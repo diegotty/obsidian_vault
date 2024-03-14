@@ -1,3 +1,6 @@
 [
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-plugin-toc",
+  "obsidian-smart-typography",
+  "folder-note-plugin"
 ]

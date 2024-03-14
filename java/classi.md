@@ -1,3 +1,18 @@
+
+index !
+[!info]- [[#def|def]]
+	- [[#def#Struttura|Struttura]]
+- [[#packages|packages]]
+- [[#campi|campi]]
+	- [[#campi#final|final]]
+	- [[#campi#static ( campo di classe)|static ( campo di classe)]]
+- [[#costruttore|costruttore]]
+	- [[#costruttore#metodi|metodi]]
+	- [[#costruttore#overloading|overloading]]
+- [[#visibilità|visibilità]]
+	- [[#visibilità#occultatori di visibilità|occultatori di visibilità]]
+	- [[#visibilità#incapsulamento|incapsulamento]]
+
 # def
 Le classi rappresentano stati/concetti/entità, e sono un prototipo astratto per gli oggetti di un tipo(tipo della classe)
 ## Struttura
