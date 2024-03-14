@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "java/strings.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "java/strings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "java/strings.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "java/strings.md"
               }
             }
           }
@@ -146,8 +146,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0a190a986550a7aa",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "Untitled.md"
+    "java/intro.md",
+    "Untitled.md",
+    "notes/2024-03-05 mp √.md",
+    "notes/2024-03-12 ae.md",
+    "notes/2024-03-07 mp √.md",
+    "notes/2024-03-14 mp.md",
+    "notes/2024-03-12 mp.md",
+    "java/memory allocation.md",
+    "java/uml.md",
+    "java/pics/Schermata 2024-03-08 alle 17.09.22.png",
+    "java/pics/Schermata 2024-03-08 alle 16.59.08.png",
+    "java/pics/Schermata 2024-03-08 alle 16.39.33.png",
+    "java/pics",
+    "java/strings.md",
+    "java/classi.md",
+    "notes",
+    "java",
+    "README.md"
   ]
 }
