@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "2d295a6bcfc6afe5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "@@@.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "@@@.md",
+                "file": "java/strings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "@@@.md",
+                "file": "java/strings.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "@@@.md"
+                "file": "java/strings.md"
               }
             }
           }
@@ -159,11 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2d295a6bcfc6afe5",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
     "@@@.md",
-    "java/strings.md",
     "java/intro.md",
+    "Untitled.md",
     "notes/2024-03-05 mp √.md",
     "notes/2024-03-12 ae.md",
     "notes/2024-03-07 mp √.md",
@@ -175,6 +162,7 @@
     "java/pics/Schermata 2024-03-08 alle 16.59.08.png",
     "java/pics/Schermata 2024-03-08 alle 16.39.33.png",
     "java/pics",
+    "java/strings.md",
     "java/classi.md",
     "notes",
     "java",
