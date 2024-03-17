@@ -46,12 +46,22 @@ permettono di usare gli operatori logici(and, or, nor, shift dx o sx)
 ## tipi di istruzione
 #### R-type (register type)
 ![[Pasted image 20240317130603.png]]
-
+arithmetic istruction format !(add, sub, …)
+	no accesso alla memoria
 opcode: [[#tipi di istruzioni]]
 rs e rt: primo e secondo operandi 
 rd: registro destinazione
 shamt: shift amount
 funct: istruzione
+```armasm
+add $t2, $s1, $s2
+```
 #### I-type (immediate type)
 ![[Pasted image 20240317131544.png]]
-2 byte usati per rd, shamt e funct non servono più e vengono usati 
+data transfer format !
+	load/store
+	salti condizionati
+2 byte usati per rd, shamt e funct non servono più e vengono usati per un indirizzo o una costante
+```armasm
+addi $t2, $s2, 4
+```
