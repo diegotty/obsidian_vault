@@ -103,4 +103,5 @@ elemento a coordinate x,y,z:
 - si trova nella z-esima matrice M x N
 - alla y-esima riga di quella matrice
 - all’ x-esima posizione di quella riga
-z * (M x N) + (y * N) + x
+z * (M x N) + (y * N) + x * dimensione_ elemento = offset !
+[!tuff] fuck me

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/vettori.md"
+                "file": "README.md"
               }
             }
           }
@@ -160,10 +160,10 @@
   },
   "active": "0a190a986550a7aa",
   "lastOpenFiles": [
-    "Pasted image 20240317182947.png",
-    "raw notes/2024-03-15 ae.md",
     "ae/vettori.md",
-    "Pasted image 20240317182706.png",
+    "ae/pics/Pasted image 20240317182947.png",
+    "raw notes/2024-03-15 ae.md",
+    "ae/pics/Pasted image 20240317182706.png",
     "ae/pseudoistruzioni.md",
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
@@ -183,7 +183,6 @@
     "ae/pics/Pasted image 20240317143111.png",
     "ae/pics/Pasted image 20240317143059.png",
     "ae/pics/Pasted image 20240317143003.png",
-    "ae/pics/Pasted image 20240317141855.png",
     "ae/pics",
     "java/strings.md",
     "conflict-files-obsidian-git.md",
