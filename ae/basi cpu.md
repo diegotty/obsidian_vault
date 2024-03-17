@@ -1,8 +1,7 @@
-
 ## prestazioni
 per misurare le prestazioni di una cpu si usano i seguenti parametri:
 
-| compontente delle prestazoni              | unità di misura                               |
+| compotente delle prestazoni               | unità di misura                               |
 | ----------------------------------------- | --------------------------------------------- |
 | tempo di esecuzione della cpu x programma | secondi                                       |
 | numero di istruzioni                      | istruzioni eseguite per singolo programma     |

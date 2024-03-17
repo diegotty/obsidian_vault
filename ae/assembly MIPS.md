@@ -47,7 +47,7 @@ file_b.asm
 j main             #jump to etichetta main(che si trova in main.asm)
 ...
 ```
-
+se i globl non sono specificati bene il [[#linker]] non sa come risolvere la label di file_b.asm
 
 # strutture di controllo di flusso
 ## if-else
