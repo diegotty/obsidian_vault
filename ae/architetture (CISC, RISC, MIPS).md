@@ -43,3 +43,10 @@ permettono di usare gli operatori logici(and, or, nor, shift dx o sx)
 	salta a : *costante, indirizzo in registro*
 
 ## rappresentazione dell’istruzione
+## tipi di istruzione
+#### I-type (immediate type)
+![[Pasted image 20240317130603.png]]
+
+opcode: tipo istruzione
+rs e rt: prim
+#### R-type (register type)
