@@ -72,15 +72,23 @@ Somma:    .word 0
 main:
 	lw $t1, 0
 	li $t2, 0
-	la $t0, vettore #carico indirizzo del vettore !(non byte                                                           corrispondente)
-	ssl $t1, $t1, 2 #calcolo offset out of bounds
-	add $t1, $t1, $t0 #indirizzo out of bouds (x il vettore)
+	la $t0, vettore         #carico indirizzo del vettore !(non byte     |WHOLE                                                                corrispondente)
+	ssl $t1, $t1, 2         #calcolo offset out of bounds                |LOTTA
+	add $t1, $t1, $t0       #indirizzo out of bouds (x il vettore)       |INSTRUCTIONS
 loop:
-	bge $t0, $t1, endLoop #confronto indirizzi, non indici
-	lw $t3, ($t0) #non devo calcolare offset
+	bge $t0, $t1, endLoop   #confronto indirizzi, non indici
+	lw $t3, ($t0)           #non devo calcolare offset                   |NGL
 	add $t2, $t2, $t3
-	addi $t0, $t0, 4 #incremento l'indirizzo(scorro 1 word alla                                                 volta)
+	addi $t0, $t0, 4        #incremento l'indirizzo(scorro 1 word alla   |!!                                                                 volta)
 	j loop
 endLoop:
 	sw $t2, Somma
 ```
+
+## matrici
+una matrice M x N è una successione di M vettori, ciascuno di N elementi.
+la dimensione totale è M * N * dimensione_elemento
+```àrmasm
+	Matrice: .word 0:91        #spazio per una matrice 7 * 13
+```
+di base nella memoria non cambia nulla, è solo un vettore molto lungo per il quale offset è relativamente più facile da calcolare perchè lo immaginiamo in questo modo:

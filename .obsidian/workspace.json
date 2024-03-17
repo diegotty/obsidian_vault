@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "efa80f8d987113ef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-03-15 ae.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -148,15 +160,15 @@
   },
   "active": "0a190a986550a7aa",
   "lastOpenFiles": [
+    "raw notes/2024-03-15 ae.md",
+    "ae/vettori.md",
+    "ae/pseudoistruzioni.md",
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
-    "ae/vettori.md",
     "ae/pics/Pasted image 20240317175058.png",
     "raw notes/2024-03-14 mp.md",
-    "raw notes/2024-03-15 ae.md",
     "raw notes/2024-03-12 mp.md",
     "ae/pics/Pasted image 20240317175138.png",
-    "ae/pseudoistruzioni.md",
     "ae/MIPS 2000.md",
     "ae/intro a MIPS.md",
     "ae/pics/Pasted image 20240317165259.png",
