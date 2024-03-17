@@ -1,4 +1,5 @@
-### main tags
+# syntax
+## main tags
 - .data
 - .text
 types:
@@ -7,7 +8,7 @@ types:
 - .float
 - .half
 - .word
-### etichette
+## etichette
 ```armasm
 CheckB:
 	slt $t0, $s4, $s1 #stiamo dando per scontato che $t0 è 0 !!!!!
@@ -25,4 +26,27 @@ End:
 	sw $s4, rez
 ```
 ci permettono di saltare ad altri pezzi di codice, facendo riferimento all’etichetta in cui è ‘incapsulato’
-[!tuff]le etichette sono fondamentali per le strutture di controllo del flusso !!
+>[!tuff] le etichette sono fondamentali per le strutture di controllo del flusso !!
+
+# strutture di controllo di flusso
+## if-else
+
+```c
+if (x > 0) {} 
+else {}
+```
+
+
+```arm-asm
+.text
+# uso il registro $t0 per la var X
+
+blez $t0,else            # branch (if) less than zero
+	#codice per condizione vera
+	j endIf              # jump to endIf(label), altrimenti 
+else:
+	#codice per condizione falsa
+endIf:
+	#stuff
+
+```

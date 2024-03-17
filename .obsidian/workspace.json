@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/assembly MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/assembly MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/assembly MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/intro a MIPS.md"
+                "file": "ae/assembly MIPS.md"
               }
             }
           }
@@ -197,12 +197,12 @@
   },
   "active": "21f6c78e58549757",
   "lastOpenFiles": [
-    "ae/MIPS 2000.md",
     "ae/intro a MIPS.md",
     "ae/pezzi del funzionamento di MIPS.md",
+    "ae/assembly MIPS.md",
+    "ae/MIPS 2000.md",
     "ae/basi cpu.md",
     "ae/architettura von neumann.md",
-    "ae/sintassi assembly MIPS.md",
     "ae/pics/Pasted image 20240317143111.png",
     "ae/pics/Pasted image 20240317143059.png",
     "ae/pics/Pasted image 20240317143003.png",
