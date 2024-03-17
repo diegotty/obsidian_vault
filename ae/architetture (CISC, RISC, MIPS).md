@@ -47,6 +47,9 @@ permettono di usare gli operatori logici(and, or, nor, shift dx o sx)
 #### I-type (immediate type)
 ![[Pasted image 20240317130603.png]]
 
-opcode: tipo istruzione
-rs e rt: prim
+opcode: [[#tipi di istruzioni]]
+rs e rt: primo e secondo operandi 
+rd: registro destinazione
+shamt: shift amount
+funct: istruzione
 #### R-type (register type)
