@@ -43,3 +43,5 @@ pro:
 - meno calcoli nel ciclo
 contro:
 - non si ha a disposizione l’indice dell’elemento
+- l’incremento del puntatore dipende dalla dimensione degli elementi(non so che contro sia in verità)
+- bisogna calcolare l’indirizzo successivo all’ultimo elemento (per uscire dal ciclo)

@@ -23,11 +23,9 @@
             "id": "a96e2210cfde9b4e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "ae/vettori.md",
-                "mode": "source",
-                "source": false
+                "file": "ae/pics/Pasted image 20240317175058.png"
               }
             }
           }
@@ -98,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "ae/pics/Pasted image 20240317175058.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "ae/pics/Pasted image 20240317175058.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/vettori.md"
+                "file": "ae/pics/Pasted image 20240317175058.png"
               }
             }
           }
@@ -159,12 +157,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a96e2210cfde9b4e",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
+    "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-15 ae.md",
+    "raw notes/2024-03-12 mp.md",
     "ae/vettori.md",
-    "Pasted image 20240317175138.png",
-    "Pasted image 20240317175058.png",
+    "ae/pics/Pasted image 20240317175138.png",
+    "ae/pics/Pasted image 20240317175058.png",
     "ae/assembly MIPS.md",
     "ae/pseudoistruzioni.md",
     "ae/MIPS 2000.md",
@@ -175,10 +175,8 @@
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/architettura von neumann.md",
     "ae/pics/Pasted image 20240317163007.png",
-    "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-12 ae.md",
     "raw notes/2024-03-07 mp √.md",
-    "raw notes/2024-03-12 mp.md",
     "ae/pics/Pasted image 20240317143111.png",
     "ae/pics/Pasted image 20240317143059.png",
     "ae/pics/Pasted image 20240317143003.png",
