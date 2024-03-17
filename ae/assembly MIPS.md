@@ -159,3 +159,26 @@ dest: .word caso0,caso1,……,casoN  #does this need to be at the end ??
 ```
 
 # flow compilatore / assemblatore
+
+![[Pasted image 20240317163007.png]]
+### compilatore
+Il compilatore ci permette di trasformare codice alto livello in **codice Assembly**
+In particolare:
+- istruzioni/espressioni di alto livello → gruppi di istruzioni ASM
+- variabili temporanee → registri
+- variabili globali e locali → etichette e direttive(?)
+- strutture di controllo → salti ed etichette
+- funzioni e chiamate → etichette e salti a funzione
+- chiamate a funzioni esterne → tabella per linker
+## assemblatore
+L’assemblatore ci permette di trasformare il codice assembly in **codice oggetto**
+In particolare:
+- istruzioni ASM → istruzioni macchina
+- etichette → indirizzi o offset relativi
+- direttive → allocazione e inizializzazione strutture statiche
+- macro → gruppi di istruzioni
+## linker
+Il linker definisce la posizione in memoria delle strutture dati statiche e del codice.
+“Collega” i riferimenti a:
+- chiamate di funzioni esterne → salti non relativi
+- strutture dati esterne → indirizzamenti non relativi
