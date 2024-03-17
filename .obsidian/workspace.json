@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md"
+                "file": "raw notes/2024-03-14 mp.md"
               }
             }
           }
@@ -160,17 +160,20 @@
   },
   "active": "0a190a986550a7aa",
   "lastOpenFiles": [
+    "raw notes/2024-03-12 mp.md",
     "raw notes/2024-03-14 mp.md",
+    "raw notes/2024-03-15 ae.md",
+    "raw notes/2024-03-12 ae.md",
+    "raw notes/2024-03-07 mp √.md",
+    "raw notes/2024-03-05 mp √.md",
     "README.md",
     "ae/vettori.md",
     "ae/pics/Pasted image 20240317182947.png",
-    "raw notes/2024-03-15 ae.md",
     "ae/pics/Pasted image 20240317182706.png",
     "ae/pseudoistruzioni.md",
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
     "ae/pics/Pasted image 20240317175058.png",
-    "raw notes/2024-03-12 mp.md",
     "ae/pics/Pasted image 20240317175138.png",
     "ae/MIPS 2000.md",
     "ae/intro a MIPS.md",
@@ -179,8 +182,6 @@
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/architettura von neumann.md",
     "ae/pics/Pasted image 20240317163007.png",
-    "raw notes/2024-03-12 ae.md",
-    "raw notes/2024-03-07 mp √.md",
     "ae/pics/Pasted image 20240317143111.png",
     "ae/pics/Pasted image 20240317143059.png",
     "ae/pics/Pasted image 20240317143003.png",
@@ -193,7 +194,6 @@
     "java/classi.md",
     "@@@.md",
     "java/intro.md",
-    "raw notes/2024-03-05 mp √.md",
     "java/pics",
     "raw notes",
     "java"
