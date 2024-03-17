@@ -19,5 +19,16 @@ i byte della word sono memorizzati dai **most** signficant byte al **last** sign
 ![[Pasted image 20240317175058.png]]
 è l’ordinamento più intuitivo (il vettore contiene 1, 2, 3, 4, 5, 6)
 ### little-endian
-i byte della word sono memorizzati dal **least** signficant byte al **most** signfiicant b
+i byte della word sono memorizzati dal **least** signficant byte al **most** signficant byte 
 ![[Pasted image 20240317175138.png]]
+molto meno intuitivo (il vettore contiene 1, 2, 3, 4, 5, 6)
+![tuff] mars usa l’ordinamento little-endian !!
+
+more on slides 05-11
+
+## accesso agli elementi per indice
+esistono 2 modi per scorrere i vettori nei cicli:
+- scansione per indice
+	tengo traccia dell'indice
+- scansione per puntatore
+	mi calcolo il puntatore ogni volta
