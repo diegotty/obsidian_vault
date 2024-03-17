@@ -120,7 +120,6 @@ endFor:
 ```
 
 ***
-
 ## switch case
 
 ```c
@@ -132,25 +131,31 @@ switch (A) {
 	case N:     // codice del caso N
 		break;
 }
-
 ```
 
 ```arm-asm
+
 .text
-sll $t0,$t0,2       # A*4
-lw $t1,dest($t0)    # carico indirizzo +$t0
+sll $t0,$t0,2       # A*4 (il caso i starà a i*4 byte)
+lw $t1,dest($t0)    # carico il caso + l'offsett calcolato sopra
 jr $t1              # salto al registro
 
-caso0:              # codice caso 0
+caso0:
+	# codice caso 0
 	j endSwitch
-caso1:              # codice caso 1
+caso1:              
+	# codice caso 1
 	j endSwitch
 # altri casi
-casoN:              # codice caso N
+casoN:              
+	# codice caso N
 	j endSwitch
 endSwitch:
-	# codice seguente
+	# code out of switch
 
 .data
-dest: .word caso0,caso1,……,casoN
+dest: .word caso0,caso1,……,casoN  #does this need to be at the end ??
+
 ```
+
+# flow compilatore / assemblatore
