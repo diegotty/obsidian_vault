@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/pseudoistruzioni.md",
+                "file": "ae/assembly MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/pseudoistruzioni.md",
+                "file": "ae/assembly MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/pseudoistruzioni.md",
+                "file": "ae/assembly MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/pseudoistruzioni.md"
+                "file": "ae/assembly MIPS.md"
               }
             }
           }
@@ -207,13 +207,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "a0bf3382cc13028f",
   "lastOpenFiles": [
+    "ae/pseudoistruzioni.md",
     "ae/MIPS 2000.md",
     "ae/assembly MIPS.md",
     "ae/intro a MIPS.md",
     "ae/basi cpu.md",
-    "ae/pseudoistruzioni.md",
     "ae/pics/Pasted image 20240317165259.png",
     "ae/pics/Pasted image 20240317165245.png",
     "ae/pezzi del funzionamento di MIPS.md",
