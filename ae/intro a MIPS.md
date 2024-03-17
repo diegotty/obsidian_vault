@@ -65,3 +65,7 @@ data transfer format !
 ```armasm
 addi $t2, $s2, 4
 ```
+
+#### J-type (jump type)
+![[Pasted image 20240317132229.png]]
+salti non condizionati
