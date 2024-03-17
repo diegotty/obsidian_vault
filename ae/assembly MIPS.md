@@ -85,7 +85,7 @@ while (x != 0) {
 # uso il registro $t0 per indice x
 
 while:
-	beqz $t0,endWhile    # esci se x = 0
+	beqz $t0,endWhile    # branch (if) equal to zero
 	# codice da ripetere
 	j while
 endWhile:
