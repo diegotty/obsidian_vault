@@ -36,6 +36,15 @@ pro:
 - comodo se il vettore è allocato staticamente
 contro:
 - ogni volta che devo accedere agli elementi bisogna calcolare l’offset corrispondente
+
+```armasm
+vettore: .word 1,2,3,4,5,6,7,8,9
+N:       .word 9
+.text
+	li $t0, 0
+	
+main:
+```
 ### scansione per puntatore
 manipolo direttamente il registro che indica l’indirizzo in memoria
 pro:
@@ -45,3 +54,9 @@ contro:
 - non si ha a disposizione l’indice dell’elemento
 - l’incremento del puntatore dipende dalla dimensione degli elementi(non so che contro sia in verità)
 - bisogna calcolare l’indirizzo successivo all’ultimo elemento (per uscire dal ciclo)
+```armasm
+vettore: .word 1,2,3,4,5,6,7,8,9
+N:       .word 9
+.text
+main:
+```
