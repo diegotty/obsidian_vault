@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/pseudoistruzioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,14 +73,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/pseudoistruzioni.md",
+                "file": "ae/assembly MIPS.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -207,18 +207,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9fdfcfc899d3ddab",
+  "active": "a0bf3382cc13028f",
   "lastOpenFiles": [
+    "ae/MIPS 2000.md",
+    "ae/assembly MIPS.md",
+    "ae/intro a MIPS.md",
+    "ae/basi cpu.md",
+    "ae/pseudoistruzioni.md",
     "Pasted image 20240317165259.png",
     "Pasted image 20240317165245.png",
-    "ae/MIPS 2000.md",
-    "ae/pseudoistruzioni.md",
     "ae/pezzi del funzionamento di MIPS.md",
     "raw notes/2024-03-15 ae.md",
-    "ae/assembly MIPS.md",
-    "ae/basi cpu.md",
     "ae/architettura von neumann.md",
-    "ae/intro a MIPS.md",
     "ae/pics/Pasted image 20240317163007.png",
     "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-12 ae.md",
@@ -232,7 +232,6 @@
     "ae/pics",
     "ae/pics/Pasted image 20240317132229.png",
     "ae/pics/Pasted image 20240317131544.png",
-    "ae/pics/Pasted image 20240317130603.png",
     "java/strings.md",
     "conflict-files-obsidian-git.md",
     "ae",
