@@ -61,14 +61,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md",
+                "file": "ae/MIPS 2000.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9fdfcfc899d3ddab",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/pseudoistruzioni.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md",
+                "file": "ae/pseudoistruzioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md",
+                "file": "ae/pseudoistruzioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-15 ae.md"
+                "file": "ae/pseudoistruzioni.md"
               }
             }
           }
@@ -195,16 +207,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "21f6c78e58549757",
+  "active": "9fdfcfc899d3ddab",
   "lastOpenFiles": [
+    "Pasted image 20240317165259.png",
+    "Pasted image 20240317165245.png",
+    "ae/MIPS 2000.md",
+    "ae/pseudoistruzioni.md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "raw notes/2024-03-15 ae.md",
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
     "ae/architettura von neumann.md",
     "ae/intro a MIPS.md",
-    "ae/MIPS 2000.md",
-    "ae/pezzi del funzionamento di MIPS.md",
     "ae/pics/Pasted image 20240317163007.png",
-    "raw notes/2024-03-15 ae.md",
     "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-12 ae.md",
     "raw notes/2024-03-07 mp √.md",
@@ -227,7 +242,6 @@
     "@@@.md",
     "java/intro.md",
     "raw notes/2024-03-05 mp √.md",
-    "java/pics/Schermata 2024-03-08 alle 17.09.22.png",
     "java/pics",
     "raw notes",
     "java",
