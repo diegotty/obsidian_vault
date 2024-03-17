@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "raw notes/2024-03-15 ae.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "raw notes/2024-03-15 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "raw notes/2024-03-15 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "raw notes/2024-03-15 ae.md"
               }
             }
           }
@@ -160,6 +160,8 @@
   },
   "active": "0a190a986550a7aa",
   "lastOpenFiles": [
+    "raw notes/2024-03-14 mp.md",
+    "README.md",
     "ae/vettori.md",
     "ae/pics/Pasted image 20240317182947.png",
     "raw notes/2024-03-15 ae.md",
@@ -168,7 +170,6 @@
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
     "ae/pics/Pasted image 20240317175058.png",
-    "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-12 mp.md",
     "ae/pics/Pasted image 20240317175138.png",
     "ae/MIPS 2000.md",
@@ -195,7 +196,6 @@
     "raw notes/2024-03-05 mp √.md",
     "java/pics",
     "raw notes",
-    "java",
-    "README.md"
+    "java"
   ]
 }
