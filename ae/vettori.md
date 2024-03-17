@@ -86,9 +86,21 @@ endLoop:
 ```
 
 ## matrici
+### matrici 2d
 una matrice M x N è una successione di M vettori, ciascuno di N elementi.
 la dimensione totale è M * N * dimensione_elemento
 ```àrmasm
 	Matrice: .word 0:91        #spazio per una matrice 7 * 13
 ```
 di base nella memoria non cambia nulla, è solo un vettore molto lungo per il quale offset è relativamente più facile da calcolare perchè lo immaginiamo in questo modo:
+![[Pasted image 20240317182706.png]]
+l’elemento e si trova a (2 * 13) + 9 = 35 word di offset
+
+### matrici 3d
+una matrice 3D di dimensioni M x N x P è una successione di P matrici 2D grandi M x N
+![[Pasted image 20240317182947.png]]
+elemento a coordinate x,y,z:
+- si trova nella z-esima matrice M x N
+- alla y-esima riga di quella matrice
+- all’ x-esima posizione di quella riga
+z * (M x N) + (y * N) + x
