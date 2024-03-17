@@ -10,7 +10,10 @@ per misurare le prestazioni di una cpu si usano i seguenti parametri:
 | cicli di clock x istruzione (CPI)         | numero medio di cicli di clock per istruzione |
 | durata del ciclo di clock                 | secondi per ciclo di clock                    |
 
-
+in generale il tempo di esecuzione di un programma dipende da 
+- numero istruzioni di un programma
+- numero medio di clock per istruzione
+- velocità clock
 
 
 

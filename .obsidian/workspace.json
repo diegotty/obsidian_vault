@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/architettura von neumann.md",
+                "file": "ae/basi cpu.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/architettura von neumann.md",
+                "file": "ae/basi cpu.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/architettura von neumann.md",
+                "file": "ae/basi cpu.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/architettura von neumann.md"
+                "file": "ae/basi cpu.md"
               }
             }
           }
@@ -173,8 +173,8 @@
   },
   "active": "e833cf934e755268",
   "lastOpenFiles": [
-    "ae/basi cpu.md",
     "ae/architettura von neumann.md",
+    "ae/basi cpu.md",
     "2024-03-15.md",
     "notes/2024-03-12 ae.md",
     "conflict-files-obsidian-git.md",
