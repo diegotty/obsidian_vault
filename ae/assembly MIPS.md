@@ -28,6 +28,27 @@ End:
 ci permettono di saltare ad altri pezzi di codice, facendo riferimento all’etichetta in cui è ‘incapsulato’
 >[!tuff] le etichette sono fondamentali per le strutture di controllo del flusso !!
 
+## globl
+utile quando abbiamo più file da gestire, con etichette che referenziano file diversi
+la direttiva globl dice all’assemblatore dove andare a prendere le etichette non definite nel file in cui vengono referenziate !
+main.asm
+```armasm
+.globl main        #indica che qui si trova l'etichetta main ?
+.text
+main: 
+	#code
+```
+
+file_b.asm
+```armasm
+....
+.text
+
+j main             #jump to etichetta main(che si trova in main.asm)
+...
+```
+
+
 # strutture di controllo di flusso
 ## if-else
 

@@ -1,4 +1,3 @@
-
 ## organizzazione della memoria
 ![[Pasted image 20240317141855.png]]
 
