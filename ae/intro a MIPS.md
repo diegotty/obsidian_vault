@@ -12,13 +12,12 @@ in era moderna, possiamo individuare 2 tipologie principali di architetture di c
 >[!tuff] MIPS è RISC !
 
 quindi, CISC risulta più complessa ma ottimizzata per singoli scopi, mentre RISC, in quanto più semplice, risulta adatta a scopi generici
-
+***
 # MIPS
 Microprocessor without Interlocked Pipelined Stages
 
 >[!tuff] MIPS è indicizzata al byte !!
 >le istruzioni sono word(lunghe 32 bit), quindi se sono all’indirizzo t e devo leggere l’istruzione successiva, incremento di 4 byte (t+4)
-
 ## operandi mips
 
 - registri
@@ -26,24 +25,25 @@ Microprocessor without Interlocked Pipelined Stages
 - parole di memoria
 	lo spazio in cui si possono memorizzare strutture dati, vettori, o il contenuto dei registri. sono accessibili 2^30 parole di memoria(4gb)
 
-# istruzioni
-## tipi di istruzioni
-### aritmetiche
+***
+## istruzioni
+### tipi di istruzioni
+#### aritmetiche
 - somma(add)
 - sottrazione(sub)
 - somma immediata (addi)
-### trasferimento dati
+#### trasferimento dati
 permettono di leggere dati(da memoria a registro), di memorizzare dati(da registro a memoria)
-### logiche
+#### logiche
 permettono di usare gli operatori logici(and, or, nor, shift dx o sx)
-### salti
+#### salti
 - salti condizionati
 	salti con test(uguaglianza, disuguaglianza, comparazione con numeri)
 - salti incondizionati
 	salta a : *costante, indirizzo in registro*
 
+****
 ## rappresentazione dell’istruzione
-## tipi di istruzione
 #### R-type (register type)
 ![[Pasted image 20240317130603.png]]
 arithmetic istruction format !(add, sub, …)

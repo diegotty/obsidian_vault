@@ -2,7 +2,6 @@
 ## prestazioni
 per misurare le prestazioni di una cpu si usano i seguenti parametri:
 
-
 | compontente delle prestazoni              | unità di misura                               |
 | ----------------------------------------- | --------------------------------------------- |
 | tempo di esecuzione della cpu x programma | secondi                                       |
@@ -14,9 +13,7 @@ in generale il tempo di esecuzione di un programma dipende da
 - numero istruzioni di un programma
 - numero medio di clock per istruzione
 - velocità clock
-
-
-
+***
 ## legge di amdahl
 $$
 \text{Tempo di esecuzione dopo il miglioramento}=
