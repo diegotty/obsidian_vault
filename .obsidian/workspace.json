@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "architetture.md",
+                "file": "ae/architetture (CISC, RISC, MIPS).md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "architetture.md",
+                "file": "ae/architetture (CISC, RISC, MIPS).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "architetture.md",
+                "file": "ae/architetture (CISC, RISC, MIPS).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "architetture.md"
+                "file": "ae/architetture (CISC, RISC, MIPS).md"
               }
             }
           }
@@ -186,8 +186,9 @@
   "active": "c23ccd1e6cad1160",
   "lastOpenFiles": [
     "ae/architettura von neumann.md",
-    "architetture.md",
     "ae/basi cpu.md",
+    "java/strings.md",
+    "ae/architetture (CISC, RISC, MIPS).md",
     "2024-03-15.md",
     "notes/2024-03-12 ae.md",
     "conflict-files-obsidian-git.md",
@@ -195,7 +196,6 @@
     "notes/2024-03-14 mp.md",
     "ae",
     "java/memory allocation.md",
-    "java/strings.md",
     "java/uml.md",
     "java/classi.md",
     "@@@.md",
