@@ -24,12 +24,22 @@ Microprocessor without Interlocked Pipelined Stages
 - registri
 	permettono accesso veloce ai dati. nel MIPS gli operandi devono essere contenuti nei registri per poter eseguire le operazioni ! alcuni registri sono riservati, non tutti e 32 sono accessibili o modificabili
 - parole di memoria
-	lo spazio in cui si possono memorizzare strutture dati, vettori, o il contenuto dei registri. sono accessibili 2^30 parole di memoria
+	lo spazio in cui si possono memorizzare strutture dati, vettori, o il contenuto dei registri. sono accessibili 2^30 parole di memoria(4gb)
 
+# istruzioni
 ## tipi di istruzioni
 ### aritmetiche
 - somma(add)
 - sottrazione(sub)
 - somma immediata (addi)
 ### trasferimento dati
-permettono di leggere dati(words, half- w)
+permettono di leggere dati(da memoria a registro), di memorizzare dati(da registro a memoria)
+### logiche
+permettono di usare gli operatori logici(and, or, nor, shift dx o sx)
+### salti
+- salti condizionati
+	salti con test(uguaglianza, disuguaglianza, comparazione con numeri)
+- salti incondizionati
+	salta a : *costante, indirizzo in registro*
+
+## rappresentazione dell’istruzione
