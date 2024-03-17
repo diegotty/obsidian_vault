@@ -44,19 +44,19 @@
             }
           },
           {
-            "id": "c23ccd1e6cad1160",
+            "id": "21f6c78e58549757",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/sintassi MIPS.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "f47c0b3b1ee7ffea",
+            "id": "a0bf3382cc13028f",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -66,21 +66,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "21f6c78e58549757",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/MIPS 2000.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/sintassi MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/sintassi MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/MIPS 2000.md"
+                "file": "ae/sintassi MIPS.md"
               }
             }
           }
@@ -207,10 +195,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "21f6c78e58549757",
   "lastOpenFiles": [
     "ae/pezzi del funzionamento di MIPS.md",
+    "ae/architettura von neumann.md",
+    "ae/basi cpu.md",
+    "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
+    "ae/sintassi MIPS.md",
     "ae/pics/Pasted image 20240317143111.png",
     "ae/pics/Pasted image 20240317143059.png",
     "ae/pics/Pasted image 20240317143003.png",
@@ -220,13 +212,10 @@
     "raw notes/2024-03-12 mp.md",
     "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-15.md",
-    "ae/intro a MIPS.md",
     "ae/pics",
     "ae/pics/Pasted image 20240317132229.png",
     "ae/pics/Pasted image 20240317131544.png",
     "ae/pics/Pasted image 20240317130603.png",
-    "ae/architettura von neumann.md",
-    "ae/basi cpu.md",
     "java/strings.md",
     "conflict-files-obsidian-git.md",
     "ae",
