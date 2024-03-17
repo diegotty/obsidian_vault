@@ -37,14 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/basi cpu.md",
+                "file": "ae/architettura von neumann.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "c23ccd1e6cad1160",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "architetture.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/basi cpu.md",
+                "file": "architetture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/basi cpu.md",
+                "file": "architetture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/basi cpu.md"
+                "file": "architetture.md"
               }
             }
           }
@@ -171,9 +183,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e833cf934e755268",
+  "active": "c23ccd1e6cad1160",
   "lastOpenFiles": [
     "ae/architettura von neumann.md",
+    "architetture.md",
     "ae/basi cpu.md",
     "2024-03-15.md",
     "notes/2024-03-12 ae.md",
