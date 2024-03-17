@@ -28,7 +28,18 @@ more on slides 05-11
 
 ## accesso agli elementi per indice
 esistono 2 modi per scorrere i vettori nei cicli:
-- scansione per indice
-	tengo traccia dell'indice
-- scansione per puntatore
-	mi calcolo il puntatore ogni volta
+### scansione per indice
+tengo traccia dell’indice, e ogni volta che devo accedere agli elementi mi calcolo l’offset corrispondente
+pro:
+- comodo se si deve usare l’indice per controlli o altro
+- l’incremento dell’indice non dipende dalla dimensione degli elementi !
+- comodo se il vettore è allocato staticamente
+contro:
+- ogni volta che devo accedere agli elementi bisogna calcolare l’offset corrispondente
+### scansione per puntatore
+manipolo direttamente il registro che indica l’indirizzo in memoria
+pro:
+- si lavora direttamente su indirizzi di memoria
+- meno calcoli nel ciclo
+contro:
+- non si ha a disposizione l’indice dell’elemento
