@@ -36,17 +36,58 @@ if (x > 0) {}
 else {}
 ```
 
-
 ```arm-asm
 .text
 # uso il registro $t0 per la var X
 
 blez $t0,else            # branch (if) less than zero
 	#codice per condizione vera
-	j endIf              # jump to endIf(label), altrimenti 
+	j endIf              # jump to endIf(label), altrimenti esegue else: labeled code
 else:
 	#codice per condizione falsa
 endIf:
 	#stuff
 
+```
+
+***
+## do while
+
+```c
+do {
+	// codice da ripetere se condizione vera
+	// il corpo del ciclo DEVE aggiornare x
+} while (x != 0)
+```
+
+```asm-arm
+.text
+# uso il registro $t0 per indice x
+
+do:
+	# codice da ripetere
+	
+	bnez $t0,do      # branch (if) not equal zero
+	# code out of loop
+```
+
+***
+## while
+```c
+while (x != 0) {
+	// codice da ripetere se x != 0
+	// il corpo del ciclo DEVE aggiornare x
+}
+```
+
+```asm-arm
+.text
+# uso il registro $t0 per indice x
+
+while:
+	beqz $t0,endWhile    # esci se x = 0
+	# codice da ripetere
+	j while
+endWhile:
+	# codice seguente
 ```
