@@ -70,12 +70,17 @@ N:       .word 9
 Somma:    .word 0
 .text
 main:
-	li $t0, 0
 	lw $t1, 0
 	li $t2, 0
+	la $t0, vettore #carico indirizzo del vettore !(non byte                                                           corrispondente)
+	ssl $t1, $t1, 2 #calcolo offset out of bounds
+	add $t1, $t1, $t0 #indirizzo out of bouds (x il vettore)
 loop:
-	bge $t0, $t1, endLoop
-	
+	bge $t0, $t1, endLoop #confronto indirizzi, non indici
+	lw $t3, ($t0) #non devo calcolare offset
+	add $t2, $t2, $t3
+	addi $t0, $t0, 4 #incremento l'indirizzo(scorro 1 word alla                                                 volta)
+	j loop
 endLoop:
 	sw $t2, Somma
 ```
