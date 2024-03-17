@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/utilizzo della memoria.md",
+                "file": "ae/pezzi del funzionamento di MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/utilizzo della memoria.md",
+                "file": "ae/pezzi del funzionamento di MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/utilizzo della memoria.md",
+                "file": "ae/pezzi del funzionamento di MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/utilizzo della memoria.md"
+                "file": "ae/pezzi del funzionamento di MIPS.md"
               }
             }
           }
@@ -205,7 +205,7 @@
     "raw notes/2024-03-15.md",
     "ae/intro a MIPS.md",
     "ae/pics",
-    "ae/utilizzo della memoria.md",
+    "ae/pezzi del funzionamento di MIPS.md",
     "ae/pics/Pasted image 20240317132229.png",
     "ae/pics/Pasted image 20240317131544.png",
     "ae/pics/Pasted image 20240317130603.png",
