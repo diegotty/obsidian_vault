@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "21f6c78e58549757",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/MIPS 2000.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md",
+                "file": "ae/MIPS 2000.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md",
+                "file": "ae/MIPS 2000.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md"
+                "file": "ae/MIPS 2000.md"
               }
             }
           }
@@ -195,20 +207,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f47c0b3b1ee7ffea",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "Pasted image 20240317143111.png",
-    "Pasted image 20240317143059.png",
-    "Pasted image 20240317143003.png",
-    "Pasted image 20240317141855.png",
-    "Pasted image 20240317141758.png",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "ae/MIPS 2000.md",
+    "ae/pics/Pasted image 20240317143111.png",
+    "ae/pics/Pasted image 20240317143059.png",
+    "ae/pics/Pasted image 20240317143003.png",
+    "ae/pics/Pasted image 20240317141855.png",
+    "ae/pics/Pasted image 20240317141758.png",
     "raw notes/2024-03-12 ae.md",
     "raw notes/2024-03-12 mp.md",
     "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-15.md",
     "ae/intro a MIPS.md",
     "ae/pics",
-    "ae/pezzi del funzionamento di MIPS.md",
     "ae/pics/Pasted image 20240317132229.png",
     "ae/pics/Pasted image 20240317131544.png",
     "ae/pics/Pasted image 20240317130603.png",
@@ -226,7 +239,6 @@
     "raw notes/2024-03-07 mp √.md",
     "java/pics/Schermata 2024-03-08 alle 17.09.22.png",
     "java/pics/Schermata 2024-03-08 alle 16.59.08.png",
-    "java/pics/Schermata 2024-03-08 alle 16.39.33.png",
     "java/pics",
     "raw notes",
     "java",
