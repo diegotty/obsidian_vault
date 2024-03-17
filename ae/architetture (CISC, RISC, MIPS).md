@@ -1,4 +1,5 @@
-## architettura cisc vs risc
+## architettura CISC vs RISC
+in era moderna, possiamo individuare 2 tipologie principali di architetture di calcolatori:
 
 | architettura CISC                                                                                                                               | architettura RISC                                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
@@ -10,3 +11,15 @@
 | **istruzioni complesse**                                                                                                                        | **istruzioni semplici**                                                                                                   |
 >[!tuff] MIPS è RISC !
 
+quindi, CISC risulta più complessa ma ottimizzata per singoli scopi, mentre RISC, in quanto più semplice, risulta adatta a scopi generici
+
+# MIPS
+Microprocessor without Interlocked Pipelined Stages
+
+>[!tuff] MIPS è indicizzata al byte !!
+>le istruzioni sono word(lunghe 32 bit), quindi se sono all’indirizzo t e devo leggere l’istruzione successiva, incremento di 4 byte (t+4)
+
+## operandi mips
+
+- registri
+- 
