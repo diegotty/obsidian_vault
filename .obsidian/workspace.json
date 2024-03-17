@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "ae/utilizzo della memoria.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "ae/utilizzo della memoria.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "ae/utilizzo della memoria.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md"
+                "file": "ae/utilizzo della memoria.md"
               }
             }
           }
@@ -198,11 +198,12 @@
   "active": "f47c0b3b1ee7ffea",
   "lastOpenFiles": [
     "raw notes/2024-03-12 ae.md",
+    "raw notes/2024-03-12 mp.md",
     "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-15.md",
     "ae/intro a MIPS.md",
     "ae/pics",
-    "ae/tipologie di indirizzamento,.md",
+    "ae/utilizzo della memoria.md",
     "ae/pics/Pasted image 20240317132229.png",
     "ae/pics/Pasted image 20240317131544.png",
     "ae/pics/Pasted image 20240317130603.png",
@@ -210,7 +211,6 @@
     "ae/basi cpu.md",
     "java/strings.md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-03-12 mp.md",
     "ae",
     "java/memory allocation.md",
     "java/uml.md",
