@@ -40,10 +40,20 @@ contro:
 ```armasm
 vettore: .word 1,2,3,4,5,6,7,8,9
 N:       .word 9
+Somma:    .word 0
 .text
-	li $t0, 0
-	
 main:
+	li $t0, 0 #index
+	lw $t1, 0 #N
+	li $t2, 0 #somma
+loop:
+	bge $t0, $t1, endLoop
+	sll $t3, $t0, 2       #offset di 1 word  |SCANSIONE
+	lw $t3, vettore($t3)  #riuso t3 !!       |CON INDICE !
+	addi $t2, $t2, $t3
+	addi $t0, $t0, 1
+endLoop:
+	sw $t2, Somma
 ```
 ### scansione per puntatore
 manipolo direttamente il registro che indica l’indirizzo in memoria
@@ -57,6 +67,15 @@ contro:
 ```armasm
 vettore: .word 1,2,3,4,5,6,7,8,9
 N:       .word 9
+Somma:    .word 0
 .text
 main:
+	li $t0, 0
+	lw $t1, 0
+	li $t2, 0
+loop:
+	bge $t0, $t1, endLoop
+	
+endLoop:
+	sw $t2, Somma
 ```
