@@ -70,3 +70,5 @@ non inizializzare i campi nella loro dichiarazione !
 ```java
 private Punto p1 = new Punto(); //dumb and stupid i hate you for doing this
 ```
+
+meglio usare una COSTANTE per la definizione di un array !
