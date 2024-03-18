@@ -30,8 +30,25 @@ non ti allargare con le righe di codice, java è già abbastanza prolisso. non s
 non scrivere classi insensate
 ```java
 public class Segmento{
-private Punto startPoint;
-private 
+	private Punto startPoint; //
+	private Punto endPoint;
+
+	public Segmento(){   //non esiste un segmento senza punti di inzio/fine, ne punti senza coordinate
+		startPoint = new Punto();
+		endPoint = new Punto();
+	}
+	public Segmento(Punto startP, Punto endP){
+		startPoint = startP;
+		endPoint = endP;
+	}
+}
+```
+
+# si può fare in una riga !
+```java
+public int maxTripla(){
+	if array[0] > array[array.length / 2] && array[0] > array[array.length - 1])
+		return 
 
 }
 ```
