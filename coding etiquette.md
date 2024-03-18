@@ -48,7 +48,25 @@ public class Segmento{
 ```java
 public int maxTripla(){
 	if array[0] > array[array.length / 2] && array[0] > array[array.length - 1])
-		return 
+		return array[0];
+	else if(array[0] < [array.length / 2] && array[array.length / 2 ] > array[length - 1])
+		return array[array.length - 1]
 
 }
+//mannaggia alla miseria se mi capita qualcuno che scrive codice così
+```
+
+```java
+public int maxTripla(){
+	if (array.length < 3)
+		return 0;
+	else 
+		return Math.max(Math.max(array[0], array[array.length / 2]), array[array.length - 1])
+}
+//very pythonic very nice
+```
+
+non inzializzare i campi nella loro dichiarazione !
+```java
+private Punto p1 = new 
 ```
