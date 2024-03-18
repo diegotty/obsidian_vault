@@ -1,0 +1,1 @@
+le costanti si scrivono in maiu
