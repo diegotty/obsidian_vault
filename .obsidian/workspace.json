@@ -49,7 +49,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "coding etiquette.md",
+                "file": "raw notes/2024-03-14 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5eca6154af307aa2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/strutture `complesse`.md",
                 "mode": "source",
                 "source": false
               }
@@ -68,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "coding etiquette.md",
+                "file": "java/strutture `complesse`.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "coding etiquette.md",
+                "file": "java/strutture `complesse`.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "coding etiquette.md"
+                "file": "java/strutture `complesse`.md"
               }
             }
           }
@@ -195,11 +207,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "68820f53e2e7ab26",
+  "active": "5eca6154af307aa2",
   "lastOpenFiles": [
-    "raw notes/2024-03-14 mp.md",
-    "coding etiquette.md",
     "java/strutture di controllo di flusso.md",
+    "raw notes/2024-03-14 mp.md",
+    "java/strutture `complesse`.md",
+    "coding etiquette.md",
     "java/uml.md",
     "java/classi.md",
     "java/intro.md",

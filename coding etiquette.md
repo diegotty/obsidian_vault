@@ -66,7 +66,7 @@ public int maxTripla(){
 //very pythonic very nice
 ```
 
-non inzializzare i campi nella loro dichiarazione !
+non inizializzare i campi nella loro dichiarazione !
 ```java
-private Punto p1 = new 
+private Punto p1 = new Punto(); //dumb and stupid i hate you for doing this
 ```
