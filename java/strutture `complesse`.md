@@ -13,8 +13,6 @@ a = new int[10];
 
 >[!tuff]ogni elemento viene inizializzato con il valore di default (0, false, null)
 
-
-
 ```java
 a = new int[] {5, 4, 3, -2, 96, 59, 32, -235959 }; //posso omettere la dimensione
 ```

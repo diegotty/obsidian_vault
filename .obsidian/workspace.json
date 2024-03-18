@@ -49,18 +49,6 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-14 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5eca6154af307aa2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "java/strutture `complesse`.md",
                 "mode": "source",
                 "source": false
@@ -80,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -207,11 +195,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5eca6154af307aa2",
+  "active": "68820f53e2e7ab26",
   "lastOpenFiles": [
     "java/strutture di controllo di flusso.md",
-    "raw notes/2024-03-14 mp.md",
     "java/strutture `complesse`.md",
+    "raw notes/2024-03-14 mp.md",
     "coding etiquette.md",
     "java/uml.md",
     "java/classi.md",
