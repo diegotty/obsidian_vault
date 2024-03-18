@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi.md",
+                "file": "raw notes/2024-03-12 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b7196a1c9dee6d73",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-03-12 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fa067fed1f6773d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-03-12 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +55,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -97,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/classi.md",
+                "file": "raw notes/2024-03-12 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/classi.md",
+                "file": "raw notes/2024-03-12 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/classi.md"
+                "file": "raw notes/2024-03-12 mp.md"
               }
             }
           }
@@ -158,16 +183,20 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "fa067fed1f6773d4",
   "lastOpenFiles": [
-    "java/intro.md",
-    "raw notes/2024-03-12 mp.md",
-    "java/memory allocation.md",
+    "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-12 ae.md",
+    "raw notes/2024-03-12 mp.md",
+    "java/strutture di controllo di flusso.md",
+    "java/packages.md",
+    "java/strings.md",
+    "java/intro.md",
+    "java/classi.md",
+    "java/memory allocation.md",
     "Pasted image 20240318201939.png",
     "Pasted image 20240318201304.png",
     "Pasted image 20240318201117.png",
-    "raw notes/2024-03-14 mp.md",
     "raw notes/2024-03-15 ae.md",
     "raw notes/2024-03-07 mp √.md",
     "raw notes/2024-03-05 mp √.md",
@@ -188,11 +217,9 @@
     "ae/architettura von neumann.md",
     "ae/pics/Pasted image 20240317163007.png",
     "ae/pics",
-    "java/strings.md",
     "conflict-files-obsidian-git.md",
     "ae",
     "java/uml.md",
-    "java/classi.md",
     "@@@.md",
     "java/pics",
     "raw notes",

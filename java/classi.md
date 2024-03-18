@@ -61,6 +61,11 @@ public void reset() {value = 0}
 
 public void reset(int NewValue) {value = newValue}
 ```
+## metodi statici
+sono metodi di classe
+non hanno accesso ai campi di istanza, ma hanno accesso ai campi di classe non fare metodi statici che provano a modificare campi d'istanza !!
+>[!tuff] I METODI STATICI INTERAGISCONO SOLO CON CAMPI DI CLASSE
+
 ***
 # visibilità
 ## occultatori di visibilità
