@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -122,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md",
+                "file": "raw notes/2024-03-14 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-12 mp.md"
+                "file": "raw notes/2024-03-14 mp.md"
               }
             }
           }
@@ -185,19 +185,20 @@
   },
   "active": "fa067fed1f6773d4",
   "lastOpenFiles": [
-    "raw notes/2024-03-14 mp.md",
-    "raw notes/2024-03-12 ae.md",
-    "raw notes/2024-03-12 mp.md",
     "java/strutture di controllo di flusso.md",
-    "java/packages.md",
-    "java/strings.md",
-    "java/intro.md",
+    "java/uml.md",
     "java/classi.md",
+    "java/intro.md",
     "java/memory allocation.md",
+    "java/strings.md",
+    "raw notes/2024-03-14 mp.md",
+    "raw notes/2024-03-15 ae.md",
+    "java/packages.md",
+    "raw notes/2024-03-12 mp.md",
+    "raw notes/2024-03-12 ae.md",
     "Pasted image 20240318201939.png",
     "Pasted image 20240318201304.png",
     "Pasted image 20240318201117.png",
-    "raw notes/2024-03-15 ae.md",
     "raw notes/2024-03-07 mp √.md",
     "raw notes/2024-03-05 mp √.md",
     "README.md",
@@ -219,7 +220,6 @@
     "ae/pics",
     "conflict-files-obsidian-git.md",
     "ae",
-    "java/uml.md",
     "@@@.md",
     "java/pics",
     "raw notes",
