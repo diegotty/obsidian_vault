@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dd11176423b1baed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-03-19 ae.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -86,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "raw notes/2024-03-19 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "raw notes/2024-03-19 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/MIPS 2000.md"
+                "file": "raw notes/2024-03-19 ae.md"
               }
             }
           }
@@ -147,8 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "771174c9304eabff",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
+    "ae/MIPS 2000.md",
+    "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-19 mp.md",
     "ae/esercizi/esercizio 2 somme.md",
     "README.md",
@@ -184,11 +198,9 @@
     "ae/basi cpu.md",
     "ae/assembly MIPS.md",
     "ae/architettura von neumann.md",
-    "ae/MIPS 2000.md",
     "ae",
     "java/strings.md",
     "java/memory allocation.md",
-    "notes/2024-03-14 mp.md",
     "java/pics",
     "notes",
     "java"
