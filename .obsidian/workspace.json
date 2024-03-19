@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "ae/MIPS 2000.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "ae/MIPS 2000.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "ae/MIPS 2000.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md"
+                "file": "ae/MIPS 2000.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "771174c9304eabff",
   "lastOpenFiles": [
+    "raw notes/2024-03-19 mp.md",
     "ae/esercizi/esercizio 2 somme.md",
     "README.md",
-    "raw notes/2024-03-19 mp.md",
     "ae/esercizi",
     "java/classi.md",
     "2024-03-15.md",
