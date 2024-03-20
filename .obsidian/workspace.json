@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-20 mp.md",
+                "file": "raw notes/2024-03-19 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-20 mp.md",
+                "file": "raw notes/2024-03-19 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-20 mp.md",
+                "file": "raw notes/2024-03-19 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-20 mp.md"
+                "file": "raw notes/2024-03-19 mp.md"
               }
             }
           }
@@ -173,8 +173,8 @@
   },
   "active": "5a172376c11f99f8",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-03-20 mp.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-03-19 mp.md",
     "java/strutture di controllo di flusso.md",
     "raw notes/2024-03-19 ae.md",
