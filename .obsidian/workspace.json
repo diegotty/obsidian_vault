@@ -42,9 +42,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3e8204835bfc62d8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "enumerazioni.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "enumerazioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "enumerazioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md"
+                "file": "enumerazioni.md"
               }
             }
           }
@@ -171,13 +183,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5a172376c11f99f8",
+  "active": "3e8204835bfc62d8",
   "lastOpenFiles": [
+    "raw notes/2024-03-19 mp.md",
+    "enumerazioni.md",
+    "raw notes/2024-03-19 ae.md",
+    "java/strutture `complesse`.md",
     "raw notes/2024-03-20 mp.md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-03-19 mp.md",
     "java/strutture di controllo di flusso.md",
-    "raw notes/2024-03-19 ae.md",
     "ae/MIPS 2000.md",
     "ae/esercizi/esercizio 2 somme.md",
     "README.md",
@@ -191,7 +205,6 @@
     "raw notes/2024-03-07 mp √.md",
     "raw notes/2024-03-05 mp √.md",
     "raw notes",
-    "java/strutture `complesse`.md",
     "java/pics/Pasted image 20240318201939.png",
     "java/pics/Pasted image 20240318201304.png",
     "java/pics/Pasted image 20240318201117.png",
@@ -211,7 +224,6 @@
     "ae/intro a MIPS.md",
     "ae/basi cpu.md",
     "ae/assembly MIPS.md",
-    "ae/architettura von neumann.md",
     "ae",
     "java/pics",
     "notes",
