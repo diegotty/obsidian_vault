@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-03-21 mp.md",
+                "file": "raw notes/2024-03-21 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-03-21 mp.md",
+                "file": "raw notes/2024-03-21 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-03-21 mp.md",
+                "file": "raw notes/2024-03-21 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-03-21 mp.md"
+                "file": "raw notes/2024-03-21 mp.md"
               }
             }
           }
@@ -195,11 +195,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9935aa54211f8f3d",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "java/enumerazioni.md",
-    "2024-03-21 mp.md",
     "raw notes/2024-03-19 mp.md",
+    "raw notes/2024-03-14 mp √.md",
+    "java/enumerazioni.md",
+    "raw notes/2024-03-21 mp.md",
     "raw notes/2024-03-19 ae.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-20 mp.md",
@@ -212,7 +213,6 @@
     "java/classi.md",
     "2024-03-15.md",
     "raw notes/2024-03-15 ae √.md",
-    "raw notes/2024-03-14 mp √.md",
     "raw notes/2024-03-12 mp √.md",
     "raw notes/2024-03-12 ae √.md",
     "raw notes/2024-03-07 mp √.md",
