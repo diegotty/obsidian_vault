@@ -66,9 +66,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c5e50b6f01f7eb17",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-03-22 ae.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -134,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-21 mp.md",
+                "file": "2024-03-22 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-21 mp.md",
+                "file": "2024-03-22 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-21 mp.md"
+                "file": "2024-03-22 ae.md"
               }
             }
           }
@@ -195,10 +207,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9935aa54211f8f3d",
+  "active": "c5e50b6f01f7eb17",
   "lastOpenFiles": [
-    "raw notes/2024-03-20 mp.md",
     "raw notes/2024-03-21 mp.md",
+    "2024-03-22 ae.md",
+    "raw notes/2024-03-20 mp.md",
     "java/classi.md",
     "raw notes/2024-03-19 mp.md",
     "raw notes/2024-03-14 mp √.md",
@@ -235,7 +248,6 @@
     "ae/pics",
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/intro a MIPS.md",
-    "ae/basi cpu.md",
     "ae",
     "java/pics",
     "notes",
