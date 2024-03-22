@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-03-22 ae.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-03-22 ae.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-03-22 ae.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-03-22 ae.md"
+                "file": "raw notes/2024-03-22 ae.md"
               }
             }
           }
@@ -207,10 +207,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e50b6f01f7eb17",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
+    "ae/pezzi del funzionamento di MIPS.md",
+    "ae/assembly MIPS.md",
+    "ae/intro a MIPS.md",
+    "ae/basi cpu.md",
+    "java/memory allocation.md",
+    "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-19 ae.md",
-    "2024-03-22 ae.md",
     "raw notes/2024-03-21 mp.md",
     "raw notes/2024-03-20 mp.md",
     "java/classi.md",
@@ -235,7 +240,6 @@
     "java/pics/Pasted image 20240318201304.png",
     "java/pics/Pasted image 20240318201117.png",
     "java/packages.md",
-    "java/coding etiquette.md",
     "ae/pics/Pasted image 20240317131544.png",
     "ae/pics/Pasted image 20240317182947.png",
     "ae/pics/Pasted image 20240317182706.png",
@@ -243,11 +247,7 @@
     "ae/pics/Pasted image 20240317175058.png",
     "ae/pics/Pasted image 20240317165259.png",
     "ae/pics/Pasted image 20240317165245.png",
-    "ae/vettori.md",
-    "ae/pseudoistruzioni.md",
     "ae/pics",
-    "ae/pezzi del funzionamento di MIPS.md",
-    "ae/intro a MIPS.md",
     "ae",
     "java/pics",
     "notes",
