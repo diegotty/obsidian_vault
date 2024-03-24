@@ -49,38 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/ereditarietà.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4d6ce18efc3959d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-03-21 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7e32cb1d281647d1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/uml.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -146,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/uml.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/uml.md",
+                "file": "raw notes/2024-03-22 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/uml.md"
+                "file": "raw notes/2024-03-22 ae.md"
               }
             }
           }
@@ -207,20 +183,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7e32cb1d281647d1",
+  "active": "32c6f374ffd6b49b",
   "lastOpenFiles": [
+    "raw notes/2024-03-19 ae.md",
     "java/ereditarietà.md",
+    "java/junit.md",
+    "raw notes/2024-03-21 mp √.md",
+    "java/uml.md",
+    "raw notes/2024-03-19 mp √.md",
+    "java/pics/Pasted image 20240324221354.png",
     "java/metodi.md",
     "java/classi.md",
-    "java/uml.md",
-    "Pasted image 20240324221307.png",
-    "raw notes/2024-03-21 mp.md",
-    "Pasted image 20240324221200.png",
-    "Pasted image 20240324221140.png",
+    "java/pics/Pasted image 20240324221307.png",
+    "java/pics/Pasted image 20240324221200.png",
+    "java/pics/Pasted image 20240324221140.png",
     "raw notes/2024-03-20 mp.md",
     "java/progettazione.md",
-    "raw notes/2024-03-19 mp √.md",
-    "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-12 mp √.md",
     "java/campi.md",
     "java/enumerazioni.md",
@@ -244,7 +222,6 @@
     "java/pics/Pasted image 20240318201304.png",
     "java/pics/Pasted image 20240318201117.png",
     "ae/pics/Pasted image 20240317182947.png",
-    "ae/pics/Pasted image 20240317182706.png",
     "ae/pics",
     "ae",
     "java/pics",

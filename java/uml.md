@@ -18,3 +18,6 @@ composizione:
 
 aggregazione:
 ![[Pasted image 20240324221307.png]]
+
+bah
+![[Pasted image 20240324221354.png]]
