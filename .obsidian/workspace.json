@@ -80,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/enumerazioni.md",
+                "file": "raw notes/2024-03-19 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/enumerazioni.md",
+                "file": "raw notes/2024-03-19 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/enumerazioni.md"
+                "file": "raw notes/2024-03-19 mp.md"
               }
             }
           }
@@ -207,14 +207,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7e32cb1d281647d1",
+  "active": "9d1fd0a97ad9bbb7",
   "lastOpenFiles": [
+    "java/classi.md",
     "raw notes/2024-03-19 mp.md",
-    "java/enumerazioni.md",
     "java/metodi.md",
+    "java/enumerazioni.md",
     "progettazione.md",
     "campi.md",
-    "java/classi.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-21 mp.md",

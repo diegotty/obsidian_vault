@@ -80,3 +80,23 @@ facilita il lavoro di gruppo e l'aggiornamento del codice
 una classe interagisce quindi con le altre quasi solo attraverso costruttori e metodi pubblici
 
 i metodi di una classe possono chiamare i metodi pubblici e privati della stessa classe, ma solo i metodi pubblici di altre classi !!!
+
+# classi particolari
+## classi wrapper
+- permettono di convertire i valori di un tipo primitivo in un oggetto
+- forniscono metodi di accesso e visualizzazone dei valori (?)
+per ogni tipo primitivo esistono delle classi corrispondenti: classi wrapper dei primitivi
+```java
+new Integer(5) != new Integer(5); //da false perchè sono stati creati 2 nuovi oggetti di tipo Integer(non primitivi) e quindi l'operatore di confronto va a confrontare i riferimenti(posto in memoria)
+```
+per l’esempio di sopra dobbiamo usare 
+- equals() 
+- compareTo()
+
+>[!tuff] I TIPI PRIMITIVI NON SONO ISTANZE DI CLASSE ! 
+
+alcuni membri speciali delle classi wrapper:
+- Integer.MIN_VALUE, …
+- i metodi Integer.parseInt(), Double.parseDouble(), …
+- toString()
+- Character.isLetter(), Character.isDigit(), Character.isUpperCase(),…
