@@ -31,7 +31,7 @@ Le classi sono organizzate in packages. Alcuni dei package più comuni sono:
 - java.awt - 4 graphics and windows
 - javax.swing, javafx - 4 gui
 ***
-# campi
+# [[campi]]
 costituiscono la memoria privata di un oggetto ( sono [[private]] la maggior parte delle volte)
 dichiarazione di un campo:
 ```java
@@ -53,7 +53,7 @@ java crea per ogni classe un costruttore di default vuoto se non creato manualme
 
 
 ***
-## metodi
+## [[metodi]]
 they do things
 ## overloading
 ```java
