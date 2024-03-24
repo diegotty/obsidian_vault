@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "1326348d49a0fbcd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -159,10 +171,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "beb067de344f862c",
+  "active": "1326348d49a0fbcd",
   "lastOpenFiles": [
-    "README.md",
     "raw notes/2024-03-19 mp.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-03-22 ae.md",
+    "raw notes/2024-03-21 mp.md",
+    "raw notes/2024-03-20 mp.md",
+    "java/enumerazioni.md",
+    "README.md",
     "raw notes/2024-03-19 ae.md",
     "esercizio 2 somme.md",
     "ae/esercizi/esercizio 2 somme.md",
@@ -188,13 +205,8 @@
     "ae/vettori.md",
     "ae/pics/Pasted image 20240317182947.png",
     "ae/pics/Pasted image 20240317182706.png",
-    "ae/pseudoistruzioni.md",
-    "ae/assembly MIPS.md",
-    "ae/basi cpu.md",
     "ae/pics/Pasted image 20240317175058.png",
     "ae/pics/Pasted image 20240317175138.png",
-    "ae/MIPS 2000.md",
-    "ae/intro a MIPS.md",
     "ae/pics/Pasted image 20240317165259.png",
     "ae/pics/Pasted image 20240317165245.png",
     "ae/pics/Pasted image 20240317163007.png",
