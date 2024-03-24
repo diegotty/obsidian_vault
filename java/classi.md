@@ -69,9 +69,12 @@ non hanno accesso ai campi di istanza, ma hanno accesso ai campi di classe non f
 ***
 # visibilità
 ## occultatori di visibilità
-- private: le cose dichiarate come private non possono essere viste da altre classi(information hiding)
-- public
-- protected
+### private: 
+le cose dichiarate come private non possono essere viste da altre classi(information hiding)
+### public
+### protected
+rende il campo/metodo visibile (solo) a tutte le sottoclassi e classi dello stesso package
+
 ## incapsulamento
 semplifica il lavoro di sviluppo.
 funzionamento a "scatola nera":
@@ -111,3 +114,17 @@ Integer[] array = {5, 3, 7, 8, 9}; //autoboxing xke 5 è un int, 3 è un int, 7 
 int j = k; //auto-unboxing(k è un oggetto di tipo Integer, non un tipo primtivo int) !!!
 int n = array[j]; //auto-unboxing xke array è un array di Integer, non di int
 ```
+
+## classi astratte
+una classe astratta non può essere istanziata(non possono esistere oggetti per quella classe)
+```java
+public abstract class PersonaggioDisney{
+	abstract void faPasticci();
+}
+```
+tipicamente verrà estesa da altre classi, che invece verranno istanziate
+anche i metodi possono essere definiti astratti(esclusivamente all’interno di una classe astratta)
+```java
+	abstract void faPasticci();
+```
+le classi non astratte che estendono classi con metodi astratte devono implementare il metodo (obbligatoriamente ! )

@@ -22,3 +22,29 @@ public class Triangolo extends Forma{
 - la sottoclasse può aggiungere nuovi metodi e campi
 - ridefinire i metodi che eredita dalla superclasse(tipicamente non i campi)
 - le classi ereditano in maniera transitiva (se a eredita da b, e c eredita da a, c eredita da b)
+
+## classi astratte
+una classe astratta non può essere istanziata(non possono esistere oggetti per quella classe)
+```java
+public abstract class PersonaggioDisney{
+	abstract void faPasticci();
+}
+```
+tipicamente verrà estesa da altre classi, che invece verranno istanziate
+anche i metodi possono essere definiti astratti(esclusivamente all’interno di una classe astratta)
+```java
+	abstract void faPasticci();
+```
+le classi non astratte che estendono classi con metodi astratte devono implementare il metodo (obbligatoriamente ! )
+
+
+## overloading vs overriding
+overriding:
+re-implementazione nella sottoclasse di un metodo creato nella superclasse
+- gli argomenti devono essere gli stessi(per numero e tipo)
+- i tipi di ritorno devono essere compatibili(lo stesso tipo o una sottoclasse)
+- non si può ridurre la visibilità
+overloading:
+re-impementazione di un metodo con lo stesso nome, ma con numero e/o parametri differenti
+- i tipi di ritorno possono essere diversi MA non si può cambiare solo il tipo di ritordo(altrimenti ho 2 metodi uguali con 2 tipi di ritorno diversi, non si saprebbe quale scegliere )
+- si può variare la visibilità in qualsiasi direzione !

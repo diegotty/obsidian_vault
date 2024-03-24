@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/classi.md",
                 "mode": "source",
                 "source": false
               }
@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/ereditarietà.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/ereditarietà.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md"
+                "file": "java/ereditarietà.md"
               }
             }
           }
@@ -219,30 +219,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d1fd0a97ad9bbb7",
+  "active": "7e32cb1d281647d1",
   "lastOpenFiles": [
+    "raw notes/2024-03-21 mp.md",
     "java/ereditarietà.md",
+    "raw notes/2024-03-20 mp.md",
+    "raw notes/2024-03-19 mp √.md",
+    "raw notes/2024-03-19 ae.md",
+    "raw notes/2024-03-12 mp √.md",
+    "java/classi.md",
     "java/campi.md",
     "java/enumerazioni.md",
-    "raw notes/2024-03-19 mp.md",
     "java/pics/Pasted image 20240324215637.png",
-    "raw notes/2024-03-21 mp.md",
     "java/progettazione.md",
-    "raw notes/2024-03-19 ae.md",
     "java/uml.md",
     "java/pics/Pasted image 20240324215332.png",
-    "java/classi.md",
     "java/metodi.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-22 ae.md",
-    "raw notes/2024-03-20 mp.md",
     "conflict-files-obsidian-git.md",
     "README.md",
     "esercizio 2 somme.md",
     "ae/esercizi/esercizio 2 somme.md",
     "ae/esercizi",
     "java/strutture di controllo di flusso.md",
-    "raw notes/2024-03-12 mp √.md",
     "raw notes/2024-03-07 mp √.md",
     "raw notes/2024-03-12 ae √.md",
     "raw notes/2024-03-14 mp √.md",
