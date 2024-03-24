@@ -56,18 +56,6 @@
             }
           },
           {
-            "id": "e54dfb0c6ee4d108",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/progettazione.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "4d6ce18efc3959d7",
             "type": "leaf",
             "state": {
@@ -92,7 +80,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -221,20 +209,20 @@
   },
   "active": "7e32cb1d281647d1",
   "lastOpenFiles": [
-    "raw notes/2024-03-21 mp.md",
-    "java/ereditarietà.md",
     "raw notes/2024-03-20 mp.md",
+    "raw notes/2024-03-21 mp.md",
+    "java/classi.md",
+    "java/metodi.md",
+    "java/progettazione.md",
+    "java/ereditarietà.md",
     "raw notes/2024-03-19 mp √.md",
     "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-12 mp √.md",
-    "java/classi.md",
     "java/campi.md",
     "java/enumerazioni.md",
     "java/pics/Pasted image 20240324215637.png",
-    "java/progettazione.md",
     "java/uml.md",
     "java/pics/Pasted image 20240324215332.png",
-    "java/metodi.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-22 ae.md",
     "conflict-files-obsidian-git.md",

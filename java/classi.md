@@ -74,6 +74,8 @@ le cose dichiarate come private non possono essere viste da altre classi(informa
 ### public
 ### protected
 rende il campo/metodo visibile (solo) a tutte le sottoclassi e classi dello stesso package
+### default 
+visibile all’interno di tutte le classi del package
 
 ## incapsulamento
 semplifica il lavoro di sviluppo.

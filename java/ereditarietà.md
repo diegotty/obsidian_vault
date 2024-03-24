@@ -46,5 +46,14 @@ re-implementazione nella sottoclasse di un metodo creato nella superclasse
 - non si può ridurre la visibilità
 overloading:
 re-impementazione di un metodo con lo stesso nome, ma con numero e/o parametri differenti
-- i tipi di ritorno possono essere diversi MA non si può cambiare solo il tipo di ritordo(altrimenti ho 2 metodi uguali con 2 tipi di ritorno diversi, non si saprebbe quale scegliere )
+- i tipi di ritorno possono essere diversi MA non si può cambiare solo il tipo di ritorno(altrimenti ho 2 metodi uguali con 2 tipi di ritorno diversi, non si saprebbe quale scegliere )
 - si può variare la visibilità in qualsiasi direzione !
+
+# tipi di relazioni
+è molto importante distinguere tra relazioni di tipo is-a e relazioni di tipo has-a
+
+## is-a
+un oggetto della sottoclasse può essere trattato come un oggetto della superclasse
+(la sottoclasse è un superclasse ? si/no) Paperino è un PersonaggioDisney? si
+
+## has-a
