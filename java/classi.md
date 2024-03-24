@@ -100,3 +100,14 @@ alcuni membri speciali delle classi wrapper:
 - i metodi Integer.parseInt(), Double.parseDouble(), …
 - toString()
 - Character.isLetter(), Character.isDigit(), Character.isUpperCase(),…
+### autoboxing e auto-unboxing
+l’autoboxing converte automaticamente un tipo primitivo al suo tipo wrapper associato, mentre l’auto-unboxing converte automaticamente da un tipo wrapper al suo tipo primitivo associato
+```java
+Integer k = 3; //autoboxing perchè 3 è un int !
+Integer[] array = {5, 3, 7, 8, 9}; //autoboxing xke 5 è un int, 3 è un int, 7 è un int,etc
+//dovrei creare l'oggetto Integer 5, l'oggetto Integer 3, etc
+// ogni oggetto occuperebbe dello spazio, l'autoboxing ci risparmia questa fatica !
+
+int j = k; //auto-unboxing(k è un oggetto di tipo Integer, non un tipo primtivo int) !!!
+int n = array[j]; //auto-unboxing xke array è un array di Integer, non di int
+```

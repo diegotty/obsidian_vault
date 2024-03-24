@@ -10,3 +10,5 @@ usare camelCase !! x eleganza
 	~ visibilità package
 si ragiona prima sull'interfaccia ( metodi)
 -interfaccia pubblica
+## ereditarietà
+![[Pasted image 20240324215332.png|250]]

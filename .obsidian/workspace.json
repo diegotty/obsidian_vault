@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/uml.md",
                 "mode": "source",
                 "source": false
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/uml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +163,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md",
+                "file": "java/uml.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +186,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-19 mp.md"
+                "file": "java/uml.md"
               }
             }
           }
@@ -207,10 +207,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d1fd0a97ad9bbb7",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "java/classi.md",
+    "java/pics/Pasted image 20240324215332.png",
     "raw notes/2024-03-19 mp.md",
+    "java/classi.md",
     "java/metodi.md",
     "java/enumerazioni.md",
     "progettazione.md",
@@ -235,7 +236,6 @@
     "java/uml.md",
     "java/intro.md",
     "java/memory allocation.md",
-    "java/strings.md",
     "java/pics/Pasted image 20240318201939.png",
     "java/pics/Pasted image 20240318201304.png",
     "java/pics/Pasted image 20240318201117.png",
