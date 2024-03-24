@@ -12,3 +12,9 @@ si ragiona prima sull'interfaccia ( metodi)
 -interfaccia pubblica
 ## ereditarietà
 ![[Pasted image 20240324215332.png|250]]
+
+composizione:
+![[Pasted image 20240324221200.png|550]]
+
+aggregazione:
+![[Pasted image 20240324221307.png]]

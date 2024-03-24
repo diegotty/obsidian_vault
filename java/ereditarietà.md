@@ -51,9 +51,14 @@ re-impementazione di un metodo con lo stesso nome, ma con numero e/o parametri d
 
 # tipi di relazioni
 è molto importante distinguere tra relazioni di tipo is-a e relazioni di tipo has-a
-
 ## is-a
+rappresenta l’ereditarietà
 un oggetto della sottoclasse può essere trattato come un oggetto della superclasse
 (la sottoclasse è un superclasse ? si/no) Paperino è un PersonaggioDisney? si
-
+![[Pasted image 20240324221140.png]]
 ## has-a
+rappresenta la composizione
+un oggetto contiene come membri (o sottoclassi ?) riferimenti ad altri oggetti
+(un oggetto contiene altri oggetti ? si/no) Bagno contiene Vasca ? si
+PersonaggioDisney contiene Paperino ? no
+//in questo caso però non avrebbe senso che Vasca sia una sottoclasse di Bagno, bensì avrebbe senso che Bagno avesse un campo di tipo Vasca
