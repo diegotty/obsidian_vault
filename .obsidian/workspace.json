@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-03-26 mp.md",
+                "file": "raw notes/2024-03-26 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-03-26 mp.md",
+                "file": "raw notes/2024-03-26 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-03-26 mp.md",
+                "file": "raw notes/2024-03-26 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-03-26 mp.md"
+                "file": "raw notes/2024-03-26 mp.md"
               }
             }
           }
@@ -196,10 +196,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ff5ea006513b0669",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
     "raw notes/2024-03-22 ae.md",
-    "2024-03-26 mp.md",
+    "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-20 mp.md",
     "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-21 mp √.md",
