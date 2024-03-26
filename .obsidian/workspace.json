@@ -4,47 +4,47 @@
     "type": "split",
     "children": [
       {
-        "id": "70e4f7a3c4962f2b",
+        "id": "ee36fb3ce6f9478c",
         "type": "tabs",
         "children": [
           {
-            "id": "0a190a986550a7aa",
+            "id": "771174c9304eabff",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi.md",
+                "file": "ae/MIPS 2000.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "beb067de344f862c",
+            "id": "dd11176423b1baed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture `complesse`.md",
+                "file": "java/strutture di controllo di flusso.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "9d1fd0a97ad9bbb7",
+            "id": "3e8204835bfc62d8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi.md",
+                "file": "java/enumerazioni.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "32c6f374ffd6b49b",
+            "id": "c5e50b6f01f7eb17",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -54,9 +54,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ff5ea006513b0669",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-03-26 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -122,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-22 ae.md",
+                "file": "2024-03-26 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-22 ae.md",
+                "file": "2024-03-26 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-22 ae.md"
+                "file": "2024-03-26 mp.md"
               }
             }
           }
@@ -183,49 +195,50 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "32c6f374ffd6b49b",
+  "active": "ff5ea006513b0669",
   "lastOpenFiles": [
+    "raw notes/2024-03-22 ae.md",
+    "2024-03-26 mp.md",
+    "raw notes/2024-03-20 mp.md",
     "raw notes/2024-03-19 ae.md",
-    "java/ereditarietà.md",
-    "java/junit.md",
     "raw notes/2024-03-21 mp √.md",
-    "java/uml.md",
     "raw notes/2024-03-19 mp √.md",
+    "java/progettazione.md",
     "java/pics/Pasted image 20240324221354.png",
-    "java/metodi.md",
-    "java/classi.md",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
     "java/pics/Pasted image 20240324221140.png",
-    "raw notes/2024-03-20 mp.md",
-    "java/progettazione.md",
-    "raw notes/2024-03-12 mp √.md",
-    "java/campi.md",
-    "java/enumerazioni.md",
     "java/pics/Pasted image 20240324215637.png",
     "java/pics/Pasted image 20240324215332.png",
-    "java/strutture `complesse`.md",
-    "raw notes/2024-03-22 ae.md",
-    "conflict-files-obsidian-git.md",
-    "README.md",
-    "esercizio 2 somme.md",
-    "ae/esercizi/esercizio 2 somme.md",
-    "ae/esercizi",
-    "java/strutture di controllo di flusso.md",
-    "raw notes/2024-03-07 mp √.md",
-    "raw notes/2024-03-12 ae √.md",
+    "java/metodi.md",
+    "java/junit.md",
+    "java/ereditarietà.md",
+    "java/campi.md",
+    "ae/vettori.md",
+    "ae/pseudoistruzioni.md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "ae/MIPS 2000.md",
+    "ae/intro a MIPS.md",
+    "ae/assembly MIPS.md",
+    "ae/basi cpu.md",
+    "java/memory allocation.md",
+    "raw notes/2024-03-21 mp.md",
+    "java/classi.md",
+    "raw notes/2024-03-19 mp.md",
     "raw notes/2024-03-14 mp √.md",
-    "raw notes/2024-03-15 ae √.md",
-    "java/coding etiquette.md",
-    "java/intro.md",
+    "java/enumerazioni.md",
+    "java/strutture `complesse`.md",
+    "conflict-files-obsidian-git.md",
+    "ae/esercizi",
+    "raw notes",
     "java/pics/Pasted image 20240318201939.png",
     "java/pics/Pasted image 20240318201304.png",
     "java/pics/Pasted image 20240318201117.png",
-    "ae/pics/Pasted image 20240317182947.png",
+    "ae/pics/Pasted image 20240317131544.png",
     "ae/pics",
     "ae",
     "java/pics",
-    "raw notes",
+    "notes",
     "java"
   ]
 }
