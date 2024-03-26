@@ -8,10 +8,23 @@ richieste al sistema operativo
 
 
 
-| syscall($v0) | descrizione    | argomenti($a0, ..)                                                                   | risultato($v0, …) |
-| ------------ | -------------- | ------------------------------------------------------------------------------------ | ----------------- |
-| 1            | stampa intero  | intero                                                                               |                   |
-| 4            | stampa stringa | string address                                                                       |                   |
-| 5            | leggi intero   |                                                                                      |                   |
-| 8            | leggi stringa  | $a0 = buffer address (indirizzo in memoria)<br>$a1 = numero di caratteri da prendere |                   |
-| 10           | fine programma |                                                                                      |                   |
+| syscall($v0) | service      | argomenti($a0, ..) | risultato($v0, …) |     |
+| ------------ | ------------ | ------------------ | ----------------- | --- |
+| 1            | print_int    | `$a0` = integer    |                   |     |
+| 2            | print_float  | `$f12` = float     |                   |     |
+| 3            | print_double | `$f12` = double    |                   |     |
+| 4            | print_string |                    |                   |     |
+| 5            | read_int     |                    |                   |     |
+| 6            | read_float   |                    |                   |     |
+| 7            | read_double  |                    |                   |     |
+| 8            | read_string  |                    |                   |     |
+| 9            | sbrk         |                    |                   |     |
+| 10           | exit         |                    |                   |     |
+| 11           | print_char   |                    |                   |     |
+| 12           | read_char    |                    |                   |     |
+| 13           | open         |                    |                   |     |
+| 14           | read         |                    |                   |     |
+| 15           | write        |                    |                   |     |
+| 16           | close        |                    |                   |     |
+| 17           | exit2        |                    |                   |     |
+|              |              |                    |                   |     |
