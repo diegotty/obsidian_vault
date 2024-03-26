@@ -68,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -134,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "system calls.md",
+                "file": "raw notes/2024-03-19 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -151,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "system calls.md",
+                "file": "raw notes/2024-03-19 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "system calls.md"
+                "file": "raw notes/2024-03-19 ae.md"
               }
             }
           }
@@ -195,10 +195,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b31a1eac8a129436",
+  "active": "c5e50b6f01f7eb17",
   "lastOpenFiles": [
-    "raw notes/2024-03-19 ae.md",
     "system calls.md",
+    "raw notes/2024-03-19 ae.md",
     "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-20 mp.md",
     "2024-03-26.md",

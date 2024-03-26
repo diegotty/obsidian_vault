@@ -8,23 +8,22 @@ richieste al sistema operativo
 
 
 
-| syscall($v0) | service      | argomenti($a0, ..) | risultato($v0, …) |     |
-| ------------ | ------------ | ------------------ | ----------------- | --- |
-| 1            | print_int    | `$a0` = integer    |                   |     |
-| 2            | print_float  | `$f12` = float     |                   |     |
-| 3            | print_double | `$f12` = double    |                   |     |
-| 4            | print_string |                    |                   |     |
-| 5            | read_int     |                    |                   |     |
-| 6            | read_float   |                    |                   |     |
-| 7            | read_double  |                    |                   |     |
-| 8            | read_string  |                    |                   |     |
-| 9            | sbrk         |                    |                   |     |
-| 10           | exit         |                    |                   |     |
-| 11           | print_char   |                    |                   |     |
-| 12           | read_char    |                    |                   |     |
-| 13           | open         |                    |                   |     |
-| 14           | read         |                    |                   |     |
-| 15           | write        |                    |                   |     |
-| 16           | close        |                    |                   |     |
-| 17           | exit2        |                    |                   |     |
-|              |              |                    |                   |     |
+| syscall($v0) | service      | argomenti($a0, ..)                                          | risultato($v0, …)            |
+| ------------ | ------------ | ----------------------------------------------------------- | ---------------------------- |
+| 1            | print_int    | `$a0` = integer                                             |                              |
+| 2            | print_float  | `$f12` = float                                              |                              |
+| 3            | print_double | `$f12` = double                                             |                              |
+| 4            | print_string |                                                             |                              |
+| 5            | read_int     |                                                             |                              |
+| 6            | read_float   |                                                             | float(in`$f0`)               |
+| 7            | read_double  |                                                             | double (int `$f0`)           |
+| 8            | read_string  | `$a0` = buffer, `$a1` = length                              |                              |
+| 9            | sbrk         | `$a0` = amount                                              | address(in `$v0`)            |
+| 10           | exit         |                                                             |                              |
+| 11           | print_char   | `$a0` = char                                                |                              |
+| 12           | read_char    |                                                             | char (in `$a0`)              |
+| 13           | open         | `$a0` = filename(string),<br>`$a1` = flags, `$a2` = mode    | file descriptor (in `$a0`)   |
+| 14           | read         | `$a0` = filename(string),<br>`$a1` = buffer, `$a2` = length | num chars written (in `$a0`) |
+| 15           | write        | `$a0` = filename(string),<br>`$a1` = buffer, `$a2` = length | num chars written (in `$a0`) |
+| 16           | close        | `$a0` = file descriptor                                     |                              |
+| 17           | exit2        | `$a0` = result                                              |                              |
