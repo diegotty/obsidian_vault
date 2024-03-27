@@ -142,8 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -222,13 +221,14 @@
   },
   "active": "b8cb64e19c606570",
   "lastOpenFiles": [
-    "2024-03-26 ae.md",
+    "2024-03-26.md",
     "2024-03-27.md",
+    "java/ereditarietà.md",
+    "2024-03-26 ae.md",
     "raw notes/2024-03-19 ae.md",
     "system calls.md",
     "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-20 mp.md",
-    "2024-03-26.md",
     "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-21 mp √.md",
     "raw notes/2024-03-19 mp √.md",
@@ -241,7 +241,6 @@
     "java/pics/Pasted image 20240324215332.png",
     "java/metodi.md",
     "java/junit.md",
-    "java/ereditarietà.md",
     "java/campi.md",
     "ae/vettori.md",
     "ae/pseudoistruzioni.md",
