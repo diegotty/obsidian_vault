@@ -12,4 +12,10 @@ posso sempre convertire, senza un cast esplicito, un sottotipo a un supertipo (*
 ```java
 ImpiegatoStipendiato is1 = new ImpiegatoStipendiato("mario", "imp1", 1500);
 ```
-può essere invece necessario convertire un supertipo a un sottotipo (**downcasting**)
+può essere invece necessario convertire un supertipo a un sottotipo (**downcasting**), ciò richieste un cast esplicito !
+```java
+ImpiegatoStipendiato is2 = (ImpiegatoStipendiato)i;
+```
+>[!tuff] NON STO CREANDO UN NUOVO OGGETTO !
+>sto giocando con i riferimenti e i vari livelli dell’oggetto
+
