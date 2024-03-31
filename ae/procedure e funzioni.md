@@ -21,6 +21,12 @@ i valori di ritorno vanno salvati, per convenzione (?), nei registri `$v0, $v1`
 ### convenzioni
 `$t0, $t1, …` possono cambiare tra una chaiamta e l’altra(sono temporary)
 `$s0, $s1, ….` non cambiano tra una chiamata  e l’altra(saved)
-more about this in 
+more about this in [[#preservare il contenuto dei registri]]
 
-# 
+# preservare il contenuto dei registri
+una delle limitazioni della struttura delle funzioni è la non-possibilità di avere più di 128bit di parametri e avere 64 bit di ritorno.
+
+quando avvengono chiamate a funzioni nidificate, bisogna gestire i contenuti (soprattuto di `$ra` !!)
+
+conviene quindi preservare il precedente contenuto dei registri usati dalla funzione e ripristinarlo (al contenuto prima della chiamata !). ciò garantisce:
+- meno vincolil alla funzione chiamante
