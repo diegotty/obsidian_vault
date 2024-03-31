@@ -36,8 +36,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "506911e5f1f012ad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "confronto tra classi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/polimorfismo.md",
+                "file": "confronto tra classi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/polimorfismo.md",
+                "file": "confronto tra classi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/polimorfismo.md"
+                "file": "confronto tra classi.md"
               }
             }
           }
@@ -164,10 +177,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "5698dc4054f4b273",
+  "active": "506911e5f1f012ad",
   "lastOpenFiles": [
-    "java/progettazione.md",
     "java/polimorfismo.md",
+    "confronto tra classi.md",
+    "java/progettazione.md",
     "Pasted image 20240331221332.png",
     "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-20 mp.md",
@@ -196,7 +210,6 @@
     "java/uml.md",
     "raw notes/2024-03-19 mp √.md",
     "java/pics/Pasted image 20240324221354.png",
-    "java/metodi.md",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
     "java/pics/Pasted image 20240324221140.png",
