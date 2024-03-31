@@ -27,3 +27,6 @@ richieste al sistema operativo
 | 15           | write        | `$a0` = filename(string),<br>`$a1` = buffer, `$a2` = length | num chars written (in `$a0`) |
 | 16           | close        | `$a0` = file descriptor                                     |                              |
 | 17           | exit2        | `$a0` = result                                              |                              |
+
+### syscall 10
+la syscall 10 viene usata perh
