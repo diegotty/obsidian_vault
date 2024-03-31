@@ -26,7 +26,20 @@ more about this in [[#preservare il contenuto dei registri]]
 # preservare il contenuto dei registri
 una delle limitazioni della struttura delle funzioni è la non-possibilità di avere più di 128bit di parametri e avere 64 bit di ritorno.
 
-quando avvengono chiamate a funzioni nidificate, bisogna gestire i contenuti (soprattuto di `$ra` !!)
+quando avvengono chiamate a funzioni nidificate, bisogna gestire i contenuti (soprattuto di `$ra` !!, che viene sovrascritto quando viene chiamata un’altra funzione)
 
-conviene quindi preservare il precedente contenuto dei registri usati dalla funzione e ripristinarlo (al contenuto prima della chiamata !). ciò garantisce:
-- meno vincolil alla funzione chiamante
+conviene quindi preservare il precedente contenuto dei registri usati dalla funzione e ripristinarlo (al contenuto prima della chiamata !). ciò garantisce meno vincoli alla funzione chiamante :)
+
+## chiamate nidificate
+ciclo di vita caratteristico delle informazioni :
+```
+-salvo stato prima di chiamata 1
+	-salvo stato prima di chiamata 2
+		- salvo stato prima di chiamata n
+			....
+		-ripristino stato prima di chiamata n
+	-ripristino stato prima di chiamata 2
+-ripristino stato prima di chiamata 1
+```
+quello illustrato sopra è il comportamento di uno stack (struttura LIFO)
+lo stack viene realizzato con un vettore di cui si tiene l’indirizzo dell’ultimo elemento occupato nel registro `$sp` 
