@@ -92,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -158,7 +158,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md",
+                "file": "system calls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md",
+                "file": "system calls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -198,7 +198,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md"
+                "file": "system calls.md"
               }
             }
           }
@@ -219,8 +219,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b8cb64e19c606570",
+  "active": "b31a1eac8a129436",
   "lastOpenFiles": [
+    "raw notes/2024-03-26 mp.md",
     "java/ereditarietà.md",
     "2024-03-27.md",
     "2024-03-26.md",
@@ -229,7 +230,6 @@
     "system calls.md",
     "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-20 mp.md",
-    "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-21 mp √.md",
     "raw notes/2024-03-19 mp √.md",
     "java/progettazione.md",
