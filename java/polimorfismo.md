@@ -1,4 +1,7 @@
 molte + forme
+xke ?
+vogliamo utilizzare facilmente e senza differenziazioni formali oggetti diversi, ma con caratteristiche comuni
+![[Pasted image 20240331221332.png|450]]
 ```java
 Animale a = new Gatto();
 a.emettiVerso();
@@ -15,4 +18,7 @@ il binding è il processo di associare la variabile al suo tipo
 ## binding statico
 il compilatore, senza eseguire il programma, stabilisce già i tipi delle variabili in maniera statica (non solo il tipo delle variabili statiche lol)
 ## binding dinamico
-fatto in Java dalla JVM, serve a stabilire (quando viene usato il p)
+fatto in Java dalla JVM, serve a stabilire (quando viene usato il polimorfismo), quale metodo chiamare (guarda emettiVerso() in esempio). 
+>[!tuff] viene chiamato il metodo implementato, ereditato, o assorbito nella classe di cui chiamo il costruttore
+
+è buona pratica implementare 
