@@ -43,7 +43,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "confronto tra classi.md",
+                "file": "confronto tra classi e conversione.md",
                 "mode": "source",
                 "source": false
               }
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "confronto tra classi.md",
+                "file": "confronto tra classi e conversione.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "confronto tra classi.md",
+                "file": "confronto tra classi e conversione.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "confronto tra classi.md"
+                "file": "confronto tra classi e conversione.md"
               }
             }
           }
@@ -180,7 +180,7 @@
   "active": "506911e5f1f012ad",
   "lastOpenFiles": [
     "java/polimorfismo.md",
-    "confronto tra classi.md",
+    "confronto tra classi e conversione.md",
     "java/progettazione.md",
     "Pasted image 20240331221332.png",
     "raw notes/2024-03-26 mp.md",
