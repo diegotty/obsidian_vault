@@ -36,8 +36,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "aeac37620e556ac5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/procedure e funzioni.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md",
+                "file": "ae/procedure e funzioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md",
+                "file": "ae/procedure e funzioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/pezzi del funzionamento di MIPS.md"
+                "file": "ae/procedure e funzioni.md"
               }
             }
           }
@@ -164,17 +177,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8d2c2ad94b2eecea",
+  "active": "aeac37620e556ac5",
   "lastOpenFiles": [
-    "raw notes/2024-03-22 ae.md",
-    "ae/pezzi del funzionamento di MIPS.md",
+    "Untitled.md",
     "ae/procedure e funzioni.md",
+    "ae/pseudoistruzioni.md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-20 mp.md",
     "raw notes/2024-03-19 ae √.md",
     "raw notes/2024-03-15 ae √.md",
     "java/strutture `complesse`.md",
     "java/classi.md",
-    "ae/pseudoistruzioni.md",
     "ae/vettori.md",
     "ae/system calls.md",
     "ae/basi cpu.md",
@@ -195,7 +209,6 @@
     "java/pics/Pasted image 20240324221140.png",
     "java/progettazione.md",
     "raw notes/2024-03-12 mp √.md",
-    "java/campi.md",
     "java/pics/Pasted image 20240324215637.png",
     "java/pics/Pasted image 20240324215332.png",
     "ae/esercizi",

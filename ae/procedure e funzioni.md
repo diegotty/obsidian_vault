@@ -22,3 +22,5 @@ i valori di ritorno vanno salvati, per convenzione (?), nei registri `$v0, $v1`
 `$t0, $t1, …` possono cambiare tra una chaiamta e l’altra(sono temporary)
 `$s0, $s1, ….` non cambiano tra una chiamata  e l’altra(saved)
 more about this in 
+
+# 
