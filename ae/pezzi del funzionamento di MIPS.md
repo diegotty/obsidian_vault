@@ -21,4 +21,6 @@
 ![[Pasted image 20240317143059.png]]
 ![[Pasted image 20240317143003.png|400]]
 ![[Pasted image 20240317143111.png|400]]
-//kinda interesting but boring ngl
+
+### indirizzamento MIPS immediato a 32 bit
+nessuna istruzione permette di caricare direttamente 32 bit, si usa lui + ori

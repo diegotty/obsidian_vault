@@ -16,3 +16,9 @@ ci permette di saltare ad un indirizzo, ma salva in `$ra` l’address della pros
 per passare valori alla funzione usiamo i registri `$a0, $a1, $a2, $a3, $a4` se ci bastano 4 parametri. altrimenti possiamo usare diversi [[pezzi del funzionamento di MIPS#modi di indirizzamento|modi di indirizzamento]]
 
 ## valori di torno
+i valori di ritorno vanno salvati, per convenzione (?), nei registri `$v0, $v1`
+
+### convenzioni
+`$t0, $t1, …` possono cambiare tra una chaiamta e l’altra(sono temporary)
+`$s0, $s1, ….` non cambiano tra una chiamata  e l’altra(saved)
+more about this in 
