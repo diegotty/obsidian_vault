@@ -46,8 +46,27 @@ lo stack viene realizzato con un vettore di cui si tiene l’indirizzo dell’ul
 ![[Pasted image 20240331213146.png|150]]
 in questo snapshot della memoria, `$sp` = 980
 lo stack cresce verso il basso ! quando viene aggiunto qualcosa, `$sp` va decrementato
-## come salvare un elemento
+### come salvare un elemento
+si decrementa lo `$sp` della dimensione dell’elemento (in byte !!!!)
+si memorizza l’elemento nella posizione 0 (in questo caso `$ra`)
 ```armasm
 subi $sp, $sp, 4
-
+sw $ra, 0($sp)
 ```
+### come recuperare un elemento
+```armasm
+lw $ra, 0($sp)
+addi $sp, $sp, 4
+```
+quindi:
+## come usare lo stack in una funzione
+all’inizio della funzione:
+- allocare su stack abbastanza word da contenere i registri da preservare
+- salvare su stack i registri, ad offset multipli di 4 rispetto ad `$sp`
+
+
+
+
+
+
+![[Pasted image 20240331214612.png|500]]
