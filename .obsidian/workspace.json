@@ -100,7 +100,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -179,6 +180,7 @@
   },
   "active": "aeac37620e556ac5",
   "lastOpenFiles": [
+    "Pasted image 20240331213146.png",
     "Untitled.md",
     "ae/procedure e funzioni.md",
     "ae/pseudoistruzioni.md",
@@ -208,7 +210,6 @@
     "java/pics/Pasted image 20240324221200.png",
     "java/pics/Pasted image 20240324221140.png",
     "java/progettazione.md",
-    "raw notes/2024-03-12 mp √.md",
     "java/pics/Pasted image 20240324215637.png",
     "java/pics/Pasted image 20240324215332.png",
     "ae/esercizi",

@@ -43,3 +43,4 @@ ciclo di vita caratteristico delle informazioni :
 ```
 quello illustrato sopra è il comportamento di uno stack (struttura LIFO)
 lo stack viene realizzato con un vettore di cui si tiene l’indirizzo dell’ultimo elemento occupato nel registro `$sp` 
+![[Pasted image 20240331213146.png]]
