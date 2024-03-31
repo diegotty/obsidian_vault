@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-22 ae.md",
+                "file": "raw notes/2024-03-20 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -100,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -117,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/procedure e funzioni.md",
+                "file": "raw notes/2024-03-20 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/procedure e funzioni.md",
+                "file": "raw notes/2024-03-20 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/procedure e funzioni.md"
+                "file": "raw notes/2024-03-20 mp.md"
               }
             }
           }
@@ -178,15 +177,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "aeac37620e556ac5",
+  "active": "beb067de344f862c",
   "lastOpenFiles": [
+    "raw notes/2024-03-26 mp.md",
+    "raw notes/2024-03-27.md",
+    "raw notes/2024-03-22 ae √.md",
+    "raw notes/2024-03-21 mp √.md",
+    "ae/procedure e funzioni.md",
+    "Pasted image 20240331220300.png",
     "Pasted image 20240331214612.png",
     "Pasted image 20240331213146.png",
     "Untitled.md",
-    "ae/procedure e funzioni.md",
     "ae/pseudoistruzioni.md",
     "ae/pezzi del funzionamento di MIPS.md",
-    "raw notes/2024-03-22 ae.md",
     "raw notes/2024-03-20 mp.md",
     "raw notes/2024-03-19 ae √.md",
     "raw notes/2024-03-15 ae √.md",
@@ -197,12 +200,9 @@
     "ae/basi cpu.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
-    "raw notes/2024-03-26 mp.md",
-    "raw notes/2024-03-27.md",
     "raw notes/2024-03-26 ae.md",
     "java/ereditarietà.md",
     "java/junit.md",
-    "raw notes/2024-03-21 mp √.md",
     "java/uml.md",
     "raw notes/2024-03-19 mp √.md",
     "java/pics/Pasted image 20240324221354.png",
@@ -215,8 +215,6 @@
     "java/pics/Pasted image 20240324215332.png",
     "ae/esercizi",
     "java/pics/Pasted image 20240318201939.png",
-    "java/pics/Pasted image 20240318201304.png",
-    "java/pics/Pasted image 20240318201117.png",
     "ae/pics",
     "ae",
     "java/pics",

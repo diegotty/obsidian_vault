@@ -71,7 +71,10 @@ all’uscita della funzione:
 inoltre lo stack viene usato anche per:
 - comunicare ulteriori argomenti oltre a `$a0, .., $a3`
 - comunicare ulteriori risultati oltre a `$v0, $v1`
-
-
+- allocare variabili locali alla procedura
+![[Pasted image 20240331220300.png|150]]
+questo blocco viene chiamato **stack frame** o **activation record**
+- lo stack pointer punta alla fine dello stack frame
+- il frame pointer punta all’inizio dello stack frame(ridondante ma comodo, non molto usato)((ridondante perchè su assembly siamo noi a hard-codare la dimensione dello stack frame di una funzione, quindi sappiamo quanto è grande e dove inizia se guardiamo allo stack pointer))
 
 ![[Pasted image 20240331214612.png|500]]
