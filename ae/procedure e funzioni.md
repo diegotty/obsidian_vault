@@ -63,9 +63,14 @@ quindi:
 all’inizio della funzione:
 - allocare su stack abbastanza word da contenere i registri da preservare
 - salvare su stack i registri, ad offset multipli di 4 rispetto ad `$sp`
+all’uscita della funzione:
+- ripristinare da stack i registri salvati, agli stessi offset usati precedentemente
+- disallocare da stack lo stesso spazio allocato in precedenza
+- tornare alla funzione chiamante
 
-
-
+inoltre lo stack viene usato anche per:
+- comunicare ulteriori argomenti oltre a `$a0, .., $a3`
+- comunicare ulteriori risultati oltre a `$v0, $v1`
 
 
 
