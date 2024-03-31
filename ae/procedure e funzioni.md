@@ -43,4 +43,11 @@ ciclo di vita caratteristico delle informazioni :
 ```
 quello illustrato sopra è il comportamento di uno stack (struttura LIFO)
 lo stack viene realizzato con un vettore di cui si tiene l’indirizzo dell’ultimo elemento occupato nel registro `$sp` 
-![[Pasted image 20240331213146.png]]
+![[Pasted image 20240331213146.png|150]]
+in questo snapshot della memoria, `$sp` = 980
+lo stack cresce verso il basso ! quando viene aggiunto qualcosa, `$sp` va decrementato
+## come salvare un elemento
+```armasm
+subi $sp, $sp, 4
+
+```
