@@ -29,4 +29,13 @@ richieste al sistema operativo
 | 17           | exit2        | `$a0` = result                                              |                              |
 
 ### syscall 10
-la syscall 10 viene usata perh
+la syscall 10 viene usata perchè in assembly non esiste uno scope, quindi di solito i programmi sono strutturati in questo modo:
+```armasm
+.text
+main:
+	li $v0, 10
+	syscall
+#funzioni varie !
+func1:
+	code ...
+```
