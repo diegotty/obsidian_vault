@@ -21,4 +21,13 @@
 ![[Pasted image 20240317143059.png]]
 ![[Pasted image 20240317143003.png|400]]
 ![[Pasted image 20240317143111.png|400]]
-//kinda interesting but boring ngl
+
+### indirizzamento MIPS immediato a 32 bit
+nessuna istruzione permette di caricare direttamente 32 bit, si usa lui + ori
+```armasm
+caricare la seguente costante in $s0:
+0000 0000 1111 1111 0000 1001 0000 0000
+si assume che tutti i registri partano vuoti (come $zero)
+lui $t0, 255 (255 = 0000 0000 1111 1111)
+ori $s0, %t0, 2304 (2304 = 0000 1001 0000 0000)
+```
