@@ -8,42 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "771174c9304eabff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/MIPS 2000.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dd11176423b1baed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/strutture di controllo di flusso.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3e8204835bfc62d8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "confronto tra classi e conversione.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "a47f7d90128e19ed",
             "type": "leaf",
             "state": {
@@ -54,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "b8cb64e19c606570",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-03-26 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
