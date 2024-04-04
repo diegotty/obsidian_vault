@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "863b0f503cfaf7a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-04-04 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "overwhelming amount of stuff to do b4 esonero.md",
+                "file": "2024-04-04 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "overwhelming amount of stuff to do b4 esonero.md",
+                "file": "2024-04-04 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "overwhelming amount of stuff to do b4 esonero.md"
+                "file": "2024-04-04 mp.md"
               }
             }
           }
@@ -146,10 +160,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a47f7d90128e19ed",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "confronto tra classi e conversione.md",
     "overwhelming amount of stuff to do b4 esonero.md",
+    "2024-04-04 mp.md",
+    "confronto tra classi e conversione.md",
     "conflict-files-obsidian-git.md",
     "java/enumerazioni.md",
     "system calls.md",
@@ -183,7 +198,6 @@
     "java/metodi.md",
     "java/junit.md",
     "java/campi.md",
-    "ae/vettori.md",
     "ae/esercizi",
     "raw notes",
     "ae/pics",
