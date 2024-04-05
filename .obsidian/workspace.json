@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "185cbf0bc05f2942",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-04-05 ae.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -99,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-04-04 mp.md",
+                "file": "2024-04-05 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-04-04 mp.md",
+                "file": "2024-04-05 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-04-04 mp.md"
+                "file": "2024-04-05 ae.md"
               }
             }
           }
@@ -160,10 +172,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "185cbf0bc05f2942",
   "lastOpenFiles": [
-    "overwhelming amount of stuff to do b4 esonero.md",
     "2024-04-04 mp.md",
+    "2024-04-05 ae.md",
+    "overwhelming amount of stuff to do b4 esonero.md",
     "confronto tra classi e conversione.md",
     "conflict-files-obsidian-git.md",
     "java/enumerazioni.md",
@@ -197,7 +210,6 @@
     "java/pics/Pasted image 20240324215332.png",
     "java/metodi.md",
     "java/junit.md",
-    "java/campi.md",
     "ae/esercizi",
     "raw notes",
     "ae/pics",
