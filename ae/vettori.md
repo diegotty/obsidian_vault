@@ -70,7 +70,7 @@ N:       .word 9
 Somma:    .word 0
 .text
 main:
-	lw $t1, 0
+	lw $t1, N
 	li $t2, 0
 	la $t0, vettore         #carico indirizzo del vettore !(non byte     |WHOLE                                                                corrispondente)
 	ssl $t1, $t1, 2         #calcolo offset out of bounds                |LOTTA
