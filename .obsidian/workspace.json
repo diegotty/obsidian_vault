@@ -4,47 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "ee36fb3ce6f9478c",
+        "id": "70e4f7a3c4962f2b",
         "type": "tabs",
         "children": [
           {
-            "id": "a47f7d90128e19ed",
+            "id": "beb067de344f862c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "overwhelming amount of stuff to do b4 esonero.md",
+                "file": "raw notes/2024-03-26 mp.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "863b0f503cfaf7a1",
+            "id": "cba91144d9887a2b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-04-04 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "185cbf0bc05f2942",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2024-04-05 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -110,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-04-05 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-04-05 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-04-05 ae.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -171,50 +159,49 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "185cbf0bc05f2942",
+  "active": "cba91144d9887a2b",
   "lastOpenFiles": [
-    "2024-04-04 mp.md",
-    "2024-04-05 ae.md",
-    "overwhelming amount of stuff to do b4 esonero.md",
-    "confronto tra classi e conversione.md",
+    "raw notes/2024-03-26 mp.md",
     "conflict-files-obsidian-git.md",
-    "java/enumerazioni.md",
-    "system calls.md",
-    "raw notes/2024-03-19 ae √.md",
-    "raw notes/2024-03-22 ae √.md",
-    "raw notes/2024-03-27 mp.md",
+    "overwhelming amount of stuff to do b4 esonero.md",
+    "2024-04-05 ae.md",
+    "2024-04-04 mp.md",
     "java/polimorfismo.md",
-    "ae/system calls.md",
+    "raw notes/2024-03-22 ae √.md",
+    "confronto tra classi e conversione.md",
+    "java/progettazione.md",
+    "Pasted image 20240331221332.png",
+    "raw notes/2024-03-20 mp.md",
+    "README.md",
     "ae/procedure e funzioni.md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "raw notes/2024-03-27 mp.md",
+    "raw notes/2024-03-26 ae.md",
+    "raw notes/2024-03-21 mp √.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
-    "Pasted image 20240331221332.png",
-    "raw notes/2024-03-26 mp.md",
-    "java/ereditarietà.md",
-    "2024-03-27.md",
-    "2024-03-26.md",
-    "2024-03-26 ae.md",
-    "raw notes/2024-03-19 ae.md",
-    "raw notes/2024-03-22 ae.md",
-    "raw notes/2024-03-20 mp.md",
-    "raw notes/2024-03-21 mp √.md",
-    "raw notes/2024-03-19 mp √.md",
-    "java/progettazione.md",
+    "ae/pseudoistruzioni.md",
+    "raw notes/2024-03-19 ae √.md",
+    "raw notes/2024-03-15 ae √.md",
+    "java/strutture `complesse`.md",
+    "java/classi.md",
+    "ae/vettori.md",
+    "ae/system calls.md",
+    "ae/basi cpu.md",
+    "ae/intro a MIPS.md",
+    "ae/MIPS 2000.md",
     "java/pics/Pasted image 20240324221354.png",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
     "java/pics/Pasted image 20240324221140.png",
     "java/pics/Pasted image 20240324215637.png",
     "java/pics/Pasted image 20240324215332.png",
-    "java/metodi.md",
-    "java/junit.md",
     "ae/esercizi",
-    "raw notes",
     "ae/pics",
     "ae",
     "java/pics",
-    "notes",
+    "raw notes",
     "java"
   ]
 }
