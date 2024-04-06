@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
+                "file": "ae/procedure e funzioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
+                "file": "ae/procedure e funzioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
+                "file": "ae/procedure e funzioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/assembly MIPS (strutture, syntax, etc).md"
+                "file": "ae/procedure e funzioni.md"
               }
             }
           }
@@ -146,16 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d2182ef633ad10f",
+  "active": "beb067de344f862c",
   "lastOpenFiles": [
+    "ae/vettori.md",
+    "ae/pseudoistruzioni.md",
     "ae/system calls.md",
-    "ae/procedure e funzioni.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
+    "ae/procedure e funzioni.md",
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
-    "ae/vettori.md",
-    "ae/pseudoistruzioni.md",
     "ae/basi cpu.md",
     "raw notes/2024-03-26 mp.md",
     "conflict-files-obsidian-git.md",
