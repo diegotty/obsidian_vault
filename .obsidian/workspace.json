@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/system calls.md"
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md"
               }
             }
           }
@@ -133,7 +133,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -145,14 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "beb067de344f862c",
+  "active": "9d2182ef633ad10f",
   "lastOpenFiles": [
+    "ae/system calls.md",
     "ae/procedure e funzioni.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
-    "ae/system calls.md",
     "ae/vettori.md",
     "ae/pseudoistruzioni.md",
     "ae/basi cpu.md",
