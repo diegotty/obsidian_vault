@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "ae/system calls.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "ae/system calls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/vettori.md",
+                "file": "ae/system calls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/vettori.md"
+                "file": "ae/system calls.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,8 +147,8 @@
   },
   "active": "beb067de344f862c",
   "lastOpenFiles": [
-    "ae/pseudoistruzioni.md",
     "ae/vettori.md",
+    "ae/pseudoistruzioni.md",
     "ae/assembly MIPS.md",
     "ae/basi cpu.md",
     "ae/intro a MIPS.md",
