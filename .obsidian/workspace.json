@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/system calls.md"
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md"
               }
             }
           }
@@ -147,15 +147,15 @@
   },
   "active": "beb067de344f862c",
   "lastOpenFiles": [
-    "ae/vettori.md",
-    "ae/pseudoistruzioni.md",
-    "ae/assembly MIPS.md",
-    "ae/basi cpu.md",
+    "ae/pezzi del funzionamento di MIPS.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
-    "ae/pezzi del funzionamento di MIPS.md",
-    "ae/procedure e funzioni.md",
     "ae/system calls.md",
+    "ae/vettori.md",
+    "ae/pseudoistruzioni.md",
+    "ae/assembly MIPS (strutture, syntax, etc).md",
+    "ae/basi cpu.md",
+    "ae/procedure e funzioni.md",
     "raw notes/2024-03-26 mp.md",
     "conflict-files-obsidian-git.md",
     "overwhelming amount of stuff to do b4 esonero.md",
