@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/system calls.md"
+                "file": "ae/assembly MIPS (strutture, syntax, etc).md"
               }
             }
           }
@@ -161,6 +161,7 @@
   },
   "active": "11a6f7807db6f4a8",
   "lastOpenFiles": [
+    "ae/system calls.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
     "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-04 mp.md",
@@ -192,7 +193,6 @@
     "ae/pics/Pasted image 20240331213146.png",
     "ae/pseudoistruzioni.md",
     "raw notes/2024-03-19 ae √.md",
-    "raw notes/2024-03-15 ae √.md",
     "java/pics/Pasted image 20240324221354.png",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
