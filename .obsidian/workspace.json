@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "ae/system calls.md",
                 "mode": "source",
                 "source": false
               }
@@ -82,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "ae/system calls.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "ae/system calls.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md"
+                "file": "ae/system calls.md"
               }
             }
           }
@@ -162,14 +161,14 @@
   },
   "active": "11a6f7807db6f4a8",
   "lastOpenFiles": [
-    "raw notes/2024-04-04 mp.md",
+    "ae/assembly MIPS (strutture, syntax, etc).md",
     "raw notes/2024-04-09 mp.md",
+    "raw notes/2024-04-04 mp.md",
     "raw notes/2024-04-05 ae √.md",
     "java/coding etiquette.md",
     "java/confronto tra classi e conversione.md",
     "raw notes/2024-03-26 mp.md",
     "conflict-files-obsidian-git.md",
-    "ae/assembly MIPS (strutture, syntax, etc).md",
     "java/pics/Pasted image 20240331221332.png",
     "ae/ricorsione.md",
     "ae/pics/Pasted image 20240406184352.png",
