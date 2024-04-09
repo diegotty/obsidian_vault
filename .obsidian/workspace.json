@@ -30,17 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "4011253b9126d4b4",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md",
+                "file": "raw notes/2024-04-09.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md",
+                "file": "raw notes/2024-04-09.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md"
+                "file": "raw notes/2024-04-09.md"
               }
             }
           }
@@ -168,7 +160,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4011253b9126d4b4",
+  "active": "11a6f7807db6f4a8",
   "lastOpenFiles": [
     "raw notes/2024-04-09.md",
     "raw notes/2024-04-05 ae √.md",
