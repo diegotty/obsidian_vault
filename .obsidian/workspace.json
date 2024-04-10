@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-21 mp √.md",
+                "file": "java/strutture di controllo di flusso.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-21 mp √.md",
+                "file": "java/strutture di controllo di flusso.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-21 mp √.md",
+                "file": "java/strutture di controllo di flusso.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-21 mp √.md"
+                "file": "java/strutture di controllo di flusso.md"
               }
             }
           }
@@ -161,6 +161,8 @@
   },
   "active": "11a6f7807db6f4a8",
   "lastOpenFiles": [
+    "java/strutture `complesse`.md",
+    "raw notes/2024-03-21 mp √.md",
     "raw notes/2024-04-04 mp.md",
     "raw notes/2024-04-09 mp.md",
     "ae/system calls.md",
@@ -187,12 +189,10 @@
     "ae/pezzi del funzionamento di MIPS.md",
     "raw notes/2024-03-27 mp.md",
     "raw notes/2024-03-26 ae.md",
-    "raw notes/2024-03-21 mp √.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
     "ae/pseudoistruzioni.md",
-    "raw notes/2024-03-19 ae √.md",
     "java/pics/Pasted image 20240324221354.png",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
