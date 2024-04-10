@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/system calls.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/system calls.md"
+                "file": "raw notes/2024-04-09 mp.md"
               }
             }
           }
@@ -161,9 +161,9 @@
   },
   "active": "11a6f7807db6f4a8",
   "lastOpenFiles": [
+    "ae/system calls.md",
     "ae/ricorsione.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
-    "ae/system calls.md",
     "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-04 mp.md",
     "raw notes/2024-04-05 ae √.md",
