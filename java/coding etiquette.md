@@ -1,3 +1,4 @@
+
 le costanti si scrivono in maiuscolo
 ```java
 public final int MAX = 10000000;
@@ -72,3 +73,8 @@ private Punto p1 = new Punto(); //dumb and stupid i hate you for doing this
 ```
 
 meglio usare una COSTANTE per la definizione di un array !
+
+i campi dovrebbero essere inizializzati, per più eleganza, nel costruttore !!
+```java
+	ArrayList<Integer> list = new ArrayList<>; //coding horror !
+```
