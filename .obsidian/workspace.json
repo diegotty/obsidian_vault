@@ -8,31 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "beb067de344f862c",
+            "id": "e7df70c1ce1da2cf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-26 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "11a6f7807db6f4a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/strutture di controllo di flusso.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture di controllo di flusso.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture di controllo di flusso.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture di controllo di flusso.md"
+                "file": "raw notes/2024-04-09 mp.md"
               }
             }
           }
@@ -159,12 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "11a6f7807db6f4a8",
+  "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
+    "raw notes/2024-04-11 mp.md",
+    "raw notes/2024-04-09 mp.md",
+    "java/strutture di controllo di flusso.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-21 mp √.md",
     "raw notes/2024-04-04 mp.md",
-    "raw notes/2024-04-09 mp.md",
     "ae/system calls.md",
     "ae/ricorsione.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
@@ -188,11 +177,9 @@
     "ae/procedure e funzioni.md",
     "ae/pezzi del funzionamento di MIPS.md",
     "raw notes/2024-03-27 mp.md",
-    "raw notes/2024-03-26 ae.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
-    "ae/pseudoistruzioni.md",
     "java/pics/Pasted image 20240324221354.png",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
