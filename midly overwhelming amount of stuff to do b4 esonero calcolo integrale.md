@@ -1,0 +1,3 @@
+- ri-studiare limiti notevoli
+- ri-studiare limiti
+- ri-studiare derivate

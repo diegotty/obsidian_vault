@@ -18,8 +18,31 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "608fabde6ec89da5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.12"
+              }
+            }
+          },
+          {
+            "id": "c13dd5fdc8db5351",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/ricorsione.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/ricorsione.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/ricorsione.md"
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md"
               }
             }
           }
@@ -146,8 +169,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "beb067de344f862c",
+  "active": "c13dd5fdc8db5351",
   "lastOpenFiles": [
+    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "ae/esercizi/esercizio 2 somme.md",
     "ae/pics/Pasted image 20240406184352.png",
     "ae/ricorsione.md",
@@ -178,7 +202,6 @@
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
-    "raw notes/2024-03-19 ae √.md",
     "java/pics/Pasted image 20240324221354.png",
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
