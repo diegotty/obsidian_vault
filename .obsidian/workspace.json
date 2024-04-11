@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-11 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,12 +64,22 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "adebea1db0d847c4",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -85,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-11 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-11 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md"
+                "file": "raw notes/2024-04-11 mp.md"
               }
             }
           }
@@ -146,10 +156,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7df70c1ce1da2cf",
+  "active": "adebea1db0d847c4",
   "lastOpenFiles": [
-    "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
+    "Spaces",
+    "raw notes/2024-04-11 mp.md",
     "java/strutture di controllo di flusso.md",
     "java/strutture `complesse`.md",
     "raw notes/2024-03-21 mp √.md",
@@ -176,7 +187,6 @@
     "README.md",
     "ae/procedure e funzioni.md",
     "ae/pezzi del funzionamento di MIPS.md",
-    "raw notes/2024-03-27 mp.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",

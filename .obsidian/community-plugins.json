@@ -3,5 +3,6 @@
   "obsidian-plugin-toc",
   "obsidian-smart-typography",
   "folder-note-plugin",
-  "callout-manager"
+  "callout-manager",
+  "make-md"
 ]
