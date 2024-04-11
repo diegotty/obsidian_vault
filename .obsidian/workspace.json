@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -90,7 +91,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -106,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-11 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-11 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md"
+                "file": "raw notes/2024-04-11 mp.md"
               }
             }
           }
@@ -167,10 +169,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7df70c1ce1da2cf",
+  "active": "6d033c1295fcf3a2",
   "lastOpenFiles": [
-    "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
+    "raw notes/2024-04-11 mp.md",
     "Spaces",
     "java/strutture di controllo di flusso.md",
     "java/strutture `complesse`.md",
