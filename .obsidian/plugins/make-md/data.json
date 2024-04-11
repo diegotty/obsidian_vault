@@ -37,7 +37,10 @@
   "showRibbon": true,
   "deleteFileOption": "trash",
   "expandedSpaces": [
-    "/"
+    "/",
+    "//Spaces",
+    "//Spaces",
+    "//raw notes"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
