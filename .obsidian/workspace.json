@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "beb067de344f862c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/ricorsione.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "608fabde6ec89da5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "c59adcbb22d9207e",
             "type": "leaf",
             "state": {
@@ -43,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md"
               }
             }
           }
@@ -171,15 +146,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "608fabde6ec89da5",
+  "active": "c59adcbb22d9207e",
   "lastOpenFiles": [
+    "ae/ricorsione.md",
+    "conflict-files-obsidian-git.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "raw notes/2024-04-11 mp.md",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-09 mp.md",
     "ae/esercizi/esercizio 2 somme.md",
     "ae/pics/Pasted image 20240406184352.png",
-    "ae/ricorsione.md",
     "ae/system calls.md",
     "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-03-26 mp.md",
