@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "9e0139ce5fd97efc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -107,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -168,10 +180,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "682b5904932635db",
+  "active": "9e0139ce5fd97efc",
   "lastOpenFiles": [
-    "raw notes/2024-03-05 mp √.md",
     "raw notes/2024-04-13 ae.md",
+    "conflict-files-obsidian-git.md",
+    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+    "raw notes/2024-03-05 mp √.md",
     "ae/Untitled.md",
     "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
@@ -187,7 +201,6 @@
     "raw notes/2024-04-05 ae √.md",
     "java/confronto tra classi e conversione.md",
     "raw notes/2024-03-26 mp.md",
-    "conflict-files-obsidian-git.md",
     "java/pics/Pasted image 20240331221332.png",
     "ae/pics/Pasted image 20240406184352.png",
     "overwhelming amount of stuff to do b4 esonero.md",
@@ -199,7 +212,6 @@
     "java/progettazione.md",
     "Pasted image 20240331221332.png",
     "raw notes/2024-03-20 mp.md",
-    "README.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
