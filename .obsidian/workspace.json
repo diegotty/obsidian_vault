@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "682b5904932635db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-04-13 ae.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -108,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -125,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -148,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-13 ae.md"
+                "file": "raw notes/2024-04-09 mp.md"
               }
             }
           }
@@ -169,15 +156,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "682b5904932635db",
+  "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
+    "raw notes/2024-04-12 ae.md",
+    "raw notes/2024-04-11 mp.md",
+    "raw notes/2024-04-09 mp.md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-04-13 ae.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "raw notes/2024-03-05 mp √.md",
     "ae/Untitled.md",
-    "raw notes/2024-04-11 mp.md",
-    "raw notes/2024-04-09 mp.md",
     "java/coding etiquette.md",
     "Spaces",
     "java/strutture di controllo di flusso.md",
