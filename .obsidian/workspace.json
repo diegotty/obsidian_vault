@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md"
+                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md"
               }
             }
           }
@@ -158,8 +157,8 @@
   },
   "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
-    "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-12 ae.md",
+    "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-11 mp.md",
     "conflict-files-obsidian-git.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
