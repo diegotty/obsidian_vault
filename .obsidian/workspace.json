@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-16 mp.md",
+                "file": "raw notes/2024-04-16 ae.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-16 mp.md",
+                "file": "raw notes/2024-04-16 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-16 mp.md",
+                "file": "raw notes/2024-04-16 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-16 mp.md"
+                "file": "raw notes/2024-04-16 ae.md"
               }
             }
           }
@@ -159,6 +158,7 @@
   "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
     "raw notes/2024-04-16 mp.md",
+    "raw notes/2024-04-16 ae.md",
     "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-11 mp.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
@@ -186,7 +186,6 @@
     "java/polimorfismo.md",
     "raw notes/2024-03-22 ae √.md",
     "confronto tra classi e conversione.md",
-    "java/progettazione.md",
     "Pasted image 20240331221332.png",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
