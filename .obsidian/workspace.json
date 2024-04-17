@@ -64,8 +64,17 @@
               "type": "bookmarks",
               "state": {}
             }
+          },
+          {
+            "id": "e733f4f61e47fb45",
+            "type": "leaf",
+            "state": {
+              "type": "mk-path-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -148,6 +157,7 @@
   },
   "active": "c59adcbb22d9207e",
   "lastOpenFiles": [
+    "Spaces",
     "overwhelming amount of stuff to do b4 esonero.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "ae/ricorsione.md",
@@ -175,7 +185,6 @@
     "ae/basi cpu.md",
     "java/polimorfismo.md",
     "java/progettazione.md",
-    "README.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
