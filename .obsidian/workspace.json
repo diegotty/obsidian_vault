@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-17.md",
+                "file": "raw notes/2024-04-18.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-17.md",
+                "file": "raw notes/2024-04-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-17.md",
+                "file": "raw notes/2024-04-18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-17.md"
+                "file": "raw notes/2024-04-18.md"
               }
             }
           }
@@ -157,9 +157,9 @@
   },
   "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
-    "raw notes/.md",
     "raw notes/2024-04-17.md",
-    "raw notes/Untitled 1.md",
+    "raw notes/.md",
+    "raw notes/2024-04-18.md",
     "ae/intro a MIPS.md",
     "raw notes/2024-04-16 ae.md",
     "raw notes/2024-04-16 mp.md",
