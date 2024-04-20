@@ -10,3 +10,5 @@ il secondo argomento dell’istruzione può essere o un registro o un campo imme
 
 note: 
 nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei registri(che corrispondono all’indirizzo del valore immediato delle istruzioni di tipo I)
+## esempi
+![[Pasted image 20240420125612.png]]
