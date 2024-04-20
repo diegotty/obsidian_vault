@@ -9,4 +9,4 @@ decodifica facilitata: i formati I ed R sono quasi uguali
 il secondo argomento dell’istruzione può essere o un registro o un campo immediato. per gestire ciò si usa un MUX: la linea di controllo ALUSrc seleziona  **dato letto 2** o **l‘output del blocco di estensione del segno**
 
 note: 
-nel blocco di estensione del segno entrano i 16bit non letti dal blocco de
+nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei registri(che corrispondono all’indirizzo del valore immediato delle istruzioni di tipo I)
