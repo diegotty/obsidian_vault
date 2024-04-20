@@ -24,4 +24,25 @@ altre operazioni necessarie:
 - aggiornamento del pc (normale/salti /salti non condizionati)
 
 ### istruzioni da realizzare per una CPU
-- accesso alla me
+
+| descrizione                    | istruzioni         | tipo   |
+| ------------------------------ | ------------------ | ------ |
+| accesso alla memoria           | lw, sw             | tipo I |
+| salti condizionati             | beq                | tipo I |
+| operazioni aritimetico-logiche | add, sub, sll, slt | tipo R |
+| salti non condizionati         | j, jal             | tipo J |
+| operazioni non costanti        | li, addi, subi     | tipo I |
+
+### unità funzionali necessarie
+
+| unità              | descrizione                                           |
+| ------------------ | ----------------------------------------------------- |
+| PC                 | registro che contiene l’indirizzo del la l’istruzione |
+| memoria istruzioni | contiene le istruzioni                                |
+| adder              | per calcolare il PC (successivo o salto)              |
+| registri           | contengono argomenti delle istruzioni                 |
+| ALU                | fa le operazioni aritmetico-logiche, confronti, etc   |
+| memoria dati       | da cui leggere/in cui scriere i dati (load/store)     |
+le unità sono collegate da diversi `datapath`
+
+se un’unità funzionale può ricevere dati da più sorgenti è necessario inserire un multiplexer per selezionare la sorgente necessaria `$@´
