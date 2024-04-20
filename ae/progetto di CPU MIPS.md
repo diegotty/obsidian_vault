@@ -50,7 +50,7 @@ se un’unità funzionale può ricevere dati da più sorgenti è necessario inse
 le unità funzionali sono attivate e coordinate dai segnali prodotti dall CU !
 
 # ingredienti
-in questa sezione vengono descritti i “blocchi” che, messi tutti in insieme, creano una CPU MIPS.
+in questa sezione vengono descritti singolarmente i “blocchi” che, messi tutti in insieme, creano una CPU MIPS.
 ## memoria delle istruzioni, PC, adder
 memoria istruzioni : prende in input un indirizzo a 32bit, e da in output l’istruzioni da 32bit situata nell’indirizzo di input
 
@@ -80,4 +80,6 @@ unità di memoria:
 - riceve un dato da 32bit da scrivere in memoria a quell’indirizzo (se bisogna fare operazione `sw`)
 
 unità di estensione del segno:
-serve a trasformare un intero relativo (in CA2) da 16bit(in input) a 32bit(copia il bit del segno nei 16bit più significativi della word in output)
+serve a trasformare un intero relativo (in CA2) da 16bit(in input) a 32bit(in output) 
+- copia il bit del segno nei 16bit più significativi della word in output
+![[Pasted image 20240420122213.png|600]]
