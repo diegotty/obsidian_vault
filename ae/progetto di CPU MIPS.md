@@ -62,4 +62,15 @@ sommatore: necessario per calcolare il nuovo PC, e le destinazioni dei salti. pr
 
 ## registri e ALU
 blocco dei registri(register file):
-contiene 32 registri a 32bit, indirizzabili con 5bit ($2^5 = 32$)
+- contiene 32 registri a 32bit, indirizzabili con 5bit ($2^5 = 32$)
+- può memorizzare un dato in un registro e contemporaneamente fornirlo in uscita
+- 3 porte a 5 bit per indicare quali 2 registri leggere e quale registro scrivere
+- 3 porte dati (a 32bit)
+	- una in ingresso per il valore da memorizzare e 2 di uscita per i valori letti
+- il regnale `regWrite` abilita (se 1) la scrittura nel registro di scrittura !
+
+alu: 
+riceve due valori interni a 32bit e svolge una operazione indicata dai segnali `Op. Alu`
+- oltre al risultato da 32bit produce un segnale **zero** asserito se il risultato è zero
+ ![[Pasted image 20240420121545.png|570]]
+## unità di memoria e unità di estensione del segno
