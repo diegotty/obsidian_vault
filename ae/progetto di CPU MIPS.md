@@ -31,7 +31,7 @@ altre operazioni necessarie:
 | salti condizionati             | beq                | tipo I |
 | operazioni aritimetico-logiche | add, sub, sll, slt | tipo R |
 | salti non condizionati         | j, jal             | tipo J |
-| operazioni non costanti        | li, addi, subi     | tipo I |
+| operazioni con costanti        | li, addi, subi     | tipo I |
 
 ### unità funzionali necessarie
 
@@ -43,6 +43,11 @@ altre operazioni necessarie:
 | registri           | contengono argomenti delle istruzioni                 |
 | ALU                | fa le operazioni aritmetico-logiche, confronti, etc   |
 | memoria dati       | da cui leggere/in cui scriere i dati (load/store)     |
-le unità sono collegate da diversi `datapath`
+le unità sono collegate da diversi `datapath` (interconnessioni che definiscono il flusso delle informazioni nella CPU)
 
-se un’unità funzionale può ricevere dati da più sorgenti è necessario inserire un multiplexer per selezionare la sorgente necessaria `$@´
+se un’unità funzionale può ricevere dati da più sorgenti è necessario inserire un `multiplexer(MUX)` per selezionare la sorgente necessaria 
+
+le unità funzionali sono attivate e coordinate dai segnali prodotti dall CU !
+
+# ingredienti
+## memoria delle istruzioni, PC, adder
