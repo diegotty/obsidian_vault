@@ -13,6 +13,18 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "ae/progetto di CPU MIPS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "edf5d0e8c8da3580",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "raw notes/2024-04-12 ae.md",
                 "mode": "source",
                 "source": false
@@ -78,7 +90,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md"
+                "file": "ae/progetto di CPU MIPS.md"
               }
             }
           }
@@ -157,10 +170,12 @@
   },
   "active": "c59adcbb22d9207e",
   "lastOpenFiles": [
+    "raw notes/2024-04-12 ae.md",
+    "ae/progetto di CPU MIPS.md",
+    "Pasted image 20240420115353.png",
     "ae/ae.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-04-12 ae.md",
     "Spaces",
     "overwhelming amount of stuff to do b4 esonero.md",
     "ae/ricorsione.md",
@@ -184,8 +199,6 @@
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
-    "ae/basi cpu.md",
-    "java/polimorfismo.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
@@ -193,7 +206,6 @@
     "java/pics/Pasted image 20240324221307.png",
     "java/pics/Pasted image 20240324221200.png",
     "java/pics/Pasted image 20240324221140.png",
-    "java/pics/Pasted image 20240324215637.png",
     "ae/esercizi",
     "ae/pics",
     "ae",
