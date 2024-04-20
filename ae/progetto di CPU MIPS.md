@@ -50,4 +50,16 @@ se un’unità funzionale può ricevere dati da più sorgenti è necessario inse
 le unità funzionali sono attivate e coordinate dai segnali prodotti dall CU !
 
 # ingredienti
+in questa sezione vengono descritti i “blocchi” che, messi tutti in insieme, creano una CPU MIPS.
 ## memoria delle istruzioni, PC, adder
+memoria istruzioni : prende in input un indirizzo a 32bit, e da in output l’istruzioni da 32bit situata nell’indirizzo di input
+
+program counter(PC): registro che contiene l’indirizzo dell’istruzione corrente
+
+sommatore: necessario per calcolare il nuovo PC, e le destinazioni dei salti. prende in input 2 valori a 32bit e ne fornisce in output la somma 
+
+![[Pasted image 20240420120852.png|600]]
+
+## registri e ALU
+blocco dei registri(register file):
+contiene 32 registri a 32bit, indirizzabili con 5bit ($2^5 = 32$)
