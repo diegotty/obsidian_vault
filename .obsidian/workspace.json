@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "63d058e3729c2f20",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -155,13 +168,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c59adcbb22d9207e",
+  "active": "63d058e3729c2f20",
   "lastOpenFiles": [
+    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-04-12 ae.md",
     "Spaces",
     "overwhelming amount of stuff to do b4 esonero.md",
-    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "ae/ricorsione.md",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
     "ae/esercizi/esercizio 2 somme.md",
