@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "file": "raw notes/2024-04-12 ae.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "file": "raw notes/2024-04-12 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+                "file": "raw notes/2024-04-12 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md"
+                "file": "raw notes/2024-04-12 ae.md"
               }
             }
           }
@@ -157,8 +157,9 @@
   },
   "active": "c59adcbb22d9207e",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "ae/ae.md",
     "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-12 ae.md",
     "Spaces",
     "overwhelming amount of stuff to do b4 esonero.md",
@@ -185,7 +186,6 @@
     "ae/MIPS 2000.md",
     "ae/basi cpu.md",
     "java/polimorfismo.md",
-    "java/progettazione.md",
     "ae/pics/Pasted image 20240331220300.png",
     "ae/pics/Pasted image 20240331214612.png",
     "ae/pics/Pasted image 20240331213146.png",
