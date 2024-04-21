@@ -62,3 +62,17 @@ in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
 
 ## datapath completo
 ![[Pasted image 20240421144032.png]]il mux cui linea di selezione è `RegDst` permette di scegliere quando prendere come registro di scrittura `rd`( istruzione di tipo R), o `rt` istruzione di tipo I
+### esempi
+esecuzione di un istruzione di tipo R
+![[Pasted image 20240421144753.png]]
+
+## segnali di controllo
+
+| Nome del segnale | Effetto quando non asserito                                                                  | Effetto quando asserito                                                                                                            |
+| ---------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `RegDst`         | il numero dei registri in scrittura proviene dal campo rt (bit 20-16)                        | il numero del registro di scrittura proviene dal campo rd (bit 15-11)                                                              |
+| `RegWrite`       | nulla                                                                                        | il dato viene scritto nel register file nel registro individuato dal numero del registro di scrittura                              |
+| `ALUSrc`         | il secondo operando della ALU proviene dalla seconda uscita del register file (Dato letto 2) | il secondo operando della ALU proviene dall’estensione del segno dei 16 bit meno significativi dell’istruzione                     |
+| `MemRead`        | nulla                                                                                        | il dato della memoria nella posizione puntata dall’indirizzo viene inviato in uscita sulla linea “dato letto”                      |
+| `MemWrite`       | nulla                                                                                        | il contenuto della memoria nella posizione puntata dall’indirizzo viene sostituito con il dato presente sulla linea “dato scritto” |
+| `MemtoReg`       | il dato viene inviato al register file per la scrittura, proviene dalla ALU                  | il dato inviato al register file per la scrittura proviene dalla Memoria Dati                                                      |
