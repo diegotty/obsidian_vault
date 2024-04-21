@@ -44,7 +44,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/progetto di CPU MIPS.md",
+                "file": "ae/intro a MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/progetto di CPU MIPS.md",
+                "file": "ae/intro a MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/progetto di CPU MIPS.md"
+                "file": "ae/intro a MIPS.md"
               }
             }
           }
@@ -180,11 +180,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "edf5d0e8c8da3580",
+  "active": "fd9345006c5fcc60",
   "lastOpenFiles": [
+    "ae/progetto di CPU MIPS.md",
     "ae/strutture della CPU MIPS.md",
     "ae/intro a MIPS.md",
-    "ae/progetto di CPU MIPS.md",
     "Pasted image 20240420125612.png",
     "raw notes/2024-04-12 ae.md",
     "Pasted image 20240420123000.png",
