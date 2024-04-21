@@ -15,7 +15,16 @@ nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei regi
 //add last 2
 
 ## salti condizionati (beq)
+struttura per poter effettuare salti condizionati:
+![[Pasted image 20240421140628.png|450]]
 
-![[Pasted image 20240421140628.png]]
+parte della struttra completa (senza la linea di controllo `PCSrc`)
+![[Pasted image 20240421140430.png|500]]
+struttura completa: 
+viene usata una porta and per controllare se:
+- l’istruzione è un branch (la linea viene presa dal blocco [[#unità di controllo]])
+- i due registri sono uguali (siamo implementando un `beq`)
+l’uscita della porta and viene poi usata come linea di selezione per il mux
+![[Pasted image 20240421140936.png|500]]
 
-![[Pasted image 20240421140430.png]]
+## unità di controllo
