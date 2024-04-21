@@ -77,4 +77,14 @@ esecuzione di un istruzione di tipo R
 | `MemWrite`       | nulla                                                                                        | il contenuto della memoria nella posizione puntata dall’indirizzo viene sostituito con il dato presente sulla linea “dato scritto” |
 | `MemtoReg`       | il dato viene inviato al register file per la scrittura, proviene dalla ALU                  | il dato inviato al register file per la scrittura proviene dalla Memoria Dati                                                      |
 l’ALU deve seguire 4 tipi di comportamento:
-- se l’istruzione è di tipo R, eseguire l’operazione indicata da
+- se l’istruzione è di tipo R, eseguire l’operazione indicata dal campo `funct`
+- se l’istruzione accede alla memoria(`lw, sw`), svolgere la somma che calcola l’indirizzo
+- se l’istruzione è un `beq`, deve svolgere una differenza
+per codificare 3 comportamenti bastano 2bit. quindi la CU dovrà produrre 4 combinazioni di bit per 4 casi diversi:
+
+| istruzione | regDst | ALUSrc | MemtoReg | RegWrite | MemRead | MemWrite | Branch | ALUOp1 | ALUOp0 |
+| ---------- | ------ | ------ | -------- | -------- | ------- | -------- | ------ | ------ | ------ |
+| Tipo R     | 1      | 0      |          |          |         |          |        |        |        |
+|            | 0      | 1      | 1        |          |         |          |        |        |        |
+|            | X      | 1      | X        |          |         |          |        |        |        |
+|            | X      | 0      | X        |          |         |          |        |        |        |
