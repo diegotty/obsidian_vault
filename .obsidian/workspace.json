@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md"
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md"
               }
             }
           },
@@ -178,10 +177,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6dc1b7c61deaeaf4",
+  "active": "e761c2e7c9b855f8",
   "lastOpenFiles": [
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/strutture della CPU MIPS.md",
+    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 11-31.md",
     "ae/intro a MIPS.md",
