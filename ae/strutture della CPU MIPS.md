@@ -76,3 +76,4 @@ esecuzione di un istruzione di tipo R
 | `MemRead`        | nulla                                                                                        | il dato della memoria nella posizione puntata dall’indirizzo viene inviato in uscita sulla linea “dato letto”                      |
 | `MemWrite`       | nulla                                                                                        | il contenuto della memoria nella posizione puntata dall’indirizzo viene sostituito con il dato presente sulla linea “dato scritto” |
 | `MemtoReg`       | il dato viene inviato al register file per la scrittura, proviene dalla ALU                  | il dato inviato al register file per la scrittura proviene dalla Memoria Dati                                                      |
+l’ALU deve seguire 4 tipi di comportamento:
