@@ -61,4 +61,4 @@ in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
 ![[Pasted image 20240421143818.png]]
 
 ## datapath completo
-![[Pasted image 20240421144032.png]]il mux cui linea di selezione è `RegDst` permette di scegliere quando prendere 
+![[Pasted image 20240421144032.png]]il mux cui linea di selezione è `RegDst` permette di scegliere quando prendere come registro di scrittura `rd`( istruzione di tipo R), o `rt` istruzione di tipo I
