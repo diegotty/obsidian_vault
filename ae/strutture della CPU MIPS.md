@@ -28,6 +28,7 @@ l’uscita della porta and viene poi usata come linea di selezione per il mux
 ![[Pasted image 20240421140936.png|500]]
 
 ## unità di controllo
+fino ad ora abiamo considerato i 4 bit che decidono l’operazione(la linea di selezione dell’ALU) come delle incoginte. L’ALU in realtà fa un totale di 6 operazioni in base alla seguente codifica:
 
 | ALU control lines | function         |
 | ----------------- | ---------------- |
@@ -37,6 +38,8 @@ l’uscita della porta and viene poi usata come linea di selezione per il mux
 | 0110              | subtract         |
 | 0111              | set on less than |
 | 1100              | NOR              |
+questi 4 bit più i due generati dal blocco control, formano l’ [[intro a MIPS#rappresentazione dell’istruzione|`opcode`]] .
+ciò è molto utile perchè, in caso 
 ![[Pasted image 20240421141924.png|400]]
 in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
 viene poi guardato l’`ALUop` che esce dal blocco control:
