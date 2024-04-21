@@ -38,8 +38,8 @@ fino ad ora abiamo considerato i 4 bit che decidono l’operazione(la linea di s
 | 0110              | subtract         |
 | 0111              | set on less than |
 | 1100              | NOR              |
-questi 4 bit più i due generati dal blocco control, formano l’ [[intro a MIPS#rappresentazione dell’istruzione|`opcode`]] .
-ciò è molto utile perchè, in caso 
+questi 4 bit più i due generati dalla Control Unit l, formano l’ [[intro a MIPS#rappresentazione dell’istruzione|`opcode`]] .
 ![[Pasted image 20240421141924.png|400]]
 in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
-viene poi guardato l’`ALUop` che esce dal blocco control:
+ guardando l’`ALUOp` che esce dalla Control Unit, si può notare immediatamente che tipo di operazione bisogna fare: infatti se l’`ALUOp` inizia per 0, si tratterà di `lw`, `sw`, oppure `beq`(e non sarà necessario i 6 bit di func), altrimenti di operazioni di tipo R.
+ per questo motivo si hanno 2 livelli di decodifica:
