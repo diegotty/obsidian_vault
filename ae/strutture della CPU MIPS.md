@@ -14,3 +14,8 @@ nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei regi
 ![[Pasted image 20240420125612.png]]
 //add last 2
 
+## salti condizionati (beq)
+
+![[Pasted image 20240421140628.png]]
+
+![[Pasted image 20240421140430.png]]

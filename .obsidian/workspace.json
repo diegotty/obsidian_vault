@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/intro a MIPS.md"
+                "file": "ae/strutture della CPU MIPS.md"
               }
             }
           }
@@ -180,11 +179,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "fd9345006c5fcc60",
+  "active": "c59adcbb22d9207e",
   "lastOpenFiles": [
+    "Pasted image 20240421140628.png",
+    "Pasted image 20240421140430.png",
+    "Pasted image 20240421140350.png",
+    "ae/intro a MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/strutture della CPU MIPS.md",
-    "ae/intro a MIPS.md",
     "Pasted image 20240420125612.png",
     "raw notes/2024-04-12 ae.md",
     "Pasted image 20240420123000.png",
@@ -216,8 +218,6 @@
     "ae/assembly MIPS (strutture, syntax, etc).md",
     "ae/procedure e funzioni.md",
     "ae/pseudoistruzioni.md",
-    "ae/pics/Pasted image 20240331220300.png",
-    "ae/pics/Pasted image 20240331214612.png",
     "ae/esercizi",
     "ae/pics",
     "ae",
