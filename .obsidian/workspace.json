@@ -11,9 +11,11 @@
             "id": "e761c2e7c9b855f8",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "ae"
+                "file": "ae/aggiungere nuove istruzioni.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "ae/aggiungere nuove istruzioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "ae/aggiungere nuove istruzioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "ae/aggiungere nuove istruzioni.md"
+              }
             }
           },
           {
@@ -161,7 +167,7 @@
   },
   "active": "e761c2e7c9b855f8",
   "lastOpenFiles": [
-    "ae/Untitled.md",
+    "ae/aggiungere nuove istruzioni.md",
     "ae/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 11-31.md",
     "ae/intro a MIPS.md",
