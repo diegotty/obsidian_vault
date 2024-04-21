@@ -28,3 +28,12 @@ l’uscita della porta and viene poi usata come linea di selezione per il mux
 ![[Pasted image 20240421140936.png|500]]
 
 ## unità di controllo
+
+| ALU control lines | function         |
+| ----------------- | ---------------- |
+| 0000              | AND              |
+| 0001              | OR               |
+| 0010              | add              |
+| 0110              | subtract         |
+| 0111              | set on less than |
+| 1100              | NOR              |
