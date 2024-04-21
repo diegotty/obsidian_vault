@@ -37,3 +37,6 @@ l’uscita della porta and viene poi usata come linea di selezione per il mux
 | 0110              | subtract         |
 | 0111              | set on less than |
 | 1100              | NOR              |
+![[Pasted image 20240421141924.png|400]]
+in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
+viene poi guardato l’`ALUop` che esce dal blocco control:
