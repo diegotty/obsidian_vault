@@ -91,3 +91,10 @@ per codificare 3 comportamenti bastano 2bit. quindi la CU dovrà produrre 4 comb
 
 ## tempi di esecuzione
 se conosciamo il tempo necessario a produrre i risultati delle diverse unità funzionali, possiamo calcolare il tempo totale di ciascuna istruzione (basta fare la somma di esse)
+
+| istruzione | regDst | ALUSrc | MemtoReg | RegWrite | MemRead | MemWrite | Branch | ALUOp1 | ALUOp0 |
+| ---------- | :----: | :----: | :------: | :------: | :-----: | :------: | :----: | :----: | :----: |
+| Tipo R     |   1    |   0    |    0     |    1     |    0    |    0     |   0    |   1    |   0    |
+| `lw`       |   0    |   1    |    1     |    1     |    1    |    0     |   0    |   0    |   0    |
+| `sw`       |   X    |   1    |    X     |    0     |    0    |    1     |   0    |   0    |   0    |
+| `beq`      |   X    |   0    |    X     |    0     |    0    |    0     |   1    |   0    |   1    |
