@@ -57,3 +57,8 @@ in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
 |           Tipo R            |  10   |                 AND                 |        100100         |         AND         |              0000              |
 |           Tipo R            |  10   |                 OR                  |        100101         |         OR          |              0001              |
 |           Tipo R            |  10   |            set less than            |        101010         |    set less than    |              0111              |
+### tabella di verità per operazione ALU
+![[Pasted image 20240421143818.png]]
+
+## datapath completo
+![[Pasted image 20240421144032.png]]il mux cui linea di selezione è `RegDst` permette di scegliere quando prendere 
