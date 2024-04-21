@@ -41,5 +41,19 @@ fino ad ora abiamo considerato i 4 bit che decidono l’operazione(la linea di s
 questi 4 bit più i due generati dalla Control Unit l, formano l’ [[intro a MIPS#rappresentazione dell’istruzione|`opcode`]] .
 ![[Pasted image 20240421141924.png|400]]
 in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
- guardando l’`ALUOp` che esce dalla Control Unit, si può notare immediatamente che tipo di operazione bisogna fare: infatti se l’`ALUOp` inizia per 0, si tratterà di `lw`, `sw`, oppure `beq`(e non sarà necessario i 6 bit di func), altrimenti di operazioni di tipo R.
+ guardando l’`ALUOp` che esce dalla Control Unit, si può notare immediatamente che tipo di operazione bisogna fare: infatti se l’`ALUOp` inizia per 0, si tratterà di `lw`, `sw`, oppure `beq`(e non sarà necessario i 6 bit di funct), altrimenti di operazioni di tipo R.
+ 
  per questo motivo si hanno 2 livelli di decodifica:
+ ![[Pasted image 20240421143222.png]]
+ la ALU Control Unit prende in ingresso i 6 bit di funct e ha come linee di selezione di ALUOp. speculo che funzioni come un misto tra decoder e mux, poichè essa genererà i 4 bit che serviranno come linea di controllo alla ALU.
+ 
+| Codice operativo istruzione | ALUOp | Operazione eseguita dall’istruzione | Campo funzione(funct) | Operazione dell’ALU | Ingresso di controllo alla ALU |
+| :-------------------------: | :---: | :---------------------------------: | :-------------------: | :-----------------: | :----------------------------: |
+|            `lw`             |  00   |          load di 1 parola           |        XXXXXX         |        somma        |              0010              |
+|            `sw`             |  00   |          store di 1 parola          |        XXXXXX         |        somma        |              0010              |
+|        Branch equal         |  01   | salto condizionato all’uguaglianza  |        XXXXXX         |     sottrazione     |              0110              |
+|           Tipo R            |  10   |                somma                |        100000         |        somma        |              0010              |
+|           Tipo R            |  10   |             sottrazione             |        100010         |     sottrazione     |              0110              |
+|           Tipo R            |  10   |                 AND                 |        100100         |         AND         |              0000              |
+|           Tipo R            |  10   |                 OR                  |        100101         |         OR          |              0001              |
+|           Tipo R            |  10   |            set less than            |        101010         |    set less than    |              0111              |
