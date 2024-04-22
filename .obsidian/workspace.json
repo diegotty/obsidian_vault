@@ -23,9 +23,11 @@
             "id": "6dc1b7c61deaeaf4",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "raw notes"
+                "file": "raw notes/2024-04-12 ae.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -105,6 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "raw notes/2024-04-12 ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,6 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "raw notes/2024-04-12 ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +146,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "raw notes/2024-04-12 ae.md"
+              }
             }
           },
           {
@@ -174,10 +180,14 @@
   },
   "active": "6dc1b7c61deaeaf4",
   "lastOpenFiles": [
-    "raw notes/2024-04-18 mp.md",
-    "raw notes/2024-04-17.md",
-    "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-16 ae.md",
+    "raw notes/2024-04-12 ae.md",
+    "raw notes/2024-03-27 mp.md",
+    "raw notes/2024-03-26 mp.md",
+    "raw notes/2024-04-17 mp.md",
+    "raw notes/2024-04-16 mp.md",
+    "raw notes/2024-03-19 mp √.md",
+    "raw notes/2024-04-18 mp.md",
     "Vault.md",
     "ttd",
     "ae/strutture della CPU MIPS.md",
@@ -195,7 +205,6 @@
     "ae/pics/Pasted image 20240421141924.png",
     "ae/pics/Pasted image 20240421140936.png",
     "ae/pics/Pasted image 20240421140833.png",
-    "raw notes/2024-04-12 ae.md",
     "ae/ae.md",
     "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "conflict-files-obsidian-git.md",
@@ -207,11 +216,8 @@
     "ae/esercizi/esercizio 2 somme.md",
     "ae/system calls.md",
     "raw notes/2024-03-22 ae √.md",
-    "raw notes/2024-03-26 mp.md",
-    "raw notes/2024-03-27 mp.md",
     "raw notes/2024-04-04 mp.md",
     "raw notes/2024-03-20 mp.md",
-    "raw notes/2024-04-05 ae √.md",
     "ae/esercizi",
     "ae/pics",
     "ae",
