@@ -77,4 +77,23 @@ public int toInt() { return.mese; }
 ```
 
 # enumerazioni e Object
-una
+- una enumerazione ha tante istanze quante sono le costanti enumerative al suo interno (non è - possibile costruire altre istanze)
+- le classi enumerative estendono la classe Enum, da cui ereditano i metodi toString e clone
+- Enum estende Object, per cui il metodo equals restituisce true solo se le costnti enumerative sono identiche
+```java
+public enum TipoDiMoneta {
+	// le costanti enumerative, costruite in modo appropriato
+	CENT(0.01), CINQUE_CENT(0.05), DIECI_CENT(0.10), VENTI_CENT(0.20),
+	CINQUANTA_CENT(0.50), EURO(1.00), DUE_EURO(2.00);
+	
+	// valore numerico della costante
+	private double valore;
+	
+	// costruttore con visibilità di default
+	TipoDiMoneta(double valore) { this.valore = valore; }
+	
+	// meotodo di accesso al valore
+	public double getValore() { return valore; }
+}
+```
+in questo esempio, si nota come le costanti (CENT, CINQUE_CENT, etc) vengano costruite 
