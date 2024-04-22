@@ -23,11 +23,9 @@
             "id": "6dc1b7c61deaeaf4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
-                "mode": "source",
-                "source": false
+                "path": "raw notes"
               }
             }
           }
@@ -107,7 +105,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +121,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,9 +142,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ae/strutture della CPU MIPS.md"
-              }
+              "state": {}
             }
           },
           {
@@ -180,8 +174,10 @@
   },
   "active": "6dc1b7c61deaeaf4",
   "lastOpenFiles": [
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
+    "Vault.md",
+    "ttd",
     "ae/strutture della CPU MIPS.md",
+    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 11-31.md",
     "ae/intro a MIPS.md",
@@ -196,12 +192,11 @@
     "ae/pics/Pasted image 20240421140936.png",
     "ae/pics/Pasted image 20240421140833.png",
     "raw notes/2024-04-12 ae.md",
-    "Vault.md",
     "ae/ae.md",
-    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
+    "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "conflict-files-obsidian-git.md",
     "Spaces",
-    "overwhelming amount of stuff to do b4 esonero.md",
+    "ttd/overwhelming amount of stuff to do b4 esonero.md",
     "ae/ricorsione.md",
     "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
@@ -216,7 +211,6 @@
     "java/confronto tra classi e conversione.md",
     "ae/vettori.md",
     "ae/assembly MIPS (strutture, syntax, etc).md",
-    "ae/procedure e funzioni.md",
     "ae/esercizi",
     "ae/pics",
     "ae",
