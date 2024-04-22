@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6dc1b7c61deaeaf4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "raw notes/2024-04-17 mp.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "raw notes/2024-04-17 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "raw notes/2024-04-17 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md"
+                "file": "raw notes/2024-04-17 mp.md"
               }
             }
           },
@@ -178,20 +165,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6dc1b7c61deaeaf4",
+  "active": "e761c2e7c9b855f8",
   "lastOpenFiles": [
-    "raw notes/2024-04-16 ae.md",
     "raw notes/2024-04-12 ae.md",
+    "raw notes/2024-04-17 mp.md",
+    "raw notes/2024-04-16 ae.md",
+    "raw notes/2024-03-22 ae √.md",
+    "raw notes/2024-04-05 ae √.md",
+    "raw notes/2024-04-09 mp.md",
+    "raw notes/2024-04-16 mp.md",
+    "raw notes/2024-04-18 mp.md",
+    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "raw notes/2024-03-27 mp.md",
     "raw notes/2024-03-26 mp.md",
-    "raw notes/2024-04-17 mp.md",
-    "raw notes/2024-04-16 mp.md",
     "raw notes/2024-03-19 mp √.md",
-    "raw notes/2024-04-18 mp.md",
     "Vault.md",
     "ttd",
     "ae/strutture della CPU MIPS.md",
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 11-31.md",
     "ae/intro a MIPS.md",
@@ -212,12 +202,9 @@
     "ttd/overwhelming amount of stuff to do b4 esonero.md",
     "ae/ricorsione.md",
     "raw notes/2024-04-11 mp.md",
-    "raw notes/2024-04-09 mp.md",
     "ae/esercizi/esercizio 2 somme.md",
     "ae/system calls.md",
-    "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-04-04 mp.md",
-    "raw notes/2024-03-20 mp.md",
     "ae/esercizi",
     "ae/pics",
     "ae",
