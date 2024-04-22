@@ -10,7 +10,8 @@ la dichiarazione di una enumerazione può contenere altre componenti tradizional
 - costruttori
 - campi
 - metodi
-non si istanzia nulla di tipo enum, i suoi campi statici pubblici diventano riferimeti ad un oggetto pubblico e statico istanziato da qualche parte
+non si istanzia nulla di tipo enum, i suoi campi statici pubblici diventano riferimeti ad un oggetto pubblico e statico
+enum vengono allocati solo una volta dal class loader nel metaspace.
 
 # metodi
 ## values()

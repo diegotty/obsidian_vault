@@ -20,3 +20,4 @@ public class LaMiaClasse extends Object {}
 ### il metodo equals
 - viene invocato per confrontare il contenuto di 2 oggetti
 - se gli oggetti sono della stessa classe, restituisce true, ma non riconosce se sono a livelli diversi di sottoclassi (in questo caso è meglio usare [[confronto tra classi e conversione#instanceof]]]instanceof)
+

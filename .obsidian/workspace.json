@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "25f8cf204c4a824f",
+            "id": "ec479460fc27c138",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi.md",
+                "file": "java/interfacce.md",
                 "mode": "source",
                 "source": false
               }
@@ -26,30 +26,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e761c2e7c9b855f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-03-26 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f59e7fed699f1eda",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-03-27 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "c77f41c6a68c8a8c",
             "type": "leaf",
             "state": {
@@ -61,8 +37,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -137,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/classi.md",
+                "file": "java/interfacce.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/classi.md",
+                "file": "java/interfacce.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/classi.md"
+                "file": "java/interfacce.md"
               }
             }
           },
@@ -208,14 +183,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "25f8cf204c4a824f",
+  "active": "ec479460fc27c138",
   "lastOpenFiles": [
-    "java/campi.md",
-    "java/classi.md",
-    "java/confronto tra classi e conversione.md",
-    "java/enumerazioni.md",
     "raw notes/2024-04-04 mp.md",
-    "raw notes/2024-03-27 mp.md",
+    "java/interfacce.md",
+    "raw notes/2024-03-27 mp(done).md",
+    "java/enumerazioni.md",
+    "java/Object.md",
+    "java/classi.md",
+    "raw notes/2024-03-26 mp (done).md",
+    "java/uml.md",
+    "java/campi.md",
+    "java/confronto tra classi e conversione.md",
     "java/ereditarietà.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/pics/Pasted image 20240422223024.png",
@@ -224,8 +203,6 @@
     "java/polimorfismo.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interesting stuff",
-    "java/Object.md",
-    "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-03-20 mp (done).md",
     "raw notes/2024-04-17 mp.md",
@@ -237,9 +214,7 @@
     "raw notes/2024-04-18 mp.md",
     "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "raw notes/2024-03-19 mp √.md",
-    "Vault.md",
     "ttd",
-    "ae/strutture della CPU MIPS.md",
     "ae/pics/Pasted image 20240420125612.png",
     "ae/pics/Pasted image 20240420123000.png",
     "ae/pics/Pasted image 20240421140350.png",
