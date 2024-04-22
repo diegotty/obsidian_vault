@@ -96,4 +96,6 @@ public enum TipoDiMoneta {
 	public double getValore() { return valore; }
 }
 ```
-in questo esempio, si nota come le costanti (CENT, CINQUE_CENT, etc) vengano costruite 
+in questo esempio, si nota come le costanti (CENT, CINQUE_CENT, etc) vengano costruite con dei valori. 
+>[!tuff] non possono essere create nuove istanze, ma possono essere costruite le istanze “costanti” !!
+

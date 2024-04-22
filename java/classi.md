@@ -66,6 +66,9 @@ sono metodi di classe
 non hanno accesso ai campi di istanza, ma hanno accesso ai campi di classe non fare metodi statici che provano a modificare campi d'istanza !!
 >[!tuff] I METODI STATICI INTERAGISCONO SOLO CON CAMPI DI CLASSE
 
+## final
+i metodi final non possono essere reimplementati
+
 ***
 # visibilità
 ## occultatori di visibilità
@@ -130,3 +133,6 @@ anche i metodi possono essere definiti astratti(esclusivamente all’interno di 
 	abstract void faPasticci();
 ```
 le classi non astratte che estendono classi con metodi astratte devono implementare il metodo (obbligatoriamente ! )
+
+## classi final
+le classi final non possono avere sottoclassi !
