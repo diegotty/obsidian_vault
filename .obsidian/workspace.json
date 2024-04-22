@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e761c2e7c9b855f8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-03-26 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "dd56d39b7ab37274",
             "type": "leaf",
             "state": {
@@ -31,8 +19,25 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
+      },
+      {
+        "id": "d535b7aa66de17c5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e761c2e7c9b855f8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-03-26 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"

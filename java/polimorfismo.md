@@ -32,4 +32,21 @@ public String toString(){
 }
 ```
 
-## intan
+## instanceof
+l’operatore instanceof, applicato a un oggetto e a un nome di classe, restituisce **true** se l’oggetto è un tipo o sottotipo di quella classe
+
+## casting
+### upcasting
+posso sempre convertire senza  un cast esplicito un sottotipo a un supertipo (upcasting). devo però dichiarare una nuova variabile
+```java
+ImpiegatoStipendiato is1 = new ImpiegatoStipendiato("mario"), "imp1", 1500);
+Impiegato i = is1;
+```
+
+### downcasting
+può essere invece necessario convertire un supertipo a un sottotipo (downcasting) e ciò richiede un cast esplicito 
+```java
+ImpiegatoStipendiato is2 = (ImpiegatoStipendiato)i;
+```
+>[!tuff] in questo modo non sto creando un nuovo oggetto !! sto giocando con i riferimenti e i vari livelli dell’oggetto
+
