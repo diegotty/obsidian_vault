@@ -39,7 +39,9 @@
   "expandedSpaces": [
     "/",
     "//Spaces",
-    "//raw notes"
+    "//raw notes",
+    "//java",
+    "//java"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
