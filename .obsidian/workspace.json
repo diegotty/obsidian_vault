@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "java/Iterable e Iterator.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "java/Iterable e Iterator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "java/Iterable e Iterator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce.md"
+                "file": "java/Iterable e Iterator.md"
               }
             }
           },
@@ -185,13 +185,13 @@
   },
   "active": "ec479460fc27c138",
   "lastOpenFiles": [
-    "java/Iterable e Iterator.md",
     "java/interfacce.md",
+    "java/Iterable e Iterator.md",
+    "java/classi.md",
     "raw notes/2024-04-04 mp.md",
     "raw notes/2024-03-27 mp(done).md",
     "java/enumerazioni.md",
     "java/Object.md",
-    "java/classi.md",
     "raw notes/2024-03-26 mp (done).md",
     "java/uml.md",
     "java/campi.md",

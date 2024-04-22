@@ -7,7 +7,10 @@ esse definiscono e standardizzano l’interazione fra oggetti tramite un insieme
 esse specificano soltanto il comportamento (le classi astratte possono definire anche un costruttore) che un certo oggetto deve presentare all’esterno, cioè cosa quell’oggetto può fare. l’implementazione di tali operazioni, cioè come queste vengono tradotte e realizzate, rimane invece non definito
 >[!tuff] no costruttori, no implementazioni. le interfacce sono classi astratte al 100% !!!
 
+### perchè esistono i metodi di default e i metodi statici nelle interfacce
+i metodi di default sono dovuti all’estensione di interfacce vecchie con nuovi metodi senza rompere il contratto con il codice che utilizza le versioni precedenti
 
+i metodi statici non godono del polimorfismo, sono metodi di utilità non associati alle singole istanze(infatti non interagiscono con campi di classe)
 ## dichiarazione di un’interfaccia
 un’interfaccia è una classe che può contenere soltanto:
 - costanti
