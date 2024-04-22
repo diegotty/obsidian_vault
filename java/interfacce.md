@@ -102,3 +102,11 @@ sarebbe un problema implementare questa gerarchia usando solo classi !
 
 ![[Pasted image 20240422233133.png]]
 usando le interfacce posso attribuire a Forma diversi comportamenti. 
+
+## polimorfismo
+nel momento in cui una classe C decide di implementare un’interfaccia I, tra queste due classi si instaura una relazione di tipo is-a, ovvero C è di tipo I (comportamento simile all’ereditarietà) quindi anche per le intefacce valgono le regole del polimorfismo  
+```java
+SupportoRiscribile supporto = new Nastro();
+supporto.leggi();
+```
+in questo modo l’oggetto ha un restringimento della visibilità ai soli metodi dell’interfaccia SupportoRiscrivibile (in quanto l’oggetto della classe Nastro è come se fosse di tipo SupportoRiscrivibile)

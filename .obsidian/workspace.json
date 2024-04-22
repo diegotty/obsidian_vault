@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "java/interfacce notevoli.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,7 +43,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-04 mp.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce.md"
+                "file": "raw notes/2024-04-09 mp.md"
               }
             }
           },
@@ -196,12 +196,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ec479460fc27c138",
+  "active": "22b1206359ac3a95",
   "lastOpenFiles": [
-    "Pasted image 20240422233133.png",
+    "raw notes/2024-04-04 mp.md",
+    "java/interfacce notevoli.md",
+    "java/interfacce.md",
+    "java/pics/Pasted image 20240422233133.png",
     "Pasted image 20240422233036.png",
     "java/Iterable e Iterator.md",
-    "raw notes/2024-04-04 mp.md",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-18 mp.md",
     "raw notes/2024-04-17 mp.md",
@@ -210,7 +212,6 @@
     "raw notes/2024-04-12 ae (done).md",
     "raw notes/2024-04-11 mp.md",
     "raw notes/2024-04-09 mp.md",
-    "java/interfacce.md",
     "java/classi.md",
     "java/enumerazioni.md",
     "java/Object.md",
@@ -235,7 +236,6 @@
     "ae/pics/Pasted image 20240421144753.png",
     "ae/pics/Pasted image 20240421144032.png",
     "ae/pics/Pasted image 20240421143818.png",
-    "ae/pics/Pasted image 20240421143222.png",
     "Spaces",
     "ae/esercizi",
     "ae/pics",
