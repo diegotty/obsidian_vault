@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/interfacce.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/interfacce.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/interfacce.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Iterable e Iterator.md"
+                "file": "java/interfacce.md"
               }
             }
           },
@@ -198,12 +198,14 @@
   },
   "active": "ec479460fc27c138",
   "lastOpenFiles": [
+    "Pasted image 20240422233133.png",
+    "Pasted image 20240422233036.png",
+    "java/Iterable e Iterator.md",
     "raw notes/2024-04-04 mp.md",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-18 mp.md",
     "raw notes/2024-04-17 mp.md",
     "raw notes/2024-03-27 mp (done).md",
-    "java/Iterable e Iterator.md",
     "raw notes/2024-04-16 ae (done).md",
     "raw notes/2024-04-12 ae (done).md",
     "raw notes/2024-04-11 mp.md",
@@ -226,7 +228,6 @@
     "java/interesting stuff",
     "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-03-20 mp (done).md",
-    "raw notes/2024-04-05 ae √.md",
     "ttd",
     "ae/pics/Pasted image 20240420125612.png",
     "ae/pics/Pasted image 20240420123000.png",
@@ -235,7 +236,6 @@
     "ae/pics/Pasted image 20240421144032.png",
     "ae/pics/Pasted image 20240421143818.png",
     "ae/pics/Pasted image 20240421143222.png",
-    "ae/pics/Pasted image 20240421141924.png",
     "Spaces",
     "ae/esercizi",
     "ae/pics",

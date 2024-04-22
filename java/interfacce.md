@@ -85,3 +85,20 @@ while(s.hasNext()){
 }
 ```
 questo problema viene risolto con [[Iterable e Iterator]]
+
+# il contratto
+implementare un’interfaccia equivale a firmare un contratto con il compilatore, che stabilisce l’impegno ad implementare tutti i metodi specificati dall’interfaccia o a dichiarare la classe abstract.
+ci sono 3 possibilità per una classe che implementa un’interfaccia:
+- fornire un’implementazione concreta di tutti i metodi, definendone il corpo
+- fornire l’implementazione concreta solo per un sottoinsieme proprio dei metodi dell’interfaccia
+- decidere di non fornire alcuna implementazione concreta
+>[!tuff] negli ultimi 2 casi però, la classe va dichiarata abstract
+
+### perchè utilizzare un’interfaccia al posto di una classe astratta 
+potrebbe essere necessario estendere più di una classe astratta(cosa non possibile). al contrario si possono implementare tutte le intefacce desiderate !!
+![[Pasted image 20240422233036.png|500]]
+sarebbe un problema implementare questa gerarchia usando solo classi !
+
+
+![[Pasted image 20240422233133.png]]
+usando le interfacce posso attribuire a Forma diversi comportamenti. 

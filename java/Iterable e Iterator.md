@@ -29,11 +29,3 @@ chi implementa Iterable restituisce un Iterator sull’oggetto-collezione
 | `boolean`         | `hasNext()`<br>Ritorna true se l’iterazione ha altri elementi |
 | `E`               | `next()`<br>Ritorna il prossimo elemento dell’iterazione      |
 | `void`            | `remove()`<br>                                                |
-
-# il contratto
-implementare un’interfaccia equivale a firmare un contratto con il compilatore, che stabilisce l’impegno ad implementare tutti i metodi specificati dall’interfaccia o a dichiarare la classe abstract.
-ci sono 3 possibilità per una classe che implementa un’interfaccia:
-- fornire un’implementazione concreta di tutti i metodi, definendone il corpo
-- fornire l’implementazione concreta solo per un sottoinsieme proprio dei metodi dell’interfaccia
-- decidere di non fornire alcuna implementazione concreta
->[!tuff] negli ultimi
