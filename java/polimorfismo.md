@@ -21,4 +21,15 @@ il compilatore, senza eseguire il programma, stabilisce già i tipi delle variab
 fatto in Java dalla JVM, serve a stabilire (quando viene usato il polimorfismo), quale metodo chiamare (guarda emettiVerso() in esempio). 
 >[!tuff] viene chiamato il metodo implementato, ereditato, o assorbito nella classe di cui chiamo il costruttore
 
-è buona pratica implementare 
+è buona pratica implementare (e fare l’override) del metodo toString()
+
+per utilizzare un metodo della superclasse basta usare `super`
+```java
+@Override
+public String toString(){
+	String striscia = getStriscia();
+	return striscia + " " + super.toString() + " " + striscia;
+}
+```
+
+## intan
