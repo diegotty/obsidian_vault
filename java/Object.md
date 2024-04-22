@@ -5,3 +5,13 @@ public class LaMiaClasse{}
 //è uguale a :
 public class LaMiaClasse extends Object {}
 ```
+## metodi principali
+
+| Metodo                               | Descrizione                                                                                                           |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| `Object clone()`                     | Restituisce una copia dell’oggetto                                                                                    |
+| `boolean eqauls(Object o)`           | Confronta l’oggetto con quello in input                                                                               |
+| `Class<? extends Object> getClass()` | Restituisce un oggetto di tipo Class che contiene informazioni sul tipo dell’oggetto                                  |
+| `int hashCode()`                     | Restituisce un intero associato all’oggetto (per es. ai fini della memorizzazione in strutture dati, hashtable, ecc.) |
+| `String toString()`                  | Restituisce una rappresentazione di tipo String dell’oggetto(per default: tipo@codice_hash)                           |
+### il metodo toString
