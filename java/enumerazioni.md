@@ -75,3 +75,6 @@ Mese(int mese) {this.mese = mese; }
 public int toInt() { return.mese; }
 }
 ```
+
+# enumerazioni e Object
+una
