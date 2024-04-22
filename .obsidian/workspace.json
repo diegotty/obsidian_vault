@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/polimorfismo.md",
+                "file": "java/Object.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/polimorfismo.md",
+                "file": "java/Object.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/polimorfismo.md",
+                "file": "java/Object.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/polimorfismo.md"
+                "file": "java/Object.md"
               }
             }
           },
@@ -185,8 +185,9 @@
   },
   "active": "dd56d39b7ab37274",
   "lastOpenFiles": [
-    "raw notes/2024-03-26 mp.md",
     "java/polimorfismo.md",
+    "java/Object.md",
+    "raw notes/2024-03-26 mp.md",
     "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-03-20 mp (done).md",
     "raw notes/2024-04-17 mp.md",
@@ -222,7 +223,6 @@
     "ttd/overwhelming amount of stuff to do b4 esonero.md",
     "ae/ricorsione.md",
     "raw notes/2024-04-11 mp.md",
-    "ae/esercizi/esercizio 2 somme.md",
     "ae/esercizi",
     "ae/pics",
     "ae",

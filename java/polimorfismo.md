@@ -50,3 +50,10 @@ ImpiegatoStipendiato is2 = (ImpiegatoStipendiato)i;
 ```
 >[!tuff] in questo modo non sto creando un nuovo oggetto !! sto giocando con i riferimenti e i vari livelli dell’oggetto
 
+## campo riferimento di tipo astratto
+anche se non è possibile istanziare un oggetto di una classe astratta, è possibile creare istanze di sottoclassi di tale classe astratta, e assegnare il riferimento alla variabile di tipo forma
+```java
+Animale a = new Gatto();
+a.getClass(); //returns gatto
+```
+ciò è possibile proprio grazie al polimorfismo !!!!!!!!!!!!!
