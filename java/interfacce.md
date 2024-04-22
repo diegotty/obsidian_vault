@@ -17,4 +17,68 @@ un’interfaccia è una classe che può contenere soltanto:
 tutti i metodi dichiarati in un’interfaccia sono implicitamente **public abstact**
 tutti i campi dichiarati in un’interfaccia sono implicitamente **public static final**
 >[!tuff] tranne per i metodi di default o statici, non è possibile specificare alcun dettaglio implementativo !
->
+
+
+## esempio: Iterabile
+ci sono molte classi di natura diversa che rappresentano sequenze di elementi, tuttavia le sequenze hanno qualcosa in comune: è possibile iterare sui loro elementi
+
+```java
+public interface Iterabile {
+	boolean hasNext();
+	Object next();
+	void reset();
+}
+```
+
+ciascuna classe implementerà i metodi a suo modo:
+
+```java
+public class MyIntegerArray implements Iterabile {
+	private Integer[] array;
+	private int k = 0;
+	
+	public MyIntegerArray(Integer[] array) {
+		this.array = array;
+	}
+	
+	@Override
+	public boolean hasNext() { return k < array.length; }
+	
+	@Override
+	public Object next() { return array[k++]; }
+	
+	@Override
+	public void reset() { k=0; }
+}
+
+
+public class MyString implements Iterabile {
+	private String s;
+	private int k = 0;
+	
+	public MyString(String s) {
+		this.s = s;
+	}
+	
+	@Override
+	public boolean hasNext() { return k < array.length; }
+	
+	@Override
+	public Object next() { return s.charAt(k++); }
+	
+	@Override
+	public void reset() { k=0; }
+}
+```
+questa implementazione però, non è la soluzione ideal per iterare su una collezione, perchè non ci permette di mantenere contatori multipli sullo stesso oggetto.
+```java
+MyString s = new MyString("ciao");
+while(s.hasNext()){
+	char c1 = s.next();
+	while(s.hasNext()){
+		char c2 = s.next();
+		System.out.println(c1+"-" + c2);
+	}
+}
+```
+questo problema viene risolto con [[Iterable e Iterator]]
