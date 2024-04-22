@@ -40,7 +40,8 @@
     "/",
     "//Spaces",
     "//java",
-    "//java"
+    "//java",
+    "//raw notes"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

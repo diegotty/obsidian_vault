@@ -36,8 +36,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "22b1206359ac3a95",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-04-04 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -185,11 +198,18 @@
   },
   "active": "ec479460fc27c138",
   "lastOpenFiles": [
-    "java/interfacce.md",
-    "java/Iterable e Iterator.md",
-    "java/classi.md",
     "raw notes/2024-04-04 mp.md",
-    "raw notes/2024-03-27 mp(done).md",
+    "raw notes/2024-04-16 mp.md",
+    "raw notes/2024-04-18 mp.md",
+    "raw notes/2024-04-17 mp.md",
+    "raw notes/2024-03-27 mp (done).md",
+    "java/Iterable e Iterator.md",
+    "raw notes/2024-04-16 ae (done).md",
+    "raw notes/2024-04-12 ae (done).md",
+    "raw notes/2024-04-11 mp.md",
+    "raw notes/2024-04-09 mp.md",
+    "java/interfacce.md",
+    "java/classi.md",
     "java/enumerazioni.md",
     "java/Object.md",
     "raw notes/2024-03-26 mp (done).md",
@@ -206,14 +226,7 @@
     "java/interesting stuff",
     "raw notes/2024-03-22 ae √.md",
     "raw notes/2024-03-20 mp (done).md",
-    "raw notes/2024-04-17 mp.md",
-    "raw notes/2024-04-12 ae.md",
-    "raw notes/2024-04-16 ae.md",
     "raw notes/2024-04-05 ae √.md",
-    "raw notes/2024-04-09 mp.md",
-    "raw notes/2024-04-16 mp.md",
-    "raw notes/2024-04-18 mp.md",
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ttd",
     "ae/pics/Pasted image 20240420125612.png",
     "ae/pics/Pasted image 20240420123000.png",

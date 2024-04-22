@@ -12,5 +12,20 @@ while(arr.hasNext()){
 	}
 	arr.next();
 	}
-// usando l'interfaccia Iterabile, non potrò avere la prima permutazione, (4,4)
+// usando l'interfaccia Iterabile, non potrò avere la permutazione, (5,4)
 ```
+
+`java.lang.Iterable`
+
+| Modifier and Type | Method and Description                                                                |
+| ----------------- | ------------------------------------------------------------------------------------- |
+| `Iterator<T>`     | `iterator()`<br>Restituisce ogni volta che lo chiamo una nuova istanza dell’iteratore |
+
+`java.lang.Iterator`
+chi implementa Iterable restituisce un Iterator sull’oggetto-collezione
+
+| Modifier and Type | Method and Description                                        |
+| ----------------- | ------------------------------------------------------------- |
+| `boolean`         | `hasNext()`<br>Ritorna true se l’iterazione ha altri elementi |
+| `E`               | `next()`<br>Ritorna il prossimo elemento dell’iterazione      |
+| `void`            | `remove()`<br>                                                |
