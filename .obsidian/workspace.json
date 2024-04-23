@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-23 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-23 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md",
+                "file": "raw notes/2024-04-23 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-09 mp.md"
+                "file": "raw notes/2024-04-23 mp.md"
               }
             }
           }
@@ -158,8 +158,8 @@
   },
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
-    "raw notes/2024-04-23 mp.md",
     "raw notes/2024-04-09 mp.md",
+    "raw notes/2024-04-23 mp.md",
     "ae/strutture della CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "conflict-files-obsidian-git.md",
