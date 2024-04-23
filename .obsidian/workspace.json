@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "289692b6fc3ddb8e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-12 ae.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -157,10 +169,28 @@
   },
   "active": "e7df70c1ce1da2cf",
   "lastOpenFiles": [
+    "raw notes/2024-04-05 ae √.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-04-12 ae.md",
+    "raw notes/2024-03-20 mp (done).md",
+    "raw notes/2024-03-26 mp (done).md",
+    "raw notes/2024-03-27 mp (done).md",
+    "raw notes/2024-04-04 mp (done).md",
+    "raw notes/2024-04-12 ae (done).md",
+    "raw notes/2024-04-16 ae (done).md",
+    "java/pics/Pasted image 20240422233133.png",
+    "java/pics/Pasted image 20240422233036.png",
+    "java/pics/Pasted image 20240422223024.png",
+    "java/pics/Pasted image 20240422223010.png",
+    "java/java.md",
+    "java/interfacce.md",
+    "java/interfacce notevoli.md",
+    "java/interesting stuff/interesting stuff.md",
+    "java/interesting stuff/getClass() e instanceof.md",
+    "java/interesting stuff",
+    "java/Object.md",
+    "java/Iterable e Iterator.md",
     "raw notes/2024-04-17 mp.md",
-    "raw notes/2024-04-05 ae √.md",
     "raw notes/2024-04-18 mp.md",
     "raw notes/2024-04-16 ae.md",
     "ttd/overwhelming amount of stuff to do b4 esonero.md",
@@ -174,27 +204,10 @@
     "ae/pics/Pasted image 20240421143222.png",
     "ae/pics/Pasted image 20240421141924.png",
     "ae/pics/Pasted image 20240421140936.png",
-    "ae/pics/Pasted image 20240421140833.png",
-    "ae/pics/Pasted image 20240421140628.png",
-    "ae/pics/Pasted image 20240421140430.png",
-    "ae/pics/Pasted image 20240421140350.png",
     "ae/esercizi/esercizio 11-31.md",
     "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/ae.md",
-    "Vault.md",
-    "raw notes/2024-04-16 mp.md",
-    "raw notes/2024-04-17.md",
-    "raw notes/.md",
-    "ae/intro a MIPS.md",
-    "raw notes/2024-04-09 mp.md",
-    "raw notes/2024-04-11 mp.md",
-    "midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
-    "raw notes/2024-03-05 mp √.md",
-    "ae/Untitled.md",
-    "java/coding etiquette.md",
     "Spaces",
-    "java/strutture di controllo di flusso.md",
-    "java/strutture `complesse`.md",
     "ae/esercizi",
     "ae/pics",
     "ae",
