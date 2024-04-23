@@ -8,24 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e7df70c1ce1da2cf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "289692b6fc3ddb8e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "raw notes/Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "raw notes/Untitled.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "raw notes/Untitled.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "raw notes/Untitled.md"
               }
             }
           }
@@ -167,10 +155,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7df70c1ce1da2cf",
+  "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
-    "raw notes/2024-04-05 ae √.md",
+    "raw notes/2024-04-09 mp.md",
+    "raw notes/Untitled.md",
     "conflict-files-obsidian-git.md",
+    "raw notes/2024-04-05 ae √.md",
     "raw notes/2024-04-12 ae.md",
     "raw notes/2024-03-20 mp (done).md",
     "raw notes/2024-03-26 mp (done).md",
@@ -205,8 +195,6 @@
     "ae/pics/Pasted image 20240421141924.png",
     "ae/pics/Pasted image 20240421140936.png",
     "ae/esercizi/esercizio 11-31.md",
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
-    "ae/ae.md",
     "Spaces",
     "ae/esercizi",
     "ae/pics",
