@@ -8,12 +8,30 @@
         "type": "tabs",
         "children": [
           {
+            "id": "47ed9ca9617e700e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/interfacce notevoli.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "550c42981929ec97",
+        "type": "tabs",
+        "children": [
+          {
             "id": "ec479460fc27c138",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "raw notes/2024-04-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Iterable e Iterator.md"
+                "file": "raw notes/2024-04-09 mp.md"
               }
             }
           },
@@ -167,24 +185,24 @@
   },
   "active": "ec479460fc27c138",
   "lastOpenFiles": [
-    "java/java.md",
+    "java/interfacce notevoli.md",
     "raw notes/2024-04-09 mp.md",
+    "raw notes/2024-04-11 mp.md",
+    "java/Iterable e Iterator.md",
+    "java/java.md",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-23 mp.md",
     "raw notes/2024-04-18 mp.md",
-    "java/interfacce notevoli.md",
     "conflict-files-obsidian-git.md",
     "Spaces",
     "java/pics/Pasted image 20240422233036.png",
     "raw notes/2024-04-04 mp (done).md",
     "java/interfacce.md",
     "java/pics/Pasted image 20240422233133.png",
-    "java/Iterable e Iterator.md",
     "raw notes/2024-04-17 mp.md",
     "raw notes/2024-03-27 mp (done).md",
     "raw notes/2024-04-16 ae (done).md",
     "raw notes/2024-04-12 ae (done).md",
-    "raw notes/2024-04-11 mp.md",
     "java/classi.md",
     "java/enumerazioni.md",
     "java/Object.md",
