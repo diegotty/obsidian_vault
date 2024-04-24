@@ -29,3 +29,6 @@ chi implementa Iterable restituisce un Iterator sull’oggetto-collezione
 | `boolean`         | `hasNext()`<br>Ritorna true se l’iterazione ha altri elementi |
 | `E`               | `next()`<br>Ritorna il prossimo elemento dell’iterazione      |
 | `void`            | `remove()`<br>                                                |
+
+quando voglio rendere una classe iterabile, essa deve implementare Iterable. in questo modo la classe sarà obbligata ad implementare il metodo iterator(), in cui bisognerà creare e ritornare un oggetto di tipo Iterator. 
+nel video trovato 
