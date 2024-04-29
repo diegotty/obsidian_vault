@@ -45,10 +45,16 @@ clonazione profonda(deep copy):
 - si può usare Object.clone() per la clonazione dei primitivi(non viene copiato il riferimento con i primivi), e richiamare .clone() su tutti i campi che sono riferimenti ad altri oggetti, impostando i nuovi riferimenti nell’oggetto clonato
 ```java
 //shallow copy
+public class IntVector implements Cloneable{
+	ArrayList<Integer> list = new ArrayList<>();
+}
+
+
 public void getCopy(){
 	try{
-		retu
+		return (IntVector)clone();
 	}
+	catch(CloneNotSupportedException e) {return null;}
 }
 
 //deep copy
