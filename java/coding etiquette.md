@@ -119,5 +119,7 @@ non posso usare tipi primitivi tra parentesi angolari
 non posso assegnare un array a una lista 
 ```java
 List<Integer> l = new Integer[] {1, 2, 3}; //no
-List<Integer> l = Array
+List<Integer> l = Arrays.asList(new Integer[] {1, 2, 3});
 ```
+
+>[!tuff] NON POSSO ACCEDERE E MODIFICARE GLI ELEMENTI DELLA LISTA ITERANDO CON UN FOR EACH !!!!!!!
