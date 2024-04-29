@@ -10,7 +10,14 @@ TipoDaEstendere unicoRiferimentoAOggetto = new TipoDaEstendere()
 ## perchè è utile ??
 è utile se il codice non servirà mai più oltre alla scope in cui viene creata la classe anonima !
 ```java
-Formula formula = new Formula(){
+public interface formula {
+	double calculate(int a);
+	default double sqrt(int a) { return Math.sqrt(a);}
+}
+```
+
+```java
+Formula formula = new Formula(){ ///tipo da estendere !!!!!! crazy !!!!!!!!
 	@Override
 	public double calculate(int a){
 		return sqrt(a * 100);
