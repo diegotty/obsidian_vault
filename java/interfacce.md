@@ -110,3 +110,13 @@ SupportoRiscribile supporto = new Nastro();
 supporto.leggi();
 ```
 in questo modo l’oggetto ha un restringimento della visibilità ai soli metodi dell’interfaccia SupportoRiscrivibile (in quanto l’oggetto della classe Nastro è come se fosse di tipo SupportoRiscrivibile)
+
+### interfacce ed enum
+posso rendere le enumerazioni estensibili !!
+```java
+public interface OperatoreBinario{
+	double applica(double a, double b);
+}
+
+public enum OperatoriDiBase implements OperatoreBinario
+```
