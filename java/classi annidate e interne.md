@@ -21,3 +21,7 @@ possono essere
 per disambiguare i casi di ambiguità (come campi con lo stesso nome in top-level e nested)
 - se dalla classe interna viene usato soltanto this, viene inteso che si riferisca ai campi della classe interna
 - per riferisi ai campi della classe esterna, si usa la sintassi ClasseEsterna.this.metodo()/.campo
+per istanziare la classe interna, è sufficiente usare l’operatore new
+per istanziare la classe interna a partire da un’altra classe si usa la sintassi **riferimentoOggetoClasseEsterna.new ClasseInterna()** //un po clunky devo dire
+
+## classi annidate statiche
