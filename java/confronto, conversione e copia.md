@@ -35,4 +35,9 @@ ciò è possibile proprio grazie al polimorfismo !!!!!!!!!!!!!
 - x.clone() != x sarà sempre vero 
 - clone non richiama il costruttore della classe (quindi si possono copiare singletons ??)
 - tuttavia, l’implementazione nativa di default di Object.clone copia l’oggetto campo per campo (shallow copy)
+per implementare la copia in una classe bisogna implementare l’intefaccia Cloneable e sovrascrivere il metodo clone()
 ## shallow copy vs deep copy
+copia campo a campo(shallow copy):
+- copia una istanza di una classe in modo che punti però allo stesso riferimento 
+clonazione profonda(deep copy):
+- vengono creati nuovi oggetti 
