@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi annidate e interne.md",
+                "file": "java/Iterable e Iterator.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/classi annidate e interne.md",
+                "file": "java/Iterable e Iterator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/classi annidate e interne.md",
+                "file": "java/Iterable e Iterator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/classi annidate e interne.md"
+                "file": "java/Iterable e Iterator.md"
               }
             }
           },
@@ -185,10 +185,10 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
+    "java/classi annidate e interne.md",
     "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-11 mp.md",
-    "java/classi annidate e interne.md",
     "java/confronto, conversione e copia.md",
     "java/polimorfismo.md",
     "java/progettazione.md",
