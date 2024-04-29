@@ -44,7 +44,7 @@ credo quello sopracitato sia il loro quasi unico scopo ? l’essere assegnate a 
 
 esempio di Formula con lambda function
 ```java
-Formula formula = a -> a -> Math.sqrt(a*100);
+Formula formula = a -> Math.sqrt(a*100);
 //ho una classe anonima che implementa un'interfaccia funzionale usando una lambda function per implementare il metodo astratto
 ```
 
