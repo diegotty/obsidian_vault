@@ -25,6 +25,11 @@ Formula formula = new Formula(){ ///tipo da estendere !!!!!! crazy !!!!!!!!
 }
 ```
 
+### peculiarità
+la parola chiave this si riferisce all’oggetto anonimo
+le classi anonime vengono compilate come classi interne
+
+
 # lambda function
 da Java 8 è possibile specificare funzioni utilizzando una notazione molto compatta: le espressioni lambda.
 ```java
@@ -37,6 +42,9 @@ da Java 8 è possibile specificare funzioni utilizzando una notazione molto comp
 ```java
 (a,b) -> a+b;
 ```
+## perchè sono utili ?????
+- è da consigliare l’impiego delle espressioni lambda **principalmente** quando il codice si scrive su una sola riga
+- in alternativa, si preferisce un’implementazione mediante classe o classe anonima ( o riferimenti a metodi)
 
 >[!tuff] tali espressioni creano oggetti anonimi, assegnabili a riferimenti a interfacce funzionali compatibili con l’intestazione (input/output) della funzione creata
 
@@ -56,3 +64,7 @@ public interface Converter<F,T>{
 Converter<String, Integer> converter = from -> Integer.valueOf(from); //ha senso...
 Integer converted = converter.convert("123"); //non sto creando una nuova istanza di converter, sto utilizzando l'unica istanza per creare un oggetto di tipo Integer ! fun !!!!!!!!!! fuck
 ```
+
+### peculiarità
+la parola chiave this si riferisce all’oggetto della classe che le racchiude
+le espressioni lambda vengono compilate come metodi privati invocati dinamicamente
