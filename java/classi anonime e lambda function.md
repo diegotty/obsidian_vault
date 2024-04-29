@@ -1,0 +1,19 @@
+- è possibile definire classi anonime (ovvero senza nome) che implementano un’interfaccia o estendono una classe
+- utilizzate esclusivamente per creare un’unica istanza
+- utili in determinati contesti (es: per creare un iteratore al volo (???))
+```java
+TipoDaEstendere unicoRiferimentoAOggetto = new TipoDaEstendere()
+{
+//codice della classe anonima(implementazione dell'interfaddia o // estensione della classe)
+};
+```
+## perchè è utile ??
+è utile se il codice non servirà mai più oltre alla scope in cui viene creata la classe anonima !
+```java
+Formula formula = new Formula(){
+	@Override
+	public double calculate(int a){
+		return sqrt(a * 100);
+	}
+}
+```
