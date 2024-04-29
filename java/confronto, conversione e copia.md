@@ -34,3 +34,5 @@ ciò è possibile proprio grazie al polimorfismo !!!!!!!!!!!!!
 - per creare una copia di un oggetto è necessario chiamare il metodo clone()
 - x.clone() != x sarà sempre vero 
 - clone non richiama il costruttore della classe (quindi si possono copiare singletons ??)
+- tuttavia, l’implementazione nativa di default di Object.clone copia l’oggetto campo per campo (shallow copy)
+## shallow copy vs deep copy
