@@ -30,3 +30,7 @@ ciò è possibile proprio grazie al polimorfismo !!!!!!!!!!!!!
 
 
 # il metodo clone
+- l’operazione di assegnazione `=` non effettua una copia dell’oggetto, ma solo del riferimento all’oggetto !!
+- per creare una copia di un oggetto è necessario chiamare il metodo clone()
+- x.clone() != x sarà sempre vero 
+- clone non richiama il costruttore della classe (quindi si possono copiare singletons ??)
