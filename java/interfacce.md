@@ -118,5 +118,10 @@ public interface OperatoreBinario{
 	double applica(double a, double b);
 }
 
-public enum OperatoriDiBase implements OperatoreBinario
+public enum OperatoriDiBase implements OperatoreBinario{
+SOMMA {public double applica (double a, double b) { return a+b;}}.
+SOTTRAZIONE {public double applica (double a, double b) { return a-b;}}
+PRODOTTO {public double applica (double a, double b){ return a*b;}}
+DIVISIONE {public double applica (double a, double b) { return a/b;}}
+}
 ```
