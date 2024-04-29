@@ -78,3 +78,18 @@ i campi dovrebbero essere inizializzati, per più eleganza, nel costruttore !!
 ```java
 	ArrayList<Integer> list = new ArrayList<>; //coding horror !
 ```
+
+
+si devono usare campi final per le costanti spento e acceso, e si deve usare un operatore elvis per l’if
+**non usare true o false 
+```java
+Public class ErroriComuni{
+	private boolean bAcceso;
+	
+	@Override
+	public String toString()}{
+		if (bAcceso) return "ACCESO";
+		else return "SPENTO";
+	}
+}
+```
