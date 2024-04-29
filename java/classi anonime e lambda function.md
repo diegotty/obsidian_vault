@@ -30,4 +30,11 @@ da Java 8 è possibile specificare funzioni utilizzando una notazione molto comp
 ```java
 (tipo nome_param1, ..., tipo nome_paramn) -> { codice della funzione}
 ```
+- il tipo dei parametri in input è opzionale, perché si ricava dal contesto dell’interfaccia a cui facciamo riferimento
+- le parentesi tonde sono opzionali se in input abbiamo un solo parametro
+- le parentesi graffe intorno al codice sono opzionali se è costituito da una sola riga
+- non è necessario return, se il codice è dato dall’espressione di ritorno
+
 >[!tuff] tali espressioni creano oggetti anonimi, assegnabili a riferimenti a interfacce funzionali compatibili con l’intestazione (input/output) della funzione creata
+
+credo quello sopracitato sia il loro quasi unico scopo ? l’essere essegnate a interfacce funzionali !
