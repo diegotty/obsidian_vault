@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/classi annidate e interne.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/classi annidate e interne.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Iterable e Iterator.md",
+                "file": "java/classi annidate e interne.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Iterable e Iterator.md"
+                "file": "java/classi annidate e interne.md"
               }
             }
           },
@@ -185,6 +185,7 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
+    "java/Iterable e Iterator.md",
     "java/classi annidate e interne.md",
     "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-16 mp.md",
@@ -196,7 +197,6 @@
     "java/interfacce.md",
     "java/interfacce notevoli.md",
     "raw notes/2024-04-23 mp.md",
-    "java/Iterable e Iterator.md",
     "java/java.md",
     "raw notes/2024-04-18 mp.md",
     "conflict-files-obsidian-git.md",
