@@ -24,3 +24,10 @@ Formula formula = new Formula(){ ///tipo da estendere !!!!!! crazy !!!!!!!!
 	}
 }
 ```
+
+# lambda function
+da Java 8 è possibile specificare funzioni utilizzando una notazione molto compatta: le espressioni lambda.
+```java
+(tipo nome_param1, ..., tipo nome_paramn) -> { codice della funzione}
+```
+>[!tuff] tali espressioni creano oggetti anonimi, assegnabili a riferimenti a interfacce funzionali compatibili con l’intestazione (input/output) della funzione creata

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interfacce funzionali e SAM.md",
+                "file": "java/classi anonime e lambda function.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interfacce funzionali e SAM.md",
+                "file": "java/classi anonime e lambda function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interfacce funzionali e SAM.md",
+                "file": "java/classi anonime e lambda function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interfacce funzionali e SAM.md"
+                "file": "java/classi anonime e lambda function.md"
               }
             }
           },
@@ -185,11 +185,11 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
-    "java/interfacce.md",
-    "interfacce funzionali e SAM.md",
-    "java/interfacce notevoli.md",
-    "java/classi anonime e lambda function.md",
     "raw notes/2024-04-09 mp.md",
+    "java/classi anonime e lambda function.md",
+    "java/interfacce funzionali e SAM.md",
+    "java/interfacce.md",
+    "java/interfacce notevoli.md",
     "java/classi annidate e interne.md",
     "java/Iterable e Iterator.md",
     "raw notes/2024-04-16 mp.md",
