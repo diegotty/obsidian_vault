@@ -22,6 +22,10 @@ per disambiguare i casi di ambiguità (come campi con lo stesso nome in top-leve
 - se dalla classe interna viene usato soltanto this, viene inteso che si riferisca ai campi della classe interna
 - per riferisi ai campi della classe esterna, si usa la sintassi ClasseEsterna.this.metodo()/.campo
 per istanziare la classe interna, è sufficiente usare l’operatore new
-per istanziare la classe interna a partire da un’altra classe si usa la sintassi **riferimentoOggetoClasseEsterna.new ClasseInterna()** //un po clunky devo dire
+per istanziare la classe interna a partire da un’altra classe si usa la sintassi `riferimentoOggetoClasseEsterna.new ClasseInterna()` //un po clunky devo dire
 
 ## classi annidate statiche
+- non richiede l’esistenza di un oggetto appartenente alla classe esterna, e non ha un riferimento implicito ad essa.
+- non può accedere ai campi di istanza della classe esterna(slide dice: no può accedere allo stato dei singoli oggetti della classe esterna)
+- da un punto di vista di comportamento, una classe annidata statica è equivalente ad una top-level inserita all’interno di un’altra top-level
+- sono accessibili secondo la forma : `new ClasseEsterna.ClasseAnnidataStatica()`
