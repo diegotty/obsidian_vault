@@ -23,6 +23,7 @@ while(arr.hasNext()){
 
 `java.lang.Iterator`
 chi implementa Iterable restituisce un Iterator sull’oggetto-collezione
+contiene uno stato(ha un indice) !!! ci può dire se l’iterabile ha un prossimo elemento ed avanzare.
 
 | Modifier and Type | Method and Description                                        |
 | ----------------- | ------------------------------------------------------------- |
