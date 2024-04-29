@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/confronto, conversione e copia.md",
+                "file": "java/classi annidate e interne.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/confronto, conversione e copia.md",
+                "file": "java/classi annidate e interne.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/confronto, conversione e copia.md",
+                "file": "java/classi annidate e interne.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/confronto, conversione e copia.md"
+                "file": "java/classi annidate e interne.md"
               }
             }
           },
@@ -185,6 +185,8 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
+    "java/confronto, conversione e copia.md",
+    "java/classi annidate e interne.md",
     "java/polimorfismo.md",
     "java/progettazione.md",
     "java/metodi.md",
@@ -212,8 +214,6 @@
     "raw notes/2024-03-26 mp (done).md",
     "java/uml.md",
     "java/campi.md",
-    "java/confronto, conversione e copia.md",
-    "java/ereditarietà.md",
     "java/pics/Pasted image 20240422223024.png",
     "java/pics/Pasted image 20240422223010.png",
     "java/interesting stuff",

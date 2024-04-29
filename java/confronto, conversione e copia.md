@@ -67,3 +67,8 @@ public IntVector getCopy(){
 	catch(CloneNotSupportedException e) {return null;}
 }
 ```
+
+```armasm
+thought:
+how is the code above working, if list.clone() makes a shallow copy ? it seems that even though it creates a new object, the references inside the new list are the same as the original list, so when we change an item in one of the two, it refelects in the other one. this is not a deep copy to me! as both objects are not stand alone instances, but the two are intertwined with references
+```
