@@ -39,5 +39,25 @@ per implementare la copia in una classe bisogna implementare l’intefaccia Clon
 ## shallow copy vs deep copy
 copia campo a campo(shallow copy):
 - copia una istanza di una classe in modo che punti però allo stesso riferimento 
+- basta chiamare .clone()
 clonazione profonda(deep copy):
-- vengono creati nuovi oggetti 
+- viene evitata la copia dei riferimenti
+- si può usare Object.clone() per la clonazione dei primitivi(non viene copiato il riferimento con i primivi), e richiamare .clone() su tutti i campi che sono riferimenti ad altri oggetti, impostando i nuovi riferimenti nell’oggetto clonato
+```java
+//shallow copy
+public void getCopy(){
+	try{
+		retu
+	}
+}
+
+//deep copy
+public IntVector getCopy(){
+	try{
+		IntVector v = (IntVector)clone();
+		v.list = (ArrayList<Integer>)list.clone();
+		return v;
+	}
+	catch(CloneNotSupportedException e) {return null;}
+}
+```
