@@ -40,9 +40,19 @@ da Java 8 è possibile specificare funzioni utilizzando una notazione molto comp
 
 >[!tuff] tali espressioni creano oggetti anonimi, assegnabili a riferimenti a interfacce funzionali compatibili con l’intestazione (input/output) della funzione creata
 
-credo quello sopracitato sia il loro quasi unico scopo ? l’essere essegnate a interfacce funzionali !
+credo quello sopracitato sia il loro quasi unico scopo ? l’essere assegnate a interfacce funzionali !
 
 esempio di Formula con lambda function
 ```java
-Formula formula = a -> a -> Math.sqrt(a*100);//ho una classe anonima che implementa un'interfaccia funzionale usando una lambda function per implementare il metodo astratto
+Formula formula = a -> a -> Math.sqrt(a*100);
+//ho una classe anonima che implementa un'interfaccia funzionale usando una lambda function per implementare il metodo astratto
+```
+
+esempio converter 
+```java
+public interface Converter<F,T>{
+	T convert(F from); // parametro di tipo F chiamato from
+}
+Converter<String, Integer> converter = from -> Integer.valueOf(from); //ha senso...
+Integer converted = converter.convert("123"); //non sto creando una nuova istanza di converter, sto utilizzando l'unica istanza per creare un oggetto di tipo Integer ! fun !!!!!!!!!! fuck
 ```
