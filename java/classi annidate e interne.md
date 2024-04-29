@@ -12,6 +12,12 @@ possono essere
 - codice + leggibile e + facile da mantenere
 	- la vicinanza spaziale è un fattore decisivo
 
-### classi interne
-- prima di poter creare un’istanza di una classe interna, è necessario istanzare la top-level che la contiene
-- ciascuna classe interna ha un riferimento implicito all’oggett
+## classi interne
+- prima di poter creare un’istanza di una classe interna, è necessario istanziare la top-level che la contiene
+- **ciascuna classe interna ha un riferimento implicito all’oggetto della classe che la contiene !!!!**
+- dalla classe interna è possibile accedere a tutte le variabili e tutti i metodi della classe esterna !
+- le classi interne possono essere public, protected o private
+### accesso a campi e metodi
+per disambiguare i casi di ambiguità (come campi con lo stesso nome in top-level e nested)
+- se dalla classe interna viene usato soltanto this, viene inteso che si riferisca ai campi della classe interna
+- per riferisi ai campi della classe esterna, si usa la sintassi ClasseEsterna.this.metodo()/.campo
