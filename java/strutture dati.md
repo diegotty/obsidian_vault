@@ -27,7 +27,7 @@ while(i.hasNext()) {      // finché ha un successivo
 	System.out.println(k);
 }
 ```
-- mediante il costrutto “for each” (per ogni eleemn)
+- mediante il costrutto for each (per ogni elemento della collezione )
 ```java
 for (Integer k : collezione)
 	System.out.println(k);
@@ -38,4 +38,10 @@ for (int j=0; j<collezione.size(); j++) {
 	int k = collezione.get(j);
 	System.out.println(k);
 }
+```
+### iterazione interna:
+- mediante il metodo `Iterable.forEach` che permette l’iterazione su qualsiasi collezione senza specificare come effettuare l’iterazione(utilizza il polimorfismo, chiamerà il forEach della classe specificata)
+	- il metodo forEach prende in input un Consumer, che è un’interfaccia funzionale con un solo metodo
+```java
+void accept(T t);
 ```
