@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-30.md",
+                "file": "raw notes/2024-04-30 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-30.md",
+                "file": "raw notes/2024-04-30 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-30.md",
+                "file": "raw notes/2024-04-30 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-30.md"
+                "file": "raw notes/2024-04-30 mp.md"
               }
             }
           }
@@ -158,7 +159,7 @@
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
     "java/strutture dati.md",
-    "raw notes/2024-04-30.md",
+    "raw notes/2024-04-30 mp.md",
     "java/interfacce funzionali e SAM.md",
     "java/classi anonime e lambda function.md",
     "java/confronto, conversione e copia.md",
