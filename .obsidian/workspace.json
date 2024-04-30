@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md"
+                "file": "java/interfacce funzionali e SAM.md"
               }
             }
           }
@@ -157,8 +157,8 @@
   },
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-23 mp.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-09 mp (done).md",
     "raw notes/2024-04-17 mp (lab).md",
     "raw notes/2024-04-18 mp (useless) (done).md",
