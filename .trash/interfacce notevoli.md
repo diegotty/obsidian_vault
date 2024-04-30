@@ -1,3 +1,4 @@
+
 | Interfaccia      | Descrizione                                                                                                                                                                                                                                                                                          |
 | ---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Comparable**   | Impone un ordinamento naturale degli oggetti tramite il metodo: int `compareTo(T b)`, che restituisce un valore >, = o < 0 se l’oggetto è rispettivamente maggiore, uguale o minore di b (T è un tipo generico; può essere di qualsiasi tipo)                                                        |

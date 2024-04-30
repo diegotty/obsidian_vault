@@ -18,7 +18,7 @@ public static double sum(double... valori){ //double...
 - i parametri normali vanno definiti prima dell’array variabile
 
 
-# [[progettazione]]] di metodi
+# [[progettazione]] di metodi
 - i metodi permettono di modularizzare un programma separandone i compiti in unità autocontenute
 - i metodi possono essere riutilizzati 
 	i metodi possono essere richiamati(senza aver istanziato un oggetto) da altri metodi nella stessa classe

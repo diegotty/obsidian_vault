@@ -78,3 +78,48 @@ i campi dovrebbero essere inizializzati, per più eleganza, nel costruttore !!
 ```java
 	ArrayList<Integer> list = new ArrayList<>; //coding horror !
 ```
+
+
+si devono usare campi final per le costanti spento e acceso, e si deve usare un operatore elvis per l’if
+```java
+Public class ErroriComuni{
+	private boolean bAcceso;
+	
+	@Override
+	public String toString()}{
+		if (bAcceso) return "ACCESO";
+		else return "SPENTO";
+	}
+}
+```
+
+```java
+public boolean cercaNO(intk, int... elenco){
+	boolean trovato = false;
+	for (int k : elenco)
+		if (x == k) trovato = true;
+	return trovato
+}
+
+public boolean cercaOK(int k, int... elenco){
+	for(int x : elenco)
+		if (x == k) return true;
+	return false;
+}
+```
+
+non posso instanziare interfacce !!
+```java
+List<Integer> l = new List<>(); // i hate you
+List<Integer> l = new ArrayList<>();
+```
+
+non posso usare tipi primitivi tra parentesi angolari
+
+non posso assegnare un array a una lista 
+```java
+List<Integer> l = new Integer[] {1, 2, 3}; //no
+List<Integer> l = Arrays.asList(new Integer[] {1, 2, 3});
+```
+
+>[!tuff] NON POSSO ACCEDERE E MODIFICARE GLI ELEMENTI DELLA LISTA ITERANDO CON UN FOR EACH !!!!!!!

@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "49ac0a8d3ce8ba3a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -156,13 +169,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "289692b6fc3ddb8e",
+  "active": "49ac0a8d3ce8ba3a",
   "lastOpenFiles": [
-    "raw notes/2024-04-09 mp.md",
     "raw notes/2024-04-23 mp.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-04-09 mp (done).md",
+    "raw notes/2024-04-17 mp (lab).md",
+    "raw notes/2024-04-18 mp (useless) (done).md",
+    "java/strutture dati.md",
+    "java/interfacce funzionali e SAM.md",
+    "java/confronto, conversione e copia.md",
+    "java/classi anonime e lambda function.md",
+    "java/classi annidate e interne.md",
+    "Pasted image 20240429205017.png",
+    "raw notes/2024-04-09 mp.md",
     "ae/strutture della CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-04-05 ae √.md",
     "raw notes/2024-04-12 ae.md",
     "raw notes/2024-03-20 mp (done).md",
@@ -181,21 +203,12 @@
     "java/interesting stuff/interesting stuff.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/interesting stuff",
-    "java/Object.md",
-    "java/Iterable e Iterator.md",
-    "raw notes/2024-04-17 mp.md",
-    "raw notes/2024-04-18 mp.md",
-    "raw notes/2024-04-16 ae.md",
-    "ttd/overwhelming amount of stuff to do b4 esonero.md",
-    "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "ttd",
     "ae/pics/Pasted image 20240421144753.png",
     "ae/pics/Pasted image 20240421144032.png",
     "ae/pics/Pasted image 20240421143818.png",
     "ae/pics/Pasted image 20240421143222.png",
     "ae/pics/Pasted image 20240421141924.png",
-    "ae/pics/Pasted image 20240421140936.png",
-    "ae/esercizi/esercizio 11-31.md",
     "Spaces",
     "ae/esercizi",
     "ae/pics",
