@@ -11,5 +11,5 @@ questa si riferirà in automatico al metodo astratto !
 
 # SAM (single abstract method)
 le interfacce funzionali sono di tipo SAM
->[!tuff] a ogni metodo(unico metodo astratto ?) che accetta un’interfaccia SAM, si può passare un’espressione lambda compatibile con l’unico metodo dell’interfaccia SAM (analogamente per un riferimento a un’interfaccia SAM)
+>[!tuff] a ogni metodo(tipo forEach che prende un Consumer) che accetta un’interfaccia SAM, si può passare un’espressione lambda compatibile con l’unico metodo dell’interfaccia SAM (analogamente per un riferimento a un’interfaccia SAM)
 
