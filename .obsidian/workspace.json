@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-30 mp.md",
+                "file": "raw notes/2024-02-05.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-30 mp.md",
+                "file": "raw notes/2024-02-05.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-30 mp.md",
+                "file": "raw notes/2024-02-05.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-30 mp.md"
+                "file": "raw notes/2024-02-05.md"
               }
             }
           }
@@ -158,8 +157,9 @@
   },
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
-    "java/strutture dati.md",
     "raw notes/2024-04-30 mp.md",
+    "raw notes/2024-02-05.md",
+    "java/strutture dati.md",
     "java/interfacce funzionali e SAM.md",
     "java/classi anonime e lambda function.md",
     "java/confronto, conversione e copia.md",
@@ -188,7 +188,6 @@
     "java/java.md",
     "java/interfacce.md",
     "java/interfacce notevoli.md",
-    "java/interesting stuff/interesting stuff.md",
     "java/interesting stuff",
     "ttd",
     "ae/pics/Pasted image 20240421144753.png",
