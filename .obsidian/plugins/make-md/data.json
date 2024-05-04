@@ -38,7 +38,10 @@
   "deleteFileOption": "trash",
   "expandedSpaces": [
     "/",
-    "//Spaces"
+    "//Spaces",
+    "//raw notes",
+    "//raw notes",
+    "//java"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
