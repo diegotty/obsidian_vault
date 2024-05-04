@@ -92,3 +92,14 @@ le classi che implementano java.util.Map sono:
 - TreeMap: memorizza le coppie in un albero mantenendo un ordine sulle chiavi
 - LinkedHashMap: estende HashMap e mantiene l’ordinamento di iterazione secondo gli inserimenti effettuati
 ## algoritmi sulle collezioni:
+metodi statici per la manipolazione delle collezioni:
+
+| Metodo         | Descrizione                                                         |
+| -------------- | ------------------------------------------------------------------- |
+| `sort`         | Ordina gli elementi di una List                                     |
+| `binarySearch` | Cerca un elemento di una List mediante ricerca binaria              |
+| `fill`         | Rimpiazza tutti gli elementi di una List con l’elemento specificato |
+| `copy`         | Copia gli elementi da una lista all’altra                           |
+| `reversed`     | Inverte l’ordine degli elementi di una List                         |
+| `shuffle`      | Mette in ordine casuale gli elementi di una List                    |
+| `min/max`      | Restituisce l’elemento più piccolo/grande della Collection          |
