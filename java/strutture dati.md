@@ -75,4 +75,14 @@ possiamo usare i metodi:
 - hasNext()
 - hasPrevious()
 ## insiemi
-sono basati su `Set`
+sono basati su `Set`, una sottointerfaccia di Collection e di Iterable
+sono Collection che contengono elementi **tutti distinti**
+le classi insiemi sono:
+- HashSet: memorizza gli elementi in una tabella di hash
+	 ![[Pasted image 20240504145913.png|400]]
+	 se due elementi sono uguali, allora hanno lo stesso hashcode
+	 se due elementi hanno lo stesso hashcode, non è detto che siano uguali
+- TreeSet: memorizza gli elementi in un albero mantenendo un ordine sugli elementi
+- LinkedHashSet: memorizza gli elementi in un ordine di inserimento
+## mappe
+una mappa mette in corrispondenza chiavi e valori
