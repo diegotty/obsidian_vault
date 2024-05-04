@@ -65,7 +65,16 @@ Converter<String, Integer> converter = from -> Integer.valueOf(from); //ha senso
 Integer converted = converter.convert("123"); //non sto creando una nuova istanza di converter, sto utilizzando l'unica istanza per creare un oggetto di tipo Integer ! fun !!!!!!!!!! fuck
 ```
 
-## visibilità delle funzi
+## visibilità delle funzioni lambda
+si possono accedere:
+- campi d’istanza e variabili statiche
+- variabili final del metodo che definisce la lambda
+- variabili del metodo esterno implicitamente final
+```java
+final int num = 1;
+Converter<Integer, String> stringConverter = from -> String.valueOf(from + num);
+stringConverter.convert(2); //3 !!
+```
 ### peculiarità
 la parola chiave this si riferisce all’oggetto della classe che le racchiude
 le espressioni lambda vengono compilate come metodi privati invocati dinamicamente
