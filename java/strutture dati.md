@@ -65,6 +65,14 @@ public interface Iterable<T> {
 ```
 # collezioni fondamentali:
 ## liste
-basate su List, sono una sottointerfaccia di Collection e di Iterable
-### arrayList
-### linkedList
+sono basate su `List`, e sono una sottointerfaccia di Collection e di Iterable
+le classi liste sono: 
+- ArrayList: implementa la lista mediante un array(eventualmente ridimensionato, la cui capacità iniziale è 10)
+- LinkedList: implementa la lista mediante elementi linkati
+### listIterator()
+restituisce un iteratore bidirezionale(un oggetto di una classe che implementa ListIterator, che estende Iterator)
+possiamo usare i metodi:
+- hasNext()
+- hasPrevious()
+## insiemi
+sono basati su `Set`
