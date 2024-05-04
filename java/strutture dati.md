@@ -85,4 +85,10 @@ le classi insiemi sono:
 - TreeSet: memorizza gli elementi in un albero mantenendo un ordine sugli elementi
 - LinkedHashSet: memorizza gli elementi in un ordine di inserimento
 ## mappe
-una mappa mette in corrispondenza chiavi e valori
+una mappa mette in corrispondenza chiavi e valori(come i dizionari in python)
+non ci sono chiavi duplicate
+le classi che implementano java.util.Map sono:
+- HashMap: memorizza le coppie in una tabella Hash
+- TreeMap: memorizza le coppie in un albero mantenendo un ordine sulle chiavi
+- LinkedHashMap: estende HashMap e mantiene l’ordinamento di iterazione secondo gli inserimenti effettuati
+è possibile ottenere l’insieme delle chiavi di una mappa mediante il metodo keySet(), e l’elenco dei valori mediante il metodo values()
