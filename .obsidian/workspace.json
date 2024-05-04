@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "raw notes/2024-04-16 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-11 mp.md",
+                "file": "raw notes/2024-04-11 mp (done).md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "raw notes/2024-04-16 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "raw notes/2024-04-16 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati.md"
+                "file": "raw notes/2024-04-16 mp.md"
               }
             }
           },
@@ -185,9 +185,10 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
-    "Pasted image 20240429205017.png",
-    "raw notes/2024-04-11 mp.md",
     "java/strutture dati.md",
+    "raw notes/2024-04-11 mp (done).md",
+    "java/interfacce.md",
+    "java/pics/Pasted image 20240429205017.png",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-23 mp.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
@@ -196,7 +197,6 @@
     "java/coding etiquette.md",
     "java/classi anonime e lambda function.md",
     "raw notes/2024-04-09 mp (done).md",
-    "java/interfacce.md",
     "java/interfacce notevoli.md",
     "java/classi annidate e interne.md",
     "java/Iterable e Iterator.md",
@@ -223,7 +223,6 @@
     "ae/pics/Pasted image 20240421140350.png",
     "ae/pics/Pasted image 20240421144753.png",
     "ae/pics/Pasted image 20240421144032.png",
-    "ae/pics/Pasted image 20240421143818.png",
     "ae/esercizi",
     "ae/pics",
     "ae",

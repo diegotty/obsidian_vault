@@ -43,5 +43,7 @@ for (int j=0; j<collezione.size(); j++) {
 - mediante il metodo `Iterable.forEach` che permette l’iterazione su qualsiasi collezione senza specificare come effettuare l’iterazione(utilizza il polimorfismo, chiamerà il forEach della classe specificata)
 	- il metodo forEach prende in input un Consumer, che è un’interfaccia funzionale con un solo metodo
 ```java
-void accept(T t);
+public interface Consumer{
+	void accept(T t);
+}
 ```
