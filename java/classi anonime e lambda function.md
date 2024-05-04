@@ -65,6 +65,7 @@ Converter<String, Integer> converter = from -> Integer.valueOf(from); //ha senso
 Integer converted = converter.convert("123"); //non sto creando una nuova istanza di converter, sto utilizzando l'unica istanza per creare un oggetto di tipo Integer ! fun !!!!!!!!!! fuck
 ```
 
+## visibilità delle funzi
 ### peculiarità
 la parola chiave this si riferisce all’oggetto della classe che le racchiude
 le espressioni lambda vengono compilate come metodi privati invocati dinamicamente
@@ -74,21 +75,24 @@ le espressioni lambda vengono compilate come metodi privati invocati dinamicamen
 - Classe::metodoStatico
 - riferimentoOggetto::MetodoNonStatico (il metodo verrà chiamato sull’oggetto)
 - Classe::metodoNonStatico (ci si riferisce al metodo implicitamente esteso con un primo parametro aggiuntivo: un riferimento a un oggetto della classe cui appartiene il metodo)((quindi implicitamente “crea” un altro metodo con un altro parametro in più, l’oggetto))
+
+def di Converter: [[Comparable e Comparator]]
 ```java
 //l'interfaccia converter è creata per rendere facile la conversione tra 2 tipi
 Converter<String, Integer> converter = Integer::valueOf;
 Integer converted = converter.convert("123");
 ```
-inciuci con riferimenti  a metodi d’istanza
+esempi:
 ```java
 public interface StringProcessor{
 	String process(String s);
 }
 StringProcessor f = String::toLowerCase;
-System.out.println(f.process("BELLA"));//toLowerCase() di solito non prende parametri !!! 
+System.out.println(f.process("BELLA"));//toLowerCase() di solito non prende parametri !!! terzo caso! Classe::metodoNonStatico
 String s = "bella";
-StringProcessor g = s::concat;
+StringProcessor g = s::concat; //secondo caso! riferimento::MetodoNonStatico
 System.out.println(g.process("zi!")); //stampa "bella zi!"
-StringProces
+StringProcessor h = String::valueOf; //valueOf è un metodo statico ! primo caso
+System.out.println(h.process("bella")); 
 
 ```

@@ -20,12 +20,12 @@
             }
           },
           {
-            "id": "d3d04c0bc4b0cca2",
+            "id": "3aaedd55adf4b02a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-30 mp.md",
+                "file": "java/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -197,9 +197,9 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
-    "java/interfacce funzionali e SAM.md",
     "java/Comparable e Comparator.md",
     "java/classi anonime e lambda function.md",
+    "java/interfacce funzionali e SAM.md",
     "raw notes/2024-04-23 mp.md",
     "java/interfacce.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
