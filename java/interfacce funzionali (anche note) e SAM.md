@@ -55,11 +55,21 @@ Integer k = toInteger.apply("123");
 
 | Modifier and Type | Method                    |
 | ----------------- | ------------------------- |
-| T                 | `get()`<br>gets a result. |
+| `T`               | `get()`<br>gets a result. |
 
 funzione senza argomenti in input
 ```java
 Supplier<String> stringSuppliler = () -> "ciao";
 Supplier<Person> personSupplier = Person::new;
-personSupplier.get(); // new Person()
+personSupplier.get(); // new Person(). possiamo ottenere un riferimento al costruttore mediante la parola chiave new !!
+```
+
+## consumer\<T>
+| Modifier and Type     | Method                                                                                                                                          |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `void`                | `accept(T t)`<br>performs this operation on the given argument.                                                                                 |
+| `default Consumer<T>` | `andThen(Consumer<? super T> after)`<br>returns a composed Consumer that performs, in sequence, this operation followed by the after operation. |
+funzione con un argomento di tipo generico T e nessun tipo di ritorno
+```java
+Consumer<Person>
 ```
