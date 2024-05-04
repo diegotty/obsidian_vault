@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/Comparable.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +56,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-16 mp.md",
+                "file": "raw notes/2024-04-16 mp (done).md",
                 "mode": "source",
                 "source": false
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/Comparable.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/Comparable.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati.md"
+                "file": "java/Comparable.md"
               }
             }
           },
@@ -210,13 +210,14 @@
   },
   "active": "bd9f5c9eed6c2b70",
   "lastOpenFiles": [
+    "raw notes/2024-04-16 mp (done).md",
+    "java/Comparable.md",
+    "java/strutture dati.md",
     "Pasted image 20240504145913.png",
     "java/interfacce funzionali e SAM.md",
-    "java/strutture dati.md",
     "raw notes/2024-04-30 mp.md",
     "raw notes/2024-02-05 mp.md",
     "java/classi anonime e lambda function.md",
-    "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-11 mp (done).md",
     "conflict-files-obsidian-git.md",
     "java/interfacce.md",
@@ -248,7 +249,6 @@
     "ae/pics/Pasted image 20240420123000.png",
     "ae/pics/Pasted image 20240421140350.png",
     "ae/pics/Pasted image 20240421144753.png",
-    "ae/pics/Pasted image 20240421144032.png",
     "ae/esercizi",
     "ae/pics",
     "ae",
