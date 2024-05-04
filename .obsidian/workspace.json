@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce funzionali e SAM.md",
+                "file": "java/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce funzionali e SAM.md",
+                "file": "java/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce funzionali e SAM.md",
+                "file": "java/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce funzionali e SAM.md"
+                "file": "java/Comparable e Comparator.md"
               }
             }
           },
@@ -198,11 +198,13 @@
   },
   "active": "3aaedd55adf4b02a",
   "lastOpenFiles": [
+    "java/interfacce funzionali e SAM.md",
+    "Pasted image 20240504173222.png",
     "java/classi anonime e lambda function.md",
+    "Pasted image 20240504173115.png",
     "java/coding etiquette.md",
     "java/strutture dati.md",
     "java/Comparable e Comparator.md",
-    "java/interfacce funzionali e SAM.md",
     "raw notes/2024-04-23 mp.md",
     "java/interfacce.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
@@ -228,15 +230,12 @@
     "raw notes/2024-04-04 mp (done).md",
     "java/pics/Pasted image 20240422233133.png",
     "raw notes/2024-03-27 mp (done).md",
-    "raw notes/2024-04-16 ae (done).md",
     "java/pics/Pasted image 20240422223024.png",
     "java/pics/Pasted image 20240422223010.png",
     "java/interesting stuff",
     "ttd",
     "ae/pics/Pasted image 20240420125612.png",
     "ae/pics/Pasted image 20240420123000.png",
-    "ae/pics/Pasted image 20240421140350.png",
-    "ae/pics/Pasted image 20240421144753.png",
     "ae/esercizi",
     "ae/pics",
     "ae",

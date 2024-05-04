@@ -15,6 +15,9 @@ le interfacce funzionali sono di tipo SAM
 
 le interfacce funzionali possono essere “espresse” in Lambda !(in qualche modo, per qualche motivo, guarda [[strutture dati#iterazione interna|esempio iterazione interna]], posso passare come argomento una lambda function a un metodo che prende come argomento un’oggeto di una classe che implementa l’interfaccia funzionale.  the bts does all that !! crazy.)
 esempio:
+![[Pasted image 20240504173222.png]]
 ```java
-List<String> name
+List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+Collections.sort(names, (a,b) -> b.compareTo(a));
+//ho passato una lambda function a un metodo che prende in input una classe che implementa Comparator
 ```
