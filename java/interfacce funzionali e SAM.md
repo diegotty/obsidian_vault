@@ -13,3 +13,4 @@ questa si riferirà in automatico al metodo astratto !
 le interfacce funzionali sono di tipo SAM
 >[!tuff] a ogni metodo(tipo forEach che prende un Consumer) che accetta un’interfaccia SAM, si può passare un’espressione lambda compatibile con l’unico metodo dell’interfaccia SAM (analogamente per un riferimento a un’interfaccia SAM)
 
+le interfacce funzionali possono essere “espresse” in Lambda !(in qualche modo, per qualche motivo, guarda [[strutture dati#iterazione interna|esempio iterazione interna]], posso passare come argomento una lambda function a un metodo che prende come argomento un’oggeto di una classe che implmenet)
