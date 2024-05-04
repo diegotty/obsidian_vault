@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati.md"
+                "file": "java/interfacce funzionali e SAM.md"
               }
             }
           },
@@ -185,12 +185,13 @@
   },
   "active": "c96180af6a1643b0",
   "lastOpenFiles": [
+    "java/classi anonime e lambda function.md",
+    "java/strutture dati.md",
     "raw notes/2024-02-05 mp.md",
     "raw notes/2024-04-16 mp.md",
     "raw notes/2024-04-11 mp (done).md",
     "raw notes/2024-04-30 mp.md",
     "conflict-files-obsidian-git.md",
-    "java/strutture dati.md",
     "java/interfacce.md",
     "java/pics/Pasted image 20240429205017.png",
     "raw notes/2024-04-23 mp.md",
@@ -198,7 +199,6 @@
     "raw notes/2024-04-17 mp (lab).md",
     "java/interfacce funzionali e SAM.md",
     "java/coding etiquette.md",
-    "java/classi anonime e lambda function.md",
     "raw notes/2024-04-09 mp (done).md",
     "java/interfacce notevoli.md",
     "java/classi annidate e interne.md",

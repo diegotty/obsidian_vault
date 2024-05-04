@@ -46,4 +46,8 @@ for (int j=0; j<collezione.size(); j++) {
 public interface Consumer{
 	void accept(T t);
 }
+//esempio iterazione interna
+List<Integer> I = List.of(4,8,15,16,23,42);
+I.forEach(x -> System.out.println(x));
+//il metodo forEach prende un Consumer
 ```
