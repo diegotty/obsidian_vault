@@ -68,3 +68,13 @@ Integer converted = converter.convert("123"); //non sto creando una nuova istanz
 ### peculiarità
 la parola chiave this si riferisce all’oggetto della classe che le racchiude
 le espressioni lambda vengono compilate come metodi privati invocati dinamicamente
+
+## riferimenti a metodi esistenti
+è possibile passare riferimenti a metodi esistenti utilizzando la sintassi:
+- Classe::metodoStatico
+- riferimentoOggetto::MetodoNonStatico
+- Classe::metodoNonStatico
+```java
+Converter<String, Integer> converter = Integer::valueOf;
+Integer converted = converter.convert("123");
+```

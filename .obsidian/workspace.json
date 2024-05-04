@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Comparable.md",
+                "file": "java/classi anonime e lambda function.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +56,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-16 mp (done).md",
+                "file": "raw notes/2024-04-23 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Comparable.md",
+                "file": "java/classi anonime e lambda function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Comparable.md",
+                "file": "java/classi anonime e lambda function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Comparable.md"
+                "file": "java/classi anonime e lambda function.md"
               }
             }
           },
@@ -210,8 +210,10 @@
   },
   "active": "bd9f5c9eed6c2b70",
   "lastOpenFiles": [
+    "java/Comparable e Comparator.md",
+    "raw notes/2024-04-23 mp.md",
+    "raw notes/2024-04-18 mp (useless) (done).md",
     "raw notes/2024-04-16 mp (done).md",
-    "java/Comparable.md",
     "java/strutture dati.md",
     "Pasted image 20240504145913.png",
     "java/interfacce funzionali e SAM.md",
@@ -222,8 +224,6 @@
     "conflict-files-obsidian-git.md",
     "java/interfacce.md",
     "java/pics/Pasted image 20240429205017.png",
-    "raw notes/2024-04-23 mp.md",
-    "raw notes/2024-04-18 mp (useless) (done).md",
     "raw notes/2024-04-17 mp (lab).md",
     "java/coding etiquette.md",
     "raw notes/2024-04-09 mp (done).md",
