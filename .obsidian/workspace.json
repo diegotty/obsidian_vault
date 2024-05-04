@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Comparable e Comparator.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Comparable e Comparator.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Comparable e Comparator.md",
+                "file": "java/interfacce funzionali e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Comparable e Comparator.md"
+                "file": "java/interfacce funzionali e SAM.md"
               }
             }
           },
@@ -198,13 +198,13 @@
   },
   "active": "3aaedd55adf4b02a",
   "lastOpenFiles": [
+    "java/Comparable e Comparator.md",
     "java/interfacce funzionali e SAM.md",
     "Pasted image 20240504173222.png",
     "java/classi anonime e lambda function.md",
     "Pasted image 20240504173115.png",
     "java/coding etiquette.md",
     "java/strutture dati.md",
-    "java/Comparable e Comparator.md",
     "raw notes/2024-04-23 mp.md",
     "java/interfacce.md",
     "raw notes/2024-04-18 mp (useless) (done).md",

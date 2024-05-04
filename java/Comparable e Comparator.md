@@ -27,9 +27,13 @@ comparator.compare(p1, p2);
 
 //confronto inverso, reversed()
 comparator.reversed().compare(p1,p2);
+
 //confronto per data chiave specificata, comparing()
-//comparing prende come parametro una funzione che estrae un Comparable che userà come chiave 
+//comparing() prende come parametro una funzione che estrae un Comparable (che userà come sort key) dal tipo T (in questo caso Person), e ritorna un Comparator<T> che compara by the sort key
 comparator = Comparator.comparing(p -> p.getFirstName());
 
-
+//confronto per criteri multipli a cascata (??):
+comparator = Comparator.comparing(p -> p.getFirstname()).thenComparing(p -> p.getLastName)); //man what the fuck
+//posso scrivere l'ultima riga di codice anche come:
+comparator = Comparator.comparing(Person::getFirstName).thenComparing(Person::getLastName));
 ```
