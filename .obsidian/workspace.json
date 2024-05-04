@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi anonime e lambda function.md",
+                "file": "java/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "java/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "java/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md"
+                "file": "java/Comparable e Comparator.md"
               }
             }
           },
@@ -195,11 +195,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ec479460fc27c138",
+  "active": "c96180af6a1643b0",
   "lastOpenFiles": [
-    "java/interfacce funzionali e SAM.md",
-    "raw notes/2024-04-23 mp.md",
     "java/classi anonime e lambda function.md",
+    "raw notes/2024-04-23 mp.md",
+    "java/interfacce funzionali e SAM.md",
     "java/Comparable e Comparator.md",
     "java/interfacce.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
