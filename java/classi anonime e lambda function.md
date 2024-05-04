@@ -72,9 +72,10 @@ le espressioni lambda vengono compilate come metodi privati invocati dinamicamen
 ## riferimenti a metodi esistenti
 è possibile passare riferimenti a metodi esistenti utilizzando la sintassi:
 - Classe::metodoStatico
-- riferimentoOggetto::MetodoNonStatico
+- riferimentoOggetto::MetodoNonStatico (il metodo verrà chiamato sull’oggetto)
 - Classe::metodoNonStatico
 ```java
+//l'interfaccia converter è creata per rendere facile la conversione tra 2 tipi
 Converter<String, Integer> converter = Integer::valueOf;
 Integer converted = converter.convert("123");
 ```
