@@ -17,10 +17,19 @@ in alternativa, per ordinare in modo diverso gli elementi di un certo oggetto, s
 >If an interface declares an abstract method overriding one of the public methods of `java.lang.Object`, that also does not count toward the interface's abstract method count since any implementation of the interface will have an implementation from `java.lang.Object` or elsewhere.
 
 alcuni metodi di default di comparator:
-- reversed()
-- comparing()
-- thenComparing()
+
 ```java
+// ... person è una classe con campi firstName e lastName, costruttore, etc ..
 Comparator<Person> comparator = (p1, p2) -> p1.firstName.compareTo(p2.firstName);
-Person p
+Person p1 = new Person("flavio", "sperandeo");
+Person p2 = new Person("francesco", "totti");
+comparator.compare(p1, p2);
+
+//confronto inverso, reversed()
+comparator.reversed().compare(p1,p2);
+//confronto per data chiave specificata, comparing()
+//comparing prende come parametro una funzione che estrae un Comparable che userà come chiave 
+comparator = Comparator.comparing(p -> p.getFirstName());
+
+
 ```
