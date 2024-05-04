@@ -18,6 +18,8 @@ alcune interfacce del framework:
 ## la gerarchia
 ![[Pasted image 20240429205017.png|600]]
 ## interazione su collezioni
+non è possibile utilizzare meteodi di modifica durante un’iterazione !! ma è possibile utilizzare `Iterator.remove`
+
 ### iterazione esterna:
 - mediante gli Iterator (vecchio stile)
 ```java
@@ -51,3 +53,18 @@ List<Integer> I = List.of(4,8,15,16,23,42);
 I.forEach(x -> System.out.println(x));
 //il metodo forEach prende un Consumer
 ```
+il metodo forEach:
+```java
+public interface Iterable<T> {
+	default void forEach(Consumer<? super T> action) { 
+		Objects.requireNonNull(action); 
+		for (T t : this) {
+			action.accept(t); 
+		} 
+	}
+```
+# collezioni fondamentali:
+## liste
+basate su List, sono una sottointerfaccia di Collection e di Iterable
+### arrayList
+### linkedList
