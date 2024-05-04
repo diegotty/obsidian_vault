@@ -79,3 +79,16 @@ le espressioni lambda vengono compilate come metodi privati invocati dinamicamen
 Converter<String, Integer> converter = Integer::valueOf;
 Integer converted = converter.convert("123");
 ```
+inciuci con riferimenti  a metodi d’istanza
+```java
+public interface StringProcessor{
+	String process(String s);
+}
+StringProcessor f = String::toLowerCase;
+System.out.println(f.process("BELLA"));//toLowerCase() di solito non prende parametri !!! 
+String s = "bella";
+StringProcessor g = s::concat;
+System.out.println(g.process("zi!")); //stampa "bella zi!"
+StringProces
+
+```
