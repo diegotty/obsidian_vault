@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -33,24 +33,6 @@
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "550c42981929ec97",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "ec479460fc27c138",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-04-23 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -125,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md"
+                "file": "ae/strutture della CPU MIPS.md"
               }
             }
           },
@@ -198,8 +180,9 @@
   },
   "active": "3aaedd55adf4b02a",
   "lastOpenFiles": [
-    "raw notes/2024-04-23 mp.md",
+    "ae/progetto di CPU MIPS.md",
     "java/interfacce funzionali (anche note) e SAM.md",
+    "raw notes/2024-04-23 mp.md",
     "java/tipi generici.md",
     "raw notes/2024-04-30 mp.md",
     "java/Comparable e Comparator.md",
@@ -230,7 +213,6 @@
     "java/pics/Pasted image 20240422233036.png",
     "raw notes/2024-04-04 mp (done).md",
     "java/pics/Pasted image 20240422233133.png",
-    "raw notes/2024-03-27 mp (done).md",
     "java/pics/Pasted image 20240422223024.png",
     "java/pics/Pasted image 20240422223010.png",
     "java/interesting stuff",
