@@ -5,3 +5,4 @@ in questa fase si preleva la nuova istruzione da eseguire. i componenti necessar
 ![[Pasted image 20240420123000.png|400]]
 
 ## fase di instruction decode
+in questa fase l’istruzione viene scomposta in ognuno dei suoi campi, in modo da poterne prelevare i contenuti
