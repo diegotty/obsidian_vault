@@ -4,24 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "70e4f7a3c4962f2b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "f2b0decd139aae69",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/fasi della CPU.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
         "id": "f85afa2160401d3b",
         "type": "tabs",
         "children": [
@@ -43,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -125,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md"
+                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md"
               }
             }
           },
@@ -198,13 +180,14 @@
   },
   "active": "ca7aa4d1e062c629",
   "lastOpenFiles": [
+    "ae/architettura von neumann.md",
+    "ae/strutture della CPU MIPS.md",
     "ae/pseudoistruzioni.md",
     "ae/procedure e funzioni.md",
     "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
     "ae/pezzi del funzionamento di MIPS.md",
-    "ae/strutture della CPU MIPS.md",
     "ae/intro a MIPS.md",
     "ae/fasi della CPU.md",
     "java/interfacce/classi anonime e lambda function.md",
@@ -227,7 +210,6 @@
     "java/oggetti/intro.md",
     "Untitled.md",
     "Vault.md",
-    "ttd/overwhelming amount of stuff to do b4 esonero.md",
     "java/pics/Pasted image 20240504145913.png",
     "java/pics/Pasted image 20240504173222.png",
     "java/controllo",
