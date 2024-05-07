@@ -17,4 +17,4 @@ in questa fase si va ad utilizzare l’ALU ed eventualmente ad accedere alla mem
 ![[Pasted image 20240507224059.png]]
 a seconda dei 4 bit di controllo verrà svolta una delle 6 operazioni nell’alu
 
-le uniche operazioni in cui MemWrite e MemRead sono asserite sono rispettivamente: sw e lw.
+le uniche operazioni in cui MemWrite e MemRead sono asserite sono rispettivamente: sw e lw. inoltre le due linee di controllo non possono essere asserite contemporaneamente
