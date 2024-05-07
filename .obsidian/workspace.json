@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,7 +102,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -118,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/ereditarietà.md"
+                "file": "raw notes/2024-05-07 mp.md"
               }
             }
           }
@@ -181,6 +182,8 @@
   },
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
+    "java/classi.md",
+    "java/ereditarietà.md",
     "raw notes/2024-05-07 mp.md",
     "java/strutture dati.md",
     "java/confronto, conversione e copia.md",
@@ -209,8 +212,6 @@
     "raw notes/2024-04-05 ae √.md",
     "raw notes/2024-04-12 ae.md",
     "raw notes/2024-03-20 mp (done).md",
-    "raw notes/2024-03-26 mp (done).md",
-    "raw notes/2024-03-27 mp (done).md",
     "java/pics/Pasted image 20240422233133.png",
     "java/pics/Pasted image 20240422233036.png",
     "java/pics/Pasted image 20240422223024.png",
