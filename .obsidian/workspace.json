@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "ae/ae.md",
                 "mode": "source",
                 "source": false
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "ae/ae.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "ae/ae.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md"
+                "file": "ae/ae.md"
               }
             }
           },
@@ -204,6 +204,7 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "java/interfacce/classi anonime e lambda function.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/swing/notes.md",
     "README.md",
