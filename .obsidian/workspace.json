@@ -8,30 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c96180af6a1643b0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3aaedd55adf4b02a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/progetto di CPU MIPS.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "f2b0decd139aae69",
             "type": "leaf",
             "state": {
@@ -43,8 +19,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       },
       {
         "id": "f85afa2160401d3b",
@@ -56,19 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/progetto di CPU MIPS.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4fb0618f615f7d6a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "mode": "source",
                 "source": false
               }
@@ -86,8 +49,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -162,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -202,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md"
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md"
               }
             }
           },
@@ -233,12 +195,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ca7aa4d1e062c629",
+  "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
-    "ae/intro a MIPS.md",
-    "ae/strutture della CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
+    "ae/intro a MIPS.md",
     "ae/fasi della CPU.md",
+    "java/interfacce/classi anonime e lambda function.md",
+    "ae/strutture della CPU MIPS.md",
     "Pasted image 20240507224059.png",
     "Pasted image 20240507223229.png",
     "Pasted image 20240507222740.png",
@@ -247,7 +210,6 @@
     "README.md",
     "ae/pezzi del funzionamento di MIPS.md",
     "ae/ae.md",
-    "java/interfacce/classi anonime e lambda function.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/swing/notes.md",
     "java/coding etiquette.md",
