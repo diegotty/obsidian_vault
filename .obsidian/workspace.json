@@ -30,9 +30,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "7a6eb6fb7d50b611",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/metodi.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3b5fcd2f7bde713f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -106,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/classi annidate e interne.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/classi annidate e interne.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/classi annidate e interne.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -177,14 +201,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "3b5fcd2f7bde713f",
   "lastOpenFiles": [
+    "java/metodi.md",
+    "conflict-files-obsidian-git.md",
+    "java/memory allocation.md",
+    "java/controllo",
+    "java/java.md",
+    "java/intro.md",
+    "java/oggetti/campi.md",
+    "java/oggetti/classi.md",
+    "java/polimorfismo/Object.md",
+    "java/oggetti",
+    "java/ereditarietà/Untitled",
+    "java/controllo/strutture di controllo di flusso.md",
+    "java/tipi generici.md",
+    "java/uml.md",
+    "java/ereditarietà/ereditarietà.md",
+    "java/ereditarietà",
+    "java/interfacce/classi annidate e interne.md",
+    "raw notes/2024-05-07 mp.md",
     "java/polimorfismo",
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/Iterable e Iterator.md",
-    "java/strutture di controllo di flusso.md",
-    "java/tipi generici.md",
     "java/strutture dati/strutture `complesse`.md",
     "java/interfacce/interfacce (real).md",
     "java/strutture dati",
@@ -199,31 +239,15 @@
     "raw notes/2024-04-30 mp.md",
     "Pasted image 20240504173222.png",
     "Pasted image 20240504173115.png",
-    "java/coding etiquette.md",
-    "java/strutture dati/strutture dati.md",
-    "raw notes/2024-04-18 mp (useless) (done).md",
-    "raw notes/2024-04-16 mp (done).md",
     "Pasted image 20240504145913.png",
-    "raw notes/2024-02-05 mp.md",
-    "raw notes/2024-04-11 mp (done).md",
-    "conflict-files-obsidian-git.md",
     "java/pics/Pasted image 20240429205017.png",
-    "raw notes/2024-04-17 mp (lab).md",
-    "raw notes/2024-04-09 mp (done).md",
-    "java/interfacce notevoli.md",
-    "java/interfacce/classi annidate e interne.md",
     "Spaces",
     "java/pics/Pasted image 20240422233036.png",
     "java/pics/Pasted image 20240422233133.png",
     "java/pics/Pasted image 20240422223024.png",
     "java/pics/Pasted image 20240422223010.png",
     "java/interesting stuff",
-    "ttd",
     "ae/pics/Pasted image 20240420125612.png",
-    "ae/pics/Pasted image 20240420123000.png",
-    "ae/esercizi",
-    "ae/pics",
-    "ae",
-    "java/pics"
+    "ae/pics/Pasted image 20240420123000.png"
   ]
 }
