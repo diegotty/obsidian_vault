@@ -63,6 +63,18 @@
             }
           },
           {
+            "id": "4fb0618f615f7d6a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/intro a MIPS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "ca7aa4d1e062c629",
             "type": "leaf",
             "state": {
@@ -74,7 +86,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -149,7 +162,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/fasi della CPU.md",
+                "file": "ae/intro a MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -166,7 +179,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/fasi della CPU.md",
+                "file": "ae/intro a MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -189,7 +202,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/fasi della CPU.md"
+                "file": "ae/intro a MIPS.md"
               }
             }
           },
@@ -220,9 +233,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "f2b0decd139aae69",
+  "active": "4fb0618f615f7d6a",
   "lastOpenFiles": [
     "ae/strutture della CPU MIPS.md",
+    "ae/intro a MIPS.md",
     "ae/fasi della CPU.md",
     "Pasted image 20240507224059.png",
     "Pasted image 20240507223229.png",

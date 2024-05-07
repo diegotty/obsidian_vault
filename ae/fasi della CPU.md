@@ -13,6 +13,6 @@ poichè l’architettura deve essere in grado di poter lavorare con tutti e 3 i 
 - registro di lettura 2: $rt
 - registro di scrittura: $rd o $rt, a seconda di RegDst
 ## fase di instruction execute
-a 
-
+in questa fase si va ad utilizzare l’ALU ed eventualmente ad accedere alla memoria dati.
 ![[Pasted image 20240507224059.png]]
+a seconda dei 4 bit di controllo verrà svolta una delle 6 operazioni nell’alu
