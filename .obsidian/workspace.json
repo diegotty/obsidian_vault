@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/ae.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "mode": "source",
                 "source": false
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/ae.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/ae.md",
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/ae.md"
+                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md"
               }
             }
           },
@@ -204,6 +204,9 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "ae/strutture della CPU MIPS.md",
+    "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+    "ae/ae.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/swing/notes.md",
@@ -231,9 +234,6 @@
     "java/oggetti/metodi.md",
     "conflict-files-obsidian-git.md",
     "java/controllo",
-    "java/oggetti/campi.md",
-    "java/oggetti/classi.md",
-    "java/polimorfismo/Object.md",
     "java/oggetti",
     "java/ereditarietà/Untitled",
     "java/ereditarietà",
