@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6069733b7670ad08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-04-23 mp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -159,6 +171,7 @@
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
     "raw notes/2024-04-23 mp.md",
+    "raw notes/2024-04-30 mp.md",
     "raw notes/2024-05-07 mp.md",
     "raw notes/2024-02-05 mp.md",
     "conflict-files-obsidian-git.md",
@@ -170,7 +183,6 @@
     "java/Comparable e Comparator.md",
     "Pasted image 20240504173222.png",
     "Pasted image 20240504145913.png",
-    "raw notes/2024-04-30 mp.md",
     "java/strutture dati.md",
     "java/interfacce funzionali e SAM.md",
     "java/classi anonime e lambda function.md",
