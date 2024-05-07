@@ -31,7 +31,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,7 +49,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -124,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md"
+                "file": "ae/strutture della CPU MIPS.md"
               }
             }
           },
@@ -195,20 +196,23 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e89db9ae7c909f6",
+  "active": "ca7aa4d1e062c629",
   "lastOpenFiles": [
+    "ae/pseudoistruzioni.md",
+    "ae/procedure e funzioni.md",
+    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
+    "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "ae/strutture della CPU MIPS.md",
     "ae/intro a MIPS.md",
     "ae/fasi della CPU.md",
     "java/interfacce/classi anonime e lambda function.md",
-    "ae/strutture della CPU MIPS.md",
     "Pasted image 20240507224059.png",
     "Pasted image 20240507223229.png",
     "Pasted image 20240507222740.png",
     "java/interfacce/classi annidate e interne.md",
-    "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
     "README.md",
-    "ae/pezzi del funzionamento di MIPS.md",
     "ae/ae.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/swing/notes.md",
@@ -224,11 +228,8 @@
     "Untitled.md",
     "Vault.md",
     "ttd/overwhelming amount of stuff to do b4 esonero.md",
-    "java/swing/swing.md",
     "java/pics/Pasted image 20240504145913.png",
     "java/pics/Pasted image 20240504173222.png",
-    "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
-    "java/oggetti/memory allocation.md",
     "java/controllo",
     "java/oggetti",
     "java/ereditarietà/Untitled",

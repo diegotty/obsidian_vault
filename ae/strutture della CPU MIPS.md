@@ -12,14 +12,13 @@ note:
 nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei registri(che corrispondono all’indirizzo del valore immediato delle istruzioni di tipo I)
 ## esempi
 ![[Pasted image 20240420125612.png]]
-//add last 2
 
-## salti condizionati (beq)
+## aggiungere salti condizionati (beq)
 struttura per poter effettuare salti condizionati:
-![[Pasted image 20240421140628.png|450]]
+![[Pasted image 20240421140628.png|400]]
 
-parte della struttra completa (senza la linea di controllo `PCSrc`)
-![[Pasted image 20240421140430.png|500]]
+parte della struttura completa (senza la linea di controllo `PCSrc`)
+![[Pasted image 20240421140430.png|550]]
 struttura completa: 
 viene usata una porta and per controllare se:
 - l’istruzione è un branch (la linea viene presa dal blocco [[#unità di controllo]])
