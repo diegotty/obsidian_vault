@@ -13,4 +13,4 @@ serve un mux messo dopo il mux del jump, che ha come entrata, quando la linea di
 | jrr        | 1      | x      | x        | 0        | 0       | 0        | 0      | 0    | 1   | x      | x      |
 
 ## c
-100+100 ns = 200 ns (non è nece)
+100+100 ns = 200 ns (non è necessario incrementare il periodo di clock)
