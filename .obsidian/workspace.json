@@ -32,24 +32,24 @@
             }
           },
           {
-            "id": "7a6eb6fb7d50b611",
+            "id": "6e89db9ae7c909f6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "ae/strutture della CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "6e89db9ae7c909f6",
+            "id": "f2b0decd139aae69",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/fasi della CPU.md",
                 "mode": "source",
                 "source": false
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/fasi della CPU.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+                "file": "ae/fasi della CPU.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/aggiungere una nuova istruzione( CPU MIPS ).md"
+                "file": "ae/fasi della CPU.md"
               }
             }
           },
@@ -202,15 +202,19 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e89db9ae7c909f6",
+  "active": "f2b0decd139aae69",
   "lastOpenFiles": [
-    "ae/strutture della CPU MIPS.md",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
+    "ae/strutture della CPU MIPS.md",
+    "java/interfacce/classi annidate e interne.md",
+    "README.md",
+    "ae/fasi della CPU.md",
+    "ae/pezzi del funzionamento di MIPS.md",
+    "ae/progetto di CPU MIPS.md",
     "ae/ae.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/swing/notes.md",
-    "README.md",
     "java/coding etiquette.md",
     "java/interesting stuff/interesting stuff.md",
     "java/tipi generici.md",
@@ -229,10 +233,6 @@
     "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "java/oggetti/memory allocation.md",
     "java/progettazione.md",
-    "java/polimorfismo/confronto, conversione e copia.md",
-    "java/oggetti/strings.md",
-    "java/oggetti/metodi.md",
-    "conflict-files-obsidian-git.md",
     "java/controllo",
     "java/oggetti",
     "java/ereditarietà/Untitled",

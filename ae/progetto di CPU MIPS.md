@@ -43,7 +43,7 @@ altre operazioni necessarie:
 | registri           | contengono argomenti delle istruzioni                 |
 | ALU                | fa le operazioni aritmetico-logiche, confronti, etc   |
 | memoria dati       | da cui leggere/in cui scriere i dati (load/store)     |
-le unità sono collegate da diversi `datapath` (interconnessioni che definiscono il flusso delle informazioni nella CPU)
+le unità sono collegate da diversi `datapath` (interconnessioni che definiscono il flusso delle informazioni nella CPU e uniscono i vari componenti)
 
 se un’unità funzionale può ricevere dati da più sorgenti è necessario inserire un `multiplexer(MUX)` per selezionare la sorgente necessaria 
 
