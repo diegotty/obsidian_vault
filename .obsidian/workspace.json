@@ -56,7 +56,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,8 +86,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -162,7 +161,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -179,7 +178,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/progetto di CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -202,7 +201,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/intro a MIPS.md"
+                "file": "ae/progetto di CPU MIPS.md"
               }
             }
           },
@@ -233,7 +232,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "4fb0618f615f7d6a",
+  "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
     "ae/strutture della CPU MIPS.md",
     "ae/intro a MIPS.md",
