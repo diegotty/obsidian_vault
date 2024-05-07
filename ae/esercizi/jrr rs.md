@@ -6,4 +6,9 @@ serve un mux messo dopo il mux del jump, che ha come entrata, quando la linea di
 
 ## a
 ## b
+
+| istruzione | RegDst | ALUSrc |     |     |     |     |     |     |     |     |
+| ---------- | ------ | ------ | --- | --- | --- | --- | --- | --- | --- | --- |
+|            |        |        |     |     |     |     |     |     |     |     |
+
 ## c
