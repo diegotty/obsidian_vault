@@ -16,3 +16,5 @@ poichè l’architettura deve essere in grado di poter lavorare con tutti e 3 i 
 in questa fase si va ad utilizzare l’ALU ed eventualmente ad accedere alla memoria dati.
 ![[Pasted image 20240507224059.png]]
 a seconda dei 4 bit di controllo verrà svolta una delle 6 operazioni nell’alu
+
+le uniche operazioni in cui MemWrite e MemRead sono asserite sono rispettivamente: sw e lw.
