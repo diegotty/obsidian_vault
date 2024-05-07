@@ -9,3 +9,10 @@ in questa fase l’istruzione viene scomposta in ognuno dei suoi campi, in modo 
 ![[Pasted image 20240507222740.png]]
 poichè l’architettura deve essere in grado di poter lavorare con tutti e 3 i tipi di istruzione, sono necessari alcuni mux e segnali di controllo in modoc he ne modifichino il comportamento a seconda del tipo di istruzione
 ![[Pasted image 20240507223229.png|450]]
+- registro di lettura 1: $rs
+- registro di lettura 2: $rt
+- registro di scrittura: $rd o $rt, a seconda di RegDst
+## fase di instruction execute
+a 
+
+![[Pasted image 20240507224059.png]]

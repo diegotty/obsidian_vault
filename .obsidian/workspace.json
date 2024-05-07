@@ -74,8 +74,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -223,10 +222,11 @@
   },
   "active": "f2b0decd139aae69",
   "lastOpenFiles": [
-    "Pasted image 20240507223229.png",
-    "ae/progetto di CPU MIPS.md",
     "ae/strutture della CPU MIPS.md",
     "ae/fasi della CPU.md",
+    "Pasted image 20240507224059.png",
+    "Pasted image 20240507223229.png",
+    "ae/progetto di CPU MIPS.md",
     "Pasted image 20240507222740.png",
     "java/interfacce/classi annidate e interne.md",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
@@ -266,8 +266,6 @@
     "Spaces",
     "java/pics/Pasted image 20240422233036.png",
     "java/pics/Pasted image 20240422233133.png",
-    "java/pics/Pasted image 20240422223024.png",
-    "java/pics/Pasted image 20240422223010.png",
     "java/interesting stuff"
   ]
 }
