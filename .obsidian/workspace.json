@@ -37,14 +37,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "java/strutture dati.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -120,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -137,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce funzionali (anche note) e SAM.md"
+                "file": "raw notes/2024-05-07 mp.md"
               }
             }
           }
@@ -181,8 +180,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b0471a80fd626163",
+  "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
+    "java/strutture dati.md",
+    "java/confronto, conversione e copia.md",
+    "java/interfacce funzionali (anche note) e SAM.md",
     "raw notes/2024-04-23 mp.md",
     "raw notes/2024-05-07 mp.md",
     "raw notes/2024-04-30 mp.md",
@@ -192,14 +194,11 @@
     "raw notes/2024-04-11 mp (done).md",
     "raw notes/2024-04-16 mp (done).md",
     "java/tipi generici.md",
-    "java/interfacce funzionali (anche note) e SAM.md",
     "java/Comparable e Comparator.md",
     "Pasted image 20240504173222.png",
     "Pasted image 20240504145913.png",
-    "java/strutture dati.md",
     "java/interfacce funzionali e SAM.md",
     "java/classi anonime e lambda function.md",
-    "java/confronto, conversione e copia.md",
     "raw notes/2024-04-09 mp (done).md",
     "raw notes/2024-04-17 mp (lab).md",
     "raw notes/2024-04-18 mp (useless) (done).md",
