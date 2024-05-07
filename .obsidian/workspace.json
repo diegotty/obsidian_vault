@@ -47,9 +47,11 @@
             "id": "6e89db9ae7c909f6",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "java/pics/Pasted image 20240507155748.png"
+                "file": "java/interfacce/classi anonime e lambda function.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -129,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/pics/Pasted image 20240507155748.png",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -146,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/pics/Pasted image 20240507155748.png",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -169,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/pics/Pasted image 20240507155748.png"
+                "file": "java/interfacce/classi anonime e lambda function.md"
               }
             }
           },
@@ -200,10 +202,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e733f4f61e47fb45",
+  "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
-    "java/swing/notes.md",
     "java/pics/Pasted image 20240507155748.png",
+    "java/swing/notes.md",
     "README.md",
     "java/coding etiquette.md",
     "java/interesting stuff/interesting stuff.md",
