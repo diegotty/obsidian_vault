@@ -39,10 +39,16 @@
   "expandedSpaces": [
     "/",
     "//Spaces",
-    "//ae",
     "//java",
-    "//java/java/interfacce",
-    "//java/java/interfacce"
+    "//java",
+    "//java",
+    "//java",
+    "//java",
+    "//java/java/ereditarietà",
+    "//java/java/swing",
+    "//java",
+    "//java/java/swing",
+    "//java/java/swing"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
