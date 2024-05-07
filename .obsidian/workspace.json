@@ -49,7 +49,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "java/swing/notes.md",
                 "mode": "source",
                 "source": false
               }
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "java/swing/notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "java/swing/notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "java/swing/notes.md"
               }
             }
           },
@@ -204,6 +204,9 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "Pasted image 20240507155748.png",
+    "java/swing/notes.md",
+    "README.md",
     "java/coding etiquette.md",
     "java/interesting stuff/interesting stuff.md",
     "java/tipi generici.md",
@@ -214,7 +217,6 @@
     "java/oggetti/packages.md",
     "java/oggetti/intro.md",
     "Untitled.md",
-    "README.md",
     "Vault.md",
     "ttd/overwhelming amount of stuff to do b4 esonero.md",
     "java/swing/swing.md",
@@ -233,8 +235,6 @@
     "java/polimorfismo/Object.md",
     "java/oggetti",
     "java/ereditarietà/Untitled",
-    "java/controllo/strutture di controllo di flusso.md",
-    "java/oggetti/uml.md",
     "java/ereditarietà",
     "java/polimorfismo",
     "java/strutture dati",

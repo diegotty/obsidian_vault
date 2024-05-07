@@ -48,6 +48,7 @@
     "//java/java/swing",
     "//java",
     "//java/java/swing",
+    "//java/java/swing",
     "//java/java/swing"
   ],
   "expandFolderOnClick": true,
