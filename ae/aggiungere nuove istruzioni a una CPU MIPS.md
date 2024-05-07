@@ -24,3 +24,8 @@ Istruzione[25-0] → SL2 → (OR con  i 4 MSBs di PC+4) → MUX → PC
 serve il segnale di controllo del nuovo mux. il segnale si chiama Jump. inoltre ci dobbiamo garantire che RegWrite = 0 e MemWrite = 0 per evitare modifiche a registri e MEM.
 ### tempo necessario
 fetch e in parallelo il tempo dell’adder che calcola PC+4
+
+### risultato
+![[Pasted image 20240507235733.png]]
+
+sulle slide ci sono anche esempi per `jal` ,`jr` e `addi`

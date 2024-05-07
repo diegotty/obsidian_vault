@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
+                "file": "ae/esercizi/jrr rs.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
+                "file": "ae/esercizi/jrr rs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
+                "file": "ae/esercizi/jrr rs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/aggiungere nuove istruzioni a una CPU MIPS.md"
+                "file": "ae/esercizi/jrr rs.md"
               }
             }
           },
@@ -180,12 +180,14 @@
   },
   "active": "ca7aa4d1e062c629",
   "lastOpenFiles": [
+    "ae/esercizi/jrr rs.md",
+    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
+    "Pasted image 20240507235733.png",
     "Pasted image 20240507235342.png",
     "ae/architettura von neumann.md",
     "ae/strutture della CPU MIPS.md",
     "ae/pseudoistruzioni.md",
     "ae/procedure e funzioni.md",
-    "ae/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/progetto di CPU MIPS.md",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
     "ae/pezzi del funzionamento di MIPS.md",
@@ -223,8 +225,6 @@
     "Pasted image 20240504173115.png",
     "java/pics/Pasted image 20240429205017.png",
     "Spaces",
-    "java/pics/Pasted image 20240422233036.png",
-    "java/pics/Pasted image 20240422233133.png",
     "java/interesting stuff"
   ]
 }
