@@ -6,3 +6,5 @@ in questa fase si preleva la nuova istruzione da eseguire. i componenti necessar
 
 ## fase di instruction decode
 in questa fase l’istruzione viene scomposta in ognuno dei suoi campi, in modo da poterne prelevare i contenuti
+![[Pasted image 20240507222740.png]]
+poichè l’architettura deve essere in grado di poter lavorare con tutti e 3 i tipi di istruzione, sono necessari alcuni mux e segnali di controllo in modoc he ne modifichino il comportamento a seconda del tipo di istruzione
