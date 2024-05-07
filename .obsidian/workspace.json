@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/classi anonime e lambda function.md",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "java/interfacce/classi annidate e interne.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,8 +86,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -107,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "java/interfacce/classi annidate e interne.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md",
+                "file": "java/interfacce/classi annidate e interne.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/strutture della CPU MIPS.md"
+                "file": "java/interfacce/classi annidate e interne.md"
               }
             }
           },
@@ -178,20 +177,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "3aaedd55adf4b02a",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "ae/progetto di CPU MIPS.md",
-    "java/interfacce funzionali (anche note) e SAM.md",
-    "raw notes/2024-04-23 mp.md",
+    "java/polimorfismo",
+    "java/interfacce/classi anonime e lambda function.md",
+    "java/interfacce/Comparable e Comparator.md",
+    "java/interfacce/Iterable e Iterator.md",
+    "java/strutture di controllo di flusso.md",
     "java/tipi generici.md",
+    "java/strutture dati/strutture `complesse`.md",
+    "java/interfacce/interfacce (real).md",
+    "java/strutture dati",
+    "java/interfacce/interfacce.md",
+    "java/interfacce",
+    "java/swing/swing.md",
+    "java/swing",
+    "ae/strutture della CPU MIPS.md",
+    "ae/progetto di CPU MIPS.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "raw notes/2024-04-23 mp.md",
     "raw notes/2024-04-30 mp.md",
-    "java/Comparable e Comparator.md",
     "Pasted image 20240504173222.png",
-    "java/classi anonime e lambda function.md",
     "Pasted image 20240504173115.png",
     "java/coding etiquette.md",
-    "java/strutture dati.md",
-    "java/interfacce.md",
+    "java/strutture dati/strutture dati.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
     "raw notes/2024-04-16 mp (done).md",
     "Pasted image 20240504145913.png",
@@ -202,16 +211,9 @@
     "raw notes/2024-04-17 mp (lab).md",
     "raw notes/2024-04-09 mp (done).md",
     "java/interfacce notevoli.md",
-    "java/classi annidate e interne.md",
-    "java/Iterable e Iterator.md",
-    "java/confronto, conversione e copia.md",
-    "java/polimorfismo.md",
-    "java/progettazione.md",
-    "java/metodi.md",
-    "java/java.md",
+    "java/interfacce/classi annidate e interne.md",
     "Spaces",
     "java/pics/Pasted image 20240422233036.png",
-    "raw notes/2024-04-04 mp (done).md",
     "java/pics/Pasted image 20240422233133.png",
     "java/pics/Pasted image 20240422223024.png",
     "java/pics/Pasted image 20240422223010.png",
@@ -222,8 +224,6 @@
     "ae/esercizi",
     "ae/pics",
     "ae",
-    "java/pics",
-    "raw notes",
-    "java"
+    "java/pics"
   ]
 }
