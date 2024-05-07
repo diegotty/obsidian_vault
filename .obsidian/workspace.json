@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-07 mp.md",
+                "file": "java/ereditarietà.md",
                 "mode": "source",
                 "source": false
               }
@@ -102,8 +102,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-07 mp.md",
+                "file": "java/ereditarietà.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-07 mp.md",
+                "file": "java/ereditarietà.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-07 mp.md"
+                "file": "java/ereditarietà.md"
               }
             }
           }
@@ -182,8 +181,8 @@
   },
   "active": "289692b6fc3ddb8e",
   "lastOpenFiles": [
-    "java/strutture dati.md",
     "raw notes/2024-05-07 mp.md",
+    "java/strutture dati.md",
     "java/confronto, conversione e copia.md",
     "java/interfacce funzionali (anche note) e SAM.md",
     "raw notes/2024-04-23 mp.md",
