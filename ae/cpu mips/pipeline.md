@@ -9,3 +9,7 @@ in una CPU a un ciclo di clock, in ogni momento è attiva solo un’unità funzi
 per rendere il più efficiente possibile la nostra architettura, possiamo scomporre l’esecuzione di un’istruzione in una catena di montaggio (**pipeline**) dove ogni fase svolge il compito ad essa assegnatogli per poi passare il risultato alla fase successiva, procedendo ad elaborare già la stessa fase dell’istruzione successiva.
 
 ![[Pasted image 20240508134210.png]]
+
+in questo modo:
+- posso scegliere un periodo di clock molto più corto !! (da 800 ps a 200ps)
+- riducendo il periodo di clock ad un quarto, quadruplico la velocità
