@@ -21,4 +21,15 @@ per individuare se la CPU sia malfunzionante, creiamo un programma che lasci il 
 addi $s0, $zero 1 # = 1 ma se è malfunzionante non verrà salvato 1
 ```
 
-## MemWrite <
+## MemWrite ← not(RegWrite)
+si ha il dubbio che:
+- il segnale di controllo MemWrite sia attivo solo se non è attivo il segnale RegWrite
+si assume che:
+- MemToReg = 1 solo per la lw ed altrimenti rimanga 0
+- RegDest = 1 solo per le istruzioni di tipo R ed altrimenti valga 0
+le istruzioni affette sono:
+- le istruzioni cui RegWrite e MemWrite dovrebbero essere entrambe a 0 o 1:
+- j e beq, in cui oltre a saltare si scriverà anche in memoria
+```armasm
+beq $s1, $s0
+```
