@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/esercizi/vj.md",
+                "file": "ae/malfunzionamenti CU.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/esercizi/vj.md",
+                "file": "ae/malfunzionamenti CU.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/esercizi/vj.md",
+                "file": "ae/malfunzionamenti CU.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/esercizi/vj.md"
+                "file": "ae/malfunzionamenti CU.md"
               }
             }
           },
@@ -179,10 +179,11 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/esercizi/vj.md",
+    "ae/malfunzionamenti CU.md",
+    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/esercizi/jrr rs.md",
-    "Screenshot 2024-05-08 (09.43.48).jpeg.png",
+    "ae/pics/Screenshot 2024-05-08 (09.43.48).jpeg.png",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 2 somme.md",
