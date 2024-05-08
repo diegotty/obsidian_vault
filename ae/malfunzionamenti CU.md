@@ -13,3 +13,12 @@ le istruzioni affette sono:
 - i branch, che oltre a saltare, scriveranno anche in un registro
 	- il valore scritto sarà la differenza tra i 2 termini del branch
 	- e il registro sovrascritto sarà rt (RegDest = 0)
+
+![[Pasted image 20240508100750.png|600]]
+
+per individuare se la CPU sia malfunzionante, creiamo un programma che lasci il valore 0 nel registro $s0 se lo è, e scriva 1 se funziona correttamente, tenendo conto che non possiamo scrivere un valore in un registro perchè RegWrite = 0
+```armasm
+addi $s0, $zero 1 # = 1 ma se è malfunzionante non verrà salvato 1
+```
+
+## MemWrite <
