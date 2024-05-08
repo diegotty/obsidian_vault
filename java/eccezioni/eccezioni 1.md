@@ -87,3 +87,20 @@ public static void main(String[] args) throws EccezionePazza, EccezioneMatta {
 
 ## stacktrace
 quando un’eccezione non viene mai catturata, su schermo viene stampato un “riassunto” associato all’eccezione non catturata, chiamato stacktrace
+```java
+Exception in thread "main" NonToccareLaMiaRobaException 
+at Armadietto.apriArmadietto(Armadietto.java:11)
+at Spogliatoio.main(Spogliatoio.java:10)
+```
+questo messaggio viene generato dal metodo `printStackTrace()`, offerto dalla classe Throwable
+per una descrizione sintetica (se prevista o disponibile) della ragione per la quale si è verificata l’eccezione, si può usare il metodo `getMessage()`
+
+## creare eccezioni
+è possibile definire eccezioni personalizzate, per conservare la semantica dell’applicazione.
+al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
+
+```java
+public class NonToccareLaMiaRobaException extends Exception {
+
+}
+```
