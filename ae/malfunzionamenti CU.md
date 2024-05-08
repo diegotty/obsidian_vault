@@ -8,4 +8,8 @@ si ha il dubbio che, per difetto di progettazione della CU:
 si assume che:
 - MemToReg = 1 solo per lw ed altrimenti valga 0
 - RegDest = 1 solo per le istruzioni di tipo R e altrimenti valga 0
-le istruzioni affet
+le istruzioni affette sono:
+- tutte le istruzioni in cui si va a modificare in un registro (tipo R e lw(anche lw scrive su un registro oltre a leggere dalla memoria !)))
+- i branch, che oltre a saltare, scriveranno anche in un registro
+	- il valore scritto sarà la differenza tra i 2 termini del branch
+	- e il registro sovrascritto sarà rt (RegDest = 0)
