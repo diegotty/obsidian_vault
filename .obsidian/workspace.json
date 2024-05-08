@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/pipeline.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/pipeline.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/pipeline.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/pipeline.md"
+                "file": "ae/cpu mips/pipeline.md"
               }
             }
           },
@@ -177,12 +177,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e89db9ae7c909f6",
+  "active": "e733f4f61e47fb45",
   "lastOpenFiles": [
+    "ae/cpu mips/pipeline.md",
     "Pasted image 20240508134210.png",
     "Pasted image 20240508134150.png",
     "ae/malfunzionamenti CU.md",
-    "ae/pipeline.md",
     "Pasted image 20240508100750.png",
     "Pasted image 20240508100729.png",
     "ae/esercizi/vj.md",
@@ -211,7 +211,6 @@
     "ae/pics/Pasted image 20240507235342.png",
     "ae/pics/Pasted image 20240507224059.png",
     "ae/pics/Pasted image 20240507223229.png",
-    "ae/pics/Pasted image 20240507222740.png",
     "ae/architettura von neumann.md",
     "ae/cpu mips",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
