@@ -16,3 +16,10 @@
 | `IOError` e `IOException`    | Grave errore di input o output                                                                                     |
 | `IllegalArgumentException`   | Parametro illegale come input di un metodo                                                                         |
 | `NumberFormatException`      | Errore nel formato di un numero (estende la precedente)                                                            |
+
+## cosa si può gestire con le eccezioni ?
+- errori sincroni, che si verificano a seguito dell’esecuzione di un istruzione
+	divisione per zero
+	errore di I/O
+	errori durante il parsin
+- errori critici o irrecuperabili: errori interni alla JVM
