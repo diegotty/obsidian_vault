@@ -13,3 +13,5 @@ per rendere il più efficiente possibile la nostra architettura, possiamo scompo
 in questo modo:
 - posso scegliere un periodo di clock molto più corto !! (da 800 ps a 200ps)
 - riducendo il periodo di clock ad un quarto, quadruplico la velocità
+## lettura e scrittura dal blocco Registri
+si può notare come quando vengono eseguite 5 istruzioni contempora
