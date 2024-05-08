@@ -25,7 +25,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3b0a469f8c5b7d8c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/cpu mips/progetto di CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -107,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/intro a MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/intro a MIPS.md"
+                "file": "ae/cpu mips/pipeline.md"
               }
             }
           },
@@ -180,6 +192,16 @@
   },
   "active": "ade9302a1866137b",
   "lastOpenFiles": [
+    "Pasted image 20240508160735.png",
+    "ae/cpu mips/progetto di CPU MIPS.md",
+    "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
+    "ae/cpu mips/fasi della CPU.md",
+    "ae/cpu mips/pipeline.md",
+    "ae/cpu mips/malfunzionamenti CU.md",
+    "ae/basi cpu.md",
+    "ae/architettura von neumann.md",
+    "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
     "ae/assembly/pezzi del funzionamento di MIPS.md",
     "ae/assembly/pseudoistruzioni.md",
@@ -188,36 +210,26 @@
     "ae/assembly/procedure e funzioni.md",
     "ae/assembly/system calls.md",
     "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
-    "ae/basi cpu.md",
-    "ae/intro a MIPS.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/assembly/assembly.md",
     "ae/assembly",
-    "ae/cpu mips/pipeline.md",
-    "Pasted image 20240508160032.png",
-    "Pasted image 20240508160012.png",
-    "Pasted image 20240508154944.png",
-    "Pasted image 20240508134210.png",
-    "Pasted image 20240508134150.png",
-    "ae/malfunzionamenti CU.md",
-    "Pasted image 20240508100750.png",
-    "Pasted image 20240508100729.png",
+    "ae/pics/Pasted image 20240508160032.png",
+    "ae/pics/Pasted image 20240508160012.png",
+    "ae/pics/Pasted image 20240508154944.png",
+    "ae/pics/Pasted image 20240508134210.png",
+    "ae/pics/Pasted image 20240508134150.png",
+    "ae/pics/Pasted image 20240508100750.png",
+    "ae/pics/Pasted image 20240508100729.png",
     "ae/esercizi/vj.md",
     "ae/esercizi/jrr rs.md",
     "ae/pics/Screenshot 2024-05-08 (09.43.48).jpeg.png",
-    "ae/cpu mips/fasi della CPU.md",
-    "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 2 somme.md",
     "ae/esercizi/jral.md",
-    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/pics/Screenshot 2024-05-08 (00.20.22).jpeg.png",
     "ae/cpu mips/cpu mips.md",
     "ae/pics/Pasted image 20240507235733.png",
     "Untitled.md",
-    "ae/architettura von neumann.md",
     "ae/cpu mips",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
-    "java/interfacce/classi anonime e lambda function.md",
     "java/controllo",
     "java/oggetti",
     "java/ereditarietà/Untitled",

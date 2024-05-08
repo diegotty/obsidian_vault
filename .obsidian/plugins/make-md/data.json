@@ -46,7 +46,8 @@
     "//java/java/swing",
     "//java/java/interfacce",
     "//Spaces",
-    "//ae"
+    "//ae",
+    "//ae/ae/cpu mips"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
