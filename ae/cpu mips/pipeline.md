@@ -14,4 +14,8 @@ in questo modo:
 - posso scegliere un periodo di clock molto più corto !! (da 800 ps a 200ps)
 - riducendo il periodo di clock ad un quarto, quadruplico la velocità
 ## lettura e scrittura dal blocco Registri
-si può notare come quando vengono eseguite 5 istruzioni contempora
+si può notare come quando vengono eseguite 5 istruzioni contemporaneamente, il blocco dei Registri verrebbe usato 2 volte (in WB e in ID). Ciò è possibile perchè lavorando sui registri, sia WB che ID impiegano un tempo notevolmente minore (per esempio, la metà), e si possono fare entrambe le operazioni in un solo colpo di clock
+![[Pasted image 20240508154944.png]]
+in particolar modo possiamo eseguire la scrittura durante il rising edge e la leggura durante il falling edge.
+
+# criticità(harzard
