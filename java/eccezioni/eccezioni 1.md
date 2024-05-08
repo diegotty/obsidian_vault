@@ -77,9 +77,13 @@ se viene sollevata un’eccezione:
 una volta solevata un’eccezione, possiamo:
 - ignorare l’eccezione e propagarla al metodo chiamante, aggiungendo però all’intestazione del metodo la clausola `throws`, seguito dall’elenco delle eccezioni potenzialmente sollevate (**politica declare**)
 ```java
-public static void main(String[] args) throws EccezionePazza {
-
+public static void main(String[] args) throws EccezionePazza, EccezioneMatta {
+//con throws dichiaro che il metodo può solleverare eccezioni dello stesso tipo (o sottotipo) di quelle elencate dopo throws
+//usare throws non è obbligatorio, dipende dal tipo di eccezione
 }
 ```
 - catturare l’eccezione, gestendo la situazione anomala in modo opportuno, prendendo provvedimenti e contromisure per arginare il più possibile la situazione di emergenza (**politica catch**)
 >[!tuff] devo perforza usare catch-or-declare !! altrimenti viene emesso un errore. 
+
+## stacktrace
+quando un’eccezione non viene mai catturata, su schermo viene stampato un “riassunto” associato all’eccezione non catturata, chiamato stacktrace
