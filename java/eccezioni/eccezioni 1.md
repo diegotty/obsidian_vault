@@ -52,3 +52,30 @@ catch(ExceptionType4 e4){} // l'ordine in cui scrivo le eccezioni conta !!
 finally{}
 ```
 nell’attuare il processo di cattura, la JVM sceglie **il primo catch compatibile**, tale cioè che il tipo dell’eccezione dichiarata sia lo stesso o un supertipo dell’eccezione lanciata
+è ovviamente meglio rispondere ad un’eccezione con il rimedio specifico e non con uno generale !
+
+si possono lanciare eccezioni dentro il blocco try: usando la parola chiave `throw`
+```java
+try{
+	if(condizione) throw new Eccezione1();
+	else throw new Eccezione2();
+}
+catch(Eccezione1|Eccezione2 e){
+	//gestione di 2 casi in un unico blocco
+}
+```
+
+### flusso in presenza o assenza di eccezioni
+se durante l’esecuzione non vengono sollevate eccezioni:
+- tutte le istruzioni dentro il try-catch vengono eseguite normalmente
+- terminato il blocco try-catch, l’esecuzione riprende dalla prima linea dopo il blocco try-catch
+se viene sollevata un’eccezione:
+- l’esecuzione del blocco try viene bloccata
+- il controllo passa al primo blocco catch compatibile
+- l’esecuzione riprende dalla prima linea dopo il blocco try-catch
+## politica catch-or-declare
+una volta solevata un’eccezione, possiamo:
+- ignorare l’eccezione e propagarla al metodo chiamante, aggiungendo però all’intestazione del metodo la clausola `throws`, seguito dall’elenco delle eccezioni potenzialmente sollevate (**politica declare**)
+
+- catturare l’eccezione, gestendo la situazione anomala in modo opportuno, prendendo provvedimenti e contromisure per arginare il più possibile la situazione di emergenza (**politica catch**)
+>[!tuff] devo perforza usare catch-or-declare !! altrimenti viene emesso un errore. 
