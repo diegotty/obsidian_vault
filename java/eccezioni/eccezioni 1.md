@@ -76,6 +76,10 @@ se viene sollevata un’eccezione:
 ## politica catch-or-declare
 una volta solevata un’eccezione, possiamo:
 - ignorare l’eccezione e propagarla al metodo chiamante, aggiungendo però all’intestazione del metodo la clausola `throws`, seguito dall’elenco delle eccezioni potenzialmente sollevate (**politica declare**)
+```java
+public static void main(String[] args) throws EccezionePazza {
 
+}
+```
 - catturare l’eccezione, gestendo la situazione anomala in modo opportuno, prendendo provvedimenti e contromisure per arginare il più possibile la situazione di emergenza (**politica catch**)
 >[!tuff] devo perforza usare catch-or-declare !! altrimenti viene emesso un errore. 
