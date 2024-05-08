@@ -101,6 +101,10 @@ per una descrizione sintetica (se prevista o disponibile) della ragione per la q
 ```java
 public class Scaffale{
 	private Libro[] libri = new Libro[20];
+
+	public Libro getLibro(int i) throws LibroMancanteException{
+		if (i < 0 || i >= libri.legnth) throw new LibroMancanteException();
+	}
 } 
 ```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
