@@ -35,4 +35,15 @@ sub $s2,$s0,$t0
 | `sub $s2,$s0,$t0` |       |  IF   | **ID** |  EXE  |  MEM   |  WB   |
 per via della scomposizione in fasi dell’esecuzione dell’istruzione, si verifica un *Data Hazard* sul registro `$s0`, il cui valore aggiornato non risulta ancora scritto, poiché la fase di WB dell’istruzione modificante non è ancora stato portato a termine. Di conseguenza, la fase di ID dell’istruzione direttamente successiva **leggerà il valore errato**
 
-per risolevere la criticità, bisogna allineare le fasi 
+per risolevere la criticità, bisogna allineare le fasi di WB e ID delle due istruzioni. ciò si può fare introducendo due stalli nella pipeline, ossia un’istruzione finta, detta NOP(no-operation), che funge da rallentamento nel caricamento della pipeline, risolvendo il data hazard.
+
+|                   | 1° CC | 3° CC | 2° CC | 4° CC | 5° CC  | 6° CC | 7° CC | 8° CC |
+| :---------------- | :---: | :---: | :---: | :---: | :----: | :---: | ----- | ----- |
+| `addi $s0,$s1,5`  |  IF   |  EXE  |  ID   |  MEM  | **WB** |       |       |       |
+| `sub $s2,$s0,$t0` |       |   →   |   →   |  IF   | **ID** |  EXE  | MEM   | WB    |
+# forwarding
+in alcuni casi, come l’esempio precedente, l’informazione necessaria è già presente nella pipeline, prima del WB.
+in questi casi possiamo inserire nel 
+
+![[Pasted image 20240508160032.png|650]]
+in questi casi possia

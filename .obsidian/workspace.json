@@ -25,13 +25,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/intro a MIPS.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -106,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/intro a MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/intro a MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/pipeline.md"
+                "file": "ae/intro a MIPS.md"
               }
             }
           },
@@ -177,41 +178,42 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e89db9ae7c909f6",
+  "active": "ade9302a1866137b",
   "lastOpenFiles": [
-    "Pasted image 20240508154944.png",
+    "ae/MIPS 2000.md",
+    "ae/assembly/pezzi del funzionamento di MIPS.md",
+    "ae/assembly/pseudoistruzioni.md",
+    "ae/assembly/vettori.md",
+    "ae/assembly/ricorsione.md",
+    "ae/assembly/procedure e funzioni.md",
+    "ae/assembly/system calls.md",
+    "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
+    "ae/basi cpu.md",
+    "ae/intro a MIPS.md",
+    "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/assembly/assembly.md",
+    "ae/assembly",
     "ae/cpu mips/pipeline.md",
+    "Pasted image 20240508160032.png",
+    "Pasted image 20240508160012.png",
+    "Pasted image 20240508154944.png",
     "Pasted image 20240508134210.png",
     "Pasted image 20240508134150.png",
     "ae/malfunzionamenti CU.md",
     "Pasted image 20240508100750.png",
     "Pasted image 20240508100729.png",
     "ae/esercizi/vj.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/esercizi/jrr rs.md",
     "ae/pics/Screenshot 2024-05-08 (09.43.48).jpeg.png",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 2 somme.md",
-    "ae/intro a MIPS.md",
     "ae/esercizi/jral.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/pics/Screenshot 2024-05-08 (00.20.22).jpeg.png",
-    "ae/MIPS 2000.md",
-    "ae/pezzi del funzionamento di MIPS.md",
-    "ae/procedure e funzioni.md",
-    "ae/pseudoistruzioni.md",
-    "ae/ricorsione.md",
-    "ae/vettori.md",
-    "ae/system calls.md",
-    "ae/assembly MIPS (strutture, syntax, etc).md",
-    "ae/basi cpu.md",
     "ae/cpu mips/cpu mips.md",
     "ae/pics/Pasted image 20240507235733.png",
     "Untitled.md",
-    "ae/pics/Pasted image 20240507235342.png",
-    "ae/pics/Pasted image 20240507224059.png",
-    "ae/pics/Pasted image 20240507223229.png",
     "ae/architettura von neumann.md",
     "ae/cpu mips",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
@@ -223,7 +225,6 @@
     "java/polimorfismo",
     "java/strutture dati",
     "java/interfacce",
-    "java/swing",
-    "Spaces"
+    "java/swing"
   ]
 }
