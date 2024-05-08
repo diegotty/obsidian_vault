@@ -98,7 +98,10 @@ per una descrizione sintetica (se prevista o disponibile) della ragione per la q
 
 ## creare eccezioni
 è possibile definire eccezioni personalizzate, per conservare la semantica dell’applicazione.
-```
+```java
+public class Scaffale{
+	private Libro[] libri = new Libro[20];
+} 
 ```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
 
