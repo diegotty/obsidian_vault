@@ -179,12 +179,13 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "ae/esercizi/jrr rs.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/esercizi/vj.md",
+    "Screenshot 2024-05-08 (09.43.48).jpeg.png",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/esercizi/esercizio 2 somme.md",
-    "ae/esercizi/vj.md",
-    "ae/esercizi/jrr rs.md",
     "ae/intro a MIPS.md",
     "ae/esercizi/jral.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
@@ -211,7 +212,6 @@
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "README.md",
-    "ae/ae.md",
     "java/pics/Pasted image 20240507155748.png",
     "java/pics/Pasted image 20240504145913.png",
     "java/pics/Pasted image 20240504173222.png",
@@ -223,7 +223,6 @@
     "java/strutture dati",
     "java/interfacce",
     "java/swing",
-    "Pasted image 20240504173115.png",
     "Spaces"
   ]
 }
