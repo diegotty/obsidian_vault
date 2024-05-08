@@ -13,7 +13,25 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "java/eccezioni/eccezioni 1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "729bb09e3fbb052c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "fba400ceac5143a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "raw notes/2024-04-23 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "java/eccezioni/eccezioni 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "java/eccezioni/eccezioni 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/pipeline.md"
+                "file": "java/eccezioni/eccezioni 1.md"
               }
             }
           },
@@ -167,10 +185,17 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "raw notes/2024-04-23 mp.md",
+    "java/eccezioni/eccezioni 1.md",
+    "Pasted image 20240508160735.png",
+    "java/eccezioni/eccezioni.md",
+    "java/eccezioni",
+    "raw notes/2024-04-30 mp.md",
+    "raw notes/2024-02-05 mp.md",
+    "raw notes/2024-05-07 mp.md",
+    "ae/cpu mips/pipeline.md",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
-    "ae/cpu mips/pipeline.md",
-    "Pasted image 20240508160735.png",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/cpu mips/malfunzionamenti CU.md",
@@ -195,22 +220,15 @@
     "ae/pics/Pasted image 20240508100750.png",
     "ae/pics/Pasted image 20240508100729.png",
     "ae/esercizi/vj.md",
-    "ae/esercizi/jrr rs.md",
     "ae/pics/Screenshot 2024-05-08 (09.43.48).jpeg.png",
-    "ae/esercizi/esercizio 2 somme.md",
-    "ae/esercizi/jral.md",
     "ae/pics/Screenshot 2024-05-08 (00.20.22).jpeg.png",
-    "ae/cpu mips/cpu mips.md",
-    "Untitled.md",
     "ae/cpu mips",
-    "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
     "java/controllo",
     "java/oggetti",
     "java/ereditarietà/Untitled",
     "java/ereditarietà",
     "java/polimorfismo",
     "java/strutture dati",
-    "java/interfacce",
-    "java/swing"
+    "java/interfacce"
   ]
 }
