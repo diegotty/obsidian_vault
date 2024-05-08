@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ade9302a1866137b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -167,9 +179,13 @@
   },
   "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
+    "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/cpu mips/fasi della CPU.md",
+    "ae/cpu mips/progetto di CPU MIPS.md",
+    "ae/esercizi/esercizio 2 somme.md",
+    "ae/esercizi/vj.md",
     "ae/esercizi/jrr rs.md",
     "ae/intro a MIPS.md",
-    "ae/esercizi/vj.md",
     "ae/esercizi/jral.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/pics/Screenshot 2024-05-08 (00.20.22).jpeg.png",
@@ -183,7 +199,6 @@
     "ae/assembly MIPS (strutture, syntax, etc).md",
     "ae/basi cpu.md",
     "ae/cpu mips/cpu mips.md",
-    "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/pics/Pasted image 20240507235733.png",
     "Untitled.md",
     "ae/pics/Pasted image 20240507235342.png",
@@ -192,15 +207,12 @@
     "ae/pics/Pasted image 20240507222740.png",
     "ae/architettura von neumann.md",
     "ae/cpu mips",
-    "ae/cpu mips/fasi della CPU.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "README.md",
     "ae/ae.md",
     "java/pics/Pasted image 20240507155748.png",
-    "java/swing/notes.md",
     "java/pics/Pasted image 20240504145913.png",
     "java/pics/Pasted image 20240504173222.png",
     "java/controllo",

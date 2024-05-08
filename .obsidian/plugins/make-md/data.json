@@ -47,7 +47,8 @@
     "//java/java/interfacce",
     "//ae",
     "//Spaces",
-    "//ae/ae/esercizi"
+    "//ae/ae/esercizi",
+    "//ae/ae/cpu mips"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
