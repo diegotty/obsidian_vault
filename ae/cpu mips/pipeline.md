@@ -23,7 +23,7 @@ tipi di hazard:
 - strutturali: le risorse hardware non sono sufficienti(per esempio memoria dati e memoria istruzioni in una sola unità)
 - sui dati: il dato necessario non è ancora pronto
 - sul controllo: la presenza di un salto cambia il flusso di esecuzione delle istruzioni
-esempio di data hazard: 
+## data harzard 
 ```asm
 addi $s0,$s1,5
 sub $s2,$s0,$t0
@@ -41,12 +41,23 @@ per risolevere la criticità, bisogna allineare le fasi di WB e ID delle due ist
 | :---------------- | :---: | :---: | :---: | :---: | :----: | :---: | ----- | ----- |
 | `addi $s0,$s1,5`  |  IF   |  EXE  |  ID   |  MEM  | **WB** |       |       |       |
 | `sub $s2,$s0,$t0` |       |   →   |   →   |  IF   | **ID** |  EXE  | MEM   | WB    |
+## control hazard
+
+
+
+
+
+
 # forwarding
 in alcuni casi, come l’esempio precedente, l’informazione necessaria è già presente nella pipeline, prima del WB.
 in questi casi possiamo inserire nel [[progetto di CPU MIPS#unità funzionali necessarie|datapath]] delle “scorciatoie”, che recapitano il dato necessario all’unità funzionale che ne ha bisogno senza aspettare la fase di WB
 ![[Pasted image 20240508160032.png|650]]
 in questo esempio non è necessario usare 2 stalli
->[!tuff] usare il forwarding è possibile quando la fase che deve ricevere il dato è successiva a quella che lo produce nel diagramma della pipeline !!
+>[!tuff] il dato non può essere propagato nello stesso colpo di clock in cui viene generato
+>usare il forwarding è possibile quando la fase che deve ricevere il dato è successiva a quella che lo produce nel diagramma della pipeline !!
+>
 
+# bolle
+se la fase che ha bisogno del dato si trova prima di quella che lo produce, sarà necessario inserire una attesa (stallo o bolla), per rallentare l’esecuzione in attesa che il dato venga generato, per poi recapitarlo con il forwarding.
 
-![[Pasted image 20240508160735.png|56]]
+![[Pasted image 20240508160735.png|650]]
