@@ -104,6 +104,7 @@ public class Scaffale{
 
 	public Libro getLibro(int i) throws LibroMancanteException{
 		if (i < 0 || i >= libri.legnth) throw new LibroMancanteException();
+		return libri[i];
 	}
 } 
 ```
