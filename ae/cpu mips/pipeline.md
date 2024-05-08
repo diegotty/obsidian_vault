@@ -42,7 +42,11 @@ per risolevere la criticità, bisogna allineare le fasi di WB e ID delle due ist
 | `addi $s0,$s1,5`  |  IF   |  EXE  |  ID   |  MEM  | **WB** |       |       |       |
 | `sub $s2,$s0,$t0` |       |   →   |   →   |  IF   | **ID** |  EXE  | MEM   | WB    |
 ## control hazard
-
+quando deve essere effettuato un salto condizionale, potrebbero verificarsi due casistiche:
+- il salto non viene eseguito, non modificando il flusso di esecuzione delle istruzioni (il control hazard si risolve da solo)
+- il salto viene eseguito, modificando il flusso di istruzioni. in tal caso sarà necessario andare a lavorare sulla pipeline, poichè sarà necessario rimpiazzare l’istruzione attualmente caricata nella pipeline(quella appena sotto il branch) con l’istruzione su cui viene effettutato il salto.
+in questo caso si devono usare delle bolle per creare del delay.
+>[!tuff] il salto di un branch può essere deciso nella fase EXE, o anche nella fa
 
 
 

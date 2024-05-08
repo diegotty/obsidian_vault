@@ -18,33 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "ade9302a1866137b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/cpu mips/pipeline.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3b0a469f8c5b7d8c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "ae/cpu mips/progetto di CPU MIPS.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -190,14 +165,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ade9302a1866137b",
+  "active": "6e89db9ae7c909f6",
   "lastOpenFiles": [
-    "Pasted image 20240508160735.png",
+    "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
+    "ae/cpu mips/pipeline.md",
+    "Pasted image 20240508160735.png",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
-    "ae/cpu mips/fasi della CPU.md",
-    "ae/cpu mips/pipeline.md",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/basi cpu.md",
     "ae/architettura von neumann.md",
@@ -226,7 +201,6 @@
     "ae/esercizi/jral.md",
     "ae/pics/Screenshot 2024-05-08 (00.20.22).jpeg.png",
     "ae/cpu mips/cpu mips.md",
-    "ae/pics/Pasted image 20240507235733.png",
     "Untitled.md",
     "ae/cpu mips",
     "ae/aggiungere una nuova istruzione( CPU MIPS ).md",
