@@ -31,5 +31,9 @@ le istruzioni affette sono:
 - le istruzioni cui RegWrite e MemWrite dovrebbero essere entrambe a 0 o 1:
 - j e beq, in cui oltre a saltare si scriverà anche in memoria
 ```armasm
-beq $s1, $s0
+li $s0, 0
+li $s1, 1
+beq $s1, $s1, On //1-1 = 0 (indirizzo zero), e salva il contenuto di $s1 che è 1
+On:
+lw $s0,0 
 ```
