@@ -59,6 +59,7 @@ si possono lanciare eccezioni dentro il blocco try: usando la parola chiave `thr
 try{
 	if(condizione) throw new Eccezione1();
 	else throw new Eccezione2();
+	// con la parola chiave throw posso lanciare un'eccezione
 }
 catch(Eccezione1|Eccezione2 e){
 	//gestione di 2 casi in un unico blocco
@@ -97,6 +98,8 @@ per una descrizione sintetica (se prevista o disponibile) della ragione per la q
 
 ## creare eccezioni
 è possibile definire eccezioni personalizzate, per conservare la semantica dell’applicazione.
+```
+```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
 
 ```java
