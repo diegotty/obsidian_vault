@@ -18,4 +18,21 @@ si può notare come quando vengono eseguite 5 istruzioni contemporaneamente, il 
 ![[Pasted image 20240508154944.png]]
 in particolar modo possiamo eseguire la scrittura durante il rising edge e la leggura durante il falling edge.
 
-# criticità(harzard
+# criticità(harzard)
+tipi di hazard:
+- strutturali: le risorse hardware non sono sufficienti(per esempio memoria dati e memoria istruzioni in una sola unità)
+- sui dati: il dato necessario non è ancora pronto
+- sul controllo: la presenza di un salto cambia il flusso di esecuzione delle istruzioni
+esempio di data hazard: 
+```asm
+addi $s0,$s1,5
+sub $s2,$s0,$t0
+```
+
+|                   | 1° CC | 2° CC | 3° CC  | 4° CC | 5° CC  | 6° CC |
+| :---------------- | :---: | :---: | :----: | :---: | :----: | :---: |
+| `addi $s0,$s1,5`  |  IF   |  ID   |  EXE   |  MEM  | **WB** |       |
+| `sub $s2,$s0,$t0` |       |  IF   | **ID** |  EXE  |  MEM   |  WB   |
+per via della scomposizione in fasi dell’esecuzione dell’istruzione, si verifica un *Data Hazard* sul registro `$s0`, il cui valore aggiornato non risulta ancora scritto, poiché la fase di WB dell’istruzione modificante non è ancora stato portato a termine. Di conseguenza, la fase di ID dell’istruzione direttamente successiva **leggerà il valore errato**
+
+per risolevere la criticità, bisogna allineare le fasi 
