@@ -39,10 +39,13 @@
   "expandedSpaces": [
     "/",
     "//Spaces",
-    "//raw notes",
     "//java",
     "//java/java/strutture dati",
-    "//java/java/interfacce"
+    "//java/java/strutture dati (real)",
+    "//java/java/strutture dati (real)",
+    "//java/java/strutture dati (real)",
+    "//java/java/strutture dati (real)",
+    "//raw notes"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
