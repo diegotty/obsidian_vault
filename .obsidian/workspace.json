@@ -18,19 +18,26 @@
                 "source": false
               }
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "a53159b2b8a0b763",
+        "type": "tabs",
+        "children": [
           {
             "id": "c044ca04e96d2737",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "ae/esercizi"
+                "file": "ae/intro a MIPS.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,6 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "ae/intro a MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,6 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "ae/intro a MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +151,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "ae/intro a MIPS.md"
+              }
             }
           },
           {
@@ -172,8 +183,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e733f4f61e47fb45",
+  "active": "c044ca04e96d2737",
   "lastOpenFiles": [
+    "ae/basi cpu.md",
     "ae/cpu mips/cpu mips.md",
     "ae/cpu mips/implementazione pipeline.md",
     "Pasted image 20240509223407.png",
@@ -205,7 +217,6 @@
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/cpu mips/malfunzionamenti CU.md",
-    "ae/basi cpu.md",
     "ae/architettura von neumann.md",
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",

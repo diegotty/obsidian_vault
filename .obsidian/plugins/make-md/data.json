@@ -46,16 +46,11 @@
     "//java/java/swing",
     "//java/java/interfacce",
     "//Spaces",
-    "//ae/ae/cpu mips",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
-    "//ae",
-    "//ae/ae/cpu mips",
-    "//ae/ae/esercizi",
-    "//ae/ae/esercizi",
-    "//ae/ae/esercizi"
+    "//ae"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
