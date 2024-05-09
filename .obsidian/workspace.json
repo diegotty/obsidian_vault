@@ -8,22 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "289692b6fc3ddb8e",
-            "type": "leaf",
-            "state": {
-              "type": "mk-space",
-              "state": {
-                "path": "java"
-              }
-            }
-          },
-          {
             "id": "6069733b7670ad08",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-23 mp.md",
+                "file": "raw notes/2024-05-09 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "raw notes/2024-05-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "raw notes/2024-05-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +133,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "raw notes/2024-05-09 mp.md"
+              }
             }
           }
         ]
@@ -161,8 +155,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "289692b6fc3ddb8e",
+  "active": "6069733b7670ad08",
   "lastOpenFiles": [
+    "raw notes/2024-05-09 mp.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-04-23 mp.md",
     "java/swing/notes.md",
@@ -196,7 +191,6 @@
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce",
-    "java/interesting stuff/junit.md",
     "java/ereditarietà",
     "java/eccezioni",
     "java/controllo",
