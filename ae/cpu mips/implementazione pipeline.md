@@ -1,0 +1,1 @@
+per implementare la pipeline, e permettere quindi il forwarding, è necessario integrare dei registri tra le varie unità funzionali, in modo tale da poter recuperare un dato se necess

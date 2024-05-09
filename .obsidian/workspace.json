@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/pipeline.md"
+                "file": "ae/cpu mips/implementazione pipeline.md"
               }
             }
           },
@@ -167,8 +167,9 @@
   },
   "active": "5814e17fe5a54d9d",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "ae/cpu mips/pipeline.md",
+    "ae/cpu mips/implementazione pipeline.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-09 mp.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/strutture dati (real)/strutture `complesse`.md",
@@ -195,7 +196,6 @@
     "ae/assembly/pseudoistruzioni.md",
     "ae/assembly/vettori.md",
     "ae/assembly/ricorsione.md",
-    "ae/assembly/procedure e funzioni.md",
     "ae/assembly",
     "ae/pics/Pasted image 20240508160032.png",
     "ae/pics/Pasted image 20240508160012.png",
