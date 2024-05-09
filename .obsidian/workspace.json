@@ -11,9 +11,11 @@
             "id": "6069733b7670ad08",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "raw notes"
+                "file": "raw notes/2024-05-09 mp.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -92,6 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "raw notes/2024-05-09 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "raw notes/2024-05-09 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "raw notes/2024-05-09 mp.md"
+              }
             }
           }
         ]
@@ -151,7 +158,9 @@
   },
   "active": "6069733b7670ad08",
   "lastOpenFiles": [
+    "java/ereditarietà/ereditarietà.md",
     "java/strutture dati (real)/strutture dati (real).md",
+    "raw notes/2024-05-09 mp.md",
     "java/java.md",
     "java/coding etiquette.md",
     "java/polimorfismo/polimorfismo.md",
@@ -160,12 +169,10 @@
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "java/interfacce/interfacce.md",
-    "java/ereditarietà/ereditarietà.md",
     "java/interesting stuff/interesting stuff.md",
     "java/eccezioni/eccezioni.md",
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/tipi generici.md",
-    "raw notes/2024-05-09 mp.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-04-23 mp.md",
     "java/swing/notes.md",
