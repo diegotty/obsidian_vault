@@ -51,7 +51,11 @@
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
-    "//ae"
+    "//ae",
+    "//ae/ae/cpu mips",
+    "//ae/ae/esercizi",
+    "//ae/ae/esercizi",
+    "//ae/ae/esercizi"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

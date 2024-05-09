@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c044ca04e96d2737",
+            "type": "leaf",
+            "state": {
+              "type": "mk-space",
+              "state": {
+                "path": "ae/esercizi"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +105,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +121,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +142,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md"
-              }
+              "state": {}
             }
           },
           {
@@ -165,8 +172,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5814e17fe5a54d9d",
+  "active": "e733f4f61e47fb45",
   "lastOpenFiles": [
+    "ae/cpu mips/cpu mips.md",
+    "ae/cpu mips/implementazione pipeline.md",
     "Pasted image 20240509223407.png",
     "Pasted image 20240509223255.png",
     "Pasted image 20240509222902.png",
@@ -177,7 +186,6 @@
     "Pasted image 20240509221426.png",
     "Pasted image 20240509220559.png",
     "ae/cpu mips/pipeline.md",
-    "ae/cpu mips/implementazione pipeline.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-09 mp.md",
     "java/strutture dati (real)/strutture dati (real).md",
@@ -205,7 +213,6 @@
     "ae/assembly/pseudoistruzioni.md",
     "ae/assembly/vettori.md",
     "ae/assembly",
-    "ae/pics/Pasted image 20240508160032.png",
     "ae/cpu mips",
     "java/controllo",
     "java/oggetti",
