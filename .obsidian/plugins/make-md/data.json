@@ -47,11 +47,11 @@
     "//java/java/interfacce",
     "//Spaces",
     "//ae/ae/cpu mips",
-    "//raw notes",
-    "//java",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
-    "//java/java/eccezioni"
+    "//java/java/eccezioni",
+    "//java/java/eccezioni",
+    "//ae"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
