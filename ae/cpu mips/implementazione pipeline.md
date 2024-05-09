@@ -7,3 +7,9 @@ in questo “snapshot” della cpu, si nota ci sarebbe un problema con il writeb
 ![[Pasted image 20240509221854.png]]
 fix: il write back viene preso solamente dalla propagazione dei registri, non viene caricata durante la decodifica dell’istruzione nella fase 2. in questo modo non ci possono essere problemi come l’esempio sopra.
 ![[Pasted image 20240509222902.png]]
+
+## propagazione dei segnali di controllo
+possiamo dividere i 9 segnali di controllo delle fasi in 3 gruppi:
+![[Pasted image 20240509223255.png]]
+in questo modo, possiamo facilmente propagare anche i segnali di controllo. come si vede dall’imagine, dopo ogni fase, non servono più i segnali di controllo di tale fase e non vengono quindi propagati
+![[Pasted image 20240509223407.png]]
