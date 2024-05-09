@@ -1,5 +1,5 @@
 # comparable
-per garantire un ordinamento sui tipi utilizzati nelle [[strutture dati]] che si fondando su un ordinamento, è necessario che i tipi implementino un’interfaccia speciale, chiamata `Comparable<T>`
+per garantire un ordinamento sui tipi utilizzati nelle [[strutture dati (real)]] che si fondando su un ordinamento, è necessario che i tipi implementino un’interfaccia speciale, chiamata `Comparable<T>`
 
 | Metodo               | Descrizione                                                                             |
 | :------------------- | :-------------------------------------------------------------------------------------- |
