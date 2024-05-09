@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-09 mp.md",
+                "file": "java/strutture dati/strutture `complesse`.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-09 mp.md",
+                "file": "java/strutture dati/strutture `complesse`.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-09 mp.md",
+                "file": "java/strutture dati/strutture `complesse`.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-09 mp.md"
+                "file": "java/strutture dati/strutture `complesse`.md"
               }
             }
           }
