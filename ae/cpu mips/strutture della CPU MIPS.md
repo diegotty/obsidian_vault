@@ -12,14 +12,13 @@ note:
 nel blocco di estensione del segno entrano i 16bit non letti dal blocco dei registri(che corrispondono all’indirizzo del valore immediato delle istruzioni di tipo I)
 ## esempi
 ![[Pasted image 20240420125612.png]]
-//add last 2
 
-## salti condizionati (beq)
+## aggiungere salti condizionati (beq)
 struttura per poter effettuare salti condizionati:
-![[Pasted image 20240421140628.png|450]]
+![[Pasted image 20240421140628.png|400]]
 
-parte della struttra completa (senza la linea di controllo `PCSrc`)
-![[Pasted image 20240421140430.png|500]]
+parte della struttura completa (senza la linea di controllo `PCSrc`)
+![[Pasted image 20240421140430.png|550]]
 struttura completa: 
 viene usata una porta and per controllare se:
 - l’istruzione è un branch (la linea viene presa dal blocco [[#unità di controllo]])
@@ -38,7 +37,8 @@ fino ad ora abiamo considerato i 4 bit che decidono l’operazione(la linea di s
 | 0110              | subtract         |
 | 0111              | set on less than |
 | 1100              | NOR              |
-questi 4 bit più i due generati dalla Control Unit l, formano l’ [[intro a MIPS#rappresentazione dell’istruzione|`opcode`]] .
+si hanno 2 livelli di codifica:
+il primo lo fa la control unit, che prende in input i 6 bit di opcode, e ricava tutti i segnali di controllo necessari, tra cui ALUOp.
 ![[Pasted image 20240421141924.png|400]]
 in qualche modo entrano 6 bit e escono 9 bit ??? decodificatore ????
  guardando l’`ALUOp` che esce dalla Control Unit, si può notare immediatamente che tipo di operazione bisogna fare: infatti se l’`ALUOp` inizia per 0, si tratterà di `lw`, `sw`, oppure `beq`(e non sarà necessario i 6 bit di funct), altrimenti di operazioni di tipo R.

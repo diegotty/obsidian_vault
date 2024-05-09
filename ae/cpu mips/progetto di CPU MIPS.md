@@ -43,7 +43,7 @@ altre operazioni necessarie:
 | registri           | contengono argomenti delle istruzioni                 |
 | ALU                | fa le operazioni aritmetico-logiche, confronti, etc   |
 | memoria dati       | da cui leggere/in cui scriere i dati (load/store)     |
-le unità sono collegate da diversi `datapath` (interconnessioni che definiscono il flusso delle informazioni nella CPU)
+le unità sono collegate da diversi `datapath` (interconnessioni che definiscono il flusso delle informazioni nella CPU e uniscono i vari componenti)
 
 se un’unità funzionale può ricevere dati da più sorgenti è necessario inserire un `multiplexer(MUX)` per selezionare la sorgente necessaria 
 
@@ -75,9 +75,9 @@ riceve due valori interni a 32bit e svolge una operazione indicata dai segnali `
  ![[Pasted image 20240420121545.png|570]]
 ## unità di memoria e unità di estensione del segno
 unità di memoria: 
-- riceve in input un indirizzo da 32bit, che indica quale word della memoria va letta
+- riceve in input un indirizzo da 32bit, che indica quale word della memoria va letta (dove c’è scritto indirizzo)
 - riceve il segnale `MemRead` che abilita la lettura dall’indirizzo e la fornitura in output dei 32bit di dato letto (se bisogna fare operazione `lw`)
-- riceve un dato da 32bit da scrivere in memoria a quell’indirizzo quando il segnale `MemWrite` è asserito (se bisogna fare operazione `sw`)
+- riceve un dato da 32bit da scrivere in memoria a quell’indirizzo quando il segnale `MemWrite` è asserito (se bisogna fare operazione `sw`) (dove c’è scritto dato scritto)
 
 unità di estensione del segno:
 serve a trasformare un intero relativo (in CA2) da 16bit(in input) a 32bit(in output) 
