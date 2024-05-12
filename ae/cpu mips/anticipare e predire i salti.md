@@ -39,3 +39,6 @@ ora servono quindi 2 stalli al posto di uno, quando il branch è preceduto da lw
 
 inoltre, ora nel caso sotto serve uno stallo:
 ![[Screenshot 2024-05-12 (23.07.04).jpeg.png]]
+
+# architettura con anticipi
+![[Pasted image 20240512230857.png|700]]
