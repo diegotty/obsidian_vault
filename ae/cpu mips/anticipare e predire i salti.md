@@ -29,5 +29,13 @@ per anticipare l’istruzione beq bisogna non usare la ALU:
 si può anche notare il segnale IF.Flush, per azzerare ID/EXE.MemWrite e ID/EXE.RegWrite
 ![[Screenshot 2024-05-12 (22.55.03).jpeg.png]]
 ## conseguenze dell’anticipo
-grazie all’anticipo, è necessario solo u
+grazie all’anticipo, è necessario solo un solo(al posto di due) stallo in caso di salto !
 ![[Screenshot 2024-05-12 (23.01.44).jpeg.png]]
+
+l’abbassamento del numbero di stalli nel caso di predizione sbagliata (da 2 a 1) non è gratuito.
+infatti, la fase in cui i branch necessitano dei dati viene anticipata da EXE a ID.
+ora servono quindi 2 stalli al posto di uno, quando il branch è preceduto da lw.
+![[Screenshot 2024-05-12 (23.05.35).jpeg.png]]
+
+inoltre, ora nel caso sotto serve uno stallo:
+![[Screenshot 2024-05-12 (23.07.04).jpeg.png]]
