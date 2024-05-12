@@ -17,7 +17,7 @@ l’istruzione beq normalmente usa la ALU per fare il confronto, per cui:
 
 
 
-# annullare le istruzioni 
+## annullare le istruzioni 
 per annullare le istruzioni:
 - IF/ID.Istruzione viene azzerat → NOP(No Operation, un’istruzione di solo bit pari a 0: 0x00..0 = `ssl $zero $zero, 0`)
 - ID/EXE.MemWrite e ID/EXE.RegWrite vengono azzerate
@@ -28,3 +28,6 @@ per anticipare l’istruzione beq bisogna non usare la ALU:
 - è necessaria un’unità di forwarding apposita per la fase ID
 si può anche notare il segnale IF.Flush, per azzerare ID/EXE.MemWrite e ID/EXE.RegWrite
 ![[Screenshot 2024-05-12 (22.55.03).jpeg.png]]
+## conseguenze dell’anticipo
+grazie all’anticipo, è necessario solo u
+![[Screenshot 2024-05-12 (23.01.44).jpeg.png]]
