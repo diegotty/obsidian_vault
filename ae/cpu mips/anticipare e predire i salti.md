@@ -25,4 +25,6 @@ per annullare le istruzioni:
 per anticipare l’istruzione beq bisogna non usare la ALU:
 - inserendo un comparatore tra i due argomenti letti dal blocco registri
 - spostando la logica di salto ed il calcolo del salto relativo dalla fase EXE alla fase ID
-- 
+- è necessaria un’unità di forwarding apposita per la fase ID
+si può anche notare il segnale IF.Flush, per azzerare ID/EXE.MemWrite e ID/EXE.RegWrite
+![[Screenshot 2024-05-12 (22.55.03).jpeg.png]]
