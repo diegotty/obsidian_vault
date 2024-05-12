@@ -18,4 +18,11 @@ l’istruzione beq normalmente usa la ALU per fare il confronto, per cui:
 
 
 # annullare le istruzioni 
-per annullare le istruzi
+per annullare le istruzioni:
+- IF/ID.Istruzione viene azzerat → NOP(No Operation, un’istruzione di solo bit pari a 0: 0x00..0 = `ssl $zero $zero, 0`)
+- ID/EXE.MemWrite e ID/EXE.RegWrite vengono azzerate
+## implementazione anticipo
+per anticipare l’istruzione beq bisogna non usare la ALU:
+- inserendo un comparatore tra i due argomenti letti dal blocco registri
+- spostando la logica di salto ed il calcolo del salto relativo dalla fase EXE alla fase ID
+- 
