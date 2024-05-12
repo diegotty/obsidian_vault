@@ -10,3 +10,12 @@ per spostare il jump nella fase IF serve:
 ![[Screenshot 2024-05-12 (22.31.58).jpeg.png|300]]
 # anticipare beq
 ## perchè
+l’istruzione beq normalmente usa la ALU per fare il confronto, per cui:
+- il salto avviene dopo la fase EXE (nella fase MEM), e in caso di salto, le 2 istruzioni seguenti (già caricate) vanno annullate
+- la necessità di avere gli argomenti nella fase EXE porta ad aver bisogno di uno stallo se il salto è preceduto da una lw
+
+
+
+
+# annullare le istruzioni 
+per annullare le istruzi
