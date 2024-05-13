@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ricorsione.md",
+                "file": "java/io/Untitled.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ricorsione.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ricorsione.md",
+                "file": "raw notes/2024-05-07 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ricorsione.md"
+                "file": "raw notes/2024-05-07 mp.md"
               }
             }
           },
@@ -183,9 +183,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "47ff615f2f1d9b1f",
   "lastOpenFiles": [
+    "raw notes/2024-04-23 mp (half done).md",
+    "raw notes/2024-04-18 mp (useless) (done).md",
     "raw notes/2024-05-07 mp.md",
+    "raw notes/2024-05-09 mp (done).md",
+    "java/io/Untitled.md",
+    "java/io/io.md",
+    "java/io",
     "ricorsione.md",
     "java/tipi generici.md",
     "java/interfacce/Comparable e Comparator.md",
@@ -201,7 +207,6 @@
     "java/strutture dati (real)/strutture dati (real).md",
     "java/strutture di controllo di flusso.md",
     "java/eccezioni.md",
-    "raw notes/2024-04-23 mp (done).md",
     "java/pics/Pasted image 20240513170805.png",
     "java/pics/Pasted image 20240513170119.png",
     "java/java.md",
@@ -217,10 +222,6 @@
     "ae/pics/Pasted image 20240508160735.png",
     "ae/intro a MIPS.md",
     "ae/basi cpu.md",
-    "ae/cpu mips/cpu mips.md",
-    "ae/cpu mips/pipeline.md",
-    "conflict-files-obsidian-git.md",
-    "raw notes/2024-05-09 mp.md",
     "java/strutture dati (real)",
     "java/eccezioni",
     "ae/assembly",
@@ -229,7 +230,6 @@
     "java/oggetti",
     "java/ereditarietà/Untitled",
     "java/ereditarietà",
-    "java/polimorfismo",
-    "java/strutture dati"
+    "java/polimorfismo"
   ]
 }

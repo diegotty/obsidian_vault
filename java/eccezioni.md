@@ -9,7 +9,7 @@
 | Eccezione                    | Descrizione                                                                                                                         |
 | :--------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `IndexOutOfBoundsException`  | Accesso ad una posizione non valida di un array o una stringa (<0 o maggiore della sua dimensione)                                  |
-| `ClassCastException`         | [[2024-04-23 mp (done)]]Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
+| `ClassCastException`         | [[2024-04-23 mp (half done)]]Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
 | `ArithmeticException`        | Condizione aritmetica non valida (es. divisione per zero)                                                                           |
 | `CloneNotSupportedException` | Metodo `clone()` non implementato o errore durante la copia dell’oggetto                                                            |
 | `ParseException`             | Errore inaspettato durante il parsing                                                                                               |
