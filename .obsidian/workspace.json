@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/io/Untitled.md",
+                "file": "java/io/input_output.md",
                 "mode": "source",
                 "source": false
               }
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/io/Untitled.md",
+                "file": "java/io/input_output.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -129,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/io/Untitled.md",
+                "file": "java/io/input_output.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/io/Untitled.md"
+                "file": "java/io/input_output.md"
               }
             }
           },
@@ -183,10 +183,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "e733f4f61e47fb45",
   "lastOpenFiles": [
+    "java/io/input_output.md",
+    "Pasted image 20240513213853.png",
     "raw notes/2024-05-07 mp.md",
-    "java/io/Untitled.md",
     "raw notes/2024-04-23 mp (half done).md",
     "raw notes/2024-04-18 mp (useless) (done).md",
     "raw notes/2024-05-09 mp (done).md",
@@ -219,9 +220,7 @@
     "ae/pics/Screenshot 2024-05-12 (22.31.58).jpeg.png",
     "ae/pics/Pasted image 20240512222805.png",
     "ae/cpu mips/implementazione pipeline.md",
-    "ae/pics/Pasted image 20240508160735.png",
     "ae/intro a MIPS.md",
-    "ae/basi cpu.md",
     "java/strutture dati (real)",
     "java/eccezioni",
     "ae/assembly",
