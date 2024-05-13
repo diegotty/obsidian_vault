@@ -175,3 +175,10 @@ non posso implementare 2 volte la stesa interfaccia, quindi non la implemento in
 List\<T extends Comparable\<? super T> >
 ## overloading dei metodi generici
 un metodo generico può essere sovraccaricato, come ogni altro metodo, e inoltre anche da un metodo non generico con lo stesso nome e numero di parametri
+- quando il compilatore traduce una chiamata di metodo cerca il metodo più specifico(prima il non generico, e poi, eventualmente, il generico)
+## tipi raw
+per retrocompatibilità, è possibile istanziare una classe generica senza specificare il tipo parametrico
+```java
+Pila<Integer> p1 = new Pila<Integer>(10); //tipo generico normale
+Pila p2 = new Pila(10); //tipo raw
+```
