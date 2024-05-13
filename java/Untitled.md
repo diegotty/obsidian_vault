@@ -50,3 +50,14 @@ public class MyClass<T extends Comparable<T>> implements MinMax <T>{
 ```
 
 >[!tuff] TUTTE LE T SONO LO STESSO TIPO !!
+
+## peculiarità
+### metodi generici in classi non generiche
+posso definire metodi generici (anche in classi non generiche !)
+per farlo è necessario **anteporre** il tipo generico tra parentesi angolari **al tipo di ritorno**:
+```java
+static public <T> void esamina(ArrayList<T> lista){
+	for(T o : lista)
+		System.out.println(o.toString());
+}
+```
