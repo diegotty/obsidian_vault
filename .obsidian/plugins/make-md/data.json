@@ -49,10 +49,10 @@
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//Spaces",
-    "//java",
     "//java/java/swing",
     "//java/java/ereditarietà",
-    "//java/java/ereditarietà"
+    "//java/java/ereditarietà",
+    "//java"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
