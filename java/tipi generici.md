@@ -147,6 +147,27 @@ con PECS:
  
 ### esempio
 nell’esempio fatto a lezione, sto usando PECS per vincolare src e dst, in modo da poter “““usare””” l’ereditarietà senza errori (aggiungo in un ArrayList\<Frutto> gli elementi di un ArrayList\<Mela>)
+```java
+package testPECS;  
+  
+import java.util.Arrays;  
+import java.util.List;  
+  
+public class Main {  
+
+    public static void main(String[] args) {  
+		List<Mela> lmel = Arrays.asList(mele);  
+        List<Pera> lper = Arrays.asList(pere);  
+        copyListPECS(lmel, lfrut); //questo funziona, sfruttando l'ereditarietà pur non avendo il polimorfismo tra tipi generici !!   
+}  
+
+    public static <T> void copyListPECS(List<? extends T> src, List<? super T> dst) {  
+       for ( T o: src)  
+          dst.add(o);  
+       // il tipo di destinazione può essere una mela, o un frutto, o un object  
+       // il tipo di souce può essere una mela, o un sottotipo di mela    }  
+}
+```
 
 //side 47
 non posso implementare 2 volte la stesa interfaccia, quindi non la implemento in pera. in questo modo, però, posso ordinare una collezione di Pera poichè Pera non estends Comparable(Pera), ma Comparable(Frutto)
