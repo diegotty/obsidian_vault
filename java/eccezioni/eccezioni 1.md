@@ -112,8 +112,20 @@ public class Scaffale{
 ```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
 
+tramite la parola chiave extends è possibile creare una nuova eccezione a partire da un tipo già esistente
 ```java
 public class NonToccareLaMiaRobaException extends Exception {
 
 }
 ```
+
+## il blocco finally
+il blocco finally è un blocco speciale posto dopo tutti i blocchi try-catch.
+- viene eseguito a prescindere dal sollevamento di eccezioni
+- le istruzioni nel blocco finally vengono eseguite anche se nel blocco try-catch c’è un alteratore del flusso (break, returno continue)
+- l’unico modo in cui non viene eseguito il blocco finally è l’uscita forzata (System.exit(), in cui uccido il thread)
+tipicamente nel blocco finally vengono eseguite operazioni di clean-up !! (chiusura di eventuali file aperti o rilascio di risorse)
+>[!tuff] un return nel finally sovrascrive un return nel try !!!
+
+# Throwable
+		
