@@ -112,4 +112,5 @@ p = new Punto<Double>(11.0, 43.5); //polimorfismo type beat !!
 dietro le quinte le classi generiche vengono gestite con la cancellazione del tipo.
 quando il compilatore traduce il metodo/la classe generica in bytecode Java:
 - viene eliminata la sezione del tipo parametrico e si sostituisce il tipo parametrico con quello reale
-- 
+- per default il tipo generico viene sostituito con il tipo Object (a meno di vincoli sul tipo)
+- solo una copia del metodo/classe viene creata !!
