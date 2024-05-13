@@ -9,3 +9,5 @@ un file di dati non è parte del codice sorgente di un programma, e può essere 
 - esempi: .txt, .java, .html, etc
 ## file binario
 I file binari possono contenere qualsiasi tipo di informazione sottoforma di sequenza di byte e solo il programmatore / progettista sa interpretarlo, infatti diversi programmi potrebbero interpretare lo stesso file in modo diverso. qualsiasi file può essere interpretato come file binario.
+
+non usare java.i

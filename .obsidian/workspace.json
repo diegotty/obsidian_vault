@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/io/input_output.md",
+                "file": "java/files.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/io/input_output.md",
+                "file": "java/files.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/io/input_output.md",
+                "file": "java/files.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/io/input_output.md"
+                "file": "java/files.md"
               }
             }
           },
@@ -167,9 +167,9 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
+    "java/io/input_output.md",
     "java/files.md",
     "raw notes/2024-05-07 mp (done).md",
-    "java/io/input_output.md",
     "Pasted image 20240513213853.png",
     "raw notes/2024-04-23 mp (half done).md",
     "raw notes/2024-04-18 mp (useless) (done).md",

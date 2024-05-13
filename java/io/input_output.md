@@ -26,12 +26,19 @@ per leggere o scrivere byte(da file binari, 8 bit alla volta):
 - java.io.InputStream/OutputStream
 l’accesso ai file di testo è stato semplificato in Java 5 mediante l’aggiunta di java.util.Scanner, che tuttavia è più lenta proprio perchè più potente
 
+lettura bufferizzata dei caratteri forniti da FileReader:
 ```java
-try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+try(BufferedReader br = new BufferedReader(new FileReader(fileName))){ //br si chiude da solo !! (try with resources)
 	while(br.ready()){
 		String line = br.readLine();
 	}
+}catch(IOException e)
+```
 
-}
+scrittura con BufferedWriter
+```java
+try(BufferedWriter bw = new BufferedWriter(new FileWriter(fileName))){
+	bw.write("the great gig in the sky");
+}catch(IOException)
 ```
 
