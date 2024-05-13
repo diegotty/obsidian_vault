@@ -65,7 +65,7 @@ public class ViolenzaSuUnArrayList{
 	}
 }
 
-//l'upcasting è invece possibile,a tempo di compilazione
+//l'upcasting è invece possibile,a tempo di compilazione, con gli array, e fare la stessa cosa non darebbe errori ma  verrebbe lanciata un'eccezione
 ```
 
 ## peculiarità
@@ -93,4 +93,12 @@ per le classi generiche non vale l’ereditarietà dei tipi generici !!
 ma rimane comunque il polimorfismo tra classi:
 ```java
 List<Integer> listaDiNumeri = new ArrayList<Integer>();
+```
+
+## jolly
+nel caso in cui non sia necessario utilizzare il tipo generico T nel corpo della classe o del metodo, è possibile utilizzare il jolly  `?(punto interrogativo)`
+```java
+public static void mangia(ArrayList<? extends Mangiabile> frutta){} // equivale a 
+public static <T extends Mangiabile> void mangia2(ArrayList<T> frutta){} 
+// ma nel secondo metodo posso usare T ! nel primo non ho la nozione del tipo utilizzato
 ```
