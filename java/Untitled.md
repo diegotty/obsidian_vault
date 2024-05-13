@@ -61,3 +61,19 @@ static public <T> void esamina(ArrayList<T> lista){
 		System.out.println(o.toString());
 }
 ```
+
+differenze : 
+```java
+static public void esamina(ArrayList<Frutto> frutti){}
+//non accetta ArrayList<Arancia> !!! non sottoclassi del tipo expected, e come visto prima i tipi generici differiscono sulla base dei oro tipi
+
+static public <T extends Frutto> void esamina(ArrayList<T> frutti){}
+//questo è veramente generico !! T accetta qualunque sottotipo della classe Frutto
+```
+
+per le classi generiche non vale l’ereditarietà dei tipi generici !!
+- ArrayList\<Integer> non è di tipo ArrayList\<Number> o ArrayList\<Object>  !!!
+ma rimane comunque il polimorfismo tra classi:
+```java
+List<I
+```
