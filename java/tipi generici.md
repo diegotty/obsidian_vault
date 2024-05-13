@@ -141,12 +141,14 @@ List<? super Number> lista = new ArrayList<Number>;
 con PECS:
 - usando `<?>`, non so nulla sul tipo, quindi posso solo leggere, non scrivere
 - usando `extends`, hai bisogno di una lista in input che “produca” valori di T, ma non puoi(vuoi) aggiungere elementi alla lista
-- usando `super`, hai bisogno di una lista che consumi elementi di tipo T, per scrivere nella lisa, ma non puoi assumere il tipo degli stessi
+- usando `super`, hai bisogno di una lista che consumi elementi di tipo T, per scrivere nella lista, ma non puoi assumere il tipo degli stessi
 
  PECS si applica sulle collection !! non sugli array, dato che negli array non è previsto poter usare tipi generici come tipo
-nell’esempio fatto a lezione, sto usando PECS per vincolare src e dst, in modo da poter “““usare””” l’ereditarietà senza errori
+ 
+### esempio
+nell’esempio fatto a lezione, sto usando PECS per vincolare src e dst, in modo da poter “““usare””” l’ereditarietà senza errori (aggiungo in un ArrayList\<Frutto> gli elementi di un ArrayList\<Mela>)
 
 //side 47
-non posso implementare 2 volte la stesa intefaccia, quindi non la implemento in pera. in questo modo, però, posso ordinare una collezione di Pera poichè Pera non estends Comparable(Pera), ma Comparable(Frutto)
+non posso implementare 2 volte la stesa interfaccia, quindi non la implemento in pera. in questo modo, però, posso ordinare una collezione di Pera poichè Pera non estends Comparable(Pera), ma Comparable(Frutto)
 
 List<T extends Comparable<? super T> >
