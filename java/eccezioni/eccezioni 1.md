@@ -127,5 +127,12 @@ il blocco finally è un blocco speciale posto dopo tutti i blocchi try-catch.
 tipicamente nel blocco finally vengono eseguite operazioni di clean-up !! (chiusura di eventuali file aperti o rilascio di risorse)
 >[!tuff] un return nel finally sovrascrive un return nel try !!!
 
-# Throwable
-		
+# gerarchia delle eccezioni
+![[Pasted image 20240513170119.png]]
+## Throwable
+la classe che implementa il concetto delle eccezioni è Throwable, che estende direttamente la classe Object. gli oggetti di tipo Throwable sono gli unici oggetti che è possibile utilizzare con il meccanismo delle eccezioni
+## Exception
+le eccezioni di tipo error sono:
+- eccezioni interne alla JVM (classe RuntimeException): legate ad errori nella logica del programma
+- eccezioni regolari(IOExcpetion, ParseException, …): errori che le applicazioni dovrebbero anticipare e dalle quali si può riprendere l’esecuzione del 
+
