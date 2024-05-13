@@ -48,6 +48,7 @@
     "//java/java/ereditarietà",
     "//java/java/ereditarietà",
     "//java",
+    "//java/java/io",
     "//raw notes"
   ],
   "expandFolderOnClick": true,
