@@ -9,3 +9,12 @@ java.io.PrintStream è una classe con tanti metodi, di cui `print(Object obj)`, 
 ### java.util.Scanner
 si può utilizzare lo scanner anche passando un file o altre fonti invece della console, e per alcuni di questi canali di flussi dati sarà molto importante chiuderli con il metodo close() per evitare comportamenti indesiderati
 ![[Pasted image 20240513213853.png|500]]
+
+## gli stream
+uno stream è un’astrazione derivata da dispositivi input o output sequenziale
+- uno stream di input riceve uno stream di caratteri, “uno alla volta”
+- uno stream di output produce uno stream di caratteri
+- gli stream non si applicano solo ai file, ma anche a dispositivi di input/output, internet, etc..
+un file può essere trattato come uno stream di input o output (in realtà i file sono bufferizzati per questioni di efficienza)
+
+## lettura e scrittura
