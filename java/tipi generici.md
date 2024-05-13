@@ -56,8 +56,11 @@ public class ViolenzaSuUnArrayList{
 	public static void main(String[] args){
 		ArrayList<Mela> mele = new ArrayList<Mela>();
 		prendiFrutta(mele);
-		//qui avrei una lista di mele
+		//qui avrei una lista di mele con una pera !!
 		System.out.println(mele.toString());
+	}
+	public static <T extends Frutto> void prendiFrutta(ArrayList<T> frutti){
+		frutti.add(new Pera());
 	}
 }
 ```
