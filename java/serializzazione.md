@@ -1,0 +1,1 @@
+supponiamo di avere un’informazione da comunicare ad un altro dispositivo. possiamo serializzare l’oggetto e trasmetterlo. in modo tale, esso può essere letto e utilizzato da altri compilatori

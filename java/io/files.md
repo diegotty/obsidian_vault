@@ -21,4 +21,9 @@ Paths.get(cartella1, cartella2, cartella3, ...., cartellaN,file);
 Paths.get(cartella1+File.separator+...+File.separator+cartellaN+File.separator + File);
 ```
 
-le operazioni che prima si svolgevano nella classe File, ora si svolgono con la classe java.nio.file.Files, inclusi i metodi di comodo per la creazione di Buffere
+le operazioni che prima si svolgevano nella classe File, ora si svolgono con la classe java.nio.file.Files, inclusi i metodi di comodo per la creazione di BufferedReader e BufferedWriter !
+```java
+try(BufferedReader br = Files.newBufferedReader(Paths.get("myFile.txt"))){
+	//reads from myFile.txt
+}
+```
