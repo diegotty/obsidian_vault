@@ -44,14 +44,16 @@
     "//java/java/swing",
     "//java/java/swing",
     "//java/java/swing",
-    "//java/java/interfacce",
     "//Spaces",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//java/java/eccezioni",
     "//ae",
-    "//ae/ae/cpu mips"
+    "//Spaces",
+    "//java",
+    "//raw notes",
+    "//java/java/swing"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

@@ -6,16 +6,16 @@
 
 ## eccezioni notevoli
 
-| Eccezione                    | Descrizione                                                                                                        |
-| :--------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `IndexOutOfBoundsException`  | Accesso ad una posizione non valida di un array o una stringa (<0 o maggiore della sua dimensione)                 |
-| `ClassCastException`         | Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
-| `ArithmeticException`        | Condizione aritmetica non valida (es. divisione per zero)                                                          |
-| `CloneNotSupportedException` | Metodo `clone()` non implementato o errore durante la copia dell’oggetto                                           |
-| `ParseException`             | Errore inaspettato durante il parsing                                                                              |
-| `IOError` e `IOException`    | Grave errore di input o output                                                                                     |
-| `IllegalArgumentException`   | Parametro illegale come input di un metodo                                                                         |
-| `NumberFormatException`      | Errore nel formato di un numero (estende la precedente)                                                            |
+| Eccezione                    | Descrizione                                                                                                                         |
+| :--------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `IndexOutOfBoundsException`  | Accesso ad una posizione non valida di un array o una stringa (<0 o maggiore della sua dimensione)                                  |
+| `ClassCastException`         | [[2024-04-23 mp]]Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
+| `ArithmeticException`        | Condizione aritmetica non valida (es. divisione per zero)                                                                           |
+| `CloneNotSupportedException` | Metodo `clone()` non implementato o errore durante la copia dell’oggetto                                                            |
+| `ParseException`             | Errore inaspettato durante il parsing                                                                                               |
+| `IOError` e `IOException`    | Grave errore di input o output                                                                                                      |
+| `IllegalArgumentException`   | Parametro illegale come input di un metodo                                                                                          |
+| `NumberFormatException`      | Errore nel formato di un numero (estende la precedente)                                                                             |
 
 ## cosa si può gestire con le eccezioni ?
 si possono gestire:
