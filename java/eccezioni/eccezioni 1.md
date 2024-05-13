@@ -134,5 +134,16 @@ la classe che implementa il concetto delle eccezioni è Throwable, che estende d
 ## Exception
 le eccezioni di tipo error sono:
 - eccezioni interne alla JVM (classe RuntimeException): legate ad errori nella logica del programma
-- eccezioni regolari(IOExcpetion, ParseException, …): errori che le applicazioni dovrebbero anticipare e dalle quali si può riprendere l’esecuzione del 
+- eccezioni regolari(IOExcpetion, ParseException, …): errori che le applicazioni dovrebbero anticipare e dalle quali si può riprendere l’esecuzione del programma
 
+## Error
+le eccezioni di tipo error sono:
+- irrecuperabili
+- molto rare e non dovrebbero essere considerate dalle applicazioni (ThreadDeath, OutOfMemoryError, …)
+## eccezioni checked e unchecked
+![[Pasted image 20240513170805.png|650]]
+con eccezioni di tipo checked:
+- è sempre necessario attenersi al paradigma catch-or-declare
+- sono eccezioni comuni, ed estendono Exception ma non RuntimeException
+con eccezioni di tipo unchecked:
+- non si è obbligati a dichiarare le eccezioni sollevate o catturarle in un blocco try-catch
