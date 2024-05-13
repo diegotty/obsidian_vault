@@ -169,7 +169,9 @@ public class Main {
 }
 ```
 
-//side 47
+//slide 47, cosa da cui non siamo riusciti a uscire a lezione
 non posso implementare 2 volte la stesa interfaccia, quindi non la implemento in pera. in questo modo, però, posso ordinare una collezione di Pera poichè Pera non estends Comparable(Pera), ma Comparable(Frutto)
 
-List<T extends Comparable<? super T> >
+List\<T extends Comparable\<? super T> >
+## overloading dei metodi generici
+un metodo generico può essere sovraccaricato, come ogni altro metodo, e inoltre anche da un metodo non generico con lo stesso nome e numero di parametri
