@@ -102,3 +102,14 @@ public static void mangia(ArrayList<? extends Mangiabile> frutta){} // equivale 
 public static <T extends Mangiabile> void mangia2(ArrayList<T> frutta){} 
 // ma nel secondo metodo posso usare T ! nel primo non ho la nozione del tipo utilizzato
 ```
+si può usare il jolly per dichiarare un oggetto di tipo classe generica con qualsiasi tipo parametrico
+```java
+Punto<?> p = new Punto<Integer>(10,42);
+p = new Punto<Double>(11.0, 43.5); //polimorfismo type beat !!
+```
+
+## cancellazione del tipo
+dietro le quinte le classi generiche vengono gestite con la cancellazione del tipo.
+quando il compilatore traduce il metodo/la classe generica in bytecode Java:
+- viene eliminata la sezione del tipo parametrico e si sostituisce il tipo parametrico con quello reale
+- 
