@@ -38,7 +38,8 @@ Valore<int> v; //da errore
 - quando si estendono classi generiche, si deve inserire il tipo
 ## vincolo di comparabilità
 ```java
-public interface MinMax<T extends Comparable<T>>{ //sto vincolando T a essere un comparabile di T o un sottotip
+public interface MinMax<T extends Comparable<T>>{ 
+//sto vincolando T a essere un comparabile di T o un sottotipo
 	T min();
 	T max();
 	
