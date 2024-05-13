@@ -39,7 +39,6 @@
   "expandedSpaces": [
     "/",
     "//Spaces",
-    "//java/java/ereditarietà",
     "//java/java/swing",
     "//java/java/swing",
     "//java/java/swing",
@@ -52,8 +51,9 @@
     "//ae",
     "//Spaces",
     "//java",
-    "//raw notes",
-    "//java/java/swing"
+    "//java/java/swing",
+    "//java/java/ereditarietà",
+    "//java/java/ereditarietà"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
