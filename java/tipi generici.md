@@ -119,4 +119,34 @@ si può imporre un vincolo sul tipo generico T mediante le parole chiave:
 - **extends**: T deve essere un sottotipo della classe specificata o la classe estesa
 - **super**: T deve essere una superclasse della classe specificata o la classe estesa
 ```java
+List<? extends Number> l1 = new ArrayList<Number>();
+List<? extends Number> l2 = new ArrayList<Integer>();
+//non posso sapere a priori quali sarannno i tipi di l1 o l2, ma per certo saprò che saranno tipo/sottotipo di Number
+
+List<? super Integer> l1 = new ArrayList<Number>();
+List<? super Integer> l2 = new ArrayList<Object>();
+//non posso sapere a priori quali sarannno i tipi di l1 o l2, ma per certo saprò che saranno tipo/supertipo di Integer(posso assumere che saranno certamente Object)
 ```
+
+# PECS (producer extends, consumer supers)
+extends e super esistono per due necessità primarie:
+- leggere da/scrivere in una collezione generica
+
+consideriamo: 
+```java
+List<?> lista = new ArrayList<Number>();
+List<? extends Number> lista = new ArrayList<Number>;
+List<? super Number> lista = new ArrayList<Number>;
+```
+con PECS:
+- usando `<?>`, non so nulla sul tipo, quindi posso solo leggere, non scrivere
+- usando `extends`, hai bisogno di una lista in input che “produca” valori di T, ma non puoi(vuoi) aggiungere elementi alla lista
+- usando `super`, hai bisogno di una lista che consumi elementi di tipo T, per scrivere nella lisa, ma non puoi assumere il tipo degli stessi
+
+ PECS si applica sulle collection !! non sugli array, dato che negli array non è previsto poter usare tipi generici come tipo
+nell’esempio fatto a lezione, sto usando PECS per vincolare src e dst, in modo da poter “““usare””” l’ereditarietà senza errori
+
+//side 47
+non posso implementare 2 volte la stesa intefaccia, quindi non la implemento in pera. in questo modo, però, posso ordinare una collezione di Pera poichè Pera non estends Comparable(Pera), ma Comparable(Frutto)
+
+List<T extends Comparable<? super T> >
