@@ -17,8 +17,11 @@ uno stream è un’astrazione derivata da dispositivi input o output sequenziale
 - gli stream non si applicano solo ai file, ma anche a dispositivi di input/output, internet, etc..
 un file può essere trattato come uno stream di input o output (in realtà i file sono bufferizzati per questioni di efficienza)
 
-## lettura e scrittura
+### lettura e scrittura
 per leggere o scrivere caratteri(16 bit alla volta):
 - java.io.Reader/Writer
 per leggere o scrivere byte(da file binari, 8 bit alla volta):
 - java.io.InputStream/OutputStream
+l’accesso ai file di testo è stato semplificato in Java 5 mediante l’aggiunta di java.util.Scanner, che tuttavia è più lenta proprio perchè più potente
+
+## buffers
