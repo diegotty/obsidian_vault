@@ -115,3 +115,8 @@ quando il compilatore traduce il metodo/la classe generica in bytecode Java:
 - per default il tipo generico viene sostituito con il tipo Object (a meno di vincoli sul tipo)
 - solo una copia del metodo/classe viene creata !!
 ## extends e super
+si può imporre un vincolo sul tipo generico T mediante le parole chiave:
+- **extends**: T deve essere un sottotipo della classe specificata o la classe estesa
+- **super**: T deve essere una superclasse della classe specificata o la classe estesa
+```java
+```
