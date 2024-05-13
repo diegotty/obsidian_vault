@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/Untitled.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/Untitled.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/Untitled.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/Untitled.md"
+                "file": "java/tipi generici.md"
               }
             }
           },
@@ -197,15 +197,16 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
+    "java/tipi generici.md",
+    "java/tipi generici.md",
+    "java/ereditarietà.md",
+    "java/polimorfismo/polimorfismo.md",
     "raw notes/2024-04-30 mp.md",
-    "java/Untitled.md",
     "java/interfacce/Comparable e Comparator.md",
     "README.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interfacce/interfacce.md",
     "java/interfacce/interfacce (real).md",
-    "java/polimorfismo/polimorfismo.md",
-    "java/ereditarietà.md",
     "java/ereditarietà/ereditarietà.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/strutture di controllo di flusso.md",
@@ -233,7 +234,6 @@
     "raw notes/2024-05-09 mp.md",
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/strutture dati (real)",
-    "raw notes/2024-03-05 mp √.md",
     "java/eccezioni",
     "ae/assembly",
     "ae/cpu mips",

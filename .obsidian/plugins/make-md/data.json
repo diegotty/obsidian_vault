@@ -52,8 +52,7 @@
     "//java",
     "//java/java/swing",
     "//java/java/ereditarietà",
-    "//java/java/ereditarietà",
-    "//raw notes"
+    "//java/java/ereditarietà"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
