@@ -55,7 +55,8 @@ public class MyClass<T extends Comparable<T>> implements MinMax <T>{
 public class ViolenzaSuUnArrayList{
 	public static void main(String[] args){
 		ArrayList<Mela> mele = new ArrayList<Mela>();
-		prendiFrutta(mele);
+		prendiFrutta(mele); //errore, non è possibile fare upcasting tra tipi generici, altrimenti potrei aggiungere una pera ad un ArrayList di mele !!!
+		
 		//qui avrei una lista di mele con una pera !!
 		System.out.println(mele.toString());
 	}
@@ -63,6 +64,8 @@ public class ViolenzaSuUnArrayList{
 		frutti.add(new Pera());
 	}
 }
+
+//l'upcasting è invece possibile,a tempo di compilazione
 ```
 
 ## peculiarità
