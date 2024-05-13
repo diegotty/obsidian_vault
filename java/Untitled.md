@@ -39,9 +39,14 @@ Valore<int> v; //da errore
 ## vincolo di comparabilità
 ```java
 public interface MinMax<T extends Comparable<T>>{ 
-//sto vincolando T a essere un comparabile di T o un sottotipo
+//sto vincolando T a essere un comparabile di T(se stesso) o un sottotipo
 	T min();
-	T max();
-	
+	T max();	
+}
+
+public class MyClass<T extends Comparable<T>> implements MinMax <T>{
+// scrivo che T extends Comparable<T> per essere sicuro di poter implementare MinMax !! altrimenti potrei non esserne capace
 }
 ```
+
+>[!tuff] TUTTE LE T SONO LO STESSO TIPO !!
