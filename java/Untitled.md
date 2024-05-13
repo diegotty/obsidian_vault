@@ -24,3 +24,12 @@ public static void main(String[] args){
 
 }
 ```
+per convenzione i tipi generici sono chiamati con le lettere T,S , etc (E nel caso in cui siano elementi di una collection
+## caratteristiche 
+- non è possibile utilizzare i primitivi come argument dei tipi generici
+```java
+Valore<int> v; //da errore
+//versioni future di java potrebbero permetterlo
+```
+
+- i tipi generici differiscono sulla base dei loro tipi(Valore\<Integer> non è compatibile con Valore\<String>)
