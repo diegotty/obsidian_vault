@@ -146,4 +146,6 @@ con eccezioni di tipo checked:
 - è sempre necessario attenersi al paradigma catch-or-declare
 - sono eccezioni comuni, ed estendono Exception ma non RuntimeException
 con eccezioni di tipo unchecked:
-- non si è obbligati a dichiarare le eccezioni sollevate o catturarle in un blocco try-catch
+- non si è obbligati a dichiarare le eccezioni sollevate o catturarle in un blocco try-catch (ma è possibile farlo)
+- estendono Error o RuntimeException
+
