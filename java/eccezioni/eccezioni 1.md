@@ -106,6 +106,8 @@ public class Scaffale{
 		if (i < 0 || i >= libri.legnth) throw new LibroMancanteException();
 		return libri[i];
 	}
+	//che significato trasmetterebbe IndexOutOfBoundsException ad un utilizzatore di una liberia ? nessuno !
+	//l'eccezione personalizzata, invece, nasconde i dettagli implementativi e trasmette un significato appropriato al contesto
 } 
 ```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
