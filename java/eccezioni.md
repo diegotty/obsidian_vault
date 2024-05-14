@@ -6,16 +6,16 @@
 
 ## eccezioni notevoli
 
-| Eccezione                    | Descrizione                                                                                                        |
-| :--------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `IndexOutOfBoundsException`  | Accesso ad una posizione non valida di un array o una stringa (<0 o maggiore della sua dimensione)                 |
-| `ClassCastException`         | Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
-| `ArithmeticException`        | Condizione aritmetica non valida (es. divisione per zero)                                                          |
-| `CloneNotSupportedException` | Metodo `clone()` non implementato o errore durante la copia dell’oggetto                                           |
-| `ParseException`             | Errore inaspettato durante il parsing                                                                              |
-| `IOError` e `IOException`    | Grave errore di input o output                                                                                     |
-| `IllegalArgumentException`   | Parametro illegale come input di un metodo                                                                         |
-| `NumberFormatException`      | Errore nel formato di un numero (estende la precedente)                                                            |
+| Eccezione                    | Descrizione                                                                                                                         |
+| :--------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `IndexOutOfBoundsException`  | Accesso ad una posizione non valida di un array o una stringa (<0 o maggiore della sua dimensione)                                  |
+| `ClassCastException`         | [[2024-04-23 mp (half done)]]Cast illecito di un oggetto ad una sottoclasse a cui non appartiene<br>Es. `Object x = new Integer(0); (Stringa)x` |
+| `ArithmeticException`        | Condizione aritmetica non valida (es. divisione per zero)                                                                           |
+| `CloneNotSupportedException` | Metodo `clone()` non implementato o errore durante la copia dell’oggetto                                                            |
+| `ParseException`             | Errore inaspettato durante il parsing                                                                                               |
+| `IOError` e `IOException`    | Grave errore di input o output                                                                                                      |
+| `IllegalArgumentException`   | Parametro illegale come input di un metodo                                                                                          |
+| `NumberFormatException`      | Errore nel formato di un numero (estende la precedente)                                                                             |
 
 ## cosa si può gestire con le eccezioni ?
 si possono gestire:
@@ -63,6 +63,8 @@ try{
 }
 catch(Eccezione1|Eccezione2 e){
 	//gestione di 2 casi in un unico blocco
+	throw new Eccezione3;
+	//nuova eccezione sollevata: la eccezione precedente viene gestita e quella corrente diventa la nuova eccezione
 }
 ```
 
@@ -106,12 +108,46 @@ public class Scaffale{
 		if (i < 0 || i >= libri.legnth) throw new LibroMancanteException();
 		return libri[i];
 	}
+	//che significato trasmetterebbe IndexOutOfBoundsException ad un utilizzatore di una liberia ? nessuno !
+	//l'eccezione personalizzata, invece, nasconde i dettagli implementativi e trasmette un significato appropriato al contesto
 } 
 ```
 al momento della creazione si dovrà studiare la natura e lo scopo delle eccezioni e scegliere la super-classe più adeguata
 
+tramite la parola chiave extends è possibile creare una nuova eccezione a partire da un tipo già esistente
 ```java
 public class NonToccareLaMiaRobaException extends Exception {
 
 }
 ```
+
+## il blocco finally
+il blocco finally è un blocco speciale posto dopo tutti i blocchi try-catch.
+- viene eseguito a prescindere dal sollevamento di eccezioni
+- le istruzioni nel blocco finally vengono eseguite anche se nel blocco try-catch c’è un alteratore del flusso (break, returno continue)
+- l’unico modo in cui non viene eseguito il blocco finally è l’uscita forzata (System.exit(), in cui uccido il thread)
+tipicamente nel blocco finally vengono eseguite operazioni di clean-up !! (chiusura di eventuali file aperti o rilascio di risorse)
+>[!tuff] un return nel finally sovrascrive un return nel try !!!
+
+# gerarchia delle eccezioni
+![[Pasted image 20240513170119.png]]
+## Throwable
+la classe che implementa il concetto delle eccezioni è Throwable, che estende direttamente la classe Object. gli oggetti di tipo Throwable sono gli unici oggetti che è possibile utilizzare con il meccanismo delle eccezioni
+## Exception
+le eccezioni di tipo error sono:
+- eccezioni interne alla JVM (classe RuntimeException): legate ad errori nella logica del programma
+- eccezioni regolari(IOExcpetion, ParseException, …): errori che le applicazioni dovrebbero anticipare e dalle quali si può riprendere l’esecuzione del programma
+
+## Error
+le eccezioni di tipo error sono:
+- irrecuperabili
+- molto rare e non dovrebbero essere considerate dalle applicazioni (ThreadDeath, OutOfMemoryError, …)
+## eccezioni checked e unchecked
+![[Pasted image 20240513170805.png|650]]
+con eccezioni di tipo checked:
+- è sempre necessario attenersi al paradigma catch-or-declare
+- sono eccezioni comuni, ed estendono Exception ma non RuntimeException
+con eccezioni di tipo unchecked:
+- non si è obbligati a dichiarare le eccezioni sollevate o catturarle in un blocco try-catch (ma è possibile farlo)
+- estendono Error o RuntimeException
+

@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "163832b87a1d4735",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -155,52 +168,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6069733b7670ad08",
+  "active": "163832b87a1d4735",
   "lastOpenFiles": [
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-09 mp (done).md",
+    "raw notes/2024-05-07 mp (done).md",
+    "raw notes/2024-04-30 mp (done).md",
+    "raw notes/2024-04-23 mp (half done).md",
+    "raw notes/2024-02-05 mp(done).md",
+    "java/strutture di controllo di flusso.md",
+    "java/serializzazione.md",
+    "java/ricorsione.md",
+    "java/pics/Pasted image 20240513213853.png",
+    "java/pics/Pasted image 20240513170805.png",
+    "java/pics/Pasted image 20240513170119.png",
+    "java/io/io.md",
+    "java/io/input_output.md",
+    "java/io/files.md",
+    "java/io",
+    "java/ereditarietà.md",
+    "java/eccezioni.md",
+    "ae/pics/Screenshot 2024-05-12 (23.07.04).jpeg.png",
+    "ae/pics/Screenshot 2024-05-12 (23.05.35).jpeg.png",
+    "ae/pics/Screenshot 2024-05-12 (23.01.44).jpeg.png",
+    "ae/pics/Screenshot 2024-05-12 (22.55.03).jpeg.png",
+    "ae/pics/Screenshot 2024-05-12 (22.31.58).jpeg.png",
+    "ae/pics/Screenshot 2024-05-09 221907.png",
+    "ae/pics/Pasted image 20240512230857.png",
+    "ae/cpu mips/anticipare e predire i salti.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce.md",
     "java/java.md",
-    "Pasted image 20240509221426.png",
     "raw notes/2024-05-09 mp.md",
-    "conflict-files-obsidian-git.md",
     "ae/cpu mips/implementazione pipeline.md",
-    "Screenshot 2024-05-09 221907.png",
-    "Pasted image 20240509223407.png",
-    "Pasted image 20240509223255.png",
-    "Pasted image 20240509222902.png",
-    "Pasted image 20240509222157.png",
-    "Pasted image 20240509221854.png",
-    "Pasted image 20240509221735.png",
-    "Pasted image 20240509220559.png",
     "java/ereditarietà/ereditarietà.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/coding etiquette.md",
     "java/polimorfismo/polimorfismo.md",
     "java/interfacce/interfacce (real).md",
-    "java/interfacce/classi anonime e lambda function.md",
-    "java/interfacce/classi annidate e interne.md",
-    "java/interesting stuff/interesting stuff.md",
-    "java/eccezioni/eccezioni.md",
-    "java/strutture dati (real)/strutture `complesse`.md",
-    "java/tipi generici.md",
-    "raw notes/2024-04-23 mp.md",
-    "java/swing/notes.md",
-    "java/swing/swing.md",
     "java/swing",
     "java/strutture dati (real)",
-    "java/polimorfismo/confronto, conversione e copia.md",
-    "java/polimorfismo/Object.md",
     "java/polimorfismo",
-    "java/pics/Pasted image 20240507155748.png",
-    "java/oggetti/uml.md",
-    "java/oggetti/strings.md",
-    "java/oggetti/packages.md",
     "java/oggetti",
     "java/interfacce",
     "java/ereditarietà",
     "java/eccezioni",
     "java/controllo",
-    "ae/cpu mips",
-    "ae/assembly"
+    "ae/cpu mips"
   ]
 }
