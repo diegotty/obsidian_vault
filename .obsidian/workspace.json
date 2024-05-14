@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "raw notes/2024-05-14.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,11 +73,13 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -93,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "raw notes/2024-05-14.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "raw notes/2024-05-14.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
+                "file": "raw notes/2024-05-14.md"
               }
             }
           }
@@ -155,10 +157,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6069733b7670ad08",
+  "active": "adebea1db0d847c4",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-14.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-09 mp (done).md",
     "raw notes/2024-05-07 mp (done).md",
     "raw notes/2024-04-30 mp (done).md",
@@ -193,7 +196,6 @@
     "java/strutture dati (real)/strutture dati (real).md",
     "java/coding etiquette.md",
     "java/polimorfismo/polimorfismo.md",
-    "java/interfacce/interfacce (real).md",
     "java/swing",
     "java/strutture dati (real)",
     "java/polimorfismo",
