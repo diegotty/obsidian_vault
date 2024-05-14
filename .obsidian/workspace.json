@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-14.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-14.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-14.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-14.md"
+                "file": "java/strutture dati (real)/strutture dati (real).md"
               }
             }
           }
@@ -157,8 +156,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "adebea1db0d847c4",
+  "active": "6069733b7670ad08",
   "lastOpenFiles": [
+    "java/java.md",
     "raw notes/2024-05-14.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "conflict-files-obsidian-git.md",
@@ -189,7 +189,6 @@
     "ae/cpu mips/anticipare e predire i salti.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce.md",
-    "java/java.md",
     "raw notes/2024-05-09 mp.md",
     "ae/cpu mips/implementazione pipeline.md",
     "java/ereditarietà/ereditarietà.md",
