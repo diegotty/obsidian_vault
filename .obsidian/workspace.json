@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-05-14 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-05-14 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-05-14 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md"
+                "file": "raw notes/2024-05-14 mp.md"
               }
             }
           }
@@ -160,7 +161,7 @@
   "lastOpenFiles": [
     "java/strutture dati (real)/strutture dati (real).md",
     "java/java.md",
-    "raw notes/2024-05-14.md",
+    "raw notes/2024-05-14 mp.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-09 mp (done).md",
