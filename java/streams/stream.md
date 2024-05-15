@@ -5,7 +5,14 @@ supporta operazioni sequenziali e parallele !!
 lo stream viene creato a partire da una sorgente di dati, ad esempio una java.util.Collection, ma al contrario delle Collection, uno stream non memorizza ne modifica i dati della sorgente, ma opera su essi
 ```java
 ```
-## oprerazioni intermedie e terminali
-- operazioni intermedie: restituiscono un altro stream su cui continuare a lavorare
+# oprerazioni 
+![[Pasted image 20240515110119.png]]
+## op intermedie
+restituiscono un altro stream su cui continuare a lavorare
 - operazioni terminali: restituiscono il tipo atteso. 
-una volta che uno stream è stato cnsu
+una volta che uno stream è stato consumato (finendo con l’operazione terminale), non può essere riutilizzato !
+
+## op terminali
+
+## comportamento
+gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
