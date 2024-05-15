@@ -16,3 +16,10 @@ una volta che uno stream è stato consumato (finendo con l’operazione terminal
 
 ## comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
+### op stateful e stateless
+stateless: l’ elaborazione dei vari elementi può procedere in modo indipendente
+stateful: l’elaborazione di un elemento potrebbe dipendere da quella di altri elementi !
+
+cioò detta l’ordine in cui devono essere eseguite le istruzioni in quanto la JVM decide l’ordine delle operazioni intermedie (o almeno ci prova)
+- se lo stream ha solo operazioni stateless, la JVM può eseguire le operazioni in qualsiasi ordine (e quindi può ottimizare di più)
+- se invece ci sono operazioni stateful, è più difficile trovare un ordine per ottimizzare la memoria, performance etc.
