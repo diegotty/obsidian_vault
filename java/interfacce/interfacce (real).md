@@ -113,6 +113,7 @@ in questo modo l’oggetto ha un restringimento della visibilità ai soli metodi
 
 ## oggetti di tipo-interfaccia
 possiamo usare il nome di un’interfaccia ovunque si può usare il nome di qualunque altro tipo!
+se definiamo una variabile di tipo-interfaccia, qualunque oggetto a cui la assegniamo deve implementare quella interfaccia !
 
 ### interfacce ed enum
 posso rendere le enumerazioni estensibili !!
