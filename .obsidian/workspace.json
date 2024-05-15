@@ -13,6 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "java/stream.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "8ed58d60f9dc828a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e46295c86d74a5a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "raw notes/2024-05-14 mp.md",
                 "mode": "source",
                 "source": false
@@ -94,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md",
+                "file": "java/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +129,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md",
+                "file": "java/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md"
+                "file": "java/stream.md"
               }
             }
           },
@@ -165,13 +183,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "e733f4f61e47fb45",
   "lastOpenFiles": [
+    "raw notes/2024-05-14 mp.md",
+    "java/stream.md",
+    "java/io/serializzazione.md",
     "raw notes/2024-05-09 mp (done).md",
     "README.md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-05-14 mp.md",
-    "java/serializzazione.md",
     "java/io/files.md",
     "java/io/input_output.md",
     "raw notes/2024-05-07 mp (done).md",
@@ -196,7 +215,6 @@
     "java/eccezioni.md",
     "java/pics/Pasted image 20240513170805.png",
     "java/pics/Pasted image 20240513170119.png",
-    "java/java.md",
     "ae/pics/Pasted image 20240512230857.png",
     "ae/pics/Screenshot 2024-05-12 (22.55.03).jpeg.png",
     "ae/pics/Screenshot 2024-05-12 (23.07.04).jpeg.png",
