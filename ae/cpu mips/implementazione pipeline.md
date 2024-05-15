@@ -27,4 +27,14 @@ sw $15, 100($2)
 In questo caso, nonostante tutte le istruzioni utilizzino il registro `$2` le uniche istruzioni che avranno il risultato corretto di `sub` saranno `add` e `sw` in quanto le altre due leggerebbero solamente il valore precedentemente immagazzinato in `$2`.
 
 - il risultato dell’istruzione sub, è però, già disponibile al termine della fase EXE. 
-- inoltre, le istruzioni `and` e `or` hanno bisogno di `$2` solamente all'inzio
+- inoltre, le istruzioni `and` e `or` hanno bisogno di `$2` solamente all'inizio della loro fase EXE.
+di conseguenza, è possibile eseguire questo frammento di codice senza stalli, semplicemente propagando il dato a qualsiasi unità lo richieda non appena è disponibile
+
+Questo veloce esempio ci fa subito capire quali siano le casistiche che ci portano ad un data hazard in EXE:
+1a. $\text{EX/MEM.RegistroRd}=\text{ID/EX.RegistroRs}$
+1b. $\text{EX/MEM.RegistroRd}=\text{ID/EX.RegistroRt}$
+2a. $\text{MEM/WB.RegistroRd}=\text{ID/EX.RegistroRs}$
+2b. $\text{MEM/WB.RegistroRd}=\text{ID/EX.RegistroRt}$
+
+il primo hazard generato nell’esempio è quello tra `sub $2, $1, $3` e `and $12, $2, $5`. l’hazard può essere rilevato quando l’istruzione `and` si trova nella fase EXE, e l’istruzione precedente si trova nella fase MEM.
+l’hazard è di tipo 1 : $\text{EX/MEM.RegistroRd}=\text{ID/EX.RegistroRs}=\$2$
