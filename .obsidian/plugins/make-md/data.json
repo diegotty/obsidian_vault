@@ -47,7 +47,8 @@
     "//Spaces",
     "//java/java/ereditarietà",
     "//java/java/ereditarietà",
-    "//java/java/io"
+    "//java/java/io",
+    "//raw notes"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/serializzazione.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/serializzazione.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/serializzazione.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/serializzazione.md"
+                "file": "README.md"
               }
             }
           },
@@ -167,8 +167,8 @@
   },
   "active": "e733f4f61e47fb45",
   "lastOpenFiles": [
-    "java/io/files.md",
     "java/serializzazione.md",
+    "java/io/files.md",
     "java/io/input_output.md",
     "raw notes/2024-05-07 mp (done).md",
     "java/pics/Pasted image 20240513213853.png",
