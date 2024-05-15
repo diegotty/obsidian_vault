@@ -58,7 +58,8 @@ l.stream().sorted().forEach(System.out::print);
 ```java
 //restituisce un nuovo stream in cui ciascun elemento dello stream originale è convertito in un altro oggetto attraverso la Function passata in input
 <R> Stream<R> map(Function<? super T, ? extends R> mapFunction);
-//output di Functiond deve extendere R altrimenti potrei avere errori di tipo! (per esempio se )
+//non è PECS
+//non mi è ben chiaro il vincolo di R, se stiamo passando una Function, sappiamo che T è convertibile in R !! che senso ha vincolare R ?
 ```
 
 ## op terminali
