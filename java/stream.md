@@ -2,6 +2,7 @@
 è un contenitore di un riferimento, che potrebbe essere o non essere **null**
 un metodo può restituire un Optional invece di restituire un riferimento potenzialmente null ! infatti serve ad evitare i NullPointerException
 
+### creazione di un Optional
 ```java
 //creazione di un Optional vuoto
 Optional.empty()
@@ -13,11 +14,16 @@ Optional<String> optional = Optional.ofNullable(s); //in questo caso ha senso us
 Optional.empty().isPresent() // == false;
 OPtional.of("bum bum ghigno"); // == true
 ```
-
+### ottenere il valore di un Optional
+```java
+Optional<String> op = Optional.of("eccomi");
+String res = op.orElse("fallback"); //res = "eccomi";
+String rez = Optional.empty().orElse("fallback"); //rez = fallback
+```
 ### difference between orElse() and orElseGet()
 ```java
 public T orElse(T other); 
 public T orElseGet(Supplier<? extends T> other);
 ```
 se viene passato un metodo come parametro ad entrambi, il orElse invocherà il metodo anche se l’Optional non è null(anche se ritornerà comunque il valore dell’Optional), 
-mentre invece orElseGet() invocherà il metodo Supplier passato come parametro solo se 
+mentre invece orElseGet() invocherà il metodo Supplier passato come parametro solo se l’Optional è null.
