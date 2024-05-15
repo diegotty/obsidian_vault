@@ -111,6 +111,9 @@ supporto.leggi();
 ```
 in questo modo l’oggetto ha un restringimento della visibilità ai soli metodi dell’interfaccia SupportoRiscrivibile (in quanto l’oggetto della classe Nastro è come se fosse di tipo SupportoRiscrivibile)
 
+## oggetti di tipo-interfaccia
+possiamo usare il nome di un’interfaccia ovunque si può usare il nome di qualunque altro tipo!
+
 ### interfacce ed enum
 posso rendere le enumerazioni estensibili !!
 ```java
