@@ -136,7 +136,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-14 mp.md"
+                "file": "java/streams/stream.md"
               }
             }
           },
@@ -207,10 +207,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e46295c86d74a5a8",
+  "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "java/streams/stream.md",
     "raw notes/2024-05-14 mp.md",
+    "java/streams/stream.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/tipi generici.md",

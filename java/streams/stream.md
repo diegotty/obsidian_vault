@@ -41,6 +41,10 @@ una volta che uno stream è stato consumato (finendo con l’operazione terminal
 ```java
 Optional<T> max/min(Comparator<? super T> comparator) 
 //restituisce il massimo/minimo elemento all'interno dello stream
+List<Integer> p = Arrays.asList(2,3,4,5,6,7,8);
+Optional<Integer> max = p.stream().max(Integer::compare);
+
+System.out.println(max.orElse)
 ```
 
 ## op terminali
