@@ -40,4 +40,4 @@ il primo hazard generato nell’esempio è quello tra `sub $2, $1, $3` e `and $1
 l’hazard è di tipo 1 : $\text{EX/MEM.RegistroRd}=\text{ID/EX.RegistroRs}=\$2$
 
 in questo modo però, potremmo propagare dati in casi non necessario, dato che non tutte le istruzioni scrivono il risulato nel register file.
-una possibile soluzione è 
+una possibile soluzione è controllare se il segnale RegWrite è attivo nella p
