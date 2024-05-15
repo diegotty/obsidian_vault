@@ -13,3 +13,5 @@ possiamo dividere i 9 segnali di controllo delle fasi in 3 gruppi:
 ![[Pasted image 20240509223255.png]]
 in questo modo, possiamo facilmente propagare anche i segnali di controllo. come si vede dall’imagine, dopo ogni fase, non servono più i segnali di controllo di tale fase e non vengono quindi propagati
 ![[Pasted image 20240509223407.png]]
+
+## scoprire data hazard

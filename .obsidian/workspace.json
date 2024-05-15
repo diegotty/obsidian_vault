@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/pipeline.md",
+                "file": "ae/cpu mips/implementazione pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/pipeline.md"
+                "file": "ae/cpu mips/implementazione pipeline.md"
               }
             }
           },
@@ -167,10 +167,11 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
+    "ae/cpu mips/malfunzionamenti CU.md",
+    "ae/cpu mips/pipeline.md",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
-    "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
@@ -194,7 +195,6 @@
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "java/ereditarietà.md",
-    "java/polimorfismo/confronto, conversione e copia.md",
     "java/pics/Pasted image 20240513213853.png",
     "java/io",
     "java/pics/Pasted image 20240513170805.png",
