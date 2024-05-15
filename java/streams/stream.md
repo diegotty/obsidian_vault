@@ -96,7 +96,8 @@ long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count();
 ```java
 <R,A> R collect(Collector<? super T, A, R> collectorFunction);
 // permette di raccogliere gli elementi dello stream in qualche oggetto (collection, una stringa, un intero)
-List<IN
+List<Integer> ivaEsclusa = Arrays.asList(10, 20, 30);
+List<Double> l = ivaEsclusa.stream().map(p->p*1.22).collect(Collectors.toList());
 
 ```
 # comportamento
