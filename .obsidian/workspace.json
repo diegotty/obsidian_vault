@@ -43,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "8ed58d60f9dc828a",
@@ -136,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
               }
             }
           },
@@ -207,12 +208,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "229dd4a99b8434e2",
   "lastOpenFiles": [
-    "raw notes/2024-05-14 mp.md",
-    "java/streams/stream.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
+    "java/streams/stream.md",
+    "raw notes/2024-05-14 mp.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/tipi generici.md",
     "java/interfacce/interfacce (real).md",
     "java/streams/optional.md",

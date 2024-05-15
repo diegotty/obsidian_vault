@@ -37,6 +37,15 @@ restituiscono un altro stream su cui continuare a lavorare
 - operazioni terminali: restituiscono il tipo atteso. 
 una volta che uno stream è stato consumato (finendo con l’operazione terminale), non può essere riutilizzato !
 
+### filter
+```java
+Stream<T> filter(Predicate<? super T> predicate)
+//accetta un Predicate per filtrare gli elementi dello stream
+```
+
+
+## op terminali
+
 ### min e max
 ```java
 Optional<T> max/min(Comparator<? super T> comparator) 
@@ -44,10 +53,16 @@ Optional<T> max/min(Comparator<? super T> comparator)
 List<Integer> p = Arrays.asList(2,3,4,5,6,7,8);
 Optional<Integer> max = p.stream().max(Integer::compare);
 
-System.out.println(max.orElse)
+System.out.println(max.orElse(-1));
 ```
 
-## op terminali
+### forEach
+```java
+void forEach(Consumer<? super T> action);
+//prende in input un Consumer e lo applca ad ogni elemento dello stream
+List<Integer> l = Arrays.asList(4,6,5,3,2,343,53);
+I.stream.filter(x-> x > 10).forEach(System.out::println);
+```
 
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
