@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a9541a7834524c0f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,8 +178,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e733f4f61e47fb45",
+  "active": "a9541a7834524c0f",
   "lastOpenFiles": [
+    "README.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-14 mp.md",
     "java/serializzazione.md",
     "java/io/files.md",
     "java/io/input_output.md",
@@ -184,7 +200,6 @@
     "raw notes/2024-04-30 mp (done).md",
     "java/ereditarietà.md",
     "java/polimorfismo/polimorfismo.md",
-    "README.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interfacce/interfacce.md",
     "java/interfacce/interfacce (real).md",
@@ -197,13 +212,11 @@
     "java/java.md",
     "ae/pics/Pasted image 20240512230857.png",
     "ae/pics/Screenshot 2024-05-12 (22.55.03).jpeg.png",
-    "ae/cpu mips/anticipare e predire i salti.md",
     "ae/pics/Screenshot 2024-05-12 (23.07.04).jpeg.png",
     "ae/pics/Screenshot 2024-05-12 (23.05.35).jpeg.png",
     "ae/pics/Screenshot 2024-05-12 (23.01.44).jpeg.png",
     "ae/pics/Screenshot 2024-05-12 (22.31.58).jpeg.png",
     "ae/pics/Pasted image 20240512222805.png",
-    "ae/cpu mips/implementazione pipeline.md",
     "java/strutture dati (real)",
     "java/eccezioni",
     "ae/assembly",
