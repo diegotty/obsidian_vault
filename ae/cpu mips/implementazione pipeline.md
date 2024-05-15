@@ -75,4 +75,10 @@ l’unità di propagazione produce i seguenti segnali di controllo:
 
 ## forwarding in MEM
 un data hazard in MEM avviene solamente quando vengono caricate, in squenza, un `lw` e un `sw` su uno stesso registro `$rd`
+
 ![[Pasted image 20240515215329.png]]
+
+>[!tuff] sintassi simile ma diversa !!
+>è importante ricorda che $t0 in lw è la destinazione in cui scrivere, mentre in sw è da dove leggere !!!
+
+riconoscere questo hazard è molto facile: basta controllare se l’istruzione precedente sta cercando di leggere dalla memoria()
