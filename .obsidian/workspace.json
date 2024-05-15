@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -197,8 +197,9 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "java/interfacce/interfacce (real).md",
+    "java/tipi generici.md",
     "java/streams/stream.md",
+    "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/streams/optional.md",
     "java/strutture dati (real)/strutture dati (real).md",
@@ -225,7 +226,6 @@
     "raw notes/2024-04-23 mp (half done).md",
     "raw notes/2024-04-18 mp (useless) (done).md",
     "java/io",
-    "java/tipi generici.md",
     "raw notes/2024-02-05 mp(done).md",
     "java/pics/Pasted image 20240513170805.png",
     "java/pics/Pasted image 20240513170119.png",

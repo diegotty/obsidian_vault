@@ -11,7 +11,8 @@ lo stream viene creato a partire da una sorgente di dati, ad esempio una java.ut
 Stream.of(6,5,3,67,3,123,4);
 
 //da una collection, usando i metodi stream() o parallelStream()
-List = new ArrayList
+ArrayList<Integer> l1 = new ArrayList<>(42,67,59,23532,3);
+
 ```
 
 ### stream di primitivi
