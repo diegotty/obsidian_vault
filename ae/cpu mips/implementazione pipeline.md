@@ -40,4 +40,9 @@ il primo hazard generato nell’esempio è quello tra `sub $2, $1, $3` e `and $1
 l’hazard è di tipo 1 : $\text{EX/MEM.RegistroRd}=\text{ID/EX.RegistroRs}=\$2$
 
 in questo modo però, potremmo propagare dati in casi non necessario, dato che non tutte le istruzioni scrivono il risulato nel register file.
-una possibile soluzione è controllare se il segnale RegWrite è attivo nella p
+una possibile soluzione è controllare se il segnale RegWrite è attivo nelle pipeline EXE/MEM e MEM/WB. inoltre, per diminuire i casi di propagazione inutile, si può controllare se il registro destinazione (`rd`) è $0, in quanto se ciò fosse così niente verrebbe veramente scritto in rd.
+ecco quindi tutti i casi di data hazard, con controlli:
+![[Pasted image 20240515213917.png]]
+
+viene aggiunto anche MemRead == 0 perchè nel caso sotto, una parte dei 16bit di indirizzo
+![[Pasted image 20240515214057.png]]
