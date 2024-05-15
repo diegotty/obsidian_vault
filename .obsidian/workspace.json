@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "8ed58d60f9dc828a",
@@ -125,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce (real).md"
+                "file": "java/streams/stream.md"
               }
             }
           },
@@ -196,10 +195,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "52ef8d8646ccf00d",
+  "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "java/streams/stream.md",
     "java/interfacce/interfacce (real).md",
+    "java/streams/stream.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/streams/optional.md",
     "java/strutture dati (real)/strutture dati (real).md",
