@@ -50,7 +50,6 @@
     "//java/java/streams",
     "//java/java/interfacce",
     "//java/java/strutture dati (real)",
-    "//ae",
     "//ae/ae/cpu mips"
   ],
   "expandFolderOnClick": true,

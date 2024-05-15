@@ -11,11 +11,9 @@
             "id": "6e411012c6d58acb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "mk-space",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
-                "mode": "source",
-                "source": false
+                "path": "ae/pics"
               }
             }
           }
@@ -94,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,9 +129,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,18 +161,18 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "Pasted image 20240515224400.png",
-    "Pasted image 20240515224013.png",
-    "Pasted image 20240515220321.png",
-    "Pasted image 20240515220219.png",
-    "Pasted image 20240515215329.png",
-    "Pasted image 20240515214318.png",
-    "Pasted image 20240515214057.png",
-    "Pasted image 20240515214030.png",
-    "Pasted image 20240515213917.png",
+    "ae/pics/Pasted image 20240515214057.png",
+    "ae/pics/Pasted image 20240515214318.png",
+    "ae/pics/Pasted image 20240515215329.png",
+    "ae/pics/Pasted image 20240515220219.png",
+    "ae/pics/Pasted image 20240515220321.png",
+    "ae/pics/Pasted image 20240515224013.png",
+    "ae/pics/Pasted image 20240515224400.png",
+    "ae/cpu mips/implementazione pipeline.md",
+    "ae/pics/Pasted image 20240515214030.png",
+    "ae/pics/Pasted image 20240515213917.png",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/pipeline.md",
-    "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
@@ -203,7 +197,6 @@
     "java/streams",
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
-    "java/pics/Pasted image 20240513213853.png",
     "java/io",
     "java/strutture dati (real)",
     "java/eccezioni",
