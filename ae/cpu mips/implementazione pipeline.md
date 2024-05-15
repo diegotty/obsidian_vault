@@ -49,8 +49,21 @@ viene aggiunto anche MemRead == 0 perchè nel caso sotto, una parte dei 16bit di
 
 il forwarding su EXE viene implementato così: 
 ![[Pasted image 20240515214318.png]]
+i 5 bit di `rs` e `rd` dell’istruzione in ID vengono confrontati con i 5 bit di `rd` di una e due istruzioni prima !
 
-con i seguenti segnali di controllo:
+**Modifiche al data path** → inserire MUX prima della ALU per selezionare i 3 casi:
+- *non c’è forwarding*
+	il valore per la ALU viene dal registro **ID/EX** della pipeline
+- *forwarding dall’istruzione precedente*
+	il valore per la ALU viene dal registro **EX/MEM** della precedente
+- *forwarding da 2 istruzioni precedenti*
+	il valore per la ALU viene dal registro **MEM/WB** della precedente
+
+è possibile realizzare il forwaring anche:
+- nella fase ID (necessario solo se `beq` viene anticipata in ID)
+- nella fase di MEM (necessario solo se `lw $rd...`, è subito seguita da `sw $rd...`, se `sw` è preceduta da tipo R il forwarding avviene in fase EXE )
+
+l’unità di propagazione produce i seguenti segnali di controllo:
 
 | Segnale multiplexer | Sorgente | Spiegazione                                                                                             |
 | ------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
