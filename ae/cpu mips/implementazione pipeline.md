@@ -97,5 +97,9 @@ add $9, $4, $2
 slt $1, $6, $7
 ```
 in questo caso l’`and` usa un dato che sarà pronto solo dopo la fase MEM. è quindi necessario introdurre uno stallo.
+per effettuare uno stallo, basta impedire la modifica del PC e del registro di pipeline IF/ID, in quanto è stata caricata l’istruzione che ci servirà dopo lo stallo.
 
-per
+lo stallo viene eseguito attraerso l’ausilio di istruzioni che non producono effetti dette NOP(not operation). una delle nop consiste nell’impostare tutti i campi a 0 !
+cpu con pipeline e stallo (semplificata):
+![[Pasted image 20240515224013.png]]
+l’unità di rilevamento degli hazard manda una linea di selezione nel mux che decide qual
