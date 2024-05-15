@@ -13,3 +13,11 @@ Optional<String> optional = Optional.ofNullable(s); //in questo caso ha senso us
 Optional.empty().isPresent() // == false;
 OPtional.of("bum bum ghigno"); // == true
 ```
+
+### difference between orElse() and orElseGet()
+```java
+public T orElse(T other); 
+public T orElseGet(Supplier<? extends T> other);
+```
+se viene passato un metodo come parametro ad entrambi, il orElse invocherà il metodo anche se l’Optional non è null(anche se ritornerà comunque il valore dell’Optional), 
+mentre invece orElseGet() invocherà il metodo Supplier passato come parametro solo se 
