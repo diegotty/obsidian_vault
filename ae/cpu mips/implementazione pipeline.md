@@ -44,5 +44,19 @@ una possibile soluzione è controllare se il segnale RegWrite è attivo nelle pi
 ecco quindi tutti i casi di data hazard, con controlli:
 ![[Pasted image 20240515213917.png]]
 
-viene aggiunto anche MemRead == 0 perchè nel caso sotto, una parte dei 16bit di indirizzo
+viene aggiunto anche MemRead == 0 perchè nel caso sotto, una parte dei 16bit di offset risulta, per caso, essere uguale all’`rs` dell’istruzione successiva, e inoltre è nella stessa posizione di un eventuale `rd` se l’istruzione fosse di tipo R
 ![[Pasted image 20240515214057.png]]
+
+il forwarding su EXE viene implementato così: 
+![[Pasted image 20240515214318.png]]
+
+con i seguenti segnali di controllo:
+
+| Segnale multiplexer | Sorgente | Spiegazione                                                                                             |
+| ------------------- | -------- | ------------------------------------------------------------------------------------------------------- |
+| PropagaA = 00       | ID/EX    | Il primo operando della ALU proviene dal register file                                                  |
+| PropagaA = 10       | EX/MEM   | Il primo operando della ALU viene propagato dal risultato della ALU nel ciclo di clock precedente       |
+| PropagaA = 01       | MEM/WB   | Il primo operando della ALU viene propagato dalla memoria dati o da un precedente risultato della ALU   |
+| PropagaB = 00       | ID/EX    | Il secondo operando della ALU proviene dal register file                                                |
+| PropagaB = 10       | EX/MEM   | Il secondo operando della ALU viene propagato dal risultato della ALU nel ciclo di clock precedente     |
+| PropagaB = 01       | MEM/WB   | Il secondo operando della ALU viene propagato dalla memoria dati o da un precedente risultato della ALU |
