@@ -37,7 +37,7 @@ restituiscono un altro stream su cui continuare a lavorare
 - operazioni terminali: restituiscono il tipo atteso. 
 una volta che uno stream è stato consumato (finendo con l’operazione terminale), non può essere riutilizzato !
 
-###
+### min e max
 
 ## op terminali
 

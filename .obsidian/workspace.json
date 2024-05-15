@@ -25,13 +25,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "229dd4a99b8434e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       },
       {
         "id": "8ed58d60f9dc828a",
@@ -124,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +154,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +177,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
               }
             }
           },
@@ -195,11 +208,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "229dd4a99b8434e2",
   "lastOpenFiles": [
-    "raw notes/2024-05-14 mp.md",
-    "java/streams/stream.md",
+    "java/interfacce/Comparable e Comparator.md",
     "java/tipi generici.md",
+    "java/streams/stream.md",
+    "raw notes/2024-05-14 mp.md",
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/streams/optional.md",
@@ -212,7 +226,6 @@
     "java/io/io.md",
     "java/ricorsione.md",
     "java/streams",
-    "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "java/ereditarietà.md",
