@@ -81,4 +81,10 @@ un data hazard in MEM avviene solamente quando vengono caricate, in squenza, un 
 >[!tuff] sintassi simile ma diversa !!
 >è importante ricorda che $t0 in lw è la destinazione in cui scrivere, mentre in sw è da dove leggere !!!
 
-riconoscere questo hazard è molto facile: basta controllare se l’istruzione precedente sta cercando di leggere dalla memoria()
+riconoscere questo hazard è molto facile: basta controllare se l’istruzione precedente sta cercando di leggere dalla memoria e poi scrivere nel registro (e quindi l’istruzione è una lw), e l’istruzione presente sta provando a scrivere in memoria (ed è quindi una sw)
+![[Pasted image 20240515220219.png]]
+
+il forwarding su MEM viene implementato così:
+![[Pasted image 20240515220321.png]]
+
+## stallo dell’istruzione
