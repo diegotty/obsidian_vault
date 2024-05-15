@@ -20,5 +20,14 @@ classe che implementa varie operazioni di riduzione utili, come accumulare eleme
 #### toMap
 more depth on riduzione a una mappa:
 toMap prende fino a 4 argomenti:
+- la funzione per scegliere la chiave con cui mappare gli oggetti
+- la funzione per scegliere il valore con cui mappare gli oggetti
+- **opzionale1**: permette di definire, tramite una funzione, il caso in cui un oggetto ha la stessa chiave di un altro oggetto già inserito nella mappa.
+- **opzionale2**: il supplier che crea la mappa (per scegliere che tipo di mappa ?)
+```java
+Map<Integer, String> map = persons.stream().collect(Collectors.toMap(
+Person::getAge, Person::getName, (name)
+))
+```
 
 ### raggruppamento di elementi
