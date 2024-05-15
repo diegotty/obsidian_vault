@@ -47,10 +47,11 @@
     "//Spaces",
     "//java/java/ereditarietà",
     "//java/java/ereditarietà",
-    "//java",
     "//java/java/streams",
     "//java/java/interfacce",
-    "//java/java/strutture dati (real)"
+    "//java/java/strutture dati (real)",
+    "//ae",
+    "//ae/ae/cpu mips"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",

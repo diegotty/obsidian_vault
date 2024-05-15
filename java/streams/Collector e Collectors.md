@@ -34,5 +34,7 @@ Person::getAge, Person::getName, (name1, name2) -> name1 + ";" + name2 ));
 - `groupingBy(lambda, downStreamCollector)` - il parametro downStreamCollector serve per groupare, ma in chiave:collectionSpecificata e non chiave:Lista
 - `mapping()` - è un modo di specificare il downStreamCollector, allo stesso tempo “modificando” lo stream !
 ```java
-
+Map<City, Set<String>> peopleSurnamesByCity = people.stream().collect(
+groupingBy(Person::getCity, mapping(Person::getLastName, toSet()));
+//sto specificando che nel set ci dovranno essere sono i cognomi !!
 ```

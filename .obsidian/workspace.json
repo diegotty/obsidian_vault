@@ -13,49 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "229dd4a99b8434e2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2ec21b7b5d5707b4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/tipi generici.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "8ed58d60f9dc828a",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "e46295c86d74a5a8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-05-14 mp.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "mode": "source",
                 "source": false
               }
@@ -136,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -153,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -176,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "ae/cpu mips/anticipare e predire i salti.md"
               }
             }
           },
@@ -209,16 +167,18 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
+    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
+    "ae/cpu mips/implementazione pipeline.md",
+    "java/streams/Collector e Collectors.md",
+    "java/pics/Pasted image 20240515110119.png",
+    "raw notes/2024-05-14 mp (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
     "java/interfacce/interfacce (real).md",
-    "raw notes/2024-05-14 mp.md",
     "java/tipi generici.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/streams/optional.md",
-    "Pasted image 20240515110119.png",
     "java/streams/streams.md",
     "java/io/serializzazione.md",
     "java/io/files.md",
@@ -236,8 +196,6 @@
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-07 mp (done).md",
     "java/pics/Pasted image 20240513213853.png",
-    "raw notes/2024-04-23 mp (half done).md",
-    "raw notes/2024-04-18 mp (useless) (done).md",
     "java/io",
     "java/pics/Pasted image 20240513170805.png",
     "java/pics/Pasted image 20240513170119.png",
