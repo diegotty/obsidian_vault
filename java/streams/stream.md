@@ -1,10 +1,19 @@
 uno stream rappresenta una sequenza di elementi su cui possono essere effettuate una o più operazioni.
 supporta operazioni sequenziali e parallele !!
 
+>[!tuff] Stream è un’interfaccia !!
+
 ## creazione di uno Stream
 lo stream viene creato a partire da una sorgente di dati, ad esempio una java.util.Collection, ma al contrario delle Collection, uno stream non memorizza ne modifica i dati della sorgente, ma opera su essi
 ```java
 ```
+
+### stream di primitivi
+poichè Stream opera su oggetti, esisono versioni ottimizzate per lavorare con 3 tipi primitivi:
+- IntStream
+- DoubleStream
+- LongStream
+tutte queste interfacce estendono l’interfaccia di base BaseStream
 # oprerazioni 
 ![[Pasted image 20240515110119.png]]
 ## op intermedie
