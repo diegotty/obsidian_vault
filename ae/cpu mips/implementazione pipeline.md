@@ -13,9 +13,8 @@ possiamo dividere i 9 segnali di controllo delle fasi in 3 gruppi:
 ![[Pasted image 20240509223255.png]]
 in questo modo, possiamo facilmente propagare anche i segnali di controllo. come si vede dall’imagine, dopo ogni fase, non servono più i segnali di controllo di tale fase e non vengono quindi propagati
 ![[Pasted image 20240509223407.png]]
-
-## scoprire data hazard 
-### data hazard in EXE
+ 
+### forwarding in EXE
 supponiamo di avere questa sequenza di istruzioni:
 ```arm-asm
 sub $2, $1, $3
@@ -73,3 +72,7 @@ l’unità di propagazione produce i seguenti segnali di controllo:
 | PropagaB = 00       | ID/EX    | Il secondo operando della ALU proviene dal register file                                                |
 | PropagaB = 10       | EX/MEM   | Il secondo operando della ALU viene propagato dal risultato della ALU nel ciclo di clock precedente     |
 | PropagaB = 01       | MEM/WB   | Il secondo operando della ALU viene propagato dalla memoria dati o da un precedente risultato della ALU |
+
+## forwarding in MEM
+un data hazard in MEM avviene solamente quando vengono caricate, in squenza, un `lw` e un `sw` su uno stesso registro `$rd`
+![[Pasted image 20240515215329.png]]
