@@ -26,8 +26,8 @@ toMap prende fino a 4 argomenti:
 - **opzionale2**: il supplier che crea la mappa (per scegliere che tipo di mappa ?)
 ```java
 Map<Integer, String> map = persons.stream().collect(Collectors.toMap(
-Person::getAge, Person::getName, (name)
-))
+Person::getAge, Person::getName, (name1, name2) -> name1 + ";" + name2 ));
 ```
 
 ### raggruppamento di elementi
+- `groupingBy()`
