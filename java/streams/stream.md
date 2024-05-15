@@ -37,6 +37,8 @@ restituiscono un altro stream su cui continuare a lavorare
 - operazioni terminali: restituiscono il tipo atteso. 
 una volta che uno stream è stato consumato (finendo con l’operazione terminale), non può essere riutilizzato !
 
+###
+
 ## op terminali
 
 # comportamento
@@ -51,4 +53,6 @@ cioò detta l’ordine in cui devono essere eseguite le istruzioni in quanto la 
 
 ## stile dichiarativo
 - lo stream permette di utilizzare uno stile dichiarativo (dichiariamo le operazioni da effetturare, la ma JVM decide l’ordine)
-- mentre la collection impone l''utilizzo di uno stile imperativo
+- mentre la collection impone l''utilizzo di uno stile imperativo (dichiarlo le operazioni da effettuare e l’ordine in cui effettuarle, passo per passo)
+lo stream si focalizza sulle operazioni di alto livello da eseguire, eventualmente anche in parallelo, **senza specificare come verranno eseguite**
+uno stream è quindi: dichiarativo, componibile, e parallelizzabile
