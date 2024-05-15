@@ -90,5 +90,12 @@ il forwarding su MEM viene implementato così:
 ## stallo dell’istruzione
 Talvolta però risulta necessario che l’istruzione debba attendere che sia pronto il dato prima di poter effettuare un forwarding. 
 ```armasm
-lw $20
+lw $2, 20($1)
+and $4, $2, $5
+or $8, $2, $6
+add $9, $4, $2
+slt $1, $6, $7
 ```
+in questo caso l’`and` usa un dato che sarà pronto solo dopo la fase MEM. è quindi necessario introdurre uno stallo.
+
+per
