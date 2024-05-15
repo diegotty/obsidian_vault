@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "f85afa2160401d3b",
+        "id": "70e4f7a3c4962f2b",
         "type": "tabs",
         "children": [
           {
-            "id": "6e411012c6d58acb",
+            "id": "6069733b7670ad08",
             "type": "leaf",
             "state": {
-              "type": "mk-space",
+              "type": "markdown",
               "state": {
-                "path": "ae/pics"
+                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -64,7 +66,7 @@
             }
           },
           {
-            "id": "e733f4f61e47fb45",
+            "id": "adebea1db0d847c4",
             "type": "leaf",
             "state": {
               "type": "mk-path-view",
@@ -92,6 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,82 +133,76 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "43ad06d8594ec5d0",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
+              "state": {
+                "file": "java/strutture dati (real)/strutture dati (real).md"
+              }
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "6069733b7670ad08",
   "lastOpenFiles": [
-    "ae/pics/Pasted image 20240515214057.png",
-    "ae/pics/Pasted image 20240515214318.png",
-    "ae/pics/Pasted image 20240515215329.png",
-    "ae/pics/Pasted image 20240515220219.png",
-    "ae/pics/Pasted image 20240515220321.png",
-    "ae/pics/Pasted image 20240515224013.png",
+    "raw notes/2024-05-14 mp.md",
+    "raw notes/2024-05-14 mp (done).md",
+    "java/streams/streams.md",
+    "java/streams/stream.md",
+    "java/streams/optional.md",
+    "java/streams/Collector e Collectors.md",
+    "java/streams",
+    "java/pics/Pasted image 20240515110119.png",
+    "java/io/serializzazione.md",
     "ae/pics/Pasted image 20240515224400.png",
-    "ae/cpu mips/implementazione pipeline.md",
+    "ae/pics/Pasted image 20240515224013.png",
+    "ae/pics/Pasted image 20240515220321.png",
+    "ae/pics/Pasted image 20240515220219.png",
+    "ae/pics/Pasted image 20240515215329.png",
+    "ae/pics/Pasted image 20240515214318.png",
+    "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214030.png",
     "ae/pics/Pasted image 20240515213917.png",
-    "ae/cpu mips/malfunzionamenti CU.md",
-    "ae/cpu mips/pipeline.md",
-    "ae/cpu mips/fasi della CPU.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
-    "ae/cpu mips/progetto di CPU MIPS.md",
-    "ae/cpu mips/anticipare e predire i salti.md",
-    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
-    "java/streams/Collector e Collectors.md",
-    "java/pics/Pasted image 20240515110119.png",
-    "raw notes/2024-05-14 mp (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
+    "java/java.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "java/streams/stream.md",
-    "java/interfacce/interfacce (real).md",
-    "java/tipi generici.md",
-    "java/interfacce/Comparable e Comparator.md",
-    "java/streams/optional.md",
-    "java/streams/streams.md",
-    "java/io/serializzazione.md",
-    "java/io/files.md",
-    "java/io/input_output.md",
-    "java/io/io.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-09 mp (done).md",
+    "raw notes/2024-05-07 mp (done).md",
+    "raw notes/2024-04-30 mp (done).md",
+    "raw notes/2024-04-23 mp (half done).md",
+    "raw notes/2024-02-05 mp(done).md",
+    "java/strutture di controllo di flusso.md",
+    "java/serializzazione.md",
     "java/ricorsione.md",
-    "java/streams",
-    "java/interfacce/classi anonime e lambda function.md",
-    "java/interfacce/classi annidate e interne.md",
+    "java/io/io.md",
+    "java/io/input_output.md",
+    "java/io/files.md",
     "java/io",
+    "java/ereditarietà.md",
+    "java/eccezioni.md",
+    "ae/cpu mips/anticipare e predire i salti.md",
+    "java/interfacce/Iterable e Iterator.md",
+    "java/swing",
     "java/strutture dati (real)",
-    "java/eccezioni",
-    "ae/assembly",
-    "ae/cpu mips",
-    "java/controllo",
+    "java/polimorfismo",
     "java/oggetti",
-    "java/ereditarietà/Untitled",
-    "java/ereditarietà"
+    "java/interfacce",
+    "java/ereditarietà",
+    "java/eccezioni",
+    "java/controllo"
   ]
 }
