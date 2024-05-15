@@ -40,6 +40,7 @@ una volta che uno stream è stato consumato (finendo con l’operazione terminal
 ### min e max
 ```java
 Optional<T> max/min(Comparator<? super T> comparator) 
+//restituisce il massimo/minimo elemento all'interno dello stream
 ```
 
 ## op terminali
