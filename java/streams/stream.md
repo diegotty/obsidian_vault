@@ -47,6 +47,19 @@ List<String> l = Arrays.asList("java", "guava", "jam", "gum");
 l.stream().filter(startsWithJ).forEach(s -> System.out::print("starts with j: " + s));
 ```
 
+### sorted
+```java
+//restituisce uno stream ordinato senza modificare la collezione da cui è stato creato lo stream
+List<String> l = Arrays.asList("da", "ab", "ac", "bb");
+l.stream().sorted().forEach(System.out::print);
+```
+
+### map
+```java
+//restituisce un nuovo stream in cui ciascun elemento dello stream originale è convertito in un altro oggetto attraverso la Function passata in input
+<R> Stream<R> map(Function<? super T, ? extends R> mapFunction);
+//output di Functiond deve extendere R altrimenti potrei non poter f
+```
 
 ## op terminali
 
@@ -74,7 +87,7 @@ long count();
 //restituisce il numero(long) di elementi nello stream
 long startsWithA = l.stream.filter(s-> s.startsWith("a").count());
 
-long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count()
+long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count();
 ```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
