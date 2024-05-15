@@ -59,7 +59,8 @@ l.stream().sorted().forEach(System.out::print);
 //restituisce un nuovo stream in cui ciascun elemento dello stream originale è convertito in un altro oggetto attraverso la Function passata in input
 <R> Stream<R> map(Function<? super T, ? extends R> mapFunction);
 //non è PECS
-//non mi è ben chiaro il vincolo di R, se stiamo passando una Function, sappiamo che T è convertibile in R !! che senso ha vincolare R ?
+//non mi è ben chiaro il vincolo di R, se stiamo passando una Function, sappiamo che T è convertibile in R !! che senso ha vincolare R ? non ho neanche capito come funziona la dichiarazione di R, evidentemente non viene presa dall'output di Function, ma viene settata da qualcos'altro ....
+l.stream().map(s -> s.toUpperCase()).forEach(System.out::println);
 ```
 
 ## op terminali
@@ -89,6 +90,13 @@ long count();
 long startsWithA = l.stream.filter(s-> s.startsWith("a").count());
 
 long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count();
+```
+
+### collect
+```java
+<R,A> R collect(Collector<? super T, A, R> collectorFunction);
+// permette di raccogliere gli elementi dello stream in qualche oggetto (collection, una stringa, un intero)
+
 ```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
