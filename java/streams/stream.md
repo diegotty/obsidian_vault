@@ -12,7 +12,16 @@ Stream.of(6,5,3,67,3,123,4);
 
 //da una collection, usando i metodi stream() o parallelStream()
 ArrayList<Integer> l1 = new ArrayList<>(42,67,59,23532,3);
+l1.stream(); //restituisce un nuovo stream sequenziale
+l1.parallelStream(); // restituisce un nuovo stream parallelo se possibile (altrimenti restituisce uno stream sequenziale)
 
+//da un array
+int[] arr = new int[] {10,5,6,32,46421};
+Arrays.stream(arr);
+
+//da un file
+BufferedReader.lines()
+Files.lines(path);
 ```
 
 ### stream di primitivi
@@ -30,12 +39,16 @@ una volta che uno stream è stato consumato (finendo con l’operazione terminal
 
 ## op terminali
 
-## comportamento
+# comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
-### op stateful e stateless
+## op stateful e stateless
 stateless: l’ elaborazione dei vari elementi può procedere in modo indipendente
 stateful: l’elaborazione di un elemento potrebbe dipendere da quella di altri elementi !
 
 cioò detta l’ordine in cui devono essere eseguite le istruzioni in quanto la JVM decide l’ordine delle operazioni intermedie (o almeno ci prova)
 - se lo stream ha solo operazioni stateless, la JVM può eseguire le operazioni in qualsiasi ordine (e quindi può ottimizare di più)
 - se invece ci sono operazioni stateful, è più difficile trovare un ordine per ottimizzare la memoria, performance etc.
+
+## stile dichiarativo
+- lo stream permette di utilizzare uno stile dichiarativo (dichiariamo le operazioni da effetturare, la ma JVM decide l’ordine)
+- mentre la collection impone l''utilizzo di uno stile imperativo
