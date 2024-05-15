@@ -115,6 +115,8 @@ in questo modo l’oggetto ha un restringimento della visibilità ai soli metodi
 possiamo usare il nome di un’interfaccia ovunque si può usare il nome di qualunque altro tipo!
 se definiamo una variabile di tipo-interfaccia, qualunque oggetto a cui la assegniamo deve implementare quella interfaccia !
 
+quando implementano una interfaccia, gli oggetti possono essere sia di tipo -la loro classe-, sia di tipo -una loro superclasse-, che tipo tipo -interfaccia che implementa la loro classe- . questo crea dei vantaggi di ereditarietà multipla, infatti si possono avere comportamenti di una superclasse e di un’interfaccia !
+
 ### interfacce ed enum
 posso rendere le enumerazioni estensibili !!
 ```java
