@@ -41,6 +41,10 @@ una volta che uno stream è stato consumato (finendo con l’operazione terminal
 ```java
 Stream<T> filter(Predicate<? super T> predicate)
 //accetta un Predicate per filtrare gli elementi dello stream
+Predicate<String> startsWithJ = s -> s.startsWith("J");
+List<String> l = Arrays.asList("java", "guava", "jam", "gum");
+
+l.stream().filter(startsWithJ).forEach(s -> System.out::print("starts with j: " + s));
 ```
 
 
@@ -61,9 +65,17 @@ System.out.println(max.orElse(-1));
 void forEach(Consumer<? super T> action);
 //prende in input un Consumer e lo applca ad ogni elemento dello stream
 List<Integer> l = Arrays.asList(4,6,5,3,2,343,53);
-I.stream.filter(x-> x > 10).forEach(System.out::println);
+l.stream.filter(x-> x > 10).forEach(System.out::println);
 ```
 
+### count
+```java
+long count();
+//restituisce il numero(long) di elementi nello stream
+long startsWithA = l.stream.filter(s-> s.startsWith("a").count());
+
+long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count()
+```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
 ## op stateful e stateless
