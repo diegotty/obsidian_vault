@@ -116,6 +116,7 @@ possiamo usare il nome di un’interfaccia ovunque si può usare il nome di qual
 se definiamo una variabile di tipo-interfaccia, qualunque oggetto a cui la assegniamo deve implementare quella interfaccia !
 
 quando implementano una interfaccia, gli oggetti possono essere sia di tipo -la loro classe-, sia di tipo -una loro superclasse-, che tipo tipo -interfaccia che implementa la loro classe- . questo crea dei vantaggi di ereditarietà multipla, infatti si possono avere comportamenti di una superclasse e di un’interfaccia !
+[src](https://docs.oracle.com/javase/tutorial/java/IandI/interfaceAsType.html#:~:text=When%20you%20define%20a%20new,any%20other%20data%20type%20name.)
 
 ### interfacce ed enum
 posso rendere le enumerazioni estensibili !!

@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "java/interfacce/interfacce (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -209,13 +209,13 @@
   },
   "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "java/streams/stream.md",
+    "java/interfacce/interfacce (real).md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/streams/Collectors.md",
+    "java/streams/stream.md",
     "raw notes/2024-05-14 mp.md",
     "java/tipi generici.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
-    "java/interfacce/interfacce (real).md",
     "java/streams/optional.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "Pasted image 20240515110119.png",

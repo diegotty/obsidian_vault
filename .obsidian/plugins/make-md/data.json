@@ -48,7 +48,8 @@
     "//java/java/ereditarietà",
     "//java/java/ereditarietà",
     "//java",
-    "//java/java/streams"
+    "//java/java/streams",
+    "//java/java/interfacce"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
