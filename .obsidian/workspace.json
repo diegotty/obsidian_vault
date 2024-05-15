@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/stream.md",
+                "file": "java/streams/stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "8ed58d60f9dc828a",
@@ -125,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
+                "file": "java/streams/stream.md"
               }
             }
           },
@@ -196,9 +195,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "52ef8d8646ccf00d",
+  "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "java/stream.md",
+    "java/streams/optional.md",
+    "java/streams/streams.md",
+    "java/streams/stream.md",
+    "java/io/serializzazione.md",
+    "java/io/files.md",
+    "java/io/input_output.md",
+    "java/io/io.md",
+    "java/ricorsione.md",
+    "java/streams",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/classi anonime e lambda function.md",
@@ -208,24 +215,17 @@
     "java/polimorfismo/Object.md",
     "java/interfacce/interfacce (real).md",
     "raw notes/2024-05-14 mp.md",
-    "java/io/serializzazione.md",
     "raw notes/2024-05-09 mp (done).md",
     "README.md",
     "conflict-files-obsidian-git.md",
-    "java/io/files.md",
-    "java/io/input_output.md",
     "raw notes/2024-05-07 mp (done).md",
     "java/pics/Pasted image 20240513213853.png",
     "raw notes/2024-04-23 mp (half done).md",
     "raw notes/2024-04-18 mp (useless) (done).md",
-    "java/io/io.md",
     "java/io",
-    "java/ricorsione.md",
     "java/tipi generici.md",
     "raw notes/2024-02-05 mp(done).md",
     "raw notes/2024-04-30 mp (done).md",
-    "java/polimorfismo/polimorfismo.md",
-    "java/interesting stuff/interesting stuff.md",
     "java/pics/Pasted image 20240513170805.png",
     "java/pics/Pasted image 20240513170119.png",
     "ae/pics/Pasted image 20240512230857.png",
@@ -242,7 +242,6 @@
     "java/controllo",
     "java/oggetti",
     "java/ereditarietà/Untitled",
-    "java/ereditarietà",
-    "java/polimorfismo"
+    "java/ereditarietà"
   ]
 }

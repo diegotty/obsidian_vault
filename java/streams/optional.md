@@ -19,6 +19,11 @@ OPtional.of("bum bum ghigno"); // == true
 Optional<String> op = Optional.of("eccomi");
 String res = op.orElse("fallback"); //res = "eccomi";
 String rez = Optional.empty().orElse("fallback"); //rez = fallback
+
+//altrimenti:
+op.ifPresent(System.out::println); // "eccomi"
+//ifPresent prende in input un consumer !! System.out::println fitta la def di consumer effettivamente
+optional.get(); //valore o sollevea eccezione se null
 ```
 ### difference between orElse() and orElseGet()
 ```java
