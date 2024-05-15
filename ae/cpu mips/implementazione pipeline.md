@@ -24,4 +24,7 @@ or $13, $6 ,$2
 add $14, $2, $2
 sw $15, 100($2)
 ```
-In questo caso, nonostante tutte le istruzioni utilizzino il registro `$2` le uniche istruzioni che avranno il risultato corretto di `sub` saranno `add` e `sw` in quanto le altre due leggerebbero solamente il valore precedentemente immagazinato in `$2`.
+In questo caso, nonostante tutte le istruzioni utilizzino il registro `$2` le uniche istruzioni che avranno il risultato corretto di `sub` saranno `add` e `sw` in quanto le altre due leggerebbero solamente il valore precedentemente immagazzinato in `$2`.
+
+- il risultato dell’istruzione sub, è però, già disponibile al termine della fase EXE. 
+- inoltre, le istruzioni `and` e `or` hanno bisogno di `$2` solamente all'inzio
