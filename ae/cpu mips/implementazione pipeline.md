@@ -88,3 +88,7 @@ il forwarding su MEM viene implementato così:
 ![[Pasted image 20240515220321.png]]
 
 ## stallo dell’istruzione
+Talvolta però risulta necessario che l’istruzione debba attendere che sia pronto il dato prima di poter effettuare un forwarding. 
+```armasm
+lw $20
+```
