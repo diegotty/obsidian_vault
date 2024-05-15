@@ -6,6 +6,11 @@ caratteristiche che distinguono le strutture dati:
 - le collezioni in java sono rese disponibili mediante il Java Collection Framework
 - sono strutture dati già pronte all’uso, con interfacce e algoritmi per manipolarle
 - contengono e strutturano riferimenti ad altri oggetti (tipicamente tutti dello stesso tipo)
+
+>[!tuff] Collection e Collections non sono la stessa cosa !!!
+>Collections è una classe che consiste solo di metodi statici che operano o ritornano collections.
+
+
 alcune interfacce del framework:
 
 | Interfaccia | Descrizione                                             |
