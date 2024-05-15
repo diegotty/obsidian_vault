@@ -14,4 +14,14 @@ possiamo dividere i 9 segnali di controllo delle fasi in 3 gruppi:
 in questo modo, possiamo facilmente propagare anche i segnali di controllo. come si vede dall’imagine, dopo ogni fase, non servono più i segnali di controllo di tale fase e non vengono quindi propagati
 ![[Pasted image 20240509223407.png]]
 
-## scoprire data hazard
+## scoprire data hazard 
+### data hazard in EXE
+supponiamo di avere questa sequenza di istruzioni:
+```arm-asm
+sub $2, $1, $3
+and $12, $2, $5
+or $13, $6 ,$2
+add $14, $2, $2
+sw $15, 100($2)
+```
+In questo caso, nonostante tutte le istruzioni utilizzino il registro `$2` le uniche istruzioni che avranno il risultato corretto di `sub` saranno `add` e `sw` in quanto le altre due leggerebbero solamente il valore precedentemente immagazinato in `$2`.

@@ -169,10 +169,10 @@
   "lastOpenFiles": [
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/pipeline.md",
+    "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
-    "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "java/streams/Collector e Collectors.md",
