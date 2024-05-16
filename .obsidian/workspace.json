@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "70e4f7a3c4962f2b",
+        "id": "58856b07108224e8",
         "type": "tabs",
         "children": [
           {
-            "id": "6069733b7670ad08",
+            "id": "56e617100af116ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-04-18 mp (useless) (done).md",
+                "file": "java/streams/stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-04-18 mp (useless) (done).md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-04-18 mp (useless) (done).md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-04-18 mp (useless) (done).md"
+                "file": "java/streams/stream.md"
               }
             }
           }
@@ -156,15 +156,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6069733b7670ad08",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "java/streams/optional.md",
+    "java/streams/Collector e Collectors.md",
+    "java/streams/stream.md",
+    "raw notes/2024-04-18 mp (useless) (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
     "raw notes/2024-05-14 mp.md",
     "raw notes/2024-05-14 mp (done).md",
     "java/streams/streams.md",
-    "java/streams/stream.md",
-    "java/streams/optional.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams",
     "java/pics/Pasted image 20240515110119.png",
     "java/io/serializzazione.md",
@@ -195,7 +196,6 @@
     "java/ereditarietà.md",
     "java/eccezioni.md",
     "ae/cpu mips/anticipare e predire i salti.md",
-    "java/interfacce/Iterable e Iterator.md",
     "java/swing",
     "java/strutture dati (real)",
     "java/polimorfismo",
