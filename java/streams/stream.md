@@ -59,7 +59,7 @@ l.stream().sorted().forEach(System.out::print);
 //restituisce un nuovo stream in cui ciascun elemento dello stream originale è convertito in un altro oggetto attraverso la Function passata in input
 <R> Stream<R> map(Function<? super T, ? extends R> mapFunction);
 //non è PECS
-//non mi è ben chiaro il vincolo di R, se stiamo passando una Function, sappiamo che T è convertibile in R !! che senso ha vincolare R ? non ho neanche capito come funziona la dichiarazione di R, evidentemente non viene presa dall'output di Function, ma viene settata da qualcos'altro ....
+// il vincolo su R ha senso perchè mi sto dando la possibilità di creare uno stream di ritorno di un sottotipo del secondo tipo generico di R
 l.stream().map(s -> s.toUpperCase()).forEach(System.out::println);
 ```
 
