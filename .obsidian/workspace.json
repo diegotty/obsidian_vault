@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-04-18 mp (useless) (done).md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-04-18 mp (useless) (done).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "raw notes/2024-04-18 mp (useless) (done).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md"
+                "file": "raw notes/2024-04-18 mp (useless) (done).md"
               }
             }
           }
@@ -158,6 +158,7 @@
   },
   "active": "6069733b7670ad08",
   "lastOpenFiles": [
+    "java/strutture dati (real)/strutture dati (real).md",
     "raw notes/2024-05-14 mp.md",
     "raw notes/2024-05-14 mp (done).md",
     "java/streams/streams.md",
@@ -176,7 +177,6 @@
     "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214030.png",
     "ae/pics/Pasted image 20240515213917.png",
-    "java/strutture dati (real)/strutture dati (real).md",
     "java/java.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "conflict-files-obsidian-git.md",
