@@ -157,11 +157,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "adebea1db0d847c4",
   "lastOpenFiles": [
+    "java/tipi generici.md",
+    "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
     "raw notes/2024-05-16 mp.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "raw notes/2024-04-18 mp (useless) (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
@@ -196,7 +197,6 @@
     "java/io/files.md",
     "java/io",
     "java/ereditarietà.md",
-    "java/eccezioni.md",
     "java/swing",
     "java/strutture dati (real)",
     "java/polimorfismo",
