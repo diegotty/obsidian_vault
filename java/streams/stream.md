@@ -61,6 +61,9 @@ l.stream().sorted().forEach(System.out::print);
 //non è PECS
 // il vincolo su R ha senso perchè mi sto dando la possibilità di creare uno stream di ritorno di un sottotipo del secondo tipo generico di R
 l.stream().map(s -> s.toUpperCase()).forEach(System.out::println);
+
+Function<Integer, Double> func = x -> x * 2;
+Stream<Integer> s = l.stream().map(f);
 ```
 
 ## op terminali
