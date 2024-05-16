@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "java/streams/stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md"
+                "file": "java/streams/stream.md"
               }
             }
           }
@@ -159,8 +158,8 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "java/streams/stream.md",
     "raw notes/2024-05-16 mp.md",
+    "java/streams/stream.md",
     "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "raw notes/2024-04-18 mp (useless) (done).md",

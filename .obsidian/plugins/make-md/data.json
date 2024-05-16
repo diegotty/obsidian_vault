@@ -42,7 +42,8 @@
     "//java/java/strutture dati",
     "//java/java/ereditarietà",
     "//java/java/ereditarietà",
-    "//java/java/streams"
+    "//java/java/streams",
+    "//java"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
