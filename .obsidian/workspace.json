@@ -44,7 +44,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "raw notes/2024-05-16 mp (done).md",
                 "mode": "source",
                 "source": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "raw notes/2024-05-16 mp (done).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -143,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "raw notes/2024-05-16 mp (done).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -166,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "raw notes/2024-05-16 mp (done).md"
               }
             }
           },
@@ -197,11 +197,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6f93c91a705225de",
+  "active": "6e411012c6d58acb",
   "lastOpenFiles": [
-    "raw notes/2024-05-16 mp.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
+    "raw notes/2024-05-16 mp (done).md",
+    "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-14 mp (done).md",
     "conflict-files-obsidian-git.md",
     "ae/pics/Pasted image 20240515214057.png",
