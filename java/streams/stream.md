@@ -92,8 +92,9 @@ List<String> reduced = l.stream().skip(2).collect(toList()); // contiene ["tre"]
 ```java
 //takeWhile prende elementi finchè si verifica la condizione del predicato
 //dropWhile salta gli elementi finchè si verifica la condizione
-List<Integer> l = List.of(3,46,5,63,4,2,1,6,3);
+List<Integer> l = List.of(3,46,54,63,45,21,1,62,3);
 List<Integer> reduced = l.stream().takeWhile(x -> x < 42).collect(toList);
+//contiene [3, 21, 1, 3]
 ```
 
 
@@ -150,6 +151,19 @@ list.stream.reduce(0, Integer::sum);
 T reduce(BinaryOperator <T> accumulator);
 lista.stream().reduce(Integer::sum);
 //viene usato Optional perchè se lo stream è vuoto, non avendo l'elemento di identità, non si sa quale valore restituire
+```
+
+### anyMatch, allMatch, noneMatch
+```java
+//gli stream espongono diverse operazioni personali di matching. restituiscono un booleano relativo all'esito del matching
+List<String> l = List.of("ciao", "abracadabra", "kenny", "luka");
+boolean anyStartsWithA = l.stream().anyMatch(s -> s.startsWith("a")); //true
+```
+
+### findFirst, findAny
+```java
+//findFirst: ottieni il primo elemento dello stream
+//findAny: ottieni un qualsiasi elemento dello stream
 ```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
