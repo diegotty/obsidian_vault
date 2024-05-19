@@ -2,6 +2,7 @@ uno stream rappresenta una sequenza di elementi su cui possono essere effettuate
 supporta operazioni sequenziali e parallele !!
 
 >[!tuff] Stream è un’interfaccia !!
+>per natura, gli stream sono parallelizzabili
 
 ## creazione di uno Stream
 lo stream viene creato a partire da una sorgente di dati, ad esempio una java.util.Collection, ma al contrario delle Collection, uno stream non memorizza ne modifica i dati della sorgente, ma opera su essi

@@ -8,8 +8,8 @@ public interface Collector<T,A,R>
 ## creazione di un collector
 si può creare un collector con il metodo `Collector.of`. il metodo prende in input 4 argomenti:
 - un supplier, per creare la rappresentazione interna
-- l’accumulator, che aggiorna la rappresentazione intermedia (l’accumulazione può essere svolta i)
-- il combiner, che “fonde” due rappresentazioni (modificate dall’accumulator) ottenute in modo parallelo (ogni elemento della rappresentazione intermedia viene gestito in parallelo !!!)
+- l’accumulator, che aggiorna la rappresentazione intermedia (l’accumulazione può essere svolta in parallelo !!! riesco a dividere l’input in tante parti e accumulare in maniera parallela)
+- il combiner, che “fonde” due rappresentazioni (modificate dall’accumulator) ottenute in modo parallelo
 - il finisher, chiamato alla fine, che trasforma il tutto nel tipo finale
 ```java
 Collector<Person, StringJoiner, String> personNameCollector = Collector.of(
