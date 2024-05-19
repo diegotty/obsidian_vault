@@ -6,7 +6,11 @@ public interface Collector<T,A,R>
 //R - il tipo del risultato dell'operazione di riduzione
 ```
 ## creazione di un collector
-si può creare un collector con il metodo `Collector.of`
+si può creare un collector con il metodo `Collector.of`. il metodo prende in input 4 argomenti:
+- un supplier, per creare la rappresentazione interna
+- l’accumulator, che aggiorna la rappresentazione intermedia (l’accumulazione può essere svolta i)
+- il combiner, che “fonde” due rappresentazioni (modificate dall’accumulator) ottenute in modo parallelo (ogni elemento della rappresentazione intermedia viene gestito in parallelo !!!)
+- il finisher, chiamato alla fine, che trasforma il tutto nel tipo finale
 ```java
 Collector<Person, StringJoiner, String> personNameCollector = Collector.of(
 () -> new StringJoiner(" | "), //supplier
@@ -18,6 +22,7 @@ String names = people.stream().collect(personNameCollector);
 System.out.println(names); // MAX | PETER | PAMELA | DAVID
 )
 ```
+
 
 
 # collectors
