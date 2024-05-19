@@ -109,6 +109,14 @@ long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count();
 // permette di raccogliere gli elementi dello stream in qualche oggetto (collection, una stringa, un intero)
 List<Integer> ivaEsclusa = Arrays.asList(10, 20, 30);
 List<Double> l = ivaEsclusa.stream().map(p->p*1.22).collect(Collectors.toList());
+```
+
+### reduce
+```java
+//effettua una riduzione sugli elementi dello stream utilizzando la funzione data in input
+list.stream.reduce(0, (a,b) -> a+b);
+list.stream.reduce(0, Integer::sum);
+//riduce ad un solo numero, la somma di tutti gli elementi dello stream !
 
 ```
 # comportamento
