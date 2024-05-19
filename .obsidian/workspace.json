@@ -8,6 +8,24 @@
         "type": "tabs",
         "children": [
           {
+            "id": "0b4d01d715c20c28",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/streams/Collector e Collectors.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "94be2d5499561c0f",
+        "type": "tabs",
+        "children": [
+          {
             "id": "6e411012c6d58acb",
             "type": "leaf",
             "state": {
@@ -78,7 +96,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -94,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +130,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +153,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-16 mp.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           },
@@ -165,11 +184,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "0b4d01d715c20c28",
   "lastOpenFiles": [
+    "raw notes/2024-05-16 mp.md",
     "raw notes/2024-05-14 mp (done).md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-05-16 mp.md",
     "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214318.png",
     "ae/pics/Pasted image 20240515215329.png",
