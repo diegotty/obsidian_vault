@@ -74,6 +74,12 @@ List<Integer> l = List.of(3,4,5,6,4,2,1,6,3);
 List<Integer> distinti = l.stream().map(x -> x*x).distinct().collect(Collectors.toList());
 ```
 
+### limit
+```java
+Limita lo stream a k elementi(k long passato in input)
+```
+
+
 ## op terminali
 
 ### min e max
@@ -114,10 +120,19 @@ List<Double> l = ivaEsclusa.stream().map(p->p*1.22).collect(Collectors.toList())
 ### reduce
 ```java
 //effettua una riduzione sugli elementi dello stream utilizzando la funzione data in input
+T reduce(T identity, BinaryOperator <T> accumulator);
 list.stream.reduce(0, (a,b) -> a+b);
 list.stream.reduce(0, Integer::sum);
+// il primo parametro, l'elemento di identità, serve come "inizio"
 //riduce ad un solo numero, la somma di tutti gli elementi dello stream !
 
+```
+### reduce (con Optional)
+```java
+//esiste anche una versione di reduce con solo un parametro, che restituisce un Optional<T>
+T reduce(BinaryOperator <T> accumulator);
+lista.stream().reduce(Integer::sum);
+//viene usato Optional perchè se lo stream è vuoto, non avendo l'elemento di identità, non si sa quale valore restituire
 ```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
