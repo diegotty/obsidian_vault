@@ -5,6 +5,12 @@ public interface Collector<T,A,R>
 //A - il tipo dell'operazione di riduzione (???) spesso nascosto come dettaglio implementativo
 //R - il tipo del risultato dell'operazione di riduzione
 ```
+## creazione di un collector
+si può creare un collector con il metodo `Collector.of`
+```java
+
+```
+
 
 # collectors
 classe che implementa varie operazioni di riduzione utili, come accumulare elementi in collezioni, o riassumere elementi in base a vari criteri, etc
