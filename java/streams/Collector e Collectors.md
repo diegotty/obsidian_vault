@@ -48,6 +48,10 @@ Map<Integer, String> map = persons.stream().collect(Collectors.toMap(
 Person::getAge, Person::getName, (name1, name2) -> name1 + ";" + name2 ));
 ```
 
+### partitioningBy
+```j
+```
+
 ### raggruppamento di elementi
 - `groupingBy(lambda che mappa gli elementi di tipo T in bucket rappresentati da oggetti di qualche altro tipo S)` - restituisce una Map\<S, List\<T>> (lo uso per creare una mappa chiave:Lista)
 - `groupingBy(lambda, downStreamCollector)` - il parametro downStreamCollector serve per groupare, ma in chiave:collectionSpecificata e non chiave:Lista
