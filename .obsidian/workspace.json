@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "dc22ed55a725b469",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,8 +178,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6e411012c6d58acb",
+  "active": "dc22ed55a725b469",
   "lastOpenFiles": [
+    "raw notes/2024-05-14 mp (done).md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-16 mp.md",
     "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214318.png",
     "ae/pics/Pasted image 20240515215329.png",
@@ -186,7 +202,6 @@
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "java/streams/Collector e Collectors.md",
     "java/pics/Pasted image 20240515110119.png",
-    "raw notes/2024-05-14 mp (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/streams/stream.md",
@@ -202,7 +217,6 @@
     "java/ricorsione.md",
     "java/streams",
     "java/interfacce/classi anonime e lambda function.md",
-    "java/interfacce/classi annidate e interne.md",
     "java/io",
     "java/strutture dati (real)",
     "java/eccezioni",
