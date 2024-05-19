@@ -76,7 +76,24 @@ List<Integer> distinti = l.stream().map(x -> x*x).distinct().collect(Collectors.
 
 ### limit
 ```java
-Limita lo stream a k elementi(k long passato in input)
+//limita lo stream a k elementi(k long passato in input)
+List<String> elementi = List.of("uno, "due", "tre");
+List<String> reduced = l.stream().limit(2).collect(toList()); //contiene ["uno", "due"]
+```
+
+### skip
+```java
+//salta k elementi (k long passato in input)
+List<String> elementi = List.of("uno, "due", "tre");
+List<String> reduced = l.stream().skip(2).collect(toList()); // contiene ["tre"]
+```
+
+### takeWhile, dropWhile
+```java
+//takeWhile prende elementi finchè si verifica la condizione del predicato
+//dropWhile salta gli elementi finchè si verifica la condizione
+List<Integer> l = List.of(3,46,5,63,4,2,1,6,3);
+List<Integer> reduced = l.stream().takeWhile(x -> x < 42).collect(toList);
 ```
 
 
