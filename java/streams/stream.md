@@ -68,7 +68,11 @@ Stream<Float> s = l.stream().map(func);
 ```
 
 ### distinct
-
+```java
+//restituisce un nuovo stream senza ripetizione di elementi (gli elementi sono tutti distinti tra loro)
+List<Integer> l = List.of(3,4,5,6,4,2,1,6,3);
+List<Integer> distinti = l.stream().map(x -> x*x).distinct().collect(Collectors.toList());
+```
 
 ## op terminali
 
