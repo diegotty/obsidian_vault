@@ -8,7 +8,15 @@ public interface Collector<T,A,R>
 ## creazione di un collector
 si può creare un collector con il metodo `Collector.of`
 ```java
+Collector<Person, StringJoiner, String> personNameCollector = Collector.of(
+() -> new StringJoiner(" | "), //supplier
+(j,p) -> j.add(p.name.toUpperCase()),   //accumulator
+(j1,h2) -> j1.merge(j2),    //combiner
+StringJoiner::toString);   //finisher
+String names = people.stream().collect(personNameCollector);
 
+System.out.println(names); // MAX | PETER | PAMELA | DAVID
+)
 ```
 
 
