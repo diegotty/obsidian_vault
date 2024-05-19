@@ -31,7 +31,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       },
       {
         "id": "94be2d5499561c0f",
@@ -125,7 +126,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +143,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +166,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/streams/stream.md"
               }
             }
           },
@@ -196,11 +197,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "0b4d01d715c20c28",
+  "active": "6f93c91a705225de",
   "lastOpenFiles": [
-    "java/streams/stream.md",
-    "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-16 mp.md",
+    "java/streams/Collector e Collectors.md",
+    "java/streams/stream.md",
     "raw notes/2024-05-14 mp (done).md",
     "conflict-files-obsidian-git.md",
     "ae/pics/Pasted image 20240515214057.png",

@@ -49,7 +49,8 @@ Person::getAge, Person::getName, (name1, name2) -> name1 + ";" + name2 ));
 ```
 
 ### partitioningBy
-```j
+```java
+
 ```
 
 ### raggruppamento di elementi

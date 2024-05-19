@@ -67,6 +67,9 @@ Function<Integer, Double> func = x -> x * 2;
 Stream<Float> s = l.stream().map(func);
 ```
 
+### distinct
+
+
 ## op terminali
 
 ### min e max
