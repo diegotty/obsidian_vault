@@ -5,6 +5,25 @@ public interface Collector<T,A,R>
 //A - il tipo dell'operazione di riduzione (???) spesso nascosto come dettaglio implementativo
 //R - il tipo del risultato dell'operazione di riduzione
 ```
+## creazione di un collector
+si può creare un collector con il metodo `Collector.of`. il metodo prende in input 4 argomenti:
+- un supplier, per creare la rappresentazione interna
+- l’accumulator, che aggiorna la rappresentazione intermedia (l’accumulazione può essere svolta in parallelo !!! riesco a dividere l’input in tante parti e accumulare in maniera parallela)
+- il combiner, che “fonde” due rappresentazioni (modificate dall’accumulator) ottenute in modo parallelo
+- il finisher, chiamato alla fine, che trasforma il tutto nel tipo finale
+```java
+Collector<Person, StringJoiner, String> personNameCollector = Collector.of(
+() -> new StringJoiner(" | "), //supplier
+(j,p) -> j.add(p.name.toUpperCase()),   //accumulator
+(j1,h2) -> j1.merge(j2),    //combiner
+StringJoiner::toString);   //finisher
+String names = people.stream().collect(personNameCollector);
+
+System.out.println(names); // MAX | PETER | PAMELA | DAVID
+)
+```
+
+
 
 # collectors
 classe che implementa varie operazioni di riduzione utili, come accumulare elementi in collezioni, o riassumere elementi in base a vari criteri, etc
@@ -27,6 +46,11 @@ toMap prende fino a 4 argomenti:
 ```java
 Map<Integer, String> map = persons.stream().collect(Collectors.toMap(
 Person::getAge, Person::getName, (name1, name2) -> name1 + ";" + name2 ));
+```
+
+### partitioningBy
+```java
+
 ```
 
 ### raggruppamento di elementi

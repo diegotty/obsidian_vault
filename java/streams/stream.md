@@ -2,6 +2,7 @@ uno stream rappresenta una sequenza di elementi su cui possono essere effettuate
 supporta operazioni sequenziali e parallele !!
 
 >[!tuff] Stream è un’interfaccia !!
+>per natura, gli stream sono parallelizzabili
 
 ## creazione di uno Stream
 lo stream viene creato a partire da una sorgente di dati, ad esempio una java.util.Collection, ma al contrario delle Collection, uno stream non memorizza ne modifica i dati della sorgente, ma opera su essi
@@ -66,6 +67,52 @@ Function<Integer, Double> func = x -> x * 2;
 Stream<Float> s = l.stream().map(func);
 ```
 
+### distinct
+```java
+//restituisce un nuovo stream senza ripetizione di elementi (gli elementi sono tutti distinti tra loro)
+List<Integer> l = List.of(3,4,5,6,4,2,1,6,3);
+List<Integer> distinti = l.stream().map(x -> x*x).distinct().collect(Collectors.toList());
+```
+
+### limit
+```java
+//limita lo stream a k elementi(k long passato in input)
+List<String> elementi = List.of("uno, "due", "tre");
+List<String> reduced = l.stream().limit(2).collect(toList()); //contiene ["uno", "due"]
+```
+
+### skip
+```java
+//salta k elementi (k long passato in input)
+List<String> elementi = List.of("uno, "due", "tre");
+List<String> reduced = l.stream().skip(2).collect(toList()); // contiene ["tre"]
+```
+
+### takeWhile, dropWhile
+```java
+//takeWhile prende elementi finchè si verifica la condizione del predicato
+//dropWhile salta gli elementi finchè si verifica la condizione
+List<Integer> l = List.of(3,46,54,63,45,21,1,62,3);
+List<Integer> reduced = l.stream().takeWhile(x -> x < 42).collect(toList);
+//contiene [3, 21, 1, 3]
+```
+
+### flatMap
+```java
+//permette di unire gli stream in un uno stream:
+<R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);
+//se ho uno stream di collection(Stream<Collection<T>>, con flatMap rendo quelle collection degli stream, e avendo Stream<Stream<T>>, creo un solo grande stream piatto
+//flatMap rende un supplier che usa per rendere il tipo stream
+Map<String, Long> letterToCount = words.map(w -> w.split(""))//returns String[]
+.flatMap(Arrays::stream) //uso il supplier su ogni elemento dello stream !!
+.collect(groupingBy(identity(), counting()); 
+```
+
+### flatMapToInt
+```java
+//come flatMap, ma lavore su IntStream
+```
+
 ## op terminali
 
 ### min e max
@@ -101,7 +148,37 @@ long numberOfLines = Files.lines(Paths.get("yourfile.txt")).count();
 // permette di raccogliere gli elementi dello stream in qualche oggetto (collection, una stringa, un intero)
 List<Integer> ivaEsclusa = Arrays.asList(10, 20, 30);
 List<Double> l = ivaEsclusa.stream().map(p->p*1.22).collect(Collectors.toList());
+```
 
+### reduce
+```java
+//effettua una riduzione sugli elementi dello stream utilizzando la funzione data in input
+T reduce(T identity, BinaryOperator <T> accumulator);
+list.stream.reduce(0, (a,b) -> a+b);
+list.stream.reduce(0, Integer::sum);
+// il primo parametro, l'elemento di identità, serve come "inizio"
+//riduce ad un solo numero, la somma di tutti gli elementi dello stream !
+
+```
+### reduce (con Optional)
+```java
+//esiste anche una versione di reduce con solo un parametro, che restituisce un Optional<T>
+T reduce(BinaryOperator <T> accumulator);
+lista.stream().reduce(Integer::sum);
+//viene usato Optional perchè se lo stream è vuoto, non avendo l'elemento di identità, non si sa quale valore restituire
+```
+
+### anyMatch, allMatch, noneMatch
+```java
+//gli stream espongono diverse operazioni personali di matching. restituiscono un booleano relativo all'esito del matching
+List<String> l = List.of("ciao", "abracadabra", "kenny", "luka");
+boolean anyStartsWithA = l.stream().anyMatch(s -> s.startsWith("a")); //true
+```
+
+### findFirst, findAny
+```java
+//findFirst: ottieni il primo elemento dello stream
+//findAny: ottieni un qualsiasi elemento dello stream
 ```
 # comportamento
 gli stream adottano una **lazy behavior**: le operazioni intermedie non vengono eseguite immediatamente, ma solo quando si richiede l’esecuzione di un’operazione terminale !
