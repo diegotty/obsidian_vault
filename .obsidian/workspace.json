@@ -4,47 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f85afa2160401d3b",
+        "id": "1f0d89c31dbf0b47",
         "type": "tabs",
         "children": [
           {
-            "id": "0b4d01d715c20c28",
+            "id": "aba7a51fe468e431",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6f93c91a705225de",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "java/streams/stream.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ],
-        "currentTab": 1
-      },
-      {
-        "id": "94be2d5499561c0f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "6e411012c6d58acb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-05-16 mp (done).md",
+                "file": "algo/data structures.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
@@ -125,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "algo/data structures.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "algo/data structures.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "algo/data structures.md"
               }
             }
           },
@@ -196,13 +164,16 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6f93c91a705225de",
+  "active": "aba7a51fe468e431",
   "lastOpenFiles": [
+    "algo/sorting algos.md",
+    "algo/data structures.md",
+    "algo",
+    "java/streams/Collector e Collectors.md",
+    "java/streams/stream.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-16 mp (done).md",
     "raw notes/2024-05-21 mp.md",
-    "java/streams/stream.md",
-    "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-14 mp (done).md",
     "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214318.png",
@@ -232,8 +203,6 @@
     "java/io/serializzazione.md",
     "java/io/files.md",
     "java/io/input_output.md",
-    "java/io/io.md",
-    "java/ricorsione.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",
@@ -242,7 +211,6 @@
     "ae/cpu mips",
     "java/controllo",
     "java/oggetti",
-    "java/ereditarietà/Untitled",
-    "java/ereditarietà"
+    "java/ereditarietà/Untitled"
   ]
 }
