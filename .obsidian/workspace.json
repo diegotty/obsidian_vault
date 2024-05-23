@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +112,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md"
+                "file": "raw notes/2024-05-23 mp.md"
               }
             }
           }
@@ -159,8 +159,9 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-21 mp.md",
+    "raw notes/2024-05-23 mp.md",
+    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-16 mp (done).md",
     "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-16 mp.md",
@@ -195,7 +196,6 @@
     "java/serializzazione.md",
     "java/ricorsione.md",
     "java/io/io.md",
-    "java/io/input_output.md",
     "java/io",
     "java/swing",
     "java/strutture dati (real)",
