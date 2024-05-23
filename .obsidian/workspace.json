@@ -159,9 +159,12 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "raw notes/2024-05-21 mp.md",
-    "raw notes/2024-05-23 mp.md",
     "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-23 mp.md",
+    "algo/sorting algos.md",
+    "algo/data structures.md",
+    "algo",
+    "raw notes/2024-05-21 mp.md",
     "raw notes/2024-05-16 mp (done).md",
     "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-16 mp.md",
@@ -194,8 +197,6 @@
     "raw notes/2024-02-05 mp(done).md",
     "java/strutture di controllo di flusso.md",
     "java/serializzazione.md",
-    "java/ricorsione.md",
-    "java/io/io.md",
     "java/io",
     "java/swing",
     "java/strutture dati (real)",
@@ -203,7 +204,6 @@
     "java/oggetti",
     "java/interfacce",
     "java/ereditarietà",
-    "java/eccezioni",
-    "java/controllo"
+    "java/eccezioni"
   ]
 }
