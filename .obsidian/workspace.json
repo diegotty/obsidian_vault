@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d3592b339bcdb8f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,17 +178,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "aba7a51fe468e431",
+  "active": "d3592b339bcdb8f1",
   "lastOpenFiles": [
+    "raw notes/2024-05-21 mp.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-23 mp.md",
     "README.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
     "algo",
     "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-16 mp (done).md",
-    "raw notes/2024-05-21 mp.md",
     "raw notes/2024-05-14 mp (done).md",
     "ae/pics/Pasted image 20240515214057.png",
     "ae/pics/Pasted image 20240515214318.png",
@@ -203,7 +217,6 @@
     "java/streams/optional.md",
     "java/streams/streams.md",
     "java/io/serializzazione.md",
-    "java/io/files.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",
