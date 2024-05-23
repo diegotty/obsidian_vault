@@ -14,3 +14,7 @@ creiamo delle interfacce per ogni comportamento dell’anatra.
 in questo modo, le sottoclassi possono implementare solo i comportamenti che effettivamente deve modellare !
 - in questo modo però, distruggo ogni possibile **riuso** del codice, in quanto se non si riesce a definire un metodo di default, dobbiamo reimplementare le interfacce per ogni sottoclasse
 >[!tuff] le interfacce sono utili per implementare comportamenti, ma distruggono ogni possibile riuso del codice
+
+## soluzione
+principio di design: identifica gli aspetti della tua applicazione che variano e separali da quelli che rimangono uguali.
+- come separarli ? incapsulandoli
