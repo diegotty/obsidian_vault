@@ -13,37 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "af49249de1875434",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "aba7a51fe468e431",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-05-21 mp.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1833edb349da4a9c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "raw notes/2024-05-16 mp (done).md",
+                "file": "ae/cache/intro.md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "ae/cache/intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "ae/cache/intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/design patterns/design patterns 1.md"
+                "file": "ae/cache/intro.md"
               }
             }
           },
@@ -197,21 +167,28 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "Pasted image 20240523230019.png",
-    "Pasted image 20240523225936.png",
-    "Pasted image 20240523225856.png",
-    "Pasted image 20240523191234.png",
-    "Pasted image 20240523190726.png",
+    "java/design patterns/observer pattern.md",
+    "ae/cache/intro.md",
+    "ae/cache/cache.md",
+    "ae/cache",
+    "ae/Untitled.md",
+    "ae/Untitled.canvas",
+    "raw notes/2024-05-23 mp.md",
+    "raw notes/2024-05-16 mp (done).md",
+    "raw notes/2024-05-21 mp (done).md",
+    "java/design patterns/strategy pattern.md",
+    "java/design patterns/design patterns 1.md",
+    "java/pics/Pasted image 20240523230019.png",
+    "java/pics/Pasted image 20240523225936.png",
+    "java/pics/Pasted image 20240523225856.png",
+    "java/pics/Pasted image 20240523191234.png",
+    "java/pics/Pasted image 20240523190726.png",
     "java/design patterns/design patterns.md",
     "java/design patterns",
     "java/strutture dati (real)/strutture dati (real).md",
-    "java/design patterns/design patterns 1.md",
     "java/streams/stream.md",
-    "raw notes/2024-05-21 mp.md",
     "java/streams/operazioni degli stream.md",
-    "raw notes/2024-05-16 mp (done).md",
     "conflict-files-obsidian-git.md",
-    "raw notes/2024-05-23 mp.md",
     "README.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
@@ -223,7 +200,6 @@
     "ae/pics/Pasted image 20240515215329.png",
     "ae/pics/Pasted image 20240515220219.png",
     "ae/pics/Pasted image 20240515220321.png",
-    "ae/pics/Pasted image 20240515224013.png",
     "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/pipeline.md",
@@ -231,17 +207,12 @@
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/progetto di CPU MIPS.md",
     "ae/cpu mips/anticipare e predire i salti.md",
-    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "java/interfacce/interfacce (real).md",
-    "java/tipi generici.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",
     "java/eccezioni",
     "ae/assembly",
     "ae/cpu mips",
-    "java/controllo",
-    "java/oggetti"
+    "java/controllo"
   ]
 }

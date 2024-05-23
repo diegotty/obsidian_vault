@@ -1,6 +1,3 @@
-# intro
-un design pattern è un modo di pensare il codice e la struttura ad oggetti !
-- i pattern sono il succo dei principi di progettazione orientata agli oggetti
 # strategy pattern
 esempio: 
 ![[Pasted image 20240523190726.png]]
@@ -30,4 +27,3 @@ il comportamento di volo specifico verrà impostato nel costruttore di ciascuna 
 
 questo pattern si chiama Strategy Pattern, il cui principio consiste nel preferire la composizione all’ereditarietà, in quanto invece di ereditare il comportamento, le anatre ottengono il loro comportamento mediante una composizione di oggetti di comportamento
 - implementa il principio della delega (delegation), spostando le responsabilità sulla classe delegata
-# observer pattern
