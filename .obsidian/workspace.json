@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "algo/data structures.md",
+                "file": "raw notes/2024-05-21 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "algo/data structures.md",
+                "file": "raw notes/2024-05-21 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "algo/data structures.md",
+                "file": "raw notes/2024-05-21 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "algo/data structures.md"
+                "file": "raw notes/2024-05-21 mp.md"
               }
             }
           },
@@ -166,8 +167,9 @@
   },
   "active": "aba7a51fe468e431",
   "lastOpenFiles": [
-    "algo/sorting algos.md",
+    "README.md",
     "algo/data structures.md",
+    "algo/sorting algos.md",
     "algo",
     "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
@@ -202,7 +204,6 @@
     "java/streams/streams.md",
     "java/io/serializzazione.md",
     "java/io/files.md",
-    "java/io/input_output.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",

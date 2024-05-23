@@ -50,7 +50,8 @@
     "//java/java/streams",
     "//java/java/interfacce",
     "//java/java/strutture dati (real)",
-    "//ae/ae/cpu mips"
+    "//ae/ae/cpu mips",
+    "//raw notes"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
