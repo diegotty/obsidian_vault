@@ -110,7 +110,7 @@ Map<String, Long> letterToCount = words.map(w -> w.split(""))//returns String[]
 
 ### flatMapToInt
 ```java
-//come flatMap, ma lavore su IntStream
+//come flatMap, ma ritorna su IntStream
 ```
 
 ## op terminali

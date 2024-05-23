@@ -51,7 +51,8 @@
     "//java/java/interfacce",
     "//java/java/strutture dati (real)",
     "//ae/ae/cpu mips",
-    "//raw notes"
+    "//raw notes",
+    "//java"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
