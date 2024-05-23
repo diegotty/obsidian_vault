@@ -33,7 +33,7 @@ Stream<Integer> numbers = Stream.iterate(0, n -> n +10);
 numbers.limit(5).forEach(System.out::println);
 //esiste anche un secondo metodo iterate che prende come secondo argomento un predicato (la funzione diventa il terzo argomento). lo stream smette di dare valori (esce) quando il predicato del terzo argomento è false
 Stream<Integer> numbers = Stream.iterate(0, n -> n < 50, n+10);
-
+```
 ### stream di primitivi
 poichè Stream opera su oggetti, esisono versioni ottimizzate per lavorare con 3 tipi primitivi:
 - IntStream
@@ -72,10 +72,14 @@ stateful: l’elaborazione di un elemento potrebbe dipendere da quella di altri 
 
 cioò detta l’ordine in cui devono essere eseguite le istruzioni in quanto la JVM decide l’ordine delle operazioni intermedie (o almeno ci prova)
 - se lo stream ha solo operazioni stateless, la JVM può eseguire le operazioni in qualsiasi ordine (e quindi può ottimizare di più)
-- se invece ci sono operazioni stateful, è più difficile trovare un ordine per ottimizzare la memoria, performance etc.
+- se invece ci sono operazioni stateful, esse non ci permettono di creare delle pipeline. non permettono di parallelizzare operazioni indipendenti tra di loro
 
 ## stile dichiarativo
 - lo stream permette di utilizzare uno stile dichiarativo (dichiariamo le operazioni da effetturare, la ma JVM decide l’ordine)
 - mentre la collection impone l''utilizzo di uno stile imperativo (dichiarlo le operazioni da effettuare e l’ordine in cui effettuarle, passo per passo)
 lo stream si focalizza sulle operazioni di alto livello da eseguire, eventualmente anche in parallelo, **senza specificare come verranno eseguite**
 uno stream è quindi: dichiarativo, componibile, e parallelizzabile
+
+## ordine delle operazioni
+- ci conviene sempre filtrare il prima possibile !
+- ci vuole comunque intuizione a scrivere il codice per ottimizzare l’esecuzione delle operazioni !
