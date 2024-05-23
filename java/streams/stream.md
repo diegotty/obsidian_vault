@@ -31,6 +31,29 @@ poichè Stream opera su oggetti, esisono versioni ottimizzate per lavorare con 3
 - DoubleStream
 - LongStream
 tutte queste interfacce estendono l’interfaccia di base BaseStream
+
+dispongono di 2 metodi statici(per creare stream su range):
+- range(inizio, fine) intervallo esclusivo (aperto a destra)
+- rangeClosed(inizio, fine) intervallo inclusivo (chiuso a destra)
+```java
+IntStream.range(0, 10).filter(n -> n % 2 == 1).forEach(System.out::println);
+```
+
+IntStream, DoubleStream e LongStream si ottengono da uno stream, con i metodi mapToInt, mapToLong, e mapToDouble
+```java
+List<String> s = Arrays.asList("a", "b", "c");
+s.stream   //Stream<String>
+.mapToInt(String::length)    //IntStream
+.asLongStream()    //LongStream
+.mapToDouble(x -> x / 42.0)    //DoubleStream
+.boxed()   //Stream<Double>
+.mapToLong( x -> 1L)    //LongStream
+.mapToObj(x -> "");    //Stream<String>
+//boxed è un metodo degli stream di primitivi, e permette di ritornare a uno Stream di tipo Integer/Double/Long
+
+//mapToObj è sempre un metodo degli stream di primitivi, prende come parametro una IntFunction 
+```
+
 # oprerazioni 
 ![[Pasted image 20240515110119.png]]
 ## op intermedie

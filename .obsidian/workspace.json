@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-21 mp.md"
+                "file": "java/streams/stream.md"
               }
             }
           },
@@ -195,11 +195,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "aba7a51fe468e431",
+  "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "raw notes/2024-05-16 mp (done).md",
-    "java/streams/stream.md",
     "raw notes/2024-05-21 mp.md",
+    "java/streams/stream.md",
+    "raw notes/2024-05-16 mp (done).md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-23 mp.md",
     "README.md",
