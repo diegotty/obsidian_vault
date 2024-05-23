@@ -34,6 +34,30 @@ numbers.limit(5).forEach(System.out::println);
 //esiste anche un secondo metodo iterate che prende come secondo argomento un predicato (la funzione diventa il terzo argomento). lo stream smette di dare valori (esce) quando il predicato del terzo argomento è false
 Stream<Integer> numbers = Stream.iterate(0, n -> n < 50, n+10);
 ```
+## fare copie di stream
+si può creare un builder di stream mediante una lambda 
+```java
+Supplier<Stream<String>> streamSupplier = () -> Stream of.("d2", "a2", "b1", "b3", "c")
+.filter(s -> s.startsWith("a"));
+streamSupplier.get().anyMatch(s -> true);
+streamSupplier.get().noneMatch(s -> true);
+
+//ovviamente ha più senso se invece di un supplier, abbiamo una funzione che prende in input una Collection e restituisce uno stream su tale Collection
+```
+
+## perchè creare stream paralleli
+- le operazioni su stream sequenziali sono effettuate in un singolo thread
+- le operazioni su stream paralleli, invece, sono effettuate concorrentemente su thread multipli
+```java
+long count = values.Stream().sorted(). count();
+//899 ms
+
+long count = values.parallelStream().sorted(). count();
+//472 ms
+```
+quano
+
+
 ### stream di primitivi
 poichè Stream opera su oggetti, esisono versioni ottimizzate per lavorare con 3 tipi primitivi:
 - IntStream
