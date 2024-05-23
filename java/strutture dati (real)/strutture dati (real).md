@@ -96,6 +96,7 @@ le classi che implementano java.util.Map sono:
 - HashMap: memorizza le coppie in una tabella Hash
 - TreeMap: memorizza le coppie in un albero mantenendo un ordine sulle chiavi
 - LinkedHashMap: estende HashMap e mantiene l’ordinamento di iterazione secondo gli inserimenti effettuati
+### operazioni aggiuntive delle mappe (Java 8)
 ## algoritmi sulle collezioni:
 metodi statici per la manipolazione delle collezioni:
 

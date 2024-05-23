@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,7 +141,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -164,7 +164,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/strutture dati (real)/strutture dati (real).md"
               }
             }
           },
@@ -197,8 +197,8 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "raw notes/2024-05-21 mp.md",
     "java/streams/stream.md",
+    "raw notes/2024-05-21 mp.md",
     "java/streams/operazioni degli stream.md",
     "raw notes/2024-05-16 mp (done).md",
     "conflict-files-obsidian-git.md",

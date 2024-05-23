@@ -55,7 +55,12 @@ long count = values.Stream().sorted(). count();
 long count = values.parallelStream().sorted(). count();
 //472 ms
 ```
-quano
+quando le operazioni sono però bloccanti, uno stream parallelo può essere molto più lento di uno stream sequenziale 
+### quando usare uno stream parallelo
+- quando è un problema parallelizzabile 
+	- quando c’è un minimo di una sequenza di operazioni non bloccanti adiacenti, posso parallelizzarle
+- quando posso permettermi di usare più risorse
+- la dimensione del problema è tale da giustificare il sovraccarico dovuto alla parallelizzazione
 
 
 ### stream di primitivi
