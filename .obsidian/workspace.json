@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "2faa8c2ba32a42c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -95,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -112,7 +125,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -135,7 +148,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -157,11 +170,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "2faa8c2ba32a42c1",
   "lastOpenFiles": [
-    "raw notes/2024-05-23 mp.md",
     "raw notes/2024-27-05 mp.md",
     "conflict-files-obsidian-git.md",
+    "raw notes/2024-05-21 mp (done).md",
+    "java/streams/operazioni degli stream.md",
+    "java/pics/Pasted image 20240523230019.png",
+    "java/pics/Pasted image 20240523225936.png",
+    "java/pics/Pasted image 20240523225856.png",
+    "java/pics/Pasted image 20240523191234.png",
+    "java/pics/Pasted image 20240523190726.png",
+    "java/design patterns/strategy pattern.md",
+    "java/design patterns/observer pattern.md",
+    "java/design patterns/design patterns.md",
+    "java/design patterns/design patterns 1.md",
+    "java/design patterns",
+    "ae/cache/intro.md",
+    "ae/cache/cache.md",
+    "ae/cache",
+    "raw notes/2024-05-23 mp.md",
     "algo/sorting algos.md",
     "algo/data structures.md",
     "algo",
@@ -184,26 +212,11 @@
     "ae/pics/Pasted image 20240515224013.png",
     "ae/pics/Pasted image 20240515220321.png",
     "ae/pics/Pasted image 20240515220219.png",
-    "ae/pics/Pasted image 20240515215329.png",
-    "ae/pics/Pasted image 20240515214318.png",
-    "ae/pics/Pasted image 20240515214057.png",
-    "ae/pics/Pasted image 20240515214030.png",
-    "ae/pics/Pasted image 20240515213917.png",
-    "java/java.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "raw notes/2024-05-09 mp (done).md",
-    "raw notes/2024-05-07 mp (done).md",
-    "raw notes/2024-04-30 mp (done).md",
-    "raw notes/2024-04-23 mp (half done).md",
-    "raw notes/2024-02-05 mp(done).md",
-    "java/strutture di controllo di flusso.md",
     "java/io",
     "java/swing",
     "java/strutture dati (real)",
     "java/polimorfismo",
     "java/oggetti",
-    "java/interfacce",
-    "java/ereditarietà",
-    "java/eccezioni"
+    "java/interfacce"
   ]
 }
