@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md",
+                "file": "raw notes/2024-29-04 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md",
+                "file": "raw notes/2024-29-04 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md",
+                "file": "raw notes/2024-29-04 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-27-05 mp.md"
+                "file": "raw notes/2024-29-04 mp.md"
               }
             }
           }
@@ -158,8 +158,8 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "raw notes/2024-29-04 mp.md",
     "raw notes/2024-27-05 mp.md",
+    "raw notes/2024-29-04 mp.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-21 mp (done).md",
     "java/streams/operazioni degli stream.md",
