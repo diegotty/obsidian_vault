@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "n",
+                "query": "data hazard",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/pipeline.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md"
+                "file": "ae/cpu mips/pipeline.md"
               }
             }
           }
@@ -156,8 +156,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f16576e6e03b4de",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "ae/cpu mips/implementazione pipeline.md",
+    "ae/cpu mips/strutture della CPU MIPS.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
     "raw notes/2024-29-04 mp.md",
@@ -190,8 +192,6 @@
     "raw notes/2024-04-18 mp (useless) (done).md",
     "java/strutture dati (real)/strutture dati (real).md",
     "raw notes/2024-05-14 mp.md",
-    "raw notes/2024-05-14 mp (done).md",
-    "java/streams/streams.md",
     "java/streams",
     "java/pics/Pasted image 20240515110119.png",
     "ae/pics/Pasted image 20240515224400.png",
