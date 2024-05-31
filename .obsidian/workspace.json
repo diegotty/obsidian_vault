@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "data hazard",
+                "query": "tipi di istruzioni",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -158,9 +157,14 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "ae/cpu mips/pipeline.md",
+    "ae/intro a MIPS.md",
     "ae/cpu mips/implementazione pipeline.md",
+    "ae/cpu mips/anticipare e predire i salti.md",
+    "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/cpu mips/pipeline.md",
+    "ae/MIPS 2000.md",
+    "raw notes/2024-03-14 mp √.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
     "raw notes/2024-29-04 mp.md",
@@ -187,11 +191,6 @@
     "raw notes/2024-05-16 mp (done).md",
     "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-16 mp.md",
-    "java/tipi generici.md",
-    "java/streams/stream.md",
-    "java/streams/optional.md",
-    "raw notes/2024-04-18 mp (useless) (done).md",
-    "java/strutture dati (real)/strutture dati (real).md",
     "java/streams",
     "java/pics/Pasted image 20240515110119.png",
     "ae/pics/Pasted image 20240515224400.png",
