@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
+                "file": "ae/intro a MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
+                "file": "ae/intro a MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md",
+                "file": "ae/intro a MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/implementazione pipeline.md"
+                "file": "ae/intro a MIPS.md"
               }
             }
           }
@@ -157,8 +157,9 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "ae/intro a MIPS.md",
+    "ae/basi cpu.md",
     "ae/cpu mips/implementazione pipeline.md",
+    "ae/intro a MIPS.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
@@ -190,7 +191,6 @@
     "raw notes/2024-05-21 mp.md",
     "raw notes/2024-05-16 mp (done).md",
     "java/streams/Collector e Collectors.md",
-    "raw notes/2024-05-16 mp.md",
     "java/streams",
     "java/pics/Pasted image 20240515110119.png",
     "ae/pics/Pasted image 20240515224400.png",
