@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-29-04 mp.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "n",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-29-04 mp.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-29-04 mp.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-29-04 mp.md"
+                "file": "ae/cpu mips/strutture della CPU MIPS.md"
               }
             }
           }
@@ -156,10 +156,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "9f16576e6e03b4de",
   "lastOpenFiles": [
-    "raw notes/2024-27-05 mp.md",
+    "algo/data structures.md",
+    "algo/sorting algos.md",
     "raw notes/2024-29-04 mp.md",
+    "raw notes/2024-27-05 mp.md",
     "conflict-files-obsidian-git.md",
     "raw notes/2024-05-21 mp (done).md",
     "java/streams/operazioni degli stream.md",
@@ -177,8 +179,6 @@
     "ae/cache/cache.md",
     "ae/cache",
     "raw notes/2024-05-23 mp.md",
-    "algo/sorting algos.md",
-    "algo/data structures.md",
     "algo",
     "raw notes/2024-05-21 mp.md",
     "raw notes/2024-05-16 mp (done).md",
