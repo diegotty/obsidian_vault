@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tipi di istruzioni",
+                "query": "funct",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/MIPS 2000.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/MIPS 2000.md"
+                "file": "ae/cpu mips/strutture della CPU MIPS.md"
               }
             }
           }
@@ -155,16 +156,25 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "9f16576e6e03b4de",
   "lastOpenFiles": [
-    "ae/cpu mips/strutture della CPU MIPS.md",
-    "ae/intro a MIPS.md",
-    "ae/basi cpu.md",
+    "ae/cpu mips/pipeline.md",
+    "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/implementazione pipeline.md",
+    "ae/cpu mips/cpu mips.md",
+    "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
-    "ae/cpu mips/pipeline.md",
+    "ae/basi cpu.md",
+    "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
+    "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
+    "ae/assembly/assembly.md",
+    "ae/assembly/procedure e funzioni.md",
+    "ae/assembly/system calls.md",
+    "ae/assembly/pseudoistruzioni.md",
+    "ae/cpu mips/strutture della CPU MIPS.md",
+    "ae/ae.md",
     "raw notes/2024-03-14 mp √.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
@@ -179,18 +189,9 @@
     "java/pics/Pasted image 20240523191234.png",
     "java/pics/Pasted image 20240523190726.png",
     "java/design patterns/strategy pattern.md",
-    "java/design patterns/observer pattern.md",
-    "java/design patterns/design patterns.md",
-    "java/design patterns/design patterns 1.md",
     "java/design patterns",
-    "ae/cache/intro.md",
-    "ae/cache/cache.md",
     "ae/cache",
-    "raw notes/2024-05-23 mp.md",
     "algo",
-    "raw notes/2024-05-21 mp.md",
-    "raw notes/2024-05-16 mp (done).md",
-    "java/streams/Collector e Collectors.md",
     "java/streams",
     "java/pics/Pasted image 20240515110119.png",
     "ae/pics/Pasted image 20240515224400.png",
