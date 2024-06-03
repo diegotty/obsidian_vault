@@ -55,5 +55,10 @@ la cache viene inizializzata con tutti i valdity bit posti su 0.
 ### pro
 è facile determinare in quale linea cercare il dato: \#linea = \#blocco % N(numero di linee) 
 ### contro
-blocchi diversi sono mappati(sovrascritti) sulla stessa linea → se gli accessi a quei blocchi si alternano, si verificano molti miss (vengono sovrascritti periodicament)
+blocchi diversi sono mappati(sovrascritti) sulla stessa linea → se gli accessi a quei blocchi si alternano, si verificano molti miss (si sovrascrivono reciprocamente dato che il tag sarà diverso ma la linea no)
+## cache fully-associative
+- un blocco può essere posto in una linea qualsiasi
 ## cache set-associative
+l’uso di una cache direct-mapped è in grado di ridurre la quantità di accessi alla memoria svolti da un programma. purtroppo, data la struttura rigorosa, ogni linea può contenere un solo blocco, generando una continua sovrascrittura dei dati per rimpiazzare i blocchi.
+
+la **cache set-associative**, permette di salvare più blocchi sullo stesso set(ossia le linee)
