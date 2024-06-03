@@ -36,4 +36,6 @@ partendo dall’indirizzo di memoria, possiamo quindi scomporlo in questo modo:
 possiamo reverse-engineer-are che:
 - la cache ha 2^5 linee
 - ogni blocco ha 16 word
-- la dimensione di un blocco è: blocchi * 4 * 8 = 512
+- la dimensione di un blocco è: blocchi * 4 * 8 = 512bit
+- la dimensione del tag è:  32 - n - m - 2 = 21bit
+- la dimensione di una linea è: 
