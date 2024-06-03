@@ -18,4 +18,10 @@ quando la CPU richiede un indirizzo di memoria, appartenente ad un blocco (????)
 - **HIT**: il blocco non è presente nella cache, il dato viene richiesto alla RAM, caricando all’interno della cache **l’intero blocco** a cui esso appartiene
 
 ## cache direct-mapped
-poichè una cache deve contenere solo i dati più richiesti, utilizzando dimensioni limitate, è necessario che più blocchi di memoria vengano salvati nello stesso spazio, sovrascrivendosi a 
+poichè una cache deve contenere solo i dati più richiesti, utilizzando dimensioni limitate, è necessario che più blocchi di memoria vengano salvati nello stesso spazio, sovrascrivendosi a vicenda
+la cache direct-mapped viene strutturata in questo modo:
+![[Pasted image 20240603095007.png]]
+- N linee, corrispondenti agli spazi occupabili dai blocchi. ogni linea è composta da:
+	- un bit di validità: indicante se i dati contenuti nella linea siano validi o meno.
+	- un campo tag: **in grado di distinguere quale blocco della memoria sia caricato nella linea**. tale campo risulta fondamentale poichè più blocchi di memoria vengono mappati sulla stessa linea. grazie al tag si previene la lettura del blocco sbagliato
+	- il blocco stesso, memorizzato all’interno della linea
