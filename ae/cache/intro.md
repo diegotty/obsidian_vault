@@ -46,3 +46,6 @@ possiamo reverse-engineer-are che:
 **i blocchi in viola sono gli indirizzi richiesti dalla CPU.**
 - (l’indirizzo 128, dovrebbe stare nel blocco 4, linea 0 e il tag dovrebbe essere 1.)
 la cache viene inizializzata con tutti i valdity bit posti su 0.
+![[Pasted image 20240603102442.png]]
+
+## cache set-associative
