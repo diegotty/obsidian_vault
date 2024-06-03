@@ -39,3 +39,10 @@ possiamo reverse-engineer-are che:
 - la dimensione di un blocco è: blocchi * 4 * 8 = 512bit
 - la dimensione del tag è:  32 - n - m - 2 = 21bit
 - la dimensione di una linea è: 
+
+
+
+![[Pasted image 20240603101944.png]]
+**i blocchi in viola sono gli indirizzi richiesti dalla CPU.**
+- (l’indirizzo 128, dovrebbe stare nel blocco 4, linea 0 e il tag dovrebbe essere 1.)
+la cache viene inizializzata con tutti i valdity bit posti su 0.
