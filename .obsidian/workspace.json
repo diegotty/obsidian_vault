@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3a8e3e7ccff04e6f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cache/intro.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cache/intro.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cache/intro.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,10 +178,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9f16576e6e03b4de",
+  "active": "3a8e3e7ccff04e6f",
   "lastOpenFiles": [
-    "java/design patterns/observer pattern.md",
     "ae/cache/intro.md",
+    "conflict-files-obsidian-git.md",
+    "raw notes/2024-29-04 mp.md",
+    "raw notes/2024-27-05 mp.md",
+    "java/design patterns/observer pattern.md",
     "ae/cache/cache.md",
     "ae/cache",
     "ae/Untitled.md",
@@ -188,7 +204,6 @@
     "java/strutture dati (real)/strutture dati (real).md",
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
-    "conflict-files-obsidian-git.md",
     "README.md",
     "algo/data structures.md",
     "algo/sorting algos.md",
@@ -205,8 +220,6 @@
     "ae/cpu mips/pipeline.md",
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
-    "ae/cpu mips/progetto di CPU MIPS.md",
-    "ae/cpu mips/anticipare e predire i salti.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",
