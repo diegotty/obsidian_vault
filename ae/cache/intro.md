@@ -50,4 +50,10 @@ la cache viene inizializzata con tutti i valdity bit posti su 0.
 
 
 >[!tuff] IL NUMERO DI BLOCCO, NELLA CACHE DIRECT-MAPPED, è L’UNIONE DI LINEA E TAG ! OGNI LINEA HA SOLO UN BLOCCO !!!!
+>puoi pensarla come la “““somma””” di tag e indice di linea, e infatti per trovare tag e indice di linea si fanno operazioni sul numero di blocco. non serve un numero di blocco in quanto sarebbe uguale all’indice di linea
+
+### pro
+è facile determinare in quale linea cercare il dato: \#linea = \#blocco % N(numero di linee) 
+### contro
+blocchi diversi sono mappati(sovrascritti) sulla stessa linea → se gli accessi a quei blocchi si alternano, si verificano molti miss (vengono sovrascritti periodicament)
 ## cache set-associative
