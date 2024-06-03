@@ -48,4 +48,6 @@ possiamo reverse-engineer-are che:
 la cache viene inizializzata con tutti i valdity bit posti su 0.
 ![[Pasted image 20240603102442.png]]
 
+
+>[!tuff] IL NUMERO DI BLOCCO, NELLA CACHE DIRECT-MAPPED, è L’UNIONE DI LINEA E TAG ! OGNI LINEA HA SOLO UN BLOCCO !!!!
 ## cache set-associative
