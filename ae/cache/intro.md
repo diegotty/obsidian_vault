@@ -76,7 +76,10 @@ nel caso in cui si debba andare a inserire un nuovo blocco in una linea di una c
 vengono utilizzate 3 politiche di rimpiazzo:
 - rimpiazzo random, dove viene rimpiazzato un blocco casuale
 - least recently used (LRU), dove viene rimpiazzato il blocco il cui ultimo accesso risulta più vecchio
-
+- least frequently used (LFU), dove viene rimpiazzato il blocco cui ultimo accesso risulta il meno frequente
+oltre al rimpiazzo, è necessario utilizzare una politica di scrittura in caso un dato della memoria venga modificato nella cache:
+…….
+per indicare se un dato è stato modificato nella cache, viene associato ad ogni blocco un **dirty bit**(1 se il blocco è stato modificato, 0 se non ha subito modifiche)
 # tipi di miss
 nel caso si verifichi un miss in qualsiasi tipologia di cache (anche direct-mapped), possiamo identificare tre tipologie di MISS:
 - il blocco richiesto da un accesso non è mai stato richiesto prima ( cold miss)
