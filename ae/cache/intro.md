@@ -25,3 +25,7 @@ la cache direct-mapped viene strutturata in questo modo:
 	- un bit di validità: indicante se i dati contenuti nella linea siano validi o meno.
 	- un campo tag: **in grado di distinguere quale blocco della memoria sia caricato nella linea**. tale campo risulta fondamentale poichè più blocchi di memoria vengono mappati sulla stessa linea. grazie al tag si previene la lettura del blocco sbagliato
 	- il blocco stesso, memorizzato all’interno della linea
+inoltre: 
+- per praticità, realizziamo la cache di 2^n linee, associando ad ognuna un indice. per selezionare uno di tali indici, servono quindi n bit.
+- la memoria viene scomposta in blocchi da 2^m word, dove. la dimensione di ogni blocco risulta quindi essere 2^m * 4 * 8 bit.
+- abbiamo bisogno di un valore, l’**offset di word**, che possa indicare quale word all’interno del blocco corrisponde alla richiesta dall’indirizzo di memoria. ci serviranno m bit per selezionare tra 2^m word.
