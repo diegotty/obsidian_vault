@@ -71,6 +71,11 @@ la **cache set-associative**, permette di salvare più blocchi sulla stessa line
 
 circuito della cache set-associative:
 ![[Pasted image 20240603110034.png]]
+## politiche di rimpiazzo e scrittura
+nel caso in cui si debba andare a inserire un nuovo blocco in una linea di una cache set-associative e tale linea sia piena, è necessario selezionare quale blocco andrà ad essere rimpiazzato.
+vengono utilizzate 3 politiche di rimpiazzo:
+- rimpiazzo random, dove viene rimpiazzato un blocco casuale
+- least recently used (LRU), dove viene rimpiazzato il blocco il cui ultimo accesso risulta più vecchio
 
 # tipi di miss
 nel caso si verifichi un miss in qualsiasi tipologia di cache (anche direct-mapped), possiamo identificare tre tipologie di MISS:
