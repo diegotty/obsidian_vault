@@ -16,3 +16,6 @@ per sfruttare al massimo questi due principi, interponiamo una memoria piccola, 
 quando la CPU richiede un indirizzo di memoria, appartenente ad un blocco (????), le possibilità sono 2:
 - **MISS**: il blocco è stato caricato nella cache, dunque il dato all’indirizzo richiesto viene restituito immediatamente
 - **HIT**: il blocco non è presente nella cache, il dato viene richiesto alla RAM, caricando all’interno della cache **l’intero blocco** a cui esso appartiene
+
+## cache direct-mapped
+poichè una cache deve contenere solo i dati più richiesti, utilizzando dimensioni limitate, è necessario che più blocchi di memoria vengano salvati nello stesso spazio, sovrascrivendosi a 
