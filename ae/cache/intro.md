@@ -30,7 +30,7 @@ inoltre:
 - la memoria viene scomposta in blocchi da 2^m word, dove. la dimensione di ogni blocco risulta quindi essere 2^m * 4 * 8 bit.
 - abbiamo bisogno di un valore, l’**offset di word**, che possa indicare quale word all’interno del blocco corrisponde alla richiesta dall’indirizzo di memoria. ci serviranno m bit per selezionare tra 2^m word.
 - abbiamo bisogno di un valore, l’**offset di byte**, che vada a selezionare quale dei 4 byte componenti la word selezionata dall’offset di word, corrisponde al byte(ma non dovrei quasi sempre caricare word ???) specifico richiesto dall’indirizzo di memoria. poichè ogni word è sempre composta da 4byte, saranno necessari 2 bit.
-- ![[Pasted image 20240603105341.png]]
+![[Pasted image 20240603105341.png]]
 
 partendo dall’indirizzo di memoria, possiamo quindi scomporlo in questo modo:
 ![[Pasted image 20240603100037.png]]
@@ -61,6 +61,10 @@ blocchi diversi sono mappati(sovrascritti) sulla stessa linea → se gli accessi
 - un blocco può essere posto in una linea qualsiasi
 ## cache set-associative
 l’uso di una cache direct-mapped è in grado di ridurre la quantità di accessi alla memoria svolti da un programma. purtroppo, data la struttura rigorosa, ogni linea può contenere un solo blocco, generando una continua sovrascrittura dei dati per rimpiazzare i blocchi.
+![[Pasted image 20240603105429.png]]
 
 la **cache set-associative**, permette di salvare più blocchi sulla stessa linea (che viene chiamata set), le quali sono divise in S vie, dove ogni via può contenere un blocco.
+>[!tuff] se una cache set-associative ha 1 sola via, è come una cache direct-mapped !
+>le vie indicano il numero di blocchi che possono essere caricati INSIEME(senza doverne sovrascrivere) in una sola linea
+
 ![[Pasted image 20240603105326.png]]
