@@ -7,10 +7,12 @@ per sfruttare al massimo questi due principi, interponiamo una memoria piccola, 
 
 
 ## schema e terminologia
+- la memoria RAM è divisa in blocchi, e ogni blocco a X word
+
 - la cache è divisa in blocchi di dimensioni uguali
 - la cache contiene un numero N di linee ( o set)
 
 ## hit e miss
 quando la CPU richiede un indirizzo di memoria, appartenente ad un blocco (????), le possibilità sono 2:
-- il blocco è stato caricato nella cache, dunque il dato all’indirizzo richiesto viene restituito immediatamente
-- il dato all’indirizzo richie
+- **MISS**: il blocco è stato caricato nella cache, dunque il dato all’indirizzo richiesto viene restituito immediatamente
+- **HIT**: il blocco non è presente nella cache, il dato viene richiesto alla RAM, caricando all’interno della cache **l’intero blocco** a cui esso appartiene
