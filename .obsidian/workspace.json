@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cache/intro.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cache/intro.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cache/intro.md",
+                "file": "ae/cpu mips/strutture della CPU MIPS.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cache/intro.md"
+                "file": "ae/cpu mips/strutture della CPU MIPS.md"
               }
             }
           },
@@ -165,8 +165,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "e733f4f61e47fb45",
+  "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "ae/cache/intro.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
@@ -176,7 +177,6 @@
     "ae/pics/Pasted image 20240603100037.png",
     "ae/pics/Pasted image 20240603095007.png",
     "conflict-files-obsidian-git.md",
-    "ae/cache/intro.md",
     "raw notes/2024-29-04 mp.md",
     "raw notes/2024-27-05 mp.md",
     "java/design patterns/observer pattern.md",
@@ -191,7 +191,6 @@
     "java/design patterns/design patterns 1.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
-    "java/pics/Pasted image 20240523225856.png",
     "java/design patterns/design patterns.md",
     "java/design patterns",
     "java/strutture dati (real)/strutture dati (real).md",
