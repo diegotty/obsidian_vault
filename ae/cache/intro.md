@@ -29,3 +29,11 @@ inoltre:
 - per praticità, realizziamo la cache di 2^n linee, associando ad ognuna un indice. per selezionare uno di tali indici, servono quindi n bit.
 - la memoria viene scomposta in blocchi da 2^m word, dove. la dimensione di ogni blocco risulta quindi essere 2^m * 4 * 8 bit.
 - abbiamo bisogno di un valore, l’**offset di word**, che possa indicare quale word all’interno del blocco corrisponde alla richiesta dall’indirizzo di memoria. ci serviranno m bit per selezionare tra 2^m word.
+- abbiamo bisogno di un valore, l’**offset di byte**, che vada a selezionare quale dei 4 byte componenti la word selezionata dall’offset di word, corrisponde al byte(ma non dovrei quasi sempre caricare word ???) specifico richiesto dall’indirizzo di memoria. poichè ogni word è sempre composta da 4byte, saranno necessari 2 bit.
+
+partendo dall’indirizzo di memoria, possiamo quindi scomporlo in questo modo:
+![[Pasted image 20240603100037.png]]
+possiamo reverse-engineer-are che:
+- la cache ha 2^5 linee
+- ogni blocco ha 16 word
+- la dimensione di un blocco è: blocchi * 4 * 8 = 512
