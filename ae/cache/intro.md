@@ -68,3 +68,12 @@ la **cache set-associative**, permette di salvare più blocchi sulla stessa line
 >le vie indicano il numero di blocchi che possono essere caricati INSIEME(senza doverne sovrascrivere) in una sola linea
 
 ![[Pasted image 20240603105326.png]]
+
+circuito della cache set-associative:
+![[Pasted image 20240603110034.png]]
+
+# tipi di miss
+nel caso si verifichi un miss in qualsiasi tipologia di cache (anche direct-mapped), possiamo identificare tre tipologie di MISS:
+- il blocco richiesto da un accesso non è mai stato richiesto prima ( cold miss)
+- il miss non si sarebbe verificato con una cache fully-associative il cui numero di vie corrisponde al prodotto tra il numero di vie e il numero di linee della cache utilizzata (conflict miss)
+- il miss si sarebbe verificato anche su una cache fully-associative (capacity miss)
