@@ -167,10 +167,10 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
-    "ae/assembly/procedure e funzioni.md",
-    "ae/assembly/pseudoistruzioni.md",
     "ae/assembly/system calls.md",
+    "ae/assembly/procedure e funzioni.md",
+    "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
+    "ae/assembly/pseudoistruzioni.md",
     "ae/assembly/ricorsione.md",
     "ae/assembly/vettori.md",
     "ae/assembly/pezzi del funzionamento di MIPS.md",
