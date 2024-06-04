@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/assembly/system calls.md",
+                "file": "ae/assembly/procedure e funzioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/assembly/system calls.md",
+                "file": "ae/assembly/procedure e funzioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/assembly/system calls.md",
+                "file": "ae/assembly/procedure e funzioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/assembly/system calls.md"
+                "file": "ae/assembly/procedure e funzioni.md"
               }
             }
           },
@@ -167,7 +167,12 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
     "ae/assembly/procedure e funzioni.md",
+    "ae/assembly/pseudoistruzioni.md",
+    "ae/assembly/system calls.md",
+    "ae/assembly/ricorsione.md",
+    "ae/assembly/vettori.md",
     "ae/assembly/pezzi del funzionamento di MIPS.md",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cache/intro.md",
@@ -201,12 +206,7 @@
     "java/streams/operazioni degli stream.md",
     "README.md",
     "algo/data structures.md",
-    "algo/sorting algos.md",
     "algo",
-    "java/streams/Collector e Collectors.md",
-    "raw notes/2024-05-14 mp (done).md",
-    "ae/cpu mips/implementazione pipeline.md",
-    "ae/cpu mips/malfunzionamenti CU.md",
     "java/streams",
     "java/io",
     "java/strutture dati (real)",
