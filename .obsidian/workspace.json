@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/anticipare e predire i salti.md",
+                "file": "ae/cache/intro.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0b94f8240cc12e33",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/anticipare e predire i salti.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/anticipare e predire i salti.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/anticipare e predire i salti.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -155,15 +168,26 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "0b94f8240cc12e33",
   "lastOpenFiles": [
+    "ae/cache/intro.md",
+    "conflict-files-obsidian-git.md",
+    "ae/cache/cache.md",
+    "ae/cpu mips/anticipare e predire i salti.md",
+    "ae/pics/Pasted image 20240603110034.png",
+    "ae/pics/Pasted image 20240603105429.png",
+    "ae/pics/Pasted image 20240603105341.png",
+    "ae/pics/Pasted image 20240603105326.png",
+    "ae/pics/Pasted image 20240603102442.png",
+    "ae/pics/Pasted image 20240603101944.png",
+    "ae/pics/Pasted image 20240603100037.png",
+    "ae/pics/Pasted image 20240603095007.png",
     "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/pipeline.md",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/implementazione pipeline.md",
     "ae/cpu mips/cpu mips.md",
     "ae/cpu mips/fasi della CPU.md",
-    "ae/cpu mips/anticipare e predire i salti.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/basi cpu.md",
     "ae/intro a MIPS.md",
@@ -179,24 +203,13 @@
     "algo/sorting algos.md",
     "raw notes/2024-29-04 mp.md",
     "raw notes/2024-27-05 mp.md",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-05-21 mp (done).md",
-    "java/streams/operazioni degli stream.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
-    "java/pics/Pasted image 20240523225856.png",
-    "java/pics/Pasted image 20240523191234.png",
-    "java/pics/Pasted image 20240523190726.png",
-    "java/design patterns/strategy pattern.md",
     "java/design patterns",
     "ae/cache",
     "algo",
     "java/streams",
-    "java/pics/Pasted image 20240515110119.png",
-    "ae/pics/Pasted image 20240515224400.png",
-    "ae/pics/Pasted image 20240515224013.png",
-    "ae/pics/Pasted image 20240515220321.png",
-    "ae/pics/Pasted image 20240515220219.png",
     "java/io",
     "java/swing",
     "java/strutture dati (real)",
