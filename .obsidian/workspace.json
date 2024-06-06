@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md",
+                "file": "ae/cpu mips/anticipare e predire i salti.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ae/cpu mips/strutture della CPU MIPS.md"
+                "file": "ae/cpu mips/anticipare e predire i salti.md"
               }
             }
           }
@@ -156,8 +155,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f16576e6e03b4de",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/cpu mips/pipeline.md",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/implementazione pipeline.md",
@@ -173,7 +173,6 @@
     "ae/assembly/procedure e funzioni.md",
     "ae/assembly/system calls.md",
     "ae/assembly/pseudoistruzioni.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "ae/ae.md",
     "raw notes/2024-03-14 mp √.md",
     "algo/data structures.md",
