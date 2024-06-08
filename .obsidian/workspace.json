@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "raw notes/2024-05-23 mp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/design patterns/design patterns 1.md"
+                "file": "raw notes/2024-05-23 mp.md"
               }
             }
           }
@@ -158,6 +158,10 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "raw notes/2024-27-05 mp.md",
+    "raw notes/2024-29-04 mp.md",
+    "raw notes/2024-05-16 mp (done).md",
+    "java/design patterns/design patterns 1.md",
     "java/design patterns/design patterns.md",
     "java/java.md",
     "ae/ae.md",
@@ -188,10 +192,6 @@
     "ae/assembly/procedure e funzioni.md",
     "ae/assembly/system calls.md",
     "ae/assembly/pseudoistruzioni.md",
-    "raw notes/2024-03-14 mp √.md",
-    "algo/data structures.md",
-    "algo/sorting algos.md",
-    "raw notes/2024-29-04 mp.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
