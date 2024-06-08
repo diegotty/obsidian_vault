@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/java.md",
+                "file": "java/design patterns/design patterns 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/java.md",
+                "file": "java/design patterns/design patterns 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/java.md",
+                "file": "java/design patterns/design patterns 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/java.md"
+                "file": "java/design patterns/design patterns 1.md"
               }
             }
           }
@@ -157,6 +158,8 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "java/design patterns/design patterns.md",
+    "java/java.md",
     "ae/ae.md",
     "ae/cache/intro.md",
     "conflict-files-obsidian-git.md",
@@ -189,8 +192,6 @@
     "algo/data structures.md",
     "algo/sorting algos.md",
     "raw notes/2024-29-04 mp.md",
-    "raw notes/2024-27-05 mp.md",
-    "raw notes/2024-05-21 mp (done).md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
