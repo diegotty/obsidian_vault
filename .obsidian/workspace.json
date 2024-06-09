@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/coding etiquette.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/coding etiquette.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/coding etiquette.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md"
+                "file": "java/coding etiquette.md"
               }
             }
           }
@@ -157,6 +157,7 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Iterable e Iterator.md",
     "raw notes/2024-05-23 mp.md",
     "raw notes/2024-27-05 mp.md",
@@ -190,7 +191,6 @@
     "ae/MIPS 2000.md",
     "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
     "ae/assembly/assembly.md",
-    "ae/assembly/procedure e funzioni.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
