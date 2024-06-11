@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ffa8d87d6d998776",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/io/files.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/io/files.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/io/files.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,11 +178,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6fd66002b028a191",
+  "active": "ffa8d87d6d998776",
   "lastOpenFiles": [
+    "java/io/files.md",
+    "conflict-files-obsidian-git.md",
     "java/io/input_output.md",
     "java/io/serializzazione.md",
-    "java/io/files.md",
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/Collector e Collectors.md",
@@ -192,7 +206,6 @@
     "ae/pics/Pasted image 20240603101944.png",
     "ae/pics/Pasted image 20240603100037.png",
     "ae/pics/Pasted image 20240603095007.png",
-    "conflict-files-obsidian-git.md",
     "raw notes/2024-29-04 mp.md",
     "raw notes/2024-27-05 mp.md",
     "java/design patterns/observer pattern.md",
