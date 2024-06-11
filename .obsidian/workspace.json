@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/io/files.md",
+                "file": "raw notes/2024-03-05 mp √.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "classe",
+                "query": "static",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/io/files.md",
+                "file": "raw notes/2024-03-05 mp √.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/io/files.md",
+                "file": "raw notes/2024-03-05 mp √.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/io/files.md"
+                "file": "raw notes/2024-03-05 mp √.md"
               }
             }
           },
@@ -167,10 +167,10 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/io/files.md",
     "java/io/input_output.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/Collector e Collectors.md",
-    "java/io/files.md",
     "conflict-files-obsidian-git.md",
     "java/io/serializzazione.md",
     "java/streams/stream.md",
