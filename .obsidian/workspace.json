@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-03-05 mp √.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "static",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-03-05 mp √.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-03-05 mp √.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-03-05 mp √.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           },
@@ -167,14 +166,15 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/streams/stream.md",
+    "java/streams/Collector e Collectors.md",
+    "java/streams/operazioni degli stream.md",
+    "java/streams/streams.md",
+    "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
     "java/io/input_output.md",
-    "java/streams/operazioni degli stream.md",
-    "java/streams/Collector e Collectors.md",
     "conflict-files-obsidian-git.md",
     "java/io/serializzazione.md",
-    "java/streams/stream.md",
-    "java/streams/streams.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/assembly/procedure e funzioni.md",
     "ae/assembly/system calls.md",
@@ -202,7 +202,6 @@
     "ae/Untitled.canvas",
     "raw notes/2024-05-23 mp.md",
     "raw notes/2024-05-16 mp (done).md",
-    "raw notes/2024-05-21 mp (done).md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
