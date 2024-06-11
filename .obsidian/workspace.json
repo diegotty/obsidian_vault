@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/streams/operazioni degli stream.md"
               }
             }
           },
@@ -166,9 +166,22 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/streams/optional.md",
     "java/streams/stream.md",
-    "java/streams/Collector e Collectors.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "java/interfacce/interfacce.md",
+    "java/design patterns/design patterns.md",
+    "java/swing/swing.md",
+    "java/coding etiquette.md",
+    "java/eccezioni.md",
+    "java/ereditarietà.md",
+    "java/java.md",
+    "java/progettazione.md",
+    "java/ricorsione.md",
+    "java/strutture di controllo di flusso.md",
+    "java/tipi generici.md",
     "java/streams/operazioni degli stream.md",
+    "java/streams/Collector e Collectors.md",
     "java/streams/streams.md",
     "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
@@ -179,12 +192,6 @@
     "ae/assembly/procedure e funzioni.md",
     "ae/assembly/system calls.md",
     "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
-    "ae/assembly/pseudoistruzioni.md",
-    "ae/assembly/ricorsione.md",
-    "ae/assembly/vettori.md",
-    "ae/assembly/pezzi del funzionamento di MIPS.md",
-    "ae/cpu mips/strutture della CPU MIPS.md",
-    "ae/cache/intro.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
@@ -193,15 +200,8 @@
     "ae/pics/Pasted image 20240603101944.png",
     "ae/pics/Pasted image 20240603100037.png",
     "ae/pics/Pasted image 20240603095007.png",
-    "raw notes/2024-29-04 mp.md",
-    "raw notes/2024-27-05 mp.md",
-    "java/design patterns/observer pattern.md",
-    "ae/cache/cache.md",
     "ae/cache",
-    "ae/Untitled.md",
     "ae/Untitled.canvas",
-    "raw notes/2024-05-23 mp.md",
-    "raw notes/2024-05-16 mp (done).md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
