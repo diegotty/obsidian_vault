@@ -53,6 +53,7 @@
     "//java",
     "//java/java/streams",
     "//java/java/streams",
+    "//java/java/io",
     "//java/java/io"
   ],
   "expandFolderOnClick": true,
