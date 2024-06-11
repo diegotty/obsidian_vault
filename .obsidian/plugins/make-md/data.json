@@ -49,8 +49,11 @@
     "//java/java/ereditarietà",
     "//java/java/strutture dati (real)",
     "//java/java/design patterns",
-    "//ae",
-    "//ae/ae/cpu mips"
+    "//ae/ae/cpu mips",
+    "//java",
+    "//java/java/streams",
+    "//java/java/streams",
+    "//java/java/io"
   ],
   "expandFolderOnClick": true,
   "menuTriggerChar": "/",
