@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/io/files.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/io/files.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/io/files.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/io/files.md"
+                "file": "java/streams/operazioni degli stream.md"
               }
             }
           },
@@ -167,13 +167,13 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/streams/Collector e Collectors.md",
+    "java/streams/operazioni degli stream.md",
     "java/io/files.md",
     "conflict-files-obsidian-git.md",
     "java/io/input_output.md",
     "java/io/serializzazione.md",
     "java/streams/stream.md",
-    "java/streams/operazioni degli stream.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/streams.md",
     "ae/cpu mips/anticipare e predire i salti.md",
     "ae/assembly/procedure e funzioni.md",
