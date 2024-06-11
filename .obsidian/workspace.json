@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/streams/optional.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/streams/optional.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/streams/optional.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/operazioni degli stream.md"
+                "file": "java/streams/optional.md"
               }
             }
           },
@@ -164,10 +164,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6fd66002b028a191",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
-    "java/streams/optional.md",
     "java/streams/stream.md",
+    "java/streams/Collector e Collectors.md",
+    "java/streams/operazioni degli stream.md",
+    "java/streams/optional.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/interfacce.md",
     "java/design patterns/design patterns.md",
@@ -180,8 +182,6 @@
     "java/ricorsione.md",
     "java/strutture di controllo di flusso.md",
     "java/tipi generici.md",
-    "java/streams/operazioni degli stream.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/streams.md",
     "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
