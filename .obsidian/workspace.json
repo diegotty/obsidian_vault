@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           },
@@ -167,10 +166,10 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "raw notes/2024-05-21 mp (done).md",
-    "raw notes/2024-05-16 mp (done).md",
     "java/streams/operazioni degli stream.md",
     "java/streams/stream.md",
+    "raw notes/2024-05-21 mp (done).md",
+    "raw notes/2024-05-16 mp (done).md",
     "java/streams/optional.md",
     "java/streams/Collector e Collectors.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
