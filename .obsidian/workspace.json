@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/coding etiquette.md",
+                "file": "java/oggetti/uml.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "d8790f6af2c392be",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/coding etiquette.md",
+                "file": "java/oggetti/uml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/coding etiquette.md",
+                "file": "java/oggetti/uml.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/coding etiquette.md"
+                "file": "java/oggetti/uml.md"
               }
             }
           }
@@ -167,8 +156,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d8790f6af2c392be",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "java/coding etiquette.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Iterable e Iterator.md",
     "raw notes/2024-05-23 mp.md",
@@ -202,7 +192,6 @@
     "ae/intro a MIPS.md",
     "ae/MIPS 2000.md",
     "ae/assembly/assembly MIPS (strutture, syntax, etc).md",
-    "ae/assembly/assembly.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
