@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "d8790f6af2c392be",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -73,7 +84,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -155,7 +167,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "d8790f6af2c392be",
   "lastOpenFiles": [
     "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Iterable e Iterator.md",
