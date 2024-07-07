@@ -50,4 +50,5 @@ s null // non punta a nulla ! ma è ok
 ## come fare un esercizio
 - metodo main. alloco i parametri del metodo (args)
 - se chiamo il metodo di una classe, prima devo caricare la classe e “istanziare” eventuali campi statici
+- se una classe viene chiamata con parametri, i parametri vengono creati e allocati nello stack (come se fossero variabilli locali)
 - 
