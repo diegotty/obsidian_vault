@@ -69,7 +69,7 @@ List<Integer> reduced = l.stream().takeWhile(x -> x < 42).collect(toList);
 //permette di unire gli stream in un uno stream:
 <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper);
 //se ho uno stream di collection(Stream<Collection<T>>, con flatMap rendo quelle collection degli stream, e avendo Stream<Stream<T>>, creo un solo grande stream piatto
-//flatMap rende un supplier che usa per rendere il tipo stream
+//flatMap pArrende un supplier che usa per rendere il tipo stream
 Map<String, Long> letterToCount = words.map(w -> w.split(""))//returns String[]
 .flatMap(Arrays::stream) //uso il supplier su ogni elemento dello stream !!
 .collect(groupingBy(identity(), counting()); 
