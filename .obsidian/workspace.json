@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/oggetti/memory allocation.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "b7ff004afb5465a4",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.3"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -59,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "collect",
+                "query": "meta",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +74,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -105,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/oggetti/memory allocation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/oggetti/memory allocation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -145,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/oggetti/memory allocation.md"
               }
             }
           },
@@ -176,13 +165,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "b7ff004afb5465a4",
+  "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/streams/Collector e Collectors.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/stream.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "raw notes/2024-05-14 mp (done).md",
-    "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-21 mp (done).md",
     "raw notes/2024-05-16 mp (done).md",
     "java/streams/optional.md",
