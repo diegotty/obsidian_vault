@@ -52,4 +52,5 @@ s null // non punta a nulla ! ma è ok
 - args non è null, è vuoto
 - se chiamo il metodo di una classe, prima devo caricare la classe e “istanziare” eventuali campi statici
 - se una classe viene chiamata con parametri, i parametri vengono creati e allocati nello stack (come se fossero variabilli locali)
-- 
+
+i campi di un enum sono tutti statici !!! (e si dovrebbe chiamare il costruttore dell’enum per ogni campo (i campi dell’enum sono public static final))
