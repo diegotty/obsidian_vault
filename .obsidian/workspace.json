@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/tipi generici.md"
+                "file": "java/streams/operazioni degli stream.md"
               }
             }
           },
@@ -164,8 +164,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/tipi generici.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
@@ -186,7 +187,6 @@
     "java/progettazione.md",
     "java/ricorsione.md",
     "java/strutture di controllo di flusso.md",
-    "java/tipi generici.md",
     "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
     "java/io/input_output.md",
