@@ -46,3 +46,8 @@ String s = null;
 s null // non punta a nulla ! ma è ok
 ```
 ![[Pasted image 20240318201304.png]]
+
+## come fare un esercizio
+- metodo main. alloco i parametri del metodo (args)
+- se chiamo il metodo di una classe, prima devo caricare la classe e “istanziare” eventuali campi statici
+- 
