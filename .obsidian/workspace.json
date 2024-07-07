@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/streams/operazioni degli stream.md"
               }
             }
           },
@@ -164,14 +164,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/streams/Collector e Collectors.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/stream.md",
     "java/streams/optional.md",
     "java/streams/streams.md",
     "java/oggetti/memory allocation.md",
-    "java/streams/Collector e Collectors.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "raw notes/2024-05-14 mp (done).md",
     "raw notes/2024-05-21 mp (done).md",
