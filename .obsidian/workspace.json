@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "group",
+                "query": "flat",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/streams/operazioni degli stream.md"
               }
             }
           }
@@ -171,6 +171,7 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
+    "java/streams/Collector e Collectors.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "conflict-files-obsidian-git.md",
     "java/polimorfismo/Object.md",
@@ -204,7 +205,6 @@
     "ae/cpu mips/fasi della CPU.md",
     "ae/cpu mips/aggiungere nuove istruzioni a una CPU MIPS.md",
     "ae/basi cpu.md",
-    "ae/intro a MIPS.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
