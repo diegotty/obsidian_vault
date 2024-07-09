@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "map",
+                "query": "comparable",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/interfacce/Comparable e Comparator.md"
               }
             }
           }
@@ -171,10 +171,10 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
+    "java/streams/Collector e Collectors.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/oggetti/classi.md",
     "raw notes/2024-05-14 mp (done).md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/operazioni degli stream.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "conflict-files-obsidian-git.md",
