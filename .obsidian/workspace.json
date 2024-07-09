@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "skip",
+                "query": "tipi generici",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/operazioni degli stream.md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -171,12 +171,12 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
+    "java/streams/operazioni degli stream.md",
     "java/oggetti/uml.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/streams/Collector e Collectors.md",
     "java/oggetti/classi.md",
     "raw notes/2024-05-14 mp (done).md",
-    "java/streams/operazioni degli stream.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "conflict-files-obsidian-git.md",
     "java/polimorfismo/Object.md",
