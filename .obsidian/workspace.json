@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,8 +61,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "comparable",
-                "matchingCase": true,
+                "query": "map",
+                "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           }
@@ -171,6 +171,7 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
+    "java/interfacce/Comparable e Comparator.md",
     "java/oggetti/classi.md",
     "raw notes/2024-05-14 mp (done).md",
     "java/streams/Collector e Collectors.md",
@@ -204,7 +205,6 @@
     "ae/cpu mips/pipeline.md",
     "ae/cpu mips/malfunzionamenti CU.md",
     "ae/cpu mips/implementazione pipeline.md",
-    "ae/cpu mips/cpu mips.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
