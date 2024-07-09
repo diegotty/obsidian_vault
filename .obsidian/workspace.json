@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md",
+                "file": "java/oggetti/classi.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "downStream",
+                "query": "abstract",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md",
+                "file": "java/oggetti/classi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md",
+                "file": "java/oggetti/classi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "raw notes/2024-05-14 mp (done).md"
+                "file": "java/oggetti/classi.md"
               }
             }
           }
@@ -171,8 +171,8 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
-    "java/streams/Collector e Collectors.md",
     "raw notes/2024-05-14 mp (done).md",
+    "java/streams/Collector e Collectors.md",
     "java/streams/operazioni degli stream.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "conflict-files-obsidian-git.md",
