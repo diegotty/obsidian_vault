@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/oggetti/uml.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "comparable",
+                "query": "aggre",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -107,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/oggetti/uml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/oggetti/uml.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md"
+                "file": "java/oggetti/uml.md"
               }
             }
           }
@@ -171,8 +171,8 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
-    "java/streams/Collector e Collectors.md",
     "java/interfacce/Comparable e Comparator.md",
+    "java/streams/Collector e Collectors.md",
     "java/oggetti/classi.md",
     "raw notes/2024-05-14 mp (done).md",
     "java/streams/operazioni degli stream.md",
