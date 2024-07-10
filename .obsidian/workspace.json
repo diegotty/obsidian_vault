@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/oggetti/memory allocation.md",
+                "file": "raw notes/2024-03-19 mp √.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "jvm",
+                "query": "enume",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/oggetti/memory allocation.md",
+                "file": "raw notes/2024-03-19 mp √.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/oggetti/memory allocation.md",
+                "file": "raw notes/2024-03-19 mp √.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/oggetti/memory allocation.md"
+                "file": "raw notes/2024-03-19 mp √.md"
               }
             }
           },
@@ -166,8 +167,8 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
-    "java/oggetti/metodi.md",
     "java/oggetti/memory allocation.md",
+    "java/oggetti/metodi.md",
     "java/oggetti/intro.md",
     "java/oggetti/classi.md",
     "java/oggetti/campi.md",
