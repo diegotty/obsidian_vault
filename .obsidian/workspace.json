@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/oggetti/memory allocation.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/oggetti/memory allocation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/oggetti/memory allocation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/eccezioni.md"
+                "file": "java/oggetti/memory allocation.md"
               }
             }
           },
@@ -167,17 +166,21 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/oggetti/metodi.md",
+    "java/oggetti/memory allocation.md",
+    "java/oggetti/intro.md",
+    "java/oggetti/classi.md",
+    "java/oggetti/campi.md",
+    "algo/data structures.md",
+    "java/eccezioni.md",
     "java/polimorfismo/polimorfismo.md",
     "java/streams/stream.md",
-    "java/oggetti/metodi.md",
-    "java/oggetti/campi.md",
     "java/streams/operazioni degli stream.md",
     "conflict-files-obsidian-git.md",
     "java/tipi generici.md",
     "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "java/streams/streams.md",
-    "java/oggetti/memory allocation.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "raw notes/2024-05-14 mp (done).md",
     "raw notes/2024-05-21 mp (done).md",
@@ -186,13 +189,9 @@
     "java/design patterns/design patterns.md",
     "java/swing/swing.md",
     "java/coding etiquette.md",
-    "java/eccezioni.md",
     "java/ereditarietà.md",
     "java/java.md",
     "java/progettazione.md",
-    "java/ricorsione.md",
-    "java/strutture di controllo di flusso.md",
-    "raw notes/2024-03-05 mp √.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
