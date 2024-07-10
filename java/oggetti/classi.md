@@ -123,7 +123,8 @@ int n = array[j]; //auto-unboxing xke array è un array di Integer, non di int
 ## classi astratte
 una classe astratta non può essere istanziata(non possono esistere oggetti per quella classe)
 ```java
-public abstract class PersonaggioDisney{
+public 
+abstract class PersonaggioDisney{
 	abstract void faPasticci();
 }
 ```

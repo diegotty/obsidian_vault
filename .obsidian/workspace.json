@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "fb45c08189cd136c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,7 +107,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +124,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/operazioni degli stream.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +147,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/operazioni degli stream.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -165,10 +178,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6fd66002b028a191",
+  "active": "fb45c08189cd136c",
   "lastOpenFiles": [
-    "java/tipi generici.md",
     "java/streams/operazioni degli stream.md",
+    "conflict-files-obsidian-git.md",
+    "java/tipi generici.md",
     "java/streams/Collector e Collectors.md",
     "java/streams/stream.md",
     "java/streams/optional.md",
@@ -191,7 +205,6 @@
     "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
     "java/io/input_output.md",
-    "conflict-files-obsidian-git.md",
     "java/io/serializzazione.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
