@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/oggetti/metodi.md",
+                "file": "java/oggetti/campi.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "jvm",
+                "query": "campi di classe",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,8 +73,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/oggetti/metodi.md",
+                "file": "java/oggetti/campi.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/oggetti/metodi.md",
+                "file": "java/oggetti/campi.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/oggetti/metodi.md"
+                "file": "java/oggetti/campi.md"
               }
             }
           },
@@ -167,6 +166,7 @@
   },
   "active": "6fd66002b028a191",
   "lastOpenFiles": [
+    "java/oggetti/metodi.md",
     "java/streams/operazioni degli stream.md",
     "conflict-files-obsidian-git.md",
     "java/tipi generici.md",
@@ -192,7 +192,6 @@
     "raw notes/2024-03-05 mp √.md",
     "java/io/files.md",
     "java/io/input_output.md",
-    "java/io/serializzazione.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
