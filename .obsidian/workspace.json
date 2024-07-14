@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md"
+                "file": "java/polimorfismo/confronto, conversione e copia.md"
               }
             }
           }
@@ -182,12 +182,15 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/polimorfismo/Object.md",
+    "java/streams/optional.md",
+    "java/tipi generici.md",
+    "java/strutture dati (real)/strutture dati (real).md",
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/classi anonime e lambda function.md",
-    "java/strutture dati (real)/strutture dati (real).md",
     "java/swing/swing.md",
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/streams/streams.md",
@@ -195,7 +198,6 @@
     "java/io/files.md",
     "java/ricorsione.md",
     "java/eccezioni.md",
-    "java/tipi generici.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interfacce/interfacce.md",
@@ -206,8 +208,6 @@
     "raw notes/2024-04-11 mp (done).md",
     "java/oggetti/uml.md",
     "java/streams/Collector e Collectors.md",
-    "java/oggetti/classi.md",
-    "java/polimorfismo/Object.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
