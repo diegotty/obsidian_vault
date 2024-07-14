@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/ricorsione.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/ricorsione.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/ricorsione.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/eccezioni.md"
+                "file": "java/ricorsione.md"
               }
             }
           }
@@ -182,8 +182,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
-    "java/tipi generici.md",
     "java/eccezioni.md",
+    "java/tipi generici.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interfacce/interfacce.md",
