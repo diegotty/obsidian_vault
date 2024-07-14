@@ -1,4 +1,5 @@
 
+
 # generici
 i tipi generici sono un modello di programmazione che permette di definire, con una sola dichiarazione, un intero insieme di metodi o classi
 è un meccanismo molto potente, da usare con consapevolezza !
