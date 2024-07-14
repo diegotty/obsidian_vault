@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,8 +86,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -107,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -124,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -147,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md"
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
               }
             }
           }
@@ -171,6 +170,7 @@
   },
   "active": "c2fb70bdc3c0af3f",
   "lastOpenFiles": [
+    "java/interfacce/classi anonime e lambda function.md",
     "raw notes/2024-04-11 mp (done).md",
     "java/tipi generici.md",
     "java/streams/operazioni degli stream.md",
@@ -204,7 +204,6 @@
     "ae/pics/Pasted image 20240603100037.png",
     "ae/pics/Pasted image 20240603095007.png",
     "ae/cpu mips/strutture della CPU MIPS.md",
-    "ae/cpu mips/pipeline.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
