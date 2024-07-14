@@ -30,9 +30,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3f70d70929781b09",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "java/tipi generici.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a0f89bbd0bac1d12",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -61,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "classi anonime",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -106,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -168,19 +192,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c2fb70bdc3c0af3f",
+  "active": "a0f89bbd0bac1d12",
   "lastOpenFiles": [
+    "java/tipi generici.md",
+    "conflict-files-obsidian-git.md",
+    "java/interfacce/Comparable e Comparator.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "java/strutture dati (real)/strutture dati (real).md",
+    "raw notes/2024-05-14 mp (done).md",
+    "java/interesting stuff/getClass() e instanceof.md",
+    "java/design patterns/design patterns.md",
     "java/interfacce/classi anonime e lambda function.md",
     "raw notes/2024-04-11 mp (done).md",
-    "java/tipi generici.md",
     "java/streams/operazioni degli stream.md",
     "java/oggetti/uml.md",
-    "java/interfacce/Comparable e Comparator.md",
     "java/streams/Collector e Collectors.md",
     "java/oggetti/classi.md",
-    "raw notes/2024-05-14 mp (done).md",
-    "java/strutture dati (real)/strutture dati (real).md",
-    "conflict-files-obsidian-git.md",
     "java/polimorfismo/Object.md",
     "java/coding etiquette.md",
     "java/interfacce/Iterable e Iterator.md",
@@ -189,12 +216,10 @@
     "raw notes/2024-29-04 mp.md",
     "raw notes/2024-05-16 mp (done).md",
     "java/design patterns/design patterns 1.md",
-    "java/design patterns/design patterns.md",
     "java/java.md",
     "ae/ae.md",
     "ae/cache/intro.md",
     "ae/cache/cache.md",
-    "ae/cpu mips/anticipare e predire i salti.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
@@ -203,7 +228,6 @@
     "ae/pics/Pasted image 20240603101944.png",
     "ae/pics/Pasted image 20240603100037.png",
     "ae/pics/Pasted image 20240603095007.png",
-    "ae/cpu mips/strutture della CPU MIPS.md",
     "java/pics/Pasted image 20240523230019.png",
     "java/pics/Pasted image 20240523225936.png",
     "java/design patterns",
