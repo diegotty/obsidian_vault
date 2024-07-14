@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "parall",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,8 +98,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/strutture dati (real)/strutture dati (real).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/strutture dati (real)/strutture dati (real).md"
               }
             }
           }
@@ -183,8 +182,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
-    "java/streams/operazioni degli stream.md",
     "java/streams/stream.md",
+    "java/streams/operazioni degli stream.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/classi anonime e lambda function.md",
