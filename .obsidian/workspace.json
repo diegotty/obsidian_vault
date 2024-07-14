@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/eccezioni.md"
+                "file": "java/interesting stuff/getClass() e instanceof.md"
               }
             }
           }
@@ -182,6 +182,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/eccezioni.md",
     "java/interesting stuff/interesting stuff.md",
     "java/interfacce/interfacce.md",
     "java/tipi generici.md",
@@ -207,7 +208,6 @@
     "raw notes/2024-05-16 mp (done).md",
     "java/design patterns/design patterns 1.md",
     "java/java.md",
-    "ae/ae.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
