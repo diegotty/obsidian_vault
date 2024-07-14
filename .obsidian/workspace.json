@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md"
+                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md"
               }
             }
           }
@@ -182,6 +182,9 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interfacce/interfacce.md",
+    "java/oggetti/packages.md",
+    "java/polimorfismo/confronto, conversione e copia.md",
     "java/polimorfismo/Object.md",
     "java/streams/optional.md",
     "java/tipi generici.md",
@@ -200,14 +203,11 @@
     "java/eccezioni.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/interesting stuff/interesting stuff.md",
-    "java/interfacce/interfacce.md",
     "conflict-files-obsidian-git.md",
     "java/interfacce/Comparable e Comparator.md",
     "raw notes/2024-05-14 mp (done).md",
     "java/design patterns/design patterns.md",
     "raw notes/2024-04-11 mp (done).md",
-    "java/oggetti/uml.md",
-    "java/streams/Collector e Collectors.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
