@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/eccezioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/eccezioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/eccezioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/tipi generici.md"
+                "file": "java/eccezioni.md"
               }
             }
           }
@@ -182,8 +182,10 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "java/interesting stuff/interesting stuff.md",
+    "java/interfacce/interfacce.md",
     "java/tipi generici.md",
+    "conflict-files-obsidian-git.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/strutture dati (real)/strutture dati (real).md",
@@ -206,8 +208,6 @@
     "java/design patterns/design patterns 1.md",
     "java/java.md",
     "ae/ae.md",
-    "ae/cache/intro.md",
-    "ae/cache/cache.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
