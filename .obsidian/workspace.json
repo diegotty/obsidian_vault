@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "parall",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +98,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -182,13 +183,14 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/streams/operazioni degli stream.md",
+    "java/streams/stream.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/swing/swing.md",
     "java/strutture dati (real)/strutture `complesse`.md",
-    "java/streams/stream.md",
     "java/streams/streams.md",
     "java/io/input_output.md",
     "java/io/files.md",
@@ -203,7 +205,6 @@
     "raw notes/2024-05-14 mp (done).md",
     "java/design patterns/design patterns.md",
     "raw notes/2024-04-11 mp (done).md",
-    "java/streams/operazioni degli stream.md",
     "java/oggetti/uml.md",
     "java/streams/Collector e Collectors.md",
     "java/oggetti/classi.md",
