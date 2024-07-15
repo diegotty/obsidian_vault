@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/domande orale ?.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/domande orale ?.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/domande orale ?.md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -192,8 +192,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2902e842caa0f8ce",
+  "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/domande orale ?.md",
     "java/tipi generici.md",
     "java/strutture di controllo di flusso.md",
     "java/ricorsione.md",
@@ -201,7 +202,6 @@
     "java/java.md",
     "java/ereditarietà.md",
     "java/eccezioni.md",
-    "java/domande orale ?.md",
     "java/coding etiquette.md",
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/strutture dati (real)/strutture dati (real).md",
