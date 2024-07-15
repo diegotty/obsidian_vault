@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+                "file": "java/interfacce/interfacce (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/domande orale ?.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/domande orale ?.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/domande orale ?.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           }
@@ -192,12 +192,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2902e842caa0f8ce",
+  "active": "3f70d70929781b09",
   "lastOpenFiles": [
-    "java/interfacce/Comparable e Comparator.md",
-    "java/interfacce/interfacce (real).md",
     "java/domande orale ?.md",
     "java/streams/Collector e Collectors.md",
+    "java/interfacce/interfacce (real).md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "java/interfacce/Comparable e Comparator.md",
     "java/strutture di controllo di flusso.md",
     "java/tipi generici.md",
     "java/ricorsione.md",
@@ -219,7 +220,6 @@
     "java/oggetti/metodi.md",
     "java/oggetti/memory allocation.md",
     "java/oggetti/intro.md",
-    "java/oggetti/enumerazioni.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
