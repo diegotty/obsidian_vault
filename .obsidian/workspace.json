@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/optional.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/optional.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/optional.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/optional.md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -194,6 +194,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/strutture di controllo di flusso.md",
+    "java/streams/optional.md",
     "java/streams/operazioni degli stream.md",
     "java/io/input_output.md",
     "java/io/files.md",
@@ -203,7 +205,6 @@
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
-    "java/strutture di controllo di flusso.md",
     "java/tipi generici.md",
     "java/ricorsione.md",
     "java/progettazione.md",
@@ -214,7 +215,6 @@
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/streams/stream.md",
-    "java/streams/optional.md",
     "java/polimorfismo/polimorfismo.md",
     "java/polimorfismo/Object.md",
     "java/polimorfismo/confronto, conversione e copia.md",
