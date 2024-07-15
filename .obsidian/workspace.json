@@ -37,13 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "java/streams/stream.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2902e842caa0f8ce",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "java/domande orale ?.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -117,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce (real).md"
+                "file": "java/streams/stream.md"
               }
             }
           }
@@ -179,34 +192,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/streams/optional.md",
     "java/domande orale ?.md",
+    "java/streams/operazioni degli stream.md",
+    "java/streams/Collector e Collectors.md",
+    "java/polimorfismo/polimorfismo.md",
+    "java/polimorfismo/Object.md",
+    "java/polimorfismo/confronto, conversione e copia.md",
+    "java/oggetti/strings.md",
+    "java/oggetti/packages.md",
+    "java/oggetti/metodi.md",
+    "java/oggetti/memory allocation.md",
+    "java/oggetti/intro.md",
+    "java/oggetti/enumerazioni.md",
+    "java/oggetti/classi.md",
+    "java/oggetti/campi.md",
+    "java/interfacce/Iterable e Iterator.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/interfacce (real).md",
     "java/interfacce/Comparable e Comparator.md",
     "java/oggetti/uml.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/interfacce/classi annidate e interne.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/interesting stuff/interesting stuff.md",
     "java/design patterns/design patterns 1.md",
     "java/design patterns/design patterns.md",
-    "java/io/files.md",
-    "java/io/input_output.md",
-    "java/io/io.md",
-    "java/oggetti/campi.md",
-    "java/oggetti/metodi.md",
-    "java/oggetti/packages.md",
-    "java/interfacce/interfacce.md",
-    "java/polimorfismo/confronto, conversione e copia.md",
-    "java/polimorfismo/Object.md",
-    "java/streams/optional.md",
-    "java/tipi generici.md",
-    "java/strutture dati (real)/strutture dati (real).md",
-    "java/streams/stream.md",
-    "java/streams/operazioni degli stream.md",
-    "java/interfacce/Iterable e Iterator.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
