@@ -1,4 +1,4 @@
 diff classi astratte interfacce
 polimorfismo interfacce
-interfacce notevoli 
+interfacce notevoli  
 collector collectors
