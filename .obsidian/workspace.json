@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md"
+                "file": "java/eccezioni.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/streams/Collector e Collectors.md",
     "java/interesting stuff/getClass() e instanceof.md",
@@ -214,7 +215,6 @@
     "java/oggetti/enumerazioni.md",
     "java/io/input_output.md",
     "java/io/files.md",
-    "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/strutture di controllo di flusso.md",
     "java/io/serializzazione.md",
