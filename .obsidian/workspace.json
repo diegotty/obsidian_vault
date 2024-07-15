@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +56,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/domande orale ?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/domande orale ?.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/domande orale ?.md"
               }
             }
           }
@@ -192,10 +192,21 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3f70d70929781b09",
+  "active": "2902e842caa0f8ce",
   "lastOpenFiles": [
-    "java/streams/optional.md",
+    "java/tipi generici.md",
+    "java/strutture di controllo di flusso.md",
+    "java/ricorsione.md",
+    "java/progettazione.md",
+    "java/java.md",
+    "java/ereditarietà.md",
+    "java/eccezioni.md",
     "java/domande orale ?.md",
+    "java/coding etiquette.md",
+    "java/strutture dati (real)/strutture `complesse`.md",
+    "java/strutture dati (real)/strutture dati (real).md",
+    "java/streams/stream.md",
+    "java/streams/optional.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/Collector e Collectors.md",
     "java/polimorfismo/polimorfismo.md",
@@ -209,17 +220,6 @@
     "java/oggetti/enumerazioni.md",
     "java/oggetti/classi.md",
     "java/oggetti/campi.md",
-    "java/interfacce/Iterable e Iterator.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "java/interfacce/interfacce (real).md",
-    "java/interfacce/Comparable e Comparator.md",
-    "java/oggetti/uml.md",
-    "java/interfacce/classi anonime e lambda function.md",
-    "java/interfacce/classi annidate e interne.md",
-    "java/interesting stuff/getClass() e instanceof.md",
-    "java/interesting stuff/interesting stuff.md",
-    "java/design patterns/design patterns 1.md",
-    "java/design patterns/design patterns.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
