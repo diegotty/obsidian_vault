@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interesting stuff/getClass() e instanceof.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interesting stuff/getClass() e instanceof.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interesting stuff/getClass() e instanceof.md",
+                "file": "java/streams/Collector e Collectors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interesting stuff/getClass() e instanceof.md"
+                "file": "java/streams/Collector e Collectors.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interesting stuff/getClass() e instanceof.md",
     "Vault.md",
     "java/tipi generici.md",
     "java/ricorsione.md",
@@ -219,7 +220,6 @@
     "java/domande orale ?.md",
     "java/eccezioni.md",
     "java/coding etiquette.md",
-    "java/strutture dati (real)/strutture `complesse`.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
