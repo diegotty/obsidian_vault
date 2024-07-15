@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/polimorfismo/confronto, conversione e copia.md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/polimorfismo/confronto, conversione e copia.md",
     "java/oggetti/uml.md",
     "java/oggetti/metodi.md",
     "java/oggetti/enumerazioni.md",
@@ -219,7 +220,6 @@
     "java/strutture dati (real)/strutture `complesse`.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/streams/stream.md",
-    "java/polimorfismo/polimorfismo.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
