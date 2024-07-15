@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/interfacce/Comparable e Comparator.md"
               }
             }
           }
@@ -194,6 +194,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interfacce/Iterable e Iterator.md",
+    "java/streams/Collector e Collectors.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "Vault.md",
     "java/tipi generici.md",
@@ -203,7 +205,6 @@
     "java/ereditarietà.md",
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
-    "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
@@ -219,7 +220,6 @@
     "java/io/serializzazione.md",
     "java/domande orale ?.md",
     "java/eccezioni.md",
-    "java/coding etiquette.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
