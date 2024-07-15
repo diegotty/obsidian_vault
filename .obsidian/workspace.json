@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/ereditarietà.md",
+                "file": "java/interfacce/classi anonime e lambda function.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/ereditarietà.md"
+                "file": "java/interfacce/classi anonime e lambda function.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/ereditarietà.md",
     "java/java.md",
     "java/progettazione.md",
     "java/strutture di controllo di flusso.md",
@@ -209,7 +210,6 @@
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/ricorsione.md",
-    "java/ereditarietà.md",
     "java/eccezioni.md",
     "java/coding etiquette.md",
     "java/strutture dati (real)/strutture `complesse`.md",
