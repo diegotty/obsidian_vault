@@ -1,6 +1,4 @@
-comparable comparator
 diff classi astratte interfacce
 polimorfismo interfacce
-interfacce notevoli (compareable)
+interfacce notevoli 
 collector collectors
-optional
