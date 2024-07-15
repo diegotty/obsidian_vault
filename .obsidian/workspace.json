@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/oggetti/uml.md",
+                "file": "java/interfacce/interfacce (real).md",
                 "mode": "source",
                 "source": false
               }
@@ -37,14 +37,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "java/domande orale ?.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "java/interfacce/interfacce (real).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/design patterns/design patterns 1.md",
+                "file": "java/interfacce/interfacce (real).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/design patterns/design patterns 1.md"
+                "file": "java/interfacce/interfacce (real).md"
               }
             }
           }
@@ -180,8 +179,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3f70d70929781b09",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
+    "java/domande orale ?.md",
+    "java/interfacce/interfacce (real).md",
+    "java/interfacce/Comparable e Comparator.md",
+    "java/oggetti/uml.md",
+    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
+    "java/interfacce/classi anonime e lambda function.md",
+    "java/interfacce/classi annidate e interne.md",
+    "java/interesting stuff/getClass() e instanceof.md",
+    "java/interesting stuff/interesting stuff.md",
+    "java/design patterns/design patterns 1.md",
     "java/design patterns/design patterns.md",
     "java/io/files.md",
     "java/io/input_output.md",
@@ -189,8 +198,6 @@
     "java/oggetti/campi.md",
     "java/oggetti/metodi.md",
     "java/oggetti/packages.md",
-    "java/oggetti/uml.md",
-    "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/interfacce.md",
     "java/polimorfismo/confronto, conversione e copia.md",
     "java/polimorfismo/Object.md",
@@ -200,14 +207,6 @@
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/interfacce/Iterable e Iterator.md",
-    "java/interfacce/classi anonime e lambda function.md",
-    "java/swing/swing.md",
-    "java/strutture dati (real)/strutture `complesse`.md",
-    "java/streams/streams.md",
-    "java/ricorsione.md",
-    "java/eccezioni.md",
-    "java/interesting stuff/getClass() e instanceof.md",
-    "java/interesting stuff/interesting stuff.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
