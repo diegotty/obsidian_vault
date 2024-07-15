@@ -6,7 +6,6 @@ supporta operazioni sequenziali e parallele !!
 
 ## creazione di uno Stream
 lo stream viene creato a partire da una sorgente di dati, ad esempio una java.util.Collection, ma al contrario delle Collection, uno stream non memorizza ne modifica i dati della sorgente, ma opera su essi
-- 
 ```java
 //direttamente dai dati
 Stream.of(6,5,3,67,3,123,4);

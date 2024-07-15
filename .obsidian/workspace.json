@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/Collector e Collectors.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/Collector e Collectors.md"
+                "file": "java/streams/stream.md"
               }
             }
           }
@@ -194,6 +194,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/streams/operazioni degli stream.md",
+    "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
@@ -210,9 +212,7 @@
     "java/java.md",
     "java/progettazione.md",
     "java/strutture di controllo di flusso.md",
-    "java/streams/operazioni degli stream.md",
     "java/io/serializzazione.md",
-    "java/streams/Collector e Collectors.md",
     "java/domande orale ?.md",
     "java/ricorsione.md",
     "java/eccezioni.md",
