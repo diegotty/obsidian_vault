@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/ereditarietà.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/ereditarietà.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/ereditarietà.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/tipi generici.md"
+                "file": "java/ereditarietà.md"
               }
             }
           }
@@ -194,7 +194,10 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/java.md",
+    "java/progettazione.md",
     "java/strutture di controllo di flusso.md",
+    "java/tipi generici.md",
     "java/streams/optional.md",
     "java/streams/operazioni degli stream.md",
     "java/io/input_output.md",
@@ -205,10 +208,7 @@
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/interfacce/Comparable e Comparator.md",
-    "java/tipi generici.md",
     "java/ricorsione.md",
-    "java/progettazione.md",
-    "java/java.md",
     "java/ereditarietà.md",
     "java/eccezioni.md",
     "java/coding etiquette.md",
