@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md"
+                "file": "java/interfacce/Comparable e Comparator.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interfacce/classi anonime e lambda function.md",
     "java/ereditarietà.md",
     "java/java.md",
     "java/progettazione.md",
@@ -219,7 +220,6 @@
     "java/polimorfismo/Object.md",
     "java/polimorfismo/confronto, conversione e copia.md",
     "java/oggetti/strings.md",
-    "java/oggetti/packages.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
