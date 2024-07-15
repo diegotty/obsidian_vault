@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/oggetti/uml.md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/oggetti/uml.md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/oggetti/uml.md",
+                "file": "java/polimorfismo/confronto, conversione e copia.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/oggetti/uml.md"
+                "file": "java/polimorfismo/confronto, conversione e copia.md"
               }
             }
           }
@@ -194,6 +194,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/oggetti/uml.md",
     "java/oggetti/metodi.md",
     "java/oggetti/enumerazioni.md",
     "java/io/input_output.md",
@@ -219,7 +220,6 @@
     "java/strutture dati (real)/strutture dati (real).md",
     "java/streams/stream.md",
     "java/polimorfismo/polimorfismo.md",
-    "java/polimorfismo/Object.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
