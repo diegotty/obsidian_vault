@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/oggetti/enumerazioni.md",
+                "file": "java/oggetti/uml.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/oggetti/enumerazioni.md",
+                "file": "java/oggetti/uml.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/oggetti/enumerazioni.md",
+                "file": "java/oggetti/uml.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/oggetti/enumerazioni.md"
+                "file": "java/oggetti/uml.md"
               }
             }
           }
@@ -194,6 +194,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/oggetti/metodi.md",
+    "java/oggetti/enumerazioni.md",
     "java/io/input_output.md",
     "java/io/files.md",
     "java/interfacce/Comparable e Comparator.md",
@@ -218,8 +220,6 @@
     "java/streams/stream.md",
     "java/polimorfismo/polimorfismo.md",
     "java/polimorfismo/Object.md",
-    "java/polimorfismo/confronto, conversione e copia.md",
-    "java/oggetti/strings.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
