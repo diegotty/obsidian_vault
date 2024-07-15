@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "mode": "source",
                 "source": false
               }
@@ -130,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interesting stuff/getClass() e instanceof.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/interesting stuff/getClass() e instanceof.md"
               }
             }
           }
@@ -194,12 +194,18 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "Vault.md",
+    "java/tipi generici.md",
+    "java/ricorsione.md",
+    "java/progettazione.md",
+    "java/java.md",
+    "java/ereditarietà.md",
+    "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/Collector e Collectors.md",
     "java/streams/optional.md",
     "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
-    "java/tipi generici.md",
     "java/polimorfismo/confronto, conversione e copia.md",
     "java/oggetti/uml.md",
     "java/oggetti/metodi.md",
@@ -208,18 +214,12 @@
     "java/io/files.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/classi anonime e lambda function.md",
-    "java/ereditarietà.md",
-    "java/java.md",
-    "java/progettazione.md",
     "java/strutture di controllo di flusso.md",
     "java/io/serializzazione.md",
     "java/domande orale ?.md",
-    "java/ricorsione.md",
     "java/eccezioni.md",
     "java/coding etiquette.md",
     "java/strutture dati (real)/strutture `complesse`.md",
-    "java/strutture dati (real)/strutture dati (real).md",
-    "java/streams/stream.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
