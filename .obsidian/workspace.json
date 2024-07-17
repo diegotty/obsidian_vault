@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Iterable e Iterator.md",
+                "file": "java/streams/stream.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "iterable",
+                "query": "stream",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/Iterable e Iterator.md",
+                "file": "java/streams/stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/Iterable e Iterator.md",
+                "file": "java/streams/stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/Iterable e Iterator.md"
+                "file": "java/streams/stream.md"
               }
             }
           }
@@ -183,6 +183,7 @@
   },
   "active": "2902e842caa0f8ce",
   "lastOpenFiles": [
+    "java/interfacce/Iterable e Iterator.md",
     "java/polimorfismo/polimorfismo.md",
     "java/eccezioni.md",
     "java/strutture dati (real)/strutture dati (real).md",
@@ -191,7 +192,6 @@
     "java/interfacce/interfacce (real).md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/tipi generici.md",
-    "java/interfacce/Iterable e Iterator.md",
     "raw notes/2024-03-26 mp (done).md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/streams/Collector e Collectors.md",
