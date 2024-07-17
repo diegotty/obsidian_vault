@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "stream",
+                "query": "  ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,8 +98,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -119,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/streams/stream.md",
+                "file": "java/interfacce/Comparable e Comparator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/streams/stream.md"
+                "file": "java/interfacce/Comparable e Comparator.md"
               }
             }
           }
@@ -181,8 +180,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "2902e842caa0f8ce",
+  "active": "87bff695949ea9dc",
   "lastOpenFiles": [
+    "java/streams/stream.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/polimorfismo/polimorfismo.md",
     "java/eccezioni.md",
@@ -200,7 +200,6 @@
     "java/progettazione.md",
     "java/java.md",
     "java/ereditarietà.md",
-    "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/optional.md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
