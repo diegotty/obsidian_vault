@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "static ",
+                "query": "retro",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/classi anonime e lambda function.md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -193,8 +193,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9f16576e6e03b4de",
+  "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/polimorfismo/polimorfismo.md",
+    "raw notes/2024-03-26 mp (done).md",
+    "java/interfacce/classi anonime e lambda function.md",
     "java/eccezioni.md",
     "java/interfacce/Comparable e Comparator.md",
     "java/interfacce/Iterable e Iterator.md",
@@ -217,10 +220,7 @@
     "java/oggetti/enumerazioni.md",
     "java/io/input_output.md",
     "java/io/files.md",
-    "java/interfacce/classi anonime e lambda function.md",
     "java/strutture di controllo di flusso.md",
-    "java/io/serializzazione.md",
-    "java/domande orale ?.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
