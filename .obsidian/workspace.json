@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "eccezioni",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,7 +98,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -118,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/eccezioni.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md"
+                "file": "java/eccezioni.md"
               }
             }
           }
@@ -182,17 +183,17 @@
   },
   "active": "2902e842caa0f8ce",
   "lastOpenFiles": [
+    "java/strutture dati (real)/strutture dati (real).md",
+    "java/interfacce/Comparable e Comparator.md",
     "java/domande orale ?.md",
     "java/interfacce/interfacce (real).md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/tipi generici.md",
-    "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Iterable e Iterator.md",
     "java/polimorfismo/polimorfismo.md",
     "raw notes/2024-03-26 mp (done).md",
     "java/interfacce/classi anonime e lambda function.md",
     "java/eccezioni.md",
-    "java/interfacce/Comparable e Comparator.md",
     "java/streams/Collector e Collectors.md",
     "Vault.md",
     "java/ricorsione.md",
