@@ -25,12 +25,12 @@ while(arr.hasNext()){
 chi implementa Iterable restituisce un Iterator sull’oggetto-collezione
 contiene uno stato(ha un indice) !!! ci può dire se l’iterabile ha un prossimo elemento ed avanzare.
 
-| Modifier and Type | Method and Description                                        |
-| ----------------- | ------------------------------------------------------------- |
-| `boolean`         | `hasNext()`<br>Ritorna true se l’iterazione ha altri elementi |
-| `E`               | `next()`<br>Ritorna il prossimo elemento dell’iterazione      |
-| `void`            | `remove()`<br>                                                |
-|                   |                                                               |
+| Modifier and Type | Method and Description                                           |
+| ----------------- | ---------------------------------------------------------------- |
+| `boolean`         | `hasNext()`<br>Ritorna true se l’iteraziocolne ha altri elementi |
+| `E`               | `next()`<br>Ritorna il prossimo elemento dell’iterazione         |
+| `void`            | `remove()`<br>                                                   |
+|                   |                                                                  |
 
 quando voglio rendere una classe iterabile, essa deve implementare Iterable. in questo modo la classe sarà obbligata ad implementare il metodo iterator(), in cui bisognerà creare e ritornare un oggetto di tipo Iterator. 
 nel video su internet viene creata una classe interna, che implementa Iterator e implementa i suoi metodi. la classe interna viene poi creata e ritornata nel metodo iterator() della classe creata all’inizio
