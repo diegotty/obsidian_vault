@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/interfacce/Iterable e Iterator.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "retro",
+                "query": "iterable",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/interfacce/Iterable e Iterator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/tipi generici.md",
+                "file": "java/interfacce/Iterable e Iterator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/tipi generici.md"
+                "file": "java/interfacce/Iterable e Iterator.md"
               }
             }
           }
@@ -195,6 +195,8 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/interfacce/interfacce (real).md",
+    "java/tipi generici.md",
     "java/polimorfismo/polimorfismo.md",
     "raw notes/2024-03-26 mp (done).md",
     "java/interfacce/classi anonime e lambda function.md",
@@ -204,7 +206,6 @@
     "java/streams/Collector e Collectors.md",
     "java/interesting stuff/getClass() e instanceof.md",
     "Vault.md",
-    "java/tipi generici.md",
     "java/ricorsione.md",
     "java/progettazione.md",
     "java/java.md",
@@ -212,7 +213,6 @@
     "java/streams/stream.md",
     "java/streams/operazioni degli stream.md",
     "java/streams/optional.md",
-    "java/interfacce/interfacce (real).md",
     "java/interfacce/interfacce funzionali (anche note) e SAM.md",
     "java/polimorfismo/confronto, conversione e copia.md",
     "java/oggetti/uml.md",
