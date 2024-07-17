@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "riferimento",
+                "query": "static ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,7 +110,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -192,7 +193,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3f70d70929781b09",
+  "active": "9f16576e6e03b4de",
   "lastOpenFiles": [
     "java/eccezioni.md",
     "java/interfacce/Comparable e Comparator.md",
