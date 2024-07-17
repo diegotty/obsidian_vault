@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/tipi generici.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "PECS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -110,7 +110,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -130,7 +131,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/tipi generici.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +148,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md",
+                "file": "java/tipi generici.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -170,7 +171,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/strutture dati (real)/strutture dati (real).md"
+                "file": "java/tipi generici.md"
               }
             }
           }
@@ -194,6 +195,7 @@
   },
   "active": "3f70d70929781b09",
   "lastOpenFiles": [
+    "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Iterable e Iterator.md",
     "java/interfacce/interfacce (real).md",
     "java/tipi generici.md",
@@ -219,7 +221,6 @@
     "java/oggetti/enumerazioni.md",
     "java/io/input_output.md",
     "java/io/files.md",
-    "java/strutture di controllo di flusso.md",
     "ae/pics/Pasted image 20240603110034.png",
     "ae/pics/Pasted image 20240603105429.png",
     "ae/pics/Pasted image 20240603105341.png",
