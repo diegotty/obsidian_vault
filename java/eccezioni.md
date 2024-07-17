@@ -1,4 +1,4 @@
-# eccezioni
+# keccezioni
 - le eccezioni rappresentano un meccanismo utile a notificare e gestire gli errori
 - un’eccezione indica che durante l’esecuzione si è verificato un errore 
 - un eccezione indica un comportamento anomalo, che si discosta dalla normale esecuzione
