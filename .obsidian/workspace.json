@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/polimorfismo/polimorfismo.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "eccezioni",
+                "query": "binding statico",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/polimorfismo/polimorfismo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/eccezioni.md",
+                "file": "java/polimorfismo/polimorfismo.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/eccezioni.md"
+                "file": "java/polimorfismo/polimorfismo.md"
               }
             }
           }
@@ -183,6 +183,7 @@
   },
   "active": "2902e842caa0f8ce",
   "lastOpenFiles": [
+    "java/eccezioni.md",
     "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Comparable e Comparator.md",
     "java/domande orale ?.md",
@@ -193,7 +194,6 @@
     "java/polimorfismo/polimorfismo.md",
     "raw notes/2024-03-26 mp (done).md",
     "java/interfacce/classi anonime e lambda function.md",
-    "java/eccezioni.md",
     "java/streams/Collector e Collectors.md",
     "Vault.md",
     "java/ricorsione.md",
