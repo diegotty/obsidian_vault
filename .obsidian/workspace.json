@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/interfacce/Comparable e Comparator.md",
+                "file": "java/oggetti/memory allocation.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "  ",
+                "query": "heap",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +99,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -119,7 +119,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/oggetti/memory allocation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +136,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/interfacce/interfacce (real).md",
+                "file": "java/oggetti/memory allocation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/interfacce/interfacce (real).md"
+                "file": "java/oggetti/memory allocation.md"
               }
             }
           }
@@ -181,17 +181,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "adebea1db0d847c4",
+  "active": "2902e842caa0f8ce",
   "lastOpenFiles": [
+    "java/strutture dati (real)/strutture dati (real).md",
+    "java/domande orale ?.md",
+    "java/interfacce/interfacce (real).md",
     "Spaces",
     "java/streams/stream.md",
     "java/interfacce/Iterable e Iterator.md",
     "java/polimorfismo/polimorfismo.md",
     "java/eccezioni.md",
-    "java/strutture dati (real)/strutture dati (real).md",
     "java/interfacce/Comparable e Comparator.md",
-    "java/domande orale ?.md",
-    "java/interfacce/interfacce (real).md",
     "java/interesting stuff/getClass() e instanceof.md",
     "java/tipi generici.md",
     "raw notes/2024-03-26 mp (done).md",
@@ -227,7 +227,6 @@
     "java/swing",
     "java/strutture dati (real)",
     "java/polimorfismo",
-    "java/oggetti",
-    "java/interfacce"
+    "java/oggetti"
   ]
 }
