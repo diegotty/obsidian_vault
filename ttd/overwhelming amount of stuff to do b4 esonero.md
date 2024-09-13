@@ -1,7 +1,0 @@
-- [ ] esercizi dispense
-- [ ] memorizzare tutte sommatorie con formule chiuse 
-- [ ] esercizi mega
-- [ ] ricontrolla esami (da fare mercoledì sera)
-- [ ] fai tante sostituzioni
-- [ ] scrivi vincoli in sommatorie con formule chiuse
-- [ ] controlla esercizi mandati su whatsapp

@@ -1,5 +1,0 @@
-- [ ] ri-studiare limiti notevoli
-- [ ] ri-studiare limiti
-- [ ] ri-studiare derivate
-- [ ] ri-studiare taylor
-- [ ] fai serie telescopiche
