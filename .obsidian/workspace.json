@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/package dependencies.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/package dependencies.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/package dependencies.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md"
+                "file": "personal stuff/arch linux notes/package dependencies.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "personal stuff/arch linux notes/misc (for rn).md",
+    "personal stuff/arch linux notes/package dependencies.md",
+    "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "personal_stuff/Untitled.md",
     "personal stuff/nvim notes",
     "personal stuff/arch linux notes",
@@ -181,7 +182,6 @@
     "year1semester2/java/interfacce/Iterable e Iterator.md",
     "year1semester2/java/eccezioni.md",
     "year1semester2/java/interfacce/Comparable e Comparator.md",
-    "year1semester2/java/interesting stuff/getClass() e instanceof.md",
     "year1semester2/ae/pics/Pasted image 20240603110034.png",
     "year1semester2/ae/pics/Pasted image 20240603105429.png",
     "year1semester2/ae/pics/Pasted image 20240603105341.png",
