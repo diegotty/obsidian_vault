@@ -1,5 +1,12 @@
-@@@@@@:
-### file permissions
+# users
+`cat /etc/paswd` to see all users !
+### system users
+users used for executing non-interactive processes (users made by things like systemd, sddm, etc)
+### regular users
+### superusers
+root !!! the root is not restricted by permissions, he can perform changes AND change permissions of files/users
+
+# file permissions
 file systems use permissions and attributes to regulate the level of interaction that users can have with files and dirs
 `ls -l` to show permissions set for the contents of a directory
 ```

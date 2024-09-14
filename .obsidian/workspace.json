@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/user hierarchy, permissions.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/user hierarchy, permissions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md",
+                "file": "personal stuff/arch linux notes/user hierarchy, permissions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "personal stuff/arch linux notes/misc (for rn).md"
+                "file": "personal stuff/arch linux notes/user hierarchy, permissions.md"
               }
             }
           },
@@ -156,11 +156,11 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "819fa9583f1812c9",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
     "personal stuff/arch linux notes/arduino",
     "personal stuff/Untitled.md",
-    "personal stuff/arch linux notes/misc (for rn).md",
+    "personal stuff/arch linux notes/user hierarchy, permissions.md",
     "personal stuff/arch linux notes/how make dumb stuff work.md",
     "personal stuff/arch linux notes/package dependencies.md",
     "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
