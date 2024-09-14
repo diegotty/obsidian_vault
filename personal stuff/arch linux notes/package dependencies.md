@@ -20,7 +20,6 @@ picom
 redshift
 stow
 ttf-jetbrains–mono, ttf-nerd-fonts-symbols, xorg-font-util, xorg-fonts-misc, xorg-xinit 4 fonts
-
 unzip, wget 4 nvim plugins
 vim
 xcape 4 key changes
