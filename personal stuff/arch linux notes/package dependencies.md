@@ -1,4 +1,4 @@
-this looks lame but i’m sure it’ll be useful
+this looks lame but i’m sure i’ll need it
 alacritty
 alsa 4 audio
 arduino-cli
@@ -19,7 +19,8 @@ obsidian
 picom
 redshift
 stow
-ttf-jetbrains–mono
+ttf-jetbrains–mono, ttf-nerd-fonts-symbols, xorg-font-util, xorg-fonts-misc, xorg-xinit 4 fonts
+
 unzip, wget 4 nvim plugins
 vim
 xcape 4 key changes

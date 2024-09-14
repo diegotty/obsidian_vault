@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "personal stuff/arch linux notes/package dependencies.md",
+                "file": "personal stuff/arch linux notes/how make dumb stuff work.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "personal stuff/arch linux notes/package dependencies.md",
+                "file": "personal stuff/arch linux notes/how make dumb stuff work.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "personal stuff/arch linux notes/package dependencies.md",
+                "file": "personal stuff/arch linux notes/how make dumb stuff work.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "personal stuff/arch linux notes/package dependencies.md"
+                "file": "personal stuff/arch linux notes/how make dumb stuff work.md"
               }
             }
           }
@@ -143,13 +143,15 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "personal stuff/arch linux notes/misc (for rn).md",
     "personal stuff/arch linux notes/package dependencies.md",
+    "personal stuff/arch linux notes/how make dumb stuff work.md",
+    "personal stuff/arch linux notes/misc (for rn).md",
     "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
     "personal_stuff/Untitled.md",
     "personal stuff/nvim notes",
@@ -180,7 +182,6 @@
     "year1semester2/java/streams/stream.md",
     "year1semester2/java/interfacce/Iterable e Iterator.md",
     "year1semester2/java/eccezioni.md",
-    "year1semester2/java/interfacce/Comparable e Comparator.md",
     "year1semester2/ae/pics/Pasted image 20240603110034.png",
     "year1semester2/ae/pics/Pasted image 20240603105429.png",
     "year1semester2/ae/pics/Pasted image 20240603105341.png",
