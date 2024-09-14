@@ -128,8 +128,17 @@
                 "file": "personal stuff/arch linux notes/misc (for rn).md"
               }
             }
+          },
+          {
+            "id": "819fa9583f1812c9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -147,7 +156,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "819fa9583f1812c9",
   "lastOpenFiles": [
     "personal stuff/arch linux notes/arduino",
     "personal stuff/Untitled.md",
