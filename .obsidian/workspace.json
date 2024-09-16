@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "71e9b72301b2a520",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "year1semester2/java/streams/operazioni degli stream.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "conflict-files-obsidian-git.md",
+                "file": "year1semester2/java/streams/operazioni degli stream.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "conflict-files-obsidian-git.md"
+                "file": "year1semester2/java/streams/operazioni degli stream.md"
               }
             }
           }
@@ -160,10 +147,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "71e9b72301b2a520",
+  "active": "56e617100af116ef",
   "lastOpenFiles": [
-    "year1semester2/java/streams/operazioni degli stream.md",
     "conflict-files-obsidian-git.md",
+    "year1semester2/java/streams/operazioni degli stream.md",
     "personal stuff/arch linux notes/user hierarchy, permissions.md",
     "personal stuff/arch linux notes/package dependencies.md",
     "personal stuff/arch linux notes/how make dumb stuff work.md",
