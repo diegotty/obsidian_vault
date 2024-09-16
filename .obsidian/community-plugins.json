@@ -3,5 +3,7 @@
   "obsidian-plugin-toc",
   "obsidian-smart-typography",
   "table-editor-obsidian",
-  "callout-manager"
+  "callout-manager",
+  "obsidian-relative-line-numbers",
+  "obsidian-vimrc-support"
 ]
