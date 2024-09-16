@@ -1,4 +1,4 @@
-god i hate linux 
+1god i hate linux 
 
 ## xcape caps to esc
 
