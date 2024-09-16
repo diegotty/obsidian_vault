@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "71e9b72301b2a520",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "year1semester2/java/streams/operazioni degli stream.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "year1semester2/java/streams/operazioni degli stream.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "year1semester2/java/streams/operazioni degli stream.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           }
@@ -147,8 +160,13 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "56e617100af116ef",
+  "active": "71e9b72301b2a520",
   "lastOpenFiles": [
+    "year1semester2/java/streams/operazioni degli stream.md",
+    "conflict-files-obsidian-git.md",
+    "personal stuff/arch linux notes/user hierarchy, permissions.md",
+    "personal stuff/arch linux notes/package dependencies.md",
+    "personal stuff/arch linux notes/how make dumb stuff work.md",
     "year1semester2/java/streams/stream.md",
     "personal stuff/arch linux notes/misc (for rn).md",
     "ttd/midly overwhelming amount of stuff to do b4 esonero calcolo integrale.md",
@@ -176,12 +194,7 @@
     "year1semester2/java/oggetti/memory allocation.md",
     "year1semester2",
     "y1s1",
-    "year1semester2/java/domande orale ?.md",
     "Spaces",
-    "year1semester2/java/interfacce/Iterable e Iterator.md",
-    "year1semester2/java/eccezioni.md",
-    "year1semester2/java/interfacce/Comparable e Comparator.md",
-    "year1semester2/java/interesting stuff/getClass() e instanceof.md",
     "year1semester2/ae/pics/Pasted image 20240603110034.png",
     "year1semester2/ae/pics/Pasted image 20240603105429.png",
     "year1semester2/ae/pics/Pasted image 20240603105341.png",
