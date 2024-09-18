@@ -9,3 +9,9 @@ exec --no-startup-id xcape -e 'Caps_Lock=Escape'
 setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape' &
 in .xprofile
 ```
+
+## ntp
+- install ntp package
+- enable ntp service
+- timedatectl set-ntp true
+- datetimectl set-timezone CET
