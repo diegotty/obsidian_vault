@@ -27,3 +27,5 @@ xclip 4 clipboard manager (nvim)
 yay
 zip
 zsh, zsh-completions
+plocate
+icat (?)
