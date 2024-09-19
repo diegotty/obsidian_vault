@@ -1,5 +1,5 @@
 this looks lame but i’m sure i’ll need it
-alacritty
+kitty
 alsa 4 audio
 arduino-cli
 blueman, bluez, pipewire-alsa 4 bluetooth
@@ -29,3 +29,6 @@ zip
 zsh, zsh-completions
 plocate
 icat (?)
+nvidia-settings
+venv
+virtualenvwrapper
