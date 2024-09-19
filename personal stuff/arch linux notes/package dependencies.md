@@ -32,3 +32,4 @@ icat (?)
 nvidia-settings
 venv
 virtualenvwrapper
+tree(useful)
