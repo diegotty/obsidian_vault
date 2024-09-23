@@ -37,3 +37,4 @@ syncthing
 zerotier-one
 ntp (for timqe)
 nm-connection-editor (nmcli gui)
+sysstat (cpu i3blocks)
