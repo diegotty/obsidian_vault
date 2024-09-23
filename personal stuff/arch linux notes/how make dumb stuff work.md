@@ -10,7 +10,7 @@ setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape' &
 in .xprofile
 ```
 
-## ntp
+## ntp (time)
 - install ntp package
 - enable ntp service
 - timedatectl set-ntp true
