@@ -36,3 +36,4 @@ tree(useful)
 syncthing
 zerotier-one
 ntp (for timqe)
+nm-connection-editor (nmcli gui)
