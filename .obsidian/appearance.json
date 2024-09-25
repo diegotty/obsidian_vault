@@ -1,4 +1,9 @@
 {
   "accentColor": "",
+<<<<<<< HEAD
   "cssTheme": "Monokai"
+=======
+  "cssTheme": "",
+  "theme": "obsidian"
+>>>>>>> origin/main
 }

@@ -1,9 +1,9 @@
 [
-  "obsidian-git",
   "obsidian-plugin-toc",
   "obsidian-smart-typography",
   "table-editor-obsidian",
   "callout-manager",
   "obsidian-relative-line-numbers",
-  "obsidian-vimrc-support"
+  "obsidian-vimrc-support",
+  "obsidian-git"
 ]
