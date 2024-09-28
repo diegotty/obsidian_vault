@@ -13,7 +13,9 @@ tutti i valori (possibilmente infiniti) di un insieme (che poi detteranno i valo
 di solito si usano i domini predefiniti: String, Integer, Real, etc….
 ### NULL
 inoltre, tutti i campi (se non specificato altrimenti o se esistono altri vincoli impliciti (chiavi)) possono avere il valore NULL, che rappresenta mancanza di informazione o il fatto che l’informazione non sia applicabile per quella tupla
->[!] e’ meglio usare null per rappresentare la mancanza di informazione, al posto che valori del dominio un
+NULL, infatti, non appartiene a nessun dominio ma puo’ sostituire valori in qualsiasi dominio
+>[!] e’ meglio usare null per rappresentare la mancanza di informazione, al posto che valori del dominio inutilizzati(potrebbero falsare i calcoli/dare problemi)
+- inoltre, due valori NULL, anche se sullo stesso dominio, sono considerati diversi
 ### grado e cardinalita’ di una relazione
 - grado → numero dei domini (attributi)
 - cardinalita’ → numero di tuple
@@ -26,3 +28,29 @@ ennupla → funzione che, dato un insieme di attributi R, associa ad ogni attrib
 
 ## dati fra relazioni diverse
 nel modello relazionale i riferimenti fra dati in relazioni diverse sono rappresentati per mezzo di valori dei domini che compaiono nelle ennuple
+
+# vincoli di integrita’
+proprieta’ che deve essere soddisfatta da ogni istanza della base di dati, che scrive proprieta’ specifiche del campo, e quindi delle informazioni ad esso relative, modellate attraverso la base di dati (a ““priori”””, quindi)
+per essere corretta, una base di dati deve soddisfare tutti i vincoli di integrita’
+>[!example] 
+>(Voto ≥ 18) AND (Voto ≤ 30)
+>COD2 UNIQUE
+>DIP REFERENCES DIPARTIMENTO.NUMERO
+## tipi di vincoli 
+### vincoli intrarelazionali
+definiti sui valori di singoli attributi, tra valori di attributi di una stessa tupla o tra tuple della stessa relazione
+- vincoli di dominio → ASSUNZIONE > 1980
+- vincoli di tupla → (Voto = 30) OR NOT (Lode = “si”)
+- vincoli tra tuple della stessa relazione → COD2 UNIQUE
+- vincolo di chiave primaria
+- vincolo di unicita’
+- vincoli di esistenza del valore per un certo attributo
+- espressioni sul valore di attributi sulla stessa tupla
+### vincoli interrelazionali
+definiti tra piu’ relazioni
+- vincoli tra valori in tuple di relazioni diverse → Studente references Studenti.Matricola
+## chiavi
+attributo/insieme di attributi con cui e’ possibile identificare univocamente le tuple di una istanza di relazione
+- ci possono essere piu’ chiavi in una relazione
+### chiave primaria
+la chiave piu’ robusta, composta da un numero minore di attributi
