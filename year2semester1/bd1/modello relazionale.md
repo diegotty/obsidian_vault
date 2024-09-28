@@ -65,4 +65,16 @@ stabilisce un particolare legame semantico tra 2 insiemi non-vuoti di attributi 
 X → Y si legge X determina Y
 >[!example]
 >supponiamo di avere uno schema di relazione VOLI(CodiceVolo, Giorno, Pilota, Ora)
->
+>intuitivamente, possiamo dedurre che: 
+>- un volo con un certo codice parte sempre alla stessa ora
+>- esiste un solo volo con un dato pilota, in un dato giorno ad una data ora
+>- c’e’ un solo pilota di un dato volo in un dato giorno
+>- quindi:
+>CodiceVolo → Ora
+>{Giorno, Pilota, Ora} → CodiceVolo
+>{CodiceVolo, Giorno} → Pilota
+
+una relazione r con schema R soddisfa la dipendenza funzionale X → Y se:
+- (i) la dipendenza funzionale X → Y e’ applicabile ad R, nel senso che sia X sia il Y sono sottoinsiemi di R;
+- (ii) le ennuple in r che concordano su X concordano anche su Y, cioe’ per ogni coppia di ennuple t2 e t2 in r:
+- t1[X] = t2[X] → t1[Y] = t2[Y]
