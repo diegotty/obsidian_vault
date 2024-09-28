@@ -5,5 +5,7 @@
   "callout-manager",
   "obsidian-relative-line-numbers",
   "obsidian-vimrc-support",
-  "obsidian-git"
+  "obsidian-git",
+  "obsidian-style-settings",
+  "obsidian-latex-suite"
 ]
