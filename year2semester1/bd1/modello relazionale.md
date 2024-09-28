@@ -1,0 +1,2 @@
+- proposto per favorire l’indipendenza dei dati
+- basato sulla n
