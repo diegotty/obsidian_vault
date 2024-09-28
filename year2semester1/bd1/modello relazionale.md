@@ -46,11 +46,23 @@ definiti sui valori di singoli attributi, tra valori di attributi di una stessa 
 - vincolo di unicita’
 - vincoli di esistenza del valore per un certo attributo
 - espressioni sul valore di attributi sulla stessa tupla
+i vincoli intrarelazionali vengono formalizzati usando le [[#dipendenze funzionali]]
 ### vincoli interrelazionali
 definiti tra piu’ relazioni
 - vincoli tra valori in tuple di relazioni diverse → Studente references Studenti.Matricola
+- #### vincolo di integrita’ referenziale(foreign key)
+	porzioni di informazione in relazioni diverse sono correlate attraverso valori di chiave
+	- e’ possibile definire “azioni” compensative a seguito di violazioni
 ## chiavi
 attributo/insieme di attributi con cui e’ possibile identificare univocamente le tuple di una istanza di relazione
 - ci possono essere piu’ chiavi in una relazione
+consentono di mettere in relazione dati in tabelle diverse
 ### chiave primaria
 la chiave piu’ robusta, composta da un numero minore di attributi
+- non ammette valori null
+## dipendenze funzionali
+stabilisce un particolare legame semantico tra 2 insiemi non-vuoti di attributi X e Y, appartenenti ad uno schema R
+X → Y si legge X determina Y
+>[!example]
+>supponiamo di avere uno schema di relazione VOLI(CodiceVolo, Giorno, Pilota, Ora)
+>
