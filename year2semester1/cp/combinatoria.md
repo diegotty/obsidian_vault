@@ -20,5 +20,7 @@ Allora, il numero delle possibili stringhe ($a_1,a_2, a_3, …, a_n$) dove $a_i$
 >non e’ quindi applicabile il princ.fond.comb.
 >
 >#{(a,b): a e’ rappr. e b e’ il vice} = #{(a,b): a e’ rappr. M e b e’ il vice F} $\cup$ #{(a,b): a e’ rappr. F e b e’ il vice M}
-> con il pr.fond.comb, possiamo calcolare indivi
+> con il pr.fond.comb, possiamo calcolare individualmente i due insiemi, e possiamo unirli sommando i risultati: $(120*20)+(20*120)=4800$
 
+## bigezione
+dati U e V insiemi, $$\exists f:U \to V$$ tale che f 
