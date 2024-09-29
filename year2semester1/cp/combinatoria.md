@@ -24,3 +24,4 @@ Allora, il numero delle possibili stringhe ($a_1,a_2, a_3, …, a_n$) dove $a_i$
 
 ## bigezione
 dati U e V insiemi, $$\exists f:U \to V$$ tale che f 
+project is now abandoned lol
