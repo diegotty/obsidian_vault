@@ -1,4 +1,5 @@
 this looks lame but i’m sure i’ll need it
+
 kitty
 alsa 4 audio
 arduino-cli
@@ -40,3 +41,6 @@ nm-connection-editor (nmcli gui)
 sysstat (cpu i3blocks)
 interception-tools, caps2esc
 flameshot gui -r -p ~/Pictures/screenshots/ | xclip -selection clipboard -t image/png
+![[Pasted image 20240930104507.png]]
+![[Pasted image 20240930104522.png]]o![[Pasted image 20240930104523.png]]
+![[Pasted image 20240930104652.png]]![[Pasted image 20240930104656.png]]
