@@ -20,3 +20,6 @@ https://christitus.com/fix-screen-tearing-linux/
 
 
 https://www.reddit.com/r/archlinux/comments/1ek0r5i/how_do_i_solve_the_pulseaudio_pipewirepulse/ 4 pulseaudio
+
+# macbook
+keyboard fix files are somewhere in /etc/modprobe.d(?)/ish
