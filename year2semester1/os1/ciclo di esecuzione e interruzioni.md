@@ -46,8 +46,16 @@ aggiungendo al primo ciclo, dopo ogni fetch-execute, viene controllato se c’e�
 quando viene chiamato l’interrupt handler, il SO e hardware collaborano per salvare le finromazioni (almeno PSW e PC) e settare il PC
 //TODO foto slide 39 e 40
 ### ciclo con disabilitazione delle interruzioni
-
+## gestione i/o
 con l’uso delle interruzioni si puo’ cambiare il modo in cui si gestiscono le chimate all’i/o module.
 #### i/o programmato
+una volta mandata la richiesta di lettura/scrittura all’ i/o module, la cpu si ferma e legge lo stato del’i/o module finche esso non e’ pronto a scambiare dati. una volta pronto, viene effettuata l’operazione e la cpu torna a eseguire istruzioni.
+in questo modo, non vengono chiamate interruzioni.
 #### i/o da interruzioni
-una volta mandata la richiesta di lettura/scrittura, il processore torna a fare altre cose, e viene interrotto quando il modulo i/o e’ pronto a scambiare dati.
+una volta mandata la richiesta di lettura/scrittura, il processore torna a fare altre cose, e viene interrotto quando il modulo i/o e’ pronto a scambiare dati. il processore salva quindi il contesto del programma che stava eseguendo e comincia ad eseguire il gestore dell’interruzione.
+in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di processore, che per ogni dato letto o scritto interrompe l’esecuzione del programma che stava eseguendo
+//TODO slide 47 foto
+#### accessso diretto in memoria
+//TODO huh ?
+si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla cpu ?
+# multiprogrammazione
