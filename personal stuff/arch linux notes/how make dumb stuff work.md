@@ -1,15 +1,14 @@
 1god i hate linux 
-
-## xcape caps to esc
-
+## caps2esc n ctrl
+- install interception-tools, caps2esc
+- enable udevmon.service, raise its priority
+- add config to `/etc/interception/udevmon.yaml`
 ```
-exec --no-startup-id xcape -e 'Caps_Lock=Escape' 
-# in i3 config
-
-setxkbmap -option 'caps:ctrl_modifier' && xcape -e 'Caps_Lock=Escape' &
-in .xprofile
+- JOB: intercept -g $DEVNODE | caps2esc | uinput -d $DEVNODE
+  DEVICE:
+    EVENTS:
+      EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
 ```
-
 ## ntp (time)
 - install ntp package
 - enable ntp service
