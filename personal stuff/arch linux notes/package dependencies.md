@@ -39,3 +39,4 @@ ntp (for timqe)
 nm-connection-editor (nmcli gui)
 sysstat (cpu i3blocks)
 interception-tools, caps2esc
+flameshot gui -r -p ~/Pictures/screenshots/ | xclip -selection clipboard -t image/png
