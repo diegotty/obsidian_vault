@@ -4,10 +4,20 @@ gestisce le risorse hardware di un sistema, per fornire un insieme di servizi ag
 - accesso a dispositivi i/o
 - accesso al SO stesso (shell)
 - sviluppo di programmi
-- rilevamento di 
+- rilevamento di e reazione ad errori
+- accounting (collezione di statistiche, monitoraggio)
 //TODO slide 64 foto
-## sistemi batch
+si puo’ quindi pensare come un’interfaccia tra le applicazione e l’hardware, gestendo e controllando l’esecuzione dei programmi:
+- e’ responsabile della gestione delle risorse
+	- concede il controllo del processore ad altri programmi
+	- controlla l’accesso alle altre risorse
+di fatto, funziona allo steso modo del software normale: e’ un programma in esecuzione, tuttativa lo fa con privilegi piu’ alti
+## kernel
+il kernel(nucleo) e’ la parte di sistema operativo che si trova sempre in memoria principale, e contiene le funzioni piu’ usate
+## sistema batch
 (anni Cinquanta)
+- viene usato un programma di monitoraggio (monitor)
+- si possono raggruppare lavori (jobs) da eseguire “insieme”(penso intenda uno dopo l’altro, non insieme dato che non esistevano architetture multip)
 nei sistemi batch, piu’ del 96% del tempo e’ sprecato ad aspettare i dispositivi di i/o
 # multiprogrammazione
 un processore deve eseguire piu’ programmi contemporaneamente, e la sequenza con cui i programmi sono eseguiti dipende dalla loro priorita’ e dal fatto che siano o meno in attesa di input/output
