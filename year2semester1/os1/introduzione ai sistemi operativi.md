@@ -17,7 +17,14 @@ il kernel(nucleo) e’ la parte di sistema operativo che si trova sempre in memo
 ## sistema batch
 (anni Cinquanta)
 - viene usato un programma di monitoraggio (monitor)
-- si possono raggruppare lavori (jobs) da eseguire “insieme”(penso intenda uno dopo l’altro, non insieme dato che non esistevano architetture multip)
+- si possono raggruppare lavori (jobs) da eseguire “insieme”(penso intenda uno dopo l’altro, non insieme dato che non esistevano architetture multiprocessore)
+- il programma, una volta concluso, ritorna il controllo al programma esterno di monitoraggio
+- per gestire il monitor, non e’ permesso che la zona che lo contiene venga modificata
+- per impedire che un job monopolizzi un intero sistema, un timer viene usato
+- vengono implementate le interruzioni
+alcune istruzioni possono essere eseguite solo dal monitor, quindi:
+- i programmi utente vengono eseguiti in modalita’ utente (non possono eseguire alcune istruzioni)
+- il monitor viene eseguito in modalita’ esterna(o modalita’ kernel), dove puo’ eseguire le istruzioni privilegiate e puo’ accedere alle aree protette della memoria
 nei sistemi batch, piu’ del 96% del tempo e’ sprecato ad aspettare i dispositivi di i/o
 # multiprogrammazione
 un processore deve eseguire piu’ programmi contemporaneamente, e la sequenza con cui i programmi sono eseguiti dipende dalla loro priorita’ e dal fatto che siano o meno in attesa di input/output
