@@ -58,8 +58,3 @@ in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di p
 #### accessso diretto in memoria
 //TODO huh ?
 si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla cpu ?
-# multiprogrammazione
-un processore deve eseguire piu’ programmi contemporaneamente, e la sequenza con cui i programmi sono eseguiti dipende dalla loro priorita’ e dal fatto che siano o meno in attesa di input/output
-per rendere “l’illusione” dell’esecuzione di molteplici programmi in contemporanea, viene usata la multiprogrammazione.
-//TODO foto 77, 78, 79
-alla fine della gestione di un’interruzione, il controllo potrebbe non tornare al programma che era in esecuzione al momento dell’interruzione
