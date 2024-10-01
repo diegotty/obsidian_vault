@@ -1,4 +1,11 @@
-
+# sistema operativo
+gestisce le risorse hardware di un sistema, per fornire un insieme di servizi agli utenti, ad esempio:
+- esecuzioni di programmi
+- accesso a dispositivi i/o
+- accesso al SO stesso (shell)
+- sviluppo di programmi
+- rilevamento di 
+//TODO slide 64 foto
 ## sistemi batch
 (anni Cinquanta)
 nei sistemi batch, piu’ del 96% del tempo e’ sprecato ad aspettare i dispositivi di i/o
@@ -28,3 +35,5 @@ il processo e’ un’unita di attivita’ caratterizata da:
 dato che viene introdotto un nuovo tipo di job, la multiprogrammaziones sui processi ha delle difficolta’:
 - errori di sincronizzazione
 - violazione della mutua esclusione
+- programmi con esecuzione non deterministica
+- deadlock
