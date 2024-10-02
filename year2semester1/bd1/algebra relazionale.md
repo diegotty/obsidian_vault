@@ -51,4 +51,12 @@ si usa quando le informazioni necessarie per rispondere a una query si trovano i
 - se ho 2 attributi con lo stesso nome in 2 tabelle diverse che vogliamo poter distinguere, possiamo usare l’operazione di ridenominazione ($\rho$)
 - spesso, le tuple che ci servono sono solo un sottoinsieme del prodotto cartesiano. e’ quindi opportuno usare, dopo il prodotto cartesiano, la [[#selezione]] per selezionare tali tuple
 ## join naturale
-consente di selezionare le tuple del prodotto cartesiano dei due operan
+consente di selezionare le tuple del prodotto cartesiano di due operandi($R_{1}, R_{2}$), a patto che le tuple rispettino la condizione: 
+$$ R_{1}.A_{1}=R_{2}.A_{2} \land R_{1}.A_{2}=R_{2}A_{2}\land \dots \land R_{1}.A_{k}=R_{2}.A_{k}$$
+dove $A_{1},A_{1},\dots, A_{k}$ sono gli attributi da avere in comune(e con lo stesso nome !!!)
+- fa cio’ eliminando le ripetizioni degli attributi (li rimuove dalla proiezione del risultato)
+$$ r_{1}>|< r_{2} = \pi_{XY}(\sigma_{C}(r_{1} \text{x} r_{2}))$$
+dove:
+- C e’ la condizione da rispettare
+- X e’ l’insieme degli attributi di $r_{1}$
+- Y e’ l’insieme degli attributi di $r_{2}$ che non sono attributi di $r_{1}$
