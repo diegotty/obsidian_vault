@@ -35,4 +35,20 @@ la differenza non e’ commutativa come l’unione! l’ordine degli operandi ca
 consente di costruire una relazione contente tutte le tuple che appartengono ad entrambi gli operandi
 - si denota con il simbolo $\cap$
 - si applica a operandi union-compatibili
-$$ 
+$$ r_{1}\cap r_{2}= (r_{1}-(r_{1}-r_{2}))$$
+l’intersezione e’ un operazione commutativa
+
+# unire dati da piu tabelle
+per garantire determinate “buone” qualita’ di una relazione, occorre rappresentare in relazioni diverse concetti diversi.
+capita quindi molto spesso che le informazioni necessarie in una query sono distribuite in piu’ relazioni, in quanto coinvolgono piu’ oggetti in qualche modo associati
+bisogna quindi combinare le informazioni delle relazioni che ci interessano in maniera opportuna !
+## prodotto cartesiano
+consente di costruire una relazione contente tutte le tuple che si ottengono concatenando una tupla del primo operando con una tuple del secondo operando
+- si denota con il simbolo $\text{x}$
+$$ r_{1}\text{x}r_{2}$$
+si usa quando le informazioni necessarie per rispondere a una query si trovano in relazioni diverse
+### accortezze nel usare il prodotto cartesiano
+- se ho 2 attributi con lo stesso nome in 2 tabelle diverse che vogliamo poter distinguere, possiamo usare l’operazione di ridenominazione ($\rho$)
+- spesso, le tuple che ci servono sono solo un sottoinsieme del prodotto cartesiano. e’ quindi opportuno usare, dopo il prodotto cartesiano, la [[#selezione]] per selezionare tali tuple
+## join naturale
+consente di selezionare le tuple del prodotto cartesiano dei due operan
