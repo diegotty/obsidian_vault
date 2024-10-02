@@ -14,3 +14,4 @@ $$\sigma_{\text{C}}(r)$$
 la condizione e’ un’espressione booleana composta, con:
 - operatori AND, OR, e NOT
 - termini semplici: $A\theta B$, $A\theta  'a'$, dove $\theta$ e’ un operatore di confronto (<,>,=,≤, ≥), A e B sono attributi _con lo stesso dominio_ e `a` e’ un elemento di dom(A)
+##
