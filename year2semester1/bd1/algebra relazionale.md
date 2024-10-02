@@ -60,3 +60,7 @@ dove:
 - C e’ la condizione da rispettare
 - X e’ l’insieme degli attributi di $r_{1}$
 - Y e’ l’insieme degli attributi di $r_{2}$ che non sono attributi di $r_{1}$
+>[!info] gli attributi vengono rilevati da soli (o almeno cosi e’ sottinteso) quando scrivo $r_{1}>|<r_{2}$. prendere come $A_{1},A_{1},\dots, A_{k}$ gli attributi con lo stesso nome delle due relazioni
+### casi limite nel join naturale
+- se le relazioni contengono attributi con lo stesso nome, ma non esistono tuple con lo stesso valore per tali attributi, il join naturale e’ vuoto
+- se non esistono attributi con lo stesso nome nelle 2 relazioni, verrebbe restituito il prodotto cartesiano tra esse. in questo caso e’ necessario usare la ridenominazione per ottenere attributi con lo stesso nome tra le 2 relazioni
