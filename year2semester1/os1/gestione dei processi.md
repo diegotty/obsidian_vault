@@ -33,4 +33,14 @@ il dispatcher è un piccolo programma che decide quando sospendere un processo p
 
 # fasi di un processo
 ## creazione
-in un certo istanse, in un sistema operativo ci sono n ≥ 1 proce
+in un certo istanse, in un sistema operativo ci sono n ≥ 1 processi(c’è sempre un processo master, che non può essere ucciso (se non spegnendo il computer))
+i processi vengono spawnati attraverso il **process spawning**
+- un processo(processo padre) crea un altro processo(processo figlio)
+- si passa quindi da n a n+1 processi
+## terminazione
+un processo può terminare in 2 modi: 
+- normale completamento(grazie a un’istruzione macchina, che genera un’interruzione per il SO)
+- uccisioni (dal SO, dall’utente, o da un altro processo)
+## blocked
+lo stato di un processo quando sta aspettando un evento (es: ha fatto una richiesta all’I/O module, che è molto più lento) e quindi non è pronto per essere eseguito dall CPU. il dispatcher non sceglie tra gli eventi blocked, che vengono accodati in una coda separata e vengono riamessi alla coda di eventi ready solo quando l’evento che stavano aspettando occorre(quindi, viene chiamata un’interruzione in cui il module comunica la fine dell’evento)
+## bloced
