@@ -75,6 +75,7 @@ i livelli comunicano con i loro adiecenti !
 11. asociazioni tra identificatori interni ed esterni
 12. supporto di alto livello per i processi
 13. interfaccia utente
+>[!figure] ![[Pasted image 20241004111658.png]]
+esempio dei livelli dell’architettura UNIX
 
-![[Pasted image 20241004111251.png]]
-![[Pasted image 20241004111306.png]]
+

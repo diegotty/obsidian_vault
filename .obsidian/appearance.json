@@ -1,4 +1,7 @@
 {
   "cssTheme": "Monokai",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "callouts"
+  ]
 }

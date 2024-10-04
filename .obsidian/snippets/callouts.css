@@ -1,0 +1,8 @@
+.callout[data-callout="figure"] {
+  --callout-color: 100, 100, 100;
+  --callout-icon: none;
+  .callout-content {
+      font-size: 0.5em; 
+      text-align: center;
+   }
+ }

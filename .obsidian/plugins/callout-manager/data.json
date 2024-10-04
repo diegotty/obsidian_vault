@@ -1,7 +1,8 @@
 {
   "callouts": {
     "custom": [
-      "tuff"
+      "tuff",
+      "figure"
     ],
     "settings": {
       "tuff": [
@@ -25,6 +26,11 @@
           "changes": {
             "color": "179, 77, 77"
           }
+        }
+      ],
+      "figure": [
+        {
+          "changes": {}
         }
       ]
     }
