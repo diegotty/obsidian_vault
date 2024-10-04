@@ -47,4 +47,13 @@ you can now test your changes with
 ```
 xmodmap ~/.Xmodmap
 ```
-this activates your custom layer for the current session.
+this activates your custom layer for the current session
+
+to make it permanent you need to put it somewhere where it gets sourced by your desktop manager:
+- ~/.xinitrc for startx
+- ~/.Xsession for sddm
+- etc
+paste this line in your file and reboot !
+```
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+```
