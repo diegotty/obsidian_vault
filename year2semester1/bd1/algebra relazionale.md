@@ -53,7 +53,7 @@ si usa quando le informazioni necessarie per rispondere a una query si trovano i
 ## join naturale
 consente di selezionare le tuple del prodotto cartesiano di due operandi($R_{1}, R_{2}$), a patto che le tuple rispettino la condizione: 
 $$ R_{1}.A_{1}=R_{2}.A_{2} \land R_{1}.A_{2}=R_{2}A_{2}\land \dots \land R_{1}.A_{k}=R_{2}.A_{k}$$
-dove $A_{1},A_{1},\dots, A_{k}$ sono gli attributi da avere in comune(e con lo stesso nome !!!)
+	dove $A_{1},A_{1},\dots, A_{k}$ sono gli attributi da avere in comune(e con lo stesso nome, ma non nello stesso ordine !!!)
 - fa cio’ eliminando le ripetizioni degli attributi (li rimuove dalla proiezione del risultato)
 $$ r_{1}>|< r_{2} = \pi_{XY}(\sigma_{C}(r_{1} \text{x} r_{2}))$$
 dove:
@@ -64,3 +64,12 @@ dove:
 ### casi limite nel join naturale
 - se le relazioni contengono attributi con lo stesso nome, ma non esistono tuple con lo stesso valore per tali attributi, il join naturale e’ vuoto
 - se non esistono attributi con lo stesso nome nelle 2 relazioni, verrebbe restituito il prodotto cartesiano tra esse. in questo caso e’ necessario usare la ridenominazione per ottenere attributi con lo stesso nome tra le 2 relazioni
+## $\theta$ join
+consente di selezionare le tuple del prodotto cartesiano dei due operandi che soddisfano una condizione del tipo: 
+$$ A\theta B$$
+dove:
+- $\theta$ e’ un operatore di confronto $(\theta\in{<,=,>,})$
+- A e’ un attributo dello schema del primo operando
+- B e’ un attributo dello schema del secondo operando
+- dom(A)=dom(b)
+$$r_{1}\underset{A\theta B}{\bowtie}r_{2}= \sigma_{A\theta B}(r_{1} \text{x}r_{2})$$
