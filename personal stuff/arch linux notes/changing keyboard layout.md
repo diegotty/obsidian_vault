@@ -61,3 +61,4 @@ https://unix.stackexchange.com/questions/704861/how-to-make-changes-made-with-xm
 all of this is now useless
 # changing keyboard layout with xkb
 https://codeaffen.org/2023/09/16/custom-keyboard-layouts-with-xkb/
+xmodmap is not directly related to xkb
