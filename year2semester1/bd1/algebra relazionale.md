@@ -68,7 +68,7 @@ dove:
 consente di selezionare le tuple del prodotto cartesiano dei due operandi che soddisfano una condizione del tipo: 
 $$ A\theta B$$
 dove:
-- $\theta$ e’ un operatore di confronto $(\theta\in{<,=,>,})$
+- $\theta$ e’ un operatore di confronto $(\theta\in\{<,=,>,\leq,\geq\})$
 - A e’ un attributo dello schema del primo operando
 - B e’ un attributo dello schema del secondo operando
 - dom(A)=dom(b)
