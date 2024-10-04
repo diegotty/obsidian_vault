@@ -42,5 +42,21 @@ un processo può terminare in 2 modi:
 - normale completamento(grazie a un’istruzione macchina, che genera un’interruzione per il SO)
 - uccisioni (dal SO, dall’utente, o da un altro processo)
 ## blocked
-lo stato di un processo quando sta aspettando un evento (es: ha fatto una richiesta all’I/O module, che è molto più lento) e quindi non è pronto per essere eseguito dall CPU. il dispatcher non sceglie tra gli eventi blocked, che vengono accodati in una coda separata e vengono riamessi alla coda di eventi ready solo quando l’evento che stavano aspettando occorre(quindi, viene chiamata un’interruzione in cui il module comunica la fine dell’evento)
-## bloced
+lo stato di un processo quando sta aspettando un evento (es: ha fatto una richiesta all’I/O module, che è molto più lento) e quindi non è pronto per essere eseguito dal processore. il dispatcher non sceglie tra gli eventi blocked, che vengono accodati in una coda separata e vengono riamessi alla coda di eventi ready solo quando l’evento che stavano aspettando occorre(quindi, viene chiamata un’interruzione in cui il module comunica la fine dell’evento)
+## suspended
+può capitare che molti eventi siano blocked (aspettando I/O)dato che il processore è molto più veloce. tutti questi processi, caricati nella memoria primaria, stanno quindi occupando spazio prezioso nella RAM (supponiamo di avere molti processi) senza poter neanche essere eseguiti.
+Lo stato blocked diventa suspeded quando il processo, per liberare memoria e non lasciare il processore inoperoso, viene swappato su disco
+ci sono due tipi di suspend (due stati nel ciclo):
+- blocked/suspend (swappato mentre era bloccato)
+- ready/blocked (swappato mentre non era bloccato(era ready, running, blocked/suspended o addirittura new))
+
+>[!figure] ![[Pasted image 20241004122152.png]]
+### motivi per sospendere un processo
+
+| motivo                       | commento                                                                                                                      |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| swapping                     | SO ha bisogno di rilasciare abbastanza memoria per portarci dentro un processo ready(motivo per sospendere un processo ready) |
+| interno al SO                | SO sospetta che il processo stia causando problemi                                                                            |
+| richiesta utente interattiva | debugging                                                                                                                     |
+| periodicità                  | il processo viene eseguito periodicamente, e può venire sospeso in attesa della prossima esecuzione                           |
+| richiesta del padre          | il padre vuole sospendere l’esecuzione di un figlio per esaminarlo o modificarlo, o per coordinare l’attività tra più figli   |
