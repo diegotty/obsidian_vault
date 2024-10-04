@@ -81,4 +81,4 @@ esempio dei livelli dell’architettura UNIX
 i kernel dei sistemi operativi moderni possono essere di 2 tipi:
 - monolitici: tutto il kernel viene caricato in memoria a boot e rimane li fino allo spegnimento(piu veloce, ma occupa più memoria)
 - microkernel: solo una minima parte del kernel è in memoria, il resto viene caricato quando serve. (MacOS è microkernel!)
-linux è principalmente monolitico, ma ha moduli, per (filesystem, driver per determinati dispositivi di I/O, implementazione delle funzionalità di rete)
+linux è principalmente monolitico, ma ha moduli, per (filesystem(mounting…), driver per determinati dispositivi di I/O, implementazione delle funzionalità di rete, etc)
