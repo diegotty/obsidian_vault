@@ -54,3 +54,27 @@ dato che viene introdotto un nuovo tipo di job, la multiprogrammaziones sui proc
 - violazione della mutua esclusione
 - programmi con esecuzione non deterministica
 - deadlock
+## elementi principali di un sistema operativo
+- scheduler (lungo termine, medio termine, breve termine)
+- service call handler
+- interrupt handler
+- i/o queue
+# struttura di un sistema operativo
+il sistema operativo viene visto come una serie di livelli.
+i livelli comunicano con i loro adiecenti !
+1. cirtuiti elettrici
+2. insieme delle istruzioni macchina
+3. aggiunge il concetto di procedura
+4. interruzioni
+5. processo come programma in esecuzione, sospensione e ripresa dell’esecuzione del processo
+6. dispositivi di memorizazione secondaria (dischi, etc),
+7. organizza lo spazio degli indirizzi virtuali in blocchi 
+8. comunicazioni tra processi
+9. filesystem
+10. acesso a dispositiv esterni
+11. asociazioni tra identificatori interni ed esterni
+12. supporto di alto livello per i processi
+13. interfaccia utente
+
+![[Pasted image 20241004111251.png]]
+![[Pasted image 20241004111306.png]]
