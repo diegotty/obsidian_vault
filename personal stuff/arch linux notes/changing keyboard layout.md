@@ -19,11 +19,32 @@ mod1        Alt_L (0x40),  Alt_R (0x6c),  Alt_L (0xcc),  Meta_L (0xcd)
 ```
 so my AltGr calls Alt_R as suggested by the wiki.
 as i’m trying to use AltrGr to use my 3rd layer on the layout, i need to remap my AltGr key to call Mode_switch when pressed.
+also, this is why, if you use i3wm and Mod1 as the mod key,
+AltGr might work for you like Alt. as i’m trying to use AltGr as a keyboard modifier, i need to move it outside of mod5.
 
 to create a new layout, you can use the command:
 ```zsh
 xmodmap -pke > ~/.Xmodmap
+## the ~/.Xmodmap is a canonic file 
 ```
 you can then edit the ~/.Xmodmap file,and change they layout to your liking. every keycode has a number of values associated to it, and every column is a layer. so to change the keycode output while pressing AltGr, i changed the 3rd column on the keycodes i needed.
 
-i also fixed the modifier keys thing here ! to change AltGr, i had to clear the group AltGr was in (mod1) and the group i wanted AltGr to be in (mod5, in my case), i then mapped the keycode 108 to call Mode_switch in all 4 layouts
+i also fixed the modifier keys thing here ! to change AltGr, i had to clear the group AltGr was in (mod1) and the group i wanted AltGr to be in (mod5, in my case(i’m clearing the mod5 group because i don’t need the ISO_Level_Shift key assigned to it)), 
+after clearing them, i need to add the modifiers to the groups i just cleared. so i added Alt_L and Meta_L to mod1 and Meta_switch to mod5
+i then mapped the keycode 108 to call Mode_switch in all 4 layers of the layout
+```
+clear mod1
+clear mod5
+add mod5 = Mode_switch
+add mod1 = Alt_L Meta_L
+....
+keycode 108 = Mode_switch Mode_switch Mode_switch Mode_switch
+```
+[here is the wiki link :)](https://wiki.archlinux.org/title/Xmodmap#Reassigning_modifiers_to_keys_on_your_keyboard)
+notice: do not assign ISO_Level_3_Shift and Mode_switch to the same keycode OR the same group. those modifiers are meant to be used for different things, and, in fact, can access another layer if pressed together in some keyboards.
+
+you can now test your changes with 
+```
+xmodmap ~/.Xmodmap
+```
+this activates your custom layer for the current session.
