@@ -21,6 +21,18 @@ ha le seguenti caratteristiche:
  contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimentti tutti i programmi potrebbero gestire i processi)
 - è creato e gestito dal SO, e gli permette di gestire più processi contemporaneamente
 - contiene sufficienti info per poter bloccare/far riprendere un programma
+### come si identifica un processo
+Identificatori:
+- ad ogni processo è assegnato un numero identificato e unico: il **PID**(Process ID)
+- p
+Informazioni sullo stato del processore:
+- ogni registro ha lo stato del processore, cioè i contenuti dei registri del processore stesso: registri visibili all’utente, di controllo, di stato, e puntatori allo stack (?) e il PSW !
+## process image
+l’insieme di:
+- programma sorgente
+- dati
+- stack delle chiamate
+- PCB (solo il PCB si trova nel kernel !!)
 
 # dispatcher
 il dispatcher è un piccolo programma che decide quando sospendere un processo per farne andare un altro in esecuzione
@@ -60,3 +72,6 @@ ci sono due tipi di suspend (due stati nel ciclo):
 | richiesta utente interattiva | debugging                                                                                                                     |
 | periodicità                  | il processo viene eseguito periodicamente, e può venire sospeso in attesa della prossima esecuzione                           |
 | richiesta del padre          | il padre vuole sospendere l’esecuzione di un figlio per esaminarlo o modificarlo, o per coordinare l’attività tra più figli   |
+
+# gestione delle risorse
+///slide 36
