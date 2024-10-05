@@ -21,6 +21,7 @@ ha le seguenti caratteristiche:
  contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimentti tutti i programmi potrebbero gestire i processi)
 - è creato e gestito dal SO, e gli permette di gestire più processi contemporaneamente
 - contiene sufficienti info per poter bloccare/far riprendere un programma
+- le sue informazioni possono essere raggruppate in 3:
 ### come si identifica un processo
 Identificatori:
 - ad ogni processo è assegnato un numero identificato e unico: il **PID**(Process ID)
