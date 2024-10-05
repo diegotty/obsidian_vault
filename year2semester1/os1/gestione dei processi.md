@@ -44,7 +44,8 @@ l’insieme di:
 - dati
 - stack delle chiamate
 - PCB (solo il PCB si trova nel kernel !!)
-
+>[!figure] ![[Pasted image 20241005221533.png]]
+i dati che non si trovano nel PCB si trovano nella memoria virtuale
 # dispatcher
 il dispatcher è un piccolo programma che decide quando sospendere un processo per farne andare un altro in esecuzione
 - è sempre in memoria, e fa parte del sistema operativo
