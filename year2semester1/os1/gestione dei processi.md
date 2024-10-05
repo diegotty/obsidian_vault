@@ -84,6 +84,4 @@ ci sono due tipi di suspend (due stati nel ciclo):
 | richiesta utente interattiva | debugging                                                                                                                     |
 | periodicità                  | il processo viene eseguito periodicamente, e può venire sospeso in attesa della prossima esecuzione                           |
 | richiesta del padre          | il padre vuole sospendere l’esecuzione di un figlio per esaminarlo o modificarlo, o per coordinare l’attività tra più figli   |
-
-# gestione delle risorse
-///slide 36
+# creazione di processi
