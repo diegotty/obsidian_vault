@@ -18,3 +18,6 @@ anche se un processo utente inizia sempre in modalità utente, spesso è necessa
 in questo modo, l’interrupt handler viene può essere eseguito in modalità kernel
 - ma dato che l’interrupt handler è dentro il kernel del SO, non ci sono problemi
 in questo modo, un processo utente può cambiare la modalità a se stesso, ma **solo per eseguire software di sistema**
+
+l’interrupt handler può essere chiamato:
+- per conto dello stesso processo interrotto, che lo ha esplicitamente voluto (syscall)
