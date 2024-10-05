@@ -21,13 +21,23 @@ ha le seguenti caratteristiche:
  contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimentti tutti i programmi potrebbero gestire i processi)
 - è creato e gestito dal SO, e gli permette di gestire più processi contemporaneamente
 - contiene sufficienti info per poter bloccare/far riprendere un programma
-- le sue informazioni possono essere raggruppate in 3:
-### come si identifica un processo
-Identificatori:
-- ad ogni processo è assegnato un numero identificato e unico: il **PID**(Process ID)
-- p
-Informazioni sullo stato del processore:
-- ogni registro ha lo stato del processore, cioè i contenuti dei registri del processore stesso: registri visibili all’utente, di controllo, di stato, e puntatori allo stack (?) e il PSW !
+- le sue informazioni possono essere raggruppate in 3: categorie: 
+### identificazione
+- PID(numero identificativo e unico assegnato ad ogni processo)
+- Parent PID (PID del processo padre)
+- identificatore dell’utente proprietario
+### stato
+informazioni sullo stato del processore(hardware context):
+- registi utente(quelli accessibili in assembly)
+- PC
+- stack pointer
+- registri di stato(flags)
+- PSW
+### controllo
+- stato del processo
+- priorità
+- informazioni sullo scheduling
+- l’evento da attendere per tornare ad essere ready, se attualmente in attesa
 ## process image
 l’insieme di:
 - programma sorgente
