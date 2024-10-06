@@ -66,3 +66,8 @@ in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di p
  è il metodo più efficiente
 >[!figure] ![[Pasted image 20241006110627.png]]
 rappresentazione grafica dei vari modi di gestire le chiamate all’i/o
+
+## system calls
+le system calls(già viste in archiettura degli elaboratori) sono interrupt “speciali”, che possono essere chiamati da un programma. 
+- per esempio, il creare un nuovo processo è una syscall: fork (in Linux). dato che deve modificare la lista dei PCB, l’handler d questa syscall verà eseguito in modalità kernel
+//TODO add info 

@@ -85,3 +85,7 @@ ci sono due tipi di suspend (due stati nel ciclo):
 | periodicità                  | il processo viene eseguito periodicamente, e può venire sospeso in attesa della prossima esecuzione                           |
 | richiesta del padre          | il padre vuole sospendere l’esecuzione di un figlio per esaminarlo o modificarlo, o per coordinare l’attività tra più figli   |
 # creazione di processi
+ per creare un processo, il SO deve:
+ - assegnargli un PID unico
+ - allocargli spazio in memoria principale
+ - inizializzare il PCB

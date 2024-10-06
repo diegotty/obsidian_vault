@@ -22,4 +22,4 @@ in questo modo, un processo utente può cambiare la modalità a se stesso, ma **
 l’interrupt handler può essere chiamato:
 - per conto dello stesso processo interrotto, che lo ha esplicitamente voluto (syscall, o una risposta ad una sue precedente richiesta di I/O, o comunque di risorse)
 - per conto dello stesso processo interrotto, che non lo ha esplicitamente voluto(errore fatale o non fatale)
-- per conto di qualche altro p
+- per conto di qualche altro processo: un processo A fa una richiesta di I/O e viene messo in blocked; nel mentre viene eseguito un processo B. se la richiesta viene esaurita mentre il processo B è in esecuzione, l’interrupt handler viene chiamato per conto del processo B, ma per una risposta al processo A
