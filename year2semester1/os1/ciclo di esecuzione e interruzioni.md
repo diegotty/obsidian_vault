@@ -10,7 +10,11 @@ andiamo ad analizzare il ciclo di esecuzione, aggiungendo a mano a mano compless
 2. il processore esegue l’istruzione prelevata
 3. back to 1.
 >[!example] esempio di esecuzione di un programma
->//TODO
+>![[Pasted image 20241006105819.png]]
+>il MSB dell’IR indica l’operazione da fare:
+>- 0001: Load AC from memory
+>- 0010: store AC to memory
+>- 0101: add to AC from memory
 # interruzioni
 - paradigma dell’interazione hardware/software, interrompono la normale esecuzione sequenziale del processore, che consegue nell’esecuzione del software “di sistema”(parte del sistema operativo), che tipicamente non e’ stato scritto dall’utente che sta eseguendo un certo programma
 cause:
@@ -42,10 +46,13 @@ una volta finita l’interruzione, possono accadere diverse cose:
 
 ## ciclo con controllo per interruzioni
 aggiungendo al primo ciclo, dopo ogni fetch-execute, viene controllato se c’e’ stata un’interruzione: se e; cosi, il programma viene sospeso e viene eseguita una funzione che gestisce l’interruzione: una **interrupt-handler routine**
-## interrupt handler
-quando viene chiamato l’interrupt handler, il SO e hardware collaborano per salvare le finromazioni (almeno PSW e PC) e settare il PC
-//TODO foto slide 39 e 40
+>[!figure] ![[Pasted image 20241006110145.png]]
+# interrupt handler
+quando viene chiamato l’interrupt handler, il SO e hardware collaborano per salvare le informazioni (almeno PSW e PC) e settare il PC
+>[!figure] ![[Pasted image 20241006110323.png]]
+![[Pasted image 20241006110359.png]]
 ### ciclo con disabilitazione delle interruzioni
+>[!figure] ![[Pasted image 20241006110508.png]]
 ## gestione i/o
 con l’uso delle interruzioni si puo’ cambiare il modo in cui si gestiscono le chimate all’i/o module.
 #### i/o programmato
@@ -58,3 +65,5 @@ in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di p
 #### accessso diretto in memoria
 //TODO huh ?
 si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla cpu ?
+>[!figure] ![[Pasted image 20241006110627.png]]
+rappresentazione grafica dei vari modi di gestire le chiamate all’i/o
