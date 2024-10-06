@@ -106,4 +106,9 @@ tutti i passaggi avvengono in kernel mode:
 - si aggiornano le strutture dati per la gestione della memoria
 - si ripristina il contesto del nuovo processo (tutti i registri della CPU, in modo che lo switch sia seamless per il processo)
 # SO come processo
+il SO è solo un insieme di programmi, ed è eseguito dal procesore come altro ogni programma, e molto spesso la scia che altri programmi vadano in esecuzione, per poi riprendere il controllo tramite interrupt
+- è quindi lui stesso un processo?
+## gestione del SO senza processi
+- il Kernel è eseguito al di fuori dei processi, infatti il concetto di processo si applica solo ai programmi utente.
+- l
 ### esempio Unix SVR4 System V Release 4
