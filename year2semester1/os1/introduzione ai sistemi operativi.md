@@ -6,7 +6,9 @@ gestisce le risorse hardware di un sistema, per fornire un insieme di servizi ag
 - sviluppo di programmi
 - rilevamento di e reazione ad errori
 - accounting (collezione di statistiche, monitoraggio)
-//TODO slide 64 foto
+>[!figure] ![[Pasted image 20241006111535.png]]
+strati di un SO
+
 si puo’ quindi pensare come un’interfaccia tra le applicazione e l’hardware, gestendo e controllando l’esecuzione dei programmi:
 - e’ responsabile della gestione delle risorse
 	- concede il controllo del processore ad altri programmi
@@ -31,7 +33,8 @@ un processore deve eseguire piu’ programmi contemporaneamente, e la sequenza c
 per rendere “l’illusione” dell’esecuzione di molteplici programmi in contemporanea, viene usata la multiprogrammazione.
 - al posto di aspettare che le istruzioni di i/o siano completate di procedere, il processore passa ad un altro processo.
 in questo modo, la percentuale d’uso del processore(e del resto delle componenti) si alza, rendendo il ciclo di esecuzione piu’ efficace. inoltre i tempi per eseguire un insieme di processi diminuisce drasticamente inoltre i tempi per eseguire un insieme di processi diminuisce drasticamente
-//TODO foto 77, 78, 79
+>[!figure] ![[Pasted image 20241006111437.png]]
+
 alla fine della gestione di un’interruzione, il controllo potrebbe non tornare al programma che era in esecuzione al momento dell’interruzione
 
 ## sistemi time sharing

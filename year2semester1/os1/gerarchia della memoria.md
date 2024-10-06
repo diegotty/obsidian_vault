@@ -1,4 +1,5 @@
-//TODO foto 52
+>[!figure] ![[Pasted image 20241006111648.png]]
+
 dall’alto verso il basso:
 - diminuisce la velocita di accesso
 - diminuisce il costo al bit
@@ -11,12 +12,14 @@ dall’alto verso il basso:
 ## inboard memory
 anche nella inboard memory ci sono importanti differenze di velocita’, infatti la velocita del processore e’ maggiore della velocita di accesso alla RAM.
 per evitare eccessivi tempi di attesa, i computer hanno una memoria cache, piccola e veloce, che sfrutta il principio di localita’
-//TODO foto 55
+>[!figure] ![[Pasted image 20241006111736.png]]
 # cache
 contiene copie di porzioni della memoria principale, e quindi il processore controlla prima se un dato e’ nella cache.
 - se il dato non e’ nella cache (MISS), il blocco di memoria viene caricato in essa, dato che secondo il principio della localita’, e’ probabile che il dato appena caricato serva ancora nell’immediato futuro
 il programmatore non vede la cache, neanche su assembly. viene unicamente gestita dall’HW della CPU (quindi neanche compilatore o SO)
-//TODO foto 58
+>[!figure] ![[Pasted image 20241006111246.png]]
+lettura dalla cache
+
 caratteristiche cache:
 - i dati scambiati tra memoria e cache sono in quantita’ multiple di blocchi.
 - anche una cache molto piccola puo’ fare un grande impatto

@@ -20,4 +20,6 @@ in questo modo, l’interrupt handler viene può essere eseguito in modalità ke
 in questo modo, un processo utente può cambiare la modalità a se stesso, ma **solo per eseguire software di sistema**
 
 l’interrupt handler può essere chiamato:
-- per conto dello stesso processo interrotto, che lo ha esplicitamente voluto (syscall)
+- per conto dello stesso processo interrotto, che lo ha esplicitamente voluto (syscall, o una risposta ad una sue precedente richiesta di I/O, o comunque di risorse)
+- per conto dello stesso processo interrotto, che non lo ha esplicitamente voluto(errore fatale o non fatale)
+- per conto di qualche altro p

@@ -18,7 +18,7 @@ ha le seguenti caratteristiche:
 - informazioni sullo stato dell’I/O usato
 - informazioni di accounting (quale utente lo esegue)
 ## process control block
- contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimentti tutti i programmi potrebbero gestire i processi)
+ contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimenti tutti i programmi potrebbero gestire i processi)
 - è creato e gestito dal SO, e gli permette di gestire più processi contemporaneamente
 - contiene sufficienti info per poter bloccare/far riprendere un programma
 - le sue informazioni possono essere raggruppate in 3: categorie: 
