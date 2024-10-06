@@ -131,5 +131,7 @@ le funzioni del kernel sono per lo più eseguite tramite interrupt, quindi on be
 >[!figure] ![[Pasted image 20241006132024.png]]
 
 alcune differenze dal ciclo a 7 fasi visto in precedenza:
-- preempted: 
+- preempted: il kernel ha appena tolto l’uso del processore a questo processo, per fare un context switch
 - zombie: quando un processo viene terminato, il suo PCB rimane nella tabella dei processi, per comunicare al processo padre della sua morte
+## processi UNIX
+boring …….
