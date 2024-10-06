@@ -105,3 +105,4 @@ tutti i passaggi avvengono in kernel mode:
 - si aggiorna il PCB del nuovo processo
 - si aggiornano le strutture dati per la gestione della memoria
 - si ripristina il contesto del nuovo processo (tutti i registri della CPU, in modo che lo switch sia seamless per il processo)
+# SO come processo
