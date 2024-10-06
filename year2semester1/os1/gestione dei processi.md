@@ -110,5 +110,26 @@ il SO è solo un insieme di programmi, ed è eseguito dal procesore come altro o
 - è quindi lui stesso un processo?
 ## gestione del SO senza processi
 - il Kernel è eseguito al di fuori dei processi, infatti il concetto di processo si applica solo ai programmi utente.
-- l
+- l’SO è quindi eseguito come un’entità separata, con privilegi più elevati, una sua zona di memoria dedicata sia per i dati che per il codice sorgente che per lo stack
+>[!figure] ![[Pasted image 20241006130751.png]]
+## esecuzione dell’SO all’interno dei processi utente
+- il SO viene eseguito nel contesto di un processo utente: il SO non è pensato come una entità separata o dei processi a se stanti, bensì viene eseguito dai processi utente (cambiando la modalità di esecuzione)
+- in questo modo, non c’è bisogno di un process switch per eseguire una funzione del SO, in quando viene utilizzato il processo running
+- lo stack delle chiamate rimane separato: esiste lo user stack e il kernel stack, mentre i dati e il codice macchina vengono condivisi con i processi
+>[!figure] ![[Pasted image 20241006131327.png]]
+
+## gestione del SO basata sui processi
+- il SO viene implementato come una serie di processi di sistema, con privilegi più alti, che quindi partecipano alla competizione per il processore, insieme ai processi utente
+quindi, se un proceso effettua una syscall, viene creato un nuovo processo di sistema che la gestisce
+- l’unica cosa che non è un processo è il meccanismo che gestisce lo switching tra i processi
+ >[!figure] ![[Pasted image 20241006131622.png]]
+ 
+### come Linux gestisce il SO 
+le funzioni del kernel sono per lo più eseguite tramite interrupt, quindi on behalf of il processo corrente, ci sono però anche dei processi di sistema che partecipano alla normale competizione del processore, senza essere stati invocati esplicitamente ( sono infatti creati in fase di inizializzazione). i processi di sistema spesso svolgono funzioni periodiche per cui sono blocked o suspended per la maggior parte del tempo
+
 ### esempio Unix SVR4 System V Release 4
+>[!figure] ![[Pasted image 20241006132024.png]]
+
+alcune differenze dal ciclo a 7 fasi visto in precedenza:
+- preempted: 
+- zombie: quando un processo viene terminato, il suo PCB rimane nella tabella dei processi, per comunicare al processo padre della sua morte
