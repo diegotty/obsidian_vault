@@ -106,3 +106,4 @@ tutti i passaggi avvengono in kernel mode:
 - si aggiornano le strutture dati per la gestione della memoria
 - si ripristina il contesto del nuovo processo (tutti i registri della CPU, in modo che lo switch sia seamless per il processo)
 # SO come processo
+### esempio Unix SVR4 System V Release 4
