@@ -89,3 +89,19 @@ ci sono due tipi di suspend (due stati nel ciclo):
  - assegnargli un PID unico
  - allocargli spazio in memoria principale
  - inizializzare il PCB
+ - inserire il processo nella coda giusta (ready, ready/suspended)
+ - creare o modificare altre strutture dati (es: quelle per l’accounting)
+# switching tra processi
+2 tipi di switch:
+- switch di modalità
+- switch tra processi
+il SO deve tenere aggiornate tutte le strutture dati(es: tutte le code nel ciclo di esecuzione), in seguito ad uno switch tra processi !
+## quando effettuare uno switch
+## passaggi
+tutti i passaggi avvengono in kernel mode:
+- si salva il contesto del programma(registri e PC)
+- si aggiorna il PCB, che è attualmente in running e spostarlo nella coda appropriata: read, blocked o ready/suspend(se il ciclo di esecuzione lo permette)
+- si sceglie un altro processo da eseguire
+- si aggiorna il PCB del nuovo processo
+- si aggiornano le strutture dati per la gestione della memoria
+- si ripristina il contesto del nuovo processo (tutti i registri della CPU, in modo che lo switch sia seamless per il processo)
