@@ -1,3 +1,31 @@
+>[!index]-
+>
+>- [processo](#processo)
+>	- [elementi di un processo](#elementi%20di%20un%20processo)
+>	- [process control block](#process%20control%20block)
+>		- [identificazione](#identificazione)
+>		- [stato](#stato)
+>		- [controllo](#controllo)
+>	- [process image](#process%20image)
+>- [dispatcher](#dispatcher)
+>- [fasi di un processo](#fasi%20di%20un%20processo)
+>	- [creazione](#creazione)
+>	- [terminazione](#terminazione)
+>	- [blocked](#blocked)
+>	- [suspended](#suspended)
+>		- [motivi per sospendere un processo](#motivi%20per%20sospendere%20un%20processo)
+>- [creazione di processi](#creazione%20di%20processi)
+>- [switching tra processi](#switching%20tra%20processi)
+>	- [quando effettuare uno switch](#quando%20effettuare%20uno%20switch)
+>	- [passaggi](#passaggi)
+>- [SO come processo](#SO%20come%20processo)
+>	- [gestione del SO senza processi](#gestione%20del%20SO%20senza%20processi)
+>	- [esecuzione dell’SO all’interno dei processi utente](#esecuzione%20dell%E2%80%99SO%20all%E2%80%99interno%20dei%20processi%20utente)
+>	- [gestione del SO basata sui processi](#gestione%20del%20SO%20basata%20sui%20processi)
+>		- [come Linux gestisce il SO](#come%20Linux%20gestisce%20il%20SO)
+>		- [esempio Unix SVR4 System V Release 4](#esempio%20Unix%20SVR4%20System%20V%20Release%204)
+>	- [processi UNIX](#processi%20UNIX)
+
 il sistema operativo deve gestire le diverse computazioni che si vuole eseguire su un sistema computerizzato, in particolare:
 - permettere l’esecuzione alternata di processi multipli (interleaving), avendo più processi di processori
 - assegnare risorse ai processi
@@ -51,7 +79,7 @@ il dispatcher è un piccolo programma che decide quando sospendere un processo p
 - è sempre in memoria, e fa parte del sistema operativo
 
 
->[!figure] ![[Pasted image 20241004115509.png]]
+>[!figure] ![[pasted image 20241004115509.png]]
 >gestione, da parte del dispatcher, dei processi
 
 

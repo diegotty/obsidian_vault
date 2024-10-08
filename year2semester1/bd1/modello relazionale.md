@@ -1,3 +1,19 @@
+>[!index]
+>- [relazioni](#relazioni)
+>- [dominio](#dominio)
+>	- [NULL](#NULL)
+>	- [grado e cardinalita’ di una relazione](#grado%20e%20cardinalita%E2%80%99%20di%20una%20relazione)
+>- [attributi](#attributi)
+>- [dati fra relazioni diverse](#dati%20fra%20relazioni%20diverse)
+>- [vincoli di integrita’](#vincoli%20di%20integrita%E2%80%99)
+>- [tipi di vincoli](#tipi%20di%20vincoli)
+>	- [vincoli intrarelazionali](#vincoli%20intrarelazionali)
+>	- [vincoli interrelazionali](#vincoli%20interrelazionali)
+>- [chiavi](#chiavi)
+>	- [chiave primaria](#chiave%20primaria)
+>- [dipendenze funzionali](#dipendenze%20funzionali)
+>
+
 - proposto per favorire l’indipendenza dei dati
 - basato sulla nozione matematica di relazione. le relazioni si traducono in maniera naturale in tabelle
 ## relazioni

@@ -1,3 +1,10 @@
+>[!index]-
+>
+>- [componenti di un computer monoprocessore](#componenti%20di%20un%20computer%20monoprocessore)
+>- [registri del processore](#registri%20del%20processore)
+>	- [registri visibili all’utente](#registri%20visibili%20all%E2%80%99utente)
+>	- [registri di controllo e di stato](#registri%20di%20controllo%20e%20di%20stato)
+>	- [registri “interni”](#registri%20%E2%80%9Cinterni%E2%80%9D)
 # sistema operativo
 gestisce le risorse harware di un sistema:
 - uno o piu’ processori

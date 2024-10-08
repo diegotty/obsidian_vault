@@ -1,3 +1,8 @@
+>[!index]
+>- [outboard memory](#outboard%20memory)
+>- [inboard memory](#inboard%20memory)
+>- [cache](#cache)
+
 >[!figure] ![[Pasted image 20241006111648.png]]
 
 dall’alto verso il basso:

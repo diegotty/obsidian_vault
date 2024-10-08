@@ -1,3 +1,16 @@
+>[!info] index !
+>- [proiezione](#proiezione)
+>- [selezione](#selezione)
+>- [unione](#unione)
+>- [differenza](#differenza)
+>- [intersezione](#intersezione)
+>- [unire dati da piu tabelle](#unire%20dati%20da%20piu%20tabelle)
+>- [prodotto cartesiano](#prodotto%20cartesiano)
+>	- [accortezze nel usare il prodotto cartesiano](#accortezze%20nel%20usare%20il%20prodotto%20cartesiano)
+>- [join naturale](#join%20naturale)
+>	- [casi limite nel join naturale](#casi%20limite%20nel%20join%20naturale)
+>- [$\theta$ join](#$%5Ctheta$%20join)
+
 linguaggio usato per interrogare una base di dati relazionale, consiste di un insieme di operatori che possono essere applicati ad una o due istande di relazione, e forniscono come risultato una nuova istanza di relazione
 viene definito linguaggio procedurale, in quanto l’interrogazione consiste in un’espressione in cui compaiono operatori dell’algebra e istanze di relazioni, in una sequenza che prescrive in maniera puntuale l’ordine delle operazioni
 ## proiezione

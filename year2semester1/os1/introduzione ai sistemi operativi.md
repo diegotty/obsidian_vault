@@ -1,3 +1,12 @@
+>[!index]-
+
+- [kernel](#kernel)
+- [sistema batch](#sistema%20batch)
+- [multiprogrammazione](#multiprogrammazione)
+- [sistemi time sharing](#sistemi%20time%20sharing)
+- [job vs processo](#job%20vs%20processo)
+- [elementi principali di un sistema operativo](#elementi%20principali%20di%20un%20sistema%20operativo)
+- [struttura di un sistema operativo](#struttura%20di%20un%20sistema%20operativo)
 # sistema operativo
 gestisce le risorse hardware di un sistema, per fornire un insieme di servizi agli utenti, ad esempio:
 - esecuzioni di programmi
