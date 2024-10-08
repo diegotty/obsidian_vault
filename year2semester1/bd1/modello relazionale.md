@@ -12,7 +12,6 @@
 >- [chiavi](#chiavi)
 >	- [chiave primaria](#chiave%20primaria)
 >- [dipendenze funzionali](#dipendenze%20funzionali)
->
 
 - proposto per favorire l’indipendenza dei dati
 - basato sulla nozione matematica di relazione. le relazioni si traducono in maniera naturale in tabelle

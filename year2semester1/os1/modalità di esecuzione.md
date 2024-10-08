@@ -1,3 +1,9 @@
+>[!index]
+>
+>- [modalità kernel](#modalit%C3%A0%20kernel)
+>- [modalità utente](#modalit%C3%A0%20utente)
+>	- [passaggio da kernel mode a user mode](#passaggio%20da%20kernel%20mode%20a%20user%20mode)
+
 ci sono aree di memoria(ad esempio i PCB) o comandi privilegiati ai cui dei processi (quelli di cui il SO non si fida) non devono avere accesso: per permettere ciò, esistono diverse modalità in cui un processo può essere eseguito, ognuna con permessi diversi (di solito)
 la maggior parte dei processori supporta almeno 2 modalità di esecuzione:
 # modalità kernel
