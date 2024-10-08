@@ -1,10 +1,99 @@
 {
-  "choices": [],
+  "choices": [
+    {
+      "id": "2e8fcf83-0028-49f9-8742-ac7882b6846f",
+      "name": "uni note",
+      "type": "Macro",
+      "command": false,
+      "macroId": "ce4b0ab3-8bd6-46d3-a861-8f3f127d344f"
+    },
+    {
+      "id": "479e630e-7ee1-44ce-affa-4d856539817c",
+      "name": "raw note",
+      "type": "Macro",
+      "command": false,
+      "macroId": "d183dfca-883d-4d43-846f-19f516698427"
+    }
+  ],
   "macros": [
     {
       "name": "uni note",
       "id": "ce4b0ab3-8bd6-46d3-a861-8f3f127d344f",
-      "commands": [],
+      "commands": [
+        {
+          "name": "Untitled Template Choice",
+          "type": "NestedChoice",
+          "id": "4864a502-ce1f-4531-90db-7b48f379c03c",
+          "choice": {
+            "id": "743f3529-ae7d-449d-9e3d-512531e27b06",
+            "name": "Untitled Template Choice",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/uni note.md",
+            "fileNameFormat": {
+              "enabled": false,
+              "format": ""
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [],
+              "chooseWhenCreatingNote": true,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": true
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        }
+      ],
+      "runOnStartup": false
+    },
+    {
+      "name": "raw note",
+      "id": "d183dfca-883d-4d43-846f-19f516698427",
+      "commands": [
+        {
+          "name": "Untitled Template Choice",
+          "type": "NestedChoice",
+          "id": "512f968d-9a3e-4cd1-988d-86f18be570ee",
+          "choice": {
+            "id": "c6f782b6-9aac-4c65-9715-e050edadc145",
+            "name": "Untitled Template Choice",
+            "type": "Template",
+            "command": false,
+            "templatePath": "templates/raw note.md",
+            "fileNameFormat": {
+              "enabled": true,
+              "format": "{{date}}"
+            },
+            "folder": {
+              "enabled": true,
+              "folders": [],
+              "chooseWhenCreatingNote": true,
+              "createInSameFolderAsActiveFile": false,
+              "chooseFromSubfolders": true
+            },
+            "appendLink": false,
+            "openFileInNewTab": {
+              "enabled": false,
+              "direction": "vertical",
+              "focus": true
+            },
+            "openFile": true,
+            "openFileInMode": "default",
+            "fileExistsMode": "Increment the file name",
+            "setFileExistsBehavior": false
+          }
+        }
+      ],
       "runOnStartup": false
     }
   ],
@@ -12,7 +101,7 @@
   "devMode": false,
   "templateFolderPath": "",
   "announceUpdates": true,
-  "version": "0.14.0",
+  "version": "1.11.1",
   "disableOnlineFeatures": true,
   "enableRibbonIcon": false,
   "ai": {
@@ -76,6 +165,6 @@
     "incrementFileNameSettingMoveToDefaultBehavior": true,
     "mutualExclusionInsertAfterAndWriteToBottomOfFile": true,
     "setVersionAfterUpdateModalRelease": true,
-    "addDefaultAIProviders": false
+    "addDefaultAIProviders": true
   }
 }
