@@ -1,5 +1,5 @@
 ---
 created: "{{date}}"
-related: 
-updated:
+related to: 
+updated: "{{date}}, {{time}}"
 ---
