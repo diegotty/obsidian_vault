@@ -1,3 +1,4 @@
+
 andiamo ad analizzare il ciclo di esecuzione, aggiungendo a mano a mano complessita’
 ### tipi di istruzioni
 - scambio dati tra processore e memoria

@@ -1,0 +1,5 @@
+---
+created: "{{date}}"
+related: 
+updated:
+---
