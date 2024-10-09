@@ -1,4 +1,4 @@
-[notes]([https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0))
+[notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0)
 [exercises]([https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2](https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2))
 
 # 25/09/2024
