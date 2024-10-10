@@ -42,6 +42,16 @@ come negli esempi precedenti abbiamo visto casi in cui oggetti di relazioni dive
 ![[Pasted image 20241010080735.png]]
 in questo caso le informazioni sullo stipendio di un impiegato e quello del suo capo si trovano in tuple diverse, ma per poter confrontare valori di attributi diversi, questi devono trovarsi nella stessa tupla.
 soluzione: creiamo una copia della relazione 
-- con un nome diverso (per questo esempio, ImpiegatiC)
-- dato che avrò una tabella con campi dello stesso nome, è meglio rinominare un set di campi per poterli distinguere durante le interrogazioni
-usando un operatore di join, collego le due tabelle: in questo caso uso un [[algebra relazionale#$ theta$ join]] per combinare le tuple con C# = Capo#: in questo modo accodiamo i dati del capo a quelli dell’impiegato.
+>- con un nome diverso (per questo esempio, ImpiegatiC)
+>- dato che avrò una tabella con campi dello stesso nome, è meglio rinominare un set di campi per poterli distinguere durante le interrogazioni
+>usando un operatore di join, collego le due tabelle: in questo caso uso un [[algebra relazionale#$ theta$ join]] per combinare le tuple con C# = Capo#: in questo modo accodiamo i dati del capo a quelli dell’impiegato.
+>![[Pasted image 20241010081309.png]]
+>a questo punto, basta confrontare Stip con CStip per selezionare gli impiegati che ci interessano, e infine proiettare :)
+![[Pasted image 20241010082535.png]]
+
+>[!example] query: nomi e codici dei capi che guadagnao più di tutti i loro impiegati
+devo ancora usare la doppia negazione, quanto le tuple vengono scandite una volta in modo sequenziale bla bla bla
+riprendiamo la query dell’ultimo esempio: i capi che compaiono in quella query (di codice CC#) guadagnano meno di almeno uno dei loro impiegati. Questi sono i capi che NON ci servono nel risultato di questa query.
+quindi, per trovare il risultato, sottraiamo r (proiettato su CNome, CC#) al theta join fatto nell’esempio sopra (altrettanto proiettato su Cnome, CC#)
+
+>[!warning] in quest
