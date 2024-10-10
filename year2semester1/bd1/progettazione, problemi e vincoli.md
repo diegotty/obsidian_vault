@@ -50,3 +50,21 @@ la base di dati consiste di 4 relazioni:
 uno schema di basi di dati è “buono” se non presenta
 - ridondanze
 - anomalie di aggiornamento, inserimento e cancellazione
+spesso la cattiva progettazione, deriva da:
+- rappresentare concetti distinti in un’unica relazione
+- raggruppare le informazioni relative agli oggetti con le loro associazioni(al posto di recuperare dati usando riferimenti per valore tra oggetti associati, e operatori come il join, si prova a unire tutte le informazioni in un’unica tabella)
+>[!warning] bisogna rappresentare separatamente ogni concetto in una relazione distinta !!
+
+# vincoli
+ ci permettono di imporre certe condizioni che sono rispettate nella realtà che si vuole rappresentare in una base di dati
+ >[!example]
+ >- un voto intero è compreso tra 18 e 30
+ >- il numero di matricola identifica univocamente uno studente
+ >- il numero di matricola in un verbale di esame deve essere il numero di matricola di uno studente
+ 
+ un’istanza della base di dati è **legale** se soddisfa tutti i vincoli(cioè se la rappresentazione è fedele alla realtà)
+## definizione di vincoli nei DBMS
+un DBMS permette di 
+- definire dei vincoli, insieme allo schema della base di dati
+- verificare che l’istanza della base di dati sia legale
+- impedire l’inserimento di tuple che violerebbero vincoli
