@@ -4,6 +4,7 @@ related to:
 updated: "2024-10-10, 07:29"
 ---
 //TODO index 
+## relazioni che usano il quantificatore universale
 fino ad ora abbiamo visto query che implicavano condizioni equivalenti al quantificatore universale:
 $$\exists \text{(esiste almeno un)}$$
 ciò ci è comodo perchè:
@@ -31,4 +32,16 @@ $$\sigma_{N-pezzi \leq 100}(Cliente \bowtie Ordine)$$
 ![[Pasted image 20241010075413.png]]
 facciamo poi la proiezione su Nome, Citta, per aver la possibilità di fare una differenza (è necessaria l’union compatibilità)
 $$\pi_{Nome, Citta}(Cliente\bowtie Ordine) - \pi_{Nome, Citta}(\sigma_{N-pezzi \leq 100}(Cliente \bowtie Ordine))$$
->[!warning] in questo caso, 
+
+>[!warning] in questo caso, è necessario sottrarre al join tra Cliente e Ordine: altrimenti, sottraendo solo a Cliente, includeremmo anche i clienti che NON hanno fatto nessun ordine, e sono solo stati registrati in Cliente
+>inoltre, sempre in questo caso, se avessimo proiettato suolo sul nome, (dal minuendo o sottraendo) avremmo perso delle informazioni: il Rossi di milano sarebbe stato un duplicato. 
+>ATTENZIONE quando si proietta su un gruppo di attributi non unici, c’è il rischio di perdere informazioni
+## condizioni che richiedono il prodotto di una relazione con se stessa
+come negli esempi precedenti abbiamo visto casi in cui oggetti di relazioni diverse vengono associati, ci sono anche casi in cui sono in qualche modo associati oggetti nella relazione. Cioè query in cui confronto campi di tuple diverse nella stessa relazione.
+>[!example] query: nomi e codici degli impiegati che guadagnano quanto o più del loro capo
+![[Pasted image 20241010080735.png]]
+in questo caso le informazioni sullo stipendio di un impiegato e quello del suo capo si trovano in tuple diverse, ma per poter confrontare valori di attributi diversi, questi devono trovarsi nella stessa tupla.
+soluzione: creiamo una copia della relazione 
+- con un nome diverso (per questo esempio, ImpiegatiC)
+- dato che avrò una tabella con campi dello stesso nome, è meglio rinominare un set di campi per poterli distinguere durante le interrogazioni
+usando un operatore di join, collego le due tabelle: in questo caso uso un [[algebra relazionale#$ theta$ join]] per combinare le tuple con C# = Capo#: in questo modo accodiamo i dati del capo a quelli dell’impiegato.
