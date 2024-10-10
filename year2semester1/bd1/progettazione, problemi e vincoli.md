@@ -43,7 +43,7 @@ la base di dati consiste di 4 relazioni:
 - Corso (C#, Tit, Doc)
 - Esame (Matr, C#, Data, Voto)
 - Comune (Com, Prov)
->[!figure]![[Pasted image 20241010225513.png]]
+>[!figure]  ![[Pasted image 20241010225513.png]]
 >perfetto !
 
 # principi di progettazione
@@ -68,3 +68,13 @@ un DBMS permette di
 - definire dei vincoli, insieme allo schema della base di dati
 - verificare che l’istanza della base di dati sia legale
 - impedire l’inserimento di tuple che violerebbero vincoli
+# schema di relazione
+- uno schema di relazione R è un insieme di attributi {$A_{1},\dots,A_{n}$}
+- le prime lettere dell’alfabeto (A,B,C,…) denotano i singoli attributi
+- le ultime lettere dell’alfabeto (X,Y,…) denotano insiemi di attributi
+- se X ed Y sono insiemi di attributi XY denota $X\cup Y$
+- una tupla t su R è una funzione che associa ad ogni Attributo $A_{i}$ su R un valore $t[A_{i}]$ nel corrispondente dominio dom($A_{1}$)
+>[!figure] ![[Pasted image 20241010235012.png]]
+
+
+Se X è un sottoinsieme di R e $t_{1}$ $t_{2}$ sono due tuple su R, $t_{1}$ e $t_{2}$ coincidono su X ($t_{1}[X]=t_{2}[X]$) se $\forall A \in X (t_{1}[A]=t_{2}[A])$
