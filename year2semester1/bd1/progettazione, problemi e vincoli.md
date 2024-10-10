@@ -98,7 +98,8 @@ una dipendenza funzionale su R è una coppia ordinata di sottoinsiemi non vuoti 
 un’istanza r di R soddisfa la dipendenza funzionale X→Y se:
 $$\forall t_{1},t_{2}\in r(t_{1}[X]=t_{2}[X]\implies t_{1}[Y]=t_{2}[Y])$$
 quindi, se X è uguale per due tuple, anche Y deve essere uguale per quelle 2 tuple
->[!example] se due tuple hanno uguale codice fiscale, devono avere anche la data di nascita !
+>[!example] 
+>se due tuple hanno uguale codice fiscale, devono avere anche la data di nascita !
 >CF→DataNascita
 
 >[!info]
