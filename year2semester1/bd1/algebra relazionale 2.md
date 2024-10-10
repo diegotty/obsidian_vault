@@ -18,3 +18,17 @@ alcune query, però, potrebbero richiedere la valutazione di gruppi interi di tu
 - la valutazione, come definito prima, avviene in sequenza, tupla per tupla, e una volta inserita una tupla nel risultato, non possiamo più eliminarla
 in questo caso, la condizione equivale a valutare il quantificatore universale 
 $$\forall \text{ (per ogni)} \text{ o } \not\exists \text{ (non esiste nessun)}$$
+>[!example] query: nomi e città dei clienti che hanno SEMPRE ordinato più di 100 pezzi per articolo
+iin questo caso non ci basta fare una selezione sul join di Ordine e Cliente
+![[Pasted image 20241010074534.png]]
+in quanto: dato che non esiste un ordine, per il cliente di C#=C1, potrebbero accadere 2 cose:
+>- durante la selezione, viene considerata per prima la tupla in cui C1 ordina 200 pezzi: inserirla è sbagliato, in quanto nelle tuple succesive C1 fa ordini ≤ 100
+>- durante la selezione, viene considerata per prima la tupla in cui C1 ordina ≤ 100 pezzi. in questo caso, dovremmo memorizzare il fatto che C1 compare in una tupla che non soddisfa la condizione, per poi non aggiungerlo al risultato quando viene valutata la tupla in cui C1 ordina 200 pezzi
+soluzione: risolviamo il problema usando la doppia negazione
+- eseguiamo la query con la condizione negata, e troviamo gli oggetti che ALMENO una volta soddisfano la condizione CONTRARIA: questi elementi non devono apparire nel risultato della query originale. li ELIMINIAMO con l’operatore differenza dalla relazione Clienti.
+quindi:
+$$\sigma_{N-pezzi \leq 100}(Cliente \bowtie Ordine)$$
+![[Pasted image 20241010075413.png]]
+facciamo poi la proiezione su Nome, Citta, per aver la possibilità di fare una differenza (è necessaria l’union compatibilità)
+$$\pi_{Nome, Citta}(Cliente\bowtie Ordine) - \pi_{Nome, Citta}(\sigma_{N-pezzi \leq 100}(Cliente \bowtie Ordine))$$
+>[!warning] in questo caso, 
