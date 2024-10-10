@@ -3,7 +3,9 @@ created: "2024-10-10"
 related to: 
 updated: "2024-10-10, 07:29"
 ---
-//TODO index 
+>[!index]
+>
+>- [condizioni che richiedono il prodotto di una relazione con se stessa](#condizioni%20che%20richiedono%20il%20prodotto%20di%20una%20relazione%20con%20se%20stessa)
 ## relazioni che usano il quantificatore universale
 fino ad ora abbiamo visto query che implicavano condizioni equivalenti al quantificatore universale:
 $$\exists \text{(esiste almeno un)}$$
@@ -53,5 +55,6 @@ soluzione: creiamo una copia della relazione
 devo ancora usare la doppia negazione, quanto le tuple vengono scandite una volta in modo sequenziale bla bla bla
 riprendiamo la query dell’ultimo esempio: i capi che compaiono in quella query (di codice CC#) guadagnano meno di almeno uno dei loro impiegati. Questi sono i capi che NON ci servono nel risultato di questa query.
 quindi, per trovare il risultato, sottraiamo r (proiettato su CNome, CC#) al theta join fatto nell’esempio sopra (altrettanto proiettato su Cnome, CC#)
+$$\pi_{CNome, CC\#}()\sigma_{Capo\#=CC\#}(Impiegati x ImpiegatiC)) - \pi_{CNome, CC\#}(r)$$
 
->[!warning] in quest
+>[!warning] in questo caso, non basta sottrarre alla tabella Impiegati: esistono impiegati che non sono capi, e sottraendo r a Impiegati, nel risultato rimarrebbero impiegati che non sono capi.
