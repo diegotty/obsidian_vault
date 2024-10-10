@@ -3,7 +3,19 @@ created: "2024-10-10"
 related to: 
 updated: "2024-10-10, 22:34"
 ---
-//TODO index
+>[!index]
+>
+>- [ipotesi 1](#ipotesi%201)
+>	- [anomalie di aggiornamento](#anomalie%20di%20aggiornamento)
+>	- [anomalie di inserimento](#anomalie%20di%20inserimento)
+>	- [anomalie di cancellazione](#anomalie%20di%20cancellazione)
+>- [ipotesi 2](#ipotesi%202)
+>- [ipotesi 3](#ipotesi%203)
+>- [principi di progettazione](#principi%20di%20progettazione)
+>- [vincoli](#vincoli)
+>	- [definizione di vincoli nei DBMS](#definizione%20di%20vincoli%20nei%20DBMS)
+>- [schema di relazione](#schema%20di%20relazione)
+>	- [dipendenze funzionali](#dipendenze%20funzionali)
 # obiettivo
 supponiamo di voler crerae una base di dati contente i seguenti dati di studenti universitari:
 - dati anagrafici e identificativi: 
@@ -78,3 +90,20 @@ un DBMS permette di
 
 
 Se X è un sottoinsieme di R e $t_{1}$ $t_{2}$ sono due tuple su R, $t_{1}$ e $t_{2}$ coincidono su X ($t_{1}[X]=t_{2}[X]$) se $\forall A \in X (t_{1}[A]=t_{2}[A])$
+## dipendenze funzionali
+una dipendenza funzionale su R è una coppia ordinata di sottoinsiemi non vuoti X ed Y di R
+- se X→Y, 
+- X(determinante) determina funzionalmente Y
+- Y(dipendente) dipende funzionalmente da X
+un’istanza r di R soddisfa la dipendenza funzionale X→Y se:
+$$\forall t_{1},t_{2}\in r(t_{1}[X]=t_{2}[X]\implies t_{1}[Y]=t_{2}[Y])$$
+quindi, se X è uguale per due tuple, anche Y deve essere uguale per quelle 2 tuple
+>[!example] se due tuple hanno uguale codice fiscale, devono avere anche la data di nascita !
+>CF→DataNascita
+
+>[!info]
+>F={A→B, B→C}
+![[Pasted image 20241011000436.png]]
+in questo caso, ogni istanza legale soddisfa A→B e B→C, E inoltre soddisfa anche A→C … possiamo considerarla allora “come se fosse in F” ?
+si !
+dato uno schema R e un insieme F di dipendenze funzionali, ci sono delle dipendenze funzionali che non sono in F, ma che sono soddisfatte da ogni istanza legale di R.
