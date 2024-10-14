@@ -11,3 +11,9 @@ funzioni biettive, funzione inversa, operazioni sulle funzioni (composizione), t
 costruzione di Q da Z, algoritmo divisione euclidea modulo b, esercizio su funzione
 # 03/10/2024
 congettura di collatz, prep all’esercizio 21, esercizio 12
+# 08/10/2024
+anello commutativo unitario(def e assiomi), regola della cancellazione, elemento invertibile, aclune proprietà di anelli c.u
+# 09/10/2024
+relazione di divisibilità, elementi irriducibili e primi, valore assoluto, algoritmo di divisione euclidea e congruenza modulo n
+# 10/10/2024
+compatibilità di operazioni con modulo, definizioni per operatori su Z/Z(congruenza modn), lemma su delta, algoritmo di euclide per MCD, identità di Bezoutlecture
