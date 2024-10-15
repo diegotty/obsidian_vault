@@ -23,3 +23,32 @@ i diversi thread in un processo condividono quasi tutte le risorse(tra cui memor
 user addres space: la parte dell’immagine condivisa tra i thread
 thread control block: gestisce solo la parte di scheduling
 ## motivi per usare i thread
+- è più efficiente la creazione, terminazione, fare lo switching e farli comunicare
+	- infatti spawn (operazione per creare un nuovo processo su un thread) è più leggera di fork, in quanto devo “fare meno cose” (a livello di scrittura di PCB)
+altre operazioni possibili su thread:
+- spawn 
+- block: non per I/O, ma esplicito (es: deve aspettare un alto thread)
+- unblock: esplicito
+- finish
+# tipi di thread
+>[!figure] ![[Pasted image 20241014195754.png]]
+ULT: i thread vengono gestiti a livello utente, quindi il SO non ha idea dell’esitenza di essi
+KLT: il SO è a conoscenza e gestisce i thread dei processi
+## ULT (User Level Thread)
+vantaggi degli ULT:
+- switch tra thread più efficiente: non devo fare il mode switch al kernel
+- permettono di usare i thread in sistemi operativi che non li offrono nativamente
+svantaggi degli ULT:
+- se un thread si blocca (blocked, non block chiamato dal processo), tutti i thread si bloccano perchè il SO non sa che ci sono altri thread di quel processo da poter eseguire
+- se ci sono più cores, il SO pensa che ci sia comunque un solo thread, quindi è meno efficiente
+## KLT (Kernel Level Thread)
+vantaggi dei KLT: 
+- se un thread si blocca, si blocca solo il thread richiedente (dato che SO sà dell’esistenza degli altri thread del processo)
+# thread in Linux
+Linux deriva da Unix, che non aveva i thread
+i thread si chiamano LWP in linux, e sono possibili sia i KLT(usati principalmente dal SO) che gli ULT(che vengono però poi mappati in KLT)
+## ambiguità dei nomi 
+usando il comando `ps` su terminale, possiamo vedere il PID dei processi: esso è unico per tutti i thread del processo
+i vari thread del processo vengono identificati con il **tid(task identifier)**. il tid non è un numero che va da 1 a n, bensì è strettamente collegato al PID che vediamo con `ps` :
+- il pid(entry del PCB) è unico per ogni thread, proprio perchè l’unità base, LWP, coincide con il processo di thread.
+- l’entry del PCB che dà il PID comune a tutti i thread di un processo (e quindi quello che vediamo con `ps`) è il **tgid**
