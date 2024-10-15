@@ -1,6 +1,6 @@
 {
   "workspaces": {
-    "os1": {
+    "bd1": {
       "main": {
         "id": "3ff226ac07ffcebf",
         "type": "split",
@@ -10,31 +10,60 @@
             "type": "tabs",
             "children": [
               {
-                "id": "3acb04dfa15bfc38",
+                "id": "a3dfdff6f8beb28a",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/gestione dei processi.md",
+                    "file": "year2semester1/bd1/raw notes/10-09-2024.md",
                     "mode": "source",
                     "source": false
                   }
                 }
               },
               {
-                "id": "6a333bf825474476",
+                "id": "ea7124b99005f3bb",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/gerarchia della memoria.md",
+                    "file": "year2semester1/bd1/algebra relazionale.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "949e87c61f3df726",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "personal stuff/arduino/basics.md",
                     "mode": "source",
                     "source": false
                   }
                 }
               }
-            ],
-            "currentTab": 1
+            ]
+          },
+          {
+            "id": "76f0ab5bfb582b72",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "a1f32a3bdb370708",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year2semester1/bd1/algebra relazionale 2.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
           }
         ],
         "direction": "vertical"
@@ -100,7 +129,7 @@
                 "state": {
                   "type": "backlink",
                   "state": {
-                    "file": "year2semester1/os1/gerarchia della memoria.md",
+                    "file": "year2semester1/bd1/raw notes/10-09-2024.md",
                     "collapseAll": false,
                     "extraContext": false,
                     "sortOrder": "alphabetical",
@@ -117,7 +146,7 @@
                 "state": {
                   "type": "outgoing-link",
                   "state": {
-                    "file": "year2semester1/os1/gerarchia della memoria.md",
+                    "file": "year2semester1/bd1/raw notes/10-09-2024.md",
                     "linksCollapsed": false,
                     "unlinkedCollapsed": true
                   }
@@ -140,7 +169,7 @@
                 "state": {
                   "type": "outline",
                   "state": {
-                    "file": "year2semester1/os1/gerarchia della memoria.md"
+                    "file": "year2semester1/bd1/raw notes/10-09-2024.md"
                   }
                 }
               },
@@ -173,9 +202,9 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "952f10de0643e940",
-      "mtime": "2024-10-08T09:06:22+02:00"
+      "active": "87bff695949ea9dc",
+      "mtime": "2024-10-10T08:36:40+02:00"
     }
   },
-  "active": "os1"
+  "active": "bd1"
 }

@@ -1,4 +1,4 @@
-[notes]([https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7))
+[notes](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7)
 [exercises]([https://notability.com/n/QL1VhUe_397quBUZl2XLI](https://notability.com/n/QL1VhUe_397quBUZl2XLI))
 
 # 25/09/2024
@@ -11,3 +11,7 @@ spazio di probabilità con esiti equiprobabili
 problema dei compleanni, esempio su approcci diversi (contare e non contare l’ordine)
 # 07/10/2024
 correzione esercizi, principio di inclusione/esclusione generalizzato
+# 08/10/2024
+probabilità condizionata, regola del prodotto, inizio teorema di Bayes
+# 09/10/2024
+legge della probabilità totale, esempi di probabilità condizionata, gioco delle 3 carte
