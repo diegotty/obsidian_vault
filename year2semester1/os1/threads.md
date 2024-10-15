@@ -22,3 +22,4 @@ i diversi thread in un processo condividono quasi tutte le risorse(tra cui memor
 >[!figure] ![[Pasted image 20241014195251.png]]
 user addres space: la parte dell’immagine condivisa tra i thread
 thread control block: gestisce solo la parte di scheduling
+## motivi per usare i thread
