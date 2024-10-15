@@ -1,19 +1,4 @@
->[!index]
->- [tipi di istruzioni](#tipi%20di%20istruzioni)
->- [ciclo a due passi](#ciclo%20a%20due%20passi)
->- [interruzioni](#interruzioni)
->- [interruzioni sincrone](#interruzioni%20sincrone)
->- [interruzioni asincrone](#interruzioni%20asincrone)
->- [istruzioni di ritorno](#istruzioni%20di%20ritorno)
->- [ciclo con controllo per interruzioni](#ciclo%20con%20controllo%20per%20interruzioni)
->- [interrupt handler](#interrupt%20handler)
->- [ciclo con disabilitazione delle interruzioni](#ciclo%20con%20disabilitazione%20delle%20interruzioni)
->- [gestione i/o](#gestione%20i/o)
->	- [i/o programmato](#i/o%20programmato)
->	- [i/o da interruzioni](#i/o%20da%20interruzioni)
->	- [accessso diretto in memoria](#accessso%20diretto%20in%20memoria)
->- [system calls](#system%20calls)
-
+//TODO 
 andiamo ad analizzare il ciclo di esecuzione, aggiungendo a mano a mano complessita’
 ### tipi di istruzioni
 - scambio dati tra processore e memoria
@@ -87,3 +72,6 @@ rappresentazione grafica dei vari modi di gestire le chiamate all’i/o
 le system calls(già viste in archiettura degli elaboratori) sono interrupt “speciali”, che possono essere chiamati da un programma. 
 - per esempio, il creare un nuovo processo è una syscall: fork (in Linux). dato che deve modificare la lista dei PCB, l’handler d questa syscall verà eseguito in modalità kernel
 //TODO add info 
+# segnali 
+a differenza degli interrupt, i segnali:
+- possono essere inviati da un processo ad un altro, tramite system call ()
