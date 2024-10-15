@@ -74,4 +74,11 @@ le system calls(già viste in archiettura degli elaboratori) sono interrupt “s
 //TODO add info 
 # segnali 
 a differenza degli interrupt, i segnali:
-- possono essere inviati da un processo ad un altro, tramite system call ()
+- possono essere inviati da un processo ad un altro, tramite system call `kill` (misleading, non uccide il processo che la riceve(anche se nel 95% dei segnali mandati poi il processo viene ucciso))
+>[!example] i segnali possono essere inviati da un processo in modalità sistema
+![[Pasted image 20241015093214.png]]
+## gestione dei segnali
+quando un segnale viene lanciato, esso viene aggiunto all’opportuno campo del PCB del processo ricevente. quando il processo viene nuovamente schedulato per l’esecuzione, il kernel controlla prima se ci sono segnali pendenti, e se sì, esegue una opportuan funzione chiamata **signal handler**
+## signal handler
+i signal handler vengono eseguiti in user mode, e possono essere sovrascritti dal programmatore per gestire cosa deve accadere quando viene ricevuto un segnale
+- esistono solo 2 signal handler non sovrascrivibili (SIGKILL, SIGSTOP)
