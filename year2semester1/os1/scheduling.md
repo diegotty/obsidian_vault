@@ -30,8 +30,23 @@ lo STS alloca tempo di esecuzione su un processore per ottimizzare il comportame
 bisogna prima effettuare delle distizioni tra i tipi di criteri:
 - criteri per utente: minimizzazione del tempo di risposta (tempo tra una richiesta di computazione e la visualizzazione dell’output)
 - criteri per sistema: uso efficiente ed effettivo del processore
-- criteri correlati alle prestazioni:
-- criteri non correlati alle prestazioni:
+- criteri correlati alle prestazioni: quantitativi e facili da misurare
+- criteri non correlati alle prestazioni: qualitativi, difficili da misurare
+### criteri utente
+prestazionali:
+- **turnaround time**: tempo tra la creazione di un processo e il suo completamento. comprende i vari tempi di attesa (I/O, processore), quindi è un buon criterio per i processi batch, non molto per quelli interattivi
+- **response time**: tempo tra la sottomissione di una richiesta e l’inizio della risposta, buono per i processi interattivi in cui si comincia a dare una risposta mentre ancora il processo non è finito
+- **deadline**: nei casi in cui si possono specificare scadenze per i processi, lo scheduler dovrebbe come prima cosa massimizzare il numero di scadenze rispettate, con la minor variabiltà nei tempi di risposta/ritorno
+non prestazionali:
+- **predictability**:
+### criteri di sistema
+prestazionali:
+- **throughput**: numero di processi completati per unità di tempo (o che abbiano cominciato a produrre output, per gli interattivi)
+- **processor utilization**: percentuale di tempo in cui il processore viene utilizzato (il processore deve essere idle il minor tempo possibile)
+non prestazionali:
+- **fairness**:
+- **enforcing priorities**:
+- **balancing resources**: lo scheduler deve far sì che le risorse del sistema siano utilizzate il più possibile, quindi i processi che useranno meno le risorse attualmente me
 ### i/o scheduling
 //TODO add quando lo facciamo
 
