@@ -2,7 +2,7 @@
 >- [relazioni](#relazioni)
 >- [dominio](#dominio)
 >	- [NULL](#NULL)
->	- [grado e cardinalita’ di una relazione](#grado%20e%20cardinalita%E2%80%99%20di%20una%20relazione)
+>		- [grado e cardinalita’ di una relazione](#grado%20e%20cardinalita%E2%80%99%20di%20una%20relazione)
 >- [attributi](#attributi)
 >- [dati fra relazioni diverse](#dati%20fra%20relazioni%20diverse)
 >- [vincoli di integrita’](#vincoli%20di%20integrita%E2%80%99)
