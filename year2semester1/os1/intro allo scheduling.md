@@ -3,8 +3,24 @@ created: 2024-10-15
 related to: "[[gestione dei processi]]"
 updated: 2024-10-15, 09:32
 ---
+>[!index]
+>- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
+>	- [long-term scheduling](#long-term%20scheduling)
+>	- [medium-term scheduling](#medium-term%20scheduling)
+>- [short-term scheduling](#short-term%20scheduling)
+>- [criteri per lo STS](#criteri%20per%20lo%20STS)
+>	- [criteri utente](#criteri%20utente)
+>	- [criteri di sistema](#criteri%20di%20sistema)
+>	- [i/o scheduling](#i/o%20scheduling)
+>- [politiche di scheduling](#politiche%20di%20scheduling)
+>- [funzione di selezione](#funzione%20di%20selezione)
+>- [modalità di decisione](#modalit%C3%A0%20di%20decisione)
+
 lo scheduling gestisce l’allocazione del tempo di esecuzione tra i diversi processi che ne fanno richiesta contemporaneamente
 ## obiettivi dello scheduling
+
+>[!figure] ![[Pasted image 20241015095636.png]]
+>transizioni decise dai vari tipi di scheduler
 ### long-term scheduling
 - decide quali programmi sono ammessi nel sistema per essere eseguiti
 - spesso FIFO, o FIFO “corretto” che tiene conto di criteri come la priorità
@@ -52,11 +68,6 @@ code per gestione della priorità
 
 ### i/o scheduling
 //TODO add quando lo facciamo
-
->[!figure] ![[Pasted image 20241015095636.png]]
->transizioni decise dai vari tipi di scheduler
-
-
 # politiche di scheduling
 >[!figure] ![[Pasted image 20241016081525.png]]
 overview delle politiche di scheduling
@@ -73,4 +84,6 @@ specifica quando chiamare la funzione di selezione
 - se un processo è in esecuzione, allora arrriva o fino a terminazione, o fino ad una richiesta di I/O (o comunque una richiesta bloccante)
 **non-preemptive**:
 - il SO può interrompere un processo in esecuzione anche senza le condizioni della modalità preemptive, e in questo caso il processo diventerà “ready”
-- la preemption di un processo può avvenrire per l’arrivo di nuovi processi (appena forkati) o per un interrupt
+- la preemption di un processo può avvenrire per l’arrivo di nuovi processi (appena forkati) o per un interrupt:
+	- interrupt di I/O: un altro processo che era blocked diventa ready
+	- clock interrupt: un interrupt periodico, per evitare che un processo monopolizzi il sistema
