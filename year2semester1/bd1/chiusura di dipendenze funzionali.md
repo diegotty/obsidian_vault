@@ -41,4 +41,30 @@ tale dipendenza è detta banale !
 $$X\to Y\in F^+ \iff \forall A\in Y(X\to A\in F^+)$$
 dato che $X \to Y$ deve essere soddisfatta da ogni istanza di R, si ha:
 - Se $t_{1}[X]=t_{2}[X]$ allora $t_{1}[Y]=t_{2}[Y]$
-- 
+- se $A \in Y$ e $t_{1}[A]\neq t_{2}[A]$, non può essere $t_{1}[Y]=t_{2}[Y]$
+- se $\forall A \in Y, t_{1}[A]=t_{2}[A]$, allora avremo $t_{1}[Y]=t_{2}[Y]$ 
+>[!figure] ![[Pasted image 20241017075818.png]]
+
+ma come facciamo a calcolare l’insieme di dipendenze $F^+$ che viene soddisfatto da ogni istanza legale di uno schema R, su cui è definito un insieme di dipendenze funzionali R?
+- abbiamo concluso banalmente che $F \subseteq F^+$, in quanto un’istanza è legale solo se soddisfa tutte le dipendenze di F, ma dobbiamo trovare le altre !
+partiamo da un insieme diverso, “facile” da calcolare:
+# $F^A$
+$F^A$ in cui A sta per Armstrong
+anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 assiomi di Armstrong:
+- se $f \in F$ allora $f \in F^A$
+## assioma della riflessività
+- se $Y \subseteq X \subseteq R$ allora $X → Y \in F^A$ (dipendenze banali)
+>[!example] 
+$Nome \subseteq (Nome, Cognome)$ ($X={Nome, Cognome}, Y={Nome) 
+ovviamente se due tuple hanno uguale X, allora avranno sicuramente uguale l’attributo Nome(Y), e idem per Cognome.
+quindi la dipendenza viene sempre soddisfatta
+
+## assioma dell’aumento
+- se $X→Y \in F^A$ allora, per ogni $Z \subseteq R$, XZ → YZ \in F^A$ (assioma dell’aumento)
+>[!example]
+>
+## assioma della transitività
+- se $X→Y \in F^A$ e $Y→Z \in F^A$ allora $X→Z \in F^A$ (assioma della transitività)
+>[!example]
+
+dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F
