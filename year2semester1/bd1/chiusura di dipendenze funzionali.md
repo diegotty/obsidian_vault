@@ -69,7 +69,7 @@ ovviamente se due tuple hanno uguale X, allora avranno sicuramente uguale l’at
 quindi la dipendenza viene sempre soddisfatta
 
 ## assioma dell’aumento
-- se $X→Y \in F^A$ allora, per ogni $Z \subseteq R$, XZ → YZ \in F^A$ (assioma dell’aumento)
+- se $X→Y \in F^A$ allora, per ogni $Z \subseteq R$, $XZ → YZ \in F^A$ (assioma dell’aumento)
 >[!example]
 >$CodFiscale \to Cognome$ è soddisfatta se, quando 2 tuple hanno lo stesso CodFiscale, allora hanno lo stesso Cognome.
 >Se la dipendenza è soddisfatta e aggiungo l’attributo indirizzo da entrambe le parti, avrò che se due tuple sono uguali in (CodFiscale, Indirizzo), quindi
