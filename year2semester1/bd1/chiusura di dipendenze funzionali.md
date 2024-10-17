@@ -15,4 +15,30 @@ con $K→R$ si intende che il sottoinsieme K determina l’intera istanza
 se il sottoinsieme K soddisfa solo la proprietà 1, allora K è una superchiave di R.
 per essere una chiave, la proprietà 2 deve essere soddisfatta (non devono esistere sottoinsiemi di K che sono a loro volta chiavi)
 >[!example] Studente = Matr Cognome Nome Data
->- il numero di matricola viene assegnato allo studente per iden
+>- il numero di matricola viene assegnato allo studente per identificarlo,quindi
+>- non ci possono essere 2 studenti con lo stesso numero di matricola,quindi
+>- un’istanza di Studente, per rappresentare correttamente la realtà, non può contenere due tuple con lo stesso numero di matricola, quindi
+$$\text{Matr} \to \text{Matr Cognome Nome Data}$$
+deve essere soddisfatta da ogni istanza legale, quindi
+**Matr è una chiave per Studente**
+
+>[!warning] uno schema può avere più chiavi
+# chiave primaria
+anche se uno schema può avere più chiavi, in SQL una di esse verrà scelta come **chiave primaria**, e come tale non può assumere valore nullo
+
+>[!info] per dichiarare le chiavi che non sono primarie su SQL, esistono le direttive UNIQUE e NON_NULL(tipo)
+
+# dipendenze funzionali banali
+dati uno schema R e due sottoinsiemi non vuoti, 
+$$X,Y \subset R : Y \subseteq X$$
+ogni istanza di R soddisfa la dipendenza funzionale 
+$$X\to Y$$
+>[!figure] ![[Pasted image 20241017074537.png]]
+
+pertanto, se $Y \subseteq X$, allora $X \to Y \in F^+$
+tale dipendenza è detta banale !
+## proprietà di dipendenze funzionali
+$$X\to Y\in F^+ \iff \forall A\in Y(X\to A\in F^+)$$
+dato che $X \to Y$ deve essere soddisfatta da ogni istanza di R, si ha:
+- Se $t_{1}[X]=t_{2}[X]$ allora $t_{1}[Y]=t_{2}[Y]$
+- 
