@@ -64,10 +64,14 @@ quindi la dipendenza viene sempre soddisfatta
 >[!example]
 >$CodFiscale \to Cognome$ è soddisfatta se, quando 2 tuple hanno lo stesso CodFiscale, allora hanno lo stesso Cognome.
 >Se la dipendenza è soddisfatta e aggiungo l’attributo indirizzo da entrambe le parti, avrò che se due tuple sono uguali in (CodFiscale, Indirizzo), quindi
->$t_{1}[CodFiscale]=t_{2}[CodFiscale]\\cap$
->
+>$t_{1}[CodFiscale]=t_{2}[CodFiscale] \land t_{1}[Indirizzo]=t_{2}[Indirizzo]$
+allora sicuramente $t_{1[Cognome]=t_{2}[Cognome]\land t_{1}[Indirizzo]=t_{2}[Indirizzo]}$
+>quindi se viene soddisfatta $CodFiscale \to Cognome$
+>viene soddisfatta anche
+>$CodFiscale, Indirizzo → Cognome, Indirizzo$
 ## assioma della transitività
 - se $X→Y \in F^A$ e $Y→Z \in F^A$ allora $X→Z \in F^A$ (assioma della transitività)
 >[!example]
+>date $Matricola \to CodFiscale$ e $CodFiscale \to Cognome$, se entrambe le dipendenze sono soddisfatte, due duple cha hanno Matricola uguale avranno CodFiscale uguale, e due tuple che hanno CodFiscale uguale avranno Cognome uguale. quindi sarà soddisfatta anche $Matricola \to Cognome$
 
 dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F
