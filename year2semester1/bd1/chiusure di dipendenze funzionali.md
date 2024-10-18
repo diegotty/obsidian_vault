@@ -50,16 +50,17 @@ ma come facciamo a calcolare l’insieme di dipendenze $F^+$ che viene soddisfat
 partiamo da un insieme diverso, “facile” da calcolare:
 # $F^A$
 $F^A$ in cui A sta per Armstrong
-anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 assiomi di Armstrong:
+anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 assiomi di Armstrong
+## assiomi di Armstrong
 - se $f \in F$ allora $f \in F^A$
-## assioma della riflessività
+### assioma della riflessività
 - se $Y \subseteq X \subseteq R$ allora $X → Y \in F^A$ (dipendenze banali)
 >[!example]-
 $Nome \subseteq (Nome, Cognome)$ ($X={Nome, Cognome}, Y={Nome) 
 ovviamente se due tuple hanno uguale X, allora avranno sicuramente uguale l’attributo Nome(Y), e idem per Cognome.
 quindi la dipendenza viene sempre soddisfatta
 
-## assioma dell’aumento
+### assioma dell’aumento
 - se $X→Y \in F^A$ allora, per ogni $Z \subseteq R$, $XZ → YZ \in F^A$ (assioma dell’aumento)
 >[!example]-
 >$CodFiscale \to Cognome$ è soddisfatta se, quando 2 tuple hanno lo stesso CodFiscale, allora hanno lo stesso Cognome.
@@ -69,10 +70,29 @@ allora sicuramente $t_{1[Cognome]=t_{2}[Cognome]\land t_{1}[Indirizzo]=t_{2}[Ind
 >quindi se viene soddisfatta $CodFiscale \to Cognome$
 >viene soddisfatta anche
 >$CodFiscale, Indirizzo → Cognome, Indirizzo$
-## assioma della transitività
+### assioma della transitività
 - se $X→Y \in F^A$ e $Y→Z \in F^A$ allora $X→Z \in F^A$ (assioma della transitività)
 >[!example]-
 >date $Matricola \to CodFiscale$ e $CodFiscale \to Cognome$, se entrambe le dipendenze sono soddisfatte, due duple cha hanno Matricola uguale avranno CodFiscale uguale, e due tuple che hanno CodFiscale uguale avranno Cognome uguale. quindi sarà soddisfatta anche $Matricola \to Cognome$
 
-#r
+## regole derivate 
+dagli assiomi di Armstrong possiamo ricavare, come conseguenza, tre regole che consentono di derivare, da dipendenze funzionali in $F^A$, altre dipendenze funzionali in $F^A$
+### regola dell’unione
+se $X \to Y \in F^A$ e $X \to Z \in F^A$ allora $X \to YZ \in F^A$
+>[!info]- Dimostrazione
+>- Se $X \to Y \in F^A$, per l’assioma dell’aumento(aggiungendo X) si ha $X \to XY \in F^A$
+>- Analogamente, se $X \to Z \in F^A$, per l’assioma dell’aumento si ha $XY \to YZ \in F^A$.
+>- quindi, poichè $X \to XY \in F^A \text{   e } XY \to YZ \in F^A$, per l’assioma della transitività si ha $X \to YZ \in F^A$
+
+### regola della decomposizione
+se $X \to Y \in F^A$ e $Z \subseteq Y$ allora $X \to Z \in F^A$
+>[!info]- Dimostrazione
+ - se $Z \subseteq Y$ allora, per l’assioma di riflessività, si ha $Y \to Z \in F^A$. 
+ - quindi, poc
+
+### regola della pseudotransitività
+se $X \to Y \in F^A$ e $WY \to Z \in F^A$ allora $WX \to Z \in F^A$
+>[!info]- Dimostrazione
+
+
 dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F

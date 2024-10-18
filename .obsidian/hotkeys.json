@@ -27,5 +27,6 @@
   ],
   "global-search:open": [],
   "editor:toggle-checklist-status": [],
-  "editor:open-search-replace": []
+  "editor:open-search-replace": [],
+  "editor:delete-paragraph": []
 }
