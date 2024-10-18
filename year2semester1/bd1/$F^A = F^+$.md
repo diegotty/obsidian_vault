@@ -22,4 +22,5 @@ passo induttivo, $i$:
 - $X \to Y \in F^A$
 - diciamo che $X \to Y$ non è altro che la dipendenza funzionale ottenuta applicando uno degli assiomi di Armstrong $i-1$ volte(la dipendenza funzionale dell’ipotesi induttiva), a cui applichiamo uno degli assiomi di Armstrong.
 - abbiamo quindi 3 casi, uno per ogni assioma che potremmo aver applicato alla dipendenza funzionale dell’ipotesi induttiva.
-1. **assioma della riflessività** ipotizziamo di aver usato l’assioma della riflessività sull’ipotesi induttiva. **applichiamo quindi l’assioma al contrario**, quindi sappiamo che: 
+1. **assioma della riflessività** ipotizziamo di aver usato l’assioma della riflessività sull’ipotesi induttiva. **applichiamo quindi l’assioma al contrario**, quindi sappiamo che: $Y \subseteq X$. ciò vuol dire che, $\forall r \text{, (r istanza legale di R)}, t_{1}[X]=t_{2}[X] \implies t_{1}[Y]=t_{2}[Y])$
+2. **assioma dell’aumento** ipotiziamo di aver usato l’assioma dell’aumento sulla dipendenza funzionale ottenuta in $i-1$ passi, che per comodità chiamiamo $V \to W \in F^A$(che per ipotesi induttiva, $\in F^+$). possiamo quindi ricavare che $X = VZ, Y=WZ$
