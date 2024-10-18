@@ -106,9 +106,20 @@ quindi:
 $$X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A \iff X \to A_{i} \in F^A, i=1,\dots,n $$
 # chiusura di un insieme di attributi
 Siano R uno schema di relazione, F un insieme di dipendenze funzionali su R e X un sottoinsieme di R.
-La chiusura di X rispetto ad F, denotata con $X^+_{F}$ è definita nel modo seguente:
+La chiusura di X rispetto ad F, denotata con $X^+_{F}$ (o $X^+$) è definita nel modo seguente:
 $$X^+_{F} = \{A|X \to A \in F^A\}$$
 quindi la chiusura di X rispetto ad F contiene gli attributi che sono determinati da X, in $F$ ma anche $F^A$ !!
  la chiusura di X non è mai vuota!! anche solo per riflessività, quindi banalmente: 
  $$X \subseteq X^+_{F}$$
- dimostreremo che se le tuple sono uguali su X, lo devono essere anche su _____
+ dimostreremo che se le tuple sono uguali su X, lo devono essere anche su IDKIDKIDKDIKDKIDK
+# lemma 1
+Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. Si ha che:
+- $X \to Y \in F^A$ se e solo se $Y \subseteq X^+$
+>[!info] dimostrazione
+>- sia $Y=A_{1},A_{2},\dots,A_{n}$
+>**parte se:**
+>poichè $Y \subseteq X^+$, per ogni i, $i=1,…,n$ si ha che $X \to A_{i} \in F^A$. quindi, per la regola dell’unione, $X \to Y \in F^A$
+>**parte solo se:**
+> poichè $X \to Y \in F^A$, per la regola della decomposizione si ha che $X \to A_{i} \in F^A$ per ogni i, $i=1,\dots,n$, cioè $A_{i} \in X^+$ per ogni i, $i=1,\dots,n$ . quindi $Y \subseteq X^+$
+
+
