@@ -7,6 +7,8 @@ updated: 2024-10-17, 07:24
 dato uno schema R e un insieme di dipendenze funzionali F, un’istanza legale di R oltre a soddisfare l’insieme di dipendenze funzionali F, soddisfa anche un insieme di dipendenze più grande: $F^+$
 $$F \subseteq F+$$
 $F^+$ è la chiusura di F, cioè l’insieme di dipendenze funzionali che sono soddisfate da ogni stanza legale di R
+
+>[!warning] due insiemi di dipendenze che hanno la stessa chiusura, avranno le stesse istanze valide (or smn like that)
 # chiave e superchiave
 dato uno schema R e un insieme di di dipendenze funzionali F, un sottoinsieme K dello schema R è una chiave di R se:
 1. $K→R \in F^+$
@@ -102,5 +104,11 @@ Osserviamo:
  - per la regola della decomposizione, se $X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A$ allora $X \to A_{i} \in F^A, i=1,\dots,n$
 quindi:
 $$X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A \iff X \to A_{i} \in F^A, i=1,\dots,n $$
-
- 
+# chiusura di un insieme di attributi
+Siano R uno schema di relazione, F un insieme di dipendenze funzionali su R e X un sottoinsieme di R.
+La chiusura di X rispetto ad F, denotata con $X^+_{F}$ è definita nel modo seguente:
+$$X^+_{F} = \{A|X \to A \in F^A\}$$
+quindi la chiusura di X rispetto ad F contiene gli attributi che sono determinati da X, in $F$ ma anche $F^A$ !!
+ la chiusura di X non è mai vuota!! anche solo per riflessività, quindi banalmente: 
+ $$X \subseteq X^+_{F}$$
+ dimostreremo che se le tuple sono uguali su X, lo devono essere anche su _____
