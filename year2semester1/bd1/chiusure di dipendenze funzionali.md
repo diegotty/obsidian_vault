@@ -50,7 +50,7 @@ ma come facciamo a calcolare l’insieme di dipendenze $F^+$ che viene soddisfat
 partiamo da un insieme diverso, “facile” da calcolare:
 # $F^A$
 $F^A$ in cui A sta per Armstrong
-anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 assiomi di Armstrong
+anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 assiomi di Armstrong, e dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F
 ## assiomi di Armstrong
 - se $f \in F$ allora $f \in F^A$
 ### assioma della riflessività
@@ -87,12 +87,20 @@ se $X \to Y \in F^A$ e $X \to Z \in F^A$ allora $X \to YZ \in F^A$
 ### regola della decomposizione
 se $X \to Y \in F^A$ e $Z \subseteq Y$ allora $X \to Z \in F^A$
 >[!info]- Dimostrazione
- - se $Z \subseteq Y$ allora, per l’assioma di riflessività, si ha $Y \to Z \in F^A$. 
- - quindi, poc
+>- se $Z \subseteq Y$ allora, per l’assioma di riflessività, si ha $Y \to Z \in F^A$. 
+>- quindi, poichè $X \to Y \in F^A \text{e} Y \to Z \in F^A$, per l’assioma della transitività si ha $X \to Z \in F^A$
 
 ### regola della pseudotransitività
 se $X \to Y \in F^A$ e $WY \to Z \in F^A$ allora $WX \to Z \in F^A$
 >[!info]- Dimostrazione
+>- se $X \to Y \in F^A$, per l’assioma dell’aumento si ha $WX \to WY \in F^A$
+>- quindi, per l’assioma della transitività si ha $WX \to Z \in F^A$
 
+## osservazione
+Osserviamo:
+- per la regola dell’unione, se $X \to A_{i} \in F^A, i=1,\dots,n$ allora $X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A$
+ - per la regola della decomposizione, se $X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A$ allora $X \to A_{i} \in F^A, i=1,\dots,n$
+quindi:
+$$X \to A_{1},\dots,A_{i},\dots A_{n} \in F^A \iff X \to A_{i} \in F^A, i=1,\dots,n $$
 
-dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F
+ 
