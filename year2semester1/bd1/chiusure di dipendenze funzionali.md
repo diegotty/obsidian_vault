@@ -3,16 +3,7 @@ created: 2024-10-17
 related to: "[[progettazione, problemi e vincoli#dipendenze funzionali]]"
 updated: 2024-10-17, 07:24
 ---
->[!index]
->- [chiave e superchiave](#chiave%20e%20superchiave)
->- [chiave primaria](#chiave%20primaria)
->- [dipendenze funzionali banali](#dipendenze%20funzionali%20banali)
->	- [proprietà di dipendenze funzionali](#propriet%C3%A0%20di%20dipendenze%20funzionali)
->- [$F^A$](#$F%5EA$)
->	- [assioma della riflessività](#assioma%20della%20riflessivit%C3%A0)
->	- [assioma dell’aumento](#assioma%20dell%E2%80%99aumento)
->	- [assioma della transitività](#assioma%20della%20transitivit%C3%A0)
-
+//TODO index
 dato uno schema R e un insieme di dipendenze funzionali F, un’istanza legale di R oltre a soddisfare l’insieme di dipendenze funzionali F, soddisfa anche un insieme di dipendenze più grande: $F^+$
 $$F \subseteq F+$$
 $F^+$ è la chiusura di F, cioè l’insieme di dipendenze funzionali che sono soddisfate da ogni stanza legale di R
@@ -63,14 +54,14 @@ anche $F^A$ parte da F, e viene costruito in maniera ricorsiva applicando i 3 as
 - se $f \in F$ allora $f \in F^A$
 ## assioma della riflessività
 - se $Y \subseteq X \subseteq R$ allora $X → Y \in F^A$ (dipendenze banali)
->[!example] 
+>[!example]-
 $Nome \subseteq (Nome, Cognome)$ ($X={Nome, Cognome}, Y={Nome) 
 ovviamente se due tuple hanno uguale X, allora avranno sicuramente uguale l’attributo Nome(Y), e idem per Cognome.
 quindi la dipendenza viene sempre soddisfatta
 
 ## assioma dell’aumento
 - se $X→Y \in F^A$ allora, per ogni $Z \subseteq R$, $XZ → YZ \in F^A$ (assioma dell’aumento)
->[!example]
+>[!example]-
 >$CodFiscale \to Cognome$ è soddisfatta se, quando 2 tuple hanno lo stesso CodFiscale, allora hanno lo stesso Cognome.
 >Se la dipendenza è soddisfatta e aggiungo l’attributo indirizzo da entrambe le parti, avrò che se due tuple sono uguali in (CodFiscale, Indirizzo), quindi
 >$t_{1}[CodFiscale]=t_{2}[CodFiscale] \land t_{1}[Indirizzo]=t_{2}[Indirizzo]$
@@ -80,7 +71,8 @@ allora sicuramente $t_{1[Cognome]=t_{2}[Cognome]\land t_{1}[Indirizzo]=t_{2}[Ind
 >$CodFiscale, Indirizzo → Cognome, Indirizzo$
 ## assioma della transitività
 - se $X→Y \in F^A$ e $Y→Z \in F^A$ allora $X→Z \in F^A$ (assioma della transitività)
->[!example]
+>[!example]-
 >date $Matricola \to CodFiscale$ e $CodFiscale \to Cognome$, se entrambe le dipendenze sono soddisfatte, due duple cha hanno Matricola uguale avranno CodFiscale uguale, e due tuple che hanno CodFiscale uguale avranno Cognome uguale. quindi sarà soddisfatta anche $Matricola \to Cognome$
 
+#r
 dimostreremo che $F^+ = F^A$, applicando gli assiomi ricorsivamente partendo da F
