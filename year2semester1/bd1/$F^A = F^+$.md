@@ -42,4 +42,8 @@ passo induttivo, $i$:
 3. **assioma della transitività**
 	- ipotiziamo di aver usato l’assioma dell’additività per ricavare $X \to Y$. ciò vuol dire che abbiamo utilizzato due dipendenze, create in $i-1$ applicazioni di assiomi di Armstrong: $X \to Y \in F^A \,\,\ ,\,\,\,\,Z \to Y \in F^A$, che per ipotesi induttiva $\in F^+$
 	- verifichiamo che $X \to Y$ sia verificata per ogni istanza legale.
-		- $\forall r \text{, (r istanza legale di R)}, t_{1}[X]=t_{2}[X] \implies t_{1}[VZ]=t_{2}[VZ]$
+		- $\forall r \text{, (r istanza legale di R)}, t_{1}[X]=t_{2}[X]$
+		- per ipotesi induttiva, $t_{1}[X]=t_{2}[X] \implies t_{1}[Y]=t_{2}[Y]$, e sempre per ipotesi induttiva, $t_{1}[Z]=t_{2}[Z] \implies t_{1}[Y]=t_{2}[Y]$
+
+se prendiamo r non legale non possiamo usare l’ipotesi induttiva ? però è anche importante perchè se prendiamo un’istanza legale dobbiamo dimostrare che la dipendenza del passo induttivo deve essere NECESSARIAMENTE soddisfatta
+il ragionamento dovrebbe essere di questo tipo: prendendo una istanza legale r, sapenzo che l’ipotesi induttiva è vera, la dipendenza del passo induttivo deve essere obbligatoriamente soddisfatta. altrimenti r non sarebbe legale. in questo caso, la dipendenza del passo induttivo belongs in $F^+$
