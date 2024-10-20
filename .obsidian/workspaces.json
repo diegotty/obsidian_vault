@@ -15,12 +15,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/politiche di scheduling.md",
+                    "file": "year2semester1/bd1/$F^A = F^+$.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "politiche di scheduling"
+                  "title": "$F^A = F^+$"
                 }
               }
             ]
@@ -35,12 +35,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/raw notes/2024-10-16.md",
+                    "file": "year2semester1/bd1/raw notes/2024-10-17.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2024-10-16"
+                  "title": "2024-10-17"
                 }
               }
             ]
@@ -198,8 +198,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "e01a2b98010431c4",
-      "mtime": "2024-10-20T12:30:34+02:00"
+      "active": "7b607dbbcd5021af",
+      "mtime": "2024-10-20T12:35:57+02:00"
     },
     "os1": {
       "main": {
@@ -403,5 +403,5 @@
       "mtime": "2024-10-20T12:30:49+02:00"
     }
   },
-  "active": "bd1"
+  "active": "os1"
 }
