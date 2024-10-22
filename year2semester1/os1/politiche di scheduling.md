@@ -78,11 +78,17 @@ si può vedere che al cambiare degli $\alpha$, i processi precedenti vengono con
 # SRT
 **shortest remaining time**
 l’SRT utilizza la stessa politica dell’SPN, ma usa la preeemption
-- non utilizza il quanto come il round-robin, ma un processo può essere interrotto solo quando ne arriva uno nuovo, appena creato
+- non utilizza il quanto come il round-robin, ma un processo può essere interrotto solo quando ne arriva uno nuovo, appena creato ( o se il proceso fa un I/O bloccante)
 - in quel momento, si prende il processo con il tempo rimanente richiesto per l’esecuzione (stimato)  è più breve
-in questo modo viene sistemato il problema di monopolizzazione del processore, ma la starvation è ancora presente
+la starvation è ancora possibile !
 >[!figure]
 ![[Pasted image 20241022085113.png]]
 # HRRN
 **highest resposnse ratio next**
-mira a risolvere i problemi di starvation di SPN e SRT, massimizzando il s
+non preemptive, mira a risolvere i problemi di starvation di SPN e SRT, massimizzando il seguente rapporto:
+$$\frac{w+s}{s} = \frac{\text{tempo trascorso in attesa + tempo totale richiesto}}{\text{tempo totale richiesto}}$$
+>[!figure]
+![[Pasted image 20241022085405.png]]
+# confronto tra tutte le politiche
+>[!figure]
+![[Pasted image 20241022085431.png]]
