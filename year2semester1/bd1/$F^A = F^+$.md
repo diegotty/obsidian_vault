@@ -45,5 +45,6 @@ passo induttivo, $i$:
 		- $\forall r \text{, (r istanza legale di R)}, t_{1}[X]=t_{2}[X]$
 		- per ipotesi induttiva, $t_{1}[X]=t_{2}[X] \implies t_{1}[Y]=t_{2}[Y]$, e sempre per ipotesi induttiva, $t_{1}[Z]=t_{2}[Z] \implies t_{1}[Y]=t_{2}[Y]$
 
-se prendiamo r non legale non possiamo usare l’ipotesi induttiva ? però è anche importante perchè se prendiamo un’istanza legale dobbiamo dimostrare che la dipendenza del passo induttivo deve essere NECESSARIAMENTE soddisfatta
-il ragionamento dovrebbe essere di questo tipo: prendendo una istanza legale r, sapenzo che l’ipotesi induttiva è vera, la dipendenza del passo induttivo deve essere obbligatoriamente soddisfatta. altrimenti r non sarebbe legale. in questo caso, la dipendenza del passo induttivo belongs in $F^+$
+il ragionamento dovrebbe essere di questo tipo: prendendo una istanza legale r, sapendo che l’ipotesi induttiva è vera, la dipendenza del passo induttivo deve essere obbligatoriamente soddisfatta. altrimenti r non sarebbe legale. in questo caso, la dipendenza del passo induttivo belongs in $F^+$
+## $F^+ \subseteq F^A$
+$X \to Y \in F^+ \implies X \to Y \in F^A$
