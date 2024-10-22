@@ -3,6 +3,11 @@ created: "2024-10-18"
 related to: 
 updated: "2024-10-18, 16:04"
 ---
+>[!index]
+>
+>- [dimostrazione](#dimostrazione)
+>	- [$F^+ \supseteq F^A$](#$F%5E+%20%5Csupseteq%20F%5EA$)
+>	- [$F^+ \subseteq F^A$](#$F%5E+%20%5Csubseteq%20F%5EA$)
 # teorema
 >[!note] teorema
 Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
@@ -65,4 +70,5 @@ dimostreremo che :
 
 >[!info] dimostrazione di 2.
 supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$
-abbiamo dimostrato che r è un’istanza legale.
+>- abbiamo dimostrato che r è un’istanza legale, quindi le dipendenze in $F^+$ sono soddisfatte anche da r.
+>- inoltre, avendo 2 tuple uguali su X ($X \subseteq X^+$), e sapendo che r soddisfa $X \to Y$, ciò implica che $Y \subseteq X^+$, e per il lemma 1, $X \to Y \in F^A$
