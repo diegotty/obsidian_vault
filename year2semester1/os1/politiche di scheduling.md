@@ -3,7 +3,20 @@ created: 2024-10-16
 related to: "[[intro allo scheduling]]"
 updated: 2024-10-16, 08:28
 ---
-//TODO index
+>[!index]
+>
+>- [FCFS](#FCFS)
+>	- [downsides:](#downsides:)
+>- [round-robin](#round-robin)
+>	- [misura del quanto di tempo per la preemption](#misura%20del%20quanto%20di%20tempo%20per%20la%20preemption)
+>	- [round-robin virtuale](#round-robin%20virtuale)
+>- [SPN](#SPN)
+>	- [problemi dell’SPN](#problemi%20dell%E2%80%99SPN)
+>	- [stima del tempo di esecuzione](#stima%20del%20tempo%20di%20esecuzione)
+>- [SRT](#SRT)
+>- [HRRN](#HRRN)
+>- [confronto tra tutte le politiche](#confronto%20tra%20tutte%20le%20politiche)
+
 useremo uno scenario comune di esempio per valutare le diverse politiche di scheduling:
 >[!figure] ![[Pasted image 20241014212633.png]]
 
