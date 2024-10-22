@@ -34,4 +34,23 @@ per essere ottimale, il quanto di tempo deve essere poco più lungo del “tipic
 con il round-robin, i processi CPU-bound sono favoriti, in quanto usano tutto il loro quanto di tempo, mentre gli I/O bound ne usano solo una porzione (fino alla richiesta di I/O)
 - ciò, oltre ad essere non equo, aumenta la variabilità della risposta e quindi diminuisce la predicibilità
 il **round-robin virtuale** mira a risolvere questi problemi:
-- dopo un completamento di I/O, il processo non va in coda ai ready,
+- dopo un completamento di I/O, il processo non va in coda ai ready, ma va in una nuova coda che ha priorità su quella dei ready
+- quando un processo viene scelto dalla nuova coda, però, va in esecuzione solo per la porzione di quanto che ancora gli rimaneva da completare
+in questo modo, viene migliorata la fairness del round-robin semplice
+>[!figure]
+![[Pasted image 20241022080958.png]]
+
+# SPN
+la politica di scheduling SPN gestisce l’allocazione del tempo di esecuzione in questo modo: **il prossimo processo da mandare in esecuzione è quello più breve**
+(con breve, si intende il processo ready in cui il tempo di esecuzione stimato è minore)
+- in questo modo, i processi corti scavalcano quelli lunghi
+- se il tempo di esecuzione stimato si rivela inesatto, il sistema operativo può abortire il processo
+l’SPN  è non-preemptive
+## problemi dell’SPN
+- la predicibilità dei processi lunghi è ridotta
+- i processi lunghi potrebbero soffrire di starvation
+## stima del tempo di esecuzione
+si usa l’**exponential averaging**, cioè si fa pesare di più le istanze più recenti
+$$S_{n+1}=\alpha T_{n}+\dots \alpha(1-\alpha)T_{n-i}+\dots+(1-\alpha)S_{1}$$
+la formula sopra, può essere 
+$$S_{n+1}=\alpha T_{n}+(1-\alpha)S_{n}, 0<\alpha<1$$
