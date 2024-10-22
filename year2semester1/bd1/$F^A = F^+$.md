@@ -47,4 +47,22 @@ passo induttivo, $i$:
 
 il ragionamento dovrebbe essere di questo tipo: prendendo una istanza legale r, sapendo che l’ipotesi induttiva è vera, la dipendenza del passo induttivo deve essere obbligatoriamente soddisfatta. altrimenti r non sarebbe legale. in questo caso, la dipendenza del passo induttivo belongs in $F^+$
 ## $F^+ \subseteq F^A$
-$X \to Y \in F^+ \implies X \to Y \in F^A$
+dimostriamo che $X \to Y \in F^+ \implies X \to Y \in F^A$
+supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$. Usiamo una particolare istanza legale di R per dimostrare che questa supposizione porta ad una contraddizione:
+>[!figure] ![[Pasted image 20241022223901.png]]
+l’istanza è composta da solo 2 tuple, uguali sugli attributi in $X^+$ e diverse in tutti gli altri attributi ($R-X^+$)
+
+dimostreremo che :
+1. r è un’istanza legale di R
+2. $X \to Y \in F^+ \implies X \to Y \in F^A$
+
+>[!info] dimostrazione di 1.
+>sia $V \to W$ una dipendenza funzionale in $F$
+>- se le due tuple sono diverse in V, allora la dipendenza è soddisfatta
+>- se le due tuple di r hanno gli stessi valori per V, allora $V \subseteq X^+$, perchè le tuple sono uguali solo per $X^+$
+>	- inoltre, per il lemma 1, $X \to V \in F^A$, e per l’assioma della transitività, $X \to W \in F^A$
+>	- quindi, di nuovo per il lemma 1, $W \subseteq X^+$, quindi le due tuple sono uguali sui valori di $W$, quindi $V \to W$ è soddisfatta, e poichè abbiamo considerato una qualunque dipendenza in F, r le soddisfa tutte, quindi è legale.
+
+>[!info] dimostrazione di 2.
+supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$
+abbiamo dimostrato che r è un’istanza legale.
