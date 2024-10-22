@@ -17,3 +17,10 @@ anello commutativo unitario(def e assiomi), regola della cancellazione, elemento
 relazione di divisibilità, elementi irriducibili e primi, valore assoluto, algoritmo di divisione euclidea e congruenza modulo n
 # 10/10/2024
 compatibilità di operazioni con modulo, definizioni per operatori su Z/Z(congruenza modn), lemma su delta, algoritmo di euclide per MCD, identità di Bezoutlecture
+# 15/10/2024
+Lemma di Gauss (divisibilià tra numeri primi), altro lemma (se p irriducibile, allora p primo), esercizi, introduzione Campo
+# 16/10/2024
+Piccolo Teorema di Fermat (PTF), esercizi, intro Serie di Fibonacci
+# 17/10/2024
+esercizio serie di fibonacci, teorema fondamentale dell'artimentica, divisori di zero (anelli e campi), intro dominio
+

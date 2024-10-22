@@ -15,3 +15,9 @@ correzione esercizi, principio di inclusione/esclusione generalizzato
 probabilità condizionata, regola del prodotto, inizio teorema di Bayes
 # 09/10/2024
 legge della probabilità totale, esempi di probabilità condizionata, gioco delle 3 carte
+# 14/10/2024
+correzione esercizi, legge della probabilità condizionata totale generalizzata
+# 16/10/2024
+esercizi, rapporto a favore di un evento, dimostrazione che E->P(E|F) è una funzione di probabilità
+# 17/10/2024
+eventi indipendenti
