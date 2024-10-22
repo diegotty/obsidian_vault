@@ -50,7 +50,19 @@ l’SPN  è non-preemptive
 - la predicibilità dei processi lunghi è ridotta
 - i processi lunghi potrebbero soffrire di starvation
 ## stima del tempo di esecuzione
+se il processo non nasce fornendo una stima del tempo di esecuzione stimato, si può effettuare una stima
+dato che alcuni processi sono eseguiti varie volte, posso usare il passato ($T_{i}$), per predire il futuro($S_{i}$)
+intuitivamente, si potrebbe usare la formula:
+$$S_{n+1}=\frac{1}{n}\sum_{i=1}^{n}T_{i}$$
+
+che può essere ottimizzata: la seguente formula ottiene lo stesso risultato, ma ricordando solo l’ultima stima e il tempo di esecuzione dell’ultima istanza del processo(e con molti meno calcoli):
+$$S_{n+1}=\frac{1}{n}T_{n}+\frac{n-1}{n}S_{n}$$
+ma la stima sopra può essere ancora ottimizzata, cambiando approccio:
 si usa l’**exponential averaging**, cioè si fa pesare di più le istanze più recenti
-$$S_{n+1}=\alpha T_{n}+\dots \alpha(1-\alpha)T_{n-i}+\dots+(1-\alpha)S_{1}$$
-la formula sopra, può essere 
+
+la formula sopra può essere riscritta in questo modo:
 $$S_{n+1}=\alpha T_{n}+(1-\alpha)S_{n}, 0<\alpha<1$$
+
+sviluppando la formula(sostituendo $S_{n}$ con la formula stessa), si ottiene:
+$$S_{n+1}=\alpha T_{n}+\dots \alpha(1-\alpha)^i\,\,T_{n-i}+\dots+(1-\alpha)^n\,S_{1}$$
+dato che $(1-\alpha$) viene elevato ogni volta ad un esponente più grande, $
