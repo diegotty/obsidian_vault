@@ -41,11 +41,14 @@ in questo modo, viene migliorata la fairness del round-robin semplice
 ![[Pasted image 20241022080958.png]]
 
 # SPN
+**shortest process next**
 la politica di scheduling SPN gestisce l’allocazione del tempo di esecuzione in questo modo: **il prossimo processo da mandare in esecuzione è quello più breve**
 (con breve, si intende il processo ready in cui il tempo di esecuzione stimato è minore)
 - in questo modo, i processi corti scavalcano quelli lunghi
 - se il tempo di esecuzione stimato si rivela inesatto, il sistema operativo può abortire il processo
 l’SPN  è non-preemptive
+>[!figure]
+![[Pasted image 20241022085156.png]]
 ## problemi dell’SPN
 - la predicibilità dei processi lunghi è ridotta
 - i processi lunghi potrebbero soffrire di starvation
@@ -65,4 +68,21 @@ $$S_{n+1}=\alpha T_{n}+(1-\alpha)S_{n}, 0<\alpha<1$$
 
 sviluppando la formula(sostituendo $S_{n}$ con la formula stessa), si ottiene:
 $$S_{n+1}=\alpha T_{n}+\dots \alpha(1-\alpha)^i\,\,T_{n-i}+\dots+(1-\alpha)^n\,S_{1}$$
-dato che $(1-\alpha$) viene elevato ogni volta ad un esponente più grande, $
+dato che $(1-\alpha$) (che vale tra 0 e 1) viene elevato ogni volta ad un esponente più grande, le istanze precedenti valgono(nel senso che sono considerate) sempre di meno. ecco l’exponential averaging!
+>[!figure]
+![[Pasted image 20241022083941.png]]
+si può vedere che al cambiare degli $\alpha$, i processi precedenti vengono considerati sempre meno
+
+>[!example]
+![[Pasted image 20241022084008.png]]
+# SRT
+**shortest remaining time**
+l’SRT utilizza la stessa politica dell’SPN, ma usa la preeemption
+- non utilizza il quanto come il round-robin, ma un processo può essere interrotto solo quando ne arriva uno nuovo, appena creato
+- in quel momento, si prende il processo con il tempo rimanente richiesto per l’esecuzione (stimato)  è più breve
+in questo modo viene sistemato il problema di monopolizzazione del processore, ma la starvation è ancora presente
+>[!figure]
+![[Pasted image 20241022085113.png]]
+# HRRN
+**highest resposnse ratio next**
+mira a risolvere i problemi di starvation di SPN e SRT, massimizzando il s
