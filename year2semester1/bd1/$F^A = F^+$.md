@@ -3,7 +3,6 @@ created: "2024-10-18"
 related to: 
 updated: "2024-10-18, 16:04"
 ---
->[!index]
 >
 >- [dimostrazione](#dimostrazione)
 >	- [$F^+ \supseteq F^A$](#$F%5E+%20%5Csupseteq%20F%5EA$)
