@@ -50,8 +50,7 @@ il **round-robin virtuale** mira a risolvere questi problemi:
 - dopo un completamento di I/O, il processo non va in coda ai ready, ma va in una nuova coda che ha priorità su quella dei ready
 - quando un processo viene scelto dalla nuova coda, però, va in esecuzione solo per la porzione di quanto che ancora gli rimaneva da completare
 in questo modo, viene migliorata la fairness del round-robin semplice
->[!figure]
-![[Pasted image 20241022080958.png]]
+>[!figure] ![[Pasted image 20241022080958.png]]
 
 # SPN
 **shortest process next**
@@ -82,8 +81,7 @@ $$S_{n+1}=\alpha T_{n}+(1-\alpha)S_{n}, 0<\alpha<1$$
 sviluppando la formula(sostituendo $S_{n}$ con la formula stessa), si ottiene:
 $$S_{n+1}=\alpha T_{n}+\dots \alpha(1-\alpha)^i\,\,T_{n-i}+\dots+(1-\alpha)^n\,S_{1}$$
 dato che $(1-\alpha$) (che vale tra 0 e 1) viene elevato ogni volta ad un esponente più grande, le istanze precedenti valgono(nel senso che sono considerate) sempre di meno. ecco l’exponential averaging!
->[!figure]
-![[Pasted image 20241022083941.png]]
+>[!figure] ![[Pasted image 20241022083941.png]]
 si può vedere che al cambiare degli $\alpha$, i processi precedenti vengono considerati sempre meno
 
 >[!example]
@@ -94,14 +92,11 @@ l’SRT utilizza la stessa politica dell’SPN, ma usa la preeemption
 - non utilizza il quanto come il round-robin, ma un processo può essere interrotto solo quando ne arriva uno nuovo, appena creato ( o se il proceso fa un I/O bloccante)
 - in quel momento, si prende il processo con il tempo rimanente richiesto per l’esecuzione (stimato)  è più breve
 la starvation è ancora possibile !
->[!figure]
-![[Pasted image 20241022085113.png]]
+>[!figure] ![[Pasted image 20241022085113.png]]
 # HRRN
 **highest resposnse ratio next**
 non preemptive, mira a risolvere i problemi di starvation di SPN e SRT, massimizzando il seguente rapporto:
 $$\frac{w+s}{s} = \frac{\text{tempo trascorso in attesa + tempo totale richiesto}}{\text{tempo totale richiesto}}$$
->[!figure]
-![[Pasted image 20241022085405.png]]
+>[!figure] ![[Pasted image 20241022085405.png]]
 # confronto tra tutte le politiche
->[!figure]
-![[Pasted image 20241022085431.png]]
+>[!figure] ![[Pasted image 20241022085431.png]]
