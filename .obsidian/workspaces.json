@@ -35,12 +35,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/bd1/raw notes/2024-10-17.md",
+                    "file": "year2semester1/bd1/raw notes/2024-10-23.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2024-10-17"
+                  "title": "2024-10-23"
                 }
               }
             ]
@@ -198,8 +198,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "87bff695949ea9dc",
-      "mtime": "2024-10-22T10:48:36+02:00"
+      "active": "d3884c7ac975c28b",
+      "mtime": "2024-10-24T10:20:05+02:00"
     },
     "os1": {
       "main": {
