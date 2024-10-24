@@ -3,6 +3,7 @@ created: "2024-10-24"
 related to: 
 updated: "2024-10-24, 20:04"
 ---
+//TODO index
 ritorniamo all’esempio in [[progettazione, problemi e vincoli]], e ripartiamo dalla soluzione “buona” trovata alla fine
 # ipotesi 3
 >[!info] example
@@ -65,6 +66,11 @@ in cui:
 >- dato che $A$ è un singleton, le dipendenze $X \to A$ le “prendiamo” da $F^+$, poichè siamo sicuri, che grazie alla regola di decomposizione, troveremo tutte le dipendenze di $F$ con dipendenti non singleton in $F^+$, decomposte nella forma $X \to A$
 >- inoltre, con $A \notin X$ sto eliminando tutte le dipendenze funzionali banali (che sono le dipendenze ottenute applicando l’assioma di Armstrong della riflessività), in quanto se controllassimo anche le dipendenze banali nessuna tabella sarebbe in 3FN (per i campi che non sono chiave)
 >- per quanto detto, è sbagliato scrivere $\forall X \to A \in F$, perchè non sapremmo se e come valutare una dipendenza del tipo $X \to AB$ (due o più attributi a destra), e se sostituisco $\forall X \to A \in F$ con $\forall X \to Y \in F$, (quindi accetto dipendenti che non sono singleton) non so come comportarmi se $Y$ contiene sia attributi primi che non primi
+>- basta identificare anche UNA SOLA dipendenza che viola le condizione per la 3FN affinchè l’intera relazione non sia in 3FN
+>-
+
+>[!info] important stuff about 3FN
+> in terza forma normale si può sempre trovare uno schema in cui si rispettano le dipendenze originarie (decomponendo la relazione originale), anche se gli attributi usati nelle dipendenze vengono distribuiti in tabelle diverse
 
 >[!example] esempio alla lavagna
 $$R = ABCD$$
@@ -84,5 +90,12 @@ ora controlliamo se R è in 3FN:
 >- $BC \to A$ è ok ($A$ è primo, $BC$ è superchiave)
 >- $D \to AC$ è ok ($AC$ è primo(possiamo analizzare le dipendenze derivate dalla decomposizione, $A$ è primo e $C$  è primo))
 >quindi la relazione è in 3FN !!!
+## definizione alternativa
+dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
+# dipendenza parziale
+$X \to A \in F^+, A \notin X$ è una dipendenza parziale su R se $A$ non è primo ed $X$ è contenuto propriamente in una chiave di R.
+>[!figure] ![[Pasted image 20241024221729.png]]
+$X$ proriamente contenuto in una chiave $K$ di R
 
-## definizione alternativa 1
+# dipendenza transitiva
+$X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo
