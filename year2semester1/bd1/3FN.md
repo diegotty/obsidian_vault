@@ -94,8 +94,9 @@ ora controlliamo se R è in 3FN:
 dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
 # dipendenza parziale
 $X \to A \in F^+, A \notin X$ è una dipendenza parziale su R se $A$ non è primo ed $X$ è contenuto propriamente in una chiave di R.
->[!figure] ![[Pasted image 20241024221729.png]]
+>[!figure] ![[Pasted image 20241024221729.png|200]]
 $X$ proriamente contenuto in una chiave $K$ di R
 
 # dipendenza transitiva
-$X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo
+$X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo e per ogni chiave $K$ di R si ha che $X$ **non** è contenuto propriamente in $K$ e $K-X \neq \varnothing$
+>[!figure] ![[Pasted image 20241024222117.png|400]]
