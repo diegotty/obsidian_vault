@@ -71,5 +71,18 @@ $$R = ABCD$$
 $$F = \{AB \to CD, AC \to BD, D \to BC\}$$
 >AB è chiave, AC è chiave, AD è chiave (applico aumento sull’ultima dipendenza)
 >se guardo F senza calcolare le chiusure, la dipendenza $D \to BC$ ha come determinante $D$ che non è una chiave(MA è parte di una chiave !!!!)
->- inoltre il dipendente è un attributo primo (B appartiene ad una chiave, C appartiene ad una chiave)
+>- inoltre il dipendente è un attributo primo (decomponendo la dipendenza e anlizzandone le versioni decomposte, vediamo che B appartiene ad una chiave, C appartiene ad una chiave)
 >quindi la dipendenza $D \to BC$  non viola la 3FN
+
+>[!example] esempio 3
+$$R = ABCD$$
+$$F = \{AB \to CD, BC \to A, D \to AC\}$$
+abbiamo tre chiavi: $AB, BC, DB$ infatti:
+$AB$ per dipendenza $AB \to CD$, $DB$ per aumento su $B$ per la dipendenza $D \to AC$, e $BC$ per aumento su $B$ per la dipendenza $BC \to A$ su cui poi si può usare la transitività con la dipendenza $AB \to CD$
+ora controlliamo se R è in 3FN:
+>- $AB \to CD$ è ok ($AB$ è superchiave)
+>- $BC \to A$ è ok ($A$ è primo, $BC$ è superchiave)
+>- $D \to AC$ è ok ($AC$ è primo(possiamo analizzare le dipendenze derivate dalla decomposizione, $A$ è primo e $C$  è primo))
+>quindi la relazione è in 3FN !!!
+
+## definizione alternativa 1
