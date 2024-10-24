@@ -38,4 +38,26 @@ uno studente può sostenere l’esame relativo ad un corso una sola volta: quind
 - un solo voto
 quindi ogni istanza legale di Esame deve soddisfare la dipendenza funzionale:
 $$Matr, C\# \to Data, Voto$$
-d’altra parte
+pertanto, $Matr, C\#$ è una chiave per Esame, e anche l’unica, perchè:
+$Matr$ non può fare da determinante nè per $Data$, nè per $Voto$ (intuitivo), e la stessa considerazione si può fare con $C\#$ come determinante
+## Corso, Comune
+con lo stesso ragionamento, arriviamo a determinare le chiavi per tutti gli schemi della base di dati:
+>[!example] risultato
+>- $Studente (\textbf{Matr}, Cf, Cogn, Nome, Data, Com)$
+>- $Corso (\textbf{C\#}, Tit, Doc)$
+>- $Esame (\textbf{Matr, C\#}, Data, Voto)$
+>- $Comune (\textbf{Com}, Prov)$
+
+>[!warning]
+stiamo continuando ad assumere che $Com \to Prov$, cioè che non ci sono comuni ononimi (cosa che in realtà non è vera)
+
+# 3FN
+dati uno schema di relazione R e un insieme di dipendenze funzionali F su R, R è in 3FN se:
+$$\forall X \to A \in F^+, A \notin X$$
+in cui:
+- $A$ **è primo**(appartiene ad una chiave)
+**oppure**
+- $X$ **è superchiave**(contiene una chiave)
+>[!info] precisazioni
+- una chiave è una superchiave
+- un attributo $A$ è primo se esiste una chiave $K che contiene A
