@@ -62,5 +62,14 @@ in cui:
 >- una chiave è una superchiave
 >- un attributo $A$ è primo se esiste una chiave $K$ che contiene $A$
 >- nella definizione, è importante ricordarsi che $A \notin X$ perchè $A$ è un **singleton**: è un elemento singolo, non un sottoinsieme di $X$, altrimenti ci sarebbe scritto $A \not\subset X$
+>- dato che $A$ è un singleton, le dipendenze $X \to A$ le “prendiamo” da $F^+$, poichè siamo sicuri, che grazie alla regola di decomposizione, troveremo tutte le dipendenze di $F$ con dipendenti non singleton in $F^+$, decomposte nella forma $X \to A$
 >- inoltre, con $A \notin X$ sto eliminando tutte le dipendenze funzionali banali (che sono le dipendenze ottenute applicando l’assioma di Armstrong della riflessività), in quanto se controllassimo anche le dipendenze banali nessuna tabella sarebbe in 3FN (per i campi che non sono chiave)
-- per quanto detto, è sbagliato scrivere $\forall X to$
+>- per quanto detto, è sbagliato scrivere $\forall X \to A \in F$, perchè non sapremmo se e come valutare una dipendenza del tipo $X \to AB$ (due o più attributi a destra), e se sostituisco $\forall X \to A \in F$ con $\forall X \to Y \in F$, (quindi accetto dipendenti che non sono singleton) non so come comportarmi se $Y$ contiene sia attributi primi che non primi
+
+>[!example] esempio alla lavagna
+$$R = ABCD$$
+$$F = \{AB \to CD, AC \to BD, D \to BC\}$$
+>AB è chiave, AC è chiave, AD è chiave (applico aumento sull’ultima dipendenza)
+>se guardo F senza calcolare le chiusure, la dipendenza $D \to BC$ ha come determinante $D$ che non è una chiave(MA è parte di una chiave !!!!)
+>- inoltre il dipendente è un attributo primo (B appartiene ad una chiave, C appartiene ad una chiave)
+>quindi la dipendenza $D \to BC$  non viola la 3FN
