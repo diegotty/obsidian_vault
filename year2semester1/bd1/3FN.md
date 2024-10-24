@@ -58,6 +58,9 @@ in cui:
 - $A$ **è primo**(appartiene ad una chiave)
 **oppure**
 - $X$ **è superchiave**(contiene una chiave)
->[!info] precisazioni
-- una chiave è una superchiave
-- un attributo $A$ è primo se esiste una chiave $K che contiene A
+>[!info] precisazioni (IMPORTANTI)
+>- una chiave è una superchiave
+>- un attributo $A$ è primo se esiste una chiave $K$ che contiene $A$
+>- nella definizione, è importante ricordarsi che $A \notin X$ perchè $A$ è un **singleton**: è un elemento singolo, non un sottoinsieme di $X$, altrimenti ci sarebbe scritto $A \not\subset X$
+>- inoltre, con $A \notin X$ sto eliminando tutte le dipendenze funzionali banali (che sono le dipendenze ottenute applicando l’assioma di Armstrong della riflessività), in quanto se controllassimo anche le dipendenze banali nessuna tabella sarebbe in 3FN (per i campi che non sono chiave)
+- per quanto detto, è sbagliato scrivere $\forall X to$
