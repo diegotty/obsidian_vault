@@ -3,10 +3,7 @@ created: "2024-10-18"
 related to: 
 updated: "2024-10-18, 16:04"
 ---
->
->- [dimostrazione](#dimostrazione)
->	- [$F^+ \supseteq F^A$](#$F%5E+%20%5Csupseteq%20F%5EA$)
->	- [$F^+ \subseteq F^A$](#$F%5E+%20%5Csubseteq%20F%5EA$)
+//TODO index
 # teorema
 >[!note] teorema
 Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
@@ -71,3 +68,14 @@ dimostreremo che :
 supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$
 >- abbiamo dimostrato che r è un’istanza legale, quindi le dipendenze in $F^+$ sono soddisfatte anche da r.
 >- inoltre, avendo 2 tuple uguali su X ($X \subseteq X^+$), e sapendo che r soddisfa $X \to Y$, ciò implica che $Y \subseteq X^+$, e per il lemma 1, $X \to Y \in F^A$
+
+# note 
+è molto utile notare che la dimostrazione del teorema di basa su due collegamenti molto utili:
+- il collegamento che esiste tra l’insieme $F^+$ e le istanze legali: se un’istanza è legale allora soddisfa anche tutte le dipendenze in $F^+$, e $F^+$ è l’insieme di dipendenze soddisfatte da ogni istanza legale (quindi per verificare se una istanza è legale, basta controllare che soddisfi le dipendenze in F (perchè $F^+$ si deriva da F con gli assiomi di Armstrong))
+- il collegamento che esiste tra la **chiusura $X^+$** di un insieme di attributi X con insieme di dipendenze funzionali di riferimento F(di cui omettiamo il pedice), e il **sottoinsieme di dipendenze in F$^A$ che hanno X come determinante**, cioè 
+ $$ Y \subseteq X^+ \iff X \to Y \in F^A$$
+che equivale a dire che 
+$$Y \subseteq X^+ \iff X \to Y \in F^+$$, e quindi in particolare che $X \to Y$ **deve essere soddisfatta da ogni istanza legale**
+# a cosa ci serve conoscere $F^+$
+calcolare $F^A$, e quindi $F^+$, richiede tempo esponenziale  in $|R|\text{\,\,\ cardinalità di R}$ (dato che si applicano ricorsivamente gli assiomi di Armstrong)
+infatti basta pensare agli assiomi della riflessività e dell’aumento, o la regola della decomposizione: ogni possibile sotti
