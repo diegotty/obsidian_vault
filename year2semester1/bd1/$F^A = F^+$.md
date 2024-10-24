@@ -78,4 +78,4 @@ che equivale a dire che
 $$Y \subseteq X^+ \iff X \to Y \in F^+$$, e quindi in particolare che $X \to Y$ **deve essere soddisfatta da ogni istanza legale**
 # a cosa ci serve conoscere $F^+$
 calcolare $F^A$, e quindi $F^+$, richiede tempo esponenziale  in $|R|\text{\,\,\ cardinalità di R}$ (dato che si applicano ricorsivamente gli assiomi di Armstrong)
-infatti basta pensare agli assiomi della riflessività e dell’aumento, o la regola della decomposizione: ogni possibile sotti
+infatti basta pensare agli assiomi della riflessività e dell’aumento, o la regola della decomposizione: ogni possibile sottoinsieme di R porta a una o più dipendenze. e visto che i possibili sottoinsiemi di R sono $2^{|R|}$, il calcolo di $|F^+|$ ha complessità esponenziale in $|R|$
