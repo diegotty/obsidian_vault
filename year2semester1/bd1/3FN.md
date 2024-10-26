@@ -90,8 +90,6 @@ ora controlliamo se R è in 3FN:
 >- $BC \to A$ è ok ($A$ è primo, $BC$ è superchiave)
 >- $D \to AC$ è ok ($AC$ è primo(possiamo analizzare le dipendenze derivate dalla decomposizione, $A$ è primo e $C$  è primo))
 >quindi la relazione è in 3FN !!!
-## definizione alternativa
-dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
 # dipendenza parziale
 $X \to A \in F^+, A \notin X$ è una dipendenza parziale su R se $A$ non è primo ed $X$ è contenuto propriamente in una chiave di R.
 >[!figure] ![[Pasted image 20241026181728.png]]
@@ -107,6 +105,8 @@ $$Matr, C\# \to Cogn$$
 la dipendenza $Matr \to Cogn$ è quindi detta dipendenza parziale
 (in soldoni: è una dipendenza in cui la determinante è parte di una chiave (non una chiave) e il dipendente  non è primo)
 
+dal punto di vista dell’attributo che dipende parzialmente:
+$A$ **dipende parzialmente** da una chiave $K$ se $\exists X \subset R$ tale che $X \to A \in F^+$ con $A \notin X$ e tale che $X \subset K$ e $A$ non è parte di una chiave
 # dipendenza transitiva
 $X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo e per ogni chiave $K$ di R si ha che $X$ **non** è contenuto propriamente in $K$ e $K-X \neq \varnothing$
 >[!figure] ![[Pasted image 20241024222117.png|400]]
@@ -120,7 +120,15 @@ $Com \to Prov$ viene detta dipendenza transitiva
 (in soldoni: la dipendenza che ci permette di applicare la transività che però non ha la determinante non chiave)
 
 dal punto di vista dell’attributo che dipende transitivamente:
-$A$ **dipende parzialmente
+$A$ **dipende transitivamente** da una chiave $K$ se $\exists X \subset R$ tale che $K \to X \in F^+$ con $A \notin X$ e $X \to A \in F^+$ e $X$ non è una chiave, ed $A$ non è parte di una chiave
 
->[info] uhhh
-siamo studiando le relazioni dei dipendenti quando non sono determinati da una chiave completa ! (fose tipo)
+>[!info] uhhh
+>siamo studiando le relazioni dei dipendenti quando non sono determinati da una chiave completa ! (fose tipo)
+
+# definizione alternativa di 3FN
+dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
+## dimostrazione
+###  schema in 3FN $\implies \forall X \to A \in F^+, A \notin X$
+abbiamo 2 possibilità per ogni dipendenza funzionale in $F^+$:
+- $A$ è primo: $\implies$ viene a mancare la prima condizione per avere una dipendenza parziale o transitiva
+- $A$ non è primo: allora $X$ è una superchiave, e in quanto tale **può** contere una chiave al suo interno, ma non può essere contenuta propriamente in una chiave(altrimenti la chiave che contiene $X$ non sarebbe una chiave, ma una superchiave), quindi non si può verificare una dipendenza parziale. Inoltre, essendo superchiave, non può verificarsi che, per ogni chiave $K$ di $
