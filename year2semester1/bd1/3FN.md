@@ -101,10 +101,26 @@ $X$ proriamente contenuto in una chiave $K$ di R
 $\text{Curriculum(\textbf{Matr}, CF, Cogn, Nome, DataN, Com, Prov, \textbf{C\#}, Tit, Doc, DataE, Voto)}$
 ad un numero di matricola corrisponde un solo cognome, il cognome dello studente con quella matricola, quindi: 
 $$Matr \to Cogn$$
-in quanto $Matr, C\# \to Cogn$ è una conseguenza della dipendenza funzionale $Matr \to Cogn$,  l’ultima è detta **dipendenza parziale**
+quindi, ad una coppia di matricola e codice fiscale uguali, corrisponderà un solo cognome:
+$$Matr, C\# \to Cogn$$
+**l’attributo Cogn però, dipende parzialmente dalla chiave $\textbf{Matr, C\#}$**, perchè la dipendenza $Matr, C\# \to Cognome$ è una conseguenza di $Matr \to Cogn$.
+la dipendenza $Matr \to Cogn$ è quindi detta dipendenza parziale
 (in soldoni: è una dipendenza in cui la determinante è parte di una chiave (non una chiave) e il dipendente  non è primo)
 
 # dipendenza transitiva
 $X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo e per ogni chiave $K$ di R si ha che $X$ **non** è contenuto propriamente in $K$ e $K-X \neq \varnothing$
 >[!figure] ![[Pasted image 20241024222117.png|400]]
 
+>[!example]
+>$\text{Studente(\textbf{Matr}, Cogn, Nome, Data, Com, Prov)}$
+ad un numero di matricola corrisponde solo un comune di nascita ( quello dello studente con quel numero di matricola): $Matr \to Com$
+inoltre, un comune si trova in una sola provincia ($Com \to Prov$)
+quindi, per transitività, esiste la dipendenza funzionale $Matr \to Prov$, che è conseguenza delle 2 dipendenze funzionali descritte sopra, e quindi si può dire che l’attributo $Prov$ dipende transitivamente dalla chiave $Matr$
+$Com \to Prov$ viene detta dipendenza transitiva 
+(in soldoni: la dipendenza che ci permette di applicare la transività che però non ha la determinante non chiave)
+
+dal punto di vista dell’attributo che dipende transitivamente:
+$A$ **dipende parzialmente
+
+>[info] uhhh
+siamo studiando le relazioni dei dipendenti quando non sono determinati da una chiave completa ! (fose tipo)
