@@ -94,9 +94,17 @@ ora controlliamo se R è in 3FN:
 dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
 # dipendenza parziale
 $X \to A \in F^+, A \notin X$ è una dipendenza parziale su R se $A$ non è primo ed $X$ è contenuto propriamente in una chiave di R.
->[!figure] ![[Pasted image 20241024221729.png|200]]
+>[!figure] ![[Pasted image 20241026181728.png]]
 $X$ proriamente contenuto in una chiave $K$ di R
+
+>[!example]
+$\text{Curriculum(\textbf{Matr}, CF, Cogn, Nome, DataN, Com, Prov, \textbf{C\#}, Tit, Doc, DataE, Voto)}$
+ad un numero di matricola corrisponde un solo cognome, il cognome dello studente con quella matricola, quindi: 
+$$Matr \to Cogn$$
+in quanto $Matr, C\# \to Cogn$ è una conseguenza della dipendenza funzionale $Matr \to Cogn$,  l’ultima è detta **dipendenza parziale**
+(in soldoni: è una dipendenza in cui la determinante è parte di una chiave (non una chiave) e il dipendente  non è primo)
 
 # dipendenza transitiva
 $X \to A \in F^+, A \notin X$ è una dipendenza transitiva su R se $A$ non è primo e per ogni chiave $K$ di R si ha che $X$ **non** è contenuto propriamente in $K$ e $K-X \neq \varnothing$
 >[!figure] ![[Pasted image 20241024222117.png|400]]
+
