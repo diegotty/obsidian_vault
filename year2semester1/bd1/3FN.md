@@ -3,7 +3,20 @@ created: "2024-10-24"
 related to: 
 updated: "2024-10-24, 20:04"
 ---
-//TODO index
+>[!index]
+>
+>- [ipotesi 3](#ipotesi%203)
+>	- [Studente](#Studente)
+>	- [Esame](#Esame)
+>	- [Corso, Comune](#Corso,%20Comune)
+>- [3FN](#3FN)
+>- [dipendenza parziale](#dipendenza%20parziale)
+>- [dipendenza transitiva](#dipendenza%20transitiva)
+>- [definizione alternativa di 3FN](#definizione%20alternativa%20di%203FN)
+>	- [dimostrazione](#dimostrazione)
+>		- [schema in 3FN $\implies$ no dipendenze parziali o transitive](#schema%20in%203FN%20$%5Cimplies$%20no%20dipendenze%20parziali%20o%20transitive)
+>		- [no dipendenze parziali o transitive$\implies$schema in 3FN](#no%20dipendenze%20parziali%20o%20transitive$%5Cimplies$schema%20in%203FN)
+>- [decomposizione](#decomposizione)
 ritorniamo all’esempio in [[progettazione, problemi e vincoli]], e ripartiamo dalla soluzione “buona” trovata alla fine
 # ipotesi 3
 >[!info] example
@@ -128,7 +141,18 @@ $A$ **dipende transitivamente** da una chiave $K$ se $\exists X \subset R$ tale 
 # definizione alternativa di 3FN
 dato uno schema R e un insieme di dipendenze funzionali F, R è in 3FN se e solo se non ci sono attributi che dipendono parzialmente o transitivamente da una chiave
 ## dimostrazione
-###  schema in 3FN $\implies \forall X \to A \in F^+, A \notin X$
+###  schema in 3FN $\implies$ no dipendenze parziali o transitive
 abbiamo 2 possibilità per ogni dipendenza funzionale in $F^+$:
 - $A$ è primo: $\implies$ viene a mancare la prima condizione per avere una dipendenza parziale o transitiva
-- $A$ non è primo: allora $X$ è una superchiave, e in quanto tale **può** contere una chiave al suo interno, ma non può essere contenuta propriamente in una chiave(altrimenti la chiave che contiene $X$ non sarebbe una chiave, ma una superchiave), quindi non si può verificare una dipendenza parziale. Inoltre, essendo superchiave, non può verificarsi che, per ogni chiave $K$ di $
+- $A$ non è primo: allora $X$ è una superchiave, e in quanto tale **può** contere una chiave al suo interno, ma non può essere contenuta propriamente in una chiave(altrimenti la chiave che contiene $X$ non sarebbe una chiave, ma una superchiave), quindi non si può verificare una dipendenza parziale. Inoltre, essendo superchiave, non può verificarsi che, per ogni chiave $K$ di R, $X$ non è contenuto propriamente in $K$ e $K - X \neq \varnothing$($X$ contiene completamente almeno una chiave di R). quindi non si può verificare neanche una dipendenza transitiva
+###  no dipendenze parziali o transitive$\implies$schema in 3FN
+Suppongo **per assurdo** che anche se non esistono dipendenze parziali o transitive, lo schema **non è in 3FN**
+ciò vuol dire che esiste almeno una dipendenza che viola la 3FN ($A$ non è primo e $X$ non è una superchiave)
+ci sono 2 casi(valutiamo X, che per ipotesi **non può essere una superchiave**):
+- per ogni chiave $K$ di R, $X$ non è contenuto propriamente in nessuna chiave, e $K - X \neq \varnothing$ . ciò implica l’esistenza di una **dipendenza transitiva**
+- esiste una chiave $K$ di R tale che $X \subset K$: in tal caso $A$ non può essere primo(per violare la 3FN), e quindi $X \to A$ è una **dipendenza parziale**
+quindi, la dimostrazione per assurdo è completata
+
+# decomposizione
+se uno schema non è in 3FN, esso può essere **decomposto** per creare un insieme di schemi in 3FN.
+esistono diversi modi per decomporre uno schema, ma è necessario che ogni dipendenza originaria (in )
