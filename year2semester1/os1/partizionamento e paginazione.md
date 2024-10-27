@@ -65,6 +65,10 @@ i SO che adottano la paginazione mantengono una tabella delle pagine di ogni pro
 quando c’è un process switch, la tabella delle pagine del nuovo processo deve essere ricaricata
 >[!example] esempio di paginazione
 
+>[!figure] ![[Pasted image 20241027154749.png]]
+tabelle delle pagine risultanti
+
+
 >[!info] traduzione della paginazione
 supponiamo che la dimensione di una pagina dell’esempio sopra sia 100bytes: la RAM sarà di solo 1400 bytes e i processi A,B,C,D richiedono solo 400,300, 400 e 500 bytes rispettivamente
 nelle istruzioni dei processi, i riferimenti alla RAM sono relativi all’inizio del processo(quindi, per D, ci saranno solo riferimenti compresi nell’intervallo [0,499])
@@ -74,4 +78,9 @@ bisogna quindi:
 >- controllare, nella tabella delle pagine di D, in che frame si trova la pagina D3: in questo caso corrisponde al frame 11
 >- trovare il byte giusto a cui saltare: il frame 11 ha byte da 1100 a 1199: basta fare $343 \text{mod} 100 = 43$: dobbiamo quindi saltare al 44-esimo byte
 >- l’indirizzo assoluto giusto è quindi: $11 \times 100 + 43 = 1143$
-# segmentaz
+# segmentazione
+## segmentazione semplice
+molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
+- i segmenti hanno una lunghezza variabile, e un limite massimo di dimensione
+- il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a metterli effettivamente in RAM e risolvere gli indirizzi ci pensa il SO)
+- sempre con aiuto hardware
