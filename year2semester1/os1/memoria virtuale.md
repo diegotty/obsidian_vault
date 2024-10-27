@@ -16,4 +16,10 @@ grazie a questa intuizione si può cambiare il modo in cui si gestisce la memori
 - quando il processo verrà eseguito, occorrerà eseguire nuovamente la stessa istruzione che aveva causato il **page fault**, questa volta però, l’indirizzo necessario è caricato nella RAM
 ## conseguenze
 - più processi possono essere in memoria pricipale, visto che non devono essere caricati per intero
-- visto che ci sono più processi in memoria principale, è più probabile che ci sia sempre un p
+- visto che ci sono più processi in memoria principale, è più probabile che ci sia sempre un processo `ready` **aumenta il grado di multiprogrammazione**
+- si possono gestire processi che richiedono più memoria di quella disponibile nella memoria principale
+# memoria virtuale
+è quindi uno schema di allorazione di memoria, in cui la memoria secondaria può essere usata come se fosse principale (nel senso che vengono tenute pagine di processi, mentre prima venivano tenuti processi per intero)
+le sue caratteristiche sono:
+- gli indirizzi usati nei programmi e quelli usati dal sistema sono diversi, e c’è una fase di traduzione automatica dai primi ai secondi
+- la dimensione della memoria virtuale è limitata dallo schema di indirizzamento e dalla disponibilità di memoria secondaria (la RAM non influisce a riguardo)
