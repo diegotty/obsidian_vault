@@ -30,7 +30,17 @@ le sue caratteristiche sono:
 **spazio degli indirizzi virtuali**: la quantità di memoria virtuale assegnata ad un processo
 **spazio degli indirizzi**: la quantità di memoria assegnata ad un processo
 **indirizzo reale**: indirizzo di una locazione in memoria principale
-## trashing
+## thrashing
 avviene quando il SO impiega la maggior parte del suo tempo a swappare pezzi di processi, anzichè eseguire istruzioni (cioè quando quasi ogni richiesta di pagina dà luogo ad un **page fault**)
 per evitare il trashing, il SO cerca di indovinare quali pezzi di processo saranno usati con maggiore probabilità nel futuro (nella prossima istruzione da eseguire), e lo fa usando un principio a noi già noto: il principio di località.
-- per il principio di località, i riferimenti che fa un processo tendono ad essere vicini, quindi saranno necessari 
+- per il principio di località, i riferimenti che fa un processo tendono ad essere vicini, quindi saranno necessari solo pochi pezzi del processo di volta in volta. in questo modo si può prevedere abbastanza bene quali pezzi di processo saranno necessari nelle istruzioni a seguire, permettendo alla memoria virtuale di evitare il thrashing e quindi di funzionare bene
+# supporto hardware
+paginazione e segmentazione hanno bisogno di essere supportati dell’hardware, poichè alcune operazioni sarebbero troppo lunghe se fatte in software dal SO
+## traduzione degli indirizzi
+### page table entry
+è la tabella delle pagine: ogni processo ne ha una ed il suo PCB punta ad essa
+ogni entry della tabella cont
+>[!figure] traduzione degli indirizzi
+>![[Pasted image 20241027172509.png]]
+la traduzione è fatta dall’hardware.
+precisazione sulla somma: il **page #**, prima di essere sommato al **page table Ptr**, che punta all’inizio della page table, va moltiplicato per la dimensione in byte di una entry della page table
