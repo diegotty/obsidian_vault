@@ -78,9 +78,17 @@ bisogna quindi:
 >- controllare, nella tabella delle pagine di D, in che frame si trova la pagina D3: in questo caso corrisponde al frame 11
 >- trovare il byte giusto a cui saltare: il frame 11 ha byte da 1100 a 1199: basta fare $343 \text{mod} 100 = 43$: dobbiamo quindi saltare al 44-esimo byte
 >- l’indirizzo assoluto giusto è quindi: $11 \times 100 + 43 = 1143$
+
+>[!figure] ![[Pasted image 20241027160939.png]]
+>lo stesso processo, ma in base 2, può essere descritto con questa immagine
 # segmentazione
 ## segmentazione semplice
 molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
 - i segmenti hanno una lunghezza variabile, e un limite massimo di dimensione
+- un indirizzo di memoria è un numero di segmento, e uno spiazzamento al suo interno
 - il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a metterli effettivamente in RAM e risolvere gli indirizzi ci pensa il SO)
 - sempre con aiuto hardware
+>[!figure] ![[Pasted image 20241027161332.png]]
+>traduzione di un indirizzo con segmentazione semplice:
+>si nota come non ci possono essere segmenti più lunghi di $2^12$ byte.
+>
