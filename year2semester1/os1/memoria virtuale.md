@@ -39,8 +39,16 @@ paginazione e segmentazione hanno bisogno di essere supportati dell’hardware, 
 ## traduzione degli indirizzi
 ### page table entry
 è la tabella delle pagine: ogni processo ne ha una ed il suo PCB punta ad essa
-ogni entry della tabella cont
+ogni entry della tabella contiene:
+- **P**: un bit per indicare se la pagina è caricata in RAM o meno
+- **M**: un bit per indicare se la pagina è stata modificata o meno, in seguito all’ultima volta che è stata caricata in memoria principale (simile alla cache)
+- **other control bits**: not relevant rn
+- **frame number**: il numero di frame in RAM
+per accedere ad una entry, basta usare il numero di pagina (moltiplicato per la dimensione di una entry)
+- la tabella è indicizzata per numero di pagina
 >[!figure] traduzione degli indirizzi
 >![[Pasted image 20241027172509.png]]
 la traduzione è fatta dall’hardware.
 precisazione sulla somma: il **page #**, prima di essere sommato al **page table Ptr**, che punta all’inizio della page table, va moltiplicato per la dimensione in byte di una entry della page table
+
+affinchè lo schema funzioni, ad ogni process switch il SO deve caricare la tabella delle pagine, del processo che andrà in esecuzione, in un registro dipendente dall’hardware
