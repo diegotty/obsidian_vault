@@ -27,6 +27,8 @@ le sue caratteristiche sono:
 **memoria virtuale**: memoria secondaria (su disco)
 **memoria reale**: memoria principale (la RAM)
 **indirizzo virtuale**: l’indirizzo associato ad una locazione nella memoria virtuale, che fa sì che si possa accedere ad essa come se fosse parte della memoria principale
+>[!figure] ![[Pasted image 20241027175025.png]]
+
 **spazio degli indirizzi virtuali**: la quantità di memoria virtuale assegnata ad un processo
 **spazio degli indirizzi**: la quantità di memoria assegnata ad un processo
 **indirizzo reale**: indirizzo di una locazione in memoria principale
@@ -52,3 +54,7 @@ la traduzione è fatta dall’hardware.
 precisazione sulla somma: il **page #**, prima di essere sommato al **page table Ptr**, che punta all’inizio della page table, va moltiplicato per la dimensione in byte di una entry della page table
 
 affinchè lo schema funzioni, ad ogni process switch il SO deve caricare la tabella delle pagine, del processo che andrà in esecuzione, in un registro dipendente dall’hardware
+## problema delle PTE
+le page tables potrebbero avere molte entry !  e quando un processo è in esecuzione, viene assicurato che almeno un parte della sua page table sia in RAM
+>[!example]
+supponiamo di avere 8GB di spazio virtuale, e che ogni pagina pesi 1kB. ogni page table
