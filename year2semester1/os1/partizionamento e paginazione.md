@@ -86,9 +86,9 @@ bisogna quindi:
 molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
 - i segmenti hanno una lunghezza variabile, e un limite massimo di dimensione
 - un indirizzo di memoria è un numero di segmento, e uno spiazzamento al suo interno
-- il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a metterli effettivamente in RAM e risolvere gli indirizzi ci pensa il SO)
+- il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a dove piazzarli in RAM e risolvere gli indirizzi ci pensa il SO)
 - sempre con aiuto hardware
 >[!figure] ![[Pasted image 20241027161332.png]]
 >traduzione di un indirizzo con segmentazione semplice:
->si nota come non ci possono essere segmenti più lunghi di $2^12$ byte.
->
+>si nota come non ci possono essere segmenti più lunghi di $2^{12}$ byte.
+>il 12-bit offset viene sommato al base address per trovare l’indirizzo fisico
