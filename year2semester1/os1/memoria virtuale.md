@@ -71,6 +71,19 @@ può capitare di avere un TLB miss e non trovare la pagina in memoria principale
 dopodichè, il TLB viene aggiornato includendo la pagina appena acceduta (si usa un algortimo di rimpiazzamento tipo LRU per gestire la TLB piena)
 >[!figure]  memoria virtuale con TLB
 ![[Pasted image 20241028135724.png]]
+come si vede nell’immagine, le “query” al TLB, che è un supporto hardware, si possono fare in parallelo
 
 >[!example]
 ![[Pasted image 20241028140037.png]]
+## process switch
+il SO deve poter resettare il TLB
+per far un po meglio, alcuni processori (es. Pentium) permettono di etichettare con il PID ciascuna entry del TLB (e una entry del TLB è presa come valida se il PID del TLB coincide con un PID attuale)
+
+in ogni caso(anche senza TLB), come abbiamo visto, a ogni process switch è necesario dire al processore dove è la nuova PT
+- nel caso sia a 2 livelli, basta la page directory
+- ciò fa parte del process switch
+
+>[!figure] ![[Pasted image 20241028141114.png]]
+>dato che il TLB non è indicizzato nello stesso modo delle PT(il TLB contiene solo alcuni elementi del PT), **l’associative mapping** ci permette di questionare tutte le entry del TLB allo stesso tempo (sempre grazie al supporto hardware)
+
+inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: dato che quando avviene una TLB hit non controlliamo la PT del processo, potremmo non aggorgerci se la pagina che cerchiamo è stata swappata. 
