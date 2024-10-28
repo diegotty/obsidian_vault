@@ -58,3 +58,19 @@ affinchè lo schema funzioni, ad ogni process switch il SO deve caricare la tabe
 le page tables potrebbero avere molte entry !  e quando un processo è in esecuzione, viene assicurato che almeno un parte della sua page table sia in RAM
 >[!example]
 supponiamo di avere 8GB di spazio virtuale, e che ogni pagina pesi 1kB. ogni page table
+
+# TLB
+ogni riferimento alla memoria virtuale può generare due accessi alla memoria: 
+- uno per la tabella delle pagine (se la tabella ha un solo livello)
+- uno per prendere il dato
+il TLB (**transation lookaside buffer**) è una cache veloce che contiene le entry delle process table  che sono state usate più di recente
+quindi, dato un indirizzo virtuale, il procesore controlla prima il TLB, e si possono verifcare due casi:
+- **TLB hit**: l’entry è presente, si prende il frame number e si ricava l’indirizzo reale
+- **TLB miss**: l’elemento non è presente, si prende la entry dal PT del processo
+può capitare di avere un TLB miss e non trovare la pagina in memoria principale: si gestisce il page fault (guarda esempio sotto)
+dopodichè, il TLB viene aggiornato includendo la pagina appena acceduta (si usa un algortimo di rimpiazzamento tipo LRU per gestire la TLB piena)
+>[!figure]  memoria virtuale con TLB
+![[Pasted image 20241028135724.png]]
+
+>[!example]
+![[Pasted image 20241028140037.png]]
