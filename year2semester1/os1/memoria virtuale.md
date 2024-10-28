@@ -86,4 +86,9 @@ in ogni caso(anche senza TLB), come abbiamo visto, a ogni process switch è nece
 >[!figure] ![[Pasted image 20241028141114.png]]
 >dato che il TLB non è indicizzato nello stesso modo delle PT(il TLB contiene solo alcuni elementi del PT), **l’associative mapping** ci permette di questionare tutte le entry del TLB allo stesso tempo (sempre grazie al supporto hardware)
 
-inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: dato che quando avviene una TLB hit non controlliamo la PT del processo, potremmo non aggorgerci se la pagina che cerchiamo è stata swappata. 
+inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: dato che quando avviene una TLB hit non controlliamo la PT del processo, potremmo non aggorgerci se la pagina che cerchiamo è stata swappata, e quindi non gestiremmo il page fault
+- se il SO swappa una pagina, deve istruire anche il TLB di eliminarla !
+- tornano qui utili le istruzioni hardware di reset parziale del TLB
+>[!figure] TLB + cache
+![[Pasted image 20241028141854.png]]
+la cache è presente anche senza il TLB !!
