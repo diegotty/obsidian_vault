@@ -23,4 +23,9 @@ Lemma di Gauss (divisibilià tra numeri primi), altro lemma (se p irriducibile, 
 Piccolo Teorema di Fermat (PTF), esercizi, intro Serie di Fibonacci
 # 17/10/2024
 esercizio serie di fibonacci, teorema fondamentale dell'artimentica, divisori di zero (anelli e campi), intro dominio
-
+# 22/10/2024
+generalizzazione del teorema della cancellazione, risoluzione di equazioni in A, teorema dei resti cinesi
+# 23/10/2024
+esercizi su equazioni e teorema resti cinese, polinomi in una indeterminata a coeff. in un campo,  grado di un polinomio
+# 24/10/2024
+analogie tra Z e polinomi: |.|c, divisione euclidea, polinomi monici, polinomi invertibili, divisibilità, dominio, congruenza, MCD, irriducibilità, primi, teorema fattorizzazione unica. 
