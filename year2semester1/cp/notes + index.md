@@ -21,3 +21,9 @@ correzione esercizi, legge della probabilità condizionata totale generalizzata
 esercizi, rapporto a favore di un evento, dimostrazione che E->P(E|F) è una funzione di probabilità
 # 17/10/2024
 eventi indipendenti
+# 21/10/2024
+molteplici eventi indipendenti tra loro
+# 23/10/2024
+monty hall, esercizio
+# 25/10/2024
+variabili aleatorie, densità di probabilità discreta, valore atteso

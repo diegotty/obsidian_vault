@@ -3,7 +3,25 @@ created: 2024-10-17
 related to: "[[progettazione, problemi e vincoli#dipendenze funzionali]]"
 updated: 2024-10-17, 07:24
 ---
-//TODO index
+>[!index]
+>
+>- [chiave e superchiave](#chiave%20e%20superchiave)
+>- [chiave primaria](#chiave%20primaria)
+>- [dipendenze funzionali banali](#dipendenze%20funzionali%20banali)
+>	- [proprietà di dipendenze funzionali](#propriet%C3%A0%20di%20dipendenze%20funzionali)
+>- [$F^A$](#$F%5EA$)
+>	- [assiomi di Armstrong](#assiomi%20di%20Armstrong)
+>		- [assioma della riflessività](#assioma%20della%20riflessivit%C3%A0)
+>		- [assioma dell’aumento](#assioma%20dell%E2%80%99aumento)
+>		- [assioma della transitività](#assioma%20della%20transitivit%C3%A0)
+>	- [regole derivate](#regole%20derivate)
+>		- [regola dell’unione](#regola%20dell%E2%80%99unione)
+>		- [regola della decomposizione](#regola%20della%20decomposizione)
+>		- [regola della pseudotransitività](#regola%20della%20pseudotransitivit%C3%A0)
+>	- [osservazione](#osservazione)
+>- [chiusura di un insieme di attributi](#chiusura%20di%20un%20insieme%20di%20attributi)
+>- [lemma 1](#lemma%201)
+
 dato uno schema R e un insieme di dipendenze funzionali F, un’istanza legale di R oltre a soddisfare l’insieme di dipendenze funzionali F, soddisfa anche un insieme di dipendenze più grande: $F^+$
 $$F \subseteq F+$$
 $F^+$ è la chiusura di F, cioè l’insieme di dipendenze funzionali che sono soddisfate da ogni stanza legale di R
