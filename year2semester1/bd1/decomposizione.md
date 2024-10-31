@@ -3,6 +3,10 @@ created: "2024-10-31"
 related to: 
 updated: "2024-10-31, 07:43"
 ---
+>[!index]
+>
+>- [condizioni della decomposizione](#condizioni%20della%20decomposizione)
+>- [forma normale di Boyce-Codd](#forma%20normale%20di%20Boyce-Codd)
 # decomposizione
 se uno schema non è in 3FN, esso può essere **decomposto** per creare un insieme di schemi in 3FN.
 esistono diversi modi per decomporre uno schema, ma è necessario che ogni dipendenza originaria (in $F$) sia rispettata negli schemi decomposti, anche se gli attributi interessati dalle dipendenze funzionali sono distribuiti in relazioni diverse.
@@ -81,3 +85,8 @@ la BCNF **non è rispettata** nella prima dipendenza funzionale, che ha come det
 la relazione Interventi **non è** quindi in BCNF
 **MA**
 la relazione interventi è in 3FN in quanto la prima dipendenza non viola la definizione ($Sala$ è primo) (però, non essendo BCNF, la prima dipendenza funzionale non è gestita “automaticamente”, e bisogna quindi aggiungere un constraint quando si crea la base di dati)
+
+\\TODO add esempi
+attraverso altri esempi, si può notare che:
+**può non essere possibile** decomporre uno schema non BCNF ottenendo sottoschemi BCNF, e preservando allo stesso tempo tutte le dipendenze originarie
+**MA** ciò è **sempre** possibile per la 3FN (che è comunque soddisfacente), quindi nel seguito contiueremo a prendere in considerazione solo la 3FN
