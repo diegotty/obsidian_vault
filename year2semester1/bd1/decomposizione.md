@@ -68,3 +68,16 @@ quindi una relazione in BCNF è **anche** in 3FN, ma non viceversa!
 $Interventi( Paziente, DataIntervento, OraIntervento, Chirurgo, Sala)$
 possiamo determinare le dipendenze funzionali in base a le seguenti informazioni date:
 nel corso di una giornata una sala operatoria è occupata **sempre** dal medesimo chirurgo che effettua più interventi, in diverse ore.
+$\{Chirurgo, DataIntervento \to Sala\}$
+$\{Chirurgo, DataIntervento, OraIntervento \to Sala, Paziente\}$
+$\{Paziente, DataIntervento \to Chirurgo, OraIntervento, Sala\}$ (diamo per scontato che un paziente non si può operare 2 volte lo stesso giorno)
+$\{Sala, DataIntervento, OraIntervento\to Paziente, Chirurgo\}$
+ci sono tre insiemi di attributi che possono fungere da chiave:
+$K1 =\{Chirurgo, DataIntervento, OraIntervento\}$
+$K2 = \{Paziente, DataIntervento\}$
+$K3 = \{Sala, DataIntervento, OraIntervento\}$
+qualunque sia la chiave primaria che scegliamo, i determinanti nelle ultime 3 dipendenze funzionali sono insiemi di attributi che possono svolgere la funzione di chiave, e quindi la BCNF non è sicuramente violata in questi casi
+la BCNF **non è rispettata** nella prima dipendenza funzionale, che ha come determinante un insieme di attributi **non chiave**
+la relazione Interventi **non è** quindi in BCNF
+**MA**
+la relazione interventi è in 3FN in quanto la prima dipendenza non viola la definizione ($Sala$ è primo) (però, non essendo BCNF, la prima dipendenza funzionale non è gestita “automaticamente”, e bisogna quindi aggiungere un constraint quando si crea la base di dati)
