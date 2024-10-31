@@ -13,4 +13,14 @@ si è quindi interessati a calcolare $F^+$, e sappiamo come farlo, ma ciò al mo
 vedremo che il calcolo di $X^+$ è utile in diversi casi … 
 # come si calcola $X^+$
 >[!example] algoritmo per calcolo di $X^+$
-**input**: uno schema di relazione R, un insieme $F$ di dipendenze funzionali su $R$, e un sottoinsieme $X$
+**input**: uno schema di relazione R, un insieme $F$ di dipendenze funzionali su $R$, e un sottoinsieme $X$ di $R$ ($X$ può essere un singolo attributo)
+**output**: la chiusura di $X$ rispetto ad $F$ (restituita nella variabile $Z$)
+
+**begin**
+$Z:= X;$
+$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
+**while**($S \not\subset Z$)
+	**do**	
+	$Z := Z \cup S;$
+	$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
+**end**
