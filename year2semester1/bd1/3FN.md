@@ -153,6 +153,4 @@ ci sono 2 casi(valutiamo X, che per ipotesi **non può essere una superchiave**)
 - esiste una chiave $K$ di R tale che $X \subset K$: in tal caso $A$ non può essere primo(per violare la 3FN), e quindi $X \to A$ è una **dipendenza parziale**
 quindi, la dimostrazione per assurdo è completata
 
-# decomposizione
-se uno schema non è in 3FN, esso può essere **decomposto** per creare un insieme di schemi in 3FN.
-esistono diversi modi per decomporre uno schema, ma è necessario che ogni dipendenza originaria (in $F$) sia rispettata negli schemi decomposti, anche se gli attributi interessati dalle dipendenze funzionali sono distribuiti in relazioni diverse.
+>[!warning] se tutte le dipendenze hanno come determinante una superchiave, non posso violare le dipendenze funzionali
