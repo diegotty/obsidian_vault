@@ -44,3 +44,24 @@ $R$, per motivi pratici può essere decomposto in:
 tale schema, pu preservando tutte le dipendenze in $F^+$(che sono quelle banali), non è soddisfacente, infatti:
 consideriamo l’istanza **legale** di R:
 ![[Pasted image 20241031080836.png]]
+in base all decomposizione data, questa istanza si decompone in:
+![[Pasted image 20241031080902.png]]
+e, in teoria, dovrebbe essere possibile ricostruirla **esattamente** tramite join naturale.
+invece, effettuando il join tra le due istanze **legali** risultanti della decomposizione, si ottiene:
+![[Pasted image 20241031081005.png]]
+**stessa situazione dell’esempio 2!!!**
+
+# condizioni della decomposizione
+quando si decompone uno schema per ottenerne uno in 3FN bisogna tenere presente altri due requisiti dello scempa decomposto:
+- deve **preservare le dipendenze funzionali** che valgono su ogni istanza legale dello **schema originario**
+- deve permettere di **ricostruire mediante join naturale** ogni **istanza legale dello schema originario**(senza aggiunta di informazione estranea)
+# forma normale di Boyce-Codd
+la 3FN non è la più restrittiva che si può ottenere. ne esistono altre, tra cui la forma normale **Boyce-Codd**:
+una relazione è in forma normale Boyce-Codd (BCNF) quando in essa **ogni determinante è una superchiave**(forzo una delle due condizione sufficienti della 3FN)
+
+perchè?
+>[!warning] se tutte le dipendenze hanno come determinante una superchiave, non posso violare le dipendenze funzionali
+
+quindi una relazione in BCNF è **anche** in 3FN, ma non viceversa!
+>[!example]
+>consideriamo ora una relazione che descrive l’allocazione delle sale operatorie di un ospedale:
