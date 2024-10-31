@@ -65,3 +65,6 @@ perchè?
 quindi una relazione in BCNF è **anche** in 3FN, ma non viceversa!
 >[!example]
 >consideriamo ora una relazione che descrive l’allocazione delle sale operatorie di un ospedale:
+$Interventi( Paziente, DataIntervento, OraIntervento, Chirurgo, Sala)$
+possiamo determinare le dipendenze funzionali in base a le seguenti informazioni date:
+nel corso di una giornata una sala operatoria è occupata **sempre** dal medesimo chirurgo che effettua più interventi, in diverse ore.
