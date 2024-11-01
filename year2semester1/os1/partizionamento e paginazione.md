@@ -96,7 +96,7 @@ molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
 pros: 
 - semplifica la gestione delle strutture dati che crescono
 - permette di modificare e ricompilare i programmi in modo indipendente
-- permette di condividere dati (utilizzando un segmento per i dati condivisi) e di proteggere dati in maniera semplice
+- permette di condividere dati (basta dire che uno stesso segmento serve per più processi) e di proteggere dati( dato che ogni segmento ha una base ed una lunghezza, è facile controllare che i riferimenti siano contenuti nel giusto intervallo)
 ## organizzazione
 la segmentazione funziona allo stesso modo della paginazione a livello di organizzazione: si usa una segmentation table (che ha la stessa funzione della page table), e cambia solo la struttura delle entry:
 >[!figure] ![[Pasted image 20241101191231.png]]
@@ -114,3 +114,6 @@ l’idea, in alcuni processori (ad esempio i Pentium), è di combinare paginazio
 >[!figure] page table
 >![[Pasted image 20241101191950.png]]
 si useranno qundi sia segmentation table che page table
+
+>[!figure] traduzione degli indirizzi
+![[Pasted image 20241101192120.png]]
