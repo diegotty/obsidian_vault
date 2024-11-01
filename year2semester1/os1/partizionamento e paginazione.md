@@ -84,7 +84,7 @@ bisogna quindi:
 # segmentazione
 ## segmentazione semplice
 molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
-- i segmenti hanno una lunghezza variabile, e un limite massimo di dimensione
+- i segmenti hanno una lunghezza variabile e dinamica, e un limite massimo di dimensione
 - un indirizzo di memoria è un numero di segmento, e uno spiazzamento al suo interno
 - il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a dove piazzarli in RAM e risolvere gli indirizzi ci pensa il SO)
 - sempre con aiuto hardware
@@ -92,3 +92,25 @@ molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
 >traduzione di un indirizzo con segmentazione semplice:
 >si nota come non ci possono essere segmenti più lunghi di $2^{12}$ byte.
 >il 12-bit offset viene sommato al base address per trovare l’indirizzo fisico
+
+pros: 
+- semplifica la gestione delle strutture dati che crescono
+- permette di modificare e ricompilare i programmi in modo indipendente
+- permette di condividere dati (utilizzando un segmento per i dati condivisi) e di proteggere dati in maniera semplice
+## organizzazione
+la segmentazione funziona allo stesso modo della paginazione a livello di organizzazione: si usa una segmentation table (che ha la stessa funzione della page table), e cambia solo la struttura delle entry:
+>[!figure] ![[Pasted image 20241101191231.png]]
+>- segment base: indirizzo di partenza (in memoria principale) del segmento
+>- length: lunghezza del segmento
+>- P ed M hanno la stessa funzione che nelle entry della paginazione
+
+>[!figure]  traduzione degli indirizzi
+>![[Pasted image 20241101191441.png]]
+
+## paginazione insieme a segmentazione
+la paginazione è trasparente al programmatore, che non ne è (o non ne deve essere a conoscenza), mentre la segmentazione è visibile al programmatore ( se programma in assembler), e se il programmatore decide di non usarla ci pensa il compilatore ad usare i segmenti
+l’idea, in alcuni processori (ad esempio i Pentium), è di combinare paginazione e segmentazione
+- ogni segmento viene diviso in più pagine
+>[!figure] page table
+>![[Pasted image 20241101191950.png]]
+si useranno qundi sia segmentation table che page table
