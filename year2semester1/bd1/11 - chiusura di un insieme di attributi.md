@@ -24,3 +24,5 @@ $S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 	$Z := Z \cup S;$
 	$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 **end**
+
+AB superchiave !! devo calcolare le chiusure di A e B per verificare se AB è chiave
