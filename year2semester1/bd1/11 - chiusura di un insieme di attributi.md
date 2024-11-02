@@ -59,7 +59,21 @@ sia $f$ tale che $S^{(f)} \subseteq Z^{(f)}$ (cioè, l’algoritmo è terminato)
 ## $A \in Z^{(f)} \implies A \in X^+$
 visto che $Z^{(f)}$ è generato iterativamente, usiamo una dimostrazione per induzione
 caso base : $i = 0$
-$Z^0 = X$, quindi $X \subseteq X^+ \implies Z^0 \subseteq X^+$
+- $Z^0 = X$, quindi $X \subseteq X^+ \implies Z^0 \subseteq X^+$
 ipotesi induttiva: $i -1$
+- $Z^{i-1} \subseteq X^+$
+passo induttivo: $i$
+- prendiamo $A \in Z^i - Z^{i-1}$, cioè un attributo aggiunto a $Z$ all’iterazione $i$
+- per aggiungere $A$, $\exists\,\, Y \to W \in F : Y \subseteq Z^{i-1} \land A \in W$
+- uso l’ipotesi induttiva: $Z^{i-1} \subseteq X^+ \implies X \to Z^{i-1} \in F^A$(per lemma 1)
+- per decomposizione su $X \to Z^{i-1}$ e sapendo che $Y \subseteq Z^{(i-1)}$, esiste la relazione $X \to Y \in F^A$
+- applicando la transitività su $X \to Y$ e $Y \to W$, trovo la relazione $X \to W \in F^A$, e per decomposizione su essa, trovo $X \to A \in F^A \implies A \in X^+$
 
+## $A \in X^+  \implies A \in Z^{(f)}$
+per dimostrare la seconda parte dell’implicazione, usiamo un’istanza legale di R (come nella dimostrazione di $F^+ \subseteq F^A$)
+>[!figure]  ![[Pasted image 20241102211932.png]]
+in questa istanza composta da due tuple, gli attributi uguali tra le due tuple sono 
 
+mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme di dipendenze funzionali $F$:
+- prendo una qualsiasi dipendenza $V \to W \in F$, assumiamo per assurdo che essa non sia soddisfatta. 
+- in questo caso, $t_{1}[V]=t_{2}[V] \land t_{1}[W] \neq t_{2}[W]$ 

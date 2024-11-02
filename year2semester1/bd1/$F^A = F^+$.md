@@ -18,7 +18,7 @@ data una dipendenza $X \to Y \in F^A$ dimostriamo che $X \to Y \in F^+$ per indu
 caso base: $i=0$ 
 - $X \to Y \in F^+$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
 ipotesi induttiva: $i-1$
-- $X \to Y \in F^A \implies X \to Y \in F^+$, quindi ($X \to Y$ è soddisfatta da ogni istanza legale)
+- $X \to Y \in F^A \implies X \to Y \in F^+$, quindi $X \to Y$ è soddisfatta da ogni istanza legale
 passo induttivo, $i$:
 - $X \to Y \in F^A$
 - diciamo che $X \to Y$ non è altro che la dipendenza funzionale ottenuta applicando uno degli assiomi di Armstrong $i-1$ volte(la dipendenza funzionale dell’ipotesi induttiva), a cui applichiamo uno degli assiomi di Armstrong.
