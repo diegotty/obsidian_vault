@@ -32,13 +32,34 @@ l’algoritmo si ferma quando il nuovo insieme $S$, appena calcolato, è già co
 $F = \{AB \to C, B \to D, AD \to E, CE \to H\}$
 $R = ABCDEHL$
 vogliamo calcolare la chiusura di $AB$
+>
 >$i = 0$
 >$Z = AB, S = \{C, D \}$, perchè $AB \to C \in F$, e applicando la transitività su $AB \to B$(riflessività) e $B \to D \in F$, ho $AB \to D$
+>
+>$i=1$
+>$Z = ABCD, S =\{C,D,E\}$, perchè applicando la transitività su $AB \to AD$(trovata applicando l’aumento su $AB \to D$, la dipendenza che abbiamo trovato anche all’iterazione precedente) e $AD \to E \in F$, ho $AB \to E$
+>
+>$i = 2$
+>$Z=ABCDE, S = \{C,D,E,H\}$, perchè applicando la transitività su $AB \to CE$ (trovata applicando l’unione tra $AB \to E$(calcolata nell’iterazione precedente) ed $AB \to C$), ho $AB \to E$, e $CE \to H$, ho $AB \to H$
+$i = 3$
+$Z = ABCDEH, S= CDEH$, e non posso aggiungere altro, quindi l’algoritmo si ferma
+>
+> abbiamo trovato che $AB$ è una superchiave ! per dimostrare che $AB$ è una chiave, devo calcolare le chiusure di $A$ e $B$
 
-$i=1$
-$Z = ABCD, S =\{C,D,E\}$, perchè applicando la transitività su $AB \to AD$(trovata applicando l’aumento su $AB \to D$, la dipendenza che abbiamo trovato anche all’iterazione precedente) e $AD \to E \in F$, ho $AB \to E$
+# teorema
+indichiamo con $Z^{(0)}$ il valore iniziale di Z (quindi $Z^{(0)} = X$ ) e con $Z^{(i)}$  ed $S^{(i)}$ , con $i ≥ 1$, i valori di $Z$ ed $S$ **dopo** l’i-esima esecuzione del ciclo. è facile vedere che $Z^{(0)} \subseteq Z^{(i+1)}, \forall i$
+sia $f$ tale che $S^{(f)} \subseteq Z^{(f)}$ (cioè, l’algoritmo è terminato); proveremo che:
+>[!info] teorema
+>l’algorimo “Calcolo di $X^+$” calcola correttamente la chiusura di un insieme di attributi $X$ rispetto ad un’insieme $F$ di dipendenze funzionali, cioè:
+> $$ Z^{(f)} \subseteq X^+ \land X^+ \subseteq Z^{(f)}$$
+>e quindi
+>$$A \in Z^{(f)} \iff A \in X^+$$
 
-$i = 2$
-$Z=ABCDE, S = \{C,D,E,H\}$, perchè applicando la transitività su $AB \to E$(calcolata nell’iterazione precedente) e $AB \to CE$ (trovata applicando l’unione tra $AB \to E$ ed $AB \to C$), ho $AB \to E
+# dimostrazione
+## $A \in Z^{(f)} \implies A \in X^+$
+visto che $Z^{(f)}$ è generato iterativamente, usiamo una dimostrazione per induzione
+caso base : $i = 0$
+$Z^0 = X$, quindi $X \subseteq X^+ \implies Z^0 \subseteq X^+$
+ipotesi induttiva: $i -1$
 
 
