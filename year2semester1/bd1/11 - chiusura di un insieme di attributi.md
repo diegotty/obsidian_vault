@@ -72,8 +72,9 @@ passo induttivo: $i$
 ## $A \in X^+  \implies A \in Z^{(f)}$
 per dimostrare la seconda parte dell’implicazione, usiamo un’istanza legale di R (come nella dimostrazione di $F^+ \subseteq F^A$)
 >[!figure]  ![[Pasted image 20241102211932.png]]
-in questa istanza composta da due tuple, gli attributi uguali tra le due tuple sono 
+>in questa istanza composta da due tuple, gli attributi uguali tra le due tuple sono contenuti in $Z^{(f)}$, mentre gli attributi diversi tra le due duple sono contenuti in $R - Z^{(f)}$
+
 
 mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme di dipendenze funzionali $F$:
 - prendo una qualsiasi dipendenza $V \to W \in F$, assumiamo per assurdo che essa non sia soddisfatta. 
-- in questo caso, $t_{1}[V]=t_{2}[V] \land t_{1}[W] \neq t_{2}[W]$ 
+- in questo caso, $t_{1}[V]=t_{2}[V] \land t_{1}[W] \neq t_{2}[W]$ , e ciò implica che $V \subseteq Z^{(f)}$ e $W \cap (R - Z^{(f)}) \neq \varnothing$
