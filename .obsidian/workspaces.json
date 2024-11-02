@@ -245,30 +245,44 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/raw notes/2024-10-22.md",
+                    "file": "year2semester1/os1/raw notes/2024-11-02.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2024-10-22"
+                  "title": "2024-11-02"
                 }
               },
               {
-                "id": "e968fc9a7cf5e4f9",
+                "id": "2babfb5153702fb6",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/politiche di scheduling.md",
+                    "file": "year2semester1/os1/partizionamento e paginazione.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "politiche di scheduling"
+                  "title": "partizionamento e paginazione"
                 }
               },
               {
-                "id": "5c21b7daaa605d10",
+                "id": "3e6ef6e59955456e",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year2semester1/os1/ciclo di esecuzione e interruzioni.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "ciclo di esecuzione e interruzioni"
+                }
+              },
+              {
+                "id": "54e9544976f28d74",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -281,8 +295,7 @@
                   "title": "politiche di scheduling"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "vertical"
@@ -437,8 +450,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "e968fc9a7cf5e4f9",
-      "mtime": "2024-10-22T10:46:51+02:00"
+      "active": "87bff695949ea9dc",
+      "mtime": "2024-11-02T19:37:43+01:00"
     },
     "update indexes": {
       "main": {
@@ -642,5 +655,5 @@
       "mtime": "2024-10-22T10:48:10+02:00"
     }
   },
-  "active": "os1"
+  "active": "bd1"
 }
