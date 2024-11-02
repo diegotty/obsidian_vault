@@ -81,4 +81,5 @@ mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme 
 - uhhhh ufff godfkndammit sono passati 2 giorni e non riesco + a capire 
 - quindi $r$ è un’istanza legale
 -  la dipendenza funzionale $X \to A \implies t_{1}[X]=t_{2}[X] \implies t_{1}[A]=t_{2}[A]$ è soddisfatta da $r$ istanza legale, e visto che $X \subseteq Z^{(f)}$, sappiamo che $t_{1}[X]=t_{2}[X]$, e quindi $A \in Z^{(f)}$
-
+# proprietà dell’insieme vuoto
+- la notazione $\{\varnothing\}
