@@ -11,8 +11,7 @@ si è quindi interessati a calcolare $F^+$, e sappiamo come farlo, ma ciò al mo
 >- ciò può essere fatto calcolando $X^+$ e verificando se $Y \subseteq X^+$, infatti, per il **lemma 1**: $X \to Y \in F^A \iff Y \subseteq X^+$, e noi sappiamo che $F^A = F^+A$
 
 vedremo che il calcolo di $X^+$ è utile in diversi casi … 
-# come si calcola $X^+$
->[!example] algoritmo per calcolo di $X^+$
+# algoritmo per calcolo di $X^+$
 **input**: uno schema di relazione R, un insieme $F$ di dipendenze funzionali su $R$, e un sottoinsieme $X$ di $R$ ($X$ può essere un singolo attributo)
 **output**: la chiusura di $X$ rispetto ad $F$ (restituita nella variabile $Z$)
 
@@ -24,5 +23,6 @@ $S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 	$Z := Z \cup S;$
 	$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 **end**
-
-AB superchiave !! devo calcolare le chiusure di A e B per verificare se AB è chiave
+>[!info] spiegazione
+ad ogni iterazione, in S inserisco i **singoli** attibuti ($A$) che compongono la dipendente ($V$) delle dipendenze in $F$ la cui determinante è contenuta in $Z$
+all’inizio $Z :=X$, quindi inserisco in $S$ tutte le dipendenti che sono determinate da $X$. nelle iterazioni successive, avendo aggiunto el
