@@ -3,7 +3,15 @@ created: 2024-10-15
 related to: "[[gestione dei processi]]"
 updated: 2024-10-15, 08:46
 ---
-//TODO index
+>[!index]
+>
+>- [motivi per usare i thread](#motivi%20per%20usare%20i%20thread)
+>- [tipi di thread](#tipi%20di%20thread)
+>- [ULT (User Level Thread)](#ULT%20(User%20Level%20Thread))
+>- [KLT (Kernel Level Thread)](#KLT%20(Kernel%20Level%20Thread))
+>- [thread in Linux](#thread%20in%20Linux)
+>- [ambiguità dei nomi](#ambiguit%C3%A0%20dei%20nomi)
+>- [stati dei processi in Linux](#stati%20dei%20processi%20in%20Linux)
 # thread
 fino a quanto studiato, ogni processo compete con tutti gli altri per l’esecuzione: grazie a una parallelizzazione che può essere:
 - finta: c’è solo un processore, i processi vengono swappati troppo in fretta perchè l’utente se ne accorga
