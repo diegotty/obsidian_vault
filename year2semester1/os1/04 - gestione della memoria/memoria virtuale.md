@@ -92,6 +92,3 @@ inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: d
 >[!figure] TLB + cache
 ![[Pasted image 20241028141854.png]]
 la cache è presente anche senza il TLB !!
-
-# cartteristiche
-## dimensione delle pagine

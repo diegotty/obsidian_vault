@@ -1,7 +1,7 @@
 ---
-created: "2024-10-31"
-related to: 
-updated: "2024-10-31, 08:42"
+created: 2024-10-31
+related to: "[[decomposizione]]"
+updated: 2024-10-31, 08:42
 ---
 come abbiamo già visto, quando si decompone uno schema di relazione $R$ su cui si è definito un insieme di dipendenze funzionali $F$, oltre ad ottenere schemi in 3FN, occorre:
 - preservare le dipendenze in $F^+$

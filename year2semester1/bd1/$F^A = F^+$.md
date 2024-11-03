@@ -1,9 +1,15 @@
 ---
-created: "2024-10-18"
-related to: 
-updated: "2024-10-18, 16:04"
+created: 2024-10-18
+related to: "[[chiusure di dipendenze funzionali]]"
+updated: 2024-10-18, 16:04
 ---
-//TODO index
+>[!index]
+>
+>- [dimostrazione](#dimostrazione)
+>	- [$F^+ \supseteq F^A$](#$F%5E+%20%5Csupseteq%20F%5EA$)
+>	- [$F^+ \subseteq F^A$](#$F%5E+%20%5Csubseteq%20F%5EA$)
+>- [note](#note)
+>- [a cosa ci serve conoscere $F^+$](#a%20cosa%20ci%20serve%20conoscere%20$F%5E+$)
 # teorema
 >[!note] teorema
 Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
