@@ -82,4 +82,16 @@ mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme 
 - quindi $r$ è un’istanza legale
 -  la dipendenza funzionale $X \to A \implies t_{1}[X]=t_{2}[X] \implies t_{1}[A]=t_{2}[A]$ è soddisfatta da $r$ istanza legale, e visto che $X \subseteq Z^{(f)}$, sappiamo che $t_{1}[X]=t_{2}[X]$, e quindi $A \in Z^{(f)}$
 # proprietà dell’insieme vuoto
-- la notazione $\{\varnothing\}
+- la notazione $\{\varnothing\}$ indica l’insieme che contiene l’insieme vuoto (insieme di insiemi) e non va confusa con il semplice $\varnothing$
+- l’insieme vuoto è un sottoinsieme di ogni insieme A : $$\forall A : A \supseteq \varnothing$$
+- l’unione di qualunque insieme A con l’insieme vuoto è A: 
+$$\forall A : A \cup \varnothing = A$$
+- l’intersezione di qualunque insieme A con l’insieme vuoto è l’insieme vuoto:
+ $$\forall A : A \cap \varnothing = \varnothing$$
+ - il prodotto cartesiano di un qualunque insieme A con l’insieme vuoto è l’insieme vuoto: 
+ $$\forall A : A \times \varnothing = \varnothing$$
+ - l’unico sottoinsieme dell’insieme vuoto è l’insieme vuoto stesso
+ - il numero di elementi dell’insieme vuoto(cioè la sua [[modello relazionale#grado e cardinalita’ di una relazione|cardinalità]]) è **zero**; l’insieme vuoto è quindi finito
+ >[!example] esempio di chiusure di insiemi di attributi
+ dato lo schema di relazione $R=(A,B,C,D,E,H)$ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$, calcolare le chiusure degli insiemi: $A,D,AB$
+ 
