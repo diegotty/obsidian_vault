@@ -1,7 +1,7 @@
 ---
-created: "2024-10-31"
-related to: 
-updated: "2024-10-31, 07:43"
+created: 2024-10-31
+related to: "[[3FN]]"
+updated: 2024-10-31, 07:43
 ---
 >[!index]
 >

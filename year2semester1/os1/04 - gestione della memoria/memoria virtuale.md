@@ -12,7 +12,7 @@ grazie a questa intuizione si può cambiare il modo in cui si gestisce la memori
 - viene generato un interrupt (**page fault**) quando al processo serve un indirizzo che non si trova in RAM
 - visto che l’interrupt lanciato è una richiesta di I/O a tutti gli effetti, il SO mette il processo nello stato`blocked`
 - mentre il pezzo di processo che contiene l’indirizzo logico viene caricata in memoria principale(il SO effettua una richiesta di lettura su disco, quindi I/O a tutti gli effetti), un altro processo va in esecuzione
-- quanto l’operazione I/O viene completata, un interrupt fa in modo che il processo torni `ready` (non necessariamente in esecuzione)
+- quando l’operazione I/O viene completata, un interrupt fa in modo che il processo torni `ready` (non necessariamente in esecuzione)
 - quando il processo verrà eseguito, occorrerà eseguire nuovamente la stessa istruzione che aveva causato il **page fault**, questa volta però, l’indirizzo necessario è caricato nella RAM
 ## conseguenze
 - più processi possono essere in memoria pricipale, visto che non devono essere caricati per intero

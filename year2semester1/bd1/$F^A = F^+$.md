@@ -1,9 +1,15 @@
 ---
-created: "2024-10-18"
-related to: 
-updated: "2024-10-18, 16:04"
+created: 2024-10-18
+related to: "[[chiusure di dipendenze funzionali]]"
+updated: 2024-10-18, 16:04
 ---
-//TODO index
+>[!index]
+>
+>- [dimostrazione](#dimostrazione)
+>	- [$F^+ \supseteq F^A$](#$F%5E+%20%5Csupseteq%20F%5EA$)
+>	- [$F^+ \subseteq F^A$](#$F%5E+%20%5Csubseteq%20F%5EA$)
+>- [note](#note)
+>- [a cosa ci serve conoscere $F^+$](#a%20cosa%20ci%20serve%20conoscere%20$F%5E+$)
 # teorema
 >[!note] teorema
 Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
@@ -18,7 +24,7 @@ data una dipendenza $X \to Y \in F^A$ dimostriamo che $X \to Y \in F^+$ per indu
 caso base: $i=0$ 
 - $X \to Y \in F^+$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
 ipotesi induttiva: $i-1$
-- $X \to Y \in F^A \implies X \to Y \in F^+$, quindi ($X \to Y$ è soddisfatta da ogni istanza legale)
+- $X \to Y \in F^A \implies X \to Y \in F^+$, quindi $X \to Y$ è soddisfatta da ogni istanza legale
 passo induttivo, $i$:
 - $X \to Y \in F^A$
 - diciamo che $X \to Y$ non è altro che la dipendenza funzionale ottenuta applicando uno degli assiomi di Armstrong $i-1$ volte(la dipendenza funzionale dell’ipotesi induttiva), a cui applichiamo uno degli assiomi di Armstrong.

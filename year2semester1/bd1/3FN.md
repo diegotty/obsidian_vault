@@ -1,7 +1,7 @@
 ---
-created: "2024-10-24"
-related to: 
-updated: "2024-10-24, 20:04"
+created: 2024-10-24
+related to: "[[progettazione, problemi e vincoli]]"
+updated: 2024-10-24, 20:04
 ---
 >[!index]
 >
