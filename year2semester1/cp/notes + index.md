@@ -27,3 +27,7 @@ molteplici eventi indipendenti tra loro
 monty hall, esercizio
 # 25/10/2024
 variabili aleatorie, densità di probabilità discreta, valore atteso
+# 28/10/2024
+funzione di ripartizione, varianza
+# 30/10/2024
+f(X), teorema su valore atteso di f(X)

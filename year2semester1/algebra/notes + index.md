@@ -29,3 +29,9 @@ generalizzazione del teorema della cancellazione, risoluzione di equazioni in A,
 esercizi su equazioni e teorema resti cinese, polinomi in una indeterminata a coeff. in un campo,  grado di un polinomio
 # 24/10/2024
 analogie tra Z e polinomi: |.|c, divisione euclidea, polinomi monici, polinomi invertibili, divisibilità, dominio, congruenza, MCD, irriducibilità, primi, teorema fattorizzazione unica. 
+# 29/10/2024
+esercizio su fattorizzazione, numeri complessi, operazioni su C, esponeziale di eulero, coniugazione complessa
+# 30/10/2024
+more on coniugazione complessa, formula fondamentale, valore assoluto, campi algebricamente chiusi
+# 31/10/2024
+more on coniugazione complessa, formula fondamentale, valore assoluto, campi algebricamente chiusi
