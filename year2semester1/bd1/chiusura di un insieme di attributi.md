@@ -3,7 +3,6 @@ created: 2024-10-31
 related to: "[[decomposizione]]"
 updated: 2024-10-31, 08:42
 ---
-    more on coniugazione complessa, formula fondamentale, valore assoluto, campi algebricamente chiusi
 come abbiamo già visto, quando si decompone uno schema di relazione $R$ su cui si è definito un insieme di dipendenze funzionali $F$, oltre ad ottenere schemi in 3FN, occorre:
 - preservare le dipendenze in $F^+$
 - poter ricostruire tramite join naturale tutta e solo l’informazione originaria (senza perdita di informazioni)
@@ -20,9 +19,9 @@ vedremo che il calcolo di $X^+$ è utile in diversi casi …
 $Z:= X;$
 $S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 **while**($S \not\subset Z$)
-	**do**	
-	$Z := Z \cup S;$
-	$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
+**do**	
+$Z := Z \cup S;$
+$S := \{A/Y \to V \in F \land A \in V \land Y \subseteq Z\}$
 **end**
 >[!info] spiegazione
 ad ogni iterazione, in S inserisco i **singoli** attibuti ($A$) che compongono la dipendente ($V$) delle dipendenze in $F$ la cui determinante è contenuta in $Z$
@@ -95,4 +94,8 @@ $$\forall A : A \cup \varnothing = A$$
  - il numero di elementi dell’insieme vuoto(cioè la sua [[modello relazionale#grado e cardinalita’ di una relazione|cardinalità]]) è **zero**; l’insieme vuoto è quindi finito
  >[!example] esempio di chiusure di insiemi di attributi
  dato lo schema di relazione $R=(A,B,C,D,E,H)$ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$, calcolare le chiusure degli insiemi: $A,D,AB$
- 
+ chiusura di $A$:
+ **begin**
+ $Z := A;$
+ $S := \{L \,\,\,t.c. Y \to V \in F \land L \in V \land Y \subseteq A\} = \varnothing$ ($A$ da solo non determina alcun altro attributo)
+ quindi al controllo del **while** 
