@@ -56,3 +56,16 @@ dati uno schema $R$ e un insieme di dipendenze funzionali $F$
 
 # chiavi e 3FN
 una volta individuate le chiavi di uno schema di relazione, possiamo determinare se lo schema è in 3FN
+
+>[!example] esempio 3
+ dato lo schema di relazione $R=(A,B,C,D,E,H)$
+ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$ (esempio in [[chiusura di un insieme di attributi#esempio di chiusure di insiemi di attributi| lezione precedente]])
+ ** determinare le chiavi e verificare che $R$ è in 3FN**
+> - tentiamo le chiusure di $AB, EH, D$(determinanti) ma senza successo.
+> - notiamo che $G$ non compare mai nelle dipendenze, quindi deve far parte della chiave, e l’attributo $E$ non compare mai a destra delle dipendenze, e farà quindi parte della chiave. 
+> - troviamo un sottoinsieme che ha come determinante $R$: $(ABEG)^+_F = \{A,B,E,G,C,D,H\}$. 
+> - calcoliamo le chiusure dei suoi sottoinsiemi: nessuno è chiave, quindi $ABEG$ è chiave !
+> - calcoliamo altri sottoinsiemi di $R$, non troviamo chiavi
+> - ora verifichiamo che $R$ sia in 3FN !
+> - la dipendenza $AB \to CD$ viola la 3FN: $AB$ è contenuto propriamente nella chiave, e $CD$ non è primo: abbiamo una **dipendenza parziale**
+>- notiamo anche che $EH \to D$ e $D \to H$ violano la 3FN. BIG SAD !
