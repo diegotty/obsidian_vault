@@ -40,4 +40,19 @@ e il seguente insieme di dipendenze funzionali:
 $F = \{AB \to D, G \to A, G \to B, H \to E, H \to G, D \to H \}$
 **determinare le 4 chiavi di $R$**
 
-cominciamo dagli attributi che ne determinano funzionalmente altri , e quelli che 
+cominciamo dagli attributi che ne determinano funzionalmente altri , e quelli che **NON** sono determinati funzionalmente dagli altri:
+nel nostro caso $AB, G, H, D$ sono buoni sottoinsiemi da cui iniziare, a cui però dobbiamo aggiungere $C$ che non appare nelle dipendenze funzionali in $F$( e quindi sarà in ogni chiave)
+calcolando le chiusure di $ABC, GC, CH, DC$, notiamo che la chiusura di ognuna comprende $R$: sono tutte superchiavi, e bisogna verificare la minimalità.
+per $GC, CH, DC$ è inutile farlo, in quanto sono necessari entrambi gli attributi.
+i sottoinsiemi di $ABH$ non sono chiavi, e quindi, pur avendo un attributo in più, anche $ABH$ è chiave di $R$
+# test di unicità della chiave
+(non necessario tipo)
+dati uno schema $R$ e un insieme di dipendenze funzionali $F$
+- calcoliamo l’intersezione degli insiemi ottenuti come sopra, cioè degli insiemi $X = R-(V-W)$, con $V \to W \in F$
+- se l’intersezione di questi insiemi (gli attributi comuni a tutti gli insiemi che interseco) determina tutto $R$, allora questa intersezione è l’unica chiave di $R$, altrimenti esistono più chiavi
+>[!warning] se esistono più chiavi vanno **TUTTE** identificate per poter testare se lo schema è in 3FN
+
+>[!warning] questa descritta è una comoda verifica, ma se nel compito viene richiesto di verficare che un insieme di attributi sia chiave, o trovare la chiave, va usata **SOLO** la definizione (verificare la chiusura contenga R, e che i suoi sottoinsiemi non siano chiavi)
+
+# chiavi e 3FN
+una volta individuate le chiavi di uno schema di relazione, possiamo determinare se lo schema è in 3FN
