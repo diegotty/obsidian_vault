@@ -3,6 +3,15 @@ created: 2024-10-31
 related to: "[[decomposizione]]"
 updated: 2024-10-31, 08:42
 ---
+>[!index]
+>
+>- [algoritmo per calcolo di $X^+$](#algoritmo%20per%20calcolo%20di%20$X%5E+$)
+>- [teorema](#teorema)
+>- [dimostrazione](#dimostrazione)
+>	- [$A \in Z^{(f)} \implies A \in X^+$](#$A%20%5Cin%20Z%5E%7B(f)%7D%20%5Cimplies%20A%20%5Cin%20X%5E+$)
+>	- [$A \in X^+  \implies A \in Z^{(f)}$](#$A%20%5Cin%20X%5E+%20%20%5Cimplies%20A%20%5Cin%20Z%5E%7B(f)%7D$)
+>- [proprietà dell’insieme vuoto](#propriet%C3%A0%20dell%E2%80%99insieme%20vuoto)
+
 come abbiamo già visto, quando si decompone uno schema di relazione $R$ su cui si è definito un insieme di dipendenze funzionali $F$, oltre ad ottenere schemi in 3FN, occorre:
 - preservare le dipendenze in $F^+$
 - poter ricostruire tramite join naturale tutta e solo l’informazione originaria (senza perdita di informazioni)
@@ -92,10 +101,25 @@ $$\forall A : A \cup \varnothing = A$$
  $$\forall A : A \times \varnothing = \varnothing$$
  - l’unico sottoinsieme dell’insieme vuoto è l’insieme vuoto stesso
  - il numero di elementi dell’insieme vuoto(cioè la sua [[modello relazionale#grado e cardinalita’ di una relazione|cardinalità]]) è **zero**; l’insieme vuoto è quindi finito
+## esempio di chiusure di insiemi di attributi 
  >[!example] esempio di chiusure di insiemi di attributi
  dato lo schema di relazione $R=(A,B,C,D,E,H)$ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$, calcolare le chiusure degli insiemi: $A,D,AB$
- chiusura di $A$:
+ **chiusura di $A$:**
  **begin**
  $Z := A;$
  $S := \{L \,\,\,t.c. Y \to V \in F \land L \in V \land Y \subseteq A\} = \varnothing$ ($A$ da solo non determina alcun altro attributo)
- quindi al controllo del **while** 
+ quindi al controllo del **while** $S \subseteq Z$, e non entriamo nella prima iterazione
+ $$A^+ =A$$
+**chiusura di $D$:** 
+ $Z := D;$
+ $S := \{L \,\,\,t.c. Y \to V \in F \land L \in V \land Y \subseteq D\} = H$
+ quindi entriamo nella prima iterazione, aggiungiamo $H$ a $Z$, ma ricalcolando $S$, vediamo che non abbiamo aggiunto niente di nuovo. quindi l’algoritmo si ferma alla seconda iterazione.
+ $$D^+ = DH$$
+ **chiusura $AB$**
+ $Z := AB;$
+ $S := \{L \,\,\,t.c. Y \to V \in F \land L \in V \land Y \subseteq AB\} =CD$
+ alla prima iterazione aggiungiamo $CD$ a $Z$, e ricalcolando $S$ gli aggiungiamo $H$, quindi $S = CDH$. dopo la verifica della condizione $S \not\subset Z$, aggiungiamo $H$ a $Z$.
+ l’algoritmo, quindi si fermerà all’iterazione successiva, in quanto $S = CDH$ e $Z = ABCDH$
+ quindi
+ $$AB^+=ABCDH$$
+ 
