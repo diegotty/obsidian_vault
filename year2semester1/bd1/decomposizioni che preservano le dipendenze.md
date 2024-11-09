@@ -11,9 +11,6 @@ Sia R uno schema di relazione. Una decomposizione di $R$ è una famiglia $\rho =
 >- in altre parole: decomporre lo schema $R$ significa definire dei sottoschemi che contengono, ognuno, un sottoinsieme di $R$. I sottoschemi possono avere attributi in comune, e la loro unione deve **necessariamente** contenere **tutti** gli attributi di $R$.
 
 decomporre un’istanza di una relazione con un certo schema, vuol dire, per ogni sottoschema della decomposizione, proiettare le tuple dello schema originale sugli attributi dei sottoschemi.
-
-per verificare se una decomposizione ha preservato le dipe
-
 # definizione formale di preservamento di dipendenze
 >[!info] definizione
 sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzionali su $R$ e sia $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$
@@ -23,6 +20,16 @@ dove $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}(=G)$
 ## $\pi_{R_i}(F)$
 $\bigcup_{i=1}^K \,\pi_{R_i} (F)$ e un insieme di dipendenze funzionali, dove ogni $\pi_{R_i}$ è un insieme di dipendenze funzioali dato dalla proiezione dell’insieme di dipendenze funzionali $F$ sul sottoschema $R_i$, che significa: 
 - prendere tutte e sole le dipendenze **derivabili** da $F$ tramite gli assiomi di Armstrong (quindi quelle in $F^+$), che hanno tutti gli attributi (determinante e dipendente) in $R_i$
+
+## verificare l’equivalenza tra 2 insiemi di dipendenze funzionali
+dobbiamo quindi verificare che $F \equiv G$.
+>[!info] definizione
+>Siano F e G due insiemi di dipendenze funzionali, $F$ e $G$ sono equivalenti( $F \equiv G$) se $F^+ = G^+$
+>- quindi non è necessario, che $F$ e $G$ contengano le stesse dipendenze, bensì che le chiusure di essi contengano le stesse dipendenze
+
+come sappiamo, per verificare l’uguaglianza tra due insiemi $\iff$ contenimento nei due versi, quindi bisogna verificare che:
+$$F^+ \subseteq G^+ \land G^+ \subseteq F^+$$
+notiamo che per come è stato definito $G$, 
 # lemma 2
 siano $F$ e $G$ due dipendenze funzionali. 
 $$F \subseteq G^+ \implies F^+ \subseteq G^+$$
