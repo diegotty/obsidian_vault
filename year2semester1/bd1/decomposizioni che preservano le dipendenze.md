@@ -58,4 +58,23 @@ quindi, per il lemma delle chiusure, visto che sappiamo che $G \subseteq F^+ \im
 la verifica può essere fatta con il seguente algoritmo:
 **algoritmo - contentimento di $F$ in $G^+$**
 **input** : due insiemi $F$ e $G$ di dipendenze funzionali su $R$
-**output** : la variabile `successo`, 
+**output** : la variabile `successo`, che al termine avrà valore `true` se $F \subseteq G^+$, `false` altrimenti
+```
+begin
+	successo := true;
+	for every $X \to Y \in F$
+	do
+		calcola $X^+_G$
+		if $Y \not\subset X^+_G$ then successo = false
+	end
+end		
+```
+la correttezza dell’algoritmo è una conseguenza del lemma 1 e del teorema $F^+ = F^A$, infatti: 
+- al posto di calcolare $F^+ \subseteq G^+$, calcolo $F \subseteq G^+$, cioè, per il lemma 1: $\forall X \to Y \in F$, $Y \subseteq X^+_G \iff X \to Y \in G^A(=G^+)$
+>[!warning] basta verificare che anche sola una dipendenza non appartiene alla chiusura di G per poter affermare che l’equivalenza non sussiste !
+
+come calcoliamo $X^+_G$ ?
+- se volessimo usare l’[[chiusura di un insieme di attributi#algoritmo per calcolo di $X +$| algorimo per il calcolo della chiusura di un insieme di attributi]] , dovremmo prima calcolare $G$, ma per la definizione di $G$, ciò richiede il calcolo di $F^+$, che richiede tempo esponenziale. 
+usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire da $F$
+## algorimo calcolo $^+_G$ a partire da $F$
+**input** : uno schema $R_i$, un insieme $F$ di dipendenze funzionali su $R$, una decomposizione 
