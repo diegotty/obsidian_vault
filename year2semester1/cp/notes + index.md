@@ -31,3 +31,9 @@ variabili aleatorie, densità di probabilità discreta, valore atteso
 funzione di ripartizione, varianza
 # 30/10/2024
 f(X), teorema su valore atteso di f(X)
+# 04/11/2024
+v.a. di Bernoulli, v.a. binomiale, deviazione standard, scrittura alternativa di varianza
+# 06/11/2024
+correzione esercizi lasciati x casa, 2 esercizi in classe
+# 08/11/2024
+prop su non linearità di deviazione standard, variabile aleatoria di Poisson, legge dei piccoli numeri, variabile aleatoria Geometrica

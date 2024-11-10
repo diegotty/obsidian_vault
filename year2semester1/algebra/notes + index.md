@@ -1,4 +1,5 @@
-[notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0)
+[notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
+[notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)
 [exercises]([https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2](https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2))
 
 # 25/09/2024
@@ -35,3 +36,9 @@ esercizio su fattorizzazione, numeri complessi, operazioni su C, esponeziale di 
 more on coniugazione complessa, formula fondamentale, valore assoluto, campi algebricamente chiusi
 # 31/10/2024
 more on coniugazione complessa, formula fondamentale, valore assoluto, campi algebricamente chiusi
+# 05/11/2024
+gruppi: notazione additiva e moltiplicativa, sottogruppi, omomorfismi, isomorfismi, costruzione canonica di sottogruppo
+# 06/11/2024
+esercizio MCD di poli. in Fp_7[X], intro sottogruppo immagine
+# 07/11/2024
+sottogruppi coniugati (dimostrazione), endomorifismi, gruppi di permutazioni, cicli, inversione, composizione, cicli a supporti disgiunti, teorema decomposizione di una permutazione
