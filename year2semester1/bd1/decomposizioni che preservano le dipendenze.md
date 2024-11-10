@@ -29,8 +29,8 @@ dobbiamo quindi verificare che $F \equiv G$.
 
 come sappiamo, per verificare l’uguaglianza tra due insiemi $\iff$ contenimento nei due versi, quindi bisogna verificare che:
 $$F^+ \subseteq G^+ \land G^+ \subseteq F^+$$
-notiamo che per come è stato definito $G$, 
-# lemma 2
+notiamo che per come è stato definito $G$ **in questo caso**(??), sarà sicuramente vero $F^+ \supseteq G$, in quanto $G$ è l’unione di sottoinsiemi di di $F$
+# lemma 2 (lemma delle chiusure)
 siano $F$ e $G$ due dipendenze funzionali. 
 $$F \subseteq G^+ \implies F^+ \subseteq G^+$$
 ( sarebbe un $\iff$ ma l’altra parte dell’implicazione è banale)
@@ -40,3 +40,22 @@ $$F \subseteq G^+ \implies F^+ \subseteq G^+$$
 $\forall X \to Y \in F$, cerco se $Y \subseteq X^+_G$ se ciò è vero, $X \to Y \in G^A(=G^+)$
 >- al posto di calcolare $G^+ \subseteq F^+$, calcolo $G \subseteq F^+$, quindi, per il lemma 1: 
 >$\forall X \to Y \in G$, cerco se $Y \subseteq X^+_F$ se ciò è vero, $X \to Y \in F^A(=F^+)$
+
+>[!info] dimostrazione
+sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
+>- per ipotesi del lemma, $F \subseteq G^+$, quindi ogni dipendenza funzionale si può ricavare da $G$ (applicando gli assiomi di Armstrong su $G$, arrivo a $G^+$, e nel “tragitto” avrò quindi ricavato ogni dipendenza in $F$) (inoltre abbiamo dimostrato che $F^+=F^A$, altrimenti se $F^+ \neq $F^A$ questo passo non funzionerebbe)
+> - sempre per il teorema che dimostra che $F^+ = F^A$, sappiamo che $F \in F^+$ è ricavabile da $F$ applicando gli assiomi di Armstrong. 
+> - quindi, $f$ è derivabile da $G$ mediante gli assiomi di armstrong:
+> $$G \to^A F \to^A F^+$$
+(con $\to^A$ denotiamo la derivazione tramite gli assiomi di Armstrong)
+
+
+
+quindi, per il lemma delle chiusure, visto che sappiamo che $G \subseteq F^+ \implies G^+ \subseteq F^+$
+- per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq F^+$
+- le dipendenze che ci danno problemi nel verificare $F^+ \subseteq G^+ sono le dipendenze $X \to Y \in F$ in cui $X$ e $Y$ non sono mai contenute insieme in un sottoschema (sono quindi, “a cavallo” di due tabelle)
+# verifica di $F \subseteq G^+$
+la verifica può essere fatta con il seguente algoritmo:
+**algoritmo - contentimento di $F$ in $G^+$**
+**input** : due insiemi $F$ e $G$ di dipendenze funzionali su $R$
+**output** : la variabile `successo`, 
