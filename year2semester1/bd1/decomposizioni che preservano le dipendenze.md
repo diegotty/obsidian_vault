@@ -77,4 +77,14 @@ come calcoliamo $X^+_G$ ?
 - se volessimo usare l’[[chiusura di un insieme di attributi#algoritmo per calcolo di $X +$| algorimo per il calcolo della chiusura di un insieme di attributi]] , dovremmo prima calcolare $G$, ma per la definizione di $G$, ciò richiede il calcolo di $F^+$, che richiede tempo esponenziale. 
 usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire da $F$
 ## algorimo calcolo $^+_G$ a partire da $F$
-**input** : uno schema $R_i$, un insieme $F$ di dipendenze funzionali su $R$, una decomposizione 
+**input** : uno schema $R$, un insieme $F$ di dipendenze funzionali su $R$, una decomposizione $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$di $R$, un sottoinsieme di $X$  di $R$;
+**output** la chiusura di $X$ rispetto a $G = \bigcup_{i=1}^k \pi_{R_i}(F)$, nella variabile Z;
+```
+begin
+Z := X;
+S := $\varnothing$;
+for i :=1 to k
+do $S := S \cup(Z \cap R_i)^+_F \cap Ri$ 
+```
+
+ $S:= S \cup(Z \cap R_i)^+_F \cap Ri$ : calcolo la chiusura su F degli attributi presenti in $F$ e allo stesso tempo in $R_i$ (quindi tutte le dipendenti delle dipendenze in $F$, che hanno come determinante $Z \cup R_i$ )
