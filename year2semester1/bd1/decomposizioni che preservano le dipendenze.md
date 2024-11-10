@@ -59,7 +59,7 @@ la verifica può essere fatta con il seguente algoritmo:
 **algoritmo - contentimento di $F$ in $G^+$**
 **input** : due insiemi $F$ e $G$ di dipendenze funzionali su $R$
 **output** : la variabile `successo`, che al termine avrà valore `true` se $F \subseteq G^+$, `false` altrimenti
-```
+```pseudo
 begin
 	successo := true;
 	for every $X \to Y \in F$
@@ -79,12 +79,38 @@ usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire
 ## algorimo calcolo $^+_G$ a partire da $F$
 **input** : uno schema $R$, un insieme $F$ di dipendenze funzionali su $R$, una decomposizione $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$di $R$, un sottoinsieme di $X$  di $R$;
 **output** la chiusura di $X$ rispetto a $G = \bigcup_{i=1}^k \pi_{R_i}(F)$, nella variabile Z;
-```
+```pseudo
 begin
 Z := X;
 S := $\varnothing$;
 for i :=1 to k
 do $S := S \cup(Z \cap R_i)^+_F \cap Ri$ 
+while  $S \not\subset Z$
+	do 
+	$Z := Z \cup S$
+	for i:=1 to k
+		do $S := S \cup(Z \cap R_i)^+_F \cap Ri$ 
+	end
+end	
 ```
 
- $S:= S \cup(Z \cap R_i)^+_F \cap Ri$ : calcolo la chiusura su F degli attributi presenti in $F$ e allo stesso tempo in $R_i$ (quindi tutte le dipendenti delle dipendenze in $F$, che hanno come determinante $Z \cup R_i$ )
+ $S:= S \cup(Z \cap R_i)^+_F \cap Ri$ : calcolo la chiusura su F degli attributi presenti in $F$ e allo stesso tempo in $R_i$ (quindi tutte le dipendenti delle dipendenze in $F$, che hanno come determinante $Z \cup R_i$ ) e interseco la chiusura con $R_i$, in modo da avere la chiusura di $X$ per $R_i$. se si esce dal while in anticipo, facciamo questo procedimento per ogni $R_i$, quindi in $S$ stiamo accumulando gli attributi di tutti i sottoschemi che sono determinati funzionalmente da $X$
+```pseudo
+	\begin{algorithm}
+	\caption{Algo Caption}
+	\begin{algorithmic}
+	\textbf{begin}
+	\State $Z := X;$
+	\S := $\varnothing$;
+for i :=1 to k
+do $S := S \cup(Z \cap R_i)^+_F \cap Ri$ 
+while  $S \not\subset Z$
+	do 
+	$Z := Z \cup S$
+	for i:=1 to k
+		do $S := S \cup(Z \cap R_i)^+_F \cap Ri$ 
+	end
+end	
+	\end{algorithmic}
+	\end{algorithm}
+``` 
