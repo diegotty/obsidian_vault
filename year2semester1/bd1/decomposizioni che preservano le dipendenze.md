@@ -128,4 +128,10 @@ passo induttivo: $i$
 	1. $A \in {(Z^{(i-1)} \cap R_{j})}^+_{F}$
 	2. $A \in R_j$
 - per definizione di chiusura (sul punto 1.), possiamo dire che $Z^{(i-1)} \cap R_j \to A \in F^+$
-- inoltre noi sappiamo che $Z^{(i-1)} \cap R_j \subseteq R_j$, e $A \in R_j$, quindi sappiamo che $
+- inoltre noi sappiamo che $Z^{(i-1)} \cap R_j \subseteq R_j$, e $A \in R_j$, quindi sappiamo che $Z^{(i-1)} \cap R_{j} \to A \in \pi_{R_j} (F)$, e quindi $Z^{(i-1)} \cap R_{j} \to A \in G$ (per def di $G$)
+- per ipotesi induttiva, $Z^{(i-1)} \in X^+_G \iff X \to Z^{(i-1)} \in G^+$, e per decomposizione si ha che $X \to (Z^{(i-1)} \cap R_j)$ (in quanto $Z^{(i-1)} \cap R_j \subseteq Z^{(i-1)}$)
+- per transitività su $X \to (Z^{(i-1)} \cap R_j)$ e $Z^{(i-1)} \cap R_j \to A$ (notare che entrambe le dipendenze $\in G^+$), si ha che  
+ $$X \to A \in G^+ \implies A \in X^+_{G}$$
+ quindi $Z^{(i)} \subseteq X^+_{G}$
+
+l’altra parta della doppia implicazione non viene studiata ma è presente nella dipensa del corso
