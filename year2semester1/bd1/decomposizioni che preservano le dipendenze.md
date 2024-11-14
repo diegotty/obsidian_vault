@@ -109,4 +109,23 @@ usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire
 >[!info] teorema
 >sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzioali su $R$, $\rho = \{R_{1},R_{2},\dots,R_{k}\}$ una decomposizione di $R$ e $X$ un sottoinsieme di $R$. 
 >l’algoritmo dato calcola correttamente $X^+_G$, dove $G=\bigcup_{i=1}^K \,\pi_{R_i} (F)$
+
+per dimostrare il teorema, dismostreremo che:
+$$X^+_{G} \subseteq Z^{(f)} \land Z{(f)} \subseteq X^+_{G}$$
+dove $Z^{(F)}$ è il valore di $Z$ quando l’algoritmo termina.
 # dimostrazione
+## $Z^{(F)} \subseteq X^+_G$
+usiamo l’induzione (su $i$) per dimostrare che:
+$$Z^{(i)} \subset X^+_{G}, \forall i$$
+(e in particolare per $i=f$)
+caso base: $i=0$
+- $Z^{(0)} = X$ e $X \subseteq X^+$, quindi $Z^{(0)} \subseteq X^+_{G}$
+ipotesi induttiva: $i-1$
+- $Z^{(i-1)} \subseteq X^+_G$
+passo induttivo: $i$
+- prendiamo un attributo $A \in Z^{(i)} - Z^{(i-1)}$ : ciò vuol dire che esiste un sottoschema $R_j$ tale che $A \in {(Z^{(i-1)} \cap R_{j})}^+_{F} \cap R_{j}$
+- ciò vuol dire che:
+	1. $A \in {(Z^{(i-1)} \cap R_{j})}^+_{F}$
+	2. $A \in R_j$
+- per definizione di chiusura (sul punto 1.), possiamo dire che $Z^{(i-1)} \cap R_j \to A \in F^+$
+- inoltre noi sappiamo che $Z^{(i-1)} \cap R_j \subseteq R_j$, e $A \in R_j$, quindi sappiamo che $
