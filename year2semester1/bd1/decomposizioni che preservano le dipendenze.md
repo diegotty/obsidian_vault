@@ -105,3 +105,4 @@ usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire
 >[!info] osservazione
 >avermo anche gli attributi che dipendono funzionalmente da $X$, anche se non appartengono a sottoschemi in cui $X$ **non è incluso** ! perchè dipendono da attributi che sono nello stesso sottoschema di $X$ e che dipendono da $X$, ma si trovano anche in altri sottoschemi !
 >cool
+# teorema sulla correttezza dell’algoritmo per il calcolo di $X^+_G$
