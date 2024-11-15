@@ -56,5 +56,15 @@ little-endian, big-endian
 ### condizioni d’errore
 la natura degli errori varia di molto da dispositivo a dispositivo
 - nel modo in cui gli errori vengono notificati
-- sulle loro conseguenze
+- sulle loro conseguenze (fataili?ignorabili)
 - su come possono essere gestiti
+
+# DMA 
+il DMA (**direct memory access**) permete di effettuare IO:
+- direttamente in memoria (senza passare per la CPU)
+- con interruzioni
+ed è la soluzione usata da tutti i sistemi moderni
+il suo funzionamento è il seguente: 
+\\TODO
+DMa non ci fa perdere tempo perchè una volta dato il comando fa tutto in automatico e ci fa sapere quando ha finito (DMA dispositivo hardware, un chip solo per le operazioni specifiche per trasferimento dati I/O)
+# organizzazione della funzione di I/O
