@@ -152,4 +152,4 @@ quindi, in questo caso, è necessario solo controllare (cioè calcolare la chius
 >[!example] svolgimento esempio 1
 >ngl im not writing all that in latex. aint no way. i got shit to do and places to be.
 ![[IMG_2600.jpg]]
-possiamo fermarci qui, anche se l’algoritmo non è ancora terminato. ciò perchè sappiamo che per come è strutturato [[#]]a Z non vengono mai 
+possiamo fermarci qui, anche se l’algoritmo non è ancora terminato. ciò perchè sappiamo che per come è strutturato [[#algorimo calcolo $ +_G$ a partire da $F$|l’algoritmo]] a $Z$ non vengono mai rimossi elementi, per cui quando $Z$ arriva a contenere la dipendente della dipendenza che dobbiamo verificare, possiamo essere sicuri che la dipendenza è preservata.
