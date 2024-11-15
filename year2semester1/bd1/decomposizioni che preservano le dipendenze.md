@@ -148,4 +148,8 @@ dire se la decomposizione $\rho  = \{ABC, ABD\}$ preserva le dipendenze in $F$
 è inutile controllare che vengano preservate le dipendenze tali che l’unione di dipendente e determinante è contenuta interamente in un sottoschema, in quanto fanno già parte di $G$, perchè $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}$
 quindi, in questo caso, è necessario solo controllare (cioè calcolare la chiusura del determinante per $G$) la dipendenza $D \to C$
 
-ngl im not writing all that in latex. aint no way. i got shit to do and places to be.
+
+>[!example] svolgimento esempio 1
+>ngl im not writing all that in latex. aint no way. i got shit to do and places to be.
+![[IMG_2600.jpg]]
+possiamo fermarci qui, anche se l’algoritmo non è ancora terminato. ciò perchè sappiamo che per come è strutturato [[#]]a Z non vengono mai 
