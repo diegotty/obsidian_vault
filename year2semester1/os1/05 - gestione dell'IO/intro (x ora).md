@@ -25,16 +25,36 @@ un dispositivo di output prevede di poter cambiare il valore di una certa grande
 un processo che effettua una syscall `write` su un dispositivo di output vuole cambiare qualcosa
 
 ci sono quindi, minimalmente, due syscall `read` e `write`, e tra i loro argomenti c’è un indentificato del dispositivo a cui ci si riferisce
-- quando viene effettuata una delle due syscall, entra in gioco il kernel, che comanda l’inizializzazione del trasferimento di informazioni, mette il processo in `BLOCKED` e passa ad altro
+- quando viene effettuata una delle due syscall, entra in gioco il kernel(avviene quindi un mode switch), che comanda l’inizializzazione del trasferimento di informazioni, mette il processo in `BLOCKED` e passa ad altro
 
 >[!info] la parte del kernel che gestisce un particolare dispositivo di IO si chiama driver
 
-il SO ha diversi livelli di interazione con i dispositivi I/O, con funzioni di diverso livello
-driver: moduli di sistema che implementano 
-- spesso il trasferimento si fa con DMA
+spesso il trasferimento si fa con [[ciclo di esecuzione e interruzioni#accessso diretto in memoria|DMA]]
 a trasferimento completato, arriva l’interrupt, si termina l’operaione e il processo torna ready
-- ci possono essere problemi
-
-processo chiama funzione di sistema (quindi mode switch)
-
-il DMA si occupad i andare a prendere i dati, li mette in una zona di memoria delegata, etc uhhh cmq con il DMA si complica 
+- ci possono essere problemi! (bad block su disco, etc)
+# differenze tra dispositivi IO
+i dispositivi IO possono differire sotto molti aspetti:
+### data rate
+>[!figure] ![[Pasted image 20241115072954.png]]
+>come si può vedere, ci possono essere differenze anche elevate sulla velocità dei dispositivi
+### applicazioni
+- i dischi sono usati per memorizzare files, e richiedono un software(applicazione) per la gestione dei files
+- ma i dischi sono usati anche per la memoria virtuale, per la quale serve altro software apposito
+- un terminale (tastiera, mouse, etc) usato da un amministratore di sitema dovrebbe avere una priorità più alta
+### complessità del controllo
+- tastiera o mouse richiedono un controllo molto semplice, mentre una stampante è più complicata, e il disco è tra le cose più complicate da controllare
+fortunatamente, non si fa tutto con il software, e molte cose vengono controllate da un hardware dedicato
+- i dispositivi I/O(moderni ?) hanno un controller, un chip che permette di effettuare le operazioni necessarie
+### unità di trasferimento dati
+i dati possono essere trasferiti:
+- in blocchi di byte di lunghezza fissa
+- come un flusso di byte
+### rappresentazione dei dati
+i dati sono rappresntati secondo codifiche diverse in dispositivi diversi
+- una vecchia tastiera magari li rappresenta in ASCII puro, ma una moderna li rappresenta in UNICODE
+little-endian, big-endian
+### condizioni d’errore
+la natura degli errori varia di molto da dispositivo a dispositivo
+- nel modo in cui gli errori vengono notificati
+- sulle loro conseguenze
+- su come possono essere gestiti
