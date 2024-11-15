@@ -139,3 +139,6 @@ passo induttivo: $i$
 l’altra parta della doppia implicazione non viene studiata ma è presente nella dipensa del corso
 
 # esempi 
+>[!example] esempio 1
+>dato il seguente schema di relazione: $R = \{A,B,C,D\}$ 
+>e il seguente insieme di dipendenze funzionali: $F = \{\}$
