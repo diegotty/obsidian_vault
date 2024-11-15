@@ -15,7 +15,7 @@ decomporre un’istanza di una relazione con un certo schema, vuol dire, per ogn
 >[!info] definizione
 sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzionali su $R$ e sia $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$
 diciamo che $\rho$ preserva $F$ se $F \equiv \bigcup_{i=1}^K \,\pi_{R_i} (F)$
-dove $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}(=G)$ 
+dove $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}$ 
 
 ## $\pi_{R_i}(F)$
 $\bigcup_{i=1}^K \,\pi_{R_i} (F)$ e un insieme di dipendenze funzionali, dove ogni $\pi_{R_i}$ è un insieme di dipendenze funzioali dato dalla proiezione dell’insieme di dipendenze funzionali $F$ sul sottoschema $R_i$, che significa: 
@@ -141,4 +141,11 @@ l’altra parta della doppia implicazione non viene studiata ma è presente nell
 # esempi 
 >[!example] esempio 1
 >dato il seguente schema di relazione: $R = \{A,B,C,D\}$ 
->e il seguente insieme di dipendenze funzionali: $F = \{\}$
+>e il seguente insieme di dipendenze funzionali: $F = \{AB \to C, D \to C, D \to B, C \to B, D\to A\}$
+dire se la decomposizione $\rho  = \{ABC, ABD\}$ preserva le dipendenze in $F$
+
+>[!info] nota importante !!
+è inutile controllare che vengano preservate le dipendenze tali che l’unione di dipendente e determinante è contenuta interamente in un sottoschema, in quanto fanno già parte di $G$, perchè $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}$
+quindi, in questo caso, è necessario solo controllare (cioè calcolare la chiusura del determinante per $G$) la dipendenza $D \to C$
+
+ngl im not writing all that in latex. aint no way. i got shit to do and places to be.
