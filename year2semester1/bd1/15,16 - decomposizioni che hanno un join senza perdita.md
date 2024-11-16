@@ -94,18 +94,22 @@ $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) 
 >
 >cominciamo costruendo la tabella:
 >![[Pasted image 20241116111847.png]]
+>
 **prima iterazione**
 $C \to D$: la prima e terza riga coincidono su $C$, ma non su $D$. dato che una delle due tuple ha un valore $a$, usiamo tale valore per sovrascrivere l’altra tupla in $D$
 $AB \to E$: non ho bisogno di fare cambiamenti (la dipendenza è gia soddisfatta)
-$D \to B$: la seconda, terza e quarta riga coincidono su $D$, ma non su $B$. nessuna delle 3 tuple ha un valore $a$ in $D$, quindi rendiamo le 3 tuple uguali su uno dei valori $b$ in $B$
->
+$D \to B$: la seconda, terza e quarta riga coincidono su $D$, ma non su $B$. nessuna delle 3 tuple ha un valore $a$ in $B$, quindi rendiamo le 3 tuple uguali su uno dei valori $b$ in $B$
+>![[Pasted image 20241116113233.png]]
 a fine iterazione notiamo che la tabella è stata modificata, quindi re-iteriamo sulle dipendenze di $F$
+>
 **seconda iterazione**
 $C \to D$: non ho bisogno di fare cambiamenti (la dipendenza è già soddisfatta)
 $AB \to E$: la prima, seconda e quarta riga hanno coincidono su $AB$, ma non su $E$: cambiamo $E$, e visto che abbiamo una tupla con una $a$, usiamo tale $a$ per modificare il resto delle tuple
-$D \to D$: la prima e la seconda riga concidono su $D$, ma non su $B$. ne
+$D \to D$: la prima e la seconda riga concidono su $D$, ma non su $B$. nessuna delle due tuple ha un valore $a$ in $B$, quindi rendiamo le 2 tuple uguali su uno dei valori $b$ in $B$
 >
+>![[Pasted image 20241116113254.png]]
 a fine iterazione notiamo che la tabella è stata modificata, quindi re-iteriamo sulle dipendenze di $F$
+>
 **terza iterazione**
 $C \to B$: non ho bisogno di effettuare cambiamenti (la dipendenza è gia soddisfatta)
 $AB \to E$: non ho bisogno di effettuare cambiamenti (la dipendenza è gia soddisfatta)
