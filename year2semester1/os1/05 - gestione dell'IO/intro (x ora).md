@@ -68,3 +68,11 @@ il suo funzionamento è il seguente:
 \\TODO
 DMa non ci fa perdere tempo perchè una volta dato il comando fa tutto in automatico e ci fa sapere quando ha finito (DMA dispositivo hardware, un chip solo per le operazioni specifiche per trasferimento dati I/O)
 # organizzazione della funzione di I/O
+ultime evoluzioni della funzione di I/O sono:
+5. DMA: blocchi di dati viaggiano tra dispositivo e memoria, senza usare il procesore ( il processore fa qualosa solo all’inizio e alla fine di un’operazione di IO)
+6. I/O channel: il modulo di IO diventa un processore separato, a cui il processore (CPU) manda comandi per eseguire certi programmi di I/O in memoria principale
+7. I/O processor: il processore di 6. ha una sua memoria dedicata (come cache, quindi fa operazioni senza dover usare la RAM). x esempio la VRAM !!
+>[!info] il chipset
+> il chipset è una collezione di componenti elettroniche (un chip), che va a implementare le connessioni con i diversi dispositivi I/O, porte SATA, etc…
+> 
+>![[Pasted image 20241116131705.png]]
