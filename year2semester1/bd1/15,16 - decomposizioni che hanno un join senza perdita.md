@@ -64,3 +64,8 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 	\end{algorithm}
 ```
 - la tabella viene costruita con questa logica: ogni colonna è un’attributo dello schema $R$, e ogni riga rappresenta un sottoschema di $\rho$. all’inizio, inseriamo $a_j$ se l’attributo $A$ nella colonna $j$-esima appartiene all sottoschema $i$-esimo ($R_i$).
+- immaginiamo che, i valori $a_j, b_{ij}$ sono valori particolari appartententi al dominio dell’attributi $A_j$, e consideriamo tutti i valori $a_j$ uguali tra loro, mentre il valore $b_{ij}$ è diverso da $a_j$ e da un altro valore $b_{kj}$, anche se tutti e 3 appartengono al dominio di $A_j$
+- con queste considerazioni, la tabella $r$ appena creata è un’istanza dello schema $R$
+- **per i nostri scopi (?)**, trasformiamo questa istanza $r$ di $R$ in una istanza legale: per fare ciò dobbiamo far rispettare ad $r$ tutte le dipendenze di $F$
+- quindi, iteriamo per ogni dipendenza $X \to Y \in F$ e ogni volta che troviamo 2 tuple $t_1, t_2 \in R \,\,\, t.c. t_1[X]=t_{2}[X] \land t_{1}[Y] \neq t_{2}[Y]$ ( che quindi non rispettano la dipendenza $X \to Y$), facciamo in modo che siano uguali anche su $Y$ (modificando la tabella $r$)
+- per rendere $t_1[Y]= t_{2}[Y]$, controlliamo ogni attributo $\in Y$, e sovrascriviamo i valori delle due tuple in questo modo: se una delle due tuple ha come valore una ‘$a$’, allora tale $a$ verrà usata per sovrascrivere l’altra tupla, altrimenti entrambe le tuple hanno un valore $b$ distinto per quell’attributo, e scegliamo una delle due tuple e usiamo il suo valore per sovrascrivere il valore nell’altra tupla
