@@ -24,7 +24,8 @@ cioè:
 
 >[!info] **b)** $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
 **dimostrazione**
-per **a)**, si ha che $r \subseteq m_{\rho}(r)$, e quindi $\pi_{R_{i}}(r) \subseteq m_{\rho}(r)$
+per **a)**, si ha che $r \subseteq m_{\rho}(r)$, e quindi $\pi_{R_{i}}(r) \subseteq \pi_{R_{i}}(m_{\rho}(r))$
+è sufficiente quindi dimostrare che $\pi_{R_{i}}(m_{\rho}(r))\subseteq \pi_{R_{i}}(r)$ (uguaglianza di insiemi dimostrata con doppia inclusione)
 
 >[!info]  **c)** $m_{\rho}(m_{\rho}(r)) = m_{\rho}(r)$
 
