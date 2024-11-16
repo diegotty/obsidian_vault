@@ -97,6 +97,11 @@ per l’I/O, esistono 3 macrotipi di gerarchie:
 
 >[!info] dispositivi di comunicazione
 >![[Pasted image 20241116134646.png|80]]
+simile alla gerarchia per i dispositivi locali, ma al posto di logical I/O c’è una architettura di comunicazione (es TCP/IP)
 
-## fily system
->[!figure] ![[Pasted image 20241116134711.png|80]]
+>[!info] file system
+>![[Pasted image 20241116134711.png|80]]
+usato da dispositivi come disco HDD, SDD, CD, DVD, USB key, etc..
+>- directory management: da nomi di file agli identificatori di file, gestisce implementa tutte le operazioni utente che hanno a che fare con i file (crearli, cancellarli, spostarli, …)
+>- file system: struttura logica ed operazioni (apri, chiudi, leggi, scrivi, …)
+>- organizzazione fisica: si occupa della gestione fisica
