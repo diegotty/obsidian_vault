@@ -83,3 +83,15 @@ i vari dispositivi di I/O sono molto più lenti della memoria principale. usiamo
 però si potrebbe arrivare comunque al punto in cui tutti i processi caricati in RAM sono in attesa del completamento di un’operazione di I/O, e sarebbe quindi necessario swapparne alcuni per avere dei processi ready da eseguire. però anche lo swap è un’operazione di I/O ! ci potrebbe quindi essere bottleneck se ci sono tante operazioni di I/O richieste
 ## generalità
 per semplicità ed evitare errori, sarebbe bene gestire i dispositivi di I/O in modo più uniforme possibile, pur nella loro diversità.
+si possono fornire funzionalità generali come read, write, unlock, lock, open, close, e nascondere la maggior parte dei dettagli dei dispositivi I/O nelle procedure a basso livello (non usate dai programmatori)
+# progettazione gerarchica 
+per gestire la necessità di generalità, si usa la progettazione gerarchica: un insieme di livelli, in cui ogni livello si basa sul fatto che il livello sottostante sa effettuare operazioni più primitive (ogni livello fornisce servizi al livello superiore, e in livelli diversi vengono implementate funzionalità diverse)
+- ogni livello contiene funzionalità simili per complessità, tempi di esecuzione e livello di astrazione
+- modificare l’implementazione di un livello non dovrebbe avere effetti sugli altri livelli
+per l’I/O, esistono 3 macrotipi di gerarchie:
+## dispositivi locali
+>[!figure] ![[Pasted image 20241116134531.png|80]]
+## dispositivi di comunicazione
+>[!figure] ![[Pasted image 20241116134646.png|80]]
+## fily system
+>[!figure] ![[Pasted image 20241116134711.png|80]]
