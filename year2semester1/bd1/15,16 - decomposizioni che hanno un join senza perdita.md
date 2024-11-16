@@ -26,6 +26,7 @@ cioè:
 **dimostrazione**
 per **a)**, si ha che $r \subseteq m_{\rho}(r)$, e quindi $\pi_{R_{i}}(r) \subseteq \pi_{R_{i}}(m_{\rho}(r))$
 è sufficiente quindi dimostrare che $\pi_{R_{i}}(m_{\rho}(r))\subseteq \pi_{R_{i}}(r)$ (uguaglianza di insiemi dimostrata con doppia inclusione)
+- per ogni tupla $t \in m_{\rho}(r)$ , e per ogni $i,i=1,…,k$, deve esistere un tupla $t’ \in r$ tale che $t[R_i]=t'[R_{i}]$. in quanto, se tale tupla $t’$ non esistesse, non troveremmo i valori di $t$ su $R_i$ nella proiezione $\pi_{R_{i}(r)}$, e di conseguenza non li avremmo nel join naturale
 
 >[!info]  **c)** $m_{\rho}(m_{\rho}(r)) = m_{\rho}(r)$
 
