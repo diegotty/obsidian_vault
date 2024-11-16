@@ -14,7 +14,11 @@ inoltre, nell [[decomposizione|esempio 2 della decomposizione]] abbiamo visto co
 Sia $R$ uno schema di relazione e $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$. per ogni istanza legale $r$ di $R$, le seguenti proprieta valgono per $r$ e $m_{\rho}(r)=\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r)$ (join naturale delle proiezioni di $r$ su ogni sottoschema di $\rho$):
 >[!info] **a)** $r \subseteq m_{\rho}(r)$
 **dimostrazione**
-
+sia $t$ una tupla di $r$. $\forall i, i=1,…,k, \,\,t[R_{i}] \in \pi_{R_{i}}(r)]$, e quindi $t \in m_{\rho}(r)$
+cioe:
+>- il sottoinsieme dei suoi valori su attributi di $R_i$ sarà sicuramente in una tupla della proiezione $\pi_{R_{i}}(r)$
+>- quindi **OGNI** sottoinsieme dei valori di $t$ corrispondente agli attributi presenti in un sottoschema della decomposizione di $R$, comparirà in una tupla di quel sottoschema per la decomposizione di $r$
+>- inoltre sappiamo che apparirà solo **una** volta in tale istanza del sottoschema, in quanto la proiezione elimina i duplicati
 
 >[!info] **b)** $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
 
