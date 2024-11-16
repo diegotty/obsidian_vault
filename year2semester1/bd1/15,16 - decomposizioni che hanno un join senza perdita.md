@@ -47,9 +47,13 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 	\textbf{do}
 	\For{ \textbf{every} $X \to Y \in F$}
 	\If{$\exist$ due tuple $t_1, t_2$, t.c. $t_1[X]=t_2[X] \land t_1[Y]\neq t_2[Y]$}
+	\For{$\forall A_J \in Y$}
+	\If{$t_1[A_j]='a_j'$}
 	\State $t_2[A_J] := t_1[A_j]$
 	\Else 
 	\State $t_1[A_j]=t_2[A_j]$
+    \EndIf
+    \EndFor
     \EndIf
 	\State
     \EndFor
@@ -69,3 +73,14 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 - **per i nostri scopi (?)**, trasformiamo questa istanza $r$ di $R$ in una istanza legale: per fare ciò dobbiamo far rispettare ad $r$ tutte le dipendenze di $F$
 - quindi, iteriamo per ogni dipendenza $X \to Y \in F$ e ogni volta che troviamo 2 tuple $t_1, t_2 \in R \,\,\, t.c. t_1[X]=t_{2}[X] \land t_{1}[Y] \neq t_{2}[Y]$ ( che quindi non rispettano la dipendenza $X \to Y$), facciamo in modo che siano uguali anche su $Y$ (modificando la tabella $r$)
 - per rendere $t_1[Y]= t_{2}[Y]$, controlliamo ogni attributo $\in Y$, e sovrascriviamo i valori delle due tuple in questo modo: se una delle due tuple ha come valore una ‘$a$’, allora tale $a$ verrà usata per sovrascrivere l’altra tupla, altrimenti entrambe le tuple hanno un valore $b$ distinto per quell’attributo, e scegliamo una delle due tuple e usiamo il suo valore per sovrascrivere il valore nell’altra tupla
+>[!warning] ricordiamo che tutti i  valori $a_j$ sono considerati uguali
+- ripetiamo l’iterazione su ogni $X \to Y \in F$ finchè $r$ non è un’istanza legale, cioè quando, dopo aver iterato su ogni $X \to Y \in F$ la tabella non è cambiata (se è cambiata, potrebbero essere cambiati i valori che prima verificando una data dipendenza, e bisogna quindi ricontrollare)
+# teorema sulla correttezza dell’algoritmo per la verifica di ‘$\rho$ ha join senza perdita’
+>[!info] teorema
+>sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzionali su $R$ e $\rho=\{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$. 
+>l’algorimo di verifica decide correttamente se $\rho$ ha un join senza perita.
+
+per dimostrare il teorema, occorre dimostare che:
+$\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) $\iff$ quando l’algoritmo termina, la tabella $r$ ha una tupla con tutte ‘$a$’
+
+# dimostrazione

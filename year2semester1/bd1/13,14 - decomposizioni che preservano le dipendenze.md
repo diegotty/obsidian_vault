@@ -3,6 +3,19 @@ created: 2024-11-09
 related to: "[[decomposizione]]"
 updated: 2024-11-09, 11:17
 ---
+>[!index]
+>
+>- [definizione formale di preservamento di dipendenze](#definizione%20formale%20di%20preservamento%20di%20dipendenze)
+>	- [$\pi_{R_i}(F)$](#$%5Cpi_%7BR_i%7D(F)$)
+>	- [verificare l’equivalenza tra 2 insiemi di dipendenze funzionali](#verificare%20l%E2%80%99equivalenza%20tra%202%20insiemi%20di%20dipendenze%20funzionali)
+>- [lemma 2 (lemma delle chiusure)](#lemma%202%20(lemma%20delle%20chiusure))
+>- [verifica di $F \subseteq G^+$](#verifica%20di%20$F%20%5Csubseteq%20G%5E+$)
+>	- [algorimo calcolo $^+_G$ a partire da $F$](#algorimo%20calcolo%20$%5E+_G$%20a%20partire%20da%20$F$)
+>- [teorema sulla correttezza dell’algoritmo per il calcolo di $X^+_G$](#teorema%20sulla%20correttezza%20dell%E2%80%99algoritmo%20per%20il%20calcolo%20di%20$X%5E+_G$)
+>- [dimostrazione](#dimostrazione)
+>	- [$Z^{(F)} \subseteq X^+_G$](#$Z%5E%7B(F)%7D%20%5Csubseteq%20X%5E+_G$)
+>- [esempi](#esempi)
+
 come abbiamo visto nelle lezioni precedenti, esistono delle [[decomposizione#condizioni della decomposizione|condizioni per effettuare una decomposizione correttamente]]. 
 il nostro obiettivo è creare delle decomposizioni che rispettano le condizioni
 per fare ciò, diamo una definizione rigorosa di decomposizione:
