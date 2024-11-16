@@ -45,15 +45,21 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 	\State all'incrocio della i-esima riga e della j-esima colonna inserire $a_j$ se l'attributo $A_j \in R_i$, altrimenti $b_{ij}$
 	\\
 	\textbf{do}
-	\For{}
+	\For{ \textbf{every} $X \to Y \in F$}
 	\If{$\exist$ due tuple $t_1, t_2$, t.c. $t_1[X]=t_2[X] \land t_1[Y]\neq t_2[Y]$}
 	\State $t_2[A_J] := t_1[A_j]$
-	\Else t_1[]
+	\Else 
+	\State $t_1[A_j]=t_2[A_j]$
     \EndIf
 	\State
     \EndFor
 	\State
 	\textbf{while} $r$ non ha una riga con tutte '$a$' $\land$ $r$ è cambiato
+	\If{$r$ ha una riga con tutte '$a$'}
+	\State $\rho$ ha un join senza perdita
+	\Else
+	\State $\rho$ non ha un join senza perdita
+    \EndIf
 	\end{algorithmic}
 	\end{algorithm}
 ```
