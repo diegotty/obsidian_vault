@@ -75,6 +75,8 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 - per rendere $t_1[Y]= t_{2}[Y]$, controlliamo ogni attributo $\in Y$, e sovrascriviamo i valori delle due tuple in questo modo: se una delle due tuple ha come valore una ‘$a$’, allora tale $a$ verrà usata per sovrascrivere l’altra tupla, altrimenti entrambe le tuple hanno un valore $b$ distinto per quell’attributo, e scegliamo una delle due tuple e usiamo il suo valore per sovrascrivere il valore nell’altra tupla
 >[!warning] ricordiamo che tutti i  valori $a_j$ sono considerati uguali
 - ripetiamo l’iterazione su ogni $X \to Y \in F$ finchè $r$ non è un’istanza legale, cioè quando, dopo aver iterato su ogni $X \to Y \in F$ la tabella non è cambiata (se è cambiata, potrebbero essere cambiati i valori che prima verificando una data dipendenza, e bisogna quindi ricontrollare)
+>[!warning] perchè entra in gioco $F$ ?
+>perchè la proprietà $m_{\rho}(r)=r$ deve valere per ogni istanza legale di $R$, cioè ogni istana che soddisfa tutte le dipendenze in $F$. l’algoritmo costruisce proprio una istanza legale che ci permette la verifica, soddisfando tutte le dipendenze in $F$
 # teorema sulla correttezza dell’algoritmo per la verifica di ‘$\rho$ ha join senza perdita’
 >[!info] teorema
 >sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzionali su $R$ e $\rho=\{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$. 
@@ -84,3 +86,5 @@ per dimostrare il teorema, occorre dimostare che:
 $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) $\iff$ quando l’algoritmo termina, la tabella $r$ ha una tupla con tutte ‘$a$’
 
 # dimostrazione
+# esempi
+>[!example]
