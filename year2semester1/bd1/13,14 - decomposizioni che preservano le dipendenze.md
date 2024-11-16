@@ -18,7 +18,7 @@ diciamo che $\rho$ preserva $F$ se $F \equiv \bigcup_{i=1}^K \,\pi_{R_i} (F)$
 dove $\pi_{R_i}(F)=\{X \to Y | X \to Y \in F^+ \land XY \subseteq R_i\}$ 
 
 ## $\pi_{R_i}(F)$
-$\bigcup_{i=1}^K \,\pi_{R_i} (F)$ e un insieme di dipendenze funzionali, dove ogni $\pi_{R_i}$ è un insieme di dipendenze funzioali dato dalla proiezione dell’insieme di dipendenze funzionali $F$ sul sottoschema $R_i$, che significa: 
+$\bigcup_{i=1}^K \,\pi_{R_i} (F)$ e un insieme di dipendenze funzionali, dove ogni $\pi_{R_i}$ è un insieme di dipendenze funzionali dato dalla proiezione dell’insieme di dipendenze funzionali $F$ sul sottoschema $R_i$, che significa: 
 - prendere tutte e sole le dipendenze **derivabili** da $F$ tramite gli assiomi di Armstrong (quindi quelle in $F^+$), che hanno tutti gli attributi (determinante e dipendente) in $R_i$
 
 ## verificare l’equivalenza tra 2 insiemi di dipendenze funzionali
