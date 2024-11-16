@@ -29,7 +29,21 @@ per **a)**, si ha che $r \subseteq m_{\rho}(r)$, e quindi $\pi_{R_{i}}(r) \subse
 - per ogni tupla $t \in m_{\rho}(r)$ , e per ogni $i,i=1,…,k$, deve esistere un tupla $t’ \in r$ tale che $t[R_i]=t'[R_{i}]$. in quanto, se tale tupla $t’$ non esistesse, non troveremmo i valori di $t$ su $R_i$ nella proiezione $\pi_{R_{i}(r)}$, e di conseguenza non li avremmo nel join naturale
 
 >[!info]  **c)** $m_{\rho}(m_{\rho}(r)) = m_{\rho}(r)$
+per **b)** si ha $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
+pertanto, applicando la definizione dell’operatore $m_{\rho}$ (join delle proiezioni), avremo:
+$$m_{\rho}(m_{\rho}(r))= \pi_{R_{1}}(m_{\rho}(r)) \bowtie \pi_{R_{2}}(m_{\rho}(r)) \bowtie \dots \bowtie \pi_{R_{k}}(m_{R_{k}}(r)) =$$ 
+$$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m_{\rho}(r)$$
 
-**a)** $r \subseteq m_{\rho}(r)$
-**b)** $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
-**c)** $m_{\rho}(m_{\rho}(r)) = m_{\rho}(r)$
+# verifica di $\rho$ senza perdita
+```pseudo
+	\begin{algorithm}
+	\caption{verifica che una decomposizione abbia join senza perdita}
+	\begin{algorithmic}
+	\Input uno schema di relazione $R$, un insieme di dipendenze funzionali $F$ su $R$, una decomposizione $\rho = \{R_1, R_2, ..., R_k\}$ di $R$
+	\Output tabella per decidere se $\rho$ ha un join senza perdita
+	\State costruire una tabella \textbf{r} di $|R|$ colonne e $|\rho|$ righe, dove:
+	\State all'incrocio della i-esima riga e della j-esima colonna inserire $a_j$ se l'attributo $A_j \in R_i$, altrimenti $b_{ij}$
+	\end{algorithmic}
+	\end{algorithm}
+```
+- la tabella 
