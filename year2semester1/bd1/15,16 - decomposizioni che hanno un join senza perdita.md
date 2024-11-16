@@ -15,10 +15,12 @@ Sia $R$ uno schema di relazione e $\rho = \{R_{1}, R_{2}, \dots, R_{k}\}$ una de
 >[!info] **a)** $r \subseteq m_{\rho}(r)$
 **dimostrazione**
 sia $t$ una tupla di $r$. $\forall i, i=1,…,k, \,\,t[R_{i}] \in \pi_{R_{i}}(r)]$, e quindi $t \in m_{\rho}(r)$
-cioe:
+cioè:
 >- il sottoinsieme dei suoi valori su attributi di $R_i$ sarà sicuramente in una tupla della proiezione $\pi_{R_{i}}(r)$
->- quindi **OGNI** sottoinsieme dei valori di $t$ corrispondente agli attributi presenti in un sottoschema della decomposizione di $R$, comparirà in una tupla di quel sottoschema per la decomposizione di $r$
->- inoltre sappiamo che apparirà solo **una** volta in tale istanza del sottoschema, in quanto la proiezione elimina i duplicati
+>- quindi **OGNI** sottoinsieme dei valori di $t$ corrispondente agli attributi presenti in un sottoschema $R_i$ della decomposizione di $R$, comparirà in $\pi_{R_{i}(r)}$
+>- inoltre sappiamo che se ci dovessero essere duplicati del sottoinsieme dei valori di $t$ in $\pi_{R_i}(r)$, tali valori apparirebbero solo una volta in $R_i$, in quanto la proiezione segue le regole insiemistiche ed elimina i duplicati
+>- quindi ogni tupla potrà essere ricostruita tramite il join naturale, in quanto per ogni sottoinsieme di tale tupla, esiste un sottoschema che contiene i suoi valori
+>- anzi, il join naturale potrebbe ottenere tuple che non erano in r ricomponendo pezzi di tuple diverse
 
 >[!info] **b)** $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
 
