@@ -43,7 +43,18 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 	\Output tabella per decidere se $\rho$ ha un join senza perdita
 	\State costruire una tabella \textbf{r} di $|R|$ colonne e $|\rho|$ righe, dove:
 	\State all'incrocio della i-esima riga e della j-esima colonna inserire $a_j$ se l'attributo $A_j \in R_i$, altrimenti $b_{ij}$
+	\\
+	\textbf{do}
+	\For{}
+	\If{$\exist$ due tuple $t_1, t_2$, t.c. $t_1[X]=t_2[X] \land t_1[Y]\neq t_2[Y]$}
+	\State $t_2[A_J] := t_1[A_j]$
+	\Else t_1[]
+    \EndIf
+	\State
+    \EndFor
+	\State
+	\textbf{while} $r$ non ha una riga con tutte '$a$' $\land$ $r$ è cambiato
 	\end{algorithmic}
 	\end{algorithm}
 ```
-- la tabella 
+- la tabella viene costruita con questa logica: ogni colonna è un’attributo dello schema $R$, e ogni riga rappresenta un sottoschema di $\rho$. all’inizio, inseriamo $a_j$ se l’attributo $A$ nella colonna $j$-esima appartiene all sottoschema $i$-esimo ($R_i$).
