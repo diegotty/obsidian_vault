@@ -89,9 +89,14 @@ per gestire la necessità di generalità, si usa la progettazione gerarchica: un
 - ogni livello contiene funzionalità simili per complessità, tempi di esecuzione e livello di astrazione
 - modificare l’implementazione di un livello non dovrebbe avere effetti sugli altri livelli
 per l’I/O, esistono 3 macrotipi di gerarchie:
-## dispositivi locali
->[!figure] ![[Pasted image 20241116134531.png|80]]
-## dispositivi di comunicazione
->[!figure] ![[Pasted image 20241116134646.png|80]]
+>[!info] dispositivi locali
+>![[Pasted image 20241116134531.png|80]]
+>- logical I/O: il dispositivo viene visto come una risorsa logica (open, close, read…)
+>- device I/O: trasforma richieste logiche in sequenze di comandi I/O
+>- scheduling and control: esegue e controlla le sequenze di comandi, eventualmente gestendo anche l’accodamento
+
+>[!info] dispositivi di comunicazione
+>![[Pasted image 20241116134646.png|80]]
+
 ## fily system
 >[!figure] ![[Pasted image 20241116134711.png|80]]
