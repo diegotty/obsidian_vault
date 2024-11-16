@@ -87,4 +87,28 @@ $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) 
 
 # dimostrazione
 # esempi
->[!example]
+>[!example] esempio 1
+>dato il seguente schema di relazione: $R =(A,B,C,D,E)$
+>e il seguente insieme di dipendenze funzionali $F = \{C \to D, AB \to E, D \to B\}$,
+>dire se la decomposizione $\rho = \{AC,ADE,CDE,AD,B\}$ ha un join senza perdita
+>
+>cominciamo costruendo la tabella:
+>![[Pasted image 20241116111847.png]]
+**prima iterazione**
+$C \to D$: la prima e terza riga coincidono su $C$, ma non su $D$. dato che una delle due tuple ha un valore $a$, usiamo tale valore per sovrascrivere l’altra tupla in $D$
+$AB \to E$: non ho bisogno di fare cambiamenti (la dipendenza è gia soddisfatta)
+$D \to B$: la seconda, terza e quarta riga coincidono su $D$, ma non su $B$. nessuna delle 3 tuple ha un valore $a$ in $D$, quindi rendiamo le 3 tuple uguali su uno dei valori $b$ in $B$
+>
+a fine iterazione notiamo che la tabella è stata modificata, quindi re-iteriamo sulle dipendenze di $F$
+**seconda iterazione**
+$C \to D$: non ho bisogno di fare cambiamenti (la dipendenza è già soddisfatta)
+$AB \to E$: la prima, seconda e quarta riga hanno coincidono su $AB$, ma non su $E$: cambiamo $E$, e visto che abbiamo una tupla con una $a$, usiamo tale $a$ per modificare il resto delle tuple
+$D \to D$: la prima e la seconda riga concidono su $D$, ma non su $B$. ne
+>
+a fine iterazione notiamo che la tabella è stata modificata, quindi re-iteriamo sulle dipendenze di $F$
+**terza iterazione**
+$C \to B$: non ho bisogno di effettuare cambiamenti (la dipendenza è gia soddisfatta)
+$AB \to E$: non ho bisogno di effettuare cambiamenti (la dipendenza è gia soddisfatta)
+$D \to B$: non ho bisogno di effettuare cambiamenti p(la dipendenza è gia soddisfatta)
+![[Pasted image 20241116112407.png]]
+la tabella non cambia più e l’algoritmo termina. occorre verificare la presenza di una tupla con tutte $a$: **poichè tale tupla non è presente, il join NON È senza perdita**
