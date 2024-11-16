@@ -67,12 +67,19 @@ ed è la soluzione usata da tutti i sistemi moderni
 il suo funzionamento è il seguente: 
 \\TODO
 DMa non ci fa perdere tempo perchè una volta dato il comando fa tutto in automatico e ci fa sapere quando ha finito (DMA dispositivo hardware, un chip solo per le operazioni specifiche per trasferimento dati I/O)
-# organizzazione della funzione di I/O
+## evoluzione della funzione di I/O
 ultime evoluzioni della funzione di I/O sono:
 5. DMA: blocchi di dati viaggiano tra dispositivo e memoria, senza usare il procesore ( il processore fa qualosa solo all’inizio e alla fine di un’operazione di IO)
-6. I/O channel: il modulo di IO diventa un processore separato, a cui il processore (CPU) manda comandi per eseguire certi programmi di I/O in memoria principale
+6. I/O channel: il modulo di IO diventa un processore separato, a cui il processore (CPU) manda comandi per eseguire certi programmi di I/O in memoria principale (esempio:la stampante, a cui noi diamo il PDF e poi il resto della traduzione viene fatta dal processo interno ad essa)
 7. I/O processor: il processore di 6. ha una sua memoria dedicata (come cache, quindi fa operazioni senza dover usare la RAM). x esempio la VRAM !!
 >[!info] il chipset
-> il chipset è una collezione di componenti elettroniche (un chip), che va a implementare le connessioni con i diversi dispositivi I/O, porte SATA, etc…
-> 
+> il chipset è una collezione di componenti elettroniche (un insieme di circuiti nella scheda madre), che va a implementare le connessioni con i diversi dispositivi I/O, porte SATA, etc…
+>il suo ruolo è quindi gestire i dispositivi e comunicare informazioni alla CPU. 
 >![[Pasted image 20241116131705.png]]
+
+# obiettivi nel progetto del SO
+## efficienza
+i vari dispositivi di I/O sono molto più lenti della memoria principale. usiamo la multiprogrammazione per eseguire processi mentre altri sono in attesa del completamento di un’operazione di I/O
+però si potrebbe arrivare comunque al punto in cui tutti i processi caricati in RAM sono in attesa del completamento di un’operazione di I/O, e sarebbe quindi necessario swapparne alcuni per avere dei processi ready da eseguire. però anche lo swap è un’operazione di I/O ! ci potrebbe quindi essere bottleneck se ci sono tante operazioni di I/O richieste
+## generalità
+per semplicità ed evitare errori, sarebbe bene gestire i dispositivi di I/O in modo più uniforme possibile, pur nella loro diversità.
