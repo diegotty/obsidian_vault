@@ -23,6 +23,8 @@ cioè:
 >- anzi, il join naturale potrebbe ottenere tuple che non erano in r ricomponendo pezzi di tuple diverse
 
 >[!info] **b)** $\pi_{R_{i}}(m_{\rho}(r))= \pi_{R_{i}}(r)$
+**dimostrazione**
+per **a)**, si ha che $r \subseteq m_{\rho}(r)$, e quindi $\pi_{R_{i}}(r) \subseteq m_{\rho}(r)$
 
 >[!info]  **c)** $m_{\rho}(m_{\rho}(r)) = m_{\rho}(r)$
 
