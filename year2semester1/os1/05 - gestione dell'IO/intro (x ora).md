@@ -116,6 +116,8 @@ si crea qundi una situazione di deadlock
 inoltre, come abbiamo visto, diversi dispositivi di I/O hanno velocità diverese, e ogni dispositivo è ottimizzato per operazioni di certe dimensioni, in base al loro tipo (trasferimento tra dispositivi I/O con dimensione di blocchi diverse)
 
 si usa quindi il **buffering** come soluzione: uso una zona di memoria principale, in modo temporaneo, per effettuare trasferimenti di input in anticipo e di output in ritardo rispetto alle richieste
+
+può essere statica o dinamica ! in Linux è dinamica
 >[!figure] senza buffer
 ![[Pasted image 20241117164627.png]]
 il SO accede al dispositivo di I/O quando ne ha necessità
@@ -131,5 +133,23 @@ il SO crea un buffer in memoria principale (kernel space) per una data richiesta
 - l’output invece, viene posticipato (viene “accumulato” nel buffer e mandato al dispositivo I/O in un solo momento)
 ### buffer singolo orientato a stream
 - usato, per esempio, per i terminali, che hanno a che fare con linee (caratteri più invio)
-- si bufferizza una linea di input o output
-- 
+- si bufferizza una linea di input o output, o un byte alla volta per i device in cui un singolo carattere premuto va gestito
+## buffer circolare
+>[!info] buffer circolare
+>![[Pasted image 20241117165920.png]]
+>- 2 o più buffer
+>- un processo può trasferire dati da opppure a uno dei buffer, mentre il SO svuota o riempie gli altri
+>- ciascun buffer è un’unità nel buffer circolare
+>- viene usato quando l’operazione di I/O deve tenere il passo del processo
+>- c’è un puntatore che viene mosso type beat
+## pro e contro
+**pro**:
+- smussa i picchi di richieste di I/O (finchè i buffer non si riempiono)
+- utile quando ci sono molti e diversi dispositivi di I/O da servire: migliora l’efficienza dei processi e del SO
+**contro**:
+-  introduce overhead a causa della copia intermedia in kernel memory
+>[!figure] flow di un buffer
+![[Pasted image 20241117170627.png]]
+si nota il trasferimento in più nel kernel space
+## buffer zero copy
+il buffer zero copy evita inutili copie intermedie, evitando di trasferire i dati nello user space e trasferendoli direttamente da un kernel buffer ad un altro (come fa a funzionare questa cosa bro \\QUESTION)
