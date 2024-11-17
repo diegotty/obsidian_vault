@@ -58,4 +58,27 @@ per confrontare i vari algoritmi, usiamo un esempio comune:
 impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 ## minimo tempo di servizio
 >[!warning] da qui in poi occorre conoscere la posizione della testina
-- sceglie la richiesta che minimizza il movimento del 
+- sceglie la richiesta che minimizza il movimento della testina (dalla posizione attuale)
+- possibile la starvation di richieste! ( se arrivano continuamente richieste più vicine)
+>[!figure] minimo tempo di servizio graph
+![[Pasted image 20241117175826.png]]
+## SCAN
+- si scelgono le richieste in modo tale che la testina si muova sempre in un verso, e poi torni indietro
+- fixa la starvation delle richieste, ma non è equo:
+	- favorisce le richieste “ai bordi”: vicine a dove la testina cambia direzione (risolto con CSCAN)
+	- potrebbe favorire le richieste appena arrivate (risolto con N-step-SCAN)
+
+>[!figure] SCAN graph
+>![[Pasted image 20241117175908.png]]
+## C-SCAN
+- come SCAN, ma quando la testina fa “marcia indietro”, non si scelgono richieste
+- serve richieste solo quando si muove in una delle due direzioni
+- quindi i bordi non vengono visitati 2 volte in poco tempo !
+>[!figure] C-SCAN graph
+![[Pasted image 20241117180000.png]]
+## FSCAN
+- fixa il problema di possibile favoritismo verso nuove richieste arrivate (che seguono il percorso che sta facendo la testina) della politica SCAN
+- usa due code, anzichè una: F(**front**) e R(**rear**)
+- quando SCAN inizia, tutte le richieste sono nella coda F, e l’altra coda R è vuota, e viene riempita con le richieste che arrivano mentre SCAN sta servendo tutta F
+- quando SCAN finisce di servire F, si scambiano F
+## N-step-SCAN
