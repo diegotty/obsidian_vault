@@ -97,6 +97,15 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 >![[Pasted image 20241117182014.png]]
 
 # cache del disco
-buffer in memoria principale che contiene una copia di alcuni settori del disco: quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale se
+spessoo chiamata **page cache**, è buffer in memoria principale che contiene una copia di alcuni settori del disco:
+- quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale settore è nella cache
+- se il settore non c’è, il settore letto viene anche copiato nella cache
+- è quindi una cache software non hardware
+>[!warning] da non confondere con la cache spesso presente direttamente sui dischi !
+>una cache hardware che fa la stessa funzione (?)
+
+ci sono svariati modi per gestire questa cache:
+## politiche di rimpiazzo
+### LRU
 # SSD
 \\TODO
