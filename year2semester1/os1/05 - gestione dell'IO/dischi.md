@@ -35,3 +35,10 @@ a parte (non fanno parte delle effettive prestazioni del disco):
 
 # politiche di scheduling per il disco
 come nella RAM, sono stati pensati diversi algoritmi per ottimizzare lo scheduling delle richieste di trasferimento per i dischi
+per confrontare i vari algoritmi, usiamo un esempio comune:
+>[!example] esempio comune
+>all’inizio, la testina si trova sulla traccia numero 100
+>ci sono 200 tracce
+>vengono richi
+## FIFO
+## LIFO
