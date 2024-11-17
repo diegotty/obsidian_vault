@@ -4,7 +4,9 @@ related to: intro
 updated: 2024-11-17, 17:09
 ---
 \\TODO index
+# HDD
 >[!warning] ciò che verrà visto vale per gli HDD, non per gli SDD (hanno problemi diversi, non trattati in questo corso)
+anche se vengono fatti dei cenni sugli SDD 
 
 >[!info] costruzione del disco
 ![[Pasted image 20241117171021.png]]
@@ -43,6 +45,9 @@ per confrontare i vari algoritmi, usiamo un esempio comune:
 >$$55, 58, 39, 18, 90, 160, 150, 38, 184$$
 >- considereremo solo il **seek time**, che è il parametro più importante per le prestazioni
 >- il nostro scheduling baseline sarà il random, che è lo scheduling peggiore
+
+>[!figure] prospetto
+![[Pasted image 20241117182258.png]]
 ## FIFO
 - le richieste vengono servite in modo sequenziale, rendendo lo scheduling equo nei confronti dei processi
 - però, se ci sono molti processi in esecuzione, le prestazioni sono simili allo scheduling random
@@ -79,6 +84,19 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 ## FSCAN
 - fixa il problema di possibile favoritismo verso nuove richieste arrivate (che seguono il percorso che sta facendo la testina) della politica SCAN
 - usa due code, anzichè una: F(**front**) e R(**rear**)
-- quando SCAN inizia, tutte le richieste sono nella coda F, e l’altra coda R è vuota, e viene riempita con le richieste che arrivano mentre SCAN sta servendo tutta F
-- quando SCAN finisce di servire F, si scambiano F
+	- quando SCAN inizia, tutte le richieste sono nella coda F, e l’altra coda R è vuota, e viene riempita con le richieste che arrivano mentre SCAN sta servendo tutta F
+	- quando SCAN finisce di servire F, si scambiano F ed $
+- in questo modo, ogni nuova richiesta deve aspettare che tutte le precedenti vengano servite, eliminando il favoritismo !
 ## N-step-SCAN
+- generalizzazione di FSCAN a N > 2 code: si accodano le richieste nella i-esima coda, finche non si riempie: si passa poi alla (i+1) mod N
+- niente viene aggiunto alla coda attualmente servita
+- se N è alto, le prestazioni sono quelle di SCAN (ma con fairness)
+- se N=1, allora si usa il FIFO per evitare di essere unfair
+##  confronto prestazionale
+>[!figure] confrontos
+>![[Pasted image 20241117182014.png]]
+
+# cache del disco
+buffer in memoria principale che contiene una copia di alcuni settori del disco: quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale se
+# SSD
+\\TODO
