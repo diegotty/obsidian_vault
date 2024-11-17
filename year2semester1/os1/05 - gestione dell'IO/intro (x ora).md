@@ -105,3 +105,14 @@ usato da dispositivi come disco HDD, SDD, CD, DVD, USB key, etc..
 >- directory management: da nomi di file agli identificatori di file, gestisce implementa tutte le operazioni utente che hanno a che fare con i file (crearli, cancellarli, spostarli, …)
 >- file system: struttura logica ed operazioni (apri, chiudi, leggi, scrivi, …)
 >- organizzazione fisica: si occupa della gestione fisica
+
+# buffering dell’I/O
+nell’attesa del completamento di un’operazione I/O, alcune pagine hanno bisogno di rimanere in memoria, infatti: 
+- il DMA scrive direttamente in memoria principale, e se il processo a cui il DMA deve mandare informazioni non è in memoria principale, la richiesta non può essere portata a termine
+- però, per essere riportato in memoria, la richiesta I/O dovrebbe essere completata 
+si crea qundi una situazione di deadlock
+- ciò è risolvibile con il [[decisioni sulla gestione della memoria#frame locking|frame locking]], ma facendo ciò (e facendolo in modo pesante), si limita il numero di pagine swappabili, e le prestazioni del SO potrebbero decrescere
+
+inoltre, come abbiamo visto, diversi dispositivi di I/O hanno velocità diverese, e ogni dispositivo è ottimizzato per operazioni di certe dimensioni, in base al loro tipo (trasferimento tra dispositivi I/O con dimensione di blocchi diverse)
+
+si usa quindi il **buffering** come soluzione: uso una zona di memoria principale, in modo temporaneo, per effettuare trasferimenti di input in anticipo e di output in ritardo rispetto alle richieste
