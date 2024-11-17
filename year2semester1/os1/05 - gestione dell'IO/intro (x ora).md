@@ -116,3 +116,20 @@ si crea qundi una situazione di deadlock
 inoltre, come abbiamo visto, diversi dispositivi di I/O hanno velocità diverese, e ogni dispositivo è ottimizzato per operazioni di certe dimensioni, in base al loro tipo (trasferimento tra dispositivi I/O con dimensione di blocchi diverse)
 
 si usa quindi il **buffering** come soluzione: uso una zona di memoria principale, in modo temporaneo, per effettuare trasferimenti di input in anticipo e di output in ritardo rispetto alle richieste
+>[!figure] senza buffer
+![[Pasted image 20241117164627.png]]
+il SO accede al dispositivo di I/O quando ne ha necessità
+
+## buffer singolo
+>[!info] buffer singolo
+![[Pasted image 20241117164709.png]]
+il SO crea un buffer in memoria principale (kernel space) per una data richiesta di I/O.
+>- lettura e scrittura nel buffer sono separate e sequenziali
+### buffer singolo orientato a blocchi
+- il blocco viene mandato nello spazio utente quando necessario
+- inoltre, viene mandato anche il blocco successivo (**read ahead**), per il principio di località
+- l’output invece, viene posticipato (viene “accumulato” nel buffer e mandato al dispositivo I/O in un solo momento)
+### buffer singolo orientato a stream
+- usato, per esempio, per i terminali, che hanno a che fare con linee (caratteri più invio)
+- si bufferizza una linea di input o output
+- 
