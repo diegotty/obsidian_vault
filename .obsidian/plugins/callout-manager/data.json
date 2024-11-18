@@ -2,7 +2,8 @@
   "callouts": {
     "custom": [
       "tuff",
-      "figure"
+      "figure",
+      "dimostrazione"
     ],
     "settings": {
       "tuff": [
@@ -30,7 +31,24 @@
       ],
       "figure": [
         {
-          "changes": {}
+          "changes": {
+            "color": "194, 188, 188"
+          }
+        }
+      ],
+      "dimostrazione": [
+        {
+          "changes": {
+            "icon": "lucide-book-marked",
+            "color": "255, 187, 0"
+          }
+        }
+      ],
+      "important": [
+        {
+          "changes": {
+            "icon": "lucide-alert-triangle"
+          }
         }
       ]
     }
