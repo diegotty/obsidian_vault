@@ -97,7 +97,7 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 >![[Pasted image 20241117182014.png]]
 
 # cache del disco
-spessoo chiamata **page cache**, è buffer in memoria principale che contiene una copia di alcuni settori del disco:
+spesso chiamata **page cache**, è buffer in memoria principale che contiene una copia di alcuni settori del disco:
 - quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale settore è nella cache
 - se il settore non c’è, il settore letto viene anche copiato nella cache
 - è quindi una cache software non hardware
@@ -135,13 +135,12 @@ in alcuni casi, si hanno a disposizione più dischi fisici, e abbiamo di trattar
 oppure, si possono considerare i diversi dischi fisici come un unico disco
 i dischi RAID permettono: 
 - **parallel access**: se faccio un’operazione sul RAID(cioè un’operazione su un sottoinsieme dei suoi dischi), tutti quei dischi effettuano in sincrono quell’operazione
-- **data availability**(oltre il RAID 1): capacità di recupero in caso di fallimento
+- **data availability**(da RAID 1 in su): capacità di recupero in caso di fallimento
 - **small I/O request rate**: velocità nel rispondere a piccole richieste di I/O
 ## LVM
-il Linux LVM (**logical volume manager**) 
+il Linux LVM (**logical volume manager**) permette di gestire diversi dischi come discono unico (bording stuff)
 
-
-- esistono device composti da più dischi fisici gestiti da un RAID direttamente a livello di dispositivo (il sistema operativo fa solo read/write, ci pensa il dispositivo stesso a gestire internamente il RAID)
+esistono device composti da più dischi fisici gestiti da un RAID direttamente a livello di dispositivo (il sistema operativo fa solo read/write, ci pensa il dispositivo stesso a gestire internamente il RAID)
 ## gerarchia dei dischi RAID
 >[!info] RAID 0: non ridondanti
 ![[Pasted image 20241118100351.png]]
@@ -188,5 +187,13 @@ il Linux LVM (**logical volume manager**)
 
 >[!example] riassunto
 ![[Pasted image 20241118102631.png]]
+# page cache in Linux
+esista una unica page cache per tutti i trasferimenti tra disco e memoria principale, compresi quelli dovuti alla gestione della memoria virtuale
+- è nell’area della memoria virtuale destinata ai processi utenti, quindi combatte con essi (si amplia e si restringe a seconda di quanti processi sono presenti, e non può occupare tutto lo spazio disponibile)
+- il page buffering ricade nella page cache
+si scrive su disco quando: 
+- è rimasta poca memoria
+- quando l’età delle pagine “sporche” va sopra una certa soglia
+non esiste una politica separata di replacement ! è la stessa usata per il rimpiazzamento delle pagine (la cache è paginata, e le sue pagine sono rimpiazzate con l’algoritmo visto per la gestione della memoria)
 # SSD
 \\TODO
