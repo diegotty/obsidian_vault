@@ -1,7 +1,7 @@
 ---
 created: 2024-10-31
 related to: "[[decomposizione]]"
-updated: 2024-10-31, 08:42
+updated: 2024-11-18T19:58
 ---
 >[!index]
 >
@@ -100,7 +100,7 @@ $$\forall A : A \cup \varnothing = A$$
  - il prodotto cartesiano di un qualunque insieme A con l’insieme vuoto è l’insieme vuoto: 
  $$\forall A : A \times \varnothing = \varnothing$$
  - l’unico sottoinsieme dell’insieme vuoto è l’insieme vuoto stesso
- - il numero di elementi dell’insieme vuoto(cioè la sua [[modello relazionale#grado e cardinalita’ di una relazione|cardinalità]]) è **zero**; l’insieme vuoto è quindi finito
+ - il numero di elementi dell’insieme vuoto(cioè la sua [[02 - modello relazionale#grado e cardinalita’ di una relazione|cardinalità]]) è **zero**; l’insieme vuoto è quindi finito
 ## esempio di chiusure di insiemi di attributi 
  >[!example] esempio di chiusure di insiemi di attributi
  dato lo schema di relazione $R=(A,B,C,D,E,H)$ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$, calcolare le chiusure degli insiemi: $A,D,AB$

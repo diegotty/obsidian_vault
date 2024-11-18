@@ -1,7 +1,7 @@
 ---
 created: 2024-10-18
-related to: "[[chiusure di dipendenze funzionali]]"
-updated: 2024-10-18, 16:04
+related to: "[[08 - chiusure di dipendenze funzionali]]"
+updated: 2024-11-18T20:01
 ---
 >[!index]
 >

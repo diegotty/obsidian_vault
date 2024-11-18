@@ -1,7 +1,7 @@
 ---
-created: "2024-11-07"
+created: 2024-11-07
 related to: 
-updated: "2024-11-07, 07:42"
+updated: 2024-11-18T20:03
 ---
 
 >[!example] esempio 1
@@ -59,7 +59,7 @@ una volta individuate le chiavi di uno schema di relazione, possiamo determinare
 
 >[!example] esempio 3
  dato lo schema di relazione $R=(A,B,C,D,E,H)$
- e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$ (esempio in [[chiusura di un insieme di attributi#esempio di chiusure di insiemi di attributi| lezione precedente]])
+ e l’insieme di dipendenze funzionali su $R$: $F = \{AB \to CD, EH \to D, D \to H\}$ (esempio in [[11 - chiusura di un insieme di attributi#esempio di chiusure di insiemi di attributi| lezione precedente]])
  ** determinare le chiavi e verificare che $R$ è in 3FN**
 > - tentiamo le chiusure di $AB, EH, D$(determinanti) ma senza successo.
 > - notiamo che $G$ non compare mai nelle dipendenze, quindi deve far parte della chiave, e l’attributo $E$ non compare mai a destra delle dipendenze, e farà quindi parte della chiave. 

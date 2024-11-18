@@ -1,7 +1,7 @@
 ---
-created: "2024-10-10"
+created: 2024-10-10
 related to: 
-updated: "2024-10-10, 07:29"
+updated: 2024-11-18T19:59
 ---
 >[!index]
 >
@@ -46,7 +46,7 @@ in questo caso le informazioni sullo stipendio di un impiegato e quello del suo 
 soluzione: creiamo una copia della relazione 
 >- con un nome diverso (per questo esempio, ImpiegatiC)
 >- dato che avrò una tabella con campi dello stesso nome, è meglio rinominare un set di campi per poterli distinguere durante le interrogazioni
->usando un operatore di join, collego le due tabelle: in questo caso uso un [[algebra relazionale#$ theta$ join]] per combinare le tuple con C# = Capo#: in questo modo accodiamo i dati del capo a quelli dell’impiegato.
+>usando un operatore di join, collego le due tabelle: in questo caso uso un [[03 - algebra relazionale#$ theta$ join]] per combinare le tuple con C# = Capo#: in questo modo accodiamo i dati del capo a quelli dell’impiegato.
 >![[Pasted image 20241010081309.png]]
 >a questo punto, basta confrontare Stip con CStip per selezionare gli impiegati che ci interessano, e infine proiettare :)
 ![[Pasted image 20241010082535.png]]

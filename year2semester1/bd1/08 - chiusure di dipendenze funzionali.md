@@ -1,7 +1,7 @@
 ---
 created: 2024-10-17
-related to: "[[progettazione, problemi e vincoli#dipendenze funzionali]]"
-updated: 2024-10-17, 07:24
+related to: "[[06, 07 - progettazione, problemi e vincoli#dipendenze funzionali]]"
+updated: 2024-11-18T20:01
 ---
 >[!index]
 >

@@ -1,7 +1,7 @@
 ---
 created: 2024-11-09
 related to: "[[decomposizione]]"
-updated: 2024-11-09, 11:17
+updated: 2024-11-18T20:03
 ---
 >[!index]
 >
@@ -90,7 +90,7 @@ la correttezza dell’algoritmo è una conseguenza del lemma 1 e del teorema $F^
 >[!warning] basta verificare che anche sola una dipendenza non appartiene alla chiusura di G per poter affermare che l’equivalenza non sussiste !
 
 come calcoliamo $X^+_G$ ?
-- se volessimo usare l’[[chiusura di un insieme di attributi#algoritmo per calcolo di $X +$| algorimo per il calcolo della chiusura di un insieme di attributi]] , dovremmo prima calcolare $G$, ma per la definizione di $G$, ciò richiede il calcolo di $F^+$, che richiede tempo esponenziale. 
+- se volessimo usare l’[[11 - chiusura di un insieme di attributi#algoritmo per calcolo di $X +$| algorimo per il calcolo della chiusura di un insieme di attributi]] , dovremmo prima calcolare $G$, ma per la definizione di $G$, ciò richiede il calcolo di $F^+$, che richiede tempo esponenziale. 
 usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire da $F$
 ## algorimo calcolo $^+_G$ a partire da $F$
 ```pseudo
