@@ -37,3 +37,9 @@ v.a. di Bernoulli, v.a. binomiale, deviazione standard, scrittura alternativa di
 correzione esercizi lasciati x casa, 2 esercizi in classe
 # 08/11/2024
 prop su non linearità di deviazione standard, variabile aleatoria di Poisson, legge dei piccoli numeri, variabile aleatoria Geometrica
+# 11/11/2024
+v.a. geometrica, v.a binomiale negativa, esercizi
+# 13/11/2024
+v.a. ipergeometrica, esempi, correzione esercizi
+# 15/11/2024
+densità di probabilità discreta congiunta di due v.a., proposizioni su densità di probabilità discreta congiunta

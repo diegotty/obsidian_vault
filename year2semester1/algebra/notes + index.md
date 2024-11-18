@@ -42,3 +42,9 @@ gruppi: notazione additiva e moltiplicativa, sottogruppi, omomorfismi, isomorfis
 esercizio MCD di poli. in Fp_7[X], intro sottogruppo immagine
 # 07/11/2024
 sottogruppi coniugati (dimostrazione), endomorifismi, gruppi di permutazioni, cicli, inversione, composizione, cicli a supporti disgiunti, teorema decomposizione di una permutazione
+# 12/11/2024
+introduzione di relazione \~, sottogruppo normale, costruzione di operazione su G/\~, costruzione di $\pi_H$, lemmi su sottogruppi normali e kernel
+# 13/11/2024
+primo teorema d'omomorfismo per i gruppi, altre proprietà dei gruppi, sottogruppo generato da sottoinsieme, $<g>$ isomorfo a Z/nZ, ordine di un elemento, ordine di un ciclo
+# 14/11/2024
+calcolo di ordine per cicli, decomposizione di permutazione in cicli a supp. disgiunti, mcm, segnatura di una permutazione, teorema su fattorizzazione in trasposizioni, calcolo di segnatura
