@@ -137,5 +137,29 @@ il Linux LVM (**logical volume manager**)
 
 
 - esistono device composti da più dischi fisici gestiti da un RAID direttamente a livello di dispositivo (il sistema operativo fa solo read/write, ci pensa il dispositivo stesso a gestire internamente il RAID)
+## gerarchia dei dischi RAID
+>[!info] RAID 0: non ridondanti
+![[Pasted image 20241118100351.png]]
+>- ogni disco (in questo caso 4 dischi) è diviso in **strip** (ogni strip contiene un certo numero di settori)
+>- una riga di strip (across i vari dischi) si chiama **stripe**
+>- nel RAID 0, distribuisco i dati tra i vari dischi per maggiore efficienza nell’accesso: posso leggere i vari dischi in parallelo, e quindi posso leggere un dato (across i vari dischi) più in fretta che se fosse su un solo disco
+
+>[!info] RAID 1: mirrored
+![[Pasted image 20241118100942.png]]
+>- come RAID 0, ma duplicando ogni dato
+>- fisicamente si hanno 2N dischi, ma la capacità di memorizzazione è quella di N dischi
+>- in questo modo, se si rompe un disco, posso sicuramente recuperare i dati di tale disco. se se ne rompono 2, ciò dipende da quali dischi si sono rotti
+
+>[!info] RAID 2: ridondanza con codice di Hamming
+![[Pasted image 20241118101155.png]]
+>- utilizzabile nei casi rari in cui gli errori non sono il fallimento di un intero disco, ma magari il flip di qualche bit
+>- invece di replicare l’intera informazione, posso usare codici particolari (es: Hamming), che correggono errori su bit singoli 
+>- in questo modo non ho più N dischi di overhead, ma tanti quanti ne servono per memorizzare il codice di Hamming (proprozionale al logarimo della capacità dei dischi)
+>- non usato (lame)
+
+>[!info] RAID 3 
+![[Pasted image 20241118101455.png]]
+- utilizza solo un disco di overhead
+- memorizza, per ogni bit, la parità dei bit che hanno la stessa posizione (per la posizione 1 su ognuno dei dischi, controllo la parità dei bit)
 # SSD
 \\TODO
