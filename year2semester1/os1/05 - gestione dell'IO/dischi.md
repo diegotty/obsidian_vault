@@ -128,10 +128,15 @@ viene aggiunta una nuova parte nella coda, in modo che:
 ciò risolve i problemi visti sopra !
 >[!figure] ![[Pasted image 20241118095243.png]]
 # dischi RAID
+RAID sta per **reduntant array of indipendent disks**
 in alcuni casi, si hanno a disposizione più dischi fisici, e abbiamo di trattarli separatamente
 - windows li mostrerebbe esplicitamente come dischi diversi, con etichette diverse
 - Linux ci permette di dire che alcune directory sono su un disco, altre su altro (mount)
 oppure, si possono considerare i diversi dischi fisici come un unico disco
+i dischi RAID permettono: 
+- **parallel access**: se faccio un’operazione sul RAID(cioè un’operazione su un sottoinsieme dei suoi dischi), tutti quei dischi effettuano in sincrono quell’operazione
+- **data availability**(oltre il RAID 1): capacità di recupero in caso di fallimento
+- **small I/O request rate**: velocità nel rispondere a piccole richieste di I/O
 ## LVM
 il Linux LVM (**logical volume manager**) 
 
