@@ -3,7 +3,30 @@ created: 2024-11-17
 related to: intro
 updated: 2024-11-17, 17:09
 ---
-\\TODO index
+>[!index]
+>
+>- [prestazioni del disco](#prestazioni%20del%20disco)
+>- [politiche di scheduling per il disco](#politiche%20di%20scheduling%20per%20il%20disco)
+>- [FIFO](#FIFO)
+>- [priorità](#priorit%C3%A0)
+>- [LIFO](#LIFO)
+>- [minimo tempo di servizio](#minimo%20tempo%20di%20servizio)
+>- [SCAN](#SCAN)
+>- [C-SCAN](#C-SCAN)
+>- [FSCAN](#FSCAN)
+>- [N-step-SCAN](#N-step-SCAN)
+>- [confronto prestazionale](#confronto%20prestazionale)
+>- [cache del disco](#cache%20del%20disco)
+>- [politiche di rimpiazzo](#politiche%20di%20rimpiazzo)
+>	- [LRU](#LRU)
+>	- [LFU](#LFU)
+>	- [sostituzione basata su frequenza](#sostituzione%20basata%20su%20frequenza)
+>	- [sostituzione basata su frequenza a 3 segmenti](#sostituzione%20basata%20su%20frequenza%20a%203%20segmenti)
+>- [dischi RAID](#dischi%20RAID)
+>- [LVM](#LVM)
+>- [gerarchia dei dischi RAID](#gerarchia%20dei%20dischi%20RAID)
+>- [page cache in Linux](#page%20cache%20in%20Linux)
+>- [SSD](#SSD)
 # HDD
 >[!warning] ciò che verrà visto vale per gli HDD, non per gli SDD (hanno problemi diversi, non trattati in questo corso)
 anche se vengono fatti dei cenni sugli SDD 

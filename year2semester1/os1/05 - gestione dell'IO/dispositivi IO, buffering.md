@@ -1,4 +1,30 @@
-\\TODO index
+>[!index]
+>
+>- [categorie di dispositivi di IO](#categorie%20di%20dispositivi%20di%20IO)
+>- [funzionamento dei dispositivi I/O](#funzionamento%20dei%20dispositivi%20I/O)
+>- [input](#input)
+>- [output](#output)
+>- [differenze tra dispositivi IO](#differenze%20tra%20dispositivi%20IO)
+>	- [data rate](#data%20rate)
+>	- [applicazioni](#applicazioni)
+>	- [complessità del controllo](#complessit%C3%A0%20del%20controllo)
+>	- [unità di trasferimento dati](#unit%C3%A0%20di%20trasferimento%20dati)
+>	- [rappresentazione dei dati](#rappresentazione%20dei%20dati)
+>	- [condizioni d’errore](#condizioni%20d%E2%80%99errore)
+>- [DMA](#DMA)
+>- [evoluzione della funzione di I/O](#evoluzione%20della%20funzione%20di%20I/O)
+>- [obiettivi nel progetto del SO](#obiettivi%20nel%20progetto%20del%20SO)
+>- [efficienza](#efficienza)
+>- [generalità](#generalit%C3%A0)
+>- [progettazione gerarchica](#progettazione%20gerarchica)
+>- [buffering dell’I/O](#buffering%20dell%E2%80%99I/O)
+>- [buffer singolo](#buffer%20singolo)
+>	- [buffer singolo orientato a blocchi](#buffer%20singolo%20orientato%20a%20blocchi)
+>	- [buffer singolo orientato a stream](#buffer%20singolo%20orientato%20a%20stream)
+>- [buffer circolare](#buffer%20circolare)
+>- [pro e contro](#pro%20e%20contro)
+>- [buffer zero copy](#buffer%20zero%20copy)
+
 la gestione dell’IO è problematica per la progettazzione di SO, in quanto:
 - c’è una grande varietà di dispositivi di IO
 - c’è una grande varietà di applicazioni che li usano
