@@ -115,8 +115,27 @@ si rimpiazza il settore con meno frequenze (quindi, il settore che è stato rife
 - serve un contatore per ogni settore(inizialmente 1, incrementato ad ogni riferimento
 - può sembrare intuitivamente corretto: meno vieni usato, meno servi. però, di solito un settore viene acceduto svariate volte di fila, perchè contiene dati acceduti secondo il principio di località. dopoichè, però, non serve più, e andrebbe quindi sostituto. invece, secondo LFU, esso avrà una frequenza abbastanza alta
 ### sostituzione basata su frequenza
-- viene usato uno stack di puntatori come LRU, ma è spezzato in 2: una parte nuova, e una parte vecchia
+- viene usato uno stack di puntatori come LRU, ma è spezzato in 2: una parte nuova, e una parte vecchia: ogni settore ha un contatore come in LFU, ma vengono incrementati solo i contatori nella parte vecchia 
+- i settori che vengono referenziati vanno in cima allo “stack”, come in LRU (anche se presi dalla parte vecchia)
 - si rimpiazza comunque il settore con il contatore di frequenza più basso, ma solo tra i puntatori nella parte vecchia (quindi un settore meno usato, con meno riferimenti)
-- c’è ancora un problema: può capitare che un settore appena inserito venga subito rimosso 
+- c’è ancora un problema: può capitare che un settore appena inserito venga subito rimosso perchè non ha avuto abbastanza riferimenti in poco tempo (ed è quindi sceso nella parte vecchia, con un contatore basso), anche se in futuro sarebbe stato usato molto
+>[!figure] ![[Pasted image 20241118095225.png]]
+### sostituzione basata su frequenza a 3 segmenti
+viene aggiunta una nuova parte nella coda, in modo che:
+- se un settore si trova nella parte **nuova**, non è eleggibile per il rimpiazzamento, e quando viene referenziato il suo contatore non viene incrementato
+- se un settore si trova nella parte **media**, non è ancora eleggibile per il rimpiazzamento, ma quando viene referenziato il suo contatore viene incrementato
+- se un settore si trova nella parte **vecchia**, è eleggibile per il rimpiazzamento, e quando viene referenziato il suo contatore viene incrementato
+ciò risolve i problemi visti sopra !
+>[!figure] ![[Pasted image 20241118095243.png]]
+# dischi RAID
+in alcuni casi, si hanno a disposizione più dischi fisici, e abbiamo di trattarli separatamente
+- windows li mostrerebbe esplicitamente come dischi diversi, con etichette diverse
+- Linux ci permette di dire che alcune directory sono su un disco, altre su altro (mount)
+oppure, si possono considerare i diversi dischi fisici come un unico disco
+## LVM
+il Linux LVM (**logical volume manager**) 
+
+
+- esistono device composti da più dischi fisici gestiti da un RAID direttamente a livello di dispositivo (il sistema operativo fa solo read/write, ci pensa il dispositivo stesso a gestire internamente il RAID)
 # SSD
 \\TODO
