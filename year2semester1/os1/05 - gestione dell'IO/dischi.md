@@ -108,6 +108,15 @@ ci sono svariati modi per gestire questa cache:
 ## politiche di rimpiazzo
 ### LRU
 se occorre rimpiazzare qualche settore nella cache piena, si prende quello nella cache da più tempo senza referenze
-- la cache viene costruita con uno #stack di puntatori che puntano ai diversi settori: il settore riferito più recentemente sarà quindi in cima allo stack, e quello riferito meno recentemente sarà in fondo allo stack. (anche se la cache non è propriamente uno stack, in quanto NON viene acceduta utilizzando le funzioni push, pop e top in quanto si poppa anche dal basso)
+- la cache viene costruita con uno “stack” di puntatori che puntano ai diversi settori: il settore riferito più recentemente sarà quindi in cima allo stack, e quello riferito meno recentemente sarà in fondo allo stack. (anche se la cache non è propriamente uno stack, in quanto NON viene acceduta utilizzando le funzioni push, pop e top in quanto si poppa anche dal basso)
+### LFU
+si rimpiazza il settore con meno frequenze (quindi, il settore che è stato riferito meno di recente potrebbe non essere quello con meno frequenza)
+- LRU si basa sul tempo, mentre LFU sulla frequenza !
+- serve un contatore per ogni settore(inizialmente 1, incrementato ad ogni riferimento
+- può sembrare intuitivamente corretto: meno vieni usato, meno servi. però, di solito un settore viene acceduto svariate volte di fila, perchè contiene dati acceduti secondo il principio di località. dopoichè, però, non serve più, e andrebbe quindi sostituto. invece, secondo LFU, esso avrà una frequenza abbastanza alta
+### sostituzione basata su frequenza
+- viene usato uno stack di puntatori come LRU, ma è spezzato in 2: una parte nuova, e una parte vecchia
+- si rimpiazza comunque il settore con il contatore di frequenza più basso, ma solo tra i puntatori nella parte vecchia (quindi un settore meno usato, con meno riferimenti)
+- c’è ancora un problema: può capitare che un settore appena inserito venga subito rimosso 
 # SSD
 \\TODO
