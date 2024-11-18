@@ -1,7 +1,7 @@
 ---
 created: 2024-11-09
-related to: "[[decomposizione]]"
-updated: 2024-11-18T20:03
+related to: "[[10 - decomposizione]]"
+updated: 2024-11-18T20:06
 ---
 >[!index]
 >
@@ -16,7 +16,7 @@ updated: 2024-11-18T20:03
 >	- [$Z^{(F)} \subseteq X^+_G$](#$Z%5E%7B(F)%7D%20%5Csubseteq%20X%5E+_G$)
 >- [esempi](#esempi)
 
-come abbiamo visto nelle lezioni precedenti, esistono delle [[decomposizione#condizioni della decomposizione|condizioni per effettuare una decomposizione correttamente]]. 
+come abbiamo visto nelle lezioni precedenti, esistono delle [[10 - decomposizione#condizioni della decomposizione|condizioni per effettuare una decomposizione correttamente]]. 
 il nostro obiettivo è creare delle decomposizioni che rispettano le condizioni
 per fare ciò, diamo una definizione rigorosa di decomposizione:
 >[!info] definizione
