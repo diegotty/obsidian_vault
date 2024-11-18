@@ -159,7 +159,29 @@ il Linux LVM (**logical volume manager**)
 
 >[!info] RAID 3 
 ![[Pasted image 20241118101455.png]]
-- utilizza solo un disco di overhead
-- memorizza, per ogni bit, la parità dei bit che hanno la stessa posizione (per la posizione 1 su ognuno dei dischi, controllo la parità dei bit)
+>- utilizza solo un disco di overhead
+>- memorizza, per ogni bit, la parità dei bit che hanno la stessa posizione (per la posizione 1 su ognuno dei dischi, controllo la parità dei bit e la scrivo nel disco di overhead, per la posizione 2 su ognuno dei dischi, …etc)
+>- ogni strip è un byte (?\\QUESTION)
+>- resta quindi possibile recuperare i dati se muore solo un disco
+>- se muore il disco di parità, e finita
+
+>[!info] RAID 4
+![[Pasted image 20241118101844.png]]
+\\HUH
+>- ogni scrittura ha effetto sul disco di parità (se ci sono tante scritture, si può creare un bottleneck)
+
+>[!info] RAID 5
+![[Pasted image 20241118102054.png]]
+>- come RAID 4, ma le informazioni di parità non sono tutte su un disco unico, ma vengono distribuite tra tutti i dischi
+>- ciò evita il collo di bottiglia del disco di parità, infatti in RAID 5 non c’è un disco privilegiato
+
+>[!info] RAID 6
+![[Pasted image 20241118102320.png]]
+> - come RAID 5, ma le informazioni di parità vengono memorizzate su 2 dischi indipendenti
+>- ciò permete di recuperare anche 2 fallimenti di disco
+>- per le operazioni di scrittura, dato che vanno scritte in 2 dischi diversi, il RAID 6 ha un 30% di penalità in più rispetto al RAID 5. per la scrittura invece, si equivalgono
+
+>[!example] riassunto
+![[Pasted image 20241118102631.png]]
 # SSD
 \\TODO
