@@ -102,10 +102,12 @@ spessoo chiamata **page cache**, è buffer in memoria principale che contiene un
 - se il settore non c’è, il settore letto viene anche copiato nella cache
 - è quindi una cache software non hardware
 >[!warning] da non confondere con la cache spesso presente direttamente sui dischi !
->una cache hardware che fa la stessa funzione (?)
+>una cache hardware che è quindi trasparente al SO
 
 ci sono svariati modi per gestire questa cache:
 ## politiche di rimpiazzo
 ### LRU
+se occorre rimpiazzare qualche settore nella cache piena, si prende quello nella cache da più tempo senza referenze
+- la cache viene costruita con uno #stack di puntatori che puntano ai diversi settori: il settore riferito più recentemente sarà quindi in cima allo stack, e quello riferito meno recentemente sarà in fondo allo stack. (anche se la cache non è propriamente uno stack, in quanto NON viene acceduta utilizzando le funzioni push, pop e top in quanto si poppa anche dal basso)
 # SSD
 \\TODO
