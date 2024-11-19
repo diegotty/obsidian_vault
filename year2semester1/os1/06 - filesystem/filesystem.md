@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-19T08:36
+updated: 2024-11-19T09:21
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -75,7 +75,6 @@ una directory master contiene tutte le altre directory, e ogni directory può co
 >[!figure] graph
 ![[Pasted image 20241119082905.png|350]]
 
-la strt
 >[!info] directory path
 ![[Pasted image 20241119083159.png]]
 la struttura ad albero permette agli utenti di trovare un file seguendo un percorso nell’albero (**directory path**)
