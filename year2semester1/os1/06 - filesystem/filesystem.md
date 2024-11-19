@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-19T10:53
+updated: 2024-11-19T11:02
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -123,6 +123,22 @@ alla fine, ci sono 2 possibilità (valide sia per preallocazione che per allocaz
 ![[Pasted image 20241119105124.png]]
 > - la frequenza di allocazione è un overhead !
 ### allocazione contigua
-un insieme di bl
+un insieme di blocchi viene allocato per il file quando ques't’ultimo viene creato
+- la preallocazione è necessaria, in quanto occorre sapere quanto, al massimo, sarà lungo il file (altrimenti, se crescesse, incontrerebe blocchi già occupati)
+- è necessaria una sola entry nella tabella di allocazione dei file: blocco di partenza e lunghezza del file
+- ci sarà frammentazione esterna, con conseguente necessità di compattazione
+>[!info] immagine di riferimento
+![[Pasted image 20241119105708.png]]
+>- se mi arrivasse un file lungo 8 blocchi, in teoria ho lo spazio “fisico” per memorizzarlo, ma non in modo contiguo: c’è quindi bisogno di compattare, in questo modo:
+![[Pasted image 20241119105831.png]]
+
 ### allocazione concatenata
+viene allocato un blocco alla volta, e ogni blocco ha un puntatore al prossimo blocco (tipo lista linkata ! la prima parte del blocco sono dati del file, l’ultima (piccola) parte del blocco è il puntatore)
+- è necessaria solo una entry nella tabella di allocazione dei file (il blocco di partenza e la lunghezza del file(che è calcolabile cmq))
+- niente frammentazione esterna ! 
+- è ok per file da accedere sequenzialmente, ma se serve un certo blocco che si trova $b$ blocchi dopo quello inziale, devo scorrere tutta la lista
+>[!info] immagine di riferimento
+![[Pasted image 20241119110103.png]]
+per migliorare l’accesso non sequenziale, si ricorre al **consolidamento**, che consiste nel mettere i blocchi di un file contigui (analogo alla compattazione), in questo modo:
+![[Pasted image 20241119110238.png]]
 ### allocazione indicizzata
