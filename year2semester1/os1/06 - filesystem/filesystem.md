@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-19T09:53
+updated: 2024-11-19T10:03
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -87,4 +87,23 @@ il SO è responsabile dell’assegnamento di blocchi a file, e deve gestire 2 pr
 - occorre tenere traccia dello spazio allocabile
 chiaramente, un problema influenza l’altro
 il SO alloca in “porzioni” o “blocchi”, cioè un sequenza **contigua** di settori
-- tipicamente, viene usata la parola **porzioni** quando si parla di allocazione dinamica, e **blocchi** quando si usa la preallocazione (allocazione fissa)
+- tipicamente, viene usata la parola **porzioni** quando si parla di allocazione dinamica, e **blocchi** quando si usa la preallocazione
+- in caso di porzioni, bisogna decidere se di dimensione fissa o dinamica, e quanto grandi
+
+**allocation table**: per ogni file, mantiene le informazioni su dove sono sul disco le porzioni che lo lo compongono
+## allocazione
+### preallocazione
+- la massima dimensione viene dichiarata a tempo di creazione
+- tuttavia, la dimensione è facilmente stimabile in alcune applicazioni, e difficile in molte altre (utenti ed applicazioni sovrastimano la dimensione così da poter effetivamente (e senza problemi) memorizzare le informazioni desiderate nel file)
+ciò risulta in uno spreco di spazio su disco
+### allocazione dinamica
+viene quindi preferita l’allocazione dinamica, in cui la dimensione viene aggiustata in base a syscall come `append` o `truncate`
+## dimensione delle porzioni
+ci sono due possibilità agli estremi:
+- si alloca una porzione larga a sufficienza per l’intero file: in questo modo l’accesso sequenziale è il più veloce
+- si alloca un blocco(sequenza di $n$ settori contigui, con $n$ fisso e piccolo (spesso $n = 1$)) alla volta
+si cerca un punto d’incontro tra efficienza del singolo file ed efficienza del sistema
+- porzioni piccole vuol dire grandi tabelle di allocazione, e quindi grande overhead, ma vuol dire anche maggior facilità di riuso dei blocchi
+- le porzioni fisse grandi invece portano a frammentazione interna
+
+## metodi di allocazione
