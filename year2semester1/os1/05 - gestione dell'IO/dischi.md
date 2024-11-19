@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2024-11-17, 17:09
+updated: 2024-11-19T09:38
 ---
 >[!index]
 >
@@ -119,6 +119,14 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 >[!figure] confrontos
 >![[Pasted image 20241117182014.png]]
 
+# SSD
+struttura degli SSD:
+- ad alto livello, sono costituiti da stack (flash chips) di **die** (matrici)
+	- il controller dell’SSD gestisce gli stack di die
+- ogni die  ha un certo numero di **planes**
+- le planes sono divise in **blocks** (blocchi)
+- ciascun block è composto da un numero variabile di **pages** (pagine, di circa 4KB)
+- ogni page è composta da **cells** (celle): le celle sono le unità più piccole
 # cache del disco
 spesso chiamata **page cache**, è buffer in memoria principale che contiene una copia di alcuni settori del disco:
 - quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale settore è nella cache
@@ -218,5 +226,3 @@ si scrive su disco quando:
 - è rimasta poca memoria
 - quando l’età delle pagine “sporche” va sopra una certa soglia
 non esiste una politica separata di replacement ! è la stessa usata per il rimpiazzamento delle pagine (la cache è paginata, e le sue pagine sono rimpiazzate con l’algoritmo visto per la gestione della memoria)
-# SSD
-\\TODO
