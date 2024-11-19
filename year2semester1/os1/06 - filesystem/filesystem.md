@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-19T10:16
+updated: 2024-11-19T10:53
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -111,6 +111,18 @@ alla fine, ci sono 2 possibilità (valide sia per preallocazione che per allocaz
 	- ogni singola allocazione è contigua, e la tabella di allocazione è abbastanza contenuta (porzioni grandi)
 	- complicata la gestione dello spazio libero !
 - porzioni fisse e piccole
-	- 
+	- tipicamente, 1 blocco per porzione
+	- molto meno contiguo del precedente
+>[!info] preallocazione + porzioni grandi e di dimensione variabile
+>se si usa questa combinazione, non c’è bisogno di una tabella di allocazione: per ogni file basta l’inizio e la lunghezza, in quanto ogni file è un’unica porzione
+>- funziona come il porzionamento della RAM: si usano algoritmi come bset fit, first fit, next fit
+> - rimane inefficiente per lo spazio libera: necessita periodica compattazione, che è molto più onerosa che la compattazione della RAM
 
 ## metodi di allocazione
+>[!info] riassunto
+![[Pasted image 20241119105124.png]]
+> - la frequenza di allocazione è un overhead !
+### allocazione contigua
+un insieme di bl
+### allocazione concatenata
+### allocazione indicizzata
