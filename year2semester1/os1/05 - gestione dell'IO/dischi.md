@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2024-11-19T09:38
+updated: 2024-11-19T09:50
 ---
 >[!index]
 >
@@ -16,6 +16,7 @@ updated: 2024-11-19T09:38
 >- [FSCAN](#FSCAN)
 >- [N-step-SCAN](#N-step-SCAN)
 >- [confronto prestazionale](#confronto%20prestazionale)
+>- [SSD](#SSD)
 >- [cache del disco](#cache%20del%20disco)
 >- [politiche di rimpiazzo](#politiche%20di%20rimpiazzo)
 >	- [LRU](#LRU)
@@ -26,7 +27,6 @@ updated: 2024-11-19T09:38
 >- [LVM](#LVM)
 >- [gerarchia dei dischi RAID](#gerarchia%20dei%20dischi%20RAID)
 >- [page cache in Linux](#page%20cache%20in%20Linux)
->- [SSD](#SSD)
 # HDD
 >[!warning] ciò che verrà visto vale per gli HDD, non per gli SDD (hanno problemi diversi, non trattati in questo corso)
 anche se vengono fatti dei cenni sugli SDD 
@@ -126,7 +126,24 @@ struttura degli SSD:
 - ogni die  ha un certo numero di **planes**
 - le planes sono divise in **blocks** (blocchi)
 - ciascun block è composto da un numero variabile di **pages** (pagine, di circa 4KB)
-- ogni page è composta da **cells** (celle): le celle sono le unità più piccole
+- ogni page è composta da **cells** (celle): le celle sono le unità più piccole, e possono immagazzinare un solo bit (2 per le multi-level cells)
+>[!info] image 
+>![[Pasted image 20241119093947.png]]
+![[Pasted image 20241119094004.png]]
+
+le operazioni sugli SSD hanno granularità diversa in base al tipo di operazione: 
+- lettura: l’unità di accesso minima sono le pagine
+- scrittura: l’unità di accesso minima sono sempre le pagine, ma un pagina può essere scritta solo se vuota (non è possibile la sovrascrittura)
+sovrascrivere un pagina implica dover **azzerare** l’intero blocco che la contiene, in questo modo: 
+1. si fa una copia dell’intero blocco
+2. si azzera il blocco
+3. si scrive la nuova pagina
+4. si copiano le pagine rimanenti dalla copia effettuata in precedenza
+
+gli SSD sono estremamente veloci, infatti:
+- nessun tempo richiesto per effettuare seek come negli HDD (non c’è necessità di preoccuparsi di dove siano i dati)
+- consentono accesso parallelo ai diversi flash chip
+- esistono algoritmi di accesso e file system progettati per massimizzare la performance di SSD, e tutti i maggiori sistemi operativi implementano ottimizzazioni specifiche per SSD (esistono addirittura file system dedicati, come F2FS)
 # cache del disco
 spesso chiamata **page cache**, è buffer in memoria principale che contiene una copia di alcuni settori del disco:
 - quando si fa una richiesta di I/O per dati che si trovano su un certo settore, si vede prima se tale settore è nella cache

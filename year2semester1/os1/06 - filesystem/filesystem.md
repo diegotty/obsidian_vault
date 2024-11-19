@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
-related to: 
-updated: 2024-11-19T09:21
+related to: "[[dispositivi IO, buffering]]"
+updated: 2024-11-19T09:53
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -81,3 +81,10 @@ la struttura ad albero permette agli utenti di trovare un file seguendo un perco
 >- è possibile avere nomi duplicati purchè con path diversi, ovvero in directory diverse
 
 solitamente, gli utenti o processi interattivi hanno associata una directory di lavoro (**working directory**), e tutti i nomi dei file sono dati relativamente alla working directory (pensa al terminale !)
+# gestione della memoria secondaria
+il SO è responsabile dell’assegnamento di blocchi a file, e deve gestire 2 problemi correlati: 
+- occorre allocare spazio per i file, e mantenerne traccia una volta allocato
+- occorre tenere traccia dello spazio allocabile
+chiaramente, un problema influenza l’altro
+il SO alloca in “porzioni” o “blocchi”, cioè un sequenza **contigua** di settori
+- tipicamente, viene usata la parola **porzioni** quando si parla di allocazione dinamica, e **blocchi** quando si usa la preallocazione (allocazione fissa)
