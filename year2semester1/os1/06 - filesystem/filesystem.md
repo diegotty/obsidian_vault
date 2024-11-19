@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-19T08:19
+updated: 2024-11-19T08:36
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -52,11 +52,33 @@ le directory contengono dei file e i loro metadati:
 - data dell’ultimo backup
 - uso attuale
 
-
-- una directory è essa stessa un file (speciale), e fornisce il mapping tra nomi dei file e file stessi
+una directory è essa stessa un file (speciale), e fornisce il mapping tra nomi dei file e file stessi
 le operazioni possibili su una directory sono:
 - ricerca
 - creazione file
 - cancellazione file
 - lista del contenuto della directory
 - modifica della directory
+## schemi per le directory
+il metodo usato per memorizzare le informazioni sopra varia da sistema a sistema:
+### struttura semplice
+lista di entry, una per ogni file
+- i file sono memorizzati in modo sequenziale, con il nome dei file da chiave
+- in questo modo, 2 file non potranno mai avere lo stesso nome
+- non aiuta nell’organizzare i file
+### schema a due livelli 
+una directory per ogni utente(che al suo interno è solo una lista dei file di quell’utente), più una (master) che le contiene tutte
+- la master contiene anche l’indirizzo e le informazioni per il controllo dell’accesso
+### schema gerarchico ad albero per le directory
+una directory master contiene tutte le altre directory, e ogni directory può contenere un file oppure altre directory utente
+- ci sono anche sottodirectory di sistema, sempre dentro la directory master
+>[!figure] graph
+![[Pasted image 20241119082905.png|350]]
+
+la strt
+>[!info] directory path
+![[Pasted image 20241119083159.png]]
+la struttura ad albero permette agli utenti di trovare un file seguendo un percorso nell’albero (**directory path**)
+>- è possibile avere nomi duplicati purchè con path diversi, ovvero in directory diverse
+
+solitamente, gli utenti o processi interattivi hanno associata una directory di lavoro (**working directory**), e tutti i nomi dei file sono dati relativamente alla working directory (pensa al terminale !)
