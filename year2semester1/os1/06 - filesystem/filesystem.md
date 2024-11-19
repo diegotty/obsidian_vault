@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-19T08:08
+updated: 2024-11-19T08:19
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -35,3 +35,28 @@ i file sono gestiti da un insieme di programmi e librerie di utilità. tali prog
 5. ogni utente deve poter muovere dati da un file ad un altro
 6. ogni utente deve poter mantenere una copia di backup dei propri file
 7. ogni utente deve poter accedere ai propri file tramite nomi simbolici
+# directory
+le directory contengono dei file e i loro metadati:
+- nome del file (nome scelto dall’utente), che deve essere unico in una directory data
+- tipo del file (eseguibile, binario, etc..)
+- organizzazione del file (per i sistemi che supportano diverse organizzazioni)
+- volume ( il dispositivo su cui il file è memorizzato)
+- indirizzo di partenza ( da quale settore e traccia di disco)
+- dimensione attuale, dimensione allocata (dimensione massima del file)
+- proprietario ( che può concedere/negare premessi ad altri utenti, e può anche cambiare tali impostazioni)
+- informazioni sull’accesso ((un file o una directory ?)potrebbe contenere username e password per ogni utente autorizzato)
+- azioni permesse (lettura, scrittura, esecuzione, etc..)
+- data di creazione, identità del creatore
+- data dell’ultimo accesso in lettura e scrittura
+- identità dell’ultimo lettore e scrittore
+- data dell’ultimo backup
+- uso attuale
+
+
+- una directory è essa stessa un file (speciale), e fornisce il mapping tra nomi dei file e file stessi
+le operazioni possibili su una directory sono:
+- ricerca
+- creazione file
+- cancellazione file
+- lista del contenuto della directory
+- modifica della directory
