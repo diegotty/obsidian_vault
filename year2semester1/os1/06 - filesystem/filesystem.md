@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-19T10:03
+updated: 2024-11-19T10:16
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -105,5 +105,12 @@ ci sono due possibilità agli estremi:
 si cerca un punto d’incontro tra efficienza del singolo file ed efficienza del sistema
 - porzioni piccole vuol dire grandi tabelle di allocazione, e quindi grande overhead, ma vuol dire anche maggior facilità di riuso dei blocchi
 - le porzioni fisse grandi invece portano a frammentazione interna
+- la frammentazione esterna invece è sempre possibile: i file possono essere cancellati (questo riguarda la contiguità delle aree allocate penso, roba della compattazione)
+alla fine, ci sono 2 possibilità (valide sia per preallocazione che per allocazione dinamica):
+- porzioni grandi e di dimensione variabile
+	- ogni singola allocazione è contigua, e la tabella di allocazione è abbastanza contenuta (porzioni grandi)
+	- complicata la gestione dello spazio libero !
+- porzioni fisse e piccole
+	- 
 
 ## metodi di allocazione
