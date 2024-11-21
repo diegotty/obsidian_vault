@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-21T21:05
+updated: 2024-11-21T21:20
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -141,4 +141,18 @@ viene allocato un blocco alla volta, e ogni blocco ha un puntatore al prossimo b
 ![[Pasted image 20241119110103.png]]
 per migliorare l’accesso non sequenziale, si ricorre al **consolidamento**, che consiste nel mettere i blocchi di un file contigui (analogo alla compattazione), in questo modo:
 ![[Pasted image 20241119110238.png]]
+
 ### allocazione indicizzata
+via di mezzo tra allocazione contigua e allocazione concatenata !
+la tabella di allocazione contiene una sola entry, con l’indirizzo di un blocco: questo blocco, in realtà, ha una enty per ogni porzione allocata al file (guarda foto). quindi funziona da tabella, anche se si trova in un blocco apparentemente indistinguibile dagli altri
+-  perchè ciò sia possibile, ci deve essere un bit che indica se un blocco è composto da dati o è un indice
+- se il file è troppo grande, si creano più livelli
+
+>[!info] allocazione indicizzata con porzioni di lunghezza fissa
+![[Pasted image 20241121211238.png]]
+> l’al
+
+>[!allocazione indicizzata con porzioni di lunghezza variabile]
+![[Pasted image 20241121211723.png]]
+il blocco che fa da tabella ora contiene anche la lunghezza (il numero di blocchi contigui allocati a partire dallo start block)
+>- la tabella è ordinata !
