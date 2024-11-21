@@ -1,13 +1,13 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-19T11:02
+updated: 2024-11-21T21:05
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
 - esistenza a lungo termine
 - condivisibilità con altri processi (tramite nomi simbolici)
-- strutturabilità (directory gerarchice)
+- strutturabilità (directory gerarchiche)
 
 i file sono gestiti da un insieme di programmi e librerie di utilità. tali programmi costituiscono il **File(Management)System**, e vengono eseguiti come processi privilegiati (**in kernel mode**)
 - le librerie vengono invece invocate come syscall (quindi comunque in kernel mode)
