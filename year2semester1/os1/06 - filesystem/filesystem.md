@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-21T21:37
+updated: 2024-11-21T21:41
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -172,3 +172,7 @@ ha però dei problemi:
 come allocazione libera: le porzioni libere possono essere concatenate le une alle latre, usando, per ogni blocco libero, un puntatore ed un intero per la dimensione
 - questa soluzione non ha praticamente overhead
 ha però dei problemi:
+- occorre leggere un blocco libero per conoscere il prossimo: se occorre allocarne molti, diventa time consuming 
+- è lungo anche cancellare file molto frammentati (xke poi devo aggiungerli alla linked list)
+## indicizzazione
+si tratta lo spazio libero come un file, e quindi si usa un indice come si farebbe per un file
