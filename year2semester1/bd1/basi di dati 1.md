@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-21T22:13
+updated: 2024-11-21T22:47
 ---
 [[02 - modello relazionale]]
 [[03 - algebra relazionale]]
@@ -15,4 +15,4 @@ updated: 2024-11-21T22:13
 [[12 - identificazione delle chiavi di uno schema]]
 [[13,14 - decomposizioni che preservano le dipendenze]]
 [[15,16 - decomposizioni che hanno un join senza perdita]]
-[[17 - copertura minimale di un insieme di dipendenze]]
+[[17, 18 - copertura minimale di un insieme di dipendenze]]

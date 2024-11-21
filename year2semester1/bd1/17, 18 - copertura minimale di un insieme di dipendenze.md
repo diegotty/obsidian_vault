@@ -1,8 +1,14 @@
 ---
 created: 2024-11-21
 related to: 
-updated: 2024-11-21T22:13
+updated: 2024-11-21T22:48
 ---
+>[!index]
+>
+>- [$F^{min}$](#$F%5E%7Bmin%7D$)
+>- [come calcolare $F^{min}$](#come%20calcolare%20$F%5E%7Bmin%7D$)
+>- [esempi](#esempi)
+
 affrontiamo ora il problema di come ottenere una decomposizione che soddisfi le nostre condizioni.
 >[!warning] è possibile sempre ottenerla ? si !
 > ed esiste un algoritmo che raggiunge questo scopo
@@ -20,10 +26,11 @@ dato un insieme di dipendenze funzionali $F$, una copertura minimale di $F$ è u
 		- $X \to A \in G^+$, quindi usando il lemma 1, dobbiamo verifcare se $A \in X^+_G$
 		- $X’ \to A \in F^+$, quindi usando il lemma 1, dobbiamo verificare se $A \in X’^+_F$
 	- $X \to A \in G^+$ non è necessario da calcolare, in quanto $X’ \subseteq X$, quindi per come è costruito l’algoritmo per il calcolo della chiusura, $A$ viene inserito subito ! prima ancora di inziare il while.
-	- quindi devo solo controllare se $A \in X’_F$, e se ciò è vero, allora posso ridurre $X \to A$ a $X’ \to A$
+	- quindi devo solo controllare se $A \in X’_F$, e se ciò è vero, allora posso ridurre $X \to A$ a $X’ \to A$, e considerare $G$ come l’insieme di riferimento per le verifiche successive
 3. $\forall  X \to A$, verificare se $F \equiv F - \{X \to A\} = G$
 $X^+_F$ dovrebbe essere uguale a $X^+_G$, in particolare dobbiamo controllare se $X \to A \in G^+$, cioè per il lemma 1, se $A \in X^+_G$. se ciò è vero, $X \to A$ viene eliminata\toA  A $ viene eleminata
 >[!info] osservazione
+>nel passo 2, se $F contiene sia $AB \to C$ che $A \to C$, allora $AB \to C$ non solo si può ridurre, ma si può anche eliminare
 nel passo 3, se $X \to A$ ma **non esiste** $Y \to A \in F$ con $Y \not= X$, allora **è inutile provare a eliminare** $X \to A$ !!
 
 
@@ -34,4 +41,5 @@ nel passo 3, se $X \to A$ ma **non esiste** $Y \to A \in F$ con $Y \not= X$, all
 proprio perchè non esiste **LA** decomposizione giusta, ma ci sono diverse possibilità, potrebbe succedere che la decomposizione da verificare **non sia stata ottenuta** tramite l’algoritmo. ciò non ci autorizza a concludere che la decomposizione da verificare non possegga le proprietà richieste !!
 >
 > può anche succedere che $F$ sia già in forma minimale, e quindi non ci sia da fare alcuna riduzione
-# algoritmo di decomposizione
+# esempi
+>[!example] esempio 1
