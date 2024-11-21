@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-21T21:20
+updated: 2024-11-21T21:37
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -150,9 +150,25 @@ la tabella di allocazione contiene una sola entry, con l’indirizzo di un blocc
 
 >[!info] allocazione indicizzata con porzioni di lunghezza fissa
 ![[Pasted image 20241121211238.png]]
-> l’al
+> l’allocazione con blocchi di lunghezza fissa evita la frammentazione esterna, in quanto \\QUESTION
+>- a volte occore il consolidamento, per migliorare la località
 
 >[!allocazione indicizzata con porzioni di lunghezza variabile]
 ![[Pasted image 20241121211723.png]]
+l’allocazione con blocchi di lunghezza variabile migliora la località ! in quanto i blocchi allocati sono contigui
 il blocco che fa da tabella ora contiene anche la lunghezza (il numero di blocchi contigui allocati a partire dallo start block)
+>- a volte occorre il consolidamento, per ridurre le dimensioni della tabella
 >- la tabella è ordinata !
+# gestione dello spazio libero
+la gestione dello spazio libero è altrettando importante di quello occupato, e per allocare spazio per i file, è necessario sapere qual è lo spazio libero ! (non è realistico guardare la tabella di allocazione di tutti i file per determinare quali blocchi/porzioni sono liberi)
+- serve quindi una **tabella di allocazione di disco**, oltre a quella di allocazione per i file, che viene aggiornata si alloca o si cancella un file
+esistono diversi modi per gestire la gestione dello spazio libero: 
+## tabelle di bit
+si usa un vettore con un bit per ogni blocco su disco: 0 vuol dire libero, 1 vuol dire occupato
+- questa soluzione minimizza lo spazio richiesto alla tabella di allocazione del disco
+ha però dei problemi: 
+- se il disco è quasi pieno, la ricerca di uno spazio libero può richiedere molto tempo (risolvibile con delle tabelle riassuntive di porzioni della tabella di bit)
+## porzioni libere concatenate
+come allocazione libera: le porzioni libere possono essere concatenate le une alle latre, usando, per ogni blocco libero, un puntatore ed un intero per la dimensione
+- questa soluzione non ha praticamente overhead
+ha però dei problemi:
