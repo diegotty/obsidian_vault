@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-18T20:12
+updated: 2024-11-21T22:11
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
@@ -9,6 +9,7 @@ updated: 2024-11-18T20:12
 [[gerarchia della memoria]]
 [[introduzione ai sistemi operativi]]
 ## 02 - processi
+[[gestione dei processi]]
 [[modalità di esecuzione]]
 [[threads]]
 ## 03 - scheduling
