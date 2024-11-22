@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-22T07:56
+updated: 2024-11-22T08:14
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -195,3 +195,14 @@ un volume potrebbe essere il risultato dell’unione di volumi più piccoli !
 - i metadati devono essere su dicsco, perchè devono essere persistenti
 - per efficienza, vengono anche tenuti in memoria principale, ma mantere sempre consistenti i metadati in memoria principale e su disco è inefficiente, quindi si fa solo di tanto in tanto, quando il disco è poco usato, e con più aggioronamenti in sieme (buffering)
 ## jounaling
+zona dedicata del disco(**log**) in cui scrivere le operazioni, prima di farne il commit nel file system
+- in caso di reboot dopo un crash, basta leggere il log !!
+il rispristino del disco, dopo un evento imprevisto (es : computer viene spento all’improvviso per mancanza di corrente, il disco viene rimosso senza dare un appropriato comando (unmount)) viene gestito con il log:
+- all’inizio del disco viene scritto un bit che dice se il sistema è stato spento correttamente. a reboot, se il bit è 0, occorre eseguire un programma di ripristino del disco, che confronta il journal allo stato corrente del file system, e corregge le inconsistenze nel file system basandosi sulle operazioni salvate nel journal
+ci sono 2 tipi di journal: 
+**logico**: copia nel journal **tutti i blocchi** che dovranno poi essere scritti nel file system, inclusi i metadati
+- se c’è un crash durante la scrittura nel file system, basta copiare il contenuto del journal al file system al reboot successivo
+**fisico**: copia nei journal **solo i metadati** delle operazioni effettuate (es: modifica la lista dei blocchi liberi dopo la cancellazione di un file)
+- se c’è un crash, si copiano i metadati dal journal al file system, ma questo può causare corruzione dati, in quanto il contenuto delle operazioni è perso perchè non salvato nel journal
+### alternative
+- Sof
