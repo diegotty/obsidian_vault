@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-22T08:14
+updated: 2024-11-22T08:17
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -204,5 +204,7 @@ ci sono 2 tipi di journal:
 - se c’è un crash durante la scrittura nel file system, basta copiare il contenuto del journal al file system al reboot successivo
 **fisico**: copia nei journal **solo i metadati** delle operazioni effettuate (es: modifica la lista dei blocchi liberi dopo la cancellazione di un file)
 - se c’è un crash, si copiano i metadati dal journal al file system, ma questo può causare corruzione dati, in quanto il contenuto delle operazioni è perso perchè non salvato nel journal
-### alternative
-- Sof
+### alternative al journaling
+- Soft Updates File Systems: riordina le scritture su file system in modo da non avere mai inconsistenze (o meglio, consente solo alcune tipi di consistenze che non portano a perdite di dati (storage leaks))
+- Log-Structured File Systems: l’intero file system è strutturato come un buffer circolare, detto **log**: dati e metadati sono scritti in modo sequenziale, sempre alla fine del log
+- Copy-on-Write File Systems: evitano di sovrascrivere dei contenuti nei file: scrivono nuovi contenuti in blocchi vuoti, e poi aggiornano i metadati per puntare ad i nuovi contenuti
