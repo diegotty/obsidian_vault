@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-21T21:41
+updated: 2024-11-22T07:43
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -176,3 +176,16 @@ ha però dei problemi:
 - è lungo anche cancellare file molto frammentati (xke poi devo aggiungerli alla linked list)
 ## indicizzazione
 si tratta lo spazio libero come un file, e quindi si usa un indice come si farebbe per un file
+- per efficienza, l’indice gestisce le porzioni come se fossero di lunghezza variabile (c’è quindi una entry per ogni porzione libera del disco)
+## lista dei blocchi liberi
+ad ogni blocco viene assegnato un numero sequenziale, e la lista di questi numeri viene memorizzata in una parte dedicata del disco (per forza riservata, NON come [[#porzioni libere concatenate]])
+- poco overhead ! la lista occupa poco spazio
+- per avere parti della lista in memoria principale, si può organizzare la lista come stack, e tenere solo la parte alta. in questo modo si può usare pop per allocare, e push per deallocare, e quando lo stack caricato finisce, si prende una nuova parte del disco
+
+# volumi
+è un “disco logico”, cioè 
+- una partizione di un disco
+- più dischi messi insieme e visti come un disco solo (LVM)
+è quindi un insieme di settori in memoria secondaria, che possono essere usati dal SO e dalle applicazioni
+- i settori non devono essere per forza contigui, ma appariranno come tali al SO e alle applicazioni
+un volume potrebbe essere il risultato dell’unione di volumi più piccoli !
