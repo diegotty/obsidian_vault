@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-21T22:11
+updated: 2024-11-22T07:15
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
@@ -25,3 +25,4 @@ updated: 2024-11-21T22:11
 [[dispositivi IO, buffering]]
 [[dischi]]
 ## 06 - filesystem
+[[filesystem]]
