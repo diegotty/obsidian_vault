@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-22T07:43
+updated: 2024-11-22T07:56
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -189,3 +189,9 @@ ad ogni blocco viene assegnato un numero sequenziale, e la lista di questi numer
 è quindi un insieme di settori in memoria secondaria, che possono essere usati dal SO e dalle applicazioni
 - i settori non devono essere per forza contigui, ma appariranno come tali al SO e alle applicazioni
 un volume potrebbe essere il risultato dell’unione di volumi più piccoli !
+# dati e metadati
+**dati**: contenuto del file
+**metadati**: lista di blocchi liberi, lista di blocchi all’interno dei file, data di ultima modifica, …
+- i metadati devono essere su dicsco, perchè devono essere persistenti
+- per efficienza, vengono anche tenuti in memoria principale, ma mantere sempre consistenti i metadati in memoria principale e su disco è inefficiente, quindi si fa solo di tanto in tanto, quando il disco è poco usato, e con più aggioronamenti in sieme (buffering)
+## jounaling
