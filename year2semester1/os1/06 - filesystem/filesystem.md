@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T09:51
+updated: 2024-11-23T10:06
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -275,6 +275,18 @@ esistono 2 tipi di file system su windows:
 - NTFS(file system nuovo): si basa su alloaczione **con bitmap**, con cluster di dimensione fissa
 ## FAT
 è molto limitato (andava bene per i vecchi dischi, soprattutto i floppy), ma è usato ancora oggi per le chiavette USB
-esiste 
+- inoltre l’approccio in sè non è scalabile, in quanto la FAT stessa può occupare molto spazio
+esiste una parte di disco usata per l’area riservata, che contiene dei dati
+la FAT (**file allocation table**) è memorizzata all’inizio della partizione su disco, e ce ne sono 2 copie (per ridondanza)
+- essa è costituita da una sola colonna, ed ogni riga contiene un valore intero a 12,16 o 32 bit (FAT-12, FAT-16, FAT-32)
+- ci sono tante righe quanti ci sono cluster, e ogni cluster ha dimensione fissa, che viene scelta dall’utente in fase di formattazione e può andare da 2KB a 32KB
+	- di conseguenza, la tabella cresce con la grandezza della partizione
+- ogni cluster è costituito da settori di disco contigui
+>[!info] rappresentazione FAT
+![[Pasted image 20241123100342.png]]
+ogni file ha una specie di inode che contiene il nome del file e l’entry (nella FAT) collegata al cluster che contiene quel file
+per ogni entry della FAT, ci possono essere 3 opzioni riguardo al valore di una riga (cluster): 
+>- se la i-esima entry è zero, il blocco i-esimo è libero
+>- se la i-esima entry non è zero e non è un valore speciale, allora il cluster associato contiene il file e il valore della riga è il prossimo 
 
 ## NTFS
