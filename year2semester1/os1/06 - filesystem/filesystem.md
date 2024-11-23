@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T12:51
+updated: 2024-11-23T13:03
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -227,6 +227,12 @@ sta per “**index node**”, è una struttura dati che contiene informazioni es
 - ogni inode è associato ad un solo file, ma grazie agli hard link in UNIX un dato inode può essere associato a più **nomi** di file
 viene mantenuta dal SO, in memoria principale, una tabella di tutti gli inode corrispondenti a file aperti
 - tutti gli altri inode sono in una zona del disco dedicata (**i-list**) (in LINUX si trova all’inizio del disco !)
+>[!info] gestione dei file aperti
+![[Pasted image 20241123125404.png]]
+il kernel unix usa due strutture di controllo separate per gestire file aperti e descrittori inode: 
+>- puntatore a descrittori dei file attualmente in uso, salvato nel [[gestione dei processi#process control block|PCB]]
+>- una tabella globale di descrittori di file aperti, mantenuto in una apposita struttura dati (quella in mezzo credo)
+
 ogni inode è associato ad un **inode number** (incrementale)
 >[!info] rappresentazione inode
 ![[Pasted image 20241123085909.png]]
@@ -267,8 +273,8 @@ più file sono messi in una directory, più grande è la directory (anche se di 
 >[!info] regioni del volume
 ![[Pasted image 20241123124845.png]]
 **regione boot sector**: simile a blocco di boot per [[#FAT]], contienele informazioni e i dati necessari per il bootstrap
-**regione superblock**: contiene informazioni sui metadati del filesystem (dimensione della partizione, dimensione dei blocchi, puntatore alla lista dei blocchi liberi, etc). esistono copie multiple di questa regione, in caso di corruzione, e sono salvate in gruppi di blocchi sparsi nel file system (la prima copia è sempre in una parte prefissata della partizione, in modo da cons)
-**regione lista degli inode (i-list)**:
+**regione superblock**: contiene informazioni sui metadati del filesystem (dimensione della partizione, dimensione dei blocchi, puntatore alla lista dei blocchi liberi, etc). esistono copie multiple di questa regione, in caso di corruzione, e sono salvate in gruppi di blocchi sparsi nel file system (la prima copia è sempre in una parte prefissata della partizione, in modo da consentire recovery in modo semplice)
+**regione lista degli inode**: la i-list !!
 ## gestione file condivisi
 come gestire i file che devono essere condivis in più directory ? fare una copia del file è inutilmente costoso. esisono 2 soluzioni:
 **symbolic links**: esiste un solo descrittore (inode) del file originale, e i symlinks contengono il cammino completo sul filesystem verso tale file (stanno quindi dove dove NON si trova il file, altrimenti sarebbe inutile)
@@ -363,3 +369,11 @@ file di larghe dimensioni (e/o sfortunati con la contiguità), possono necessita
 - se i record estesi non rientrano in MFT per mancanza di spazio, vengono trattati come attributo non residente, e quindi salvati in un file dedicato, con un apposito record salvato nell’MFT
 >[!info] record con estensioni
 ![[Pasted image 20241123124504.png]]
+
+# gestione file system in Linux
+il file system originario di Linux è **ext2**, che è l’evoluzione (se non la copia) del file system originario di UNIlX
+in seguito, è stato creato **ext3**, che aggiungeva il journaling all’ext2
+ancora in seguito, è stato creato **ext4**(l’attualmente più utilizzato), una versione migliore dell’ext3 in grado di memorizzare singoli file più grandi di 2TB e filesystem più grandi di 16TB
+in generale, quindi, il file sytem di Linux è fortemente basato sugli inode, che sono memorizzati nella parte iniziale del file sytem
+>[!info] linux può tranquillamente utilizzare i filesystem FAT e NTFS
+>sorge un problema, in quanto FAT e NTFS non sono basati su inode: per rimediare, gli inode vengono creati on-the-fly su una cache quando vengono aperti i file o viene letta una directory
