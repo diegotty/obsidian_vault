@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T09:20
+updated: 2024-11-23T09:36
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -253,6 +253,11 @@ l’allocazione è quindi: a blocchi, dinamica, e indicizzata (anche se parte de
 ![[Pasted image 20241123091622.png]]
 ### directory
 le directory sono una lista di coppie (nome di file, puntatore ad inode)
+>[!example]
+quind se un file si chiama “pippo” e il suo inode number è 100, basta andare nella **i-list** e prendere l’inode 100 (che è facile, basta saltare i primi 99 (che immagino abbiano tutti la stessa dimensione, quindi dovrebbe essere veramente facile)), e una volta ottenuto l’inode abbiamo tutte le informazioni che ci servono sul file
+
 più file sono messi in una directory, più grande è la directory (anche se di solito bastano i puntatori `direct` per gestire una directory)
 >[!info]  rappresentazione directory
 ![[Pasted image 20241123084739.png|350]]
+
+# gestione dei file su windows
