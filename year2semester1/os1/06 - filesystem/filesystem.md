@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T09:36
+updated: 2024-11-23T09:51
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -159,6 +159,10 @@ l’allocazione con blocchi di lunghezza variabile migliora la località ! in qu
 il blocco che fa da tabella ora contiene anche la lunghezza (il numero di blocchi contigui allocati a partire dallo start block)
 >- a volte occorre il consolidamento, per ridurre le dimensioni della tabella
 >- la tabella è ordinata !
+
+>[!info] ora possiamo capire meglio cosa vuol dire formattare un file system !
+vuol dire prepararlo per raccogliere le informazioni secondo la struttura di un certo file system
+es: se un file system usa l’allocazione indicizzata, è necessario che ci sia una file allocation table (vuota)
 # gestione dello spazio libero
 la gestione dello spazio libero è altrettando importante di quello occupato, e per allocare spazio per i file, è necessario sapere qual è lo spazio libero ! (non è realistico guardare la tabella di allocazione di tutti i file per determinare quali blocchi/porzioni sono liberi)
 - serve quindi una **tabella di allocazione di disco**, oltre a quella di allocazione per i file, che viene aggiornata si alloca o si cancella un file
@@ -259,5 +263,18 @@ quind se un file si chiama “pippo” e il suo inode number è 100, basta andar
 più file sono messi in una directory, più grande è la directory (anche se di solito bastano i puntatori `direct` per gestire una directory)
 >[!info]  rappresentazione directory
 ![[Pasted image 20241123084739.png|350]]
-
+## gestione file condivisi
+come gestire i file che devono essere condivis in più directory ? fare una copia del file è inutilmente costoso. esisono 2 soluzioni:
+**symbolic links**: esiste un solo descrittore (inode) del file originale, e i symlinks contengono il cammino completo sul filesystem verso tale file (stanno quindi dove dove NON si trova il file, altrimenti sarebbe inutile)
+- possono esiste symlinks a file non più esistenti
+**hard links**: sono un puntatore diretto al descrittore del file originale(inode), e il file condiviso non può essere cancellato finchè esiste un hard link collegato ad esso
+- per gestire ciò, l’inode contiene un contatore dei file che lo referenziano
 # gestione dei file su windows
+esistono 2 tipi di file system su windows:
+- FAT(file sytem vecchio): si basa su allocazione concatenata, con blocchi (chiamati **cluster**) di dimensione fissa
+- NTFS(file system nuovo): si basa su alloaczione **con bitmap**, con cluster di dimensione fissa
+## FAT
+è molto limitato (andava bene per i vecchi dischi, soprattutto i floppy), ma è usato ancora oggi per le chiavette USB
+esiste 
+
+## NTFS
