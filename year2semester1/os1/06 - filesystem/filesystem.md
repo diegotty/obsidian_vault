@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T11:51
+updated: 2024-11-23T12:06
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -300,10 +300,16 @@ ciò consente di identificare i blocchi di un file e accedervi seguendo sequenzi
 > - **regione FAT**: due copie della FAT, in caso la tabella principale sia corrotta
 > - **regione root directory**: è una **directory table** che contiene tutti i file entry per la directory root del sistema (la dimensione della table è limitata a 256 entry in FAT-12 e FAT-16, mentre in FAT-32 è inclusa nella regione dati, insieme a file e directory normali, e non ha limitazioni sulla dimensione)
 > - **regione dati**: è la regione del volume in cui sono effettivamente contenuti i dati dei file e directory
-> - 
 
 per le directory, al posto di essere una lista con entrate del tipo “nomefile-numero inode", le directory sono liste con entrate del tipo “nomefile-insieme di dati”, e l’insieme di dati è il seguente:
->[!figure] 
-![[Pasted image 20241123115042.png|1000]]
+>[!info] 
+>![[Pasted image 20241123115042.png|900x500]]
+>- 32 byte in tutto
+>- quindi l’illustrazione nella rappresentazione del FAT è una semplificazione !
+### limitazioni
+- supporta file di dimensione massima 4GB (32 bit nel campo dimensione file nelle directory)
+- non implementa journaling
+- non consente alcun meccanismo di controllo di accessi ai file/directory
+- limite dimensione partizioni: 2TB ($2^32$ settori da 512B)
 ## NTFS
  sta per **new technology file system**
