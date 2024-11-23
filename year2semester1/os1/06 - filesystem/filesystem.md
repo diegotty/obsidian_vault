@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T09:05
+updated: 2024-11-23T09:20
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -227,9 +227,16 @@ ogni inode è associato ad un **inode number** (incrementale)
 >[!info] rappresentazione inode
 ![[Pasted image 20241123085909.png]]
 >l’inode è la parte a sinistra dell’immagine (contiene quindi diverse informazioni)
+>- le celle `direct(0), direct(1)` contengono puntatori a effettivi indirizzi del disco (quindi per i file piccoli (di massimo 13 blocchi), verrano utilizzati SOLO le celle `direct`). esse contengono i blocchi in ordine !
+>- esistono poi altri puntatori: `single indirect, double indirect, triple indirect`
+>- `single indirect`: punta ad un blocco nel disco, che è indicizzato (contiene le posizioni dei blocchi nel disco che contengono dati del file, come in [[#allocazione indicizzata]])
+>- `double indirect`: funziona allo stesso modo del `single indirect` ma con un livello di blocco indicizzato in più
+>- `triple indirect`: funziona allo stesso modo del `double indirect` ma con un livello di blocco indicizzato in più
+>
+> ovviamente non serve tenere conto del fatto che un blocco sia dato o tabella, in quanto, questa informazion si conosce già, in base a da cosa viene puntato il blocco
 
 l’inode contiene:
-- 3 time stamp: ultimo accesso in lettura, ultimo accesso in scrittura, metadati(?)
+- 3(3 in Linux, 4 in UNIX) time stamp: ultimo accesso in lettura, ultimo accesso in scrittura, metadati(?)
 - identificatore dell’utente proprietario e del gruppo a cui tale utente appartiene
 - informazioni sul controllo di accesso (permessi)
 - tempo di creazione e di ultimo accesso
@@ -241,6 +248,11 @@ l’inode contiene:
 - numero di blocchi, o numero di file
 - dimensione dei blocchi
 - sequenze di puntatori a blocchi
+l’allocazione è quindi: a blocchi, dinamica, e indicizzata (anche se parte dell’indice è memorizzata nell’inode)
+>[!info] risultati con inode
+![[Pasted image 20241123091622.png]]
 ### directory
->[!info]  uhhhh
+le directory sono una lista di coppie (nome di file, puntatore ad inode)
+più file sono messi in una directory, più grande è la directory (anche se di solito bastano i puntatori `direct` per gestire una directory)
+>[!info]  rappresentazione directory
 ![[Pasted image 20241123084739.png|350]]
