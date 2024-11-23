@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-22T08:17
+updated: 2024-11-23T08:31
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -208,3 +208,12 @@ ci sono 2 tipi di journal:
 - Soft Updates File Systems: riordina le scritture su file system in modo da non avere mai inconsistenze (o meglio, consente solo alcune tipi di consistenze che non portano a perdite di dati (storage leaks))
 - Log-Structured File Systems: l’intero file system è strutturato come un buffer circolare, detto **log**: dati e metadati sono scritti in modo sequenziale, sempre alla fine del log
 - Copy-on-Write File Systems: evitano di sovrascrivere dei contenuti nei file: scrivono nuovi contenuti in blocchi vuoti, e poi aggiornano i metadati per puntare ad i nuovi contenuti
+# gestione dei file in UNIX
+in UNIX ci sono 6 tipi di file:
+- normale
+- directory
+- speciale (i file che mappano su nomi di file i dispositivi di I/O,etc )
+- named pipe (per far comunicare i processi tra loro)
+- hard link (collegamenti, per dare un nome di file alternativo)
+- symbolic links
+## inode
