@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T12:06
+updated: 2024-11-23T12:21
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -312,4 +312,14 @@ per le directory, al posto di essere una lista con entrate del tipo “nomefile-
 - non consente alcun meccanismo di controllo di accessi ai file/directory
 - limite dimensione partizioni: 2TB ($2^32$ settori da 512B)
 ## NTFS
- sta per **new technology file system**
+ sta per **new technology file system**, è il file sytem adottato a partire da Windows NT in poi
+ - usa UNICODE per l’encoding dei nomi dei file, con 255 caratteri come limite massimo
+ - i file sono definiti da un insieme di attributi, che sono rappresentati come un **byte stream**
+ - supporta hard e soft link 
+ - implementa journaling
+ >[!info] formato del volume
+ ![[Pasted image 20241123121915.png]]
+ **regione boot sector**: basata sull’equivalente FAT, alcuni campi sono in posizioni diverse ma per il resto è uguale
+ **master file table**: contiene la MTF
+### MFT
+la **master file table** è la principale struttura dati del file system: è unica per cia
