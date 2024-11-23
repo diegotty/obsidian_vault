@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T08:50
+updated: 2024-11-23T09:05
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -220,7 +220,27 @@ in UNIX ci sono 6 tipi di file:
 - symbolic links
 ## inode
 sta per “**index node**”, è una struttura dati che contiene informazioni essenziali per un dato file (simile al PCB ! ma per i file)
-- di solito ogni inode è un file, ma grazie agli hard link in UNIX un dato inode può essere
+- ogni inode è associato ad un solo file, ma grazie agli hard link in UNIX un dato inode può essere associato a più **nomi** di file
+viene mantenuta dal SO, in memoria principale, una tabella di tutti gli inode corrispondenti a file aperti
+- tutti gli altri inode sono in una zona del disco dedicata (**i-list**) (in LINUX si trova all’inizio del disco !)
+ogni inode è associato ad un **inode number** (incrementale)
+>[!info] rappresentazione inode
+![[Pasted image 20241123085909.png]]
+>l’inode è la parte a sinistra dell’immagine (contiene quindi diverse informazioni)
+
+l’inode contiene:
+- 3 time stamp: ultimo accesso in lettura, ultimo accesso in scrittura, metadati(?)
+- identificatore dell’utente proprietario e del gruppo a cui tale utente appartiene
+- informazioni sul controllo di accesso (permessi)
+- tempo di creazione e di ultimo accesso
+- flag utente e flag per il kernel
+- numero sequenziale di generazione del file
+- dimensione delle informazioni aggiuntive
+- altri attributi (controllo di accesso e altro)
+- dimensione
+- numero di blocchi, o numero di file
+- dimensione dei blocchi
+- sequenze di puntatori a blocchi
 ### directory
 >[!info]  uhhhh
 ![[Pasted image 20241123084739.png|350]]
