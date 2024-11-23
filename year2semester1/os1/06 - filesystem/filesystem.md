@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T08:31
+updated: 2024-11-23T08:50
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -163,6 +163,8 @@ il blocco che fa da tabella ora contiene anche la lunghezza (il numero di blocch
 la gestione dello spazio libero è altrettando importante di quello occupato, e per allocare spazio per i file, è necessario sapere qual è lo spazio libero ! (non è realistico guardare la tabella di allocazione di tutti i file per determinare quali blocchi/porzioni sono liberi)
 - serve quindi una **tabella di allocazione di disco**, oltre a quella di allocazione per i file, che viene aggiornata si alloca o si cancella un file
 esistono diversi modi per gestire la gestione dello spazio libero: 
+>[!warning] una parte della tabella che indica lo spazio libero va sempre tenuta in RAM
+>spesso le operazioni di modifica sulla tabella dello spazio libero (quando un file viene allocato\deallocato) vengono registrate solo in memoria principale, e poi in seguito riportate su disco. ciò può portare a inconsistenza e i problemi che vedremo in seguito !
 ## tabelle di bit
 si usa un vettore con un bit per ogni blocco su disco: 0 vuol dire libero, 1 vuol dire occupato
 - questa soluzione minimizza lo spazio richiesto alla tabella di allocazione del disco
@@ -217,3 +219,8 @@ in UNIX ci sono 6 tipi di file:
 - hard link (collegamenti, per dare un nome di file alternativo)
 - symbolic links
 ## inode
+sta per “**index node**”, è una struttura dati che contiene informazioni essenziali per un dato file (simile al PCB ! ma per i file)
+- di solito ogni inode è un file, ma grazie agli hard link in UNIX un dato inode può essere
+### directory
+>[!info]  uhhhh
+![[Pasted image 20241123084739.png|350]]
