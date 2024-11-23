@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T12:34
+updated: 2024-11-23T12:51
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -263,6 +263,12 @@ quind se un file si chiama “pippo” e il suo inode number è 100, basta andar
 più file sono messi in una directory, più grande è la directory (anche se di solito bastano i puntatori `direct` per gestire una directory)
 >[!info]  rappresentazione directory
 ![[Pasted image 20241123084739.png|350]]
+
+>[!info] regioni del volume
+![[Pasted image 20241123124845.png]]
+**regione boot sector**: simile a blocco di boot per [[#FAT]], contienele informazioni e i dati necessari per il bootstrap
+**regione superblock**: contiene informazioni sui metadati del filesystem (dimensione della partizione, dimensione dei blocchi, puntatore alla lista dei blocchi liberi, etc). esistono copie multiple di questa regione, in caso di corruzione, e sono salvate in gruppi di blocchi sparsi nel file system (la prima copia è sempre in una parte prefissata della partizione, in modo da cons)
+**regione lista degli inode (i-list)**:
 ## gestione file condivisi
 come gestire i file che devono essere condivis in più directory ? fare una copia del file è inutilmente costoso. esisono 2 soluzioni:
 **symbolic links**: esiste un solo descrittore (inode) del file originale, e i symlinks contengono il cammino completo sul filesystem verso tale file (stanno quindi dove dove NON si trova il file, altrimenti sarebbe inutile)
@@ -345,3 +351,15 @@ NTFS cerca sempre di assegnare ad un file sequenze contigue di blocchi
 - per i file grandi, il valore dell’attributo(`$DATA`) indica la sequenza ordinata dei blocchi sul disco dove risiede il file
 per ogni file, esiste un record base nell’MFT
 - \\QUESTION
+>[!info] record base
+![[Pasted image 20241123123952.png]]
+in questo esempio, il file ha dimensione 9 blocchi, divisi in 3 **run** (dal blocco 20, 4 blocchi contigui hanno dati del file. dal blocco 64, 2 blocchi contigui hanno dati del file, etc)
+il record base è un descrittore singolo sufficiente per l’intera lista di run, infatti consente di descrivere file di dimensione potenzialmente illimitata: dipende tutto dalla contiguità dei blocchi
+>- con blocchi da 1KB, un file da 20GB diviso in 20 run da 1M di blocchi ognuna, richiede 20 coppie di 64 bit (ogni coppia determina una run), più un’altra coppia \\QUESTION(credo c’entri con lo 0), quindi in totale il record base occupa **336B**
+>- sempre con blocchi da 1KB, un file da 64KB, con 64 run da 1 blocco occupa **1040B**
+
+file di larghe dimensioni (e/o sfortunati con la contiguità), possono necessitare di più record, e per gestire ciò NFTS usa una tecnica simile agli inode di UNIX:
+- il record base ““diventa” un puntatore a $N$ record secondari, ed eventuale spazio rimanente nel record base contiene le prime sequenze del file (very cool !!)
+- se i record estesi non rientrano in MFT per mancanza di spazio, vengono trattati come attributo non residente, e quindi salvati in un file dedicato, con un apposito record salvato nell’MFT
+>[!info] record con estensioni
+![[Pasted image 20241123124504.png]]
