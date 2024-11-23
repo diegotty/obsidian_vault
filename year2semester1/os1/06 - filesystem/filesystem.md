@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T10:06
+updated: 2024-11-23T10:21
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -283,10 +283,21 @@ la FAT (**file allocation table**) è memorizzata all’inizio della partizione 
 	- di conseguenza, la tabella cresce con la grandezza della partizione
 - ogni cluster è costituito da settori di disco contigui
 >[!info] rappresentazione FAT
-![[Pasted image 20241123100342.png]]
+![[Pasted image 20241123101452.png]]
 ogni file ha una specie di inode che contiene il nome del file e l’entry (nella FAT) collegata al cluster che contiene quel file
+il FAT funziona similarmente alla [[#allocazione concatenata]], ma i puntatori non sono dentro la partizione, ma sono i valori della FAT
 per ogni entry della FAT, ci possono essere 3 opzioni riguardo al valore di una riga (cluster): 
 >- se la i-esima entry è zero, il blocco i-esimo è libero
->- se la i-esima entry non è zero e non è un valore speciale, allora il cluster associato contiene il file e il valore della riga è il prossimo 
+>- se la i-esima entry non è zero e non è un valore speciale, allora il cluster associato contiene il file e il valore della riga è la prossima riga che contiene il file
+>- ci sono diversi valori speciali (per valori riservati, cluster danneggiati, etc) ma a noi interessa il valore speciale `FFFF` (nel FAT-16, cioè tutti 1), che vuol dire che quella riga era l’ultimo blocco del file
 
+ciò consente di identificare i blocchi di un file e accedervi seguendo sequenzialmente i collegamenti nella FAT
+>[!warning] la parte della FAT relativa ai file aperti deve essere sempre mantenuta interamente in memoria principale
+### regioni del volume
+>[!info] rappresentazione delle regioni di un volume FAT
+![[Pasted image 20241123101018.png]]
+>- **regione boot sector**: contiene informazioni necessarie per l’accesso al volume, tra cui il tipo (del volume ? \\QUESTION) e puntatori alle altre sezioni del volume
+- **regione FAT**: due copie della FAT, in caso la tabella principale sia corrotta
+- **regione root directory**:
 ## NTFS
+ sta per **new technology file system**
