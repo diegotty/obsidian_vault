@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T10:25
+updated: 2024-11-23T11:51
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -299,6 +299,11 @@ ciò consente di identificare i blocchi di un file e accedervi seguendo sequenzi
 >- **regione boot sector**: contiene informazioni necessarie per l’accesso al volume, tra cui il tipo (del volume ? \\QUESTION) e puntatori alle altre sezioni del volume
 > - **regione FAT**: due copie della FAT, in caso la tabella principale sia corrotta
 > - **regione root directory**: è una **directory table** che contiene tutti i file entry per la directory root del sistema (la dimensione della table è limitata a 256 entry in FAT-12 e FAT-16, mentre in FAT-32 è inclusa nella regione dati, insieme a file e directory normali, e non ha limitazioni sulla dimensione)
-> - **regione dati**:
+> - **regione dati**: è la regione del volume in cui sono effettivamente contenuti i dati dei file e directory
+> - 
+
+per le directory, al posto di essere una lista con entrate del tipo “nomefile-numero inode", le directory sono liste con entrate del tipo “nomefile-insieme di dati”, e l’insieme di dati è il seguente:
+>[!figure] 
+![[Pasted image 20241123115042.png|1000]]
 ## NTFS
  sta per **new technology file system**
