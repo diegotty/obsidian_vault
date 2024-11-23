@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-23T12:21
+updated: 2024-11-23T12:34
 ---
 il file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
@@ -322,4 +322,26 @@ per le directory, al posto di essere una lista con entrate del tipo “nomefile-
  **regione boot sector**: basata sull’equivalente FAT, alcuni campi sono in posizioni diverse ma per il resto è uguale
  **master file table**: contiene la MTF
 ### MFT
-la **master file table** è la principale struttura dati del file system: è unica per cia
+la **master file table** è la principale struttura dati del file system: è unica per ciascun volume, ed è implementata come un file
+- la MFT è una sequenza lineare di record (massimo $2^{48}$, la cui dimensione va da 1KB 4KB(penso funzioni a scelta in fase di formattazione come in FAT)), e ogni record descrive un file
+#### record di MFT
+ogni record è identificato da un puntatore di 48bit, mentre i rimanenti 16bit sono usati come numero di sequenza
+- ogni record contiene una lista di attributi (nella forma “attributo(intero, che indica il tipo di attributo)-valore(sequenza di byte)”)
+- il contenuto di un file è anch’esso un attributo !(`$DATA`)
+- il valore dell’attributo può essere incluso direttamente nel record (**attributo residente**), oppure può essere un puntatore ad un record remoto (**attributo non residente**) se il valore dell’attributo è troppo grande e non sta nel record (il caso di `$DATA`)
+i primi 27 record sono riservati per i metadati del file system:
+- il record 0 descrive l’MFT stesso (in particolare, tutti i file nel volume (damn))
+- il record 1 contiene una copia dei primi record dell’MFT, in modo non residente
+- il record 2 contiene le informazioni di journaling (metadata-only !)
+- il record 3 ha le informazioni sul volume (id, label, versione del file system, etc)
+- il record 4 è una tabella degli attributi usati nella MFT (definisce un intero per ogni attributo)
+- il record 6 definisce la lista dei blocchi liberi, usando una bitmap
+dal record 28 in poi, ci sono i descrittori dei file normali (sempre in forma di record)
+>[!info] rappresentazione MFT
+>![[Pasted image 20241123123045.png|500]]
+#### files in MFT
+NTFS cerca sempre di assegnare ad un file sequenze contigue di blocchi
+- per i file piccoli (< 1KB), i dati sono salvati direttamente nell’MFT (nel record penso intenda, in particolare nell’attributo `$DATA`)
+- per i file grandi, il valore dell’attributo(`$DATA`) indica la sequenza ordinata dei blocchi sul disco dove risiede il file
+per ogni file, esiste un record base nell’MFT
+- \\QUESTION
