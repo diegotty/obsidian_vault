@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-11-25T11:00
+updated: 2024-11-25T11:12
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -30,4 +30,24 @@ la concorrenza si manifesta nelle seguenzi occasioni:
 - **livelock(stallo attivo)**: situazione in cui due o più processi cambiano continuamente il proprio stato, l’uno in risposta dell’altro, senza fare alcunchè di “utile” (quindi sempre in stallo)
 - **starvation(morte per fame)**: quando un processo, pur essendo ready, non viene mai scelto dallo scheduler
 ## difficoltà della concorrenza
-**LA** difficoltà della concorrenza è che non si può fare nessuna assunzione sul comportamento dei processi, e neanche su come funzionerà lo scheduler
+- **LA** difficoltà della concorrenza è che non si può fare nessuna assunzione sul comportamento dei processi, e neanche su come funzionerà lo scheduler (però devo avere una soluzione che funziona per tutti i casi)
+- un’altro grande problema è la condivisione di risorse (es: una stampante, o anche semplicemente 2 thread the accedono alla stessa variabile globale)
+- bisogna anche gestire l’allocazione delle risorse condivise:
+	- ad esempio, un processo potrebbe richiedere un dispositivo I/O e poi essere rimesso in `ready` prima di poterlo usare. quel dispositivo I/O va considerato `locked` oppure no ?
+- spesso il manifestarsi di un errore dipende dallo scheduler e dagli altri processi presenti, quindi rilanciare l’ultimo processo spesso **non** riproduce lo stesso errore
+
+### esempio facile
+```
+/* chin e chout sono variabili globali */
+void echo(){
+	chin = getchar();
+	chout = chin;
+	putchar(chout);
+}
+//questo codice prende un carattere in input e lo stampa sullo schermo (esempio)
+```
+
+>[!example] esempio su un processore
+se il codice venisse eseguito da 2 processi su un solo processore, lo scheduler protrebbe decidere di assegnare il processore in questo modo:
+![[Pasted image 20241125111107.png]]
+in questo caso, il carattere preso in input dal processo P1 viene preso, in quanto chin è globale e viene sovrascritta prima che P1 possa salvarla (e stamparla)
