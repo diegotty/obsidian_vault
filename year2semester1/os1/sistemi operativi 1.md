@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-22T07:15
+updated: 2024-11-25T09:51
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
@@ -25,4 +25,7 @@ updated: 2024-11-22T07:15
 [[dispositivi IO, buffering]]
 [[dischi]]
 ## 06 - filesystem
-[[filesystem]]
+[[intro al filesystem]]
+[[gestione della memoria secondaria]]
+[[filesystem in UNIX, Windows, Linux]]
+## 07 - concorrenza
