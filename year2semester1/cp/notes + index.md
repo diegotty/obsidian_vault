@@ -1,3 +1,7 @@
+---
+created: 2024-10-08T08:10
+updated: 2024-11-25T11:55
+---
 [notes](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7)
 [exercises](https://notability.com/n/QL1VhUe_397quBUZl2XLI)
 
@@ -43,3 +47,9 @@ v.a. geometrica, v.a binomiale negativa, esercizi
 v.a. ipergeometrica, esempi, correzione esercizi
 # 15/11/2024
 densità di probabilità discreta congiunta di due v.a., proposizioni su densità di probabilità discreta congiunta
+# 18/11/2024
+dipendenza di $p_{X,Y}$ dall'esperimento e non da $p_X, p_Y$
+# 20/11/2024
+valore atteso di funzione congiunta ($f : R^2 \to R$), valore atteso di somma di v.a. ($E[X+Y]$) e generalizzazione, dimostrazione formula chiusa di valore atteso per v.a. binomiale
+# 22/11/2024
+$P(E_1) = P(E_i)$ in esempio di v.a. ipergeometrica, dimostrazione di formula chiusa per valore atteso di v.a. ipergeometrica, v.a indipendenti

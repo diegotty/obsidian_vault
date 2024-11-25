@@ -1,3 +1,7 @@
+---
+created: 2024-10-08T08:10
+updated: 2024-11-25T11:56
+---
 [notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
 [notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)
 [exercises]([https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2](https://notability.com/n/GF6LeAOS2SNPfz8rMoa~2))
@@ -48,3 +52,9 @@ introduzione di relazione \~, sottogruppo normale, costruzione di operazione su 
 primo teorema d'omomorfismo per i gruppi, altre proprietà dei gruppi, sottogruppo generato da sottoinsieme, $<g>$ isomorfo a Z/nZ, ordine di un elemento, ordine di un ciclo
 # 14/11/2024
 calcolo di ordine per cicli, decomposizione di permutazione in cicli a supp. disgiunti, mcm, segnatura di una permutazione, teorema su fattorizzazione in trasposizioni, calcolo di segnatura
+# 19/11/024
+prodotto cartesiano di gruppi, spazi vettoriali, proprietà, esempi, applicazione lineare, isomorfismo
+# 20/11/2024
+teorema di lagrange, dimostrazione. gruppi ciclici, diagramma di Hasse
+# 21/11/2024
+sottospazio vettoriale (cond. equivalenti), combinazioni lineari, sottospazio vettoriale generato da un vettore, indipendenza e dipendenza lineare, matrici quadrate e triangolari, prodotto di matrici
