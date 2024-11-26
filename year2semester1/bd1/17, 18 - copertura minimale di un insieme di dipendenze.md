@@ -1,7 +1,7 @@
 ---
 created: 2024-11-21
 related to: 
-updated: 2024-11-21T22:48
+updated: 2024-11-26T20:52
 ---
 >[!index]
 >
@@ -30,7 +30,7 @@ dato un insieme di dipendenze funzionali $F$, una copertura minimale di $F$ è u
 3. $\forall  X \to A$, verificare se $F \equiv F - \{X \to A\} = G$
 $X^+_F$ dovrebbe essere uguale a $X^+_G$, in particolare dobbiamo controllare se $X \to A \in G^+$, cioè per il lemma 1, se $A \in X^+_G$. se ciò è vero, $X \to A$ viene eliminata\toA  A $ viene eleminata
 >[!info] osservazione
->nel passo 2, se $F contiene sia $AB \to C$ che $A \to C$, allora $AB \to C$ non solo si può ridurre, ma si può anche eliminare
+>nel passo 2, se $F$ contiene sia $AB \to C$ che $A \to C$, allora $AB \to C$ non solo si può ridurre, ma si può anche eliminare
 nel passo 3, se $X \to A$ ma **non esiste** $Y \to A \in F$ con $Y \not= X$, allora **è inutile provare a eliminare** $X \to A$ !!
 
 
