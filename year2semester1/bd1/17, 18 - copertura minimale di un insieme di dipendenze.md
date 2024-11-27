@@ -1,7 +1,7 @@
 ---
 created: 2024-11-21
 related to: 
-updated: 2024-11-26T20:52
+updated: 2024-11-27T05:52
 ---
 >[!index]
 >
@@ -43,3 +43,18 @@ proprio perchè non esiste **LA** decomposizione giusta, ma ci sono diverse poss
 > può anche succedere che $F$ sia già in forma minimale, e quindi non ci sia da fare alcuna riduzione
 # esempi
 >[!example] esempio 1
+dato il seguente schema di relazione : $R = (A,B,C,D,E,H)$
+e il seguente insieme di dipendenze funzionali $F = \{AB \to CD, C \to E, AB \to E, ABC \to D\}$
+trovare una copertura minimale $G$ di $F$
+>
+> per trovare la copertura minimale, prima di tutto riduciamo le parti destre a singleton (**passo 1**)
+> $F = \{AB \to C, AB \to D, C \to E, AB \to E, ABC \to D\}$
+>
+>ora dobbiamo verificare se nelle dipendenze ci sono ridondanze nelle parti sinistre (**passo 2**)
+>per la dipendenza $AB \to C$, controliamo se $A \to C$ appartiene a $F$, cioè se $C$ appartiene a $(A)_F^+$ e controlliamo se $B \to C$ appartiene a $F$ . in questo caso entrambe le chiusure contengono solo l’attributo di partenza, quindi la parte sinistra della dipendenza non può essere ridotta
+>lo stesso si verifica per le le dipendenze $AB \to D, AB \to E$. invece, provando a ridurre $ABC \to D$, notiamo che nell’insieme di dipendenze esiste $AB \to D$. quindi, in questo caso, oltre a eliminare l’attributo $C$ da $ABC \to D$, possiamo eliminare tutta la dipendenza risultante che è un duplicato.
+>alla fine di questo passo, quindi abbiamo $G = \{AB \to C, AB \to D, C \to E, AB \to E\}$, che è equivalente ad $F$, e quindi diventa il nostro nuovo $F$
+>
+>vediamo ora se questo insieme contiene dipendenze ridondanti (**passo 3**)
+>possiamo considerare che $C$ è determinato unicamente da $AB$, quindi elminando la dipendenza $AB \to C$ non riusciremmo più ad inserirlo nella chiusra di $AB$ rispetto al nuovo insieme di dipendenze, e lo stesso ragionamento vale per $D$. 
+>proviamo allora ad elmi
