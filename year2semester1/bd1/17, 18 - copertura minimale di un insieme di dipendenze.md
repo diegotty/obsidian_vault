@@ -1,7 +1,7 @@
 ---
 created: 2024-11-21
 related to: 
-updated: 2024-11-27T05:52
+updated: 2024-11-27T06:07
 ---
 >[!index]
 >
@@ -28,10 +28,15 @@ dato un insieme di dipendenze funzionali $F$, una copertura minimale di $F$ è u
 	- $X \to A \in G^+$ non è necessario da calcolare, in quanto $X’ \subseteq X$, quindi per come è costruito l’algoritmo per il calcolo della chiusura, $A$ viene inserito subito ! prima ancora di inziare il while.
 	- quindi devo solo controllare se $A \in X’_F$, e se ciò è vero, allora posso ridurre $X \to A$ a $X’ \to A$, e considerare $G$ come l’insieme di riferimento per le verifiche successive
 3. $\forall  X \to A$, verificare se $F \equiv F - \{X \to A\} = G$
-$X^+_F$ dovrebbe essere uguale a $X^+_G$, in particolare dobbiamo controllare se $X \to A \in G^+$, cioè per il lemma 1, se $A \in X^+_G$. se ciò è vero, $X \to A$ viene eliminata\toA  A $ viene eleminata
+$X^+_F$ dovrebbe essere uguale a $X^+_G$, in particolare dobbiamo controllare se $X \to A \in G^+$, cioè per il lemma 1, se $A \in X^+_G$. se ciò è vero, $X \to A$ viene eliminata
 >[!info] osservazione
 >nel passo 2, se $F$ contiene sia $AB \to C$ che $A \to C$, allora $AB \to C$ non solo si può ridurre, ma si può anche eliminare
 nel passo 3, se $X \to A$ ma **non esiste** $Y \to A \in F$ con $Y \not= X$, allora **è inutile provare a eliminare** $X \to A$ !!
+
+>[!info] osservazione 2: il cacolo delle chiusure di attributi
+>- nel passo 2, se calcoliamo le chiusure di attributi e dopo riduciamo o eliminiamo delle dipendenze, non c’è bisogno di ri-calcolare le chiusure di tali attributi, in quanto $G$ è equivalente a $F$
+>- nel passo 3 invece, se calcoliamo la chiusura di degli attributi a un certo punto del passo (mentre proviamo ad eliminare una certa dime)
+>
 
 
 >[!warning] il secondo passo va fatto rigorosamente prima del terzo !!!!!
@@ -57,4 +62,7 @@ trovare una copertura minimale $G$ di $F$
 >
 >vediamo ora se questo insieme contiene dipendenze ridondanti (**passo 3**)
 >possiamo considerare che $C$ è determinato unicamente da $AB$, quindi elminando la dipendenza $AB \to C$ non riusciremmo più ad inserirlo nella chiusra di $AB$ rispetto al nuovo insieme di dipendenze, e lo stesso ragionamento vale per $D$. 
->proviamo allora ad elmi
+>proviamo allora ad eliminare la dipendenza $C \to E$, e calcolando $(C)_G^+$ con $G =\{AB \to C, AB \to D, AB \to E\}$, abbiamo che $(C)_G^+ = \{C\}$, in cui non compare $E$. la dipendenza deve dunque rimanere.
+>proviamo infine ad elminare $AB \to E$. calcolando $(AB)^+_G =\{A,B,C,D,E\}$ con $G = \{AB \to C, AB \to D, C \to D\}$, notiamo che $E$ è presente. ciò significa che $E$ **rientra comunque** nella chiusura di $AB$ perchè la dipendenza $AB \to E$, pur non comparendo in $G$, si trova in $G^+$, e quindi può essere eliminata.
+>
+> la **copertura minimale** di $F$ è $G = \{AB \to C, AB \to D, C \to D\}$
