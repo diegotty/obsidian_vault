@@ -1,7 +1,7 @@
 ---
 created: 2024-11-21
 related to: 
-updated: 2024-11-27T06:07
+updated: 2024-11-27T06:09
 ---
 >[!index]
 >
@@ -35,7 +35,7 @@ nel passo 3, se $X \to A$ ma **non esiste** $Y \to A \in F$ con $Y \not= X$, all
 
 >[!info] osservazione 2: il cacolo delle chiusure di attributi
 >- nel passo 2, se calcoliamo le chiusure di attributi e dopo riduciamo o eliminiamo delle dipendenze, non c’è bisogno di ri-calcolare le chiusure di tali attributi, in quanto $G$ è equivalente a $F$
->- nel passo 3 invece, se calcoliamo la chiusura di degli attributi a un certo punto del passo (mentre proviamo ad eliminare una certa dime)
+>- nel passo 3 invece, se calcoliamo la chiusura di degli attributi(es :$B$) a un certo punto del passo (mentre proviamo ad eliminare una certa dipendenza), stiamo cambiando $G$ in modo che esso potrebbe non essere equivalente ad $F$ (stiamo appunto rimuovendo una dipendenza $G$ per verificare se è ridondante). quindi, la prossima volta che bisognerà calcolare la chiusura di tali attributi (es :$B$), non potremo usare la chiusura che abbiamo calcolato in precedenza, ma dovremo ri-calcolarla perchè avremo temporaneamente eliminato una dipendenza diversa da $G$, che potrebbe quindi essere non equivalente ad $F$
 >
 
 
