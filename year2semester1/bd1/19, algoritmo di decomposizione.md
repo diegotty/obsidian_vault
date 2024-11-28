@@ -1,7 +1,7 @@
 ---
 created: 2024-11-27
 related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
-updated: 2024-11-27T06:28
+updated: 2024-11-28T10:52
 ---
 mostriamo ora che dato uno schema di relazione $R$ e un insieme di dipendenze funzionali $F$ su $R$, esiste **sempre** una decomposizione(che può essere calcolata in tempo polinomiale) $\rho = \{R_{1}, R_{2},\dots, R_{k}\}$ di $R$ tale che:
 - $\forall i, i=1,\dots,k \,\,R_{i}$ è in 3FN
@@ -33,3 +33,7 @@ mostriamo ora che dato uno schema di relazione $R$ e un insieme di dipendenze fu
 	\end{algorithmic}
 	\end{algorithm}
 ```
+in questo algoritmo definiamo quanti e come sono fatti gli $R_i$ che compongnono $\rho$. in particolare:
+1. nel primo for potremmo aggiungere a $\rho$ un sottoschema composto da
+>[!info] osservazioni
+>possiamo avere 1+2 ($R$ residuo), oppure 1+3, oppure solo 3
