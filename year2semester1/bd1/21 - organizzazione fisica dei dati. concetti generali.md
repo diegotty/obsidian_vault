@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T18:19
+updated: 2024-11-29T18:34
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -94,8 +94,13 @@ poniamo:
 $N$: numero di record
 $R$: numero di record che possono essere memorizzati in un blocco
 $n = \frac{N}{R}$
+per calcolare il costo medio della ricerca, calcoliamo la media degli accessi necessari per un record
 >[!info] ragionamento
-abbiamo $n$ blocchi, e in ogni blocco abbiamo $R$ record. nel $$
+abbiamo $n$ blocchi, e in ogni blocco abbiamo $R$ record. nel primo blocco, ognuno dei $R$ record richiede 1 accesso in memoria per accedere a tale record. nel secondo blocco, ognuno dei $R$ record richiede 2 accessi (caricare il primo blocco, che scorriamo e in cui non troviamo il record, e con il puntatore alla fine del primo blocco carichiamo il secondo blocco in memoria principale). nel terzo blocco, ognuno dei $R$ record richiede 3 accessi, e così via.
+>
+> quindi, la somma degli accessi necessari per tutti i record è $R \cdot1 + R \cdot2+ \dots+ R \cdot n$, che dividiamo per il numero di record ($N$)
+>mettiamo poi in evidenza $R$, e notiamo che $\frac{R}{N}$ è il reciproco di $n$, quindi lo possiamo sostituire con $\frac{1}{n}$. inoltre $(1 +2 + \dots + i +\dots+n)$ è la sommatoria di Gauss, che possiamo quindi sostituire con il risultato chiuso $n(n+1)$. 
+>a questo punto, possiamo semplificare per $n$, e arriviamo alla conclusione che il costo medio della ricerca è $\simeq \frac{n}{2}$
 
 $$
 \begin{align}
@@ -104,3 +109,8 @@ $$
 &\simeq \frac{n}{2}
 \end{align}
 $$
+### inserimento
+per l’inserimento invece, è necessario:
+- 1 accesso in lettura (per portare l’ultimo blocco in memoria principale)
+- 1 accesso in scrittura (per riscrivere l’ultimo blocco in memoria secondaria, dopo aver inserito il record)
+- + gli accessi necesari per il controllo del duplicato ()
