@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T17:29
+updated: 2024-11-29T17:49
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -61,3 +61,4 @@ un’operazione sulla base di dati consiste di:
 di un record !
 la ricerca è quindi alla base di tutte le altre operazioni !!
 # organizzazioni dei file
+esaminiamo ora diversi tipi di organizzazione fisica, che consentono la ricerca di record
