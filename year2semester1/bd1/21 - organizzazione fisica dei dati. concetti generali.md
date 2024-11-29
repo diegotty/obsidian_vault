@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T17:49
+updated: 2024-11-29T18:03
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -61,4 +61,18 @@ un’operazione sulla base di dati consiste di:
 di un record !
 la ricerca è quindi alla base di tutte le altre operazioni !!
 # organizzazioni dei file
-esaminiamo ora diversi tipi di organizzazione fisica, che consentono la ricerca di record
+esaminiamo ora diversi tipi di organizzazione fisica, che consentono la ricerca di record in base al valore di uno o più **campi chiave**
+>[!warning] il termine “chiave” non va inteso nel senso in cui viene usato nella teoria relazionale, in quanto un valore della chiave in questo contesto (ricerca) non necessessariamente identifica univocamente un record nel file
+## file heap
+>[!warning] non parliamo dell’heap - struttura dati studiata in algoritmi
+
+“non organizzazione”, cioè collocazione dei record nei file in un ordine determinato solo dall’ordine di inserimento
+- organizzazione con peggiore prestazioni in termini di numero di accessi in memoria richiesti dalle operazioni di ricerca (mentre l’inserimento è molto veloce se ammettiamo duplicati: in un file heap un record viene sempre inserito come ultimo record del file)
+- l’accesso al file avviene attraverso la directory (indice di heap), che è un array di puntatori che puntano ai blocchi che contengono i record di quella tabella 
+
+### ricerca
+se si vuole ricercare un record, ci sono 2 casi:
+- **chiave fornita indentifica univocamente i campi**: occorre scandire tutto il file, iniziando dal primo record fino ad incontrare il record desiderato
+- **chiave fornita non identifica univocamente i campi**: occorre scandire tutto il file, **obbligatoriamente dall’inizio alla fine**, in quanto non sappiamo se, trovato il primo campo che corrisponde, ce ne sono altri che corrispondono al valore della chiave fornita
+### costo medio della ricerca
+se la chiave fornita per la ricerca identifica univocamente i campi, ha senso parlare di costo medio, in quanto il costo della ricerca varia in base a dove si trova il record: se il record si trova nell’$i$-esimo blocco, occorre effettuare $i$ accessi in lettura
