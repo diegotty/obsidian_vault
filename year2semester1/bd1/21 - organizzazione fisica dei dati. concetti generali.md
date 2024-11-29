@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T19:04
+updated: 2024-11-29T19:07
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -132,6 +132,7 @@ in questa organizzazione fisica, il file è diviso in **bucket**, cioè secchi n
 
 l’accesso ai bucket avviene attraverso la **bucket directory**, che contiene $B$ elementi
 - l’$i$-esimo elemento contiene l’indirizzo (**bucket header**) del primo blocco dell’$i$-esimo blocco
+la bucket directory viene memorizzata in blocchi
 >[!figure] rappresenteazione bucket directory
 ![[Pasted image 20241129185521.png]]
 ### funzione hash
@@ -144,4 +145,9 @@ in questo caso il record ha valore chiave $v$, che inserito nella funzione hash 
 una funzione has, per essere “buona”, deve ripartire uniformemente i record nel bucket, cioè al variare del valore della chiave, deve assumere con la “**stessa**” probabilità uno dei valori compresi tra $0$ e $B-1$
 una qualsiasi operazione su file hash, richiede la valutazione di $h(v)$ per individuare il bucket, e poi l’esecuzione dell’operazione sul bucket che è organizzato come un file heap
 - in genere, una funzione hash trasforma la chiave in un intero, divide questo intero per $B$, e fornisce il resto della divisione come numero del bucket
->[!example] esempio di funzione hash
+>[!info] considerazioni
+quanti più sono i bucket, più è basso il costo di ogni operazione. d’altra parte ci sono delle limitazioni sul numero di bucket:
+>- ogni bucket deve avere almeno un blocco
+>- è preferibile che la bucket directory abbia una dimensione tale che possa essere mantenuta in memoria principale, altrimenti durante l’utilizzo del file, saranno necessari ulteriori accessi per accedere ai blocchi della bucket directory
+
+>[!example] 
