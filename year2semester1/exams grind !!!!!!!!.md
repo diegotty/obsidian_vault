@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-11-29T07:02
+updated: 2024-11-29T16:19
 ---
 >[!index]
 >>
@@ -47,7 +47,7 @@ exams: in ordine di importanza ( e appelli, ma soprattuto importanza)
 - [appello luglio 2024](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)
 - [simulazione esame 2023](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)
 - [demo prova in initere](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)
-- [sbarramento gennaio 2024](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)
+- [sbarramento gennaio 2024](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)(flavio)
 - [prova in itinere 2023 (che ci ha fatto vedre in classe)](https://drive.google.com/drive/folders/1IBBff-5DaA1tpisj7XJSW9FGGEKoE26N)
 ### github 
 [ssn](https://github.com/sapienzastudentsnetwork/algebra/blob/main/pellarin/README.md#aa-202425-pellarin-mz)

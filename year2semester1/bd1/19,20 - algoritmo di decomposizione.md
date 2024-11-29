@@ -1,7 +1,11 @@
 ---
 created: 2024-11-27
 related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
+<<<<<<< HEAD:year2semester1/bd1/19,20 - algoritmo di decomposizione.md
 updated: 2024-11-29T16:19
+=======
+updated: 2024-11-29T09:39
+>>>>>>> origin/main:year2semester1/bd1/19, algoritmo di decomposizione.md
 ---
 mostriamo ora che dato uno schema di relazione $R$ e un insieme di dipendenze funzionali $F$ su $R$, esiste **sempre** una decomposizione(che può essere calcolata in tempo polinomiale) $\rho = \{R_{1}, R_{2},\dots, R_{k}\}$ di $R$ tale che:
 - $\forall i, i=1,\dots,k \,\,R_{i}$ è in 3FN
@@ -65,7 +69,7 @@ e il seguente insieme di dipendenze funzionali: $F = \{AB \to CD, C \to E, AB \t
 **verificare che $ABH$ è una chiave per $R$**
 dobbiamo verificare 2 condizioni : che $ABH$ determina funzionalmente l’intero schema, e che nessun sottoinsieme di $ABH$ determina funzionalmente l’intero schema (nessun suo sottoinsieme è chiave).
 per verificare la prima condizione, calcoliamo quindi la chiusura di $ABH$, che è $\{ABHCDE\}$, quindi $R$.
-per verificare la seconda condizione, calcoliamo la chisuu
+per verificare la seconda condizione, calcoliamo la chisura dei sott
 
 
 
