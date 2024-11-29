@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T18:34
+updated: 2024-11-29T18:43
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -113,4 +113,21 @@ $$
 per l’inserimento invece, è necessario:
 - 1 accesso in lettura (per portare l’ultimo blocco in memoria principale)
 - 1 accesso in scrittura (per riscrivere l’ultimo blocco in memoria secondaria, dopo aver inserito il record)
-- + gli accessi necesari per il controllo del duplicato ()
+- + gli accessi necesari per il controllo del duplicato (che possiamo dire essere in media $\frac{n}{2}$, in quanto una volta trovato un record duplicato non abbiamo bisogno di continuare la ricerca)
+### modifica
+per la modifica, è necessario:
+- costo medio della ricerca (per trovare il record da modificare)
+- 1 accesso in scrittura (per riscrivere in memoria secondaria il blocco, dopo aver modificato il record)
+### cancellazione
+per la cancellazione, è necessario:
+- costo medio della ricerca
+- 1 accesso in lettura (per riutilizzare spazio ed evitare buchi, prendiamo l’ulitmo record e lo inseriamo al posto del record che cancelleremo)
+- 2 accessi in scrittura (per riscrivere in memoria secondaria il blocco modificato(da cui abbiamo rimosso un record e aggiunto un record nello stesso posto) e l’ultimo blocco (da cui abbiamo rimosso un record))
+## file hash
+in questa organizzazione fisica, il file è diviso in **bucket**, cioè secchi numerati da $0$ a $B-1$
+- ciascun **bucket** è costituito da uno o più blocchi (collegati mediante puntatori), ogni bucket è organizzato come un file heap
+>[!figure] rappresentazione dei bucket
+![[Pasted image 20241129184148.png]]
+
+l’accesso ai bucket avviene attraverso la **bucket directory**, che contiene $B$ elementi
+- l’$i$-esimo elemento contiene l’indirizzo (**bucket header**) del primo blocco dell’$i$-esimo blocco
