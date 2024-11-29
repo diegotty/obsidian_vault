@@ -69,7 +69,19 @@ e il seguente insieme di dipendenze funzionali: $F = \{AB \to CD, C \to E, AB \t
 **verificare che $ABH$ è una chiave per $R$**
 dobbiamo verificare 2 condizioni : che $ABH$ determina funzionalmente l’intero schema, e che nessun sottoinsieme di $ABH$ determina funzionalmente l’intero schema (nessun suo sottoinsieme è chiave).
 per verificare la prima condizione, calcoliamo quindi la chiusura di $ABH$, che è $\{ABHCDE\}$, quindi $R$.
-per verificare la seconda condizione, calcoliamo la chisura dei sott
+per verificare la seconda condizione, calcoliamo la chisura dei sottoinsiemi di $ABH$(prima di fare ciò, notiamo però che $H$ deve per forza apparire nella chiave, in quanto non è determinato in nessuna dipendenza, quindi ha senso calcolare solo $(AH)^+_{F}, (BH)^+_{F}$): $(AH)^+_{F}= \{AH\}, (BH)^+_{F} = \{BH\}$. quindi anche le seconda condizione è verificata
+>
+> **sapendo che $ABH$ è l’unica chiave per $R$, verificare che $R$ non è in 3FN**
+> per verificare che lo schema non è in 3FN, basta osservare la dipendenza funzionale $AB \to CD$ ($AB$ non è superchiave, $CD$ non è primo)
+>
+> **trovare una copertura minimale $G$ di $F$**
+>nel passo 1 decomponiamo tutte le parti destre delle dipendenze, ottentendo $F=\{AB \to C, AB \to D, C \to E, AB \to E, ABC \to D\}$.
+>nel passo 2, riduciamo la dipendenza $ABC \to D$ in $AB \to D$ che però è un duplicato, quindi possiamo eleminarla, ottenendo $G = F=\{AB \to C, AB \to D, C \to E, AB \to E\}$ 
+>nel passo 3, posso eliminare la dipendenza $AB \to E$, ottentendo quindi $G = \{AB \to C, AB \to D, C \to E\}$
+>
+> **trovare una decomposizione $\rho$ di $R$ tale che preserva $G$ e ogni schema in $\rho$ è in 3FN**
+> 
+**trovare una decomposizione $\sigma$ di $R$ tale che preserva $G$, ha un join senza perdita e ogni schema in $\sigma$ è in 3FN**
 
 
 
