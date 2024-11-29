@@ -1,7 +1,7 @@
 ---
 created: 2024-11-27
 related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
-updated: 2024-11-29T07:04
+updated: 2024-11-29T16:19
 ---
 mostriamo ora che dato uno schema di relazione $R$ e un insieme di dipendenze funzionali $F$ su $R$, esiste **sempre** una decomposizione(che può essere calcolata in tempo polinomiale) $\rho = \{R_{1}, R_{2},\dots, R_{k}\}$ di $R$ tale che:
 - $\forall i, i=1,\dots,k \,\,R_{i}$ è in 3FN
@@ -60,3 +60,12 @@ l’inclusione $G^+ \subseteq F^+$ è banalmente verificata in quanto, per defin
 >basta aggiungere un sottoschema che contente **una** chiave al risultato dell’algoritmo di decomposizione
 
 >[!example] esempio 1
+dato il seguente schema di relazione: $R=(A,B,C,D,E,H)$
+e il seguente insieme di dipendenze funzionali: $F = \{AB \to CD, C \to E, AB \to E, ABC \to D\}$
+**verificare che $ABH$ è una chiave per $R$**
+dobbiamo verificare 2 condizioni : che $ABH$ determina funzionalmente l’intero schema, e che nessun sottoinsieme di $ABH$ determina funzionalmente l’intero schema (nessun suo sottoinsieme è chiave).
+per verificare la prima condizione, calcoliamo quindi la chiusura di $ABH$, che è $\{ABHCDE\}$, quindi $R$.
+per verificare la seconda condizione, calcoliamo la chisuu
+
+
+
