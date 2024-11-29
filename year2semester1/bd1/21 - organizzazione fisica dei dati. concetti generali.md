@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T18:43
+updated: 2024-11-29T19:04
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -123,6 +123,7 @@ per la cancellazione, è necessario:
 - costo medio della ricerca
 - 1 accesso in lettura (per riutilizzare spazio ed evitare buchi, prendiamo l’ulitmo record e lo inseriamo al posto del record che cancelleremo)
 - 2 accessi in scrittura (per riscrivere in memoria secondaria il blocco modificato(da cui abbiamo rimosso un record e aggiunto un record nello stesso posto) e l’ultimo blocco (da cui abbiamo rimosso un record))
+>[!info] poichè l’inserimento di un record viene effettuato sull’ultimo blocco del bucket, è opportuno che la bucket directory contenga anche, per ogni bucket, un puntatore all’ultimo record del bucket
 ## file hash
 in questa organizzazione fisica, il file è diviso in **bucket**, cioè secchi numerati da $0$ a $B-1$
 - ciascun **bucket** è costituito da uno o più blocchi (collegati mediante puntatori), ogni bucket è organizzato come un file heap
@@ -131,3 +132,16 @@ in questa organizzazione fisica, il file è diviso in **bucket**, cioè secchi n
 
 l’accesso ai bucket avviene attraverso la **bucket directory**, che contiene $B$ elementi
 - l’$i$-esimo elemento contiene l’indirizzo (**bucket header**) del primo blocco dell’$i$-esimo blocco
+>[!figure] rappresenteazione bucket directory
+![[Pasted image 20241129185521.png]]
+### funzione hash
+viene usata per mettere i record dentro un bucket con un criterio: dato un valore $v$ per la chiave, **il numero del bucket** in cui deve trovarsi un record con chiave $v$ è calcolato mediante una funzione, la funzione hash
+- il risultato di una funzione hash deve essere compreso tra $0$ e $B-1$ (viene quindi usato il modulo)
+>[!example] esempio di inserimento con funzione hash
+![[Pasted image 20241129185717.png]]
+in questo caso il record ha valore chiave $v$, che inserito nella funzione hash genera il numero $0$, quindi viene inserito nel bucket $0$ (alla fine dell’ultimo blocco, in quanto ogn bucket è gestito come un file heap)
+
+una funzione has, per essere “buona”, deve ripartire uniformemente i record nel bucket, cioè al variare del valore della chiave, deve assumere con la “**stessa**” probabilità uno dei valori compresi tra $0$ e $B-1$
+una qualsiasi operazione su file hash, richiede la valutazione di $h(v)$ per individuare il bucket, e poi l’esecuzione dell’operazione sul bucket che è organizzato come un file heap
+- in genere, una funzione hash trasforma la chiave in un intero, divide questo intero per $B$, e fornisce il resto della divisione come numero del bucket
+>[!example] esempio di funzione hash
