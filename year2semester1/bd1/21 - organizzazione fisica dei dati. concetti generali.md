@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T18:03
+updated: 2024-11-29T18:19
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -76,3 +76,31 @@ se si vuole ricercare un record, ci sono 2 casi:
 - **chiave fornita non identifica univocamente i campi**: occorre scandire tutto il file, **obbligatoriamente dall’inizio alla fine**, in quanto non sappiamo se, trovato il primo campo che corrisponde, ce ne sono altri che corrispondono al valore della chiave fornita
 ### costo medio della ricerca
 se la chiave fornita per la ricerca identifica univocamente i campi, ha senso parlare di costo medio, in quanto il costo della ricerca varia in base a dove si trova il record: se il record si trova nell’$i$-esimo blocco, occorre effettuare $i$ accessi in lettura
+>[!example] esempio
+N = 151 record
+ogni record ha dimensione 30 byte
+ogni blocco contiene 65 byte
+ogni blocco ha un puntatore al prossimo blocco (di dimensione 4 byte)
+>
+> **quanti record entrano in un blocco ?**
+> $\frac{65-4}{30} = 2,03$, di cui consideriamo la parte intera inferiore($2$), in quanto: **in un blocco possiamo inserire solo record completi: non possiamo avere un record a cavallo di 2 blocchi
+>
+**quanti blocchi servono per memorizzare tutti i record ?**
+$\frac{151}{2}=75,5$ di cui consideriamo la parte intera superiore ($76$), in quanto: **se scegliessimo la parte intera inferiore, avremmo dei record non memorizzati (la quantità che entra in 0,5 blocchi)**
+>
+>in questo caso quindi, in una ricerca, devo scorrere 76 blocchi, e potrei trovare il record in uno di questi 76 blocchi
+
+poniamo: 
+$N$: numero di record
+$R$: numero di record che possono essere memorizzati in un blocco
+$n = \frac{N}{R}$
+>[!info] ragionamento
+abbiamo $n$ blocchi, e in ogni blocco abbiamo $R$ record. nel $$
+
+$$
+\begin{align}
+\frac{R\cdot1+R\cdot 2+\dots+R\cdot n}{N}&=\frac{R\cdot(1+2+\dots+i+\dots+n)}{N} =\\
+&=\frac{R}{N}\cdot \frac{n(n+1)}{2}=\frac{1}{n}\cdot \frac{n(n+1)}{2}= \\
+&\simeq \frac{n}{2}
+\end{align}
+$$
