@@ -1,12 +1,12 @@
 ---
-created: 2024-11-27
-related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
-<<<<<<< HEAD:year2semester1/bd1/19,20 - algoritmo di decomposizione.md
-updated: 2024-11-29T16:19
-=======
-updated: 2024-11-29T09:39
->>>>>>> origin/main:year2semester1/bd1/19, algoritmo di decomposizione.md
+created: 2024-11-29T16:19
+updated: 2024-11-29T16:41
 ---
+>[!index]
+>- [algoritmo per la decomposizione di uno schema](#algoritmo%20per%20la%20decomposizione%20di%20uno%20schema)
+>- [teorema](#teorema)
+>- [dimostrazione](#dimostrazione)
+
 mostriamo ora che dato uno schema di relazione $R$ e un insieme di dipendenze funzionali $F$ su $R$, esiste **sempre** una decomposizione(che può essere calcolata in tempo polinomiale) $\rho = \{R_{1}, R_{2},\dots, R_{k}\}$ di $R$ tale che:
 - $\forall i, i=1,\dots,k \,\,R_{i}$ è in 3FN
 - $\rho$ preserva $F$
@@ -80,8 +80,11 @@ per verificare la seconda condizione, calcoliamo la chisura dei sottoinsiemi di 
 >nel passo 3, posso eliminare la dipendenza $AB \to E$, ottentendo quindi $G = \{AB \to C, AB \to D, C \to E\}$
 >
 > **trovare una decomposizione $\rho$ di $R$ tale che preserva $G$ e ogni schema in $\rho$ è in 3FN**
-> 
+> applichiamo l’algoritmo di decomposizione: otteniamo $\rho = \{\{H\},\{ABC\}, \{ABD\},\{CE\}\}$
+>
 **trovare una decomposizione $\sigma$ di $R$ tale che preserva $G$, ha un join senza perdita e ogni schema in $\sigma$ è in 3FN**
+per ottenere una decomposizione con join senza perdita, basta aggiungere un sottoschema che contiene gli attributi della chiave. otteniamo quindi $\rho = \{\{H\},\{ABC\}, \{ABD\},\{CE\}, \{ABH\}\}$
+
 
 
 
