@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T17:19
+updated: 2024-11-29T17:29
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -39,5 +39,25 @@ un puntatore ad un record/blocco è un dato che permette di accedere rapidamente
 		- $b$ è l’indirizzo del blocco che contiene il record
 		- $k$ è il valore della chiave (dobbiamo quindi efffettuare una ricerca ? \\QUESTION)
 	-  nel secondo caso è possibile spostare il record all’interno del blocco, mentre nel primo no, altrimenti potremmo avere dei **dangling pointers**
-
+## blocchi
 sul blocco invece, ci possono essere, oltre ai record:
+- informazioni sul blocco stesso
+- puntatori ad altri blocchi (le strutture dati che vedremo usanto puntatori epr spostarsi attraverso i dati (puntano ad altri blocchi))
+se un blocco contiene **solo** record di lunghezza fissa:
+- il blocco è suddiviso in aree (**sottoblocchi**) di lunghezza fissa, ciascuna delle quali può contener un record, e i bit “usato/non usato” sono raccolti in uno o più byte all’inizio del blocco
+- nota: se bisogna inserire un record nel blocco, occorre cercare un’area non usata: se il bit “usato/non usato” è in ciascun record, ciò può richiedere la scansione di tutto il blocco. per evitare ciò si possono raccogliere tutti i bit “usato/non usato” in uno o più byte all’inizio del blocco
+invece, se il blocco contiene record di lunghezza variabile:
+- si pone in ogni record un campo che ne specifica la lunghezza in termini di byte, **oppure** si pone all’inizio del blocco una **directory** contenente i puntatori(**offset**) ai record nel blocco
+	- la **directory** può essere realizzata in uno dei modi seguenti: 
+		- è preceduta da un campo che specifica quanti sono i puntatori nella directory
+		- è una lista di puntatori ( e la sua fine è specificata da uno 0)
+		- ha dimensione fissa e contiene il valore 0 negli spazi che non contengono puntatori
+# operazioni sulla base di dati
+un’operazione sulla base di dati consiste di:
+- **ricerca**
+- **inserimento**(implica ricerca, se vogliamo evitare duplicati)
+- **cancellazione**(implica ricerca)
+- **modifica**(implica ricerca)
+di un record !
+la ricerca è quindi alla base di tutte le altre operazioni !!
+# organizzazioni dei file
