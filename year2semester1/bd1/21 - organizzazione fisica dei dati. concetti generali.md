@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-30T09:36
+updated: 2024-11-30T09:51
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -86,7 +86,7 @@ ogni blocco ha un puntatore al prossimo blocco (di dimensione 4 byte)
 > $\frac{65-4}{30} = 2,03$, di cui consideriamo la parte intera inferiore($2$), in quanto: **in un blocco possiamo inserire solo record completi: non possiamo avere un record a cavallo di 2 blocchi
 >
 **quanti blocchi servono per memorizzare tutti i record ?**
-$\frac{151}{2}=75,5$ di cui consideriamo la parte intera superiore ($76$), in quanto: **se scegliessimo la parte intera inferiore, avremmo dei record non memorizzati (la quantità che entra in 0,5 blocchi)**
+$\frac{151}{2}=75,5$ di cui consideriamo la parte intera superiore ($76$), in quanto **i blocchi vengono allocati interamente se non specificato altrimenti**
 >
 >in questo caso quindi, in una ricerca, devo scorrere 76 blocchi, e potrei trovare il record in uno di questi 76 blocchi
 
@@ -151,7 +151,15 @@ quanti più sono i bucket, più è basso il costo di ogni operazione. d’altra 
 >- è preferibile che la bucket directory abbia una dimensione tale che possa essere mantenuta in memoria principale, altrimenti durante l’utilizzo del file, saranno necessari ulteriori accessi per accedere ai blocchi della bucket directory
 
 >[!example] 
-supponiamo di avere un file di 250.000 record. ogni record occupa 300 byte, di cui 75 per il campo chiave. ogni blocco contiene 1024 byte. ogni puntatore a blocco occupa 4 byte
+supponiamo di avere un file di 250.000 record. ogni record occupa 300 byte, di cui 75 per il campo chiave. ogni blocco contiene 1024 byte. ogni puntatore a blocco occupa 4 byte.
 **se usiamo una organizazione hash con 1200 bucket, quanti blocchi occorrono per la bucket directory ?**
+>per sapere quanti blocchi servono per la bucket directory, dobbiamo calcolare quanti puntatori entrano in un blocco, in quanto la bucket directory è essenzialmente un array di puntatori indicizato da $0$ a $B-1$.
+>$\frac{1024}{4}=256$. quindi il numero di blocchi necessari per la bucket directory è $\frac{1200}{256}=4,69 = 5$(parte intera superiore, perchè **non essendo stato specificato direttamente nell’esercizio, i blocchi vengono allocati interamente**). (notiamo che se ogni entry della bucket entry avesse anche un puntatore all’ultimo blocco del bucket, occorrerebbe considerare coppie intere di puntatori(non possiamo spezzare in due blocchi la coppia di puntatori per un bucket))
+>
 **quanti blocchi occorrono per i bucket, assumendo una distribuzione uniforme dei record nei bucket ?**
-**assome
+>assumento una distribuzione uniforme per i bucket, ci basta calcolare il numero di blocchi necessari per i record, e dividere per il numero di bucket. $\frac{1024-4}{300}=3,4=3$(parte intera inferiore perchè non possiamo memorizzare un record a cavallo di 2 blocchi). sappiamo che il numero di record nei bucket è uniforme, quindi $\frac{250.000}{1200}=208,3=209$
+>
+**assumendo ancora che tutti i bucket contegano il numero medio di record, qual è il numero medio di accessi a blocco per ricercare un record che sia presente nel file ?**
+>
+>
+**quanti bucket dovremmo creare per avere invece un numero medio di accessi a blocco inferiore o al massimo uguale a 10, assumendo comunque una distribuzione uniforme dei record nel bucket ?**
