@@ -1,7 +1,7 @@
 ---
 created: 2024-11-30
 related to: 
-updated: 2024-11-30T17:39
+updated: 2024-11-30T17:53
 ---
 # insiemistica
 **partizione**: sia $\mathcal{P} \subset \mathcal{P}(X)$, $\mathcal{P}$ è una partizione di $X$ se:
@@ -27,3 +27,13 @@ i cui dati devono soddisfare le seguenti condizioni:
 8. $ab=ba$
 
 tricotomia:$\forall a \in Z$ si ha che $a \in N^*$, oppure $a=0$, oppure $-a ‘ si hac che $a9 \in N^*$, oppure $a=0$, oppure $-a \in N^*$. la tricotomia ci permette di stabilire una relazione di ordinamento tra gli elementi di un anello
+
+**elementi invertibili**: dato $A$ anello con $1_A \neq 0_A$, $a \in A$ è invertibile se $\exists \,b \in A \,\,t.c.\, ab=ba=1_A$. $A^{\times}$ è insieme degli invertibili
+- se $a$ è invertibile, $a^{-1}$ è unicamente determinato !
+**relazione di divisibilità**: dato $A$ anello e $a,b \in A$, $a|b \iff \exists c \in A : b=ac$
+- è riflessiva e transitiva
+altre proprietà della relazione di divisibilità: 
+- se $a|b \land a|c \implies a|b+c$
+
+**elementi irriducibili**: $a \in A/A^{\times}$ è detto irriducibile se $\forall b,c \in A : a=bc$ allora $b \in A^{\times}$ oppure $c \in A^{\times}$
+**elementi primi**: $a \in A/A^{\times}$, $a \neq 0$, è detto primo se $\forall b,c \in A$, se $a|bc$ allora $a|b$ oppure $a|c$
