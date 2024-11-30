@@ -1,8 +1,25 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-30T09:51
+updated: 2024-11-30T10:04
 ---
+>[!index]
+>
+>- [file](#file)
+>- [record](#record)
+>- [puntatori](#puntatori)
+>- [blocchi](#blocchi)
+>- [operazioni sulla base di dati](#operazioni%20sulla%20base%20di%20dati)
+>- [organizzazioni dei file](#organizzazioni%20dei%20file)
+>- [file heap](#file%20heap)
+>	- [ricerca](#ricerca)
+>	- [costo medio della ricerca](#costo%20medio%20della%20ricerca)
+>	- [inserimento](#inserimento)
+>	- [modifica](#modifica)
+>	- [cancellazione](#cancellazione)
+>- [file hash](#file%20hash)
+>	- [funzione hash](#funzione%20hash)
+
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
 [[dischi#HDD|come in SO!]], abbiamo testina che ruota, tracce e settori. il bottleneck per noi è il trasferimento dei dati (soprattuto in scrittura), che è molto più lento del tempo di elaborazione della CPU
@@ -150,16 +167,17 @@ quanti più sono i bucket, più è basso il costo di ogni operazione. d’altra 
 >- ogni bucket deve avere almeno un blocco
 >- è preferibile che la bucket directory abbia una dimensione tale che possa essere mantenuta in memoria principale, altrimenti durante l’utilizzo del file, saranno necessari ulteriori accessi per accedere ai blocchi della bucket directory
 
->[!example] 
+>[!example] esempio 1
 supponiamo di avere un file di 250.000 record. ogni record occupa 300 byte, di cui 75 per il campo chiave. ogni blocco contiene 1024 byte. ogni puntatore a blocco occupa 4 byte.
 **se usiamo una organizazione hash con 1200 bucket, quanti blocchi occorrono per la bucket directory ?**
 >per sapere quanti blocchi servono per la bucket directory, dobbiamo calcolare quanti puntatori entrano in un blocco, in quanto la bucket directory è essenzialmente un array di puntatori indicizato da $0$ a $B-1$.
 >$\frac{1024}{4}=256$. quindi il numero di blocchi necessari per la bucket directory è $\frac{1200}{256}=4,69 = 5$(parte intera superiore, perchè **non essendo stato specificato direttamente nell’esercizio, i blocchi vengono allocati interamente**). (notiamo che se ogni entry della bucket entry avesse anche un puntatore all’ultimo blocco del bucket, occorrerebbe considerare coppie intere di puntatori(non possiamo spezzare in due blocchi la coppia di puntatori per un bucket))
 >
 **quanti blocchi occorrono per i bucket, assumendo una distribuzione uniforme dei record nei bucket ?**
->assumento una distribuzione uniforme per i bucket, ci basta calcolare il numero di blocchi necessari per i record, e dividere per il numero di bucket. $\frac{1024-4}{300}=3,4=3$(parte intera inferiore perchè non possiamo memorizzare un record a cavallo di 2 blocchi). sappiamo che il numero di record nei bucket è uniforme, quindi $\frac{250.000}{1200}=208,3=209$
+>assumento una distribuzione uniforme per i bucket, ci basta calcolare il numero di blocchi necessari per i record, e dividere per il numero di bucket. $\frac{1024-4}{300}=3,4=3$(parte intera inferiore perchè non possiamo memorizzare un record a cavallo di 2 blocchi). sappiamo che il numero di record nei bucket è uniforme, quindi $\frac{250.000}{1200}=208,3=209$ record in ogni bucket. servono quindi $\frac{209}{3}=69,6=70$ blocchi in ogni bucket, per un totale di $70 \cdot1200=84.000$ blocchi
 >
 **assumendo ancora che tutti i bucket contegano il numero medio di record, qual è il numero medio di accessi a blocco per ricercare un record che sia presente nel file ?**
->
+>per calcolare il numero medio di accessi a blocco, dobbiamo calcolare il numero di accessi a blocco per ogni bucket (che è uguale per tutti i bucket, dato che hanno lo stesso numero di record). usando la formula chiusa, il costo medio della ricerca è $\frac{n}{2}=\frac{70}{2}=35$($n$ è il numero di blocchi per il singolo bucket/file heap). **potrebbe essere necessario aggiungere 1 accesso, se l’intera bucket directory non entra in memoria principale e il record del bucket necessario va preso dalla memoria secondaria**
 >
 **quanti bucket dovremmo creare per avere invece un numero medio di accessi a blocco inferiore o al massimo uguale a 10, assumendo comunque una distribuzione uniforme dei record nel bucket ?**
+per avere un numero medio di accessi a blocco $\leq 10$, dovremmo avere massimo $20$ blocchi per bucket. avremmo quindi $20 \cdot 3 = 60$ record memorizzati in ogni bucket, per un totale di $\frac{250.000}{60}=4166,6=4167$ bucket 
