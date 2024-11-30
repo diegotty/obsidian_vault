@@ -1,3 +1,7 @@
+---
+created: 2024-10-05T21:59
+updated: 2024-11-30T16:47
+---
 >[!index]-
 >
 >- [processo](#processo)
@@ -79,7 +83,7 @@ il dispatcher è un piccolo programma che decide quando sospendere un processo p
 - è sempre in memoria, e fa parte del sistema operativo
 
 
->[!figure] ![[pasted image 20241004115509.png]]
+>[!figure] ![[Pasted image 20241004115509.png]]
 >gestione, da parte del dispatcher, dei processi
 
 

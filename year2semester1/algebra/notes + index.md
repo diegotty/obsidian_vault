@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-11-29T16:19
+updated: 2024-11-30T16:47
 ---
 [notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
 [notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)
@@ -43,7 +43,7 @@ more on coniugazione complessa, formula fondamentale, valore assoluto, campi alg
 # 05/11/2024
 gruppi: notazione additiva e moltiplicativa, sottogruppi, omomorfismi, isomorfismi, costruzione canonica di sottogruppo
 # 06/11/2024
-esercizio MCD di poli. in Fp_7[X], intro sottogruppo immagine
+esercizio MCD di poli. in $Fp_7[X]$, intro sottogruppo immagine
 # 07/11/2024
 sottogruppi coniugati (dimostrazione), endomorifismi, gruppi di permutazioni, cicli, inversione, composizione, cicli a supporti disgiunti, teorema decomposizione di una permutazione
 # 12/11/2024
