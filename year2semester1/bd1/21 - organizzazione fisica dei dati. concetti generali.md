@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-11-29T19:07
+updated: 2024-11-30T09:36
 ---
 >[!info] rapprentazione memoria a disco rigido
 ![[Pasted image 20241129164243.png]]
@@ -151,3 +151,7 @@ quanti più sono i bucket, più è basso il costo di ogni operazione. d’altra 
 >- è preferibile che la bucket directory abbia una dimensione tale che possa essere mantenuta in memoria principale, altrimenti durante l’utilizzo del file, saranno necessari ulteriori accessi per accedere ai blocchi della bucket directory
 
 >[!example] 
+supponiamo di avere un file di 250.000 record. ogni record occupa 300 byte, di cui 75 per il campo chiave. ogni blocco contiene 1024 byte. ogni puntatore a blocco occupa 4 byte
+**se usiamo una organizazione hash con 1200 bucket, quanti blocchi occorrono per la bucket directory ?**
+**quanti blocchi occorrono per i bucket, assumendo una distribuzione uniforme dei record nei bucket ?**
+**assome
