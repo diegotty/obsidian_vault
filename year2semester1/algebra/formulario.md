@@ -1,7 +1,7 @@
 ---
 created: 2024-11-30
 related to: 
-updated: 2024-11-30T18:01
+updated: 2024-11-30T18:47
 ---
 # insiemistica
 **partizione**: sia $\mathcal{P} \subset \mathcal{P}(X)$, $\mathcal{P}$ è una partizione di $X$ se:
@@ -38,3 +38,5 @@ altre proprietà della relazione di divisibilità:
 **elementi irriducibili**: $a \in A/A^{\times}$ è detto irriducibile se $\forall b,c \in A : a=bc$ allora $b \in A^{\times}$ oppure $c \in A^{\times}$
 **elementi primi**: $a \in A/A^{\times}$, $a \neq 0$, è detto primo se $\forall b,c \in A$, se $a|bc$ allora $a|b$ oppure $a|c$
  $p \in Z \,\, primo \iff p \,\, irriducibile$
+
+operazioni binarie su $Z/nZ$: -,+
