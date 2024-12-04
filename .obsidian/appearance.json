@@ -1,0 +1,7 @@
+{
+  "cssTheme": "Monokai",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "callouts"
+  ]
+}
