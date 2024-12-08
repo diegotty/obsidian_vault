@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T13:23
+updated: 2024-12-08T13:37
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -92,4 +92,26 @@ in questo caso, è il programmatore che si occupa di scrivere `entercritical` ed
 >[!example] esempio di starvation
 >- A richiede accesso prima alla stampante
 >- B fa la stessa cosa
->- il SO da la sta
+>- il SO dà la stampante ad A
+>- A rilascia la stampante e lo scheduler gli permette di richiederla nuovamente
+>- il SO dà nuovamente la stampante ad A
+>- si ripete all’infinito, B non riceve mai la stampante e muore di fame. con soli 2 processi è improbabile, ma con tanti processi diventa probabile
+
+>[!example] esempio di deadlock
+>- A richiede accesso prima alla stampante, e poi al monitor
+>- B richiede accesso prima al monitor, e poi alla stampante
+>- capita che lo scheduler faccia andare in esecuzione B in mezzo alle 2 richieste di A: B prende quindi il monitor, ed A deve aspettare. 
+>- B rimane in esecuzione quel tanto che basta per fargli richiedere il monitor
+>- le successive richieste (da parte di A per il monitor, e da parte di B per la stampante) non possono essere soddisfatte
+>- in questo modo, A e B restano bloccati per sempre, eppure è tutto avvenuto legalemente !
+## requisiti per utilizzare la mutua esclusione
+qualsiasi meccanismo si usi per offire la mutua esclusione, deve soddisfare i seguenti requisiti:
+- solo un processo alla volta può essere nella sezione critica per una risorsa
+- non deve avvenire nè deadlock nè starvation
+- non ci deve essere nessuna assunzione su scheduling dei processi, nè sul numero dei processi (nè sulla velocità dei processi)
+- un processo deve entrare subito nella sezione critica, se nessun altro processo usa la risorsa (non bisogna farlo attendere !)
+- un processo che si trova nella sua sezione non-critica non deve subire interferenze da altri processi (in particolare non può essere bloccato)
+- un processo che si trova nella sezione critica ne deve prima o poi uscire
+	- ci vuole cooperazione: se è stato pensato un protocollo per accedere ad una risorsa convidisa, un processo non può entrare nella sua sezione critica senza rispettarlo (es: chiamare `entercritical`)
+## 4 dummies
+ci sono N processi che eseguono la funzione `P`, e tutti possono scrivere nella variabile condivisa `bolt`
