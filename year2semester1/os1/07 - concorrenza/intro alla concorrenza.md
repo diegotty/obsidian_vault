@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T13:46
+updated: 2024-12-08T14:04
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -116,11 +116,12 @@ qualsiasi meccanismo si usi per offire la mutua esclusione, deve soddisfare i se
 ## 4 dummies
 ci sono N processi che eseguono la funzione `P`, e tutti possono scrivere nella variabile condivisa `bolt`
 ```
+**esempio 1
 int bolt = 0;
 void P(int i){
 	while(true){
 		bolt = 1;
-		while (bolt ==1) /* wait and do nothing */;
+		while (bolt == 1) /* wait and do nothing */;
 		/*enter critical section */;
 		bolt = 0;
 		/*remainder*/;
@@ -132,5 +133,21 @@ la logica: un processo mette `bolt` a 1 quando vuole entrare nella sezione criti
 - un processo singolo non entrerà mai nella sezione critica
 - abbiamo rispettato la mutua esclusione (al massimo un processo nella sezione critica), ma il problema è che non ci entra nessuno
 
+```
+**esempio 2
+int bolt = 0;
+void P(int i){
+	while(true){
+		while (bolt == 1) /* wait and do nothing */;
+		bolt = 1;
+		/*enter critical section */;
+		bolt = 0;
+		/*remainder*/;
+	}
+}
+```
+questa funzione permette la mutua esclusione per qualche scheduling, ma ciò non basta ! deve essere corretto per tutti i possibili scheduling, e ciò non accade:  basta che lo scheduler faccia eseguire i 2 processi in interleaving, e si viola la mutua esclusione: P1 entra ed esce dal while, ma prima di poter mettere `bolt=1`viene mandato in esecuzione P2 che entra nel while, esce dal while ed entra nella sezione critica. all’esecuzione di P1, anche esso entrerà nella sezione critica. violazine !!!!
+>[!warning] il dispatcher può interrompere un processo in qualsiasi istante
+>anche prima che una istruzione venga completata ! dobbiamo pensare il codice a livello assembler. un ciclo while (come nell’esempio sopra) non viene eseguito “tutto insieme” solo perchè è in una sola riga. solo le singole istruzioni assembler vegnono sempre completate, e tra una istruzione assembler e la prossima il dispatcher può togliere la CPU al processo
 
-in questo esempio, basta che lo scheduler faccia eseguire i 2 processi in interleaving, e si viola la mutua esclusione: il primo processo entra nel while, viene mandato in esecuzione il secondo processo che entra nel while (il primo processo non ha avuto il tempo di mettere `bolt=1`), 
+possiamo pensare `bolt=1;` come 2 istruzioni macchina (una carica 1 in un registro, l’altra carica il registro in RAM (ci fidiamo))
