@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T16:53
+updated: 2024-12-08T17:01
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -305,6 +305,8 @@ void semSignalB(binary_semaphore s) {
 la particolarità di questa implementazione è che se `value == 1`, allora non ci sono processi in `queue`
 >[!warning] rimane fondamentale che `initialize`, `semWait` e `semSignal` siano operazioni atomiche !!
 
+>[!important] IL SEMAFORO È SOLO UNO !!! NON UNO A PROCESSO !!!!
+
 ```c
 ***implementazione di semafori con compare_and_swap
 semWait(s){
@@ -376,3 +378,29 @@ quando rimuovo un processo da `s.queue`, devo sceglierne uno, usando un qualche 
 ![[Pasted image 20241208164921.png]]
 con s=1 è inteso che `s.count == 1`
 in (1), A è il processo in esecuzione. viene chiamata `semWait` su A, e decrementato `s.count` e visto che `s.count-1 >= 0`, A non diventa `BLOCKED`, ma va solo in `READY`
+lo stesso accade in (2), che però manda B in `BLOCKED`
+in (3), viene chiamata `semSignal` (si nota come `s.count` viene incrementato), e viene mandato da `BLOCKED` a `READY`
+![[Pasted image 20241208165605.png]]
+in (5) viene eseguito C, e verrà chiamata `semWait`, e ciò succederà anche quando andranno in esecuzione A e B. (saltiamo quindi alcuni passaggi da (5) a (6))
+in (6) vediamo che D è in esecuzione, e gli altri 3 processi sono `BLOCKED`. viene chiamata `semSignal` e viene mandato C da `BLOCKED` a `READY`( un weak semaphore avrebbe potuto sbloccare anche A o B)
+## mutua esclusione con i semafori
+```c
+/* program mutualexclusion */
+const int n = /* number of processes */;
+semaphore s = 1;
+
+void P(int i) {
+	while (true) {
+		semWait(s);
+		/* critical section */
+		semSignal(s);
+		/* remainder */
+	}
+}
+
+void main() {
+	parbegin(P(1), P(2), ..., P(n));
+}
+```
+se 2 processi sono eseguiti concorrentemente, dato che `semWait` è un’operazione atomica, solo uno dei due la eseguirà, nella usa interezza, per primo. quel processo non verrà messo in `BLOCKED`, mentre il secondo si (`s.count`diventerà -1)
+>[!warning] è fondamenta che il semaforo sia inzializzato con count = 1 !!!
