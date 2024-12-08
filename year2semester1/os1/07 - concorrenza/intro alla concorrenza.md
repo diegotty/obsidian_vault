@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T17:01
+updated: 2024-12-08T17:23
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -402,5 +402,18 @@ void main() {
 	parbegin(P(1), P(2), ..., P(n));
 }
 ```
-se 2 processi sono eseguiti concorrentemente, dato che `semWait` è un’operazione atomica, solo uno dei due la eseguirà, nella usa interezza, per primo. quel processo non verrà messo in `BLOCKED`, mentre il secondo si (`s.count`diventerà -1)
+se 2 processi sono eseguiti concorrentemente (P1, P2), dato che `semWait` è un’operazione atomica, solo uno dei due la eseguirà, nella usa interezza, per primo (in questo caso, per esempio P1). P1 non verrà messo in `BLOCKED`, mentre P2, quando eseguirà `semWait`, si (`s.count`diventerà -1), e in questo modo non c’è busy-waiting !!! (pazzesco ngl). inoltre, quando P1 avrà finito la sua sezione critica, chiamerà `semSignal`, che riporterà P2 da `BLOCKED` a `READY`, e quando P2 verrà eseguito finirà la chiamata `semWait`, e farà la sua sezione critica.
+- con 2 processi, la starvation è evitata anche unsando weak semaphores, mentre con 3+ processi la starvation è sicuramente evitata solo usando strong semaphores, in quanto un weak semaphore potrebbe scegliere sempre uno tra i processi da mandare sempre da `BLOCKED` a `READY`, mandandone in starvation almeno un altro
 >[!warning] è fondamenta che il semaforo sia inzializzato con count = 1 !!!
+
+>[!figure] rappresentazione grafica di un esempio
+![[Pasted image 20241208171636.png]]
+
+# problemi tra processi in cooperazione
+## problema del produttore/consumatore
+situazione generale:
+- uno o più processi (produttori) creano dati e li mettono in un buffer
+- un consumatore prende dati dal buffer, uno alla volta
+- al buffer può accedere solo un processo, sia esso produttore o consumatore
+il problema:
+- 
