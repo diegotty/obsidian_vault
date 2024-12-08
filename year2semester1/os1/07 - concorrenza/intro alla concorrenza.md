@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T16:24
+updated: 2024-12-08T16:53
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -328,6 +328,21 @@ semSignal(s){
 }
 ```
 
+>[!example] esempio
+consideriamo 3 processi A, B, C
+> 1. A ha già completato la `semWait` e sta eseguendo codice in sezione critica. `s.count = 0`
+> 2. B entra in `semWait`, `s.count` va a -1 e B diventa `BLOCKED`. `s.flag = 0`
+> 3. tocca ad A, che esegue sezione critica e `semSignal`. `s.count = 0`. il sistema dunque sposta B che era in wait sul semaforo, da `BLOCKED` a `READY`. A completa `semSignal`. `s.flag = 0`
+> 4. C entra in `semWait`, passa il `while compare_and_swap` e viene interrotto immediatamente dallo scheduler. `s.flag = 1`
+> 5. B riprende l’esecuzione, imposta `s.flag = 0`, esegue la sua sezione critica e chiama `semSignal`. passa il `while compare_and_swap`. `s.flag = 1`.  imposta `s.count = 1`, termina `semSignal` ed imposta `s.flag = 0`(in questo momento, C è fermo prima di `s.count--;`, `s.count == 1` e `s.flag == 0`)
+> 6. arriva un nuovo processo D, che entra in `semWait`. passa il `while`, e `s.flag = 1`
+> 7. D esegue `s.count--;`. legge `s.count` da memoria e lo porta in `eax`. `eax == 1`. scheduler interrompe D ed esegue C
+> 8. C continua da dov’era:’ esegue `s.count--;`quindi `s.count == 0`, quindi non va in `BLOCKED`
+> 9. C viene interrotto mentre è nella sezione critica
+> 10. tocca a D, che continua il calcolo di prima: salva `eax - 1` in `s.count`, che rimane 0. 
+> 11. D non va in `BLOCKED`, e continua nella sezione critica
+> **RACE CONDITION**
+
 ```c
 ***implementazione di semafori con disabilitazione di interrupts(sistema monoprocessore)
 semWait(s){
@@ -351,11 +366,13 @@ semSignal(s){
 }
 ```
 
->[!example] esempio
-consideriamo 3 processi A, B, C
-> 1. A ha già completato la `semWait` e sta eseguendo codice in sezione critica. `s.count = 0`
-> 2. B entra in `semWait`, `s.count` va a -1 e B diventa `BLOCKED`. `s.flag = 0`
-> 3. tocca ad A, che esegue sezione critica e `semSignal`. `s.count = 0`. il sistema dunque sposta B che era in wait sul semaforo, da `BLOCKED` a `READY`. A completa `semSignal`. `s.flag = 0`
-> 4. C entra in `semWait`, passa il `while compare_and_swap` e viene interrotto immediatamente dallo scheduler. `s.flag = 1`
-> 5. B riprende l’esecuzione, imposta `s.flag = 0`, esegue la sua sezione critica e chiama `semSignal`. passa il `while compare_and_swap`. `s.flag = 1`. 
 ## semafori deboli e forti
+quando rimuovo un processo da `s.queue`, devo sceglierne uno, usando un qualche tipo di criterio
+**strong semaphore**: usa la politica FIFO
+**weak semaphore**: se la politica non viene specificata
+> [!warning] con i semafori forti, si può evitare la starvation, mentre con i deboli no
+
+>[!example] esempio di strong semaphore
+![[Pasted image 20241208164921.png]]
+con s=1 è inteso che `s.count == 1`
+in (1), A è il processo in esecuzione. viene chiamata `semWait` su A, e decrementato `s.count` e visto che `s.count-1 >= 0`, A non diventa `BLOCKED`, ma va solo in `READY`
