@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T15:08
+updated: 2024-12-08T15:23
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -173,11 +173,11 @@ i problemi di questa strategia:
 - se i processi abusano della disabilitazione, peggiorano le prestazioni del SO (in quanto cala la multiprogrammazione e quindi l’uso del processore)
 la disabilitazione degli interrupt funziona “localmente” su ogni processore, quindi su sistemi con più processori questa strategia non funziona ( un altro processo può accedere alla zona critica semplicemente perchè è in esecuzione su un altro processore)
 inoltre, di solito la disabilitazione dei processi è una cosa che si fa solo in kernel mode
-## istruzioni macchina speciali
+# istruzioni macchina speciali
 entrambe le seguenti istruzioni sono **atomiche**
 - l’hardware garantisce che un solo processo per volta possa eseguire una chiamata a tali istruzioni(/funzioni)
 - anche se ci sono più processori ! (thank you hardware, very cool)
-`compare_and_swap`
+## `compare_and_swap`
 ```c
 int compare_and_swap(int word, int testval, int newval){
 	int oldval;
@@ -186,7 +186,7 @@ int compare_and_swap(int word, int testval, int newval){
 	return oldval;
 }
 ```
-### mutua esclusione con compare_and_swap
+### mutua esclusione con `compare_and_swap`
 ```c
 /* program mutualexclusion */
 const int n = /* number of processes */
@@ -206,8 +206,10 @@ void main() {
 }
 ```
 ciò funziona perchè:
-- in `while (compre`
-`exchange`
+- in `while (compare_and_swap(bolt, 0, 1) == 1)`, se `bolt == 0`, viene modificato in 1 (ricordiamo che `compare_and_swap` è atomica !!!) e viene ritornato il valore 0 da `compare_and_swap`. quindi si esce dal while, e il processo entra nella sezione critica
+- se un altro processo esegue `p`, ci sarà `bolt == 1`, e quindi il processo rimarrà nel while, e uscirà solo quando il processo nella sezione critica eseguirà `bolt = 0;`
+è fondamentale che `compare_e_swap` sia atomica !!
+## `exchange`
 ```c
 void exchange (int register, int memory){
 	int temp;
@@ -216,3 +218,27 @@ void exchange (int register, int memory){
 	register = temp;
 }
 ```
+### mutua esclusione con `exchange`
+```c
+/* program mutualexclusion */
+const int n = /* number of processes */
+int bolt;
+void P(int i) {
+	while (true) {
+		int keyi = 1;
+		do exchange(keyi, bolt)
+		while (keyi != 0); /* do nothing */
+		/* critical section */
+		bolt = 0;
+		/* remainder */
+	}
+}
+
+void main() {
+	bolt = 0;
+	parbegin(P(1), P(2), ..., P(n));
+}
+```
+in questo caso, `keyi` è una variabile locale (ne esiste una per ogni processo)
+funziona in modo molto simile alla mutua esclusione con `compare_and_swap`, in questo caso lo swap avviene direttamente e ogni volta
+## vantag
