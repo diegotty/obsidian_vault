@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T18:07
+updated: 2024-12-08T18:23
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -555,3 +555,67 @@ void main() {
 ```
 ## producer/consumer con buffer circolare
 in questo caso, con `in == out`, il buffer potrebbe essere sia pieno che vuoto (nell’esempio precedente, il buffer era sicuramente vuoto)
+per gestire ciò, forziamo la dimensione effettiva del buffer a n-1 invece che n (altrimenti, non si potrebbe capire se `in == out` implichi buffer pieno o vuoto)
+>[!figure] rappresentazione buffer circolare
+![[Pasted image 20241208181135.png]]
+
+```c
+**implementazione producer
+while (true) {
+	/* produce item v */
+	while ((in+1)%n == out) /* do nothing*/;
+	b[in] = v;
+	in = (in+1)%n;
+}
+```
+
+```c
+**implementazione consumer
+while (true) {
+	while (in == out) /* do nothing*/;
+	w = b[out];
+	out = (out+1)%n;
+	/* consume item w */
+}
+```
+>[!info] differenze a livello di codice
+>- l’incremento non è semplice, avviene un operazione di modulo per gestire la natura circolare del buffer
+>- se `(in+1)%n == out`, il buffer è pieno
+>- se `in == out`, il buffer è vuoto
+### implementazione con semafori
+```c
+/* program boundedbuffer */
+const int sizeofbuffer = /* buffer size */;
+semaphore n = 0, s = 1, e = sizeofbuffer;
+
+void producer() {
+	while (true) {
+		produce();
+		semWait(e); // viene decrementato ogni volta finché non si arriva
+		semWait(s); // fino a 0 quando il buffer è pieno
+		append();
+		semSignal(s);
+		semSignal(n);
+	}
+}
+
+void consumer() {
+	while (true) {
+		semWait(n);
+		semWait(s);
+		take();
+		semSignalB(s);
+		semSignalB(e); // viene incrementato e "sveglia" il produttore
+		consume();
+	}
+}
+
+void main() {
+	parbegin(producer, consumer);
+}
+```
+i understand this but what the fuck man 
+# trastevere (roma)
+>[!info] roma mia quanto sei bella
+>![[Pasted image 20241208182157.png]]
+- i blocchetti sono le macchine, il tubo è la strada di traster
