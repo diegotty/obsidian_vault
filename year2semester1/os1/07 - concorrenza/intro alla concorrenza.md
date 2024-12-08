@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T13:08
+updated: 2024-12-08T13:23
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -71,7 +71,25 @@ il SO deve quindi assicurare che processi ed output siano indipendenti dalla vel
 
 # tipi di interazione tra processi
 
-| comunicazione | relazione |     |     |
-| ------------- | --------- | --- | --- |
-|               |           |     |     |
-|               |           |     |     |
+| comunicazione                                                                       | relazione    | influenza                                                                                                                                   | problemi di controllo                                     |
+| ----------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| nessuna (ogni processo pensa di essere solo)                                        | competizione | risultato di un processo è indipendente dagli altri, tempo di esecuzione di un processo è dipendente dagli altri                            | mutua esclusione, deadlock, starvation                    |
+| memoria condivisa (i processi sanno che c’è qualche altro processo)                 | cooperazione | risultato di un processo è dipendente dall’informazione data da altri processi, tempo di esecuzione di un processo è dipendente dagli altri | mutua esclusione, deadlock, starvation, coerenza dei dati |
+| primitive di comunicazione ( i processi sanno anche i PID di alcuni altri processi) | cooperazione | risultato di un processo è dipendente dall’informazione data da altri, tempo di esecuzione di un processo è dipendente dagli altri          | deadlock, starvation                                      |
+primitive di comunicazione: i processi possono mandare dati ad altri processi di cui conoscono il PID
+memoria condivisa: un processo scrive nell’area di memoria condivisa, non sa chi la andrà a leggere
+
+## processi in competizione
+il problema principale in questo caso è che per l’accesso alle risorse i processi devono fare richiesta al SO (tramite syscall) (es: accesso a tastiera, monitor, disco …)
+>[!info] mutua esclusione per processi in competizione
+![[Pasted image 20241208131930.png]]
+ogni processo chiama una funzione che entra nella sezione critica, fa l’operazione, ed esce
+
+>[!info] mutua esclusione per processi cooperanti
+in questo caso, è il programmatore che si occupa di scrivere `entercritical` ed `exitcritical`, in quanto spesso la risorsa condivisa riguarda il processo stesso
+![[Pasted image 20241208131930.png]]
+
+>[!example] esempio di starvation
+>- A richiede accesso prima alla stampante
+>- B fa la stessa cosa
+>- il SO da la sta
