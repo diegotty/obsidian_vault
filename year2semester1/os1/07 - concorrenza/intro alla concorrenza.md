@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-11-25T11:12
+updated: 2024-12-08T13:08
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -51,3 +51,27 @@ void echo(){
 se il codice venisse eseguito da 2 processi su un solo processore, lo scheduler protrebbe decidere di assegnare il processore in questo modo:
 ![[Pasted image 20241125111107.png]]
 in questo caso, il carattere preso in input dal processo P1 viene preso, in quanto chin è globale e viene sovrascritta prima che P1 possa salvarla (e stamparla)
+
+>[!example] esempio su più processori
+![[Pasted image 20241208125616.png]]
+>come si può notare, il problema potrebbe non risolversi anche se si usano 2 processori
+
+## restrizione all’accesso singolo
+si fa in modo che la funzione `echo()` diventi atomica, cioè: 
+- dentro la funzione ci può entrare solo un processo alla volta. una volta che ci entra P1, a P2 viene negata l’entrata finche P1 non finisce. a quel punto, P2 viene riesumato e può essere completato
+in questo modo non ci sono più comportamenti indesiderati, ma ci vuole un modo per gestire l’atomicità della funzione
+
+## race condition
+si ha una race condition quando:
+- più processi o thread leggono e scrivono su una stessa risorsa condivisa, e lo fanno in modo tale che lo stato finale della risorsa dipende dall’ordine di esecuzione dei detti processi e thread
+	- in particolare, il risultato può dipendere dal processo o thread che finisce per ultimo
+**sezione critica** è la parte del codice di un processo che può portare ad una corsa critica
+
+il SO deve quindi assicurare che processi ed output siano indipendenti dalla velocità di computazione (ovvero da che scheduling accade)
+
+# tipi di interazione tra processi
+
+| comunicazione | relazione |     |     |
+| ------------- | --------- | --- | --- |
+|               |           |     |     |
+|               |           |     |     |
