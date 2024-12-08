@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T17:51
+updated: 2024-12-08T18:07
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -449,7 +449,6 @@ non c’è nessun problema se, contemporaneamente, il produttore produce e il co
 #### implementazione, soluzione sbagliata
 ```c
 **implementazione produttore/consumatore, !!SOLUZIONE SBAGLIATA!!
-/* program producerconsumer */
 int n; // numero elementi buffer
 binary_semaphore s = 1, delay = 0;
 
@@ -490,7 +489,6 @@ come si può vedere, in questa situazione particolare (in cui il consumer viene 
 in questa implementazione, uso `m` per salvare `n` che devo veramente considerare (per evitare che il producer modifichi `n` ma il consumer si stia ad un iterazione del while precedente )
 ```c
 **implementazione producer/consumer, !!SOLUZIONE CORRETTA!!
-/* program producerconsumer */
 int n; // numero elemnti buffer
 binary_semaphore s = 1, delay = 0;
 
@@ -524,3 +522,36 @@ void main() {
 	parbegin(producer, consumer);
 }
 ```
+è possibile dimostrare matematicamente che la soluzione è corretta (nerd)
+### soluzione con semafori generali
+nella soluzione precedente sono stati usati i semafori binari. tutto ciò che può essere fatto con i semafori binari può essere implementato con i semafori generali, **e viceversa**
+```c
+**implementazione producer/consumer
+semaphore n = 0, s = 1;
+
+void producer() {
+	while (true) {
+		produce();
+		semWait(s);
+		append();
+		semSignal(s);
+		semSignal(n);
+	}
+}
+
+void consumer() {
+	while (true) {
+		semWait(n);
+		semWait(s);
+		take();
+		semSignalB(s);
+		consume();
+	}
+}
+
+void main() {
+	parbegin(producer, consumer);
+}
+```
+## producer/consumer con buffer circolare
+in questo caso, con `in == out`, il buffer potrebbe essere sia pieno che vuoto (nell’esempio precedente, il buffer era sicuramente vuoto)
