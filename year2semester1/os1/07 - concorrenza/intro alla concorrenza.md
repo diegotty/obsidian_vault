@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T16:23
+updated: 2024-12-08T16:24
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -350,11 +350,12 @@ semSignal(s){
 	allow interrupts;
 }
 ```
+
 >[!example] esempio
 consideriamo 3 processi A, B, C
 > 1. A ha già completato la `semWait` e sta eseguendo codice in sezione critica. `s.count = 0`
 > 2. B entra in `semWait`, `s.count` va a -1 e B diventa `BLOCKED`. `s.flag = 0`
 > 3. tocca ad A, che esegue sezione critica e `semSignal`. `s.count = 0`. il sistema dunque sposta B che era in wait sul semaforo, da `BLOCKED` a `READY`. A completa `semSignal`. `s.flag = 0`
 > 4. C entra in `semWait`, passa il `while compare_and_swap` e viene interrotto immediatamente dallo scheduler. `s.flag = 1`
-> 5. B riprende l’esecuzione, imposta `s.flag = 0`, esegue la sua sezione critica e chiama `semSignal`. passa
+> 5. B riprende l’esecuzione, imposta `s.flag = 0`, esegue la sua sezione critica e chiama `semSignal`. passa il `while compare_and_swap`. `s.flag = 1`. 
 ## semafori deboli e forti
