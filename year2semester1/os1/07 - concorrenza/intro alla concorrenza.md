@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T15:34
+updated: 2024-12-08T16:07
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -251,3 +251,55 @@ svantaggi:
  - possibile la starvation ( se va male, un processo riesce a entrare nella sezione critica, uscire, e ri-entrarci, e quando viene eseguito un altro processo, si trova fermo ad aspettare) (più probabile con tanti processi)
  - possibile il deadlock, se a questi meccanismi viene abbinata la priorità fissa (ormai non usata)
 # semafori
+i semafori sono strutture dati, usate dai processi per scambiarsi segnali, forniti con tre operazioni definite, tutte e 3 atomiche (stavolta l’atomicità è garantita dal SO):
+- `intialize`
+- `decrement/semWait`: può mettere il processo in `BLOCKED` : niente CPU sprecata come con il busy-waiting
+- `increment/semSignal`: può mettere un processo `BLOCKED` in `READY`
+queste 3 operazioni sono syscall, quindi eseguite in kernel mode e possono agire direttamente sui processi
+```c
+**implementazione di semafori
+struct semaphore {
+	int count;
+	queueType queue;
+};
+void semWait(semaphore a) {
+	s.count--;
+	if (s.count < 0) {
+		/* place this process in s.queue */;
+		/* block this process */
+	}
+}
+void semSignal(semaphore a) {
+	s.count++;
+	if (s.count <= 0) {
+		/* remove a process P from s.queue */;
+		/* place process P on ready list */;
+	}
+}
+```
+la particolarità di questa implementazione è che se `count` è negativo, il suo valore assoluto è uguale al numero di processi in `queue`
+
+```c
+**implementazione di semafori binari
+struct binary_semaphore {
+	enum {zero, one} value;
+	queueType queue;
+};
+void semWait(binary_semaphore a) {
+	if (s.value == one)
+		s.value = zero;
+	else {
+		/* place this process in s.queue */;
+		/* block this process */;
+	}
+}
+void semSignalB(binary_semaphore a) {
+	if (s.queue is empty())
+		s.value = one;
+	else {
+		/* remove a process P from s.queue */;
+		/* place process P on ready list */;
+	}
+}
+```
+la particolarità di questa implementazione è che se `value == 1`, allora non ci sono processi in `queue`
