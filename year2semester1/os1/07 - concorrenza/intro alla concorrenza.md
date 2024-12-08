@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T17:37
+updated: 2024-12-08T17:51
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -446,8 +446,9 @@ non c’è nessun problema se, contemporaneamente, il produttore produce e il co
 >[!figure] rappresentazione buffer
 ![[Pasted image 20241208172941.png|350]]
 
+#### implementazione, soluzione sbagliata
 ```c
-**implementazione produttore/consumatore
+**implementazione produttore/consumatore, !!SOLUZIONE SBAGLIATA!!
 /* program producerconsumer */
 int n; // numero elementi buffer
 binary_semaphore s = 1, delay = 0;
@@ -469,7 +470,6 @@ void consumer() {
 		semWaitB(s);
 		take();
 		n--;
-		m = n;
 		semSignalB(s);
 		consume();
 		if(n == 0) semWaitB(delay);
@@ -481,4 +481,46 @@ void main() {
 	parbegin(producer, consumer);
 }
 ```
-`s` garantisce la mutua esclusione sul buffer, 
+`s` garantisce la mutua esclusione sul buffer, uso `delay` per garantire che il consumer non legga mai il buffer vuoto
+>[!example] esempio di errore della soluzione sopra
+![[Pasted image 20241208174228.png]]
+come si può vedere, in questa situazione particolare (in cui il consumer viene eseguito per abbastanza tempo da leggere 2 volte di fila il buffer) il consumer finisce a leggere il buffer vuoto
+>- questo perchè n ha modificato delay in un momento particolare (e ha mandato a fanculo tutto)
+#### implementazione, soluzione corretta
+in questa implementazione, uso `m` per salvare `n` che devo veramente considerare (per evitare che il producer modifichi `n` ma il consumer si stia ad un iterazione del while precedente )
+```c
+**implementazione producer/consumer, !!SOLUZIONE CORRETTA!!
+/* program producerconsumer */
+int n; // numero elemnti buffer
+binary_semaphore s = 1, delay = 0;
+
+void producer() {
+	while (true) {
+		produce();
+		semWaitB(s);
+		append();
+		n++;
+		if(n == 1) semSignalB(delay);
+		semSignalB(s);
+	}
+}
+
+void consumer() {
+	int m; /* a local variable */
+	semWaitB(delay);
+	while (true) {
+		semWaitB(s);
+		take();
+		n--;
+		m = n;
+		semSignalB(s);
+		consume();
+		if(m == 0) semWaitB(delay);
+	}
+}
+
+void main() {
+	n = 0;
+	parbegin(producer, consumer);
+}
+```
