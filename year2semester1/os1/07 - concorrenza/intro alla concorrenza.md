@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T16:07
+updated: 2024-12-08T16:23
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -262,14 +262,14 @@ struct semaphore {
 	int count;
 	queueType queue;
 };
-void semWait(semaphore a) {
+void semWait(semaphore s) {
 	s.count--;
 	if (s.count < 0) {
 		/* place this process in s.queue */;
 		/* block this process */
 	}
 }
-void semSignal(semaphore a) {
+void semSignal(semaphore s) {
 	s.count++;
 	if (s.count <= 0) {
 		/* remove a process P from s.queue */;
@@ -285,7 +285,7 @@ struct binary_semaphore {
 	enum {zero, one} value;
 	queueType queue;
 };
-void semWait(binary_semaphore a) {
+void semWait(binary_semaphore s) {
 	if (s.value == one)
 		s.value = zero;
 	else {
@@ -293,7 +293,7 @@ void semWait(binary_semaphore a) {
 		/* block this process */;
 	}
 }
-void semSignalB(binary_semaphore a) {
+void semSignalB(binary_semaphore s) {
 	if (s.queue is empty())
 		s.value = one;
 	else {
@@ -303,3 +303,58 @@ void semSignalB(binary_semaphore a) {
 }
 ```
 la particolarità di questa implementazione è che se `value == 1`, allora non ci sono processi in `queue`
+>[!warning] rimane fondamentale che `initialize`, `semWait` e `semSignal` siano operazioni atomiche !!
+
+```c
+***implementazione di semafori con compare_and_swap
+semWait(s){
+	while(compare_and_swap(s.flag, 0, 1) == 1) /* do nothing */;
+	s.count--;
+	if (s.count < 0){
+		/* place this process in s.queue */;
+		/* block this process (must also set s.flag to 0) */;
+	}
+	s.flag = 0;
+}
+
+semSignal(s){
+	while(compare_and_swap(s.flag, 0, 1) == 1) /* do nothing */;
+	s.count++;
+	if (s.count <= 0){
+		/* remove a process P from s.queue */;
+		/* place process P on ready list */;
+	}
+	s.flag = 0;
+}
+```
+
+```c
+***implementazione di semafori con disabilitazione di interrupts(sistema monoprocessore)
+semWait(s){
+	inhibit interrupts;
+	s.count--;
+	if (s.count < 0){
+		/* place this process in s.queue */;
+		/* block this process and allow interrupts */;
+	}else
+		allow interrupts;
+}
+
+semSignal(s){
+	inhibit interrupts;
+	s.count++;
+	if (s.count <= 0){
+		/* remove a process P from s.queue */;
+		/* place process P on ready list */;
+	}
+	allow interrupts;
+}
+```
+>[!example] esempio
+consideriamo 3 processi A, B, C
+> 1. A ha già completato la `semWait` e sta eseguendo codice in sezione critica. `s.count = 0`
+> 2. B entra in `semWait`, `s.count` va a -1 e B diventa `BLOCKED`. `s.flag = 0`
+> 3. tocca ad A, che esegue sezione critica e `semSignal`. `s.count = 0`. il sistema dunque sposta B che era in wait sul semaforo, da `BLOCKED` a `READY`. A completa `semSignal`. `s.flag = 0`
+> 4. C entra in `semWait`, passa il `while compare_and_swap` e viene interrotto immediatamente dallo scheduler. `s.flag = 1`
+> 5. B riprende l’esecuzione, imposta `s.flag = 0`, esegue la sua sezione critica e chiama `semSignal`. passa
+## semafori deboli e forti
