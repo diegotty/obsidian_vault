@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T14:38
+updated: 2024-12-08T14:53
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -35,9 +35,8 @@ la concorrenza si manifesta nelle seguenzi occasioni:
 - bisogna anche gestire l’allocazione delle risorse condivise:
 	- ad esempio, un processo potrebbe richiedere un dispositivo I/O e poi essere rimesso in `ready` prima di poterlo usare. quel dispositivo I/O va considerato `locked` oppure no ?
 - spesso il manifestarsi di un errore dipende dallo scheduler e dagli altri processi presenti, quindi rilanciare l’ultimo processo spesso **non** riproduce lo stesso errore
-
 ### esempio facile
-```
+```c
 /* chin e chout sono variabili globali */
 void echo(){
 	chin = getchar();
@@ -115,7 +114,7 @@ qualsiasi meccanismo si usi per offire la mutua esclusione, deve soddisfare i se
 	- ci vuole cooperazione: se è stato pensato un protocollo per accedere ad una risorsa convidisa, un processo non può entrare nella sua sezione critica senza rispettarlo (es: chiamare `entercritical`)
 ## 4 dummies
 ci sono N processi che eseguono la funzione `P`, e tutti possono scrivere nella variabile condivisa `bolt`
-```
+```c
 **esempio 1
 int bolt = 0;
 void P(int i){
@@ -133,7 +132,7 @@ la logica: un processo mette `bolt` a 1 quando vuole entrare nella sezione criti
 - un processo singolo non entrerà mai nella sezione critica
 - abbiamo rispettato la mutua esclusione (al massimo un processo nella sezione critica), ma il problema è che non ci entra nessuno
 
-```
+```c
 **esempio 2
 int bolt = 0;
 void P(int i){
@@ -152,4 +151,24 @@ questa funzione permette la mutua esclusione per qualche scheduling, ma ciò non
 
 possiamo pensare `bolt=1;` come 2 istruzioni macchina (una carica 1 in un registro, l’altra carica il registro in RAM (ci fidiamo))
 pensando in questo modo, anche `while (bolt == 1)` è composto da diverse operazioni.
-potrebbe capitare che P2 venga eseguito fino a `bolt = 1`, ma in precedenza P1 fosse arrivato fino a “metà” di `while (bolt == 1)`, ovvero fino a caricare il valore della variabile bolt (che a quel punto era ancora 0) dentro a
+potrebbe capitare che P2 venga eseguito fino a `bolt = 1`, ma in precedenza P1 fosse arrivato fino a “metà” di `while (bolt == 1)`, ovvero fino a caricare il valore della variabile bolt (che a quel punto era ancora 0) dentro un registro
+quando P1 tornerà in esecuzione, per lui `bolt` varrà ancora 0 ! (in quanto riprenderà da dopo il caricamento)
+
+## disabilitazione delle interruzioni
+```c
+while (true){
+	/* prima della sezione critica*/;
+	disabilita_interrupt();
+	/*sezione critica */;
+	riabilita_interrupt();
+	/* rimanente */;
+}
+```
+in questo modo, tolgo al dispatcher la possibilità di interrompere il processo che entra nella sezione critica !
+- ciò garantisce la mutua esclusione
+>[!figure] ciclo delle istruzioni con iterrupt
+![[Pasted image 20241208145002.png]]
+
+i problemi di questa strategia:
+- se i processi abusano della disabilitazione, peggiorano le prestazioni del SO (in quanto cala la multiprogrammazione e quindi l’uso del processore)
+la disabilitazione degli interrupt funziona “localmente” su ogni processore, quindi su sistemi con più processori questa strategia non funziona ( un altro processo può accedere alla zona critica semplicemente perchè è in e)
