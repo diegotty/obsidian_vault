@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T17:23
+updated: 2024-12-08T17:37
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -416,4 +416,69 @@ situazione generale:
 - un consumatore prende dati dal buffer, uno alla volta
 - al buffer può accedere solo un processo, sia esso produttore o consumatore
 il problema:
-- 
+- assicurare che i produttori non inseriscano dati quando il buffer è pieno (bloccando i produttori nell’eventualità)
+- assicurare che il consumatore non prenda dati quando il buffer è vuoto (bloccando il consumatore nell’eventualità )
+- mutua esclusione sull’intero buffer (che diamo per scontato, in quando sarebbe possibile permettere a consumatori e produttori di agire anche in contemporanea)
+### esempio1
+facciamo finta che il buffer sia infinito: il produttore non ha mai motivo di fermarsi
+in questo esempio, `b` è il buffer.
+```c
+**implementazione produttore
+while (true) {
+	/* produce item v */
+	b[in] = v;
+	in++;
+}
+```
+
+```c
+**implementazione consumatore
+while (true) {
+	while (in <= out) /* do nothing */;
+	w = b[out];
+	out++;
+	/* consume item w */
+}
+```
+
+non c’è nessun problema se, contemporaneamente, il produttore produce e il consumatore consuma (magari su processori diversi, in un sistema multiprocessore)
+
+>[!figure] rappresentazione buffer
+![[Pasted image 20241208172941.png|350]]
+
+```c
+**implementazione produttore/consumatore
+/* program producerconsumer */
+int n; // numero elementi buffer
+binary_semaphore s = 1, delay = 0;
+
+void producer() {
+	while (true) {
+		produce();
+		semWaitB(s);
+		append();
+		n++;
+		if(n == 1) semSignalB(delay);
+		semSignalB(s);
+	}
+}
+
+void consumer() {
+	semWaitB(delay);
+	while (true) {
+		semWaitB(s);
+		take();
+		n--;
+		m = n;
+		semSignalB(s);
+		consume();
+		if(n == 0) semWaitB(delay);
+	}
+}
+
+void main() {
+	n = 0;
+	parbegin(producer, consumer);
+}
+```
+`s` garantisce la mutua esclusione sul buffer, 
