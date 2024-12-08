@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T14:04
+updated: 2024-12-08T14:38
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -151,3 +151,5 @@ questa funzione permette la mutua esclusione per qualche scheduling, ma ciò non
 >anche prima che una istruzione venga completata ! dobbiamo pensare il codice a livello assembler. un ciclo while (come nell’esempio sopra) non viene eseguito “tutto insieme” solo perchè è in una sola riga. solo le singole istruzioni assembler vegnono sempre completate, e tra una istruzione assembler e la prossima il dispatcher può togliere la CPU al processo
 
 possiamo pensare `bolt=1;` come 2 istruzioni macchina (una carica 1 in un registro, l’altra carica il registro in RAM (ci fidiamo))
+pensando in questo modo, anche `while (bolt == 1)` è composto da diverse operazioni.
+potrebbe capitare che P2 venga eseguito fino a `bolt = 1`, ma in precedenza P1 fosse arrivato fino a “metà” di `while (bolt == 1)`, ovvero fino a caricare il valore della variabile bolt (che a quel punto era ancora 0) dentro a
