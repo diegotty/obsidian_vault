@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T13:37
+updated: 2024-12-08T13:46
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -115,3 +115,22 @@ qualsiasi meccanismo si usi per offire la mutua esclusione, deve soddisfare i se
 	- ci vuole cooperazione: se è stato pensato un protocollo per accedere ad una risorsa convidisa, un processo non può entrare nella sua sezione critica senza rispettarlo (es: chiamare `entercritical`)
 ## 4 dummies
 ci sono N processi che eseguono la funzione `P`, e tutti possono scrivere nella variabile condivisa `bolt`
+```
+int bolt = 0;
+void P(int i){
+	while(true){
+		bolt = 1;
+		while (bolt ==1) /* wait and do nothing */;
+		/*enter critical section */;
+		bolt = 0;
+		/*remainder*/;
+	}
+}
+```
+la logica: un processo mette `bolt` a 1 quando vuole entrare nella sezione critica, ed aspetta finchè non viene messa a 0 per entrarci.
+- in questo esempio, 2 process in interleaving perfetto vanno in deadlock
+- un processo singolo non entrerà mai nella sezione critica
+- abbiamo rispettato la mutua esclusione (al massimo un processo nella sezione critica), ma il problema è che non ci entra nessuno
+
+
+in questo esempio, basta che lo scheduler faccia eseguire i 2 processi in interleaving, e si viola la mutua esclusione: il primo processo entra nel while, viene mandato in esecuzione il secondo processo che entra nel while (il primo processo non ha avuto il tempo di mettere `bolt=1`), 
