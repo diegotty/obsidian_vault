@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T14:53
+updated: 2024-12-08T15:08
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -171,4 +171,48 @@ in questo modo, tolgo al dispatcher la possibilità di interrompere il processo 
 
 i problemi di questa strategia:
 - se i processi abusano della disabilitazione, peggiorano le prestazioni del SO (in quanto cala la multiprogrammazione e quindi l’uso del processore)
-la disabilitazione degli interrupt funziona “localmente” su ogni processore, quindi su sistemi con più processori questa strategia non funziona ( un altro processo può accedere alla zona critica semplicemente perchè è in e)
+la disabilitazione degli interrupt funziona “localmente” su ogni processore, quindi su sistemi con più processori questa strategia non funziona ( un altro processo può accedere alla zona critica semplicemente perchè è in esecuzione su un altro processore)
+inoltre, di solito la disabilitazione dei processi è una cosa che si fa solo in kernel mode
+## istruzioni macchina speciali
+entrambe le seguenti istruzioni sono **atomiche**
+- l’hardware garantisce che un solo processo per volta possa eseguire una chiamata a tali istruzioni(/funzioni)
+- anche se ci sono più processori ! (thank you hardware, very cool)
+`compare_and_swap`
+```c
+int compare_and_swap(int word, int testval, int newval){
+	int oldval;
+	oldval = word;
+	if (word == testval) word = newval;
+	return oldval;
+}
+```
+### mutua esclusione con compare_and_swap
+```c
+/* program mutualexclusion */
+const int n = /* number of processes */
+int bolt;
+void P(int i) {
+	while (true) {
+		while (compare_and_swap(bolt, 0, 1) == 1) /* do nothing */
+		/* critical section */
+		bolt = 0;
+		/* remainder */
+	}
+}
+
+void main() {
+	bolt = 0;
+	parbegin(P(1), P(2), ..., P(n));
+}
+```
+ciò funziona perchè:
+- in `while (compre`
+`exchange`
+```c
+void exchange (int register, int memory){
+	int temp;
+	temp = memory;
+	memory = register;
+	register = temp;
+}
+```
