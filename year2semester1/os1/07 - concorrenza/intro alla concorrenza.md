@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T15:23
+updated: 2024-12-08T15:34
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -241,4 +241,13 @@ void main() {
 ```
 in questo caso, `keyi` è una variabile locale (ne esiste una per ogni processo)
 funziona in modo molto simile alla mutua esclusione con `compare_and_swap`, in questo caso lo swap avviene direttamente e ogni volta
-## vantag
+## vantaggi e svantaggi
+vantaggi:
+- applicabili a qualsiasi numero di processi, sia su un sistema ad un solo processore che multiprocessore con memoria condivisa
+- semplici, e quindi facili da verificare
+- possono essere usate per gestire sezioni critiche multiple
+svantaggi:
+ - queste soluzioni sono basate sul **busy-waiting**, cioè eseguono un ciclo all’infinito finchè non hanno il via libera per andare avanti, e in pratica stanno solamente aspettando. il problema è che un ciclo di busy wait non è distinguibile da codice “normale”, cioè codice che effettivamente fa qualcosa di utile. la CPU deve quindi eseguire il processo in busy-wait fino al timeout, anche se, se fosse possibile, non dovrebbe nemmeno essere considerato come eseguibile (invece è `READY` se non `RUNNING`). ciò porta a uno spreco di tempo computazionale
+ - possibile la starvation ( se va male, un processo riesce a entrare nella sezione critica, uscire, e ri-entrarci, e quando viene eseguito un altro processo, si trova fermo ad aspettare) (più probabile con tanti processi)
+ - possibile il deadlock, se a questi meccanismi viene abbinata la priorità fissa (ormai non usata)
+# semafori
