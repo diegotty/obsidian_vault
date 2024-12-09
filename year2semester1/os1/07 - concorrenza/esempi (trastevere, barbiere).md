@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T10:08
+updated: 2024-12-09T10:20
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -184,22 +184,6 @@ void cashier() {
 - il semaforo `chair` è inizializzato a 0, e viene incrementato ogni volta che un barbiere torna libero
 - piccola inefficienza: solo un barbiere alla volta può **preparare** la propria sedia
 ```c
-int next_barber;
-void Barber(i) {
-	while(true) {
-		wait(mutex);
-		next_barber = i;
-		signal(chair);
-		wait(ready);
-		signal(mutex);
-		cut_hair();
-		signal(finish[i]);
-		wait(paym);
-		accept_pay();
-		signal(recpt);
-	}
-}
-
 void Customer(i) {
 	int my_barber;
 	wait(max_cust);
@@ -220,4 +204,26 @@ void Customer(i) {
 	exit_shop();
 	signal(max_cust);
 }
+
+int next_barber;
+void Barber(i) {
+	while(true) {
+		wait(mutex);
+		next_barber = i;
+		signal(chair);
+		wait(ready);
+		signal(mutex);
+		cut_hair();
+		signal(finish[i]);
+		wait(paym);
+		accept_pay();
+		signal(recpt);
+	}
+}
 ```
+### breakdown
+#### customer
+- prima di sedermi su una sedia, io mi “prendo” un barbiere con `my_barber = next_barber`
+#### barber
+- la funzione prende un int come parametro ! che rappresenta il numero del barbiere
+- `next_barber = i` per dire che il barbiere `i`è libero (per fare ciò entra in una sezione critica), che dura finchè qualcuno non si siede sulla sua sedia !!! quindi non ci sono problemi con altri barbieri che sono pronti (che potrebbero sovrascrivere `next_barber`). in questo modo, i clienti non hanno bisogno di entrare in una sezione critica per accedere in lettura a `next_barber`. very smart ngl
