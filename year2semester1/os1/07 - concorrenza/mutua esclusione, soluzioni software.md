@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T11:13
+updated: 2024-12-09T19:40
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -47,3 +47,9 @@ very cool. it works.
 quando un processo interagisce con un altro, due requisiti fondamentali devono essere soddisfatti: 
 - sincronizzazione
 - comunicazione
+il **message passing** (scambio di messaggi) è una soluzione al secondo requisito !
+- funziona sia con memoria condivisa che distribuita (i cluster(memoria distribuita) spesso funzionano usando message passing), e può essere usata anche per la sincronizzazione
+funziona attraverso 2 primitive:
+- `send(destination, message)`
+- `receive(source, message)`
+- inoltre spesso c’è anche il test di ricezione
