@@ -1,8 +1,9 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-09T08:28
+updated: 2024-12-09T08:44
 ---
+//TODO
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
 >[!figure] 
@@ -662,3 +663,28 @@ il semaforo `strettoia` viene inizializzato a 4 perchè nella strettoia possono 
 in questo snippet di codice, garantiamo che le 4 macchine che sono nella strettoia riescano a passare, mentre la quinta si ferma (`count < 0`)
 
 notiamo come la funzione `macchina_dal_lato_sinistro` incrementi e decrementi solo `nsx` (come è giusto che sia, in quanto una macchina dal lato sinistro non ha informazioni sul numero di macchine in coda dal lato destro)
+
+```c
+if(nsx == 1)
+	wait(dx);
+```
+funziona perchè se la prima macchina a passare è da sinistra, il wait sopra non fermerà le macchine da destra, ma il `wait(dx)` chiamato dalla prima macchina da destra si !
+
+ricordiamo che il semplice incremento
+```c
+++nsx;
+```
+comporta una piccola race condition (in quanto, in verità, è più istruzioni assembly)(esempio sopra) /TODO
+
+```c
+wait(sx);
+signal(sx);
+```
+sono usati per garantire una mutua esclusione sulla variabile globale `nsx`
+la macchina dal lato destro fa esattamente la stessa cosa, ma scambiando `sx`
+
+senza la presenza di `wait(z);`, è possibile avere un deadlock: S1 e D1 eseguono entrambe, rispettivamente `wait(sx)` e `wait(dx)`, e quando S1 arriva a `wait(dx)`, si blocca perchè `dx == -1`. lo stesso accade per D1, che arriva a `wait(sx)` e va in `BLOCKED`
+
+il semaforo `z` impedisce che lo scheduling sopra avvenga, poichè il bloco tra `wait(z)` e `signal(z)` sarà eseguibile solo da un processo alla volta
+
+# il negozio del barbiere
