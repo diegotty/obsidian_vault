@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T09:29
+updated: 2024-12-09T09:44
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -73,8 +73,130 @@ signal(sx);
 ```
 
 - senza la presenza di `wait(z)`, è possibile avere un deadlock: S1 e D1 eseguono entrambe, rispettivamente `wait(sx)` e `wait(dx)`, e quando S1 arriva a `wait(dx)`, va in `BLOCKED` perchè `dx == -1`. lo stesso accade per D1, che arriva a `wait(sx)` e va in `BLOCKED`
+	- il semaforo `z` impedisce che lo scheduling sopra avvenga, poichè il bloco tra `wait(z)` e `signal(z)` sarà eseguibile solo da un processo alla volta
 
-il semaforo `z` impedisce che lo scheduling sopra avvenga, poichè il bloco tra `wait(z)` e `signal(z)` sarà eseguibile solo da un processo alla volta
-
-la macchina dal lato destro fa esattamente la stessa cosa, ma scambiando `sx`
+la macchina dal lato destro fa esattamente la stessa cosa, ma scambiando `sx` con `dx`, e `nsx` con `ndx`
 # il negozio del barbiere
+>[!info] barberia
+![[Pasted image 20241209093132.png]]
+>- dimensione massima del negozio: `max_cust`
+>- prima ci si siede sul divano, poi da lì si accede ad una delle sedie per tagliarsi i capelli
+>- si compete per entrambe le risorse: un certo numero (`sofa`) di posti sul divano, e un certo numero (minore dei posti sul divano) di posti sulle sedie
+>- tra tutti quelli nel negozio si compete per il divano, e tra tutti quelli sul divano si compete per le sedie
+>- i barbieri (1 per sedia) fanno anche da cassieri dopo il taglio
+
+## soluzione 1
+- si decide che si possono servire, nel corso di una giornata, un massimo numero di clienti (`finish`)
+- c’è una sola cassa, per la quale competono i barbieri( ovvero, un barbiere libero a caso può fare le veci del cassiere)
+```c
+// finish=numero massimo di persone servibili nel periodo
+// max_clust=numero massimo di persone contemporaneamente nel negozio
+// coord=numero di barbieri
+semaphore
+	max_clust=20, sofa=4, chair=3, coord=3, ready=0, leave_ch=0,
+	paym=0, recpt=0, finish[50]={0};
+	mutex1=1, mutex2=1;
+
+int count = 0;
+
+void customer() {
+	int cust_nr;
+	wait(max_cust);
+	enter_shop();
+	wait(mutex1);
+	cust_nr = count;
+	count++;
+	signal(mutex1);
+	wait(sofa);
+	sit_on_sofa();
+	wait(chair);
+	get_up_from_sofa();
+	signal(sofa);
+	sit_in_chair();
+	wait(mutex2);
+	enqueue1(cust_nr);
+	signal(mutex2);
+	signal(ready);
+	wait(finish[cust_nr]);
+	leave_chair;
+	signal(leave_cr);
+	pay();
+	wait(recpt);
+	exit_shop();
+	signal(max_cust);
+}
+
+void barber() {
+	int b_cust;
+	while(true) {
+		wait(ready);
+		wait(mutex2);
+		dequeue1(b_cust);
+		signal(mutex2);
+		wait(coord);
+		cut_hair();
+		signal(coord);
+		signal(finish[b_cust]);
+		wait(leave_ch);
+		signal(chair);
+	}
+}
+
+void cashier() {
+	while(true) {
+		wait(paym);
+		wait(coord);
+		accept_pay();
+		signal(coord);
+		signal(recpt);
+	}
+}
+```
+### breakdown
+- `max_cust, sofa, chair`: semafori con la stessa funzione di `strettoria` nell’esempio precedente, cioè garantire il numero massimo di persone 
+- il seguente snippet permette di accedere a `count` in mutua esclusione(dato che`count` è una variabile globale)
+```c
+	wait(mutex1);
+	cust_nr = count;
+	count++;
+	signal(mutex1);
+```
+## soluzione 2
+```c
+int next_barber;
+void Barber(i) {
+	while(true) {
+		wait(mutex);
+		next_barber = i;
+		signal(chair);
+		wait(ready);
+		signal(mutex);
+		cut_hair();
+		signal(finish[i]);
+		wait(paym);
+		accept_pay();
+		signal(recpt);
+	}
+}
+
+void Customer(i) {
+	int my_barber;
+	wait(max_cust);
+	enter_shop();
+	wait(sofa);
+	sit_on_sopfa();
+	wait(chair);
+	get_up_from_sofa();
+	signal(sofa);
+	my_barber = next_barber;
+	sit_in_chair();
+	signal(ready);
+	wait(finish[my_barber]);
+	leave_chair();
+	pay();
+	signal(paym);
+	wait(recpt);
+	exit_shop();
+	signal(max_cust);
+}
+```
