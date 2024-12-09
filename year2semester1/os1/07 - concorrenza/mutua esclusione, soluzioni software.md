@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T20:10
+updated: 2024-12-09T20:25
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -88,3 +88,76 @@ si possono usare:
 
 - evidenti analogie con producer/consumer
 	- in particolare, se la mailbox è piena allora anche `nbsend` si deve bloccare !!
+- se serve solo per le versioni bloccanti e per comuncazioni x-to-one, la mailbox può avere dimensione 1 
+>[!info] casi di comunicazione indiretta
+>![[Pasted image 20241209201213.png]]
+## formato dei messaggi
+>[!figure] rappresentazione messaggio mandato 
+>![[Pasted image 20241209201329.png|300]]
+
+## mutua esclusione con messaggi
+```c
+**implementazione di mutua escluzione con i messaggi, indirizzazione indiretta
+const message null = /* null message */
+mailbox box;
+
+void P(int i) {
+	message msg;
+	while(true) {
+		receive(box, msg);
+		/* critical section */
+		nbsend(box, msg);
+		/* remainder */
+	}
+}
+
+void main() {
+	box = create_mailbox();
+	nbsend(box, null);
+	parbegin (P(1),P(2),...,P(n));
+}
+```
+usiamo i messaggi per “““comunicare””” la situazione della sezione critica !(se mailbox è vuota, qualcuno è in sezione critica, se mailbox ha un messaggio, il primo che lo riceve può entrare nella sezione critica)
+- è necessario creare la mailbox con un messaggio al suo interno, altrimenti nessun processo entrerebbe mai nella sezione critica
+- è necessario usare `nbsed(box, msg)` altrimenti il processo che è stato nella sezione critica non può andare avanti finchè un altro processo non entra nella sezione critica
+## producer/consumer con messaggi
+la situa:
+- uno o più producer creano dati e li mettono in un buffer, consumer prende dati dal buffer. al buffer può accedere solo un processo, che sia esso producer o consumer
+il problema:
+- assicurare che i producer non inseriscando dati quando il buffer è pieno
+- assicurare che il consumer non legga quando il buffer è vuoto
+- mutua esclusione sul buffer
+(quindi le stesse premesse di prima !)
+```c
+const int capacity = /* buffering capacity */;
+mailbox mayproduce, mayconsume;
+const message null = /* null message */;
+
+void main() {
+	mayproduce = crate_mailbox();
+	mayconsume = create_mailbox();
+	for(int i=1; i<=capacity; i++) {
+		nbsend(mayproduce, null);
+	}
+	parbegin(producer, consumer);
+}
+
+void producer() {
+	message pmsg;
+	while(true) {
+		receive(mayproduce, pmsg);
+		pmsg = produce();
+		nbsend(mayconsume, pmsg);
+	}
+}
+
+void consumer() {
+	message cmsg;
+	while(true) {
+		receive(mayconsume, cmsg);
+		consume(cmsg);
+		nbsend(mayproduce, null);
+	}
+}
+```
+riempiendo `mayproduce` di `capacity`-elementi, mi assicuro che nessun producer aggiunga al buffer se esso è già pieno (`mayproduce` non ha messaggi, il producer va in `BLOCKED` !)
