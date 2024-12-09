@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2024-12-08T18:30
+updated: 2024-12-09T08:28
 ---
 per i SO moderni è essenziale supportare più processi in esecuzione che sia:
 - multipogrammazione(un solo processore)
@@ -631,13 +631,13 @@ semaphore strettoia = 4;
 semaphore sx = 1;
 semaphore dx = 1;
 //4 semafori (sai com'è, a roma, alla fine ne fuziona 1)
-int nsx = 0; 
-int ndx = 0;
+int nsx = 0; // curr numero di macchine in coda a sinistra
+int ndx = 0; // curr numero di macchine in coda a destra
 
 macchina_dal_lato_sinistro () {
 	wait(sx);
 	nsx++;
-	if(nsx == 1)
+	if(nsx == 1) //se io sono la prima macchina, devo bloccare le macchine dall'altro lato
 		wait(dx);
 	signal(sx); 
 	signal(z);
@@ -647,8 +647,18 @@ macchina_dal_lato_sinistro () {
 	signal(strettoia);
 	wait(sx);
 	nsx--;
-	if(nsx == 0)
+	if(nsx == 0) //se io ero l'ultima macchina, devo sbloccare le macchine dall'altro lato
 		signal(dx);
 	signal(sx);
 }
 ```
+se non c’è mutua esclusione c’è un incidente frontale
+il semaforo `strettoia` viene inizializzato a 4 perchè nella strettoia possono sostare 4 macchine
+```c
+	wait(strettoia);
+	passa_strettoia();
+	signal(strettoia);
+```
+in questo snippet di codice, garantiamo che le 4 macchine che sono nella strettoia riescano a passare, mentre la quinta si ferma (`count < 0`)
+
+notiamo come la funzione `macchina_dal_lato_sinistro` incrementi e decrementi solo `nsx` (come è giusto che sia, in quanto una macchina dal lato sinistro non ha informazioni sul numero di macchine in coda dal lato destro)
