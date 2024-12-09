@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T19:40
+updated: 2024-12-09T19:55
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -50,6 +50,19 @@ quando un processo interagisce con un altro, due requisiti fondamentali devono e
 il **message passing** (scambio di messaggi) è una soluzione al secondo requisito !
 - funziona sia con memoria condivisa che distribuita (i cluster(memoria distribuita) spesso funzionano usando message passing), e può essere usata anche per la sincronizzazione
 funziona attraverso 2 primitive:
-- `send(destination, message)`
-- `receive(source, message)`
+- `send(destination, message)` (`message` e effettivamente il messaggio da mandare)
+- `receive(source, message)` (`message` è la zona di memoria in cui vogliamo ricevere il messaggio)
 - inoltre spesso c’è anche il test di ricezione
+chiaramente, la comunicazione richiede anche la sincronizzazione (il mittente deve inviare, prima che il ricevente possa leggere)
+- le operazioni di `send` e `receive` possono essere bloccanti oppure no (con bloccanti si intende che mandano il processo che le chiama in `BLOCKED`, per evitare il busy-waiting)
+	- il test di ricezione non è mai bloccante
+### send e receive bloccanti
+se `send` è bloccante, il processo che invia il messaggio diventerà `BLOCKED` fino a che qualcuno non effettuerà un `receive`, e allo stesso modo un processo che chiama `receive` prima di avere un messaggio da ricevere sara `BLOCKED` fino a che non riceve un messaggio
+- quindi che un processo si blocchi o non si blocchi dipende da qualche funzione è stata chiamata prima
+- tipicamente questo tipo di comunicazione viene chiamato **rendezvous** (ah, l’amore, le donne francesi. they all smell like freshly baked, buttery croissants. dont get me started on their taste)
+### send non bloccante
+più naturale per molti programmi concorrenti ! la chiameremo `nbsend`. 
+- di solito, la ricezione è bloccante
+	- in questo modo, il mittente continua, mentre il destinatario rimante `BLOCKED` finchè non ha ricevuto il messaggio
+- però la ricezione può esser anche non bloccante (`nbreceive`). per sapere se abbiamo ricevuto un messagio o no (visto che il processo che chiama `nbreceive`, anche se non riceve il messaggio, va avanti lo stesso), la funzione può settare un bit dentro il messagio (la zona di memoria dedicata ad esso ?)per dire se la recezione è avvenuta oppure no
+	- se la ricezione non è
