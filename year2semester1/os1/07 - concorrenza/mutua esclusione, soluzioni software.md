@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T19:55
+updated: 2024-12-09T20:10
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -54,6 +54,11 @@ funziona attraverso 2 primitive:
 - `receive(source, message)` (`message` è la zona di memoria in cui vogliamo ricevere il messaggio)
 - inoltre spesso c’è anche il test di ricezione
 chiaramente, la comunicazione richiede anche la sincronizzazione (il mittente deve inviare, prima che il ricevente possa leggere)
+
+>[!important] `send` e `receive` sono SEMPRE ATOMICHE
+>ciò è garantito dal SO
+>- solo un processo per volta esegue una delle due operazioni
+
 - le operazioni di `send` e `receive` possono essere bloccanti oppure no (con bloccanti si intende che mandano il processo che le chiama in `BLOCKED`, per evitare il busy-waiting)
 	- il test di ricezione non è mai bloccante
 ### send e receive bloccanti
@@ -64,5 +69,22 @@ se `send` è bloccante, il processo che invia il messaggio diventerà `BLOCKED` 
 più naturale per molti programmi concorrenti ! la chiameremo `nbsend`. 
 - di solito, la ricezione è bloccante
 	- in questo modo, il mittente continua, mentre il destinatario rimante `BLOCKED` finchè non ha ricevuto il messaggio
-- però la ricezione può esser anche non bloccante (`nbreceive`). per sapere se abbiamo ricevuto un messagio o no (visto che il processo che chiama `nbreceive`, anche se non riceve il messaggio, va avanti lo stesso), la funzione può settare un bit dentro il messagio (la zona di memoria dedicata ad esso ?)per dire se la recezione è avvenuta oppure no
-	- se la ricezione non è
+- però la ricezione può esser anche non bloccante (`nbreceive`). per sapere se abbiamo ricevuto un messagio o no (visto che il processo che chiama `nbreceive`, anche se non riceve il messaggio, va avanti lo stesso), la funzione può settare un bit dentro il messagio (la zona di memoria dedicata ad esso ?)per dire se la recezione è avvenuta oppure no (altrimenti può anche essere la return value della funzione)
+	- se la ricezione non è bloccante, allora tipicamente non lo è neanche l’invio
+## indirizzamento
+il mittente deve poter dire a quale processo (o quale gruppo di processi) vuole mandare il messaggio, e lo stesso deve essere possibile per il destinatario (anche se non sempre !)
+ogni processo ha una sua coda, che contiene i messaggi ancora non ricevuti(con una `receive`). una volta piena, solitamente il messaggio si perde o viene ritrasmesso (es: syscall `listen` di Linux). ciò è gestito dal SO (dimensione della coda, eventuale ritrasmissione)
+si possono usare: 
+**indirizzamento diretto**:
+- `send` include uno specifico identificatore per il destinatario (o per il gruppo di destinatari)
+- per la receive, l’identificatore ci può essere oppure no:
+		- `receive(sender, msg)`: ricevi solo se il mittente coincide con `sender` (utile per applicazioni fortemente cooperative)
+	- `receive(null, msg)`: ricevi da chiunque(dentro `msg`, c’è anche il mittente)
+**indirizzamento indiretto**:
+- i messaggi sono inviati ad una particolare zona di memoria condivisa(**mailbox**), che va esplicitamente creata da qualche processo
+- il mittente manda messaggi alla mailbox, il destinatario se li va a prendere nella mailbox
+>[!example] esempio, caso limite
+> può capitare che, con una ricezione **bloccante**: tanti processi chiamino `receive` su una mailbox vuota, e tali processi diventino `BLOCKED`. quando viene mandato un messaggio nella mailbox, **solo uno** dei processi `BLOCKED` diventa `READY`. e gli altri ????
+
+- evidenti analogie con producer/consumer
+	- in particolare, se la mailbox è piena allora anche `nbsend` si deve bloccare !!
