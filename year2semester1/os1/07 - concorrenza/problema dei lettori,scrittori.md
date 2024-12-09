@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T22:55
+updated: 2024-12-09T23:08
 ---
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente
@@ -9,7 +9,8 @@ a differenza del problema [[intro alla concorrenza#problema del produttore/consu
 - se uno scrittore è all’opera sul buffer, nessun lettore può effettuare letture
 inoltre, a differenza del problema producer/consumer, il buffer si accede **per intero**
 - il buffer è quindi un’area condivisa **intera**, e non ci sono problemi di buffer pieno/vuoto
-## soluzione con precedenza ai lettori precedenza ai lettori: se un lettore sta operando sull’area, e “arriva” uno scrittore ad aspettare, e poi arrivano altri lettori ad aspettare, hanno la precedenza i lettori (starvation ? capiamo)
+## soluzione con precedenza ai lettori
+precedenza ai lettori: se un lettore sta operando sull’area, e “arriva” uno scrittore ad aspettare, e poi arrivano altri lettori ad aspettare, hanno la precedenza i lettori (starvation ? capiamo)
 ```c
 **implementazione con precedenza ai lettori
 int readcount;
@@ -47,6 +48,8 @@ if(readcount == 0) semSignal(wsem);
 - semaforo `x` serve per garantire mutua esclusione su `readcount`
 - simile a quello che abbiamo visto in [[esempi (trastevere, barbiere)#trastevere (roma)|trastevere]] 
 - gli scrittori possono andare in starvation ! (anche se coda dei `BLOCKED` gestita con semafori forti)
+>[!example] esempio
+>in particolare, notiamo come, quando arrivano più lettori, oltre al fatto che tutti i lettori che arrivano possono leggere l’area di memoria (come previsto), ma effettivamente nessuno scrittore riuscirà a tornare `READY` fino a che l’ultimo lettore non finisce la lettura
 ## soluzione con precedenza agli scrittori
 ```c
 **soluzione con precedenza agli scrittori
@@ -92,3 +95,65 @@ void main(){
 }
 ```
 (indentazione puramente per facilitare la comprensione)
+- semaforo `y` usato solamente dagli scrittori, per garantire la mutua esclusione su `writecount`
+- il primo reader che esegue `reader()`, blocca gli scrittori !
+```c
+if(readcount == 1) semWait(wsem);
+```
+## soluzione con i messaggi
+- oltre a questo codice occorre un processo di inizializzazione che crea le 3 mailbox e lancia 1 controller e più reader e writer a piacimento
+- se ci sono più di `MAX_READERS-1` richieste contemporanee da lettori, la soluzione non funziona
+```c
+// mailbox = readrequest, writerequest, finished
+// send non bloccante, receive bloccante
+// empty verifica se ci sono messaggi da ricevere
+
+void reader(int i) {
+	while(true) {
+		nbsend(readrequest, null);
+		receive(controller_pid, null);
+		READUNIT();
+		nbsend(finished, null);
+	}
+}
+
+void writer(int j) {
+	while(true) {
+		nbsend(writerequest, null);
+		receive(controller_pid, null);
+		WRITEUNIT();
+		nbsend(finished, null);
+	}
+}
+
+void controller() {
+	int count = MAX_READERS;
+	while(true) {
+		if (count > 0) {
+			if (!empty(finished)) {
+				receive(finished, msg); /* da reader! */
+				count++;
+			}
+			else if (!empty(writerequest)) {
+				receive(writerequest, msg);
+				writer_id = msg.sender;
+				count = count - MAX_READERS;
+			}
+			else if (!empty(readrequest)) {
+				receive(readrequest, msg);
+				count--;
+				nbsend(msg.sender, "OK");
+			}
+		}
+		if (count == 0) {
+			nbsend(writer_id, "OK");
+			receive(finished, msg); /* da writer! */
+			count = MAX_READERS;
+		}
+		while (count < 0) {
+			receive(finished, msg); /* da reader! */
+			count++;
+		}
+	}
+}
+```
