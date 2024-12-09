@@ -1,12 +1,12 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T10:59
+updated: 2024-12-09T11:13
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
 >fare il passaggio a $n$ processi è possibile ma non semplice
-
+# code-based
 >[!info] primo tentativo
 >![[Pasted image 20241209102943.png]]
 >- lame, se un processo è da solo e vuole accedere alla sezione critica non lo può fare. L
@@ -29,4 +29,21 @@ uso il flag per comunicare l’intenzione di voler accedere in sezione critica
 >livelock:
 >![[Pasted image 20241209105858.png|250]]
 
+## algoritmo di Dekker
+>[!info] algoritmo
+>![[Pasted image 20241209110104.png]]
+>- `turn`  può essere inizializzato a 0 o 1, non importa
+>- se il dispatcher è fair, questa soluzione funziona ! 
+>- garantisce il **bounded-waiting**: un processo può aspettare l’altro al più una volta
+>- garantisce il non-deadlock, ma è busy-waiting
+>- non richiede nessun supporto dal SO(c'è da dire che ci sono alcune architetture moderne che hanno ottimizzazioni hardware che riordinano le istruzioni da eseguire, nonchè gli access in memoria. È NECESSARIO DISABILITARE TALI OTTIMIZZAZIONI !!!)
+## algoritmo di Peterson
+>[!info] algoritmo
+![[Pasted image 20241209110739.png]]
+very cool. it works.
+>- stesse caratteristiche dell’algoritmo di Dekker !
 
+# passaggio di messaggi
+quando un processo interagisce con un altro, due requisiti fondamentali devono essere soddisfatti: 
+- sincronizzazione
+- comunicazione
