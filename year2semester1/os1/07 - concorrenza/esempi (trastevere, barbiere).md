@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T10:20
+updated: 2024-12-09T20:33
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -9,7 +9,7 @@ updated: 2024-12-09T10:20
 >- i blocchetti sono le macchine, il tubo è la strada di trastervere
 >- la strada si restringe: senso unico alternato, massimo 4 auto per volta
 >- vince chi arriva prima, non ci può essere parità
->- una volta impegnata da un lato, tutte le macchine dell’altro lato devono aspettare che non ci siano più macchine nè sulla strettoia, nè in coda
+>- una volta impegnata da un lato, tutte le macchine dell’altro lato devono aspettare che non ci siano più macchine nè sulla strettoia, nè in coda(non effettivamente vero: se la coda di `BLOCKED` è gesita in modo forte, questa caratteristica, con il codice in seguito, non è rispettata)
 >- amico mio, vedi ad andare in macchina a trastevere, ma che brutta idea che ti è passata per la mente
 >- si ma gli autobus puzzano, io ho l’arbre magique del pupone
 

@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T20:25
+updated: 2024-12-09T20:29
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -147,6 +147,7 @@ void producer() {
 	while(true) {
 		receive(mayproduce, pmsg);
 		pmsg = produce();
+		// append al buffer !
 		nbsend(mayconsume, pmsg);
 	}
 }
@@ -160,4 +161,11 @@ void consumer() {
 	}
 }
 ```
-riempiendo `mayproduce` di `capacity`-elementi, mi assicuro che nessun producer aggiunga al buffer se esso è già pieno (`mayproduce` non ha messaggi, il producer va in `BLOCKED` !)
+- riempiendo `mayproduce` di `capacity`-elementi, mi assicuro che nessun producer aggiunga al buffer se esso è già pieno (`mayproduce` non ha messaggi, il producer va in `BLOCKED` !)
+- `mayconsume` è usato per assicurarsi che il consumer non legga un buffer vuoto !
+caratteristiche:
+- mutua esclusione: assicurata
+- deadlock: no
+- starvation: ok solo se le code di processi bloccati su una `receive` sono gestite in modo “ forte” (ovvero, se i processi vengono sbloccati secondo un ordine FIFO). ovviamente se esiste solo 1 consumer ed un producer, non c’è starvation
+- thirst: quenched
+- videolezione: finita
