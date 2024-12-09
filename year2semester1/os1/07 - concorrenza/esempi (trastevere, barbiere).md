@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T08:54
+updated: 2024-12-09T09:29
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -57,6 +57,7 @@ macchina_dal_lato_sinistro () {
 
 - notiamo come la funzione `macchina_dal_lato_sinistro` incrementi e decrementi solo `nsx` (come è giusto che sia, in quanto una macchina dal lato sinistro non ha informazioni sul numero di macchine in coda dal lato destro)
 - il seguente snippet di codice in `macchina_dal_lato_sinistro` serve perchè se viene eseguito dalla prima macchina in coda nel lato sinistro (quindi `nsx == 1`), deve bloccare le macchine dal lato destro dall’entrare nella strettoia. allo stesso modo, se viene eseguito dall’ultima macchina in coda (dopo il decremento `nsx == 0`), essa deve sbloccare le macchine dal lato destro, per farle entrare nella strettoia
+	- in particolare, non sarà il`wait(dx)` chiamato a una macchina dal lato sinistro a bloccare la macchina del lato destro, ma il `wait(dx)` chiamato dalla macchina dal lato destro (infatti `dx` è inizializzato ad 1)
 ```c
 if(nsx == 1)
 	wait(dx);
@@ -64,23 +65,16 @@ if(nsx == 1)
 if(nsx == 0)
 	signal(dx);
 ```
-funziona perchè se la prima macchina a passare è da sinistra, il wait sopra non fermerà le macchine da destra, ma il `wait(dx)` chiamato dalla prima macchina da destra si !
 
-ricordiamo che il semplice incremento
-```c
-++nsx;
-```
-comporta una piccola race condition (in quanto, in verità, è più istruzioni assembly)(esempio sopra) /TODO
-
+- il seguente snippet di codice serve per garantire una mutua esclusione sulla variabile globale `nsx` (infatti ricordiamo che il semplice incremento `++nsx;` comporta una piccola race condition (in quanto è composta da 2/3 operazioni assembly), e quindi potrebbe succedere che, se incrementata da 2 processi, risulti incrementata solo da 1)
 ```c
 wait(sx);
 signal(sx);
 ```
-sono usati per garantire una mutua esclusione sulla variabile globale `nsx`
-la macchina dal lato destro fa esattamente la stessa cosa, ma scambiando `sx`
 
-senza la presenza di `wait(z);`, è possibile avere un deadlock: S1 e D1 eseguono entrambe, rispettivamente `wait(sx)` e `wait(dx)`, e quando S1 arriva a `wait(dx)`, si blocca perchè `dx == -1`. lo stesso accade per D1, che arriva a `wait(sx)` e va in `BLOCKED`
+- senza la presenza di `wait(z)`, è possibile avere un deadlock: S1 e D1 eseguono entrambe, rispettivamente `wait(sx)` e `wait(dx)`, e quando S1 arriva a `wait(dx)`, va in `BLOCKED` perchè `dx == -1`. lo stesso accade per D1, che arriva a `wait(sx)` e va in `BLOCKED`
 
 il semaforo `z` impedisce che lo scheduling sopra avvenga, poichè il bloco tra `wait(z)` e `signal(z)` sarà eseguibile solo da un processo alla volta
 
+la macchina dal lato destro fa esattamente la stessa cosa, ma scambiando `sx`
 # il negozio del barbiere
