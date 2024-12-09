@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T09:58
+updated: 2024-12-09T10:08
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -169,12 +169,20 @@ void cashier() {
 - `finish[50]` è un vettore di 50 semafori !!!
 - viene chiamato `wait(finish[cust_nr)`quando inizia il taglio, e sarà poi il barbiere a chiamare il rispettivo `signal`
 - una volta finito il taglio, il cliente si alza dalla sedia e chiama `signal(leave_ch)` (il barbiere chiama `wait(leave_ch)`
+- il cliente paga, e chiama `wait(recpt)` per aspettare la ricevuta, e poi se ne va
 #### barber
 - `wait(ready)` perchè se non ci sono clienti va ananna
 - il barbiere prende il numero del prossimo cliente
-- `wait(coord)` perchè potrebbe non esserci una sedia libera ! (se magari ci sono 4 barbieri e 3 sedie, 11 piccioni e 10 buchi)
+- `wait(coord)` per gestire il fatto che i barbieri si devono dividere tra barbieri e cassieri (infatti viene fatta la stessa cosa nel codice del cassiere)
 - il barbiere taglia i capelli al cliente, e quando ha finito chiama `signal(coord)` poichè si è liberata una sedia, e chiama `signal(finish[b_cust])` perchè il taglio di capelli è finito
+- il numero di sedie disponbili viene gestito dal cliente !! il barbiere chiama solo `signal(chair)` alla fine del taglio
 ## soluzione 2
+- niente limite massimo al numero di clienti servibili in un giorno
+- niente processo separato per pagare, ma resta il fatto che paga un barbiere qualsiasi, purchè libero
+- serve solo un semaforo `mutex`, non serve più il semaforo `coord`(non ci serve gestire la divisione tra barbieri e cassieri)
+- ci sono tanti semafori `finish`, quanti sono i barbieri
+- il semaforo `chair` è inizializzato a 0, e viene incrementato ogni volta che un barbiere torna libero
+- piccola inefficienza: solo un barbiere alla volta può **preparare** la propria sedia
 ```c
 int next_barber;
 void Barber(i) {
