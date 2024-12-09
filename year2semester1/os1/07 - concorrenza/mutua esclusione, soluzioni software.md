@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T10:38
+updated: 2024-12-09T10:59
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -26,4 +26,7 @@ uso il flag per comunicare l’intenzione di voler accedere in sezione critica
 >![[Pasted image 20241209103538.png]]
 >l’idea è che con interleaving perfetto, entro nel loop e usando un buon delay, riesco a settare il mio flag a true prima che l’altro processo possa fare lo stesso.
 >potrebbe funzionare con buona probabilità, ma non generale abbastanza.
->
+>livelock:
+>![[Pasted image 20241209105858.png|250]]
+
+
