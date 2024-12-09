@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T09:44
+updated: 2024-12-09T09:58
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
@@ -153,6 +153,7 @@ void cashier() {
 }
 ```
 ### breakdown
+#### customer
 - `max_cust, sofa, chair`: semafori con la stessa funzione di `strettoria` nell’esempio precedente, cioè garantire il numero massimo di persone 
 - il seguente snippet permette di accedere a `count` in mutua esclusione(dato che`count` è una variabile globale)
 ```c
@@ -161,6 +162,18 @@ void cashier() {
 	count++;
 	signal(mutex1);
 ```
+- in seguito, provo a sedermi sul divano, per poi alzarmi quando c’è posto sulla sedia e sedermi quindi sulla sedia
+- dopo essermi seduto, “metto il mio numeretto” dentro una coda (`enqueue1(cust_nr)`), da poi il barbiere andrà a prendere i clienti)
+- vengono usati 2 semafori (`mutex1`, `mutex2`) perchè se ne avessi usato solo uno, avrebbe funzionato ma sarebbe stato meno efficiente (un cliente non poteva mettere il suo numero nella queue se un altro cliente stava prendendo il suo numero)
+- viene chiamato `signal(ready)` (credo!) per tenere traccia del numero dei clienti in coda ?
+- `finish[50]` è un vettore di 50 semafori !!!
+- viene chiamato `wait(finish[cust_nr)`quando inizia il taglio, e sarà poi il barbiere a chiamare il rispettivo `signal`
+- una volta finito il taglio, il cliente si alza dalla sedia e chiama `signal(leave_ch)` (il barbiere chiama `wait(leave_ch)`
+#### barber
+- `wait(ready)` perchè se non ci sono clienti va ananna
+- il barbiere prende il numero del prossimo cliente
+- `wait(coord)` perchè potrebbe non esserci una sedia libera ! (se magari ci sono 4 barbieri e 3 sedie, 11 piccioni e 10 buchi)
+- il barbiere taglia i capelli al cliente, e quando ha finito chiama `signal(coord)` poichè si è liberata una sedia, e chiama `signal(finish[b_cust])` perchè il taglio di capelli è finito
 ## soluzione 2
 ```c
 int next_barber;
