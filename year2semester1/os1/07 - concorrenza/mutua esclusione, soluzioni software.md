@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T20:29
+updated: 2024-12-10T07:43
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
@@ -75,12 +75,12 @@ più naturale per molti programmi concorrenti ! la chiameremo `nbsend`.
 il mittente deve poter dire a quale processo (o quale gruppo di processi) vuole mandare il messaggio, e lo stesso deve essere possibile per il destinatario (anche se non sempre !)
 ogni processo ha una sua coda, che contiene i messaggi ancora non ricevuti(con una `receive`). una volta piena, solitamente il messaggio si perde o viene ritrasmesso (es: syscall `listen` di Linux). ciò è gestito dal SO (dimensione della coda, eventuale ritrasmissione)
 si possono usare: 
-**indirizzamento diretto**:
+### indirizzamento diretto
 - `send` include uno specifico identificatore per il destinatario (o per il gruppo di destinatari)
 - per la receive, l’identificatore ci può essere oppure no:
 		- `receive(sender, msg)`: ricevi solo se il mittente coincide con `sender` (utile per applicazioni fortemente cooperative)
 	- `receive(null, msg)`: ricevi da chiunque(dentro `msg`, c’è anche il mittente)
-**indirizzamento indiretto**:
+### indirizzamento indiretto
 - i messaggi sono inviati ad una particolare zona di memoria condivisa(**mailbox**), che va esplicitamente creata da qualche processo
 - il mittente manda messaggi alla mailbox, il destinatario se li va a prendere nella mailbox
 >[!example] esempio, caso limite

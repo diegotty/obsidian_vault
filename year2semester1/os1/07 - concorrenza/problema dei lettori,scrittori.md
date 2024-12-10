@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-10T07:30
+updated: 2024-12-10T07:45
 ---
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente
@@ -102,7 +102,6 @@ if(readcount == 1) semWait(wsem);
 ```
 ## soluzione con i messaggi
 - oltre a questo codice occorre un processo di inizializzazione che crea le 3 mailbox e lancia 1 controller e più reader e writer a piacimento
-- se ci sono più di `MAX_READERS-1` richieste contemporanee da lettori, la soluzione non funziona
 ```c
 // mailbox = readrequest, writerequest, finished
 // empty verifica se ci sono messaggi da ricevere
@@ -144,11 +143,13 @@ void controller() {
 				nbsend(msg.sender, "OK");
 			}
 		}
+
 		if (count == 0) {
 			nbsend(writer_id, "OK");
 			receive(finished, msg); /* da writer! */
 			count = MAX_READERS;
 		}
+
 		while (count < 0) {
 			receive(finished, msg); /* da reader! */
 			count++;
@@ -158,4 +159,9 @@ void controller() {
 ```
 ### breakdown 
 - vegono usate `nbsend` e `receive`
-- sia reader che writer mandano una richiesta
+- sia reader che writer mandano una richiesta alle rispettive mailbox: `readrequest`, `writerequest`, per “chiedere” se possono accedere all’area ([[mutua esclusione, soluzioni software#indirizzamento indiretto|indirizzamneto indiretto !!]])
+- viene poi chiamata `receive(controller_pid, null);` , in cui writer e reader aspettano una risposta dal controller per accedere all’area ([[mutua esclusione, soluzioni software#indirizzamento diretto|indirizzamento diretto !]])
+- `count`, se positivo, indica il numero corrente di lettori sull’area
+- tutte le condizioni dentro `if(count > 0)` controllano se una delle mailbox ha dei messaggi, e in caso positivo, viene usato `receive` per prendere tali messaggi. quindi, anche se `receive` è bloccante, non succederà mai che il controller si bloccherà su una di queste `receive`, perchè è sicuro che ci sia almeno un messaggio
+- si nota come il controller, per mandare un messaggio al writer che m
+- se ci sono più di `MAX_READERS-1` richieste contemporanee da lettori, la soluzione non funziona
