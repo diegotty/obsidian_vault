@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-10T07:45
+updated: 2024-12-10T07:58
 ---
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente
@@ -163,5 +163,14 @@ void controller() {
 - viene poi chiamata `receive(controller_pid, null);` , in cui writer e reader aspettano una risposta dal controller per accedere all’area ([[mutua esclusione, soluzioni software#indirizzamento diretto|indirizzamento diretto !]])
 - `count`, se positivo, indica il numero corrente di lettori sull’area
 - tutte le condizioni dentro `if(count > 0)` controllano se una delle mailbox ha dei messaggi, e in caso positivo, viene usato `receive` per prendere tali messaggi. quindi, anche se `receive` è bloccante, non succederà mai che il controller si bloccherà su una di queste `receive`, perchè è sicuro che ci sia almeno un messaggio
-- si nota come il controller, per mandare un messaggio al writer che m
+- se `writerequest` non è vuota, invece (e ciò viene controllato prima di `!empty(readrequest))`, si usa la linea di codice `count = count - MAX_READERS;`(**il barbatrucco**) per forzare `count <= 0`
+	- se `count == 0`, non erano presenti lettori, e quindi writer può andare scrivere nell’area
+	- se `count < 0`, sono presenti dei lettori, e si attende finchè tutti i lettori non finiscano, con lo snippet di codice appena sotto. in questo modo, quando si esce da quel while, all’iterazione dopo di `while(true)`, avremo `count == 0` e il writer verrà ammesso all’area (very smart)
+```c
+while(count < 0){
+	receive(finished, msg);
+	count++;
+}
+```
+- si nota come il controller, per mandare un messaggio al writer che ha mandato la sua richiesta in `readrequest`, usi `msg.sender` come destinatario
 - se ci sono più di `MAX_READERS-1` richieste contemporanee da lettori, la soluzione non funziona
