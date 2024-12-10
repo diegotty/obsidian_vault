@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
-related to: 
-updated: 2024-12-10T07:43
+related to: "[[intro alla concorrenza]]"
+updated: 2024-12-10T08:10
 ---
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi

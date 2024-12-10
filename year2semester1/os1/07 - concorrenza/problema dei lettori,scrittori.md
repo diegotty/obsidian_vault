@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
-related to: 
-updated: 2024-12-10T07:58
+related to: "[[mutua esclusione, soluzioni software]]"
+updated: 2024-12-10T08:11
 ---
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente

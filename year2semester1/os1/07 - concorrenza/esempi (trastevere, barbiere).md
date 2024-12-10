@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
-related to: 
-updated: 2024-12-09T20:33
+related to: "[[semafori]]"
+updated: 2024-12-10T08:10
 ---
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
