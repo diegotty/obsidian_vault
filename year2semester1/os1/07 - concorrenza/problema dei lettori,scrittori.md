@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: 
-updated: 2024-12-09T23:08
+updated: 2024-12-10T07:30
 ---
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente
@@ -105,7 +105,6 @@ if(readcount == 1) semWait(wsem);
 - se ci sono più di `MAX_READERS-1` richieste contemporanee da lettori, la soluzione non funziona
 ```c
 // mailbox = readrequest, writerequest, finished
-// send non bloccante, receive bloccante
 // empty verifica se ci sono messaggi da ricevere
 
 void reader(int i) {
@@ -157,3 +156,6 @@ void controller() {
 	}
 }
 ```
+### breakdown 
+- vegono usate `nbsend` e `receive`
+- sia reader che writer mandano una richiesta
