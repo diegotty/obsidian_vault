@@ -1,9 +1,12 @@
 ---
 created: 2024-12-10
 related to: "[[mutua esclusione, soluzioni hardware]]"
-updated: 2024-12-10T08:09
+updated: 2024-12-10T08:14
 ---
-
+>[!index]
+>
+>- [semafori deboli e forti](#semafori%20deboli%20e%20forti)
+>- [mutua esclusione con i semafori](#mutua%20esclusione%20con%20i%20semafori)
 # semafori
 i semafori sono strutture dati, usate dai processi per scambiarsi segnali, forniti con tre operazioni definite, tutte e 3 atomiche (stavolta l’atomicità è garantita dal SO):
 - `intialize`

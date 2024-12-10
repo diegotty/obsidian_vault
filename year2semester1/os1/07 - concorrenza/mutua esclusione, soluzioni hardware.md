@@ -1,9 +1,16 @@
 ---
 created: 2024-12-09
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T08:08
+updated: 2024-12-10T08:15
 ---
-
+>[!index]
+>
+>- [istruzioni macchina speciali](#istruzioni%20macchina%20speciali)
+>	- [`compare_and_swap`](#%60compare_and_swap%60)
+>		- [mutua esclusione con `compare_and_swap`](#mutua%20esclusione%20con%20%60compare_and_swap%60)
+>	- [`exchange`](#%60exchange%60)
+>		- [mutua esclusione con `exchange`](#mutua%20esclusione%20con%20%60exchange%60)
+>	- [vantaggi e svantaggi](#vantaggi%20e%20svantaggi)
 # istruzioni macchina speciali
 entrambe le seguenti istruzioni sono **atomiche**
 - l’hardware garantisce che un solo processo per volta possa eseguire una chiamata a tali istruzioni(/funzioni)

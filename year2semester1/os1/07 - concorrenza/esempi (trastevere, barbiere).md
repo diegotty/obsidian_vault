@@ -1,8 +1,20 @@
 ---
 created: 2024-12-09
 related to: "[[semafori]]"
-updated: 2024-12-10T08:10
+updated: 2024-12-10T08:14
 ---
+>[!index]
+>
+>- [breakdown](#breakdown)
+>- [il negozio del barbiere](#il%20negozio%20del%20barbiere)
+>- [soluzione 1](#soluzione%201)
+>	- [breakdown](#breakdown)
+>		- [customer](#customer)
+>		- [barber](#barber)
+>- [soluzione 2](#soluzione%202)
+>	- [breakdown](#breakdown)
+>		- [customer](#customer)
+>		- [barber](#barber)
 # trastevere (roma)
 >[!info] roma mia quanto sei bella
 >![[Pasted image 20241208182157.png]]

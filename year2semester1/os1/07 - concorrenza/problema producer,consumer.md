@@ -1,9 +1,19 @@
 ---
 created: 2024-12-10
 related to: "[[semafori]]"
-updated: 2024-12-10T08:09
+updated: 2024-12-10T08:14
 ---
-
+>[!index]
+>
+>- [problemi tra processi in cooperazione](#problemi%20tra%20processi%20in%20cooperazione)
+>	- [problema del produttore/consumatore](#problema%20del%20produttore/consumatore)
+>		- [esempio1](#esempio1)
+>			- [implementazione, soluzione sbagliata](#implementazione,%20soluzione%20sbagliata)
+>			- [implementazione, soluzione corretta](#implementazione,%20soluzione%20corretta)
+>		- [soluzione con semafori generali](#soluzione%20con%20semafori%20generali)
+>	- [producer/consumer con buffer circolare](#producer/consumer%20con%20buffer%20circolare)
+>		- [implementazione con semafori](#implementazione%20con%20semafori)
+>
 # problemi tra processi in cooperazione
 ## problema del produttore/consumatore
 situazione generale:

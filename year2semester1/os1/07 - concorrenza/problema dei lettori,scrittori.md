@@ -1,8 +1,15 @@
 ---
 created: 2024-12-09
 related to: "[[mutua esclusione, soluzioni software]]"
-updated: 2024-12-10T08:11
+updated: 2024-12-10T08:13
 ---
+>[!index]
+>
+>- [soluzione con precedenza ai lettori](#soluzione%20con%20precedenza%20ai%20lettori)
+>- [soluzione con precedenza agli scrittori](#soluzione%20con%20precedenza%20agli%20scrittori)
+>- [soluzione con i messaggi](#soluzione%20con%20i%20messaggi)
+>	- [breakdown](#breakdown)
+
 a differenza del problema [[intro alla concorrenza#problema del produttore/consumatore|problema del producer/consumer]], le condizioni da soddisfare sono le seguenti:
 - più lettori possono leggere il buffer contemporaneamente
 - un solo scrittore può leggere il buffer

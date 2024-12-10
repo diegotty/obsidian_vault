@@ -1,8 +1,23 @@
 ---
 created: 2024-12-09
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T08:10
+updated: 2024-12-10T08:14
 ---
+>[!index]
+>
+>- [code-based](#code-based)
+>	- [algoritmo di Dekker](#algoritmo%20di%20Dekker)
+>	- [algoritmo di Peterson](#algoritmo%20di%20Peterson)
+>- [passaggio di messaggi](#passaggio%20di%20messaggi)
+>		- [send e receive bloccanti](#send%20e%20receive%20bloccanti)
+>		- [send non bloccante](#send%20non%20bloccante)
+>	- [indirizzamento](#indirizzamento)
+>		- [indirizzamento diretto](#indirizzamento%20diretto)
+>		- [indirizzamento indiretto](#indirizzamento%20indiretto)
+>	- [formato dei messaggi](#formato%20dei%20messaggi)
+>	- [mutua esclusione con messaggi](#mutua%20esclusione%20con%20messaggi)
+>	- [producer/consumer con messaggi](#producer/consumer%20con%20messaggi)
+	
 proviamo ora a gestire la mutua esclusione senza aiuto dal parte dell’hardware o dal SO. gestiremo quindi tutto nel codice (senza la sicurezza di avere operazioni atomiche).
 >[!important] le soluzioni che vedremo valgono per 2 processi
 >fare il passaggio a $n$ processi è possibile ma non semplice
