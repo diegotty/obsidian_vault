@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T09:00
+updated: 2024-12-10T09:15
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -12,10 +12,30 @@ updated: 2024-12-10T09:00
 >in questo esempio (a) esistonon tante combinazioni possibili che risultano in una gestione corretta, ma ne esiste anche uno che finisce in deadlock (b)
 >- if you do this you are braindead. and i hate you
 ## joint progress diagram
-utilizzato per gestire deadlock tra pochi processi
->[!info] diagramma
+utilizzato per gestire deadlock tra pochi processi(2,3 procesi, xke 1 processo per asse)
+>[!example] esempio 1
 >![[Pasted image 20241210084017.png]]
 x-axis: progress of P 
 y-axis: progress of Q
 le linee marcate in nero sono le possibili progress path di P e Q
-se il dispatcher gestisce i processi in modo tale da seguire la linea 
+se il dispatcher gestisce i processi in modo tale da seguire la linea (3) o (4), è assicurato un deadlock (che avviene nelle zone a righe, non nella zona grigia ! però, per arrivare nelle zone a righe, si ““entra”” solo dalla zona grigia(?))
+
+>[!example] esempio 2
+![[Pasted image 20241210090428.png]]
+in questo caso invece, non si arriverà mai a un deadlock (infatti le zone a righe esistono, ma non esiste una zona grigia attraverso cui arrivarci)
+>- in questo caso, P è molto più “generoso” di prima, in quanto non necessita di possedere 2 risorse contemporaneamente
+
+## risorse riusabili
+usabili da un solo processo alla volta,  e il fatto di essere usate non le “consuma”. una volta che un processo ottiene una risorsa riusabile, prima o poi la rilascia, cosicchè altri processi possano usarla a loro volta
+- es: processori, I/O channels, memoria primaria/secondaria, dispositivi, file, database, etc
+per le risorse riusabili, lo stallo può esistere solo se un processo ha una risorsa e ne richiede un’altra
+>[!example] esempio 1 con 2 processi
+![[Pasted image 20241210091149.png]]
+perform funzion: sezione critica
+i lock sono semplificazioni dei semafori (`request(D) + lock(D) == semWait(D)`)
+
+>[!example] esempio 2 con 2 processi
+![[Pasted image 20241210091533.png]]
+
+
+## risorse consumabili
