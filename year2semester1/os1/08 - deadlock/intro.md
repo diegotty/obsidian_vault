@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T09:15
+updated: 2024-12-10T09:24
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -36,6 +36,18 @@ i lock sono semplificazioni dei semafori (`request(D) + lock(D) == semWait(D)`)
 
 >[!example] esempio 2 con 2 processi
 ![[Pasted image 20241210091533.png]]
+supponiamo di avere 200KB di memoria disponibili:
+>- il deadlock avverà quando uno dei due processi farà la seconda richiesta (se anche l’altro processo ha effettuato la prima richiesta)
+>- in questo esempio, se P1 venisse eseguito nella sua interezza, la memoria usata e poi rilasciata da P1 può essere **riusata** da P2
 
 
 ## risorse consumabili
+vengono create(prodotte) e distrutte(consumate)
+- es: interruzioni, segnali, messaggi, informazione dei buffer di I/O
+in questo caso il deadlock si verifica se si fa una richiesta (bloccante) di una risorsa non ancora creata
+>[!example] esempio con 2 procesi
+![[Pasted image 20241210091941.png]]
+who made this mf burger dawg
+# grafo dell’allocazione delle risorse
+grafo diretto che rappresenta lo stato di risorse e processi
+- tanti pallini quante istanze di una stessa risorsa
