@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T09:24
+updated: 2024-12-10T10:00
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -48,6 +48,24 @@ in questo caso il deadlock si verifica se si fa una richiesta (bloccante) di una
 >[!example] esempio con 2 procesi
 ![[Pasted image 20241210091941.png]]
 who made this mf burger dawg
-# grafo dell’allocazione delle risorse
+## grafo dell’allocazione delle risorse
 grafo diretto che rappresenta lo stato di risorse e processi
-- tanti pallini quante istanze di una stessa risorsa
+- ogni quadrato è un tipo di risorsa, tanti pallini nel quadrato quante istanze di una stessa risorsa
+>[!info] rappresentazione grafo allocazione risorse
+![[Pasted image 20241210095101.png]]
+
+>[!important] per le risorse consumabili, non esiste mai la freccia “Held by”, bensì i pallini compaiono(quando vengono prodotti) e scompaiono(quando vengono consumati)
+## condizioni per il deadlock
+condizioni necessarie affichè si verifichi il deadlock
+### risorse riusabili
+- mutua esclusione: solo un processo alla volta può usare una data risorsa
+- **hold and wait**: un processo può richiedere risorse mentre ne tiene già bloccate altre
+- niente preemption per le risorse: nono si può sottrarre una risorsa ad un processo senza che quest’ultimo non la rilasci
+- attesa circolare: esiste una catena chiusa di processi, in cui ciascun processo detiene una risorsa che è richiesta (invano) dal processo che lo segue nella catena
+### risorse consumabili
+- mutua esclusione: la risorsa va a chi ne riesce a fare richiesta per primo
+- **hold and wait**: diventa: si può richiedere(in modo bloccante), una risorsa quando ancora non sia stata creata
+- niente preeemption per le risorse: infatti non appena viene concessa una risorsa, essa viene distrutta
+- attesa circolare (same as above)
+>[!example] esempio di attesa circolare
+![[Pasted image 20241210100016.png]]
