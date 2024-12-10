@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-11-29T16:19
+updated: 2024-12-10T08:16
 ---
 [[02 - modello relazionale]]
 [[03 - algebra relazionale]]
@@ -16,3 +16,5 @@ updated: 2024-11-29T16:19
 [[13,14 - decomposizioni che preservano le dipendenze]]
 [[15,16 - decomposizioni che hanno un join senza perdita]]
 [[17, 18 - copertura minimale di un insieme di dipendenze]]
+[[19,20 - algoritmo di decomposizione]]
+[[21 - organizzazione fisica dei dati. concetti generali]]

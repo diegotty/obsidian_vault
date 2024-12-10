@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-10T08:07
+updated: 2024-12-10T08:26
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
@@ -37,3 +37,4 @@ updated: 2024-12-10T08:07
 [[mutua esclusione, soluzioni software]]
 [[problema dei lettori,scrittori]]
 [[conclusioni]]
+## 08 - deadlock
