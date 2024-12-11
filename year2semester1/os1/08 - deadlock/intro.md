@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-11T07:55
+updated: 2024-12-11T08:03
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -96,6 +96,15 @@ occorre decidere se l’attuale richiesta di una risorsa può portare ad un dead
 - non mandare in esecuzione un processo se le sue richieste possono portare a deadlock
 - non conedere una risorsa ad un processo se allocarla può portare a deadlock 
 ### algoritmo del banchiere
+- valido per le risorse riusabili
+il sistema ha uno **stato**, che è l’attuale allocazione delle risorse hai processi
+- uno stato è **safe**(sicuro) se da esso parte almeno un cammino che non porta ad un deadlock
+- uno stato non sicuro è **unsafe** (insicuro)(insecure ??? man up kid)
+
+>[!info] algoritmo del banchiere: strutture dati
+>
+>- $m$ è il numero di tipi di risorse diverse (es: stampante, mouse, tastiera, monitor sono 4 tipi di risorse diverse)
+>- in 
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
