@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T10:07
+updated: 2024-12-11T07:33
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -81,3 +81,9 @@ la **possibilità di deadlock** si verifica quando sono presenti:
 - hold-and-wait
 - niente preemption per le risorse
 l’**esitenza di un deadlock** avviene quando, oltre alle condizioni di sopra, si aggiunge l’attesa circolare
+## deadlock e SO
+il SO può decidere di gestire il deadlock in modo diverso:
+- prevenire: il SO fa sì che una delle 4 condizioni per il deadlock sia sempre falsa
+- evitare: il SO fa s
+- rilevare
+- ignorare
