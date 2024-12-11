@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-11T08:14
+updated: 2024-12-11T08:47
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -110,8 +110,70 @@ il sistema ha uno **stato**, che è l’attuale allocazione delle risorse hai pr
 >- la matrice $A$ ha la stessa struttura della matrice $C$, e contiene le il numero di allocazioni correnti di ogni tipo di risorsa per ogni processo 
 >- esiste anche un altro vettore, `request`(che vedremo nel codice), che contiene la prossima (?) richiesta da parte di un processo. è un vettore di $m$ elementi ed ogni valore corrisponde al numero di istanze di un tipo di risorsa richiesto dal processo
 
->[!example] esempio 
+>[!example] esempio di stato sicuro
 ![[Pasted image 20241211081415.png]]
+**verifichiamo che questo sia uno stato sicuro**:
+supponiamo di eseguire P2 fino al suo completamento:
+![[Pasted image 20241211083543.png]]
+da questo punto in poi, abbiamo abbastanza risorse (tra cui quelle liberate da P2), per portare a termine tutti i processi rimanenti:
+eseguiamo P1 fino al suo completamento:
+![[Pasted image 20241211083811.png]]
+eseguiamo P3 fino al suo completamento:
+![[Pasted image 20241211083845.png]]
+e possiamo eseguire anche P4 fino al suo completamento. lo stato è quindi sicuro
+abbiamo quindi trovato un cammino che non porta ad un deadlock, quindi lo stato è sicuro
+
+>[!example] esempio di stato non sicuro
+partiamo da queso stato (sicuro). 
+![[Pasted image 20241211084002.png]]
+arriviamo al seguente stato dopo una richiesta da parte di P1 di una unità di R1 ed una unità di R3 (perchè l’algoritmo del banchiere era stato implementato male ??????? o xke non c’era l’algoritmo del banchiere ?????)
+![[Pasted image 20241211084211.png]]
+
+### implementazione dell’algoritmo del banchiere
+```c
+struct state {
+	int resource[m];  // R
+	int available[m]; // V
+	int claim[n][m];  // C
+	int alloc[n][m];  // A
+}
+```
+
+```c
+if(alloc[i,*]+request[*] > claim[i,*]) 
+	<error>;                           // total request > claim
+else if(request[*] > available[*])
+	<suspend process>;
+else {
+	<define newstate by:
+	alloc[i,*] = alloc[i,*] + request[*];
+	available[*] = available[*] - request[*]>;
+}
+
+if(safe(newstate)) {
+	<carry out allocation>;
+} else {
+	<restore original state>;
+	<suspend process>;
+}
+
+boolean safe(state S) {
+	int currentavail[m];
+	process rest[<number of processes>];
+	currentavail = available;
+	rest = {all processes};
+	possibile = true;
+	while(possible) {
+		<find a process Pk in rest such that
+		claim[k, *]-alloc[k, *] <= currentavail;>
+		if(found) {
+			currentavail = currentavail+alloc[k,*];
+			rest = rest - {Pk}
+		} else possible = false;
+	}
+	return (rest == null)
+}
+```
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
