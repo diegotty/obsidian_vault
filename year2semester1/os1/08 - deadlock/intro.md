@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T10:00
+updated: 2024-12-10T10:07
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -69,3 +69,15 @@ condizioni necessarie affichè si verifichi il deadlock
 - attesa circolare (same as above)
 >[!example] esempio di attesa circolare
 ![[Pasted image 20241210100016.png]]
+>- in (a) si verificano : mutua esclusione, hold and wait, mancanza di preemption, e attesa circolare
+>- in (b) viene risolto il deadlock allocando più istanze delle risorsa necessarie
+
+>[!example] esempio delle 4 macchine
+![[Pasted image 20241210100332.png]]
+rappresentazione grafica del deadlock nel primo esempio visto in questo file
+
+la **possibilità di deadlock** si verifica quando sono presenti:
+- mutua esclusione
+- hold-and-wait
+- niente preemption per le risorse
+l’**esitenza di un deadlock** avviene quando, oltre alle condizioni di sopra, si aggiunge l’attesa circolare
