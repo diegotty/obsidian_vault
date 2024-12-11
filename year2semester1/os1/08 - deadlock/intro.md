@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-11T07:47
+updated: 2024-12-11T07:55
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -81,27 +81,28 @@ la **possibilità di deadlock** si verifica quando sono presenti:
 - hold-and-wait
 - niente preemption per le risorse
 l’**esitenza di un deadlock** avviene quando, oltre alle condizioni di sopra, si aggiunge l’attesa circolare
-## deadlock e SO
+# deadlock e SO
 il SO può decidere di gestire il deadlock in modo diverso:
-### prevenire 
+## prevenire 
 il SO fa sì che una delle 4 condizioni per il deadlock sia sempre falsa (quindi deadlock impossibile,  “per costruzione”)
 - mutua esclusione: non c’è un modo per evitare che la mutua esclusione sia un requisito per certe risorse
 - hold-and wait: si impone ad un processo di richiedere tutte le risorse di cui potrebbe aver bisogno in una volta (può essere difficile per software complessi, e si tengono risorse bloccate per un tempo troppo lungo)
 - niente preemption per le risorse: il SO può richiedere ad un processo di rilasciare le sue risorse(e lo dovrà richiedere in seguito), (ciò si può fare solo per risorse/processi particolari)
-- attesa circolare: si definisce un ordinamento crescente delle risorse
-### evitare 
+- attesa circolare: si definisce un ordinamento crescente delle risorse: una risorsa viene data solo se segue (di ordine) quelle che il processo già detiene (ciò impedisce l’attesa circolare)
+## evitare 
 il SO fa sì che il dealock possa accadere, ma il sistema si muova in modo che il deadlock non capiti (decidendo di volta in volta cosa fare con l’assegnazione delle risorse)
-- mutua esclusione: 
-- hold-and wait:
-- niente preemption per le risorse:
-- attesa circolare
-### rilevare 
+- in particolare, ammette mutua esclusione, hold-and-wait e niente preemption per le risorse, ma si concentra sull’attesa circolare: evita di farla accadere
+occorre decidere se l’attuale richiesta di una risorsa può portare ad un deadlock, se esaudita( ciò richiede la conoscenza delle richieste future (quindi in generale complesso)). ci sono quindi 2 possibilità:
+- non mandare in esecuzione un processo se le sue richieste possono portare a deadlock
+- non conedere una risorsa ad un processo se allocarla può portare a deadlock 
+### algoritmo del banchiere
+## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
 - hold-and wait:
 - niente preemption per le risorse:
 - attesa circolare
-### ignorare 
+## ignorare 
 il SO lascia che il deadlock accada: se dei processi vanno in deadlock, è colpa dell’utente (questa gestione non è accettabile, in generale, per i processi del SO)
 - mutua esclusione: 
 - hold-and wait:
