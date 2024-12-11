@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-11T08:03
+updated: 2024-12-11T08:14
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -102,9 +102,16 @@ il sistema ha uno **stato**, che è l’attuale allocazione delle risorse hai pr
 - uno stato non sicuro è **unsafe** (insicuro)(insecure ??? man up kid)
 
 >[!info] algoritmo del banchiere: strutture dati
->
+>![[Pasted image 20241211080539.png]]
 >- $m$ è il numero di tipi di risorse diverse (es: stampante, mouse, tastiera, monitor sono 4 tipi di risorse diverse)
->- in 
+>- in $R_i$ è presente il valore che rappresenta il numero di istanze per l’$i$-esimo tipo di risorsa
+>- in $V_i$ è presente il valore che rappresenta il numero di istanze per l’$i$-esimo tipo di risorsa **ancora non allocate**, quindi disponibili
+>- la matrice $C$ è composta da $m$ colonne (una per ogni tipo di risorsa), ed $n$ righe, una per ogni processo che sto monitorando, e un valore si legge come: il processo $i$-esimo (riga) prima o poi chiederà x istanze del tipo di di risorsa $j$-esima (colonna)
+>- la matrice $A$ ha la stessa struttura della matrice $C$, e contiene le il numero di allocazioni correnti di ogni tipo di risorsa per ogni processo 
+>- esiste anche un altro vettore, `request`(che vedremo nel codice), che contiene la prossima (?) richiesta da parte di un processo. è un vettore di $m$ elementi ed ogni valore corrisponde al numero di istanze di un tipo di risorsa richiesto dal processo
+
+>[!example] esempio 
+![[Pasted image 20241211081415.png]]
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
