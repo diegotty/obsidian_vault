@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-11-30T16:47
+updated: 2024-12-11T07:08
 ---
 [notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
 [notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)
@@ -58,3 +58,13 @@ prodotto cartesiano di gruppi, spazi vettoriali, proprietà, esempi, applicazion
 teorema di lagrange, dimostrazione. gruppi ciclici, diagramma di Hasse
 # 21/11/2024
 sottospazio vettoriale (cond. equivalenti), combinazioni lineari, sottospazio vettoriale generato da un vettore, indipendenza e dipendenza lineare, matrici quadrate e triangolari, prodotto di matrici
+# 26/11/2024
+esercizio 10: struttura di anello unitario su $M_2(K)$, matrice identità, matrici invertibili, strutturaw di gruppo su GL_2(K), determinante di una matrice, lemma su determinante e invertibilità, lemma su prodotto di determinanti, corollario (determinante è un omom. di gruppi )
+# 27/11/2024
+sistemi lineari, espressione matriciale di un s.l., matrice completa associata a un s.l., struttura dell'insieme di sol. di s.l., prop:(insieme di sol. è sott.sp.vett di $K^n$ $\iff$ b = 0
+# 28/11/2024
+teorema su insieme di soluzioni di s.l., relazione su $Sol(A|b)$ di s.l. diversi, operazioni elementari, algoritmo di Grauss, matrici a gradini e a gradini ridotte, teorema rinforzato di Gauss
+# 03/12/2024
+esercizi, parametri, rango di una matrice, teorema di rouchè-capelli
+# 04/12/2024
+sistema di generatori, spazio vettoriale finitamente generato, base, dimensione di uno spazio vettoriale, PROPOSIZIONE 1, PROPOSIZIONE 2, lemma su rango di una matrice, riformulazione del teorema di Rouchè-Capelli con dimensione, esercizio

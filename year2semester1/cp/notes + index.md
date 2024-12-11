@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-11-29T16:19
+updated: 2024-12-11T07:06
 ---
 [notes](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7)
 [exercises](https://notability.com/n/QL1VhUe_397quBUZl2XLI)
@@ -53,3 +53,16 @@ dipendenza di $p_{X,Y}$ dall'esperimento e non da $p_X, p_Y$
 valore atteso di funzione congiunta ($f : R^2 \to R$), valore atteso di somma di v.a. ($E[X+Y]$) e generalizzazione, dimostrazione formula chiusa di valore atteso per v.a. binomiale
 # 22/11/2024
 $P(E_1) = P(E_i)$ in esempio di v.a. ipergeometrica, dimostrazione di formula chiusa per valore atteso di v.a. ipergeometrica, v.a indipendenti
+# 25/11/2024
+correzione esercizi, covarianza, proprietà di covarianza, bilinearità
+# 27/11/2024
+prop. su covarianza di v.a. indipendenti, collegamento tra v.a. non correlate e v.a. indipendenti, corollario su varianza di v.a. indipendenti, esempio figurine
+# 29/11/2024
+esercizi, v.a. continue, v.a. uniformi
+# 02/12/2024
+esercizi, valore atteso di v.a. continua, valore atteso di funzione su v.a. continua
+# 04/12/2024
+correzione esercizi, variabile aleatoria gaussiana/gaussiana standard
+
+# 06/12/2024
+v.a. identicamente distribuite (i.d.). teorema di De Moivre-Laplace
