@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-11T08:47
+updated: 2024-12-11T08:54
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -131,6 +131,7 @@ arriviamo al seguente stato dopo una richiesta da parte di P1 di una unità di R
 
 ### implementazione dell’algoritmo del banchiere
 ```c
+**strutture dati
 struct state {
 	int resource[m];  // R
 	int available[m]; // V
@@ -140,6 +141,7 @@ struct state {
 ```
 
 ```c
+**implementazione algoritmo del banchiere
 if(alloc[i,*]+request[*] > claim[i,*]) 
 	<error>;                           // total request > claim
 else if(request[*] > available[*])
@@ -174,6 +176,12 @@ boolean safe(state S) {
 	return (rest == null)
 }
 ```
+#### breakdown
+>[!important] l’algoritmo del banchiere è implementato nel SO, e viene quindi eseguito in kernel mode
+>è per questo che l’algoritmo può bloccare i processi (quando una richiesta non si può soddisfare !)
+
+- devo verificare se una richiesta **fatta da un processo tra quelli che sto monitorando** è soddisfabile o no
+- `if(alloc[i,*] + request[*] > claim[i,*])` viene usato per controllare che i processi non richiedano più risorse di quante avevano dichiarato di volerne chiedere
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
