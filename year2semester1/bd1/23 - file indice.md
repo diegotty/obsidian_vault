@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T10:43
+updated: 2024-12-13T11:00
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -86,3 +86,7 @@ consideriamo ora il caso in cui il file principale contiene record puntati (ovve
 in questo caso, nella fase di inizializzazione è preferibile lasciare più spazio libero nei blocchi per successivi inserimenti, visto che poichè i record sono puntati, **non possono essere spostati** per mantenere l’ordinamento quando si inseriscono nuovi record
 - se non c’è spazio sufficiente in un blocco B per l’inserimento di un nuovo record, occorre chiedere al sistema un nuovo blocco che viene collegato a B **tramite un puntatore** ( bisogna quindi tenere conto dello spazio del puntatore nei blocchi del file principale !)
 	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket** e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
+## ricerca
+la ricerca di un record con chiave $v$ richiede la ricerca di una chiave nel file principale che ricopre $v$, e poi la scansione del bucket corrispondente (**il file principale non è più ordinato !!!!!!!!**)
+## cancellazione
+la cancellazione di un record richiede la ricerca del record e poi la modifica dei bit di cancellazione nell’intestazione del blocco (WHAT ? SORRY ? COME ? \\QUESTION)
