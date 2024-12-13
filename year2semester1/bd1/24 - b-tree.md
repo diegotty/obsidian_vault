@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T16:58
+updated: 2024-12-13T17:13
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -28,4 +28,19 @@ durante la ricerca di un record con un dato valore della chiave, si accede agli 
 per la ricerca sono necessari $h+1$ accessi, dove $h$ è **l’altezza dell’albero**
 
 ### altezza di un b-tree
-l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono 
+l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono pieni, mentre l’altezza massima è ottenuta quando ho il minimo numero di record per ogni blocco.
+- se i blocchi, però, sono completamente pieni, un inserimento può richiedere una modifica dell’indice ad ogni livello e in ultima ipotesi può far crescere l’altezza dell’albero di un livello !!! (that would suck, man)
+>[!example] esempio catastrofico di inserimento
+ si vuole inserire il record con chiave 40 in questo b-tree
+ ![[Pasted image 20241213170159.png]]
+ per forza di cose, arriviamo a questa forma del b-tree:
+ ![[Pasted image 20241213170228.png]]
+
+qual’è il valore massimo $k$ che può assumere l’altezza $h$ ?
+$\log_{d}\left( \frac{N}{e} \right)$
+## inserimento
+l’inserimento costa:
+- $h+1$ (costa di una ricerca per ricercare il blocco in cui deve essere inserito il record)
+- +1 accesso per riscrivere il blocco del file principale
+- altrimenti, se nel blocco **non c’è** spazio sufficiente per inserire il record: $+s$ accessi ($s≤2h+1$) 
+	- nel caso peggiore, per ogni livello dobbiamo sdoppiare un blocco: il che vuol dire  effettuare 1 accesso sul blocco presente, e 1 sul blocco nuovo richiesto(entrambi gli accessi in scrittura), più 1 alla fine per la nuova radice

@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T11:35
+updated: 2024-12-13T17:08
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -62,9 +62,9 @@ la ricerca per interpolazione richiede circa $1 + \log_2 \log_2 m$ accessi, rend
 ## inserimento
 esistono diverse situazioni che influenzano il costo dell’insierimento di un record.
 l’ inserimento richiede
-	- costo della ricerca
-	- 1 accesso per scrivere il blocco modificato(c’è spazio nel blocco)
-	- altrimenti, si controlla se c’è spazio nel blocco successivo, (se c’è non basta inserirlo, bisogna rispettare l’ordine del file principale, e quindi spesso spostare diversi record tra i 2 blocchi)
+- costo della ricerca
+- 1 accesso per scrivere il blocco modificato(c’è spazio nel blocco)
+- altrimenti, si controlla se c’è spazio nel blocco successivo, (se c’è non basta inserirlo, bisogna rispettare l’ordine del file principale, e quindi spesso spostare diversi record tra i 2 blocchi)
 se non c’è spazio nè nel blocco precedente nè nel successivo, occorre richiedere un nuovo blocco al file system, ripartire i record tra il vecchio e il nuovo blocco(quando alloco un nuovo blocco, non metto un singolo record, ma ne metto diversi, per lasciare dello spazio libero) e riscrivere tutti i blocchi modificati
 >[!example]- esempio di inserimento con richiesta di nuovo blocco
 >![[Pasted image 20241213102439.png]]
