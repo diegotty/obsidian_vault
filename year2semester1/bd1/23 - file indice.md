@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T11:31
+updated: 2024-12-13T11:35
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -123,15 +123,17 @@ ogni record del file indice ha dimensione $54$ byte
 > $\frac{37.500}{18} = 2083.3 = 2084$ blocchi per file indice
 >
 **c)se utilizziamo la ricerca binaria, quale è il numero massimo di accessi a blocco per ricercare un record presente nel file nei casi a) e b), supponendo nel caso b) di non avere liste di overflow ?**
- dobbiamo trovare $n \,\,\,\, \text{t.c.} \,\,\, 2^{n-1} < \text{numero di blocchi per file indice} \leq 2^{n}$ 
+ dobbiamo trovare $n \,\,\,\, \text{t.c.} \,\,\, 2^{n-1} < \text{numero di blocchi per file indice} \leq 2^{n}$, e poi aggiungere l’accesso in lettura del blocco del file principale
+>nel caso a), notiamo che $2^{13} = 8912 > 4167  >2^{12} = 4096)$
+>quindi, il numero massimo di accessi è $13 + 1= 14$
 nel caso b), non avere liste di overflow signfica che non esistono bucket con 2 blocchi (credo)(cioè, i blocchi putatati dal file indice, pur avendo lo spazio per un puntatore, non puntano ad un altro blocco)
+>il numero massimo di accessi è $12 + 1 = 13$
 
-$2^{13} \cdot 18 \cdot 4 = $ (numero di blocchi possibili per il file indice per il numero di entrare per il file indice( ottengo il numero totale di blocchi in cui sono stored dei record del file principale), per il numero di record di ogni blocco)
 
->[!info]
+>[!info] spoken words
 >- se non specificato diversamente, i blocchi sono pieni per intero
 >- al più il 70%: in questo caso devo prendere la parte intera inferiore dopo aver calcolato qual’è il 70% dello spazio.
 >- non abbiamo liste di overflow: ogni blocco non punta ad altri blocchi !
 >- se non abbiamo liste di overflow: dobbiamo solo riservare spazio per un puntatore
 >- se abbiamo snumero di liste di overflow medio: aggiungiamo quel numero ad ogni 
->- esercizio carino: senza modificare i tempi di accesso, qualè il massimo numero di record che posso memorizzzare ?
+>- esercizio carino: senza modificare i tempi di accesso, qualè il massimo numero di record che posso memorizzzare ? in questo caso $2^{13} \cdot 18 \cdot 4$ (numero di blocchi possibili per il file indice per il numero di entrare per il file indice( ottengo il numero totale di blocchi in cui sono stored dei record del file principale), per il numero di record di ogni blocco)
