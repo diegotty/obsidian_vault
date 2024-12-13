@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T09:29
+updated: 2024-12-13T09:46
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -48,3 +48,16 @@ $m$ è il numero totale di blocchi per il file indice
 	- se $k = k1$ abbiamo finito!
 	- se $k < k1$ allora si ripete il procedimento sui blocco i da $1$ a $(\frac{m}{2})$
 	- altrimenti si ripete il procedimento sui blocchi da $\left( \frac{m}{2} \right)+1$ ad $m$ (il blocco $\left( \frac{m}{2} \right)+1$ va riconsiderato, perchè abbiamo controllato solo la prima chiave !)
+- ci si ferma quando lo spazio di ricerca è ridotto ad un unico blocco, quindi dopo $[\log_2 a]$ accessi
+>[!info] ricerca sveglia che puoi fare 
+se $k>k1$, prima di ripetere la ricerca binaria, controlliamo tutti i valori del blocco che abbiamo caricato (che contiene $k1$).
+>- se troviamo la chiave che copre $k$, abbiamo finito.
+>- però, se $k>km$, con $km$ l’ultima chiave del blocco, non possiamo sapere se $k$ è coperta da $km$ o se è coperta da una chiave nei blocchi successivi. quindi si deve continuare con la ricerca binaria
+## ricerca per interpolazione sul file indice
+la ricerca per interpolazione è basata sulla conoscenza della distribuzione dei valori della chiave:
+- deve essere disponibile una funzione $f$, che dati tre valori $k1, k2, k3$ della chiave, fornisce un valore che è la frazione dell’intervallo di valori della chiave compresi tra $k2$ e $k3$ in cui deve trovarsi $k1$($k1$ chiave di ricerca)
+	- nella ricerca binaria, questa frazione è sempre $\frac{1}{2}$
+la ricerca per interpolazione richiede circa $1 + \log_2 \log_2 m$ accessi, rendendola quindi molto più veloce, ma è molto difficile conoscere $f$ e poi la distribuzione dei dati potrebbe cambiare nel tempo
+// non ci siamo soffermati molto su questa ricerca se ricordo bene
+## inserimento
+esistono diverse situazioni che influenzano il costo dell’insierimento di un record. - - tutto liscio. l’ inserimento richiede
