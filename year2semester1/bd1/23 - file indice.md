@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T11:15
+updated: 2024-12-13T11:31
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -106,31 +106,32 @@ l’indice secondario è un **indice denso** (cioè esiste un record nell’indi
 
 >[!example] esempio1
 supponiamo di avere un file con 150000 record. ogni record occupa 250 byte, di cui 50 per il campo chiave. ogni blocco contiene 1024 byte. un puntatore a blocco occupa 4 byte.
-**a) se usiamo un indice ISAM sparso, e assumiamo che i record non siano puntati e che il fattore di utilizzo dei blocchi del file principale sia 0,8 (cioè i blocchi non sono completamente pieni, ma pieni al più 70%), quanti blocchi dobbiamo utilizzare per l’indice ?**
-**b) se usiamo un indice ISAM sparso, e assumiamo che i record siano puntati e che i blocchi del file principale siano pieni, quanti blocchi dobbiamo utilizzare per l’indice ?**
-**c)se utilizziamo la ricerca binaria, quale è il numero massimo di accessi a blocco per ricercare un record presente nel file nei casi a) e b), supponendo nel caso b) di non avere liste di overflow ? **
-
-a)per sapere quanti blocchi servono per l’indice, dobbiamo sapere quanti blocchi occupa il file principale. 
-$\frac{70}{100}\cdot 1024 = 716$
+**a) se usiamo un indice ISAM sparso, e assumiamo che i record non siano puntati e che il fattore di utilizzo dei blocchi del file principale sia 0,7 (cioè i blocchi non sono completamente pieni, ma pieni al più 70%), quanti blocchi dobbiamo utilizzare per l’indice ?**
+per sapere quanti blocchi sevono per l’indice, dobbiamo sapere quanti blocchi occupa il file:
+$\frac{70}{100}\cdot 1024 = 716$ spazio massimo di un blocco
 $\frac{716}{250} = 2,86 = 2$ (parte intera inferiore) (2 record per blocco)
-$\frac{150.000}{2} = 75.000$
+$\frac{150.000}{2} = 75.000$ blocchi per file principale
 ogni record del file indice ha dimensione $50 + 4 = 54$ byte.
-$\frac{1024}{54} = 18,96 = 18$ (parte intera inferiore)
-$\frac{75.000}{18}=4166,6 = 4167$ (parte intera superiore)
+$\frac{1024}{54} = 18,96 = 18$ record del file indice in un blocco
+$\frac{75.000}{18}=4166,6 = 4167$ blocchi per il file indice
+>
+**b) se usiamo un indice ISAM sparso, e assumiamo che i record siano puntati e che i blocchi del file principale siano pieni, quanti blocchi dobbiamo utilizzare per l’indice ?**
+$\frac{1024 -4}{250} = 4.08 = 4$ record del file principale per blocco ($1024 -4$ perchè record puntati, dobbiamo tenere in conto lo spazio per il puntatore in al prossimo blocco del bucket)
+>$\frac{150.000}{4} = 37.500$ blocchi per file principale
+ogni record del file indice ha dimensione $54$ byte
+>$\frac{1024}{54} = 18,96 = 18$
+> $\frac{37.500}{18} = 2083.3 = 2084$ blocchi per file indice
+>
+**c)se utilizziamo la ricerca binaria, quale è il numero massimo di accessi a blocco per ricercare un record presente nel file nei casi a) e b), supponendo nel caso b) di non avere liste di overflow ?**
+ dobbiamo trovare $n \,\,\,\, \text{t.c.} \,\,\, 2^{n-1} < \text{numero di blocchi per file indice} \leq 2^{n}$ 
+nel caso b), non avere liste di overflow signfica che non esistono bucket con 2 blocchi (credo)(cioè, i blocchi putatati dal file indice, pur avendo lo spazio per un puntatore, non puntano ad un altro blocco)
 
-c) a. costo massimo ricerca binaria  ? $2^{13} + 1 = 14$
-c) b.
-
-esercizio carino: senza modificare i tempi di accesso, qualè il massimo numero di record che posso memorizzzare ?
 $2^{13} \cdot 18 \cdot 4 = $ (numero di blocchi possibili per il file indice per il numero di entrare per il file indice( ottengo il numero totale di blocchi in cui sono stored dei record del file principale), per il numero di record di ogni blocco)
 
-se non specificato diversamente, i blocchi sono pieni per intero
-
-al più il 70%: in questo caso devo prendere la parte intera inferiore dopo aver calcolato qual’è il 70% dello spazio.
-
-
-b) 
-$\frac{1024 -4 }{250} = 4.08 = 4$ 
-non abbiamo liste di overflow: ogni blocco non punta ad altri blocchi !
-se non abbiamo liste di overflow: dobbiamo solo riservare spazio per un puntatore
-se abbiamo snumero di liste di overflow medio: aggiungiamo quel numero ad ogni 
+>[!info]
+>- se non specificato diversamente, i blocchi sono pieni per intero
+>- al più il 70%: in questo caso devo prendere la parte intera inferiore dopo aver calcolato qual’è il 70% dello spazio.
+>- non abbiamo liste di overflow: ogni blocco non punta ad altri blocchi !
+>- se non abbiamo liste di overflow: dobbiamo solo riservare spazio per un puntatore
+>- se abbiamo snumero di liste di overflow medio: aggiungiamo quel numero ad ogni 
+>- esercizio carino: senza modificare i tempi di accesso, qualè il massimo numero di record che posso memorizzzare ?
