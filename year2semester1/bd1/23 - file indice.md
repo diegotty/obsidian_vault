@@ -60,4 +60,5 @@ la ricerca per interpolazione è basata sulla conoscenza della distribuzione dei
 la ricerca per interpolazione richiede circa $1 + \log_2 \log_2 m$ accessi, rendendola quindi molto più veloce, ma è molto difficile conoscere $f$ e poi la distribuzione dei dati potrebbe cambiare nel tempo
 // non ci siamo soffermati molto su questa ricerca se ricordo bene
 ## inserimento
-esistono diverse situazioni che influenzano il costo dell’insierimento di un record. - - tutto liscio. l’ inserimento richiede
+esistono diverse situazioni che influenzano il costo dell’insierimento di un record.
+- tutto liscio. l’ inserimento richiede
