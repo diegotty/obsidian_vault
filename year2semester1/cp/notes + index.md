@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-12-12T13:30
+updated: 2024-12-13T08:47
 ---
 [notes](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7)
 [exercises](https://notability.com/n/QL1VhUe_397quBUZl2XLI)
