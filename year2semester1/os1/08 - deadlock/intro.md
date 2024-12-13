@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-13T08:47
+updated: 2024-12-13T21:12
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -151,7 +151,6 @@ else {
 	alloc[i,*] = alloc[i,*] + request[*];
 	available[*] = available[*] - request[*]>;
 }
-
 if(safe(newstate)) {
 	<carry out allocation>;
 } else {
@@ -181,7 +180,14 @@ boolean safe(state S) {
 >è per questo che l’algoritmo può bloccare i processi (quando una richiesta non si può soddisfare !)
 
 - devo verificare se una richiesta **fatta da un processo tra quelli che sto monitorando** è soddisfabile o no
-- `if(alloc[i,*] + request[*] > claim[i,*])` viene usato per controllare che i processi non richiedano più risorse di quante avevano dichiarato di volerne chiedere
+- `if(alloc[i,*] + request[*] > claim[i,*])` viene usato per controllare che i processi non richiedano più risorse di quante avevano dichiarato di volerne chiedere (basta una risorsa che sfora il claim !!)
+- se un processo viene sospeso perchè la richiesta è maggiore delle risorse allocate, esso può esser messo in più code d’attesa ! una per ogni risorsa che ha chiesto che al momento della richiesta non era disponibile (nel numero di istanze necessario)
+- se invece le risorse sono disponibili, viene creato un nuovo stato con la situazione delle tabelle futura (eventuale), e se lo stato è safe, viene effettuata l’allocazione delle risorse. se lo stato non è safe, il processo viene sospeso
+- come viene controllato se uno stato è safe ? con `safe(state S)` (pseudocodice scritto un po con i piedi)
+>[!info] osservazioni
+>i processi devono essere indipendenti! quindi senza requisiti di sincronizzazione
+>- devono quindi essere liberi di andare in esecuzione in un qualsiasi ordine, altrimenti non si può simularne l’esecuzione fino al completamento
+>- quindi, l’unica sincronizzazione presente è proprio quella sulle richieste delle risorse !
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
 - mutua esclusione: 
