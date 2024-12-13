@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T17:13
+updated: 2024-12-13T17:27
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -30,7 +30,7 @@ per la ricerca sono necessari $h+1$ accessi, dove $h$ è **l’altezza dell’al
 ### altezza di un b-tree
 l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono pieni, mentre l’altezza massima è ottenuta quando ho il minimo numero di record per ogni blocco.
 - se i blocchi, però, sono completamente pieni, un inserimento può richiedere una modifica dell’indice ad ogni livello e in ultima ipotesi può far crescere l’altezza dell’albero di un livello !!! (that would suck, man)
->[!example] esempio catastrofico di inserimento
+>[!example]- esempio catastrofico di inserimento
  si vuole inserire il record con chiave 40 in questo b-tree
  ![[Pasted image 20241213170159.png]]
  per forza di cose, arriviamo a questa forma del b-tree:
@@ -39,8 +39,22 @@ l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono pieni, men
 qual’è il valore massimo $k$ che può assumere l’altezza $h$ ?
 $\log_{d}\left( \frac{N}{e} \right)$
 ## inserimento
-l’inserimento costa:
-- $h+1$ (costa di una ricerca per ricercare il blocco in cui deve essere inserito il record)
+l’inserimento richiede:
+- $h+1$ accessi (costo di una ricerca per ricercare il blocco in cui deve essere inserito il record)
 - +1 accesso per riscrivere il blocco del file principale
 - altrimenti, se nel blocco **non c’è** spazio sufficiente per inserire il record: $+s$ accessi ($s≤2h+1$) 
 	- nel caso peggiore, per ogni livello dobbiamo sdoppiare un blocco: il che vuol dire  effettuare 1 accesso sul blocco presente, e 1 sul blocco nuovo richiesto(entrambi gli accessi in scrittura), più 1 alla fine per la nuova radice
+## cancellazione
+la cancellazione richiede:
+- $h+1$ accessi (costo di una ricerca per trovare il blocco in cui si trova il record)
+- +1 accesso per riscrivere il blocco, se il blocco **rimane pieno almeno per metà dopo la cancellazione**, altrimenti sono necessari ulteriori accessi
+>[!example]- esempio catastrofico di cancellazione
+si vuole cancellare il record con chiave 28
+![[Pasted image 20241213172042.png]]
+l’operazione, conclusa correttamente, modifica il b-tree in questo modo:
+![[Pasted image 20241213172117.png]]
+## modifica
+la modifica richiede: 
+- $h+1$ (costo di una ricerca)
+- +1 accesso per riscrivere il blocco se la modifica non coinvolge campi della chiave
+- altrimenti modifica = costo cancellazione + costo inserimento
