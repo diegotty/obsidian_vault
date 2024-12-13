@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T09:12
+updated: 2024-12-13T09:29
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -33,3 +33,18 @@ e il puntatore punta al primo blocco del file principale
 
 >[!info] rappesentazione
 ![[Pasted image 20241213090504.png|350]]
+## ricerca
+per ricercare un record con valore della chiave $k$, occorre cercare sul file indice un valore $k’$ della chiave che **ricopre $k$**, cioè tale che:
+- $k' \leq k$
+- se il record $k’$ non è l’ultimo record del file indice e $k’’$ è il valore della chiave nel record successivo, $k < k''$
+la ricerca di un record con chiave $k$ richiede:
+- 1 ricerca sul file indice ($n$ accessi per caricare l’$n$ esimo blocco, che contiene $k’$)
+- 1 accesso in lettura sul file principale
+## ricerca binaria
+poichè il file indice è ordinato in base al valore della chiave, la ricerca di un valore che ricopre la chiave può essere fatta in modo efficiente mediante la **ricerca binaria**
+la ricerca è fatta in questo modo:
+$m$ è il numero totale di blocchi per il file indice
+- si fa un accesso in lettura al blocco $\left( \frac{m}{2} \right)+1$ e si confronta $k$ con $k1$(la prima chiave del blocco)
+	- se $k = k1$ abbiamo finito!
+	- se $k < k1$ allora si ripete il procedimento sui blocco i da $1$ a $(\frac{m}{2})$
+	- altrimenti si ripete il procedimento sui blocchi da $\left( \frac{m}{2} \right)+1$ ad $m$ (il blocco $\left( \frac{m}{2} \right)+1$ va riconsiderato, perchè abbiamo controllato solo la prima chiave !)
