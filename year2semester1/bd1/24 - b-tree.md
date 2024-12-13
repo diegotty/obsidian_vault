@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T17:58
+updated: 2024-12-13T18:08
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -38,6 +38,8 @@ l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono pieni, men
 
 qual’è il valore massimo $k$ che può assumere l’altezza $h$ ?
 $\log_{d}\left( \frac{N}{e} \right)$
+ngl non mi andava di scrivere tutto il ragionamento
+\\TODO
 ## inserimento
 l’inserimento richiede:
 - $h+1$ accessi (costo di una ricerca per ricercare il blocco in cui deve essere inserito il record)
@@ -75,16 +77,18 @@ se usiamo un b-tree e assumiamo che sia i blocchi indice che i blocchi del file 
 $\frac{1024}{200} = 5$ quindi il minimo numero di record in un blocco è 3 (foglia)
 $\frac{170.000}{3} = 56.666.6666 = 56.667$ blocchi usati per livello foglia
 il primo livello di indice contiene un record per ogni blocco del file principale:$1024$
-calcoliamo la capacità dei blocchi indice
+calcoliamo la capacità dei blocchi indice:
 $20 + 4 = 24$ byte per record nel file indice
 $\frac{{1024 -4}}{24}+1=43$ max entry per indice (calcoliamo il numero di entry senza contare la prima (e quindi togliendo lo spazio che occupa, 4 byte), e poi la aggiungiamo al calcolo, in quanto è sempre una entry !)
-quindi $43 = (2 \cdot 22)-1 $, e il numero di record minimo è $23$
->
+quindi $43 = (2 \cdot 22)-1$, e il numero di record minimo è $23$
+al primo livello di indice avremo un record per ogni blocco del file principale, quindi:
+$\frac{56.667}{23}=2463,7 = 2464$
+al secondo livello avremo un record per ogni blocco del primo livello di indice, quindi:
+>$\frac{2464}{23} = 107,13 = 108$
+al terzo livello avremo un record per ogni blocco del secondo livello indice, quindi:
+$\frac{108}{23} = 5$
+al quarto livello avremo un record per ogni blocco del terzo livello di indice, e visto che $5<23$, tutti i record entrano in un blocco, e il quarto livello è la radice
 >
 >**qual è il costo di una ricerca in questo caso ?**
+il costo della ricerca sarà $4+1=5$(1 accesso per ogni livello indice + 1 per il blocco del file principale)
 
-$\frac{1024}{200} = 5$ quindi il minimo numero di record in un blocco è 3 (foglia)
-$\frac{170.000}{3} = $
-
-$\frac{{1024 - 4}}{24} + 1 = 43$ max entry per radice ! 
-min entry  per radice $\frac{512 - 4}{24} + 1 = 23$
