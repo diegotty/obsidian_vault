@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T10:30
+updated: 2024-12-13T10:43
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -64,7 +64,7 @@ esistono diverse situazioni che influenzano il costo dell’insierimento di un r
 l’ inserimento richiede
 	- costo della ricerca
 	- 1 accesso per scrivere il blocco modificato(c’è spazio nel blocco)
-	- altrimenti, 1 accesso per leggere il blocco in cui non c’è spazio, 1 accesso per scrivere il blocco successivo (in cui troviamo spazio) 
+	- altrimenti, si controlla se c’è spazio nel blocco successivo, (se c’è non basta inserirlo, bisogna rispettare l’ordine del file principale, e quindi spesso spostare diversi record tra i 2 blocchi)
 se non c’è spazio nè nel blocco precedente nè nel successivo, occorre richiedere un nuovo blocco al file system, ripartire i record tra il vecchio e il nuovo blocco(quando alloco un nuovo blocco, non metto un singolo record, ma ne metto diversi, per lasciare dello spazio libero) e riscrivere tutti i blocchi modificati
 >[!example]- esempio di inserimento con richiesta di nuovo blocco
 >![[Pasted image 20241213102439.png]]
@@ -80,4 +80,9 @@ la cancellazione richiede:
 la modifica richiede:
 - costo della ricerca
 - 1 accesso in scrittura sul blocco modificato
->[!important] se la modifica coinvolge lal chiave, la modifica diventa cancellazione + inserimento
+>[!important] se la modifica coinvolge la chiave, la modifica diventa cancellazione + inserimento
+# file con record puntati
+consideriamo ora il caso in cui il file principale contiene record puntati (ovvero, se esistono da qualche parte, dei puntatori che puntano alla posizione dei record del file principale)
+in questo caso, nella fase di inizializzazione è preferibile lasciare più spazio libero nei blocchi per successivi inserimenti, visto che poichè i record sono puntati, **non possono essere spostati** per mantenere l’ordinamento quando si inseriscono nuovi record
+- se non c’è spazio sufficiente in un blocco B per l’inserimento di un nuovo record, occorre chiedere al sistema un nuovo blocco che viene collegato a B **tramite un puntatore** ( bisogna quindi tenere conto dello spazio del puntatore nei blocchi del file principale !)
+	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket** e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
