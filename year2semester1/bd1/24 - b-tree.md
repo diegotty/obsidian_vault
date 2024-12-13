@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T17:27
+updated: 2024-12-13T17:35
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -58,3 +58,25 @@ la modifica richiede:
 - $h+1$ (costo di una ricerca)
 - +1 accesso per riscrivere il blocco se la modifica non coinvolge campi della chiave
 - altrimenti modifica = costo cancellazione + costo inserimento
+>[!info] osservazioni
+per il file principale:
+>- se il numero di record massimo che possiamo memorizzare è dispari, quindi esprimibile nella forma $2E-1$, possiamo direttamente considerare $E$ come occupazione minima !
+>- se invece il numero di record massimo è dispari, quindi esprimibile nella forma $2E$, possiamo direttamente considerare $E+1$ come occupazione minima **TRANNE** nel caso in cui ogni record occupa $t$ byte, ed  $E \cdot t$, è esattamente la metà dei byte disponibili nel blocco. in quel caso, l’occupazione minima è $E$
+>**x sicurezza, verificare !!!**
+
+>[!info] osservazioni 2
+per il file indice:
+>- valgono grosso modo le stesse considerazioni, ma bisogna considerare il fatto che nei file indice il primo record ha sempre solo la dimensione di un puntatore.
+
+>[!example] esempio1
+supponiamo di avere un file di 170.000 record. ogni record occupa 200 byte, di cui 20 per il campo chiave. ogni blocco contiene 1024 byte. un puntatore a blocco ocucpa 4 byte.
+se usiamo un b-tree e assumiamo che sia i blocchi indice che i blocchi del file principale sono pieni al **minimo**:
+**quanti blocchi vengono usati per il livello foglia (file principale) e quanti per l’indice, considerando tutti i livelli non foglia ?**
+>
+>**qual è il costo di una ricerca in questo caso ?**
+
+$\frac{1024}{200} = 5$ quindi il minimo numero di record in un blocco è 3 (foglia)
+$\frac{170.000}{3} = $
+
+$\frac{{1024 - 4}}{24} + 1 = 43$ max entry per radice ! 
+min entry  per radice $\frac{512 - 4}{24} + 1 = 23$
