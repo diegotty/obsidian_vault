@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T17:35
+updated: 2024-12-13T17:58
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -69,9 +69,17 @@ per il file indice:
 >- valgono grosso modo le stesse considerazioni, ma bisogna considerare il fatto che nei file indice il primo record ha sempre solo la dimensione di un puntatore.
 
 >[!example] esempio1
-supponiamo di avere un file di 170.000 record. ogni record occupa 200 byte, di cui 20 per il campo chiave. ogni blocco contiene 1024 byte. un puntatore a blocco ocucpa 4 byte.
+supponiamo di avere un file di 170.000 record. ogni record occupa 200 byte, di cui 20 per il campo chiave. ogni blocco contiene 1024 byte. un puntatore a blocco occupa 4 byte.
 se usiamo un b-tree e assumiamo che sia i blocchi indice che i blocchi del file principale sono pieni al **minimo**:
 **quanti blocchi vengono usati per il livello foglia (file principale) e quanti per l’indice, considerando tutti i livelli non foglia ?**
+$\frac{1024}{200} = 5$ quindi il minimo numero di record in un blocco è 3 (foglia)
+$\frac{170.000}{3} = 56.666.6666 = 56.667$ blocchi usati per livello foglia
+il primo livello di indice contiene un record per ogni blocco del file principale:$1024$
+calcoliamo la capacità dei blocchi indice
+$20 + 4 = 24$ byte per record nel file indice
+$\frac{{1024 -4}}{24}+1=43$ max entry per indice (calcoliamo il numero di entry senza contare la prima (e quindi togliendo lo spazio che occupa, 4 byte), e poi la aggiungiamo al calcolo, in quanto è sempre una entry !)
+quindi $43 = (2 \cdot 22)-1 $, e il numero di record minimo è $23$
+>
 >
 >**qual è il costo di una ricerca in questo caso ?**
 
