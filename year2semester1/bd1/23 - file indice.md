@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T11:00
+updated: 2024-12-13T11:15
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -85,8 +85,52 @@ la modifica richiede:
 consideriamo ora il caso in cui il file principale contiene record puntati (ovvero, se esistono da qualche parte, dei puntatori che puntano alla posizione dei record del file principale)
 in questo caso, nella fase di inizializzazione è preferibile lasciare più spazio libero nei blocchi per successivi inserimenti, visto che poichè i record sono puntati, **non possono essere spostati** per mantenere l’ordinamento quando si inseriscono nuovi record
 - se non c’è spazio sufficiente in un blocco B per l’inserimento di un nuovo record, occorre chiedere al sistema un nuovo blocco che viene collegato a B **tramite un puntatore** ( bisogna quindi tenere conto dello spazio del puntatore nei blocchi del file principale !)
-	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket** e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
+	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket**(e i blocchi oltre al primo sono chiamati **liste di overflow**) e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
 ## ricerca
 la ricerca di un record con chiave $v$ richiede la ricerca di una chiave nel file principale che ricopre $v$, e poi la scansione del bucket corrispondente (**il file principale non è più ordinato !!!!!!!!**)
 ## cancellazione
-la cancellazione di un record richiede la ricerca del record e poi la modifica dei bit di cancellazione nell’intestazione del blocco (WHAT ? SORRY ? COME ? \\QUESTION)
+la cancellazione di un record richiede la ricerca del record e poi la modifica dei bit di cancellazione nell’intestazione del blocco 
+>[!info] conspiracy theory
+>non credo abbia spiegato questa cosa, ma immagino che nell’itestazione del blocco (nel caso file con record puntati), visto che non è possibile veramente cancellare record(in quanto avremmo puntatori che puntano ai record sbagliati), esista un’area usata per tenere dei flag, tra cui se un dato record dovrebbe apparire cancellato
+>in questo caso, nella modifica avrebbe senso fare quello che è scritto nelle slide
+## modifica
+la modifica di un record richiede la ricerca del record, poi:
+- se la modifica non coinvolge campi chiave, il record viene modificato
+- altrimenti, la modifica equivale ad una cancellazione seguita da un inserimento (in questo caso, non è sufficiente modificare il bit di cancellazione del record cancellato, ma è necessario inserire in esso un puntatore al nuovo record inserito in modo che questo sia raggiungibile da qualsiasi record che contenga un puntatore al record cancellato)
+>[!important] poichè non è possibile mantenere il file principale ordinato, se si vuole avere la possibilità di esaminare il file seguendo l’ordinamento della chiave, occorre inserire in ogni record un puntatore al record successivo nell’ordinamento (werid ? weird)
+## indice secondario
+l’indice secondario è un **indice denso** (cioè esiste un record nell’indice secondario per ogni record del file principale) su un’altra chiave(**sempre univoca** ?)
+- viene usato in caso si vuole ordinare anche su un’altra chiave
+- anche queto indice è fatto a blocchi
+- è possibile fare la ricerca binaria
+
+>[!example] esempio1
+supponiamo di avere un file con 150000 record. ogni record occupa 250 byte, di cui 50 per il campo chiave. ogni blocco contiene 1024 byte. un puntatore a blocco occupa 4 byte.
+**a) se usiamo un indice ISAM sparso, e assumiamo che i record non siano puntati e che il fattore di utilizzo dei blocchi del file principale sia 0,8 (cioè i blocchi non sono completamente pieni, ma pieni al più 70%), quanti blocchi dobbiamo utilizzare per l’indice ?**
+**b) se usiamo un indice ISAM sparso, e assumiamo che i record siano puntati e che i blocchi del file principale siano pieni, quanti blocchi dobbiamo utilizzare per l’indice ?**
+**c)se utilizziamo la ricerca binaria, quale è il numero massimo di accessi a blocco per ricercare un record presente nel file nei casi a) e b), supponendo nel caso b) di non avere liste di overflow ? **
+
+a)per sapere quanti blocchi servono per l’indice, dobbiamo sapere quanti blocchi occupa il file principale. 
+$\frac{70}{100}\cdot 1024 = 716$
+$\frac{716}{250} = 2,86 = 2$ (parte intera inferiore) (2 record per blocco)
+$\frac{150.000}{2} = 75.000$
+ogni record del file indice ha dimensione $50 + 4 = 54$ byte.
+$\frac{1024}{54} = 18,96 = 18$ (parte intera inferiore)
+$\frac{75.000}{18}=4166,6 = 4167$ (parte intera superiore)
+
+c) a. costo massimo ricerca binaria  ? $2^{13} + 1 = 14$
+c) b.
+
+esercizio carino: senza modificare i tempi di accesso, qualè il massimo numero di record che posso memorizzzare ?
+$2^{13} \cdot 18 \cdot 4 = $ (numero di blocchi possibili per il file indice per il numero di entrare per il file indice( ottengo il numero totale di blocchi in cui sono stored dei record del file principale), per il numero di record di ogni blocco)
+
+se non specificato diversamente, i blocchi sono pieni per intero
+
+al più il 70%: in questo caso devo prendere la parte intera inferiore dopo aver calcolato qual’è il 70% dello spazio.
+
+
+b) 
+$\frac{1024 -4 }{250} = 4.08 = 4$ 
+non abbiamo liste di overflow: ogni blocco non punta ad altri blocchi !
+se non abbiamo liste di overflow: dobbiamo solo riservare spazio per un puntatore
+se abbiamo snumero di liste di overflow medio: aggiungiamo quel numero ad ogni 
