@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T09:46
+updated: 2024-12-13T10:30
 ---
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
@@ -61,4 +61,23 @@ la ricerca per interpolazione richiede circa $1 + \log_2 \log_2 m$ accessi, rend
 // non ci siamo soffermati molto su questa ricerca se ricordo bene
 ## inserimento
 esistono diverse situazioni che influenzano il costo dell’insierimento di un record.
-- tutto liscio. l’ inserimento richiede
+l’ inserimento richiede
+	- costo della ricerca
+	- 1 accesso per scrivere il blocco modificato(c’è spazio nel blocco)
+	- altrimenti, 1 accesso per leggere il blocco in cui non c’è spazio, 1 accesso per scrivere il blocco successivo (in cui troviamo spazio) 
+se non c’è spazio nè nel blocco precedente nè nel successivo, occorre richiedere un nuovo blocco al file system, ripartire i record tra il vecchio e il nuovo blocco(quando alloco un nuovo blocco, non metto un singolo record, ma ne metto diversi, per lasciare dello spazio libero) e riscrivere tutti i blocchi modificati
+>[!example]- esempio di inserimento con richiesta di nuovo blocco
+>![[Pasted image 20241213102439.png]]
+>![[Pasted image 20241213102507.png]]
+>![[Pasted image 20241213102541.png]]
+## cancellazione
+la cancellazione richiede:
+- costo della ricerca
+- 1 accesso per scrivere il blocco modificato, e in più:
+	- se il record cancellato è il primo di un blocco, va modificato anche l’indice (1 accesso in scrittura)
+	- se il record cancellato è l’unico del blocco, il blocco viene restituito al sistema e viene modificato anche l’indice (1 accesso in scrittura)
+## modifica
+la modifica richiede:
+- costo della ricerca
+- 1 accesso in scrittura sul blocco modificato
+>[!important] se la modifica coinvolge lal chiave, la modifica diventa cancellazione + inserimento
