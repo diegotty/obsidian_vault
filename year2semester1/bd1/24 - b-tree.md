@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T11:53
+updated: 2024-12-13T16:58
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -24,3 +24,8 @@ ogni blocco di un file indice è costituito di record contenenti una coppia $(v,
 >[!important] ogni record di un file indice, ha una chaive che ricopre quelle del sottoalbero che parte dal blocco puntato
 ![[Pasted image 20241213115342.png]]
 ## ricerca
+durante la ricerca di un record con un dato valore della chiave, si accede agli indici a partire da quello più alto, e si segue il puntatore del record con la chiave che copre il valore di ricerca, findo ad arrivare ad un unico blocco, del file principale.
+per la ricerca sono necessari $h+1$ accessi, dove $h$ è **l’altezza dell’albero**
+
+### altezza di un b-tree
+l’altezza minima del b-tree è ottenuta quando tutti i blocchi sono 
