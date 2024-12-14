@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-13T21:12
+updated: 2024-12-14T06:58
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -96,7 +96,7 @@ occorre decidere se l’attuale richiesta di una risorsa può portare ad un dead
 - non mandare in esecuzione un processo se le sue richieste possono portare a deadlock
 - non conedere una risorsa ad un processo se allocarla può portare a deadlock 
 ### algoritmo del banchiere
-- valido per le risorse riusabili
+- valido per le risorse riusabili(non per le risorse consumabili !)
 il sistema ha uno **stato**, che è l’attuale allocazione delle risorse hai processi
 - uno stato è **safe**(sicuro) se da esso parte almeno un cammino che non porta ad un deadlock
 - uno stato non sicuro è **unsafe** (insicuro)(insecure ??? man up kid)
@@ -190,13 +190,34 @@ boolean safe(state S) {
 >- quindi, l’unica sincronizzazione presente è proprio quella sulle richieste delle risorse !
 ## rilevare 
 il SO lascia che eventualemente ci sia deadlock, ma deve rilevare se ciò accade (ogni tanto, il SO, vede se si è verificato, e notifica all’utente o prende decisioni per rimuoverlo)
-- mutua esclusione: 
-- hold-and wait:
-- niente preemption per le risorse:
-- attesa circolare
+si usa la stesse strutture dati dell’algortimo del banchiere, tranne per la **claim** matrix, che viene sostituita da una matrice contenente le richieste effettuate da tutti i processi (in un dato momento) (come `request`, ma per tutti i processi)
+### algoritmo
+1. marca tutti i processi che non hanno allocato nulla
+2. $w \leftarrow V$
+3. (inizio ciclo) sia $i$ un processo non marcato t.c. $Q_{ik}\leq w_{k}$, $\forall 1\leq k \leq m$(cioè che il suo vettore di richiesta è soddisfabile). le sue risorse possono essere accordate
+ 4. se $i$ non esiste, vai al passo 6 (c’è almeno un processo non marcato)
+ 5. marca $i$ e aggiorna $w \leftarrow w + A_i$ , poi ritorna al passo 3 (facciamo finta il processo venga eseguito a termine e che le sue risorse vengano liberate)
+ 6. (fine ciclo)
+ 7. c’è un deadlock se e solo se esiste un processo non marcato
+ >[!info] rappresentazione delle strutture dati
+ ![[Pasted image 20241214062640.png]]
+ in questo caso ho un deadlock !! riesco solo a marcare P3
+
+una volta rilevato il deadlock, si può:
+- terminare forzosamente tutti i processi coinvolti nel deadlock (soluzione più comune, e almeno un processo non in deadlock resta sempre)
+- mantenere dei punti di riprisitino, ed effettuare il ripristino al punto precedente ( lo stallo può verificarsi nuovamente, ma è improbabile che lo faci all’infinito)
+- terminare forzosamente i processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
+- sottrarre forzosamente risorse ai processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
 ## ignorare 
 il SO lascia che il deadlock accada: se dei processi vanno in deadlock, è colpa dell’utente (questa gestione non è accettabile, in generale, per i processi del SO)
-- mutua esclusione: 
-- hold-and wait:
-- niente preemption per le risorse:
-- attesa circolare
+- banale, il SO non fa niente ( e non c’è niente da dire :))
+>[!info] vantaggi e svantaggi
+![[Pasted image 20241214064933.png]]
+# deadlock in linux
+come sempre, Linux implementa una gestione minimale ma il più efficiente possibile:
+se dei processi utente sono scritti male e possono andare in deadlock, peggio per loro, che ci vadano !!!! (FUCK EM !!!)
+- vorrà dire che saranno tutti bloccati (`TASK_INTERRUPTIBLE`)
+- sta all’utente accorgersene e killarli, e visto che sono solo processi utente, non possono fare grande danno
+invece, per quanto riguarda il kernel, c’è la **prevenzione dell’attesa circolare** ( con un ordinamento crescente delle risorse, come abbiamo visto sopra)
+- i lock vengono sempre acquisiti in un ordine fisso e predeterminato
+# filosofi a cena
