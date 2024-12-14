@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-13T18:08
+updated: 2024-12-14T20:44
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
@@ -63,7 +63,7 @@ la modifica richiede:
 >[!info] osservazioni
 per il file principale:
 >- se il numero di record massimo che possiamo memorizzare è dispari, quindi esprimibile nella forma $2E-1$, possiamo direttamente considerare $E$ come occupazione minima !
->- se invece il numero di record massimo è dispari, quindi esprimibile nella forma $2E$, possiamo direttamente considerare $E+1$ come occupazione minima **TRANNE** nel caso in cui ogni record occupa $t$ byte, ed  $E \cdot t$, è esattamente la metà dei byte disponibili nel blocco. in quel caso, l’occupazione minima è $E$
+>- se invece il numero di record massimo è pari, quindi esprimibile nella forma $2E$, possiamo direttamente considerare $E+1$ come occupazione minima **TRANNE** nel caso in cui ogni record occupa $t$ byte, ed  $E \cdot t$, è esattamente la metà dei byte disponibili nel blocco. in quel caso, l’occupazione minima è $E$
 >**x sicurezza, verificare !!!**
 
 >[!info] osservazioni 2
