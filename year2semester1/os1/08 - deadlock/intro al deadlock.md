@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-14T06:49
+updated: 2024-12-14T06:58
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -213,3 +213,11 @@ il SO lascia che il deadlock accada: se dei processi vanno in deadlock, è colpa
 - banale, il SO non fa niente ( e non c’è niente da dire :))
 >[!info] vantaggi e svantaggi
 ![[Pasted image 20241214064933.png]]
+# deadlock in linux
+come sempre, Linux implementa una gestione minimale ma il più efficiente possibile:
+se dei processi utente sono scritti male e possono andare in deadlock, peggio per loro, che ci vadano !!!! (FUCK EM !!!)
+- vorrà dire che saranno tutti bloccati (`TASK_INTERRUPTIBLE`)
+- sta all’utente accorgersene e killarli, e visto che sono solo processi utente, non possono fare grande danno
+invece, per quanto riguarda il kernel, c’è la **prevenzione dell’attesa circolare** ( con un ordinamento crescente delle risorse, come abbiamo visto sopra)
+- i lock vengono sempre acquisiti in un ordine fisso e predeterminato
+# filosofi a cena
