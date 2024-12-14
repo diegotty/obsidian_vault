@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-14T06:26
+updated: 2024-12-14T06:49
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -194,14 +194,22 @@ si usa la stesse strutture dati dell’algortimo del banchiere, tranne per la **
 ### algoritmo
 1. marca tutti i processi che non hanno allocato nulla
 2. $w \leftarrow V$
-3. sia $i$ un processo non marcato t.c. $Q_{ik}\leq w_{k}$, $\forall 1\leq k \leq m$. le sue risorse possono essere accordate
- 4. se $i$ non esiste, vai al passo 6
- 5. marca e $i$ e aggiorna $w \leftarrow w + A_i$ , poi ritorna al passo 3 (facciamo finta che le sue risorse vengano liberate)
- 6. c’è un deadlock se e solo se esiste un processo non marcato
- >[!info]
+3. (inizio ciclo) sia $i$ un processo non marcato t.c. $Q_{ik}\leq w_{k}$, $\forall 1\leq k \leq m$(cioè che il suo vettore di richiesta è soddisfabile). le sue risorse possono essere accordate
+ 4. se $i$ non esiste, vai al passo 6 (c’è almeno un processo non marcato)
+ 5. marca $i$ e aggiorna $w \leftarrow w + A_i$ , poi ritorna al passo 3 (facciamo finta il processo venga eseguito a termine e che le sue risorse vengano liberate)
+ 6. (fine ciclo)
+ 7. c’è un deadlock se e solo se esiste un processo non marcato
+ >[!info] rappresentazione delle strutture dati
+ ![[Pasted image 20241214062640.png]]
+ in questo caso ho un deadlock !! riesco solo a marcare P3
+
+una volta rilevato il deadlock, si può:
+- terminare forzosamente tutti i processi coinvolti nel deadlock (soluzione più comune, e almeno un processo non in deadlock resta sempre)
+- mantenere dei punti di riprisitino, ed effettuare il ripristino al punto precedente ( lo stallo può verificarsi nuovamente, ma è improbabile che lo faci all’infinito)
+- terminare forzosamente i processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
+- sottrarre forzosamente risorse ai processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
 ## ignorare 
 il SO lascia che il deadlock accada: se dei processi vanno in deadlock, è colpa dell’utente (questa gestione non è accettabile, in generale, per i processi del SO)
-- mutua esclusione: 
-- hold-and wait:
-- niente preemption per le risorse:
-- attesa circolare
+- banale, il SO non fa niente ( e non c’è niente da dire :))
+>[!info] vantaggi e svantaggi
+![[Pasted image 20241214064933.png]]
