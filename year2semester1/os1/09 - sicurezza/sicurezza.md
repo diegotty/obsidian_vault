@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T17:46
+updated: 2024-12-17T18:01
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -60,4 +60,25 @@ l’autenticazione è il primo passo da parte del SO per protegere il sistema, e
 l’autenticazione ha 2 passi:
 -  identificazione
 - verifica
-determina quindi se un utente è abilitato ad accedere al sistema, e determina anche i privilegi
+determina quindi se un utente è abilitato ad accedere al sistema, e determina anche i privilegi dell’utente abilitato (linux !!!!!!)
+rende possibile il **discretionary control access**(controllo di accesso discrezionale), in cui un utente può decidere a quali utenti concedere determinati permessi
+## mezzi per l’autenticazione
+l’autenticazione può essere svolta in 3 fattori: almeno uno deve essere presente, ed è meglio se se ne usano 2 contemporaneamente (autenticazione a 2 fattori)
+- qualcosa che sai (password)
+- qualcosa che hai (chiave, badge RFID)
+- qualcosa che sei (biometrica: impronta, retina, …)
+bisogna comunque tenere in considerazione che questi fattori possono avere qualche problema (dimenticarsi la password, perdere un badge, cambiare i connotati (?????))
+**autenticazione con password**: quella più nota ed usata, e spesso anche l’unica. è importante che le password siano memorizzate non in chiaro !
+**autenticazione con token**: si usano oggetti fisici (**token**) posseduti da un utente per l’autenticazione, ad esempio:
+- memory card: possono memorizzare i dati, ma senza elaborarli (es: bancomat tradizionali, carte per acceso a camere d’albergo)
+	- svantaggi: serve un lettore apposito, si può perdere il token
+- smartcard: hanno un microprocessore, memoria e porte I/O. ne esistono di diversi tipi, a seconda dei seguenti aspetti:
+	- caratteristiche fisiche: possono presentarsi come una carta di credito, una chiavetta USB,..
+	- interfaccia: spesso serve un lettore apposito
+	- protocollo di autenticazione: ci può essere un vero protocollo di autenticazione(domanda-risposta, non possibile per le memory card), e quindi potrebbe esserci un generatore di password statico o dinamico
+**autenticazione biometrica**: recentemente, la biometrica si è espansa in autenticazione tramite qualcosa che sei, e autenticazione con qualcosa che fai, che portano a rispettivamente:
+- **autenticazione biometrica statica**: include il riconoscimento tramite caratteristiche facciali, impronte digitali, geometria della mano, retina e iride, ma anche riconoscimento basato su pattern, che però è complesso e costoso 
+- **autenticazione biometrica dinamica**: include il riconoscimento tramite firma, voce, ritmo di battitura (wpm)
+>[!info] costo vs accuratezza !
+![[Pasted image 20241217180030.png]]
+## controllo di accesso
