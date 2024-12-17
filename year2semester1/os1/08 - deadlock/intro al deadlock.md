@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-17T17:01
+updated: 2024-12-17T17:04
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -344,3 +344,7 @@ philosopher(int me) {
 }
 ```
 con i messaggi ho la possibilità di usare `nbreceive`, quindi di fare una richiesta non bloccante (non possibile con i semafori: `wait` è bloccante)
+non c’è deadlock, ma ci possono essere:
+- livelock(tutti i filosofi prendono la rispettiva forchetta sinistra, nessuno riesce a prendere la destra. quindi tutti rilasciano la sinistra,e si ricomincia da capo)
+	-se `think_for_a_random_time()` è veramente random, è difficile che ciò accada
+- starvation(alcuni filosofi non riescono mai a mangiare)
