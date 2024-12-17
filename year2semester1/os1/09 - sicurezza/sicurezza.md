@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T19:46
+updated: 2024-12-17T20:01
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -97,3 +97,25 @@ le 3 modalità possono essere presenti contemporaneamente ! ovviamente applicate
 ![[Pasted image 20241217194306.png|500]]
 quando viene fatta una richiesta, viene controllata la tabella (o la struttura che contiene queste informazioni (es, in Linux per i file abbiamo i 3 valori))
 inoltre la tabella deve poter evolvere: deve essere possibile scrivere nella tabella (solo da chi ha il permesso)
+### controllo di accesso basato su ruoli
+ viene implementato il principio di minimo privilegio: esistono dei ruoli, e ciascun ruolo deve contenere il minimo insieme di diritti d’accesso per il ruolo stesso
+ - ogni utente è assegnato ad uno o più ruoli, che lo abilitano ad effettuare le operazioni richieste per quel ruolo (ma solo mentre si sta agendo sotto quel ruolo)
+ >[!info] rappresentazione grafica dei ruoli
+ ![[Pasted image 20241217194925.png|350]]
+
+>[!info] matrice del controllo di accesso: rappresentazione RBAC
+in questo caso, sono cecessarie 2 matrici: 
+la prima identifica i permessi che ha ogni ruolo:
+![[Pasted image 20241217195102.png]]
+>
+la seconda tiene traccia di che ruoli ha ogni utente:
+![[Pasted image 20241217195047.png|300]]
+# meccanismi di protezione di UNIX
+in UNIX, la sicurezza è tipicamente basata sull’autenticazione dell’utente (**User-Oriented Access Control**)
+- ci possono essere altri meccanismi (es: NIS, LDAP, Kerberos)
+per ogni utente c’è uno *username*(alfanumerico) e un *uid*(numerico intero)
+- lo uid è usato ogni volta che occorre dare un proprietaro ad una risorsa (file, processi, etc)
+ogni utente appartiene ad un gruppo, ed ogni gruppo è identificato da *groupname* e *gid*
+le informazioni riguardo i gruppi a cui appartiene un utente sono contenute in alcuni file di sistema: `/etc/group`, `/etc/passwd`(talvolta in combinazione con `/etc/shadow`)
+- dentro `/etc/passwd` potremmo trovare: `sabinar:x:6335:283:Sabrina Rossi:/home/sabinar:/bin/csh`
+- dentro `/etc/group` potremmo trovare: `aan:x:283:`
