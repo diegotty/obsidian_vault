@@ -211,12 +211,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year2semester1/os1/07 - concorrenza/intro alla concorrenza.md",
+                    "file": "year2semester1/os1/08 - deadlock/intro al deadlock.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "intro alla concorrenza"
+                  "title": "intro al deadlock"
                 }
               }
             ]
@@ -275,7 +275,8 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300
+        "width": 300,
+        "collapsed": true
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -374,8 +375,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "87bff695949ea9dc",
-      "mtime": "2024-11-25T11:50:59+01:00"
+      "active": "8cc86bda50214495",
+      "mtime": "2024-12-17T16:20:40+01:00"
     },
     "update indexes": {
       "main": {
