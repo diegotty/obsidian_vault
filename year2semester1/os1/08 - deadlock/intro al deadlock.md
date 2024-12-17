@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-17T16:46
+updated: 2024-12-17T17:01
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -268,4 +268,79 @@ void main() {
 	parbegin(philosopher[0], philosopher[1], philosopher[2], philosopher[3], philosopher[4])
 }
 ```
-penso al fatto che il problema è che tutti i filosofi vogliono mangiare contemporaneamente:
+penso al fatto che il problema è che tutti i filosofi vogliono mangiare contemporaneamente: creo un semaforo che inizializzo a 4.
+- cambiamo un po i parametri del problema (nel problema tradizionale, i filosofi rimangono sempre seduti sulle sedie)
+## terza soluzione
+```c
+semaphore fork[N] = {1, 1, ..., 1};
+
+philosopher(int me) {
+	int left, right, first, second;
+	left = me;
+	right = (me+1)%N;
+	first = right < left ? right : left;
+	second = right < left ? left : right;
+	
+	while(true) {
+		think();
+		wait(fork[first]);
+		wait(fork[second]);
+		eat();
+		signal(fork[first]);
+		signal(fork[second]);
+	}
+}
+```
+mentre nella prima soluzione si prende sempre prima la forchetta di sinistra e poi la forchetta di destra, in questo caso $P_{n-1}$ prende prima la forchetta di destra e poi quella di sinistra 
+- con questa soluzione, anche se tutti i filosofi arrivano ai rispettivi `wait(fork[first])`, il filosofo $n-1$ chiederà `fork[0]`, che è già occupata, e quindi il filosofo $n-2$ potrà mangiare 
+## quarta soluzione
+```c
+mailbox fork[N];
+
+init_forks() {
+	int i;
+	for(i=0; i<N; i++) {
+		nbsend(fork[i], "fork");
+	}
+}
+
+philosopher(int me) {
+	int left, right;
+	message fork1, fork2;
+	left = me;
+	right = (me+1)%N;
+	first = right < left ? right : left;
+	second = right < left ? left : right;
+	
+	while(true) {
+		think_for_a_while();
+		receive(fork[first], fork1);
+		receive(fork[second], fork2);
+		eat();
+		nbsend(fork[first], fork1);
+		nbsend(fork[second], fork2)
+	}
+}
+```
+come soluzione 3 ma con mailbox
+## quinta soluzione
+```c
+philosopher(int me) {
+	int left, right;
+	message fork1, fork2;
+	left = me;
+	right = (me+1)%N;
+	
+	while(true) {
+		think_for_a_random_time();
+		if(nbreceive(fork[left], fork1)) {
+			if(nbreceive(fork[right], fork2)) {
+				eat();
+				nbsend(fork[right], fork1);
+			}
+			nbsend(fork[left], fork2)
+		}
+	}
+}
+```
+con i messaggi ho la possibilità di usare `nbreceive`, quindi di fare una richiesta non bloccante (non possibile con i semafori: `wait` è bloccante)
