@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T20:01
+updated: 2024-12-17T20:15
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -116,6 +116,31 @@ in UNIX, la sicurezza è tipicamente basata sull’autenticazione dell’utente 
 per ogni utente c’è uno *username*(alfanumerico) e un *uid*(numerico intero)
 - lo uid è usato ogni volta che occorre dare un proprietaro ad una risorsa (file, processi, etc)
 ogni utente appartiene ad un gruppo, ed ogni gruppo è identificato da *groupname* e *gid*
-le informazioni riguardo i gruppi a cui appartiene un utente sono contenute in alcuni file di sistema: `/etc/group`, `/etc/passwd`(talvolta in combinazione con `/etc/shadow`)
+le informazioni riguardo i gruppi stessi ed i gruppi a cui appartiene un utente sono contenute in alcuni file di sistema: `/etc/group`, `/etc/passwd`(talvolta in combinazione con `/etc/shadow`)
 - dentro `/etc/passwd` potremmo trovare: `sabinar:x:6335:283:Sabrina Rossi:/home/sabinar:/bin/csh`
-- dentro `/etc/group` potremmo trovare: `aan:x:283:`
+- dentro `/etc/group` potremmo trovare: `aan:x:283:`(*groupname:x:gid*)
+## login
+il login può essere fatto su un terminale della macchina (processo `getty`) o tramite rete (`telnet, ssh`)
+- richiede una coppia username+password
+- se la coppia corrisponde ad una entry di `/etc/passwd`, viene eseguita la shell indicata (`/bin/csh`nel caso di Sabrina Rossi)
+- quando la shell esegue `exit`, si ritorna al `getty` o si chiude la connessione di rete
+- all’interno di una shell si può cambiare identità con il comando `su` (i used this one !!)
+## accesso ai file
+per ogni file ci sono tre terne di permessi: **lettura, scrittura ed esecuzione**
+- la prima terna è per il proprietario del file, la seconda per il gruppo a cui il proprietario del file appartiene, e la terza per tutti gli altri utenti
+	- il proprietario è lo stesso del processo che ha creato il file, ma si può cambiare con `chown`(solo con i permessi sudo)
+i diritti si possono cambiare con `chmod` !!
+```
+**esempio (federico è il proprietario, ed appartiene al gruppo em)
+-rwxr-xr-x 1 federico em 5120 Nov 7 11:03 a.out
+-rw-r--r-- 1 federico em 233 Nov 7 11:03 test.c
+```
+
+
+gli eseguibili hanno permesso `x`, e quando vengono eseguiti, il proprietario del processo creato è l’utente che ha eseguito il file (non l’utente che ha creato il file). ciò vale anche per i comandi (`ls` è un file creato da root, ma un utente lo può eseguire)
+```
+-rwxr-xr-x 1 federico em 5120 Nov 7 11:03 a.out
+-rw-r--r-- 1 root root 1715 Oct 12 2014 /etc/passwd
+-r-sr-sr-x 1 root sys 21964 Apr 7 2002 /bin/passwd
+```
+se invece, al posto di `x`, è presente `s`, 
