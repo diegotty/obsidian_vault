@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T18:01
+updated: 2024-12-17T18:02
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -82,3 +82,7 @@ bisogna comunque tenere in considerazione che questi fattori possono avere qualc
 >[!info] costo vs accuratezza !
 ![[Pasted image 20241217180030.png]]
 ## controllo di accesso
+il controllo di accesso determina quali tipi di accesso sono ammessi, sotto quali circostanze e da parte di chi. può essere:
+- discrezionale: un utente può concedere i suoi stessi privilegi ad altri utenti
+- obbligatorio: un utente non può concedere i suoi stessi privilegi ad altri utenti
+- basato su ruoli:
