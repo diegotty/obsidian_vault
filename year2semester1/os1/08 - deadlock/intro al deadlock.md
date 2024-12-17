@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-17T16:31
+updated: 2024-12-17T16:46
 ---
 **deadlock**: blocco permanente di un insieme di processi, che competono per delle risorse di sistema o comunicano tra loro
 - il motivo di base è la richiesta contemporanea delle stesse risorse da parte di due o più processi !
@@ -223,4 +223,49 @@ invece, per quanto riguarda il kernel, c’è la **prevenzione dell’attesa cir
 # filosofi a cena
 >[!info] rappresentazione del problema dei filosofi
 ![[Pasted image 20241217162733.png]]
-n forchette, n 
+>- $n$ forchette, $n$ sedie, $n$ filosofi 
+>- ogni filosofo, per mangiare, ha bisogno di 2 forchette
+il problema è far mangiare il numero di filosofi più alto senza che ci sia deadlock
+## prima soluzione
+```c
+semaphore fork[5] = {1};
+
+void philosopher(int i) {
+	while(true) {
+		think();
+		wait(fork[i]);
+		wait(fork[(i+1)%5]);
+		eat();
+		signal(fork[(i+1)%5]);
+		signal(fork[i]);
+	}
+}
+
+void main() {
+	parbegin(philosopher[0], philosopher[1], philosopher[2], philosopher[3], philosopher[4])
+}
+```
+questa soluzione ammette deadlock: se tutti i filosofi arrivano alla rispettiva `wait(fork[i])`, tutti ottengono una forchetta e nessuno riesce a mangiare
+## seconda soluzione
+```c
+semaphore fork[5] = {1};
+semaphore room = {4}
+
+void philosopher(int i) {
+	while(true) {
+		think();
+		wait(room)
+		wait(fork[i]);
+		wait(fork[(i+1)%5]);
+		eat();
+		signal(fork[(i+1)%5]);
+		signal(fork[i]);
+		signal(room)
+	}
+}
+
+void main() {
+	parbegin(philosopher[0], philosopher[1], philosopher[2], philosopher[3], philosopher[4])
+}
+```
+penso al fatto che il problema è che tutti i filosofi vogliono mangiare contemporaneamente:
