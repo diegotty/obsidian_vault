@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T18:02
+updated: 2024-12-17T19:46
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -83,6 +83,17 @@ bisogna comunque tenere in considerazione che questi fattori possono avere qualc
 ![[Pasted image 20241217180030.png]]
 ## controllo di accesso
 il controllo di accesso determina quali tipi di accesso sono ammessi, sotto quali circostanze e da parte di chi. può essere:
-- discrezionale: un utente può concedere i suoi stessi privilegi ad altri utenti
-- obbligatorio: un utente non può concedere i suoi stessi privilegi ad altri utenti
-- basato su ruoli:
+- discrezionale: un utente può concedere i suoi stessi privilegi ad altri utenti(sulle cose che lui stesso ha creato)
+- obbligatorio: un utente non può concedere i suoi stessi privilegi ad altri utenti (molto stringente, usato in ambienti militari (??))
+- basato su ruoli
+>[!info] info
+![[Pasted image 20241217193725.png]]
+le 3 modalità possono essere presenti contemporaneamente ! ovviamente applicate a insiemi di risorse diversi
+### controllo di accesso discrezionale
+>[!info] tabella di controlo direzionale
+![[Pasted image 20241217193919.png]]
+
+>[!info] organizzazione del controllo di accesso
+![[Pasted image 20241217194306.png|500]]
+quando viene fatta una richiesta, viene controllata la tabella (o la struttura che contiene queste informazioni (es, in Linux per i file abbiamo i 3 valori))
+inoltre la tabella deve poter evolvere: deve essere possibile scrivere nella tabella (solo da chi ha il permesso)
