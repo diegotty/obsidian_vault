@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T07:23
+updated: 2024-12-18T07:38
 ---
 una password è un dato segreto, tipicamente utilizzato per identificare un utente, e garantire l’accesso sicuro
 # password in Linux
@@ -33,17 +33,31 @@ ciascuna riga del file `passwd` indica informazioni fondamentali su ciascun uten
 ## \etc\shadow
 il file `shadow` è un plaintext file, contenente, per ciascun utente del sistema, l’hash della sua password ed altre informazioni aggiuntive
 - data la criticità delle informazioni contenute, sottrarre e decifrare lo shadow file è spesso uno degli obiettivi principali di un attaccante, e conseguentemente ha permessi molto più restrittivi di passwd
-di default, ha i seguenti permessi
+di default, ha i seguenti permessi:
 ```
 -rw-r----- 1 root root 2659 Dec 22 12:21 /etc/shadow
 ```
+
 >[!info] formato riga di \etc\shadow
 ![[Pasted image 20241218072100.png]]
 >1. username: nome dell’utente a cui la password appartiene (definito in passwd)
 >2. password: password dell’utente salvato usando il Modular Crypt Format
->3. last changed: data dell’ultimo cambiamento della password, espresso in giorni trascorsi dall’Unix Epoch(01/01/1970)
->4.
->5.
->6.
+>3. last changed: data dell’ultimo cambiamento della password, espresso in giorni trascorsi dall’Unix Epoch(01/01/1970). se il valore di questo campo è 0, vuol dire che l’utente deve cambiare password al suo prossimo accesso, mentre se il campo è vuoto, vuol dire che le funzioni di invecchiamento della password sono disabilitate
+>4. min age: il minimo numero di giorni dall’ultimo cambio prima che la password possa essere nuovamente cambiata
+>5. max age: il massimo numero di giorni dopo dei quali è necessario cambiare la password
+>6. warn: quanti giorni prima della scadenza della password va avvisato l’utente
+esistono anche altri 2 campi (possiamo vedere dall’imagine che in questo caaso sono vuoti): inactive (numero di giorni dopo la scadenza della password dopo di chè l’account viene disabilitato), expire(data di scadenza dell’account)
+## modular crypt format
+è il formatoo usato nello shadow file per salvare gli hash delle password, ed è il seguente formato:
+$$$ID$salt$hash$$
+**ID**: indica l’algoritmo di salting usato per questa password (ID=1 corrisponde a MD5, ID = 6 corrisponde all’algritmo SHA512, e ne esistono tanti altri: blowfish, SHA256, …)
+**salt**: senquenza randomica data in input ad una funzione hash, per garantire un risultato unico, anche se la password data in input è la stessa
+**hash**: hash della password, calcolato con l’algoritmo ID e il salt
+## hash functions
+>[!info] rappresentazione hash function
+>![[Pasted image 20241218073629.png]]
+
+la funzione hash trasforma un input di lunghezza variabile, in un output di lunghezza fissa, in maniera **deterministica**:
+- cioè, data la stessa stringa in input, darà sempre lo stesso digest
 # attacchi a password
 # sviluppi futuri
