@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T07:38
+updated: 2024-12-18T07:53
 ---
 una password è un dato segreto, tipicamente utilizzato per identificare un utente, e garantire l’accesso sicuro
 # password in Linux
@@ -51,13 +51,34 @@ esistono anche altri 2 campi (possiamo vedere dall’imagine che in questo caaso
 è il formatoo usato nello shadow file per salvare gli hash delle password, ed è il seguente formato:
 $$$ID$salt$hash$$
 **ID**: indica l’algoritmo di salting usato per questa password (ID=1 corrisponde a MD5, ID = 6 corrisponde all’algritmo SHA512, e ne esistono tanti altri: blowfish, SHA256, …)
-**salt**: senquenza randomica data in input ad una funzione hash, per garantire un risultato unico, anche se la password data in input è la stessa
+**salt**: senquenza randomica data in input ad una funzione hash, per garantire un risultato unico
 **hash**: hash della password, calcolato con l’algoritmo ID e il salt
 ## hash functions
 >[!info] rappresentazione hash function
 >![[Pasted image 20241218073629.png]]
 
-la funzione hash trasforma un input di lunghezza variabile, in un output di lunghezza fissa, in maniera **deterministica**:
+la funzione hash trasforma un input di lunghezza variabile, in un output(chiamato hash o digest) di lunghezza fissa, in maniera **deterministica**:
 - cioè, data la stessa stringa in input, darà sempre lo stesso digest
+inoltre, una funzione hash è detta **crittografica** se:
+- è computazionalmente difficile calcolare l’inverso della funzione hash
+- è computazionalmente difficile, dato un input $x$ e il suo valore hash $d$, trovare un altro input $x_1$ che abbia lo stesso hash $d$
+- è computazionalmente difficile trovare due input diversi di lunghezz arbitraria $x_1$ ed $x_2$ che abbiano lo stesso hash $d$
+
+>[!important] collisioni
+>se due sequenze arbitrarie, di lunghezze diverse, finiscono ad avere lo stesso hash, allora si è verificata una **collisione*
+
+perchè non cifrare direttamente le password ? in entrambi casi, le password non sono leggibili da un attaccante. però:
+- se si usa una cifratura ed un attaccante ottiene la chiave, potrebbe decifrare ed ottenere tutte le password in plaintext
+- mentre le funzioni hash sono **one way**: una volta fatto l’hash, non si può più tornare indietro: se un attaccante ottiene l’hash, non potrà mai scoprire la password che l’ha generato (a parte per eccezioni, che vedremo poi)
+	- però, rimane semplice verificare se una password corrisponde a quella salvata in formato hash: basta fare l’hash della password e verificarne l’equivalenza ! (perchè l’hashing è deterministico)
 # attacchi a password
+anche se le funzioni di hash sono **one-way**, ciò non significa che esse non possano essere attaccate. i due attacchi più comuni, sono:
+## attacco dizionario
+ci sono un numero infinito di password che possono risultare nello stesso hash, quindi come è possibile scoprire qual’è quella giusta ? 
+fortunatamente per gli attaccanti, gli utenti sono pigri (non vogliono ricordarsi password complesse, e non vogliono ricordarsi tante password)
+- di conseguenza, le password di solito sono **brevi e semplici**, e la stessa password viene **riusata** molte volte per servizi diversi
+gli attaccanti quindi sanno: se gli utenti usano password semplici, molti avranno la stessa password. è quindi possibile compilare una lista di password comunemente utilizzate e fare **bruteforce**
+dato un hash $d$ che voglio invertire:
+1. per ogni $x$ nella mia lista di password, calcola
+## attacco rainbow table
 # sviluppi futuri
