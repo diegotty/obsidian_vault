@@ -42,4 +42,4 @@ in questo caso, mandiamo come parametro una stringa troppo lunga, che non entra 
 
 ## stack smashing
 di solito, fare overflow di un buffer in questo modo porta alla terminazione del programma (segmentation fault)
-tuttavia, se i dati che sono usati h
+tuttavia, se i dati che sono usati nell’overflow del buffer sono preparati in modo accurato, è possibile eseguire del codice arbitrario
