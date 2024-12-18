@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T08:08
+updated: 2024-12-18T08:14
 ---
 una password è un dato segreto, tipicamente utilizzato per identificare un utente, e garantire l’accesso sicuro
 # password in Linux
@@ -111,5 +111,14 @@ svantaggi:
 ## come proteggersi da attachi
 ci pensa il sale ! (salt)
 al posto di avere una funzione di hash $h(x) = d$, ne usiamo una di questo tipo: $h(x, s) = d$ (il salt viene preso come parametro)
-il salt viene salv
+il salt viene salvato in chiaro assieme all’hash calcolato, e ciò rende impossibile l’uso di rainbow tables, in quanto: se per ogni utente c’è un salt randomico diverso, non posso precomputare gli hash
+- inoltre, è utile la proprietà che due utenti con la stess identica password avranno due hash diversi, perchè molto probabilmente il salt saranno diversi
+
+l’attacco dizionario bruteforce funziona ancora, ma quello è inevitabile !
 # sviluppi futuri
+creare grandi dizionari di password non è semplice, e sfruttare questi dizionari al massimo è ancora più difficile
+- data una password semplice e comune, gli utenti tendono a farci spesso modifiche
+nonostante ciò, i tool usati per fare bruteforcing applicano in automatico una serie di regole a ciascuna password nel dizionario, per creare varianti comuni come quelle qui sora, però è difficile pensare a tutte le regole possibili per modifcare la password in modo sensato (di solito vengono usate regole molto generali, che si applicano ad un’ampia platea di utenti, risulta difficile trovare regole specifiche per gruppi di utenti specifici)
+
+si può però usare **machine learning** (ML), per imparare a generare password realistiche
+- ML ed in particolare deep learning sono ideali per imparare a riconoscere pattern, e l’insieme delle password “human-like” ha pattern molto specifici e riconoscibili
