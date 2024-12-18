@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-17T20:25
+updated: 2024-12-18T07:03
 ---
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
@@ -148,6 +148,9 @@ può capitare che un utente debba essere messo nelle condizioni di eseguire coma
 -r-sr-sr-x 1 root sys 21964 Apr 7 2002 /bin/passwd
 ```
 se invece, al posto di `x`, è presente `s`, l’utente può eseguire il file, e quando viene eseguito, l’utente viene “castato” all’utente proprietario del file
+
+
+>[!info] se il permesso `x` non è impostato, non è possibile eseguire un file ! (ma può essere possibile leggerlo e modificarlo, se permesso)
 
 tali permessi possono esser accordati solo da un utente amministartore, con `chmod u+s nomefile` e/o `chmod g+s nomefile`
 - con questi comandi, l’`uid` o il `gid` del processo non sono quelli dell’utente che lo ha lanciato, ma del proprietario del file eseguibile
