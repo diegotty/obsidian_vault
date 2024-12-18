@@ -1,7 +1,7 @@
 ---
 created: 2024-12-18
 related to: 
-updated: 2024-12-18T13:28
+updated: 2024-12-18T13:29
 ---
 l’area di memoria di un processo caricare in memoria (principale) è diviso nelle sezioni seguenti:
 >[!figure] area di memoria di un processo
@@ -42,4 +42,13 @@ in questo caso, mandiamo come parametro una stringa troppo lunga, che non entra 
 
 ## stack smashing
 di solito, fare overflow di un buffer in questo modo porta alla terminazione del programma (segmentation fault)
-tuttavia, se i dati che sono usati nell’overflow del buffer sono preparati in modo accurato, è possibile eseguire del codice arbitrario
+tuttavia, se i dati che sono usati nell’overflow del buffer sono preparati in modo accurato, è possibile eseguire del codice arbitrario:
+```c
+void foo(char *s) {
+	char buf[10];
+	strcpy(buf, s);
+	printf("buf is %s\n", s);
+}
+
+foo("stringatroppolun\xda\x51\x55\x55\x55\x55\x00\x00");
+```
