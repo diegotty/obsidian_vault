@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T07:53
+updated: 2024-12-18T08:08
 ---
 una password è un dato segreto, tipicamente utilizzato per identificare un utente, e garantire l’accesso sicuro
 # password in Linux
@@ -78,7 +78,38 @@ ci sono un numero infinito di password che possono risultare nello stesso hash, 
 fortunatamente per gli attaccanti, gli utenti sono pigri (non vogliono ricordarsi password complesse, e non vogliono ricordarsi tante password)
 - di conseguenza, le password di solito sono **brevi e semplici**, e la stessa password viene **riusata** molte volte per servizi diversi
 gli attaccanti quindi sanno: se gli utenti usano password semplici, molti avranno la stessa password. è quindi possibile compilare una lista di password comunemente utilizzate e fare **bruteforce**
+si prosegue in questo modo: 
+
 dato un hash $d$ che voglio invertire:
-1. per ogni $x$ nella mia lista di password, calcola
+1. per ogni $x$ nella mia lista di password, calcola $d_{x} = h(x)$
+2. ripeti finchè $d_{x} == d$
+
+>[!info] esistono oggi dizionari di svariati GB contenenti password ! (es: rockyou.txt)
+>some really funny passwords in there lmao
+
+vantaggi:
+- molto semplice da effettuare
+- versatile: funziona per qualsiasi funzione hash
+- moltissimi tool per automatizzare il tutto (es: John the Ripper)
+svantaggi:
+- può essere molto lento, in quanto richiede la computazione in real time degli hash
+- la password può non essere presente nel dizionario
 ## attacco rainbow table
+è nato come miglioramento dell’attacco dizionario
+le funzioni hash sono deterministiche: data una lista di passwords ed una funzione has, l’hash computato sarà sempre lo stess per ciascuna password
+- perchè allora calcolare l’hash delle password del dizionario in real time, durante l’attacco ? meglio precomputarle !
+il **rainbow table** è un dizionario di coppie (valore hash, plaintext password) usato per trovare velocemente quale password corrisponde ad un hash
+- viene creato offline, e riutilizzato più volte per molti attacchi
+- per quanto sembri un miglioramento facile, viene utilizzato un sistema più complesso di funzioni di riduzione, per mantenere trattabili le dimensioni della tabella
+
+vantaggi:
+- molto semplice da effettuare
+- molto più veloce da effettuare rispetto ad un attacco dizionario
+svantaggi:
+- rigidita: una data table funziona solo per la funzione di hash per la quale è stata creata (se dobbiamo lavorare su un’altra funzione hash, dobbiamo creare un’altra rainbow table)
+
+## come proteggersi da attachi
+ci pensa il sale ! (salt)
+al posto di avere una funzione di hash $h(x) = d$, ne usiamo una di questo tipo: $h(x, s) = d$ (il salt viene preso come parametro)
+il salt viene salv
 # sviluppi futuri
