@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-19T10:03
+updated: 2024-12-19T10:13
 ---
 in sistemi di calcolo con una sola CPU, i programmi sono eseguiti concorrentemente in modo **interleaved**: la CPU esegue alcune istruzioni di un programma, sospende quel programma, esegue istruzioni di altri programmi, ritorna ad eseguire istruzioni del primo, etc.
 - questo perchè l’esecuzione concorrente permette un uso efficiente della CPU
@@ -69,5 +69,24 @@ in questo caso, i due schedule producono gli stessi valori **solo** se il valore
 ### equivalenza di schedule
 due schedule sono equivalenti se, per ogni dato modificato, producono valori uguali, **dove** due valori sono uguali **solo se sono prodotti dalla stessa sequenza di operazioni**
 >[!info] osservazione
-in questo caso, i seguenti schedule non sono equivalenti, in quanto, pur d
+in questo caso, i seguenti schedule non sono equivalenti, in quanto, pur dando lo stesso risultato su $X$, $X$ non è prodotto dalla stessa sequenza di operazioni. però, visto che sono entrambi schedule seriali, sono entrambi schedule corretti
 ![[Pasted image 20241219100258.png]]
+
+## garantire la serializzabilità
+testare la serializzabilità per un dato schedule, a livello pratico, è molto difficile in quanto:
+- è difficile stabilire quando comincia uno schedule e quando finisce
+- è praticamente impossibile determinare in anticipo in quale ordine le operazioni verranno eseguite, in quanto l’ordine è determinato da vari fattori che non conosciamo a runtime
+- se prima si eseguono le operazioni e poi si testa la serializzabilità dello schedule, i suoi effetti devono essere annullati se lo schedule risulta non serializzabile (scomodo)
+
+l’approccio seguito nei sistemi è quello di determinare dei **metodi che garantiscono la serializzabilità** di uno schedule, eliminando così la necessità di dover testare ogni volta la serializzabilità di uno schedule
+
+i 2 metodi che studieremo sono:
+- imporre dei protocolli, cioè delle regole, alle transazioni in modo da garantire la serializzabilità di ogni schedule
+- usare i timestamp delle transazioni, cioè degli identificatori delle transazioni che vengono generati dal sistema, e in base ai quali le operazioni delle transazioni possono essere ordinate in modo da garantire la serializzabilità
+### item
+entrambi i metodi fanno usato del concetto di **item**, cioè un’unità della BD a cui l’accesso è controllato 
+- può essere una tupla,, un campo di una tupla, una intera tabella
+le dimensioni degli item devono essere definite in base all’uso che viene fatto dalla base di dati in modo tale, in media, una transazione acceda a pochi item
+- le dimensioni degli item usate da un sistema sono dette la sua **granularità**, e quella degli item va dal singolo campo all’intera tabella e oltre
+	- una granularità grande permette una gestione efficiente della concorrenza
+	- una granularità piccola può sovraccaricare il sistema, ma aumenta il **livello di concorrenza** (multiprogrammazione) , cioè consente l’esecuzione concorrente di molte transazioni)
