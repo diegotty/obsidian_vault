@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: 
-updated: 2024-12-19T11:18
+updated: 2024-12-19T11:21
 ---
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
@@ -53,8 +53,17 @@ e lo schedule con interleaving:
 in questo caso il valore finale di $X$ è $f_{4}(f_{1}(X_{0}), Y_{0})$ e il valore finale di $Y$ è $f_{2}(X_{0}, f_{3}(Y_{0}))$
 >
 >calcoliamo ora gli schedule sequenziali, per vedere se lo scheduling sopra è serializzabile:
+>schedule $T_{1},T_{2}$
 ![[Pasted image 20241219111414.png]]
 >in questo caso, il valore finale di $X$ è $f_{4}(f_{1}(X_{0}),f_{2}(X_{0},Y_{0}))$, e il valore finale di $Y$ è $f_{3}(f_{2}(X_{0},Y_{0})$
 >
+>schedule $T_{2},T_{1}$
 >![[Pasted image 20241219111727.png]]
->in questo caso, il valore finale di $X$ è $f_{1}(f_{4}(X_{0},Y_{0}))$, e il valore finale di $Y$ è $f_{2}(f_{4})$
+>in questo caso, il valore finale di $X$ è $f_{1}(f_{4}(X_{0},Y_{0}))$, e il valore finale di $Y$ è $f_{2}(f_{4}(X_{0},Y_{0}),f_{3}(Y_{0}))$
+pertanto, lo schedule non è serializzabile, in quanto produce per $X$ un valore finale diverso da entrambi gli schedule seriali, e lo stesso vale per $Y$
+
+>[!info] osservazione
+>basta concludere che le formule siano diverse anche per un solo item per concludere che gli schedule non sono equivalenti
+
+## testare la serializzabilità
+### algoritmo 1
