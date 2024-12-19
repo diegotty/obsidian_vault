@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: 
-updated: 2024-12-14T20:44
+updated: 2024-12-18T15:24
 ---
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
