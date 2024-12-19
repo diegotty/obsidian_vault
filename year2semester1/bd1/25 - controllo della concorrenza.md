@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-19T09:48
+updated: 2024-12-19T10:03
 ---
 in sistemi di calcolo con una sola CPU, i programmi sono eseguiti concorrentemente in modo **interleaved**: la CPU esegue alcune istruzioni di un programma, sospende quel programma, esegue istruzioni di altri programmi, ritorna ad eseguire istruzioni del primo, etc.
 - questo perchè l’esecuzione concorrente permette un uso efficiente della CPU
@@ -53,4 +53,21 @@ il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è p
 >[!example] esempio 3: aggiornamento non corretto
 consideriamo il seguente schedule: se il valore inziale di $X$ è $X_0$ e il valore iniziale di $Y$ è $Y_0$, al termine dell’esecuzione dello schedule il valore di somma è $X_0 - N + Y_0$ invece di $X_0 + Y_0$
 ![[Pasted image 20241219094643.png]]
-il valore di `somma` è un dato **aggregato non corretto**
+il valore di `somma` è un dato **aggregato non corretto**(abbiamo preso un valore aggiornato di X e non aggiornato di Y)
+>- ricordiamo che il nostro punto di riferimento è sempre lo schedule seriale: le permutazioni possibili sono $T_1, T_3$, $T_3,T_1$, e in entrambi i casi `somma` all fine dello schedule vale $X_{0} + Y_{0}$, invece di $X_0 - N + Y_0$ 
+## serializzabilità
+>[!important] tutti gli schedule seriali sono corretti
+
+uno schedule **non seriale** è corretto se è serializzabile, cioè se è “equivalente” ad uno schedule seriale
+- equivalente non è da intendere con lo stesso significato che ha per 2 insiemi di dipendenze funzionali, in cui l’equivalenza era data dal fatto di avere la stessa chiusura
+capiamo quindi cosa vuold dire essere equivalenti:
+prendiamo per ipotesi che, due schedule sono equivalenti se, per ogni dato modificato, producono valori uguali
+>[!example] controesempio
+![[Pasted image 20241219095648.png]]
+in questo caso, i due schedule producono gli stessi valori **solo** se il valore iniziale di $X$ è 10 !
+> quindi l’ipotesi non basta
+### equivalenza di schedule
+due schedule sono equivalenti se, per ogni dato modificato, producono valori uguali, **dove** due valori sono uguali **solo se sono prodotti dalla stessa sequenza di operazioni**
+>[!info] osservazione
+in questo caso, i seguenti schedule non sono equivalenti, in quanto, pur d
+![[Pasted image 20241219100258.png]]
