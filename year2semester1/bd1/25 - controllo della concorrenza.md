@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-19T10:13
+updated: 2024-12-19T11:00
 ---
 in sistemi di calcolo con una sola CPU, i programmi sono eseguiti concorrentemente in modo **interleaved**: la CPU esegue alcune istruzioni di un programma, sospende quel programma, esegue istruzioni di altri programmi, ritorna ad eseguire istruzioni del primo, etc.
 - questo perchè l’esecuzione concorrente permette un uso efficiente della CPU
@@ -43,7 +43,7 @@ quali sono i problemi che possono sorgere a causa dell’esecuzione concorrente 
 consideriamo il seguente schedule:
 >se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule il valore di $X$ è $X_0+M$ invece di $X_0-N+M$
 ![[Pasted image 20241219093217.png]]
-quindi in questo schedule, l’aggiornamento di $X$ prodotto da $T_1$
+quindi in questo schedule, l’aggiornamento di $X$ prodotto da $T_1$ viene perso
 
 >[!example] esempio 2: dato sporco
 consideriamo il seguente schedule: se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule, il valore di $X$ è $X_0-N+M$ invece di $X_0 + M$
