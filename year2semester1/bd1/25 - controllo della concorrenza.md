@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-19T09:32
+updated: 2024-12-19T09:48
 ---
 in sistemi di calcolo con una sola CPU, i programmi sono eseguiti concorrentemente in modo **interleaved**: la CPU esegue alcune istruzioni di un programma, sospende quel programma, esegue istruzioni di altri programmi, ritorna ad eseguire istruzioni del primo, etc.
 - questo perchè l’esecuzione concorrente permette un uso efficiente della CPU
@@ -40,5 +40,17 @@ quali sono i problemi che possono sorgere a causa dell’esecuzione concorrente 
 ![[Pasted image 20241219093135.png]]
 
 >[!example] esempio 1: ghost update
+consideriamo il seguente schedule:
+>se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule il valore di $X$ è $X_0+M$ invece di $X_0-N+M$
 ![[Pasted image 20241219093217.png]]
-in questo schedule, l’aggiornamento di $X$ prodotto da $T1$
+quindi in questo schedule, l’aggiornamento di $X$ prodotto da $T_1$
+
+>[!example] esempio 2: dato sporco
+consideriamo il seguente schedule: se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule, il valore di $X$ è $X_0-N+M$ invece di $X_0 + M$
+![[Pasted image 20241219094444.png]]
+il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita
+
+>[!example] esempio 3: aggiornamento non corretto
+consideriamo il seguente schedule: se il valore inziale di $X$ è $X_0$ e il valore iniziale di $Y$ è $Y_0$, al termine dell’esecuzione dello schedule il valore di somma è $X_0 - N + Y_0$ invece di $X_0 + Y_0$
+![[Pasted image 20241219094643.png]]
+il valore di `somma` è un dato **aggregato non corretto**
