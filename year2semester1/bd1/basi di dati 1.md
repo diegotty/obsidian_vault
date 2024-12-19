@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-18T15:24
+updated: 2024-12-19T08:35
 ---
 [[02 - modello relazionale]]
 [[03 - algebra relazionale]]
