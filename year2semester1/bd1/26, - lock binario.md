@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: 
-updated: 2024-12-20T20:06
+updated: 2024-12-20T20:19
 ---
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
@@ -78,12 +78,28 @@ consideriamo il seguente schedule d $T_1,T_2$
 ![[Pasted image 20241220200100.png|300]]
 esso genera il seguente grafo:
 ![[Pasted image 20241220200149.png]]
+in questo caso il grafo è ciclico, in quanto esiste un percorso, **seguendo la direzione delle frecce**, che crea un ciclo
 >
 >invece, uno schedule diverso di $T_1,T_2$:
 ![[Pasted image 20241220200305.png|300]]
 genera un grafo diverso:
 ![[Pasted image 20241220200318.png]]
+questo grafo invece è aciclico (non ciclico)
 ## ordinamento topologico
 l’ordinamento topologico si ottiene eliminando ricorsivamente un nodo che non ha archi entranti, eliminando insieme ad esso anche i suoi archi uscenti
 >[!important] osservazioni
->- un grafo può ammettere più ordinamenti topologici, ed ognuo di essi 
+>- un grafo può ammettere più ordinamenti topologici, ed ognuo di essi è uno schedule seriale equivalente ad $S$
+>- in particolare, quando ad una data iterazione della ricorsione si ha una scelta tra 2 nodi da eliminare, visto che si possono prendere 2 strade, si raddoppiano (sdoppiano ? aumentano di uno ? ) i possibili schedule
+
+>[!info] rappresentazione di ordinamento topologico
+![[Pasted image 20241220200827.png]]
+in questo esempio, un ordinamento topologico può essere:
+$$T_{4},T_{7},T_{5},T_{1},T_{8},T_{9},T_{2},T_{3},T_{6}$$
+## teorema sulla correttezza dell’algoritmo del grafo di serializzazione
+uno schedule $S$ è **serializzabile** $\iff$ il suo grafo di serializzazione è **aciclico**
+- non lo dimostriamo :)))
+>[!example] esempio
+prendiamo uno schedule di 5 transizioni, e applichiamo l’algoritmo, segnando sulla tabela le relazioni tra le transazioni che produrranno archi nel grafo
+![[Pasted image 20241220201829.png]]
+la rappresentazione del grafo è la seguente:
+![[Pasted image 20241220201942.png]]
