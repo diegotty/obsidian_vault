@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: 
-updated: 2024-12-19T11:21
+updated: 2024-12-20T20:06
 ---
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
@@ -65,5 +65,25 @@ pertanto, lo schedule non è serializzabile, in quanto produce per $X$ un valore
 >[!info] osservazione
 >basta concludere che le formule siano diverse anche per un solo item per concludere che gli schedule non sono equivalenti
 
-## testare la serializzabilità
-### algoritmo 1
+# testare la serializzabilità
+## algoritmo 1
+dato uno schedule $S$:
+**passo 1**: crea un grafo diretto(con archi diretti) $G$ (**grafo di serializzazione**)
+- nodi: transazioni
+- archi: $T_{i} \to T_{j}$ (con etichetta $X$) se in $S$, $T_i$ esegue un `unlock(X)` e $T_j$ esegue il successivo `lock(X)` (non un successivo, ma **IL** successivo, cioè $T_j$ è la prima transazione che effettua il `lock` di $X$ dopo che $T_j$ ha effettuato l’`unlock`, and se le due operazioni non sono di seguito)
+**passo 2**: se $G$ ha un cliclo allora $S$ non è serializzabile, altrimenti applicando a G l’**ordinamento topologico** si ottiene uno schedule seriale $S’$ **equivalente** ad $S$
+
+>[!example]- esempio 
+consideriamo il seguente schedule d $T_1,T_2$
+![[Pasted image 20241220200100.png|300]]
+esso genera il seguente grafo:
+![[Pasted image 20241220200149.png]]
+>
+>invece, uno schedule diverso di $T_1,T_2$:
+![[Pasted image 20241220200305.png|300]]
+genera un grafo diverso:
+![[Pasted image 20241220200318.png]]
+## ordinamento topologico
+l’ordinamento topologico si ottiene eliminando ricorsivamente un nodo che non ha archi entranti, eliminando insieme ad esso anche i suoi archi uscenti
+>[!important] osservazioni
+>- un grafo può ammettere più ordinamenti topologici, ed ognuo di essi 
