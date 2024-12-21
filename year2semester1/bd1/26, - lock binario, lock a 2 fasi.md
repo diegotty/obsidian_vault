@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: 
-updated: 2024-12-20T20:19
+updated: 2024-12-21T07:48
 ---
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
@@ -103,3 +103,20 @@ prendiamo uno schedule di 5 transizioni, e applichiamo l’algoritmo, segnando s
 ![[Pasted image 20241220201829.png]]
 la rappresentazione del grafo è la seguente:
 ![[Pasted image 20241220201942.png]]
+notiamo che il grafo presenta il ciclo $T_{1},T_{2},T_{3},T_{4}$, e possiamo quindi concludere che lo schedule dato non è serializzabile
+inoltre si nota che $T_{1},T_{2},T_{5}$ e $T_{2},T_{5},T_{3}$ **non** sono cicli in quanto i sensi delle frecce non descrivono cicli
+
+# locking a 2 fasi
+una transazioni obbedisce al protocollo di locking a 2 fasi (è a 2 fasi) se:
+- prima effettua tutte le operazioni di `lock` (**fase di locking**)
+- poi effettua tutte le operazioni di `unlock` (**fase di unlocking**)
+>[!warning] NON CONFONDERE il lock a 2 fasi con il lock a 2 valori. 
+>il fatto di essere a 2 fasi è una caratteristica in più, e non è una caratteristica propria del lock a 2 valori. esistono protocolli a 2 fasi e 3 valori, per esempio.
+## teorema sul lock a 2 fasi
+sia $T$ un insieme di transazioni
+se ogni transazione in $T$ è a due fasi allora ogni schedule di $T$ è serializzabile (damn !)
+## dimostrazione
+>[!info] dimostrazione per assurdo
+per assurdo, diciamo che ogni transazione in $S$ è a 2 fasi, ma nel grafo di serializzazione c’è un ciclo
+![[Pasted image 20241221074850.png]]
+
