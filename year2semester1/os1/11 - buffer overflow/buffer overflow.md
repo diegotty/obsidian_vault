@@ -1,7 +1,7 @@
 ---
 created: 2024-12-18
 related to: 
-updated: 2024-12-18T13:29
+updated: 2024-12-21T10:40
 ---
 l’area di memoria di un processo caricare in memoria (principale) è diviso nelle sezioni seguenti:
 >[!figure] area di memoria di un processo
@@ -52,3 +52,36 @@ void foo(char *s) {
 
 foo("stringatroppolun\xda\x51\x55\x55\x55\x55\x00\x00");
 ```
+
+con questo codice, possiamo sovrascrivere l’indirizzo di ritorno a piacere:
+>[!figure] rappresentazione
+![[Pasted image 20241221103308.png]]
+# esecuzione codice arbitrario
+modificare l’indirizzo di ritorno arbitrariamente è utile, ma come eseguiamo il codice arbitrario ?
+1. shellcode
+2. return-to-libc
+3. stack frame replacement (solo nominato)
+4. return-oriented programming (solo nominato)
+## shellcode
+lo shellcode è un piccolo pezzo di codice che viene eseguito quando si sfrutta una vulnerabilità (es: buffer overflow) per attaccare un sistema
+- il pezzo di codice è piccolo perchè deve rientrare nelle dimensioni del buffer
+- è chiamato shellcode perchè solitamente avvia una command shell, dalla quale l’attaccante può prender controllo della macchina
+>[!warning] l’idea è inserire codice eseguibile arbitrario nel buffer, e camabiare il return address con l’indirizzo del buffer !
+
+### esempio
+assumendo che l’indirizzo di `buf` sia `0x00005555555551da`, possiamo effettuare così l’attacco:
+```c
+void foo(char *s) {
+	char buf[10];
+	strcpy(buf, s);
+	printf("buf is %s\n", s);
+}
+
+foo("<shellcode>\xda\x51\x55\x55\x55\x55\x00\x00");
+```
+
+così una volta completata la chiamata a `foo()`, il processore salterà all’indirizzo `0x00005555555551da` ed eseguirà il codice che trova (lo shellcode)
+>[!figure] rappresentazione
+![[Pasted image 20241221103902.png]]
+## return-to-libc
+non è sempre possibile inserire shellcode arbitrario (buffer piccoli, o meccanismi di difesa possono impedirlo). tuttavia, esiste del codice utile ad attacchi, che è sempre presente in RAM ed è sempre raggiungibile dal nostro processo: le librerie dinamiche e di sistema
