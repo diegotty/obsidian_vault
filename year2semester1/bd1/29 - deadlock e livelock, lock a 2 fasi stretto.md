@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: 
-updated: 2024-12-21T08:55
+updated: 2024-12-21T08:59
 ---
 # deadlock
 un deadlock si verifica quando:
@@ -81,3 +81,7 @@ i protocolli aggressivi cercano di processare le transazioni il più rapidamente
 una transazione deve richiedere un lock su un item immediatamente prima di leggerlo o di scriverlo
 >- può verificarsi un deadlock
 
+### quando
+se la probabilità che due transazioni richiedano un lock sullo stesso item è:
+- alta: è conveniente un protocollo conservativo, in quanto evita al sistema il sovraccarico dovuto alla getione dei deadlock (rilevare e risolvere stalli, eseguire transazioni che poi vengono abortite, l’aborto stesso)
+- bassa: è conveniente un protocollo aggressivo, in quanto evita al sistema il sovraccarico dovuto alla gestione dei lock (decidere se garantire un lock su un dato item ad una data transazione, gestire la tavola dei lock, mettere le transazioni in una coda e gestirla)
