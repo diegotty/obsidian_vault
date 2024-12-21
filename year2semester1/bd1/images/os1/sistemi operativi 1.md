@@ -1,10 +1,10 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-19T20:15
+updated: 2024-12-21T10:04
 ---
 ## 01 - introduzione
-[[year2semester1/os1/01 - intro/intro|intro]]
+[[year2semester1/bd1/images/os1/01 - intro/intro|intro]]
 [[ciclo di esecuzione e interruzioni]]
 [[gerarchia della memoria]]
 [[introduzione ai sistemi operativi]]

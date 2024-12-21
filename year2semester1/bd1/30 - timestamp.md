@@ -1,14 +1,14 @@
 ---
 created: 2024-12-21
 related to: 
-updated: 2024-12-21T09:56
+updated: 2024-12-21T10:01
 ---
 # timestamp
 il timestamp identifica una transazione, ed è assegnato alla transazione dallo scheduler quando la transazione ha inizio
 esso può essere:
 - il valore di un contatore
 - l’ora di inizio della transazione
-quindi: il timestamp della transazione $T_{1}$ è minore del timestamp della transazione $T_{2}$, la transazione $T_{1}$  è iniziata prima della transazione $T_{2}$
+quindi: il timestamp della transazione $T_{1}$ è minore del timestamp della transazione $T_{2}$, la transazione $T_{1}$  è inGiziata prima della transazione $T_{2}$
 - quindi, se la transazioni fossero eseguite in modo seriale, verrebbe eseguita $T_{1}$ e poi $T_{2}$
 ## serializzabilità
 uno schedule è serializzabile se è equivalente allo schedule seriale in cui le transazioni compaiono ordinate in base al loro timestamp
@@ -79,7 +79,10 @@ al passo 9 la transazione $T_{2}$ viene abortita. dovrebbe eseguire `write(X)`, 
 
 >[!info] domanda 
 >come mai possiamo saltare l’operazione di scrittura di una transazione $T$ senza violare la proprietà di **atomicità** ?
->la proprietà di atomicità
+>la proprietà di atomicità serve a garantire la coerenza dei dati nella base di dati. dal punto di vista degli effetti della transazione sulla base di dati e di questa coerenza, le transazioni che potrebbero trovare una situazione incoerente sono quelle che avre //cba + QUESTION
 
 >[!osservazione]
-supponiamo di avere, rispetto al timestamp ``
+supponiamo di avere, rispetto al timestamp $T_{1} < T_{2} < T_{3}$, il seguente schedule:
+![[Pasted image 20241221095657.png]]
+cosa succederebbe se `WTS(X)` e `RTS(X)` fossero il timestamp dell’ultima transazione che ha avuto accesso con successo all’item, anzichè il timestamp della transazione più giovane che ha avuto accesso all’item ?
+>secondo l’algoritmo della scrittura,  $T_{2}$ scriverebbe, ma sarebbe sbagliato, perchè $T_{3}$ ha già letto $X$, nello schedule seriale avrebbo dovuto leggere il valore di $T_{2}$
