@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: 
-updated: 2024-12-21T07:48
+updated: 2024-12-21T08:06
 ---
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
@@ -119,4 +119,14 @@ se ogni transazione in $T$ è a due fasi allora ogni schedule di $T$ è serializ
 >[!info] dimostrazione per assurdo
 per assurdo, diciamo che ogni transazione in $S$ è a 2 fasi, ma nel grafo di serializzazione c’è un ciclo
 ![[Pasted image 20241221074850.png]]
+ciò vuol dire che esiste una transazione che ha effettutato prima un `unlock`, e poi un `lock`
+in questo caso per comodità chiamiamo $T_{1}$ la prima transazionei del ciclo che compare nello schedule (il seguente), che esegue un’operazione che genera un arco del ciclo
+![[Pasted image 20241221080201.png|150]]
 
+>[!warning] questo teorema non è una doppia implicazione !
+esistono schedule che, pur non essendo a 2 fasi, sono serializzabili
+>- inoltre se una transazione non è a 2 fasi, esiste sempre un’altra transazione a 2 fasi e uno schedule delle 2 transazioni che non è serializzabile 
+
+quindi, solo se **tutte** le transazioni sono a 2 fasi possiamo avere la certeza che ogni schedule è serializzabile
+
+>[!important]  **TUTTI** i protocolli di lock a 2 fasi (a prescindere dal numero di valori di lock) risolvono il problema **dell’aggregato non corretto**

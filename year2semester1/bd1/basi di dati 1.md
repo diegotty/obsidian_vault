@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-21T07:43
+updated: 2024-12-21T08:09
 ---
 [[02 - modello relazionale]]
 [[03 - algebra relazionale]]
@@ -21,4 +21,4 @@ updated: 2024-12-21T07:43
 [[23 - file indice]]
 [[24 - b-tree]]
 [[25 - controllo della concorrenza]]
-[[26, - lock binario, lock a 2 fasi]]
+[[26 - lock binario, lock a 2 fasi]]
