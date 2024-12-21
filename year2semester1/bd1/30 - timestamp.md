@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: 
-updated: 2024-12-21T09:40
+updated: 2024-12-21T09:56
 ---
 # timestamp
 il timestamp identifica una transazione, ed è assegnato alla transazione dallo scheduler quando la transazione ha inizio
@@ -72,3 +72,14 @@ con `TS(T1) = 100, TS(T2) = 100, TS(T3) = 105`
 >- all’inizio, `RTS(X) = 0, RTS(Y) = 0, WTS(X) = 0, WTS(Y) = 0`
 >
 ![[Pasted image 20241221093959.png]]
+al passo 9 la transazione $T_{2}$ viene abortita. dovrebbe eseguire `write(X)`, ma `TS(T2) < RTS(X)`. ciò significa che una transazione che ha iniziato le proprie operazioni dopo $T2$ ha gia letto il valore dell’item $X$, mentre secondo ordine di esecuizone avrebbe dovuto leggere il valore di $X$ già modificato da $T2$. per questo motivo, è necessario il roll-back di $T2$
+
+>[!info] osservazione
+>nell’esempio precedente (e in generale), lo schedule delle trasazioni superstiti è equivalente allo schedule seriale delle transazioni eseguite in ordine di arrivo
+
+>[!info] domanda 
+>come mai possiamo saltare l’operazione di scrittura di una transazione $T$ senza violare la proprietà di **atomicità** ?
+>la proprietà di atomicità
+
+>[!osservazione]
+supponiamo di avere, rispetto al timestamp ``
