@@ -1,7 +1,7 @@
 ---
 created: 2024-12-18
 related to: 
-updated: 2024-12-21T10:40
+updated: 2024-12-21T10:52
 ---
 l’area di memoria di un processo caricare in memoria (principale) è diviso nelle sezioni seguenti:
 >[!figure] area di memoria di un processo
@@ -85,3 +85,34 @@ così una volta completata la chiamata a `foo()`, il processore salterà all’i
 ![[Pasted image 20241221103902.png]]
 ## return-to-libc
 non è sempre possibile inserire shellcode arbitrario (buffer piccoli, o meccanismi di difesa possono impedirlo). tuttavia, esiste del codice utile ad attacchi, che è sempre presente in RAM ed è sempre raggiungibile dal nostro processo: le librerie dinamiche e di sistema
+- invece di usare shellcode, possiamo quindi usare come indirizzo di ritorno l’indirizzo di una funzione di sistema utile per un attacco (es: sysem)
+- l’attacco è chiamato return-to-libc perchè modifica l’indirizzo di ritorno solitamente con l’indirizzo di una funzione standard della libreria C
+
+asumendo di conoscere l’indirizzo di `system()`, possiamo effettuare così l’attacco:
+```c
+void foo(char *s) {
+	char buf[10];
+	strcpy(buf, s);
+	printf("buf is %s\n", s);
+}
+
+foo("AAAAAAAAAAAAAAAA<indirizzo di system>AAAA’bin/sh'");
+```
+
+completata la chiamata a `foo()`, il processore salterà all’indirizzo di `system()` e ne eseguirà il codice usando come parametro `bin/sh`
+>[!figure] rappresentazione
+![[Pasted image 20241221104636.png]]
+# contromisure
+esistono 2 tipi di contromisure:
+## difese a tempo di compilazione
+- uso di linguaggi di programmazione e funzioni sicure (l’overflow è possibile perchè in C ci sono alcune funzioni che spostano dati senza limiti di dimensione)
+- stack smashing protection
+	- il compilatore inserisce del codice per generare un valore casuale (**canary**) a runtime
+	- il valore canary viene inserito tra il frame pointer e l’indirizzo di ritorno, se il valore canary viene modificato prima che la funzione ritorni, l’esecuzione va interrotta perchè è stato sovrascritto da un possibile attacco
+## difese a tempo di esecuzione
+- executable space protection
+	- stack e heap generalmente non contegono codice eseguibile (che si trova nella sezione .text), quindi il SO marca le pagine/segmenti dello stack e heap come non eseguibili, e se un attaccante cerca di eseguire codice nello stack (shellcode), il sistema terminerà il processo con un errore (in questo caso return-to-libc funziona ancora)
+
+- address space layout randomization
+	- ad ogni esecuzione, randomizzare gli indirizzi dove sono caricati i diversi segmenti del programma (stack, heap, …), in questo modo è molto più difficile per l’attaccante indovinare l’indirizzo del buffer contenente lo shellcode (in quando l’attaccante non sa dove inizia lo stack)
+	- inoltre, anche indovinare l’indirizzo delle librerie standard  per un attacco return-to-libc è più difficile
