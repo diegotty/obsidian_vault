@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: 
-updated: 2024-12-21T08:35
+updated: 2024-12-21T08:55
 ---
 # deadlock
 un deadlock si verifica quando:
@@ -54,4 +54,30 @@ come abbiamo visto:
 # locking a 2 fasi stretto
 una transazione soddisfa il **protocollo di locking a 2 fasi stretto** se:
 1. non scrive sulla BD fino a quando non ha raggiunto il suo punto di commit ( in questo modo, se una transazione è stata abortita, allora non ha modificato alcun item)
-2. non rilascia un lock finchè non ha finito di scrivere sulla BD
+2. non rilascia un lock finchè non ha finito di scrivere sulla BD (se una transazione legge un item scritto da un’altra transazione, quest’ultima non può essere abortita)
+>[!example]- esempi
+>esempi di schedule di transazioni che rispettano il protocollo di locking a 2 fasi stretto:
+![[Pasted image 20241221084421.png|200]]
+![[Pasted image 20241221084433.png|150]]
+## classificazione dei protocolli
+### conservativi
+i protocolli conservativi cercano di **evitare** il verificari di situazioni di stallo
+>[!example] protocollo conservativo 1
+>una transazione $T$ richiede tutti i lock che servono **all’inizio**, e li ottiene se e solo se **tutti i lock** sono disponibili, altrimenti, se non li può ottenere tutti, viene messa in una coda di attesa
+>- in questo modo si evita il deadlock, ma non il livelock(la starvation)
+
+>[!example] protocollo conservativo 2
+>per evitare il verificarsi sia del deadlock che del livelock:
+>una transazione $T$ richiede tutti i lock che servono all’inizio e li ottiene se e solo se tutti i lock sono disponibili e nessuna transazione che precede $T$ nella coda è in attesa di un lock richiesto da $T$
+
+vantaggi:
+- si evita il verificarsi sia del deadlock che del livelock
+svantaggi:
+- l’esecuzione di una transazione può essere ritardata
+- una transazione è costretta a richiedere un lock su ogni item che potrebbe essergli necessario, anche se poi di fatto non l’utilizza
+### aggressivi 
+i protocolli aggressivi cercano di processare le transazioni il più rapidamente possibile, anche se ciò può portare a situazioni di stallo
+>[!example] protocollo aggressivo
+una transazione deve richiedere un lock su un item immediatamente prima di leggerlo o di scriverlo
+>- può verificarsi un deadlock
+
