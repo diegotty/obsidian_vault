@@ -1,8 +1,20 @@
 ---
 created: 2024-12-21
-related to: 
-updated: 2024-12-21T08:59
+related to: "[[26 - lock binario, lock a 2 fasi]]"
+updated: 2024-12-22T14:03
 ---
+>[!index]
+>
+>- [soluzioni per il deadlock](#soluzioni%20per%20il%20deadlock)
+>- [livelock](#livelock)
+>- [abort di una transazione](#abort%20di%20una%20transazione)
+>- [punto di commit](#punto%20di%20commit)
+>- [roll-back a cascata](#roll-back%20a%20cascata)
+>- [locking a 2 fasi stretto](#locking%20a%202%20fasi%20stretto)
+>- [classificazione dei protocolli](#classificazione%20dei%20protocolli)
+>	- [conservativi](#conservativi)
+>	- [aggressivi](#aggressivi)
+>	- [quando](#quando)
 # deadlock
 un deadlock si verifica quando:
 - ogni transazione in un insieme $T$ è in attesa di ottenere un lock su un item sul quale qualche altra transazione nell’insieme $T$ mantiene un lock, e quindi:

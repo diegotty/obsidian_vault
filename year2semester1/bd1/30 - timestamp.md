@@ -1,8 +1,14 @@
 ---
 created: 2024-12-21
-related to: 
-updated: 2024-12-21T10:01
+related to: "[[25 - controllo della concorrenza]]"
+updated: 2024-12-22T14:03
 ---
+>[!index]
+>
+>- [serializzabilità](#serializzabilit%C3%A0)
+>- [read timestamp, write timestamp](#read%20timestamp,%20write%20timestamp)
+>- [controllo della serializzabilità](#controllo%20della%20serializzabilit%C3%A0)
+>- [algoritmo](#algoritmo)
 # timestamp
 il timestamp identifica una transazione, ed è assegnato alla transazione dallo scheduler quando la transazione ha inizio
 esso può essere:

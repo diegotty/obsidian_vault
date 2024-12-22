@@ -1,8 +1,15 @@
 ---
 created: 2024-12-13
-related to: 
-updated: 2024-12-19T20:15
+related to: "[[23 - file indice]]"
+updated: 2024-12-22T14:03
 ---
+>>[!index]
+>
+>- [ricerca](#ricerca)
+>	- [altezza di un b-tree](#altezza%20di%20un%20b-tree)
+>- [inserimento](#inserimento)
+>- [cancellazione](#cancellazione)
+>- [modifica](#modifica)
 # b-tree
 anche in questo caso, si lavora su dati ordinabili per chiave univoca.
 il b-tree nasce dalla generalizzazione della struttura di indice, creando più di livelli del file indice, in modo da poter accedere al file principale attraverso una gerarchia di indici. l’indice a livello più alto nella gerarchia, la **radice**, è **costituito da un unico blocco**, e quindi può risiedere in memoria principale durante l’utilizzo del file.

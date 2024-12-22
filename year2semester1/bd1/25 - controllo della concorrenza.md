@@ -1,8 +1,20 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-19T11:00
+updated: 2024-12-22T14:03
 ---
+>[!index]
+>
+>- [transazione](#transazione)
+>	- [proprietà della transazioni](#propriet%C3%A0%20della%20transazioni)
+>- [schedule](#schedule)
+>	- [schedule seriale](#schedule%20seriale)
+>	- [problemi](#problemi)
+>	- [serializzabilità](#serializzabilit%C3%A0)
+>		- [equivalenza di schedule](#equivalenza%20di%20schedule)
+>	- [garantire la serializzabilità](#garantire%20la%20serializzabilit%C3%A0)
+>		- [item](#item)
+
 in sistemi di calcolo con una sola CPU, i programmi sono eseguiti concorrentemente in modo **interleaved**: la CPU esegue alcune istruzioni di un programma, sospende quel programma, esegue istruzioni di altri programmi, ritorna ad eseguire istruzioni del primo, etc.
 - questo perchè l’esecuzione concorrente permette un uso efficiente della CPU
 in un DBMS la principale risorsa a cui i programmi accedono in modo concorrente è la base di dati
@@ -82,7 +94,7 @@ l’approccio seguito nei sistemi è quello di determinare dei **metodi che gara
 
 i 2 metodi che studieremo sono:
 - imporre dei protocolli, cioè delle regole, alle transazioni in modo da garantire la serializzabilità di ogni schedule
-- usare i timestamp delle transazioni, cioè degli identificatori delle transazioni che vengono generati dal sistema, e in base ai quali le operazioni delle transazioni possono essere ordinate in modo da garantire la serializzabilità
+- usare i [[30 - timestamp|timestamp]] delle transazioni, cioè degli identificatori delle transazioni che vengono generati dal sistema, e in base ai quali le operazioni delle transazioni possono essere ordinate in modo da garantire la serializzabilità
 ### item
 entrambi i metodi fanno usato del concetto di **item**, cioè un’unità della BD a cui l’accesso è controllato 
 - può essere una tupla,, un campo di una tupla, una intera tabella

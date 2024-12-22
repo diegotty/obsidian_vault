@@ -1,9 +1,26 @@
 ---
 created: 2024-12-13
-related to: 
-updated: 2024-12-13T17:08
+related to: "[[21, 22 - organizzazione fisica dei dati. concetti generali]]"
+updated: 2024-12-22T14:03
 ---
+>[!index]
+>
+>- [ordine lessicografico](#ordine%20lessicografico)
+>- [file con indice (sparso)](#file%20con%20indice%20(sparso))
+>- [file ISAM](#file%20ISAM)
+>- [ricerca](#ricerca)
+>- [ricerca binaria](#ricerca%20binaria)
+>- [ricerca per interpolazione sul file indice](#ricerca%20per%20interpolazione%20sul%20file%20indice)
+>- [inserimento](#inserimento)
+>- [cancellazione](#cancellazione)
+>- [modifica](#modifica)
+>- [file con record puntati](#file%20con%20record%20puntati)
+>- [ricerca](#ricerca)
+>- [cancellazione](#cancellazione)
+>- [modifica](#modifica)
+>- [indice secondario](#indice%20secondario)
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
+
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)
 - se la chiave ha campi multipli, si ordina sul primo campo, poi sul secondo, e così via
 >[!important] le chiavi possono sempre essere ordinate !

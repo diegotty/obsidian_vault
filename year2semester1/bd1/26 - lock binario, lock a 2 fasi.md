@@ -1,8 +1,20 @@
 ---
 created: 2024-12-19
-related to: 
-updated: 2024-12-21T08:06
+related to: "[[25 - controllo della concorrenza]]"
+updated: 2024-12-22T14:03
 ---
+>>[!index]
+>
+>- [schedule legale](#schedule%20legale)
+>- [lock binario](#lock%20binario)
+>	- [equivalenza](#equivalenza)
+>- [testare la serializzabilità](#testare%20la%20serializzabilit%C3%A0)
+>- [algoritmo 1](#algoritmo%201)
+>- [ordinamento topologico](#ordinamento%20topologico)
+>- [teorema sulla correttezza dell’algoritmo del grafo di serializzazione](#teorema%20sulla%20correttezza%20dell%E2%80%99algoritmo%20del%20grafo%20di%20serializzazione)
+>- [locking a 2 fasi](#locking%20a%202%20fasi)
+>- [teorema sul lock a 2 fasi](#teorema%20sul%20lock%20a%202%20fasi)
+>- [dimostrazione](#dimostrazione)
 # lock
 **lock**: privilegio di accesso ad un singolo item, realizzato mediante una variabile associata all’item (**variabile lucchetto**), il cui valore descrive lo stato dell’item rispetto alle operazioni che possono essere effettuate su di esso
 - un lock viene richiesto da una transazione mediante un’operazione di **locking** (`lock(X)`): se il valore della variabile è `unlocked`, la transazione può accedere all’item e alla variabile viene assegnato il valore `locked`

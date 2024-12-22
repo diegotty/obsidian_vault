@@ -1,6 +1,7 @@
 ---
 created: 2024-11-29T16:19
-updated: 2024-11-29T16:41
+updated: 2024-12-22T14:02
+related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
 ---
 >[!index]
 >- [algoritmo per la decomposizione di uno schema](#algoritmo%20per%20la%20decomposizione%20di%20uno%20schema)
