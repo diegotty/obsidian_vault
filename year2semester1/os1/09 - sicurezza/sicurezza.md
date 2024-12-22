@@ -1,8 +1,23 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T07:03
+updated: 2024-12-22T13:55
 ---
+>[!index]
+>
+>- [minacce](#minacce)
+>- [asset](#asset)
+>	- [relazione tra asset e la triade](#relazione%20tra%20asset%20e%20la%20triade)
+>- [autenticazione](#autenticazione)
+>- [mezzi per l’autenticazione](#mezzi%20per%20l%E2%80%99autenticazione)
+>- [controllo di accesso](#controllo%20di%20accesso)
+>	- [controllo di accesso discrezionale](#controllo%20di%20accesso%20discrezionale)
+>	- [controllo di accesso basato su ruoli](#controllo%20di%20accesso%20basato%20su%20ruoli)
+>- [meccanismi di protezione di UNIX](#meccanismi%20di%20protezione%20di%20UNIX)
+>- [login](#login)
+>- [accesso ai file](#accesso%20ai%20file)
+>- [SETUID e STGID](#SETUID%20e%20STGID)
+
 dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
 >[!info] la triade

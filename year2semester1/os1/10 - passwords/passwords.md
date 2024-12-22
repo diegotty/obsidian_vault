@@ -1,8 +1,21 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2024-12-18T08:14
+updated: 2024-12-22T13:56
 ---
+>[!index]
+>
+>- [password in Linux](#password%20in%20Linux)
+>	- [\etc\passwd](#%5Cetc%5Cpasswd)
+>	- [\etc\shadow](#%5Cetc%5Cshadow)
+>	- [modular crypt format](#modular%20crypt%20format)
+>	- [hash functions](#hash%20functions)
+>- [attacchi a password](#attacchi%20a%20password)
+>	- [attacco dizionario](#attacco%20dizionario)
+>	- [attacco rainbow table](#attacco%20rainbow%20table)
+>	- [come proteggersi da attachi](#come%20proteggersi%20da%20attachi)
+>- [sviluppi futuri](#sviluppi%20futuri)
+
 una password è un dato segreto, tipicamente utilizzato per identificare un utente, e garantire l’accesso sicuro
 # password in Linux
 per gestire utenti e le relative password, Linux usa 2 file:

@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-21T10:21
+updated: 2024-12-22T13:57
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
@@ -38,3 +38,12 @@ updated: 2024-12-21T10:21
 [[problema dei lettori,scrittori]]
 [[conclusioni]]
 ## 08 - deadlock
+[[intro al deadlock]]
+[[gestione del deadlock]]
+[[filosofi a cena]]
+## 09 - sicurezza
+[[sicurezza]]
+## 10 - passwords
+[[passwords]]
+## 11 - buffer overflow
+[[buffer overflow]]

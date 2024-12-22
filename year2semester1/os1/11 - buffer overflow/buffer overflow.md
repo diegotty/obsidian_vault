@@ -1,8 +1,19 @@
 ---
 created: 2024-12-18
 related to: 
-updated: 2024-12-21T10:52
+updated: 2024-12-22T13:58
 ---
+>[!index]
+>
+>- [stack smashing](#stack%20smashing)
+>- [esecuzione codice arbitrario](#esecuzione%20codice%20arbitrario)
+>- [shellcode](#shellcode)
+>	- [esempio](#esempio)
+>- [return-to-libc](#return-to-libc)
+>- [contromisure](#contromisure)
+>- [difese a tempo di compilazione](#difese%20a%20tempo%20di%20compilazione)
+>- [difese a tempo di esecuzione](#difese%20a%20tempo%20di%20esecuzione)
+
 l’area di memoria di un processo caricare in memoria (principale) è diviso nelle sezioni seguenti:
 >[!figure] area di memoria di un processo
 ![[Pasted image 20241218131014.png]]
@@ -116,3 +127,5 @@ esistono 2 tipi di contromisure:
 - address space layout randomization
 	- ad ogni esecuzione, randomizzare gli indirizzi dove sono caricati i diversi segmenti del programma (stack, heap, …), in questo modo è molto più difficile per l’attaccante indovinare l’indirizzo del buffer contenente lo shellcode (in quando l’attaccante non sa dove inizia lo stack)
 	- inoltre, anche indovinare l’indirizzo delle librerie standard  per un attacco return-to-libc è più difficile
+
+//honestly didnt undersand much but i am very much done with this stuff for now
