@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-12-19T20:15
+updated: 2024-12-23T06:45
 ---
 [notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
 [notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)
@@ -68,3 +68,13 @@ teorema su insieme di soluzioni di s.l., relazione su $Sol(A|b)$ di s.l. diversi
 esercizi, parametri, rango di una matrice, teorema di rouchè-capelli
 # 04/12/2024
 sistema di generatori, spazio vettoriale finitamente generato, base, dimensione di uno spazio vettoriale, PROPOSIZIONE 1, PROPOSIZIONE 2, lemma su rango di una matrice, riformulazione del teorema di Rouchè-Capelli con dimensione, esercizio
+# 10/12/2024
+esercizio su rango di matrice con parametro, PROPOSIZIONE 3, PROPOSIZIONE 4, vettore delle coordinate di V nella base $B$, base canonica
+# 11/12/2024
+es1, esempi di basi, es5, traspozione di matrici, proprietà della trasposizione di matrici, simmetria e antisimmetria di matrici
+# 12/12/2024
+proposizione 3, versione equivalente, matrice inversa, teorema su matrici quadrate , applicazioni lineari, immagine e nucleo
+# 17/12/2024
+teorema di grassman, es2, es3 settimana 9
+# 18/12/2024
+es3 settimana 9

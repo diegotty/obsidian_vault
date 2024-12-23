@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2024-12-19T20:15
+updated: 2024-12-23T06:45
 ---
 [notes](https://notability.com/n/0ZqsK_BeCDXuIQmxkCOTk7)
 [exercises](https://notability.com/n/QL1VhUe_397quBUZl2XLI)
@@ -66,3 +66,9 @@ correzione esercizi, variabile aleatoria gaussiana/gaussiana standard
 
 # 06/12/2024
 v.a. identicamente distribuite (i.d.). teorema di De Moivre-Laplace
+# 11/12/2024
+esercizio su approssimazione gaussiana
+# 13/12/2024
+teorema del limite centrale, osservazioni a riguardo
+# 20/12/2024
+interpretazione frequentistica della probabilità, legge forte dei grandi numeri, corollario, corollario del corollario
