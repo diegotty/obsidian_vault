@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: "[[23 - file indice]]"
-updated: 2024-12-29T14:12
+updated: 2024-12-30T06:31
 ---
 >>[!index]
 >
