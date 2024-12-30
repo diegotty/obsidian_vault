@@ -1,5 +1,5 @@
 ---
 created: "{{date}}"
 related to: 
-updated: "{{date}}, {{time}}"
+updated: 2024-12-25T17:05
 ---
