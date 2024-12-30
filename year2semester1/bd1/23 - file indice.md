@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: "[[21, 22 - organizzazione fisica dei dati. concetti generali]]"
-updated: 2024-12-22T14:03
+updated: 2024-12-29T14:12
 ---
 >[!index]
 >
