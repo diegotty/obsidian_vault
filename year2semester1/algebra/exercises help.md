@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-03T10:49
+updated: 2025-01-03T10:53
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -20,6 +20,8 @@ se dobbiamo controllare se un dato insieme è sottogruppo:
 - scrivere 1 teo isom con ker e im
 - se f omom, ker sottogruppo normale
 - i sottogruppi ciclici di $S_n$ sono sempre abeliani, $S_2$ è abeliano, da $S_3$ in poi no
+- ogni gruppo è normale in se stesso 
+- ogni sottogruppo di indice 2 è normale (card di gruppo / card di sottogruppo = 2, indice visto quando abbiamo fatto lagrange)
 ## anelli
 $A^X$ chiuso per il prodotto
 
