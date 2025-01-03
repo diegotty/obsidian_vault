@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-03T09:13
+updated: 2025-01-03T09:34
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -15,3 +15,7 @@ se dobbiamo controllare se un dato insieme è sottogruppo:
 - per calcolare $R_i$ invertibile mod $r_i$, devo aver ridotto l’equazione (solo $x$ con coeff. 1 a sinistra)
 - posso ridurre $Y_i$ mod $r_i$ e posso ridurre $x_0$ mod $R$
 - $x_0 = R_1 \cdot Y_1 ….$
+## gruppi
+- se $f$ omom, $Ker(f)$ e $Im(f)$ sono sottogruppi
+- scrivere 1 teo isom con ker e im
+- se f omom, ker sottogruppo normale
