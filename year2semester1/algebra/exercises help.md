@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-03T12:14
+updated: 2025-01-04T16:10
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -31,3 +31,4 @@ scrivere dim ker sottogruppo normale se f omom
 
 lontanamente possibili dimostrazioni 
 irriducibili, primi ?
+
