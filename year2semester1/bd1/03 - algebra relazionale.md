@@ -1,3 +1,7 @@
+---
+created: 2024-09-28T09:11
+updated: 2025-01-05T13:54
+---
 >[!info] index !
 >- [proiezione](#proiezione)
 >- [selezione](#selezione)
@@ -18,7 +22,7 @@ taglio verticale su una relazione(selezionare solo alcuni attributi)
 - si denota con il simbolo $\pi$
 , selezionando gli attributi della relazione (in questo caso r)
 $$\pi_{\text{A1,A2,...Ak}}(r)$$
->![warning] si seguono le regole insiemistiche ! nella relazione risultato NON CI SONO DUPLICATI. per avere anche i doppioni bisogna includere una chiave nella proiezione
+>[!warning] si seguono le regole insiemistiche ! nella relazione risultato NON CI SONO DUPLICATI. per avere anche i doppioni bisogna includere una chiave nella proiezione
 ## selezione
 selezione di alcune righe che soddisfano una condizione
 - si denota con il simbolo $\sigma$
@@ -28,7 +32,7 @@ la condizione e’ un’espressione booleana composta, con:
 - operatori AND, OR, e NOT
 - termini semplici: $A\theta B$, $A\theta  'a'$, dove $\theta$ e’ un operatore di confronto (<,>,=,≤, ≥), A e B sono attributi _con lo stesso dominio_ e `a` e’ un elemento di dom(A)
 ## unione
-consente di costruire una relazione contenente tutte le tuple che appartengono al meno a uno dei 2 operandi.
+consente di costruire una relazione contenente tutte le tuple che appartengono almeno ad uno dei 2 operandi.
 - si denota con il simbolo $\cup$ 
 >[!info] union-compatibilita’
 >l’unione, come altre operazioni, puo’ essere applicata solo a operandi union-compatibili, cioe’:
