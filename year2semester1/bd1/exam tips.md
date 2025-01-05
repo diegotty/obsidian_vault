@@ -1,15 +1,19 @@
 ---
 created: 2025-01-05T12:53
-updated: 2025-01-05T13:58
+updated: 2025-01-05T14:17
 ---
 ## esercizio 1
 theta join: dell’attributo su cui si fa il theta join rimane solo una copia, quella di sinistra (?, per il noome è importante)
 
 ## esercizio 2
 chiavi dello schema : [[12 - identificazione delle chiavi di uno schema]]
-
->[!info] osservazioni
+>[!info]- osservazioni
 >1. conviene partire dai sottoinisiemi di $ABH$ di cardinalità maggiore: se la loro chiusura non contiene $R$, è inutila calcolare la chiusura dei loro sottoinsiemi
 >2. gli attributi che **non compaiono mai a destra delle dipendenze funzionali di F**, non sono determinati funzionalmente da nessun attributo, quindi **dovranno essere sicuramente in ogni chiave** (perchè rimarebbero fuori da qualunque chiusura transitiva, e una chiave deve determinare l’intero schema)
 >3. gli attributi che compaiono sempre e solo come dipendenti non potranno stare in una chiave
 >4. gli attributi che non compaiono mai( nè determinante, nè dipendente) nelle dipendenze funzionali in $F$, devono stare per forza nella chiave
+
+definizioni formali: 
+- chiave: insieme di campi la cui chiusura contiene l’intera relazione, e tale insieme non contiene al suo interno altre chiavi (insiemi la cui chiusura è $R$)
+- 3FN: forma normale. determinante superchiave, dipendente primo (oppure). dipendenze prese da $F^+$. basta una dipendenza non in 3FN e tutta la tabella è in non 3FN
+- per trovare decomposizione, si applica algoritmo per trovarla. per applicare algoritmo, serve una chiusura minimale, delle dipendenze funzionali, cioè un insieme di dipendenze funzionali equivalente ad F. per trovarla si applicano le 3 caratteristiche della copertura minimale, in ordine.
