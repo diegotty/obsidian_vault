@@ -1,6 +1,6 @@
 ---
 created: 2024-09-28T09:11
-updated: 2025-01-05T13:54
+updated: 2025-01-05T13:55
 ---
 >[!info] index !
 >- [proiezione](#proiezione)
@@ -69,7 +69,7 @@ si usa quando le informazioni necessarie per rispondere a una query si trovano i
 - spesso, le tuple che ci servono sono solo un sottoinsieme del prodotto cartesiano. e’ quindi opportuno usare, dopo il prodotto cartesiano, la [[#selezione]] per selezionare tali tuple
 ## join naturale
 consente di selezionare le tuple del prodotto cartesiano di due operandi($R_{1}, R_{2}$), a patto che le tuple rispettino la condizione: 
-$$ R_{1}.A_{1}=R_{2}.A_{2} \land R_{1}.A_{2}=R_{2}A_{2}\land \dots \land R_{1}.A_{k}=R_{2}.A_{k}$$
+$$ R_{1}.A_{1}=R_{2}.A_{1} \land R_{1}.A_{2}=R_{2}A_{2}\land \dots \land R_{1}.A_{k}=R_{2}.A_{k}$$
 	dove $A_{1},A_{1},\dots, A_{k}$ sono gli attributi da avere in comune(e con lo stesso nome, ma non nello stesso ordine !!!)
 - fa cio’ eliminando le ripetizioni degli attributi (li rimuove dalla proiezione del risultato)
 $$ r_{1}>|< r_{2} = \pi_{XY}(\sigma_{C}(r_{1} \text{x} r_{2}))$$

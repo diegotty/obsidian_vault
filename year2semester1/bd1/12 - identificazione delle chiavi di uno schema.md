@@ -1,7 +1,7 @@
 ---
 created: 2024-11-07
 related to: 
-updated: 2024-11-18T20:03
+updated: 2025-01-05T14:00
 ---
 
 >[!example] esempio 1
@@ -39,12 +39,12 @@ $R = (A,B,C,D,E, G, H)$
 e il seguente insieme di dipendenze funzionali:
 $F = \{AB \to D, G \to A, G \to B, H \to E, H \to G, D \to H \}$
 **determinare le 4 chiavi di $R$**
-
-cominciamo dagli attributi che ne determinano funzionalmente altri , e quelli che **NON** sono determinati funzionalmente dagli altri:
-nel nostro caso $AB, G, H, D$ sono buoni sottoinsiemi da cui iniziare, a cui però dobbiamo aggiungere $C$ che non appare nelle dipendenze funzionali in $F$( e quindi sarà in ogni chiave)
-calcolando le chiusure di $ABC, GC, CH, DC$, notiamo che la chiusura di ognuna comprende $R$: sono tutte superchiavi, e bisogna verificare la minimalità.
-per $GC, CH, DC$ è inutile farlo, in quanto sono necessari entrambi gli attributi.
-i sottoinsiemi di $ABH$ non sono chiavi, e quindi, pur avendo un attributo in più, anche $ABH$ è chiave di $R$
+>
+>cominciamo dagli attributi che ne determinano funzionalmente altri , e quelli che **NON** sono determinati funzionalmente dagli altri:
+>nel nostro caso $AB, G, H, D$ sono buoni sottoinsiemi da cui iniziare, a cui però dobbiamo aggiungere $C$ che non appare nelle dipendenze funzionali in $F$( e quindi sarà in ogni chiave)
+>calcolando le chiusure di $ABC, GC, CH, DC$, notiamo che la chiusura di ognuna comprende $R$: sono tutte superchiavi, e bisogna verificare la minimalità.
+>per $GC, CH, DC$ è inutile farlo, in quanto sono necessari entrambi gli attributi.
+>i sottoinsiemi di $ABH$ non sono chiavi, e quindi, pur avendo un attributo in più, anche $ABH$ è chiave di $R$
 # test di unicità della chiave
 (non necessario tipo)
 dati uno schema $R$ e un insieme di dipendenze funzionali $F$
