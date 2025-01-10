@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: 
-updated: 2024-12-22T13:57
+updated: 2025-01-10T09:38
 ---
 ## 01 - introduzione
 [[year2semester1/os1/01 - intro/intro|intro]]
