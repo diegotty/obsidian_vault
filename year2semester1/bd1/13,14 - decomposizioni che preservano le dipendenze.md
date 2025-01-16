@@ -1,7 +1,7 @@
 ---
 created: 2024-11-09
 related to: "[[10 - decomposizione]]"
-updated: 2024-11-18T20:06
+updated: 2025-01-16T05:57
 ---
 >[!index]
 >
@@ -116,10 +116,10 @@ usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire
  
 -  $S:= S \cup(Z \cap R_i)^+_F \cap Ri$ : calcolo la chiusura su F degli attributi presenti in $F$ e allo stesso tempo in $R_i$ (quindi tutte le dipendenti delle dipendenze in $F$, che hanno come determinante $Z \cup R_i$ ) e interseco la chiusura con $R_i$, in modo da avere la chiusura di $X$ per $R_i$. se si esce dal while in anticipo, facciamo questo procedimento per ogni $R_i$, quindi in $S$ stiamo accumulando gli attributi di tutti i sottoschemi che sono determinati funzionalmente da $X$
 >[!info] osservazione
->avermo anche gli attributi che dipendono funzionalmente da $X$, anche se non appartengono a sottoschemi in cui $X$ **non è incluso** ! perchè dipendono da attributi che sono nello stesso sottoschema di $X$ e che dipendono da $X$, ma si trovano anche in altri sottoschemi !
+>avremo anche gli attributi che dipendono funzionalmente da $X$, anche se non appartengono a sottoschemi in cui $X$ **non è incluso** ! perchè dipendono da attributi che sono nello stesso sottoschema di $X$ e che dipendono da $X$, ma si trovano anche in altri sottoschemi !
 >cool
 
->[!warning] l’algoritmo termina sempre ! ciò non implica che una dipendenza $X \to Y è preservata
+>[!warning] l’algoritmo termina sempre ! ciò non implica che una dipendenza $X \to Y$ è preservata
 # teorema sulla correttezza dell’algoritmo per il calcolo di $X^+_G$
 >[!info] teorema
 >sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzioali su $R$, $\rho = \{R_{1},R_{2},\dots,R_{k}\}$ una decomposizione di $R$ e $X$ un sottoinsieme di $R$. 

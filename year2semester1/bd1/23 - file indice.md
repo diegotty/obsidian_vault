@@ -1,7 +1,7 @@
 ---
 created: 2024-12-13
 related to: "[[21, 22 - organizzazione fisica dei dati. concetti generali]]"
-updated: 2024-12-30T06:31
+updated: 2025-01-16T06:02
 ---
 >[!index]
 >
@@ -19,6 +19,7 @@ updated: 2024-12-30T06:31
 >- [cancellazione](#cancellazione)
 >- [modifica](#modifica)
 >- [indice secondario](#indice%20secondario)
+
 quando le chiavi ammettono un ordinamento significativo per l’applicazione, e più conveniente utilizzare un’organizzazione fisica dei dati che ne tenga conto
 
 - interi e stringhe ammettono i consueti ordinamenti (lessicografico per le stringhe)

@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2024-12-30T06:31
+updated: 2025-01-16T06:01
 ---
 >[!index]
 >
@@ -159,7 +159,7 @@ viene usata per mettere i record dentro un bucket con un criterio: dato un valor
 ![[Pasted image 20241129185717.png]]
 in questo caso il record ha valore chiave $v$, che inserito nella funzione hash genera il numero $0$, quindi viene inserito nel bucket $0$ (alla fine dell’ultimo blocco, in quanto ogn bucket è gestito come un file heap)
 
-una funzione has, per essere “buona”, deve ripartire uniformemente i record nel bucket, cioè al variare del valore della chiave, deve assumere con la “**stessa**” probabilità uno dei valori compresi tra $0$ e $B-1$
+una funzione hash, per essere “buona”, deve ripartire uniformemente i record nel bucket, cioè al variare del valore della chiave, deve assumere con la “**stessa**” probabilità uno dei valori compresi tra $0$ e $B-1$
 una qualsiasi operazione su file hash, richiede la valutazione di $h(v)$ per individuare il bucket, e poi l’esecuzione dell’operazione sul bucket che è organizzato come un file heap
 - in genere, una funzione hash trasforma la chiave in un intero, divide questo intero per $B$, e fornisce il resto della divisione come numero del bucket
 >[!info] considerazioni

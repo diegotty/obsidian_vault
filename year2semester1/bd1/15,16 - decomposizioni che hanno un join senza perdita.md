@@ -1,7 +1,7 @@
 ---
 created: 2024-11-15
 related to: "[[10 - decomposizione]]"
-updated: 2024-11-18T20:06
+updated: 2025-01-16T05:55
 ---
 come abbiamo visto nelle [[10 - decomposizione#condizioni della decomposizione| condizioni per una decomposizione corretta]], l’ultima condizione, che non sappiamo anche verificare in una decomposizione, è che deve permettere di **ricostruire mediante join naturale** ogni **istanza legale dello schema originario**(senza aggiunta di informazione estranea)
 
@@ -76,7 +76,7 @@ $$\pi_{R_{1}}(r) \bowtie \pi_{R_{2}}(r) \bowtie \dots \bowtie \pi_{R_{k}}(r) = m
 >[!warning] ricordiamo che tutti i  valori $a_j$ sono considerati uguali
 - ripetiamo l’iterazione su ogni $X \to Y \in F$ finchè $r$ non è un’istanza legale, cioè quando, dopo aver iterato su ogni $X \to Y \in F$ la tabella non è cambiata (se è cambiata, potrebbero essere cambiati i valori che prima verificando una data dipendenza, e bisogna quindi ricontrollare)
 >[!warning] perchè entra in gioco $F$ ?
->perchè la proprietà $m_{\rho}(r)=r$ deve valere per ogni istanza legale di $R$, cioè ogni istana che soddisfa tutte le dipendenze in $F$. l’algoritmo costruisce proprio una istanza legale che ci permette la verifica, soddisfando tutte le dipendenze in $F$
+>perchè la proprietà $m_{\rho}(r)=r$ deve valere per ogni istanza legale di $R$, cioè ogni istanza che soddisfa tutte le dipendenze in $F$. l’algoritmo costruisce proprio una istanza legale che ci permette la verifica, soddisfando tutte le dipendenze in $F$
 # teorema sulla correttezza dell’algoritmo per la verifica di ‘$\rho$ ha join senza perdita’
 >[!info] teorema
 >sia $R$ uno schema di relazione, $F$ un insieme di dipendenze funzionali su $R$ e $\rho=\{R_{1}, R_{2}, \dots, R_{k}\}$ una decomposizione di $R$. 
