@@ -1,6 +1,6 @@
 ---
 created: 2025-01-05T12:53
-updated: 2025-01-16T06:07
+updated: 2025-01-16T17:08
 ---
 ## esercizio 1
 theta join: dell’attributo su cui si fa il theta join rimane solo una copia, quella di sinistra (?, per il noome è importante)

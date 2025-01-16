@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-16T06:07
+updated: 2025-01-16T17:08
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
