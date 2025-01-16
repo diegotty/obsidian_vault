@@ -1,7 +1,11 @@
 ---
 created: 2024-11-09
 related to: "[[10 - decomposizione]]"
+<<<<<<< HEAD
 updated: 2025-01-16T05:57
+=======
+updated: 2025-01-15T17:17
+>>>>>>> origin/main
 ---
 >[!index]
 >
@@ -66,7 +70,7 @@ sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
 
 quindi, per il lemma delle chiusure, visto che sappiamo che $G \subseteq F^+ \implies G^+ \subseteq F^+$
 - per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq F^+$
-- le dipendenze che ci danno problemi nel verificare $F^+ \subseteq G^+ sono le dipendenze $X \to Y \in F$ in cui $X$ e $Y$ non sono mai contenute insieme in un sottoschema (sono quindi, “a cavallo” di due tabelle)
+- le dipendenze che ci danno problemi nel verificare $F^+ \subseteq G^+$ sono le dipendenze $X \to Y \in F$ in cui $X$ e $Y$ non sono mai contenute insieme in un sottoschema (sono quindi, “a cavallo” di due tabelle)
 # verifica di $F \subseteq G^+$
 la verifica può essere fatta con il seguente algoritmo:
 ```pseudo
@@ -92,7 +96,7 @@ la correttezza dell’algoritmo è una conseguenza del lemma 1 e del teorema $F^
 come calcoliamo $X^+_G$ ?
 - se volessimo usare l’[[11 - chiusura di un insieme di attributi#algoritmo per calcolo di $X +$| algorimo per il calcolo della chiusura di un insieme di attributi]] , dovremmo prima calcolare $G$, ma per la definizione di $G$, ciò richiede il calcolo di $F^+$, che richiede tempo esponenziale. 
 usiamo quindi il seguente algoritmo, che permette di calcolare $X^+_G$ a partire da $F$
-## algorimo calcolo $^+_G$ a partire da $F$
+## algorimo calcolo $X^+_G$ a partire da $F$
 ```pseudo
 	\begin{algorithm}
 	\caption{calcolo di $X^+_G$ a partire da $F$}

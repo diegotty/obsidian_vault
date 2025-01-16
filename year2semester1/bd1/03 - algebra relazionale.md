@@ -1,6 +1,6 @@
 ---
 created: 2024-09-28T09:11
-updated: 2025-01-05T13:55
+updated: 2025-01-16T06:07
 ---
 >[!info] index !
 >- [proiezione](#proiezione)

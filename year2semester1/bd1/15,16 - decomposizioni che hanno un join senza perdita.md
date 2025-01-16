@@ -1,7 +1,11 @@
 ---
 created: 2024-11-15
 related to: "[[10 - decomposizione]]"
+<<<<<<< HEAD
 updated: 2025-01-16T05:55
+=======
+updated: 2025-01-15T17:20
+>>>>>>> origin/main
 ---
 come abbiamo visto nelle [[10 - decomposizione#condizioni della decomposizione| condizioni per una decomposizione corretta]], l’ultima condizione, che non sappiamo anche verificare in una decomposizione, è che deve permettere di **ricostruire mediante join naturale** ogni **istanza legale dello schema originario**(senza aggiunta di informazione estranea)
 
@@ -86,6 +90,7 @@ per dimostrare il teorema, occorre dimostare che:
 $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) $\iff$ quando l’algoritmo termina, la tabella $r$ ha una tupla con tutte ‘$a$’
 
 # dimostrazione
+none
 # esempi
 >[!example] esempio 1
 >dato il seguente schema di relazione: $R =(A,B,C,D,E)$
