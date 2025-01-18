@@ -1,7 +1,7 @@
 ---
 created: 2024-10-16
 related to: "[[intro allo scheduling]]"
-updated: 2024-10-16, 08:28
+updated: 2025-01-18T22:10
 ---
 >[!index]
 >
@@ -94,9 +94,12 @@ l’SRT utilizza la stessa politica dell’SPN, ma usa la preeemption
 la starvation è ancora possibile !
 >[!figure] ![[Pasted image 20241022085113.png]]
 # HRRN
-**highest resposnse ratio next**
+**highest response ratio next**
 non preemptive, mira a risolvere i problemi di starvation di SPN e SRT, massimizzando il seguente rapporto:
 $$\frac{w+s}{s} = \frac{\text{tempo trascorso in attesa + tempo totale richiesto}}{\text{tempo totale richiesto}}$$
 >[!figure] ![[Pasted image 20241022085405.png]]
 # confronto tra tutte le politiche
 >[!figure] ![[Pasted image 20241022085431.png]]
+
+>[!figure] ![[Pasted image 20241016081525.png]]
+overview delle politiche di scheduling

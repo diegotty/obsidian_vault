@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2025-01-18T21:52
+updated: 2025-01-18T22:10
 ---
 >[!index]
 >- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
@@ -69,8 +69,7 @@ code per gestione della priorità
 ### i/o scheduling
 //TODO add quando lo facciamo
 # politiche di scheduling
->[!figure] ![[Pasted image 20241016081525.png]]
-overview delle politiche di scheduling
+
 ## funzione di selezione
 è quella che sceglie effettivamente il processo da mandare in esecuzione.
 se basata sulle caratteristiche dell’esecuzione, i parametri da cui dipende sono:
