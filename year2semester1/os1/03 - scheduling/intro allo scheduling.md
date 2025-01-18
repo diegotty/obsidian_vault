@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2024-10-15, 09:32
+updated: 2025-01-18T21:43
 ---
 >[!index]
 >- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
@@ -27,7 +27,7 @@ lo scheduling gestisce l’allocazione del tempo di esecuzione tra i diversi pro
 - controlla il grado di [[introduzione ai sistemi operativi#multiprogrammazione]]
 - più processi ci sono, più è piccola la percentuale di tempo per cui ogni processo viene eseguito
 tipiche strategie:
-- i lavori batch(non interattivi) vengono accodati il LTS li prende quando lo ritiene giusto
+- i lavori batch(non interattivi) vengono accodati e il LTS li prende quando lo ritiene giusto
 - i lavori interattivi vengono ammessi fino a “saturazione” del sistema
 - si prova a mantenere un mix tra I/O-bound e CPU-bound jobs
 l’LTS può essere chiamato anche quando termina un processo o quando un processo è idle da troppo tempo
