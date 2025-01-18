@@ -1,3 +1,7 @@
+---
+created: 2024-09-30T23:12
+updated: 2025-01-18T14:26
+---
 >[!index]
 >
 >- [kernel](#kernel)
@@ -18,7 +22,7 @@ gestisce le risorse hardware di un sistema, per fornire un insieme di servizi ag
 >[!figure] ![[Pasted image 20241006111535.png]]
 strati di un SO
 
-si puo’ quindi pensare come un’interfaccia tra le applicazione e l’hardware, gestendo e controllando l’esecuzione dei programmi:
+si puo’ quindi pensare come un’interfaccia tra le applicazioni e l’hardware, gestendo e controllando l’esecuzione dei programmi:
 - e’ responsabile della gestione delle risorse
 	- concede il controllo del processore ad altri programmi
 	- controlla l’accesso alle altre risorse
@@ -41,7 +45,7 @@ nei sistemi batch, piu’ del 96% del tempo e’ sprecato ad aspettare i disposi
 un processore deve eseguire piu’ programmi contemporaneamente, e la sequenza con cui i programmi sono eseguiti dipende dalla loro priorita’ e dal fatto che siano o meno in attesa di input/output
 per rendere “l’illusione” dell’esecuzione di molteplici programmi in contemporanea, viene usata la multiprogrammazione.
 - al posto di aspettare che le istruzioni di i/o siano completate di procedere, il processore passa ad un altro processo.
-in questo modo, la percentuale d’uso del processore(e del resto delle componenti) si alza, rendendo il ciclo di esecuzione piu’ efficace. inoltre i tempi per eseguire un insieme di processi diminuisce drasticamente inoltre i tempi per eseguire un insieme di processi diminuisce drasticamente
+in questo modo, la percentuale d’uso del processore(e del resto delle componenti) si alza, rendendo il ciclo di esecuzione piu’ efficace. inoltre i tempi per eseguire un insieme di processi diminuisce drasticamente
 >[!figure] ![[Pasted image 20241006111437.png]]
 
 alla fine della gestione di un’interruzione, il controllo potrebbe non tornare al programma che era in esecuzione al momento dell’interruzione
@@ -53,7 +57,7 @@ sistemi a condivisione del tempo! uso della multiprogrammazine per gestire conte
 |                                   | batch                                                          | time sharing                     |
 | --------------------------------- | -------------------------------------------------------------- | -------------------------------- |
 | scopo principale                  | massimizzare l’uso del processore (?)                          | minimizzare il tempo di risposta |
-| provenienza delle direttiva al SO | comandi del job control language, sottomessi con il job stesso | comandi dati dal terminale       |
+| provenienza delle direttive al SO | comandi del job control language, sottomessi con il job stesso | comandi dati dal terminale       |
 # job vs processo
 il processo riunisce in un unico conetto il job non-interattivo e quello interattivo
 - incorpora anche un altro tipo di job che comincio’ a manifestarsi dagli anni Settanta: quello transazionale real-time (ad es. prenotazione biglietti aerei)
@@ -74,7 +78,7 @@ dato che viene introdotto un nuovo tipo di job, la multiprogrammaziones sui proc
 # struttura di un sistema operativo
 il sistema operativo viene visto come una serie di livelli.
 i livelli comunicano con i loro adiecenti !
-1. cirtuiti elettrici
+1. circuiti elettrici
 2. insieme delle istruzioni macchina
 3. aggiunge il concetto di procedura
 4. interruzioni
@@ -83,8 +87,8 @@ i livelli comunicano con i loro adiecenti !
 7. organizza lo spazio degli indirizzi virtuali in blocchi 
 8. comunicazioni tra processi
 9. filesystem
-10. acesso a dispositiv esterni
-11. asociazioni tra identificatori interni ed esterni
+10. acesso a dispositivi esterni
+11. associazioni tra identificatori interni ed esterni
 12. supporto di alto livello per i processi
 13. interfaccia utente
 >[!figure] ![[Pasted image 20241004111658.png]]
