@@ -1,3 +1,7 @@
+---
+created: 2024-10-05T22:37
+updated: 2025-01-18T21:27
+---
 >[!index]
 >
 >- [modalità kernel](#modalit%C3%A0%20kernel)
@@ -7,7 +11,7 @@
 ci sono aree di memoria(ad esempio i PCB) o comandi privilegiati ai cui dei processi (quelli di cui il SO non si fida) non devono avere accesso: per permettere ciò, esistono diverse modalità in cui un processo può essere eseguito, ognuna con permessi diversi (di solito)
 la maggior parte dei processori supporta almeno 2 modalità di esecuzione:
 # modalità kernel
-i processi eseguiti in modalità kernel (o modalità sitema) hanno pieno controllo:
+i processi eseguiti in modalità kernel (o modalità sistema) hanno pieno controllo:
 - possono eseguire istruzioni macchina che bloccano gli interrupt
 - possono accedere a qualsiasi locazione di RAM
 ed è quindi pensata per i processi del kernel
@@ -19,9 +23,9 @@ in particolare, hanno accesso a:
 # modalità utente
 pensata per i programmi utente, a cui molte operazioni sono vietate
 ## passaggio da kernel mode a user mode
-anche se un processo utente inizia sempre in modalità utente, spesso è necessario che un processo venga eseguito in kernel mode (per esempio, l’utilizzo di I/O). Ciò è possibile, e segue una logica:
-- la modalità di un processo cambia in seguito ad un iterrupt(la prima cosa che fa l’hardware, prima di invocare l’handler, è cambiare modalità da utente a sitema del processo; inoltre l’ultima istruzione dell’interrupt handler è lo switch a modalità utente del processo)
-in questo modo, l’interrupt handler viene può essere eseguito in modalità kernel
+anche se un processo utente inizia sempre in modalità utente, spesso è necessario che un processo venga eseguito in kernel mode (per esempio, l’utilizzo di I/O). ciò è possibile, e segue una logica:
+- la modalità di un processo cambia in seguito ad un interrupt(la prima cosa che fa l’hardware, prima di invocare l’handler, è cambiare modalità da utente a sitema del processo; inoltre l’ultima istruzione dell’interrupt handler è lo switch a modalità utente del processo)
+in questo modo, l’interrupt handler può essere eseguito in modalità kernel
 - ma dato che l’interrupt handler è dentro il kernel del SO, non ci sono problemi
 in questo modo, un processo utente può cambiare la modalità a se stesso, ma **solo per eseguire software di sistema**
 

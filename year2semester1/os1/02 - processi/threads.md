@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2024-10-15, 08:46
+updated: 2025-01-18T21:30
 ---
 >[!index]
 >
@@ -17,7 +17,7 @@ fino a quanto studiato, ogni processo compete con tutti gli altri per l’esecuz
 - finta: c’è solo un processore, i processi vengono swappati troppo in fretta perchè l’utente se ne accorga
 - vera: ci sono più processori (o un processore con più core)
 per alcune applicazioni, però, è importante che esse siano a loro volta organizzate in parallelo
->[!example]
+>[!example] esempio
 per esempio, un’applicazione grafica potrebbe essere suddivisa in 3 computazioni: una che ascolta input, una che ridisegna la finestra, e un’altra che fa i calcoli necessari
 
 alcune applicazioni vengono suddivise a loro volta in più esecuzioni: i thread
