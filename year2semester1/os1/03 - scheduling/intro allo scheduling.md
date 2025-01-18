@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2025-01-18T21:43
+updated: 2025-01-18T21:52
 ---
 >[!index]
 >- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
@@ -80,9 +80,9 @@ se basata sulle caratteristiche dell’esecuzione, i parametri da cui dipende so
 	- inizialmente e = 0, quindi s va stimato o fornito come input assieme alla richiesta di creazione del processo
 ## modalità di decisione
 specifica quando chiamare la funzione di selezione
-**preemptive**:
-- se un processo è in esecuzione, allora arrriva o fino a terminazione, o fino ad una richiesta di I/O (o comunque una richiesta bloccante)
 **non-preemptive**:
+- se un processo è in esecuzione, allora arrriva o fino a terminazione, o fino ad una richiesta di I/O (o comunque una richiesta bloccante)
+**preemptive**:
 - il SO può interrompere un processo in esecuzione anche senza le condizioni della modalità preemptive, e in questo caso il processo diventerà “ready”
 - la preemption di un processo può avvenrire per l’arrivo di nuovi processi (appena forkati) o per un interrupt:
 	- interrupt di I/O: un altro processo che era blocked diventa ready
