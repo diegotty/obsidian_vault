@@ -1,6 +1,6 @@
 ---
 created: 2024-10-05T21:59
-updated: 2025-01-18T14:29
+updated: 2025-01-18T21:09
 ---
 >[!index]-
 >
@@ -89,7 +89,7 @@ il dispatcher è un piccolo programma che decide quando sospendere un processo p
 
 # fasi di un processo
 ## creazione
-in un certo istanse, in un sistema operativo ci sono n ≥ 1 processi(c’è sempre un processo master, che non può essere ucciso (se non spegnendo il computer))
+in un certo istante, in un sistema operativo ci sono n ≥ 1 processi(c’è sempre un processo master, che non può essere ucciso (se non spegnendo il computer))
 i processi vengono spawnati attraverso il **process spawning**
 - un processo(processo padre) crea un altro processo(processo figlio)
 - si passa quindi da n a n+1 processi
