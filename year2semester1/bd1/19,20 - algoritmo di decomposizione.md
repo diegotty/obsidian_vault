@@ -1,6 +1,6 @@
 ---
 created: 2024-11-29T16:19
-updated: 2025-01-16T06:07
+updated: 2025-01-18T12:27
 related to: "[[17, 18 - copertura minimale di un insieme di dipendenze]]"
 ---
 >[!index]

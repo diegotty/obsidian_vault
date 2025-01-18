@@ -1,7 +1,6 @@
 ---
-created: 2024-12-13
-related to: "[[23 - file indice]]"
-updated: 2025-01-18T12:12
+created: 2025-01-18T12:27
+updated: 2025-01-18T12:38
 ---
 >>[!tsindex]
 >

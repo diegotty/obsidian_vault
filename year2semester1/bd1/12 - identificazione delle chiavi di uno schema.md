@@ -1,7 +1,7 @@
 ---
 created: 2024-11-07
 related to: 
-updated: 2025-01-16T06:07
+updated: 2025-01-18T12:27
 ---
 
 >[!example] esempio 1
