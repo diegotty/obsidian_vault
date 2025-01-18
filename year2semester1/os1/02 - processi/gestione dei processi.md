@@ -1,6 +1,6 @@
 ---
 created: 2024-10-05T21:59
-updated: 2025-01-18T12:27
+updated: 2025-01-18T14:29
 ---
 >[!index]-
 >
@@ -53,7 +53,7 @@ ha le seguenti caratteristiche:
  contiene gli elementi del processo, ed è stored nella zona di spazio riservata al kernel (altrimenti tutti i programmi potrebbero gestire i processi)
 - è creato e gestito dal SO, e gli permette di gestire più processi contemporaneamente
 - contiene sufficienti info per poter bloccare/far riprendere un programma
-- le sue informazioni possono essere raggruppate in 3: categorie: 
+- le sue informazioni possono essere raggruppate in 3 categorie: 
 ### identificazione
 - PID(numero identificativo e unico assegnato ad ogni processo)
 - Parent PID (PID del processo padre)
