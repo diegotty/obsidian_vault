@@ -1,9 +1,9 @@
 ---
 created: 2024-12-13
 related to: "[[23 - file indice]]"
-updated: 2025-01-16T06:07
+updated: 2025-01-18T12:12
 ---
->>[!index]
+>>[!tsindex]
 >
 >- [ricerca](#ricerca)
 >	- [altezza di un b-tree](#altezza%20di%20un%20b-tree)
