@@ -1,3 +1,7 @@
+---
+created: 2024-09-30T22:18
+updated: 2025-01-18T14:12
+---
 >[!index]
 >
 >- [tipi di istruzioni](#tipi%20di%20istruzioni)
@@ -74,7 +78,7 @@ quando viene chiamato l’interrupt handler, il SO e hardware collaborano per sa
 ### ciclo con disabilitazione delle interruzioni
 >[!figure] ![[Pasted image 20241006110508.png]]
 ## gestione i/o
-con l’uso delle interruzioni si puo’ cambiare il modo in cui si gestiscono le chimate all’i/o module.
+con l’uso delle interruzioni si puo’ cambiare il modo in cui si gestiscono le chiamate all’i/o module.
 #### i/o programmato
 una volta mandata la richiesta di lettura/scrittura all’ i/o module, la cpu si ferma e legge lo stato del’i/o module finche esso non e’ pronto a scambiare dati. una volta pronto, viene effettuata l’operazione e la cpu torna a eseguire istruzioni.
 in questo modo, non vengono chiamate interruzioni.
@@ -82,7 +86,7 @@ in questo modo, non vengono chiamate interruzioni.
 una volta mandata la richiesta di lettura/scrittura, il processore torna a fare altre cose, e viene interrotto quando il modulo i/o e’ pronto a scambiare dati. il processore salva quindi il contesto del programma che stava eseguendo e comincia ad eseguire il gestore dell’interruzione.
 in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di processore, che per ogni dato letto o scritto interrompe l’esecuzione del programma che stava eseguendo
 #### accessso diretto in memoria
- è il metodo di I/O usato nei computer attuali: dato che le istruzioni di I/O tipicamente richiedono di trasferire informazioni tra dispositivo di I/O e memoria, si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla cpu ?
+ è il metodo di I/O usato nei computer attuali: dato che le istruzioni di I/O tipicamente richiedono di trasferire informazioni tra dispositivo di I/O e memoria, si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla RAM
  è il metodo più efficiente
 >[!figure] ![[Pasted image 20241006110627.png]]
 rappresentazione grafica dei vari modi di gestire le chiamate all’i/o
