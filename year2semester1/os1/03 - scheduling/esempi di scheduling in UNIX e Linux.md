@@ -1,7 +1,7 @@
 ---
 created: 2024-10-22
 related to: "[[politiche di scheduling]]"
-updated: 2024-10-22, 10:43
+updated: 2025-01-18T22:19
 ---
 >[!index]
 >
@@ -41,7 +41,7 @@ $$P_{j}(i)=Base_{j}+ \frac{CPU_{j}(i)}{2} + nice_{j}$$
 >[!example]
 ![[Pasted image 20241022092933.png]]
 durante ogni quanto: il CPU count del processo in esecuzione viene aumentato di 1 ogni sessantesimo di secondo
-a fine quanto: vengono ricalcolate tutte le priorità ($P_{j}(i)$), usando i valori aggionrati di $CPU_{j}(i)$
+a fine quanto: vengono ricalcolate tutte le priorità ($P_{j}(i)$), usando i valori aggiornati di $CPU_{j}(i)$
 # architetture multiprocessore
 le politiche di scheduling viste in precedenza valgono solo per sistemi con un solo processore. con sitemi multiprocessore (la norma, al giorno d’oggi)
 - cluster
