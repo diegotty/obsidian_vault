@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[intro allo scheduling]]"
-updated: 2025-01-20T16:45
+updated: 2025-01-20T16:52
 ---
 studiamo ora i diversi tipi di strategie usate nel tempo per gestire la memoria
 # partizionamento
@@ -82,7 +82,7 @@ bisogna quindi:
 >lo stesso processo, ma in base 2, può essere descritto con questa immagine
 # segmentazione
 ## segmentazione semplice
-molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
+molto simile alla paginazione (anche i programmi vengono divisi in segmenti), però:
 - i segmenti hanno una lunghezza variabile e dinamica, e un limite massimo di dimensione
 - un indirizzo di memoria è un numero di segmento, e uno spiazzamento al suo interno
 - il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a dove piazzarli in RAM e risolvere gli indirizzi ci pensa il SO)
