@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[intro al filesystem]]"
-updated: 2024-11-25T09:51
+updated: 2025-01-20T21:19
 ---
 >[!index]
 >
@@ -57,7 +57,7 @@ alla fine, ci sono 2 possibilità (valide sia per preallocazione che per allocaz
 >[!info] preallocazione + porzioni grandi e di dimensione variabile
 >se si usa questa combinazione, non c’è bisogno di una tabella di allocazione: per ogni file basta l’inizio e la lunghezza, in quanto ogni file è un’unica porzione
 >- funziona come il porzionamento della RAM: si usano algoritmi come bset fit, first fit, next fit
-> - rimane inefficiente per lo spazio libera: necessita periodica compattazione, che è molto più onerosa che la compattazione della RAM
+> - rimane inefficiente per lo spazio libero: necessita periodica compattazione, che è molto più onerosa che la compattazione della RAM
 
 ## metodi di allocazione
 >[!info] riassunto
