@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2025-01-20T15:15
+updated: 2025-01-20T15:46
 ---
 >[!index]
 >- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
@@ -32,7 +32,7 @@ tipiche strategie:
 - si prova a mantenere un mix tra I/O-bound e CPU-bound jobs
 l’LTS può essere chiamato anche quando termina un processo o quando un processo è idle da troppo tempo
 ### medium-term scheduling
-- gestisce lo swapping dei processi (il passaggio da memoria seconda a memoria principale e viceversa)
+- gestisce lo swapping dei processi (il passaggio da memoria secondaria a memoria principale e viceversa)
 - gestisce quindi il grado di multiprogrammazione
 # short-term scheduling
 chiamato anche [[gestione dei processi#dispatcher]], è lo scheduler eseguito più frequentemente
