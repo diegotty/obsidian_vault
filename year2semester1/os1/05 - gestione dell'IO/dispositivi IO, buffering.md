@@ -1,3 +1,7 @@
+---
+created: 2024-11-21T14:24
+updated: 2025-01-20T19:58
+---
 >[!index]
 >
 >- [categorie di dispositivi di IO](#categorie%20di%20dispositivi%20di%20IO)
@@ -82,7 +86,7 @@ little-endian, big-endian
 ### condizioni d’errore
 la natura degli errori varia di molto da dispositivo a dispositivo
 - nel modo in cui gli errori vengono notificati
-- sulle loro conseguenze (fataili?ignorabili)
+- sulle loro conseguenze (fataili/ignorabili)
 - su come possono essere gestiti
 
 # DMA 
