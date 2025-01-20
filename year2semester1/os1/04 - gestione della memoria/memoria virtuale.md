@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[partizionamento e paginazione]]"
-updated: 2025-01-20T17:13
+updated: 2025-01-20T17:26
 ---
 fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che:
 - i riferimenti alla memoria avvengono tramite indirizzi logici, che vengono tradotti ad indirizzi fisici a tempo di esecuzione
@@ -37,7 +37,7 @@ avviene quando il SO impiega la maggior parte del suo tempo a swappare pezzi di 
 per evitare il trashing, il SO cerca di indovinare quali pezzi di processo saranno usati con maggiore probabilità nel futuro (nella prossima istruzione da eseguire), e lo fa usando un principio a noi già noto: il principio di località.
 - per il principio di località, i riferimenti che fa un processo tendono ad essere vicini, quindi saranno necessari solo pochi pezzi del processo di volta in volta. in questo modo si può prevedere abbastanza bene quali pezzi di processo saranno necessari nelle istruzioni a seguire, permettendo alla memoria virtuale di evitare il thrashing e quindi di funzionare bene
 # supporto hardware
-paginazione e segmentazione hanno bisogno di essere supportati dell’hardware, poichè alcune operazioni sarebbero troppo lunghe se fatte in software dal SO
+paginazione e segmentazione hanno bisogno di essere supportati dall’hardware, poichè alcune operazioni sarebbero troppo lunghe se fatte in software dal SO
 ## traduzione degli indirizzi
 ### page table entry
 è la tabella delle pagine: ogni processo ne ha una ed il suo PCB punta ad essa
@@ -57,13 +57,13 @@ affinchè lo schema funzioni, ad ogni process switch il SO deve caricare la tabe
 ## problema delle PTE
 le page tables potrebbero avere molte entry !  e quando un processo è in esecuzione, viene assicurato che almeno un parte della sua page table sia in RAM
 >[!example]
-supponiamo di avere 8GB di spazio virtuale, e che ogni pagina pesi 1kB. ogni page table
+supponiamo di avere 8GB di spazio virtuale, e che ogni pagina pesi 1kB. ogni page table \\\QUE>STION
 
 # TLB
 ogni riferimento alla memoria virtuale può generare due accessi alla memoria: 
 - uno per la tabella delle pagine (se la tabella ha un solo livello)
 - uno per prendere il dato
-il TLB (**transation lookaside buffer**) è una cache veloce che contiene le entry delle process table  che sono state usate più di recente
+il TLB (**transation lookaside buffer**) è una cache veloce che contiene le entry delle page table(PCB ?) che sono state usate più di recente
 quindi, dato un indirizzo virtuale, il procesore controlla prima il TLB, e si possono verifcare due casi:
 - **TLB hit**: l’entry è presente, si prende il frame number e si ricava l’indirizzo reale
 - **TLB miss**: l’elemento non è presente, si prende la entry dal PT del processo
