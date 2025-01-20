@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[partizionamento e paginazione]]"
-updated: 2025-01-20T17:26
+updated: 2025-01-20T17:33
 ---
 fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che:
 - i riferimenti alla memoria avvengono tramite indirizzi logici, che vengono tradotti ad indirizzi fisici a tempo di esecuzione
@@ -86,7 +86,7 @@ in ogni caso(anche senza TLB), come abbiamo visto, a ogni process switch è nece
 >[!figure] ![[Pasted image 20241028141114.png]]
 >dato che il TLB non è indicizzato nello stesso modo delle PT(il TLB contiene solo alcuni elementi del PT), **l’associative mapping** ci permette di questionare tutte le entry del TLB allo stesso tempo (sempre grazie al supporto hardware)
 
-inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: dato che quando avviene una TLB hit non controlliamo la PT del processo, potremmo non aggorgerci se la pagina che cerchiamo è stata swappata, e quindi non gestiremmo il page fault
+inoltre, bisogna fare in modo che il TLB contenga solo pagine presenti in RAM: dato che quando avviene una TLB hit non controlliamo la PT del processo, potremmo non accorgerci se la pagina che cerchiamo è stata swappata, e quindi non gestiremmo il page fault
 - se il SO swappa una pagina, deve istruire anche il TLB di eliminarla !
 - tornano qui utili le istruzioni hardware di reset parziale del TLB
 >[!figure] TLB + cache
