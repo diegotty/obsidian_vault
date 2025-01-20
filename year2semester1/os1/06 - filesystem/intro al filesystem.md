@@ -1,9 +1,9 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2024-11-25T09:50
+updated: 2025-01-20T21:00
 ---
-il file system è una delle parti del SO che sono più imporanti per l’utente
+l file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
 - esistenza a lungo termine
 - condivisibilità con altri processi (tramite nomi simbolici)
