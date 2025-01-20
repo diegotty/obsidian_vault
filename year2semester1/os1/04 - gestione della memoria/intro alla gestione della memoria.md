@@ -56,7 +56,7 @@ il risultato dell’absolute address viene confrontato con il bounds register, e
 - base register: indirizzo di partenza del processo
 - bounds register: indirizzo di fine del processo
 i valori di questi registri vengono settati nel momento in cui il processo viene posizionato in memoria, e sono manenuti nel PCB del processo.
-- il set fa parte del passo 6 del [[]]
+- il set fa parte del passo 6 del [[gestione dei processi#switching tra processi]]
 ## protezione
 i processi non devono poter accedere a locazioni di memoria di un altro processo, a meno che non siano autorizzati
 - a causa delle rilocazione, non si può fare a tempo di compilazione, bisogna gestirlo a tempo di esecuzione, con aiuto hardware

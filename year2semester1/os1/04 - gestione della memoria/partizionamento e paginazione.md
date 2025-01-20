@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[intro allo scheduling]]"
-updated: 2024-10-27, 15:35
+updated: 2025-01-20T16:45
 ---
 studiamo ora i diversi tipi di strategie usate nel tempo per gestire la memoria
 # partizionamento
@@ -63,7 +63,6 @@ c’è un grande overhead giustificato dal miglioramento di prestazioni
 i SO che adottano la paginazione mantengono una tabella delle pagine di ogni processo, che, per ogni pagina del processo, indica in che frame effettivo si trova
 - la situazione dei module relativi va modificata: ogni indirizzo di memoria può essere visto come un numero di pagina e un offset al suo interno
 quando c’è un process switch, la tabella delle pagine del nuovo processo deve essere ricaricata
->[!example] esempio di paginazione
 
 >[!figure] ![[Pasted image 20241027154749.png]]
 tabelle delle pagine risultanti
