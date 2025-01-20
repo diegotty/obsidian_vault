@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2025-01-20T20:11
+updated: 2025-01-20T20:30
 ---
 >[!index]
 >
@@ -186,7 +186,7 @@ i dischi RAID permettono:
 - **data availability**(da RAID 1 in su): capacità di recupero in caso di fallimento
 - **small I/O request rate**: velocità nel rispondere a piccole richieste di I/O
 ## LVM
-il Linux LVM (**logical volume manager**) permette di gestire diversi dischi come discono unico (bording stuff)
+il Linux LVM (**logical volume manager**) permette di gestire diversi dischi come disco unico (boring stuff)
 
 esistono device composti da più dischi fisici gestiti da un RAID direttamente a livello di dispositivo (il sistema operativo fa solo read/write, ci pensa il dispositivo stesso a gestire internamente il RAID)
 ## gerarchia dei dischi RAID
