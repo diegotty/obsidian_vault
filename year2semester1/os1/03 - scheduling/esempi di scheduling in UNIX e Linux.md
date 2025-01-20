@@ -1,7 +1,7 @@
 ---
 created: 2024-10-22
 related to: "[[politiche di scheduling]]"
-updated: 2025-01-18T22:19
+updated: 2025-01-20T15:15
 ---
 >[!index]
 >

@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2025-01-18T22:10
+updated: 2025-01-20T15:15
 ---
 >[!index]
 >- [obiettivi dello scheduling](#obiettivi%20dello%20scheduling)
