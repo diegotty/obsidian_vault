@@ -1,9 +1,9 @@
 ---
 created: 2024-10-27
 related to: "[[partizionamento e paginazione]]"
-updated: 2024-10-27, 16:18
+updated: 2025-01-20T17:13
 ---
-fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che :
+fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che:
 - i riferimenti alla memoria avvengono tramite indirizzi logici, che vengono tradotti ad indirizzi fisici a tempo di esecuzione
 - un processo può essere spezzato in più parti, che non necessariamente occupano una zona contigua di memoria
 se queste due caratteristiche sono vere, allora non è necessario che tutte le pagine(o segmenti) di un processo siano in memoria principale, per far poter eseguire il processo: in RAM servono solamente la prossima istruzione e i dati di cui ha bisogno
@@ -19,7 +19,7 @@ grazie a questa intuizione si può cambiare il modo in cui si gestisce la memori
 - visto che ci sono più processi in memoria principale, è più probabile che ci sia sempre un processo `ready` **aumenta il grado di multiprogrammazione**
 - si possono gestire processi che richiedono più memoria di quella disponibile nella memoria principale
 # memoria virtuale
-uno schema che usa memoria virtuale è quindi uno schema di allorazione di memoria, in cui la memoria secondaria può essere usata come se fosse principale (nel senso che vengono tenute pagine di processi, mentre prima venivano tenuti processi per intero)
+uno schema che usa memoria virtuale è quindi uno schema di allocazione di memoria, in cui la memoria secondaria può essere usata come se fosse principale (nel senso che vengono tenute pagine di processi, mentre prima venivano tenuti processi per intero)
 le sue caratteristiche sono:
 - gli indirizzi usati nei programmi e quelli usati dal sistema sono diversi, e c’è una fase di traduzione automatica dai primi ai secondi
 - la dimensione della memoria virtuale è limitata dallo schema di indirizzamento e dalla disponibilità di memoria secondaria (la RAM non influisce a riguardo)
