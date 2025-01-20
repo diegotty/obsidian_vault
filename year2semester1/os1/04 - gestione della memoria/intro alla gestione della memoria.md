@@ -1,7 +1,7 @@
 ---
-created: "2024-10-27"
+created: 2024-10-27
 related to: 
-updated: "2024-10-27, 15:34"
+updated: 2025-01-20T16:32
 ---
 >[!index]
 >
@@ -56,7 +56,7 @@ il risultato dell’absolute address viene confrontato con il bounds register, e
 - base register: indirizzo di partenza del processo
 - bounds register: indirizzo di fine del processo
 i valori di questi registri vengono settati nel momento in cui il processo viene posizionato in memoria, e sono manenuti nel PCB del processo.
-- il set fa parte del passo 6 del process switch
+- il set fa parte del passo 6 del [[]]
 ## protezione
 i processi non devono poter accedere a locazioni di memoria di un altro processo, a meno che non siano autorizzati
 - a causa delle rilocazione, non si può fare a tempo di compilazione, bisogna gestirlo a tempo di esecuzione, con aiuto hardware
