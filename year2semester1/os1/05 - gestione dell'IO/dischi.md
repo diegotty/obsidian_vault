@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2024-11-19T09:50
+updated: 2025-01-20T20:11
 ---
 >[!index]
 >
@@ -108,7 +108,7 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 - fixa il problema di possibile favoritismo verso nuove richieste arrivate (che seguono il percorso che sta facendo la testina) della politica SCAN
 - usa due code, anzichè una: F(**front**) e R(**rear**)
 	- quando SCAN inizia, tutte le richieste sono nella coda F, e l’altra coda R è vuota, e viene riempita con le richieste che arrivano mentre SCAN sta servendo tutta F
-	- quando SCAN finisce di servire F, si scambiano F ed $
+	- quando SCAN finisce di servire F, si scambiano F ed R
 - in questo modo, ogni nuova richiesta deve aspettare che tutte le precedenti vengano servite, eliminando il favoritismo !
 ## N-step-SCAN
 - generalizzazione di FSCAN a N > 2 code: si accodano le richieste nella i-esima coda, finche non si riempie: si passa poi alla (i+1) mod N
@@ -123,7 +123,7 @@ impossibile fare il grafico perchè non sappiamo quale utente fa la richiesta
 struttura degli SSD:
 - ad alto livello, sono costituiti da stack (flash chips) di **die** (matrici)
 	- il controller dell’SSD gestisce gli stack di die
-- ogni die  ha un certo numero di **planes**
+- ogni die ha un certo numero di **planes**
 - le planes sono divise in **blocks** (blocchi)
 - ciascun block è composto da un numero variabile di **pages** (pagine, di circa 4KB)
 - ogni page è composta da **cells** (celle): le celle sono le unità più piccole, e possono immagazzinare un solo bit (2 per le multi-level cells)
