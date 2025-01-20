@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2025-01-20T20:30
+updated: 2025-01-20T20:42
 ---
 >[!index]
 >
@@ -231,12 +231,12 @@ esistono device composti da più dischi fisici gestiti da un RAID direttamente a
 ![[Pasted image 20241118102320.png]]
 > - come RAID 5, ma le informazioni di parità vengono memorizzate su 2 dischi indipendenti
 >- ciò permete di recuperare anche 2 fallimenti di disco
->- per le operazioni di scrittura, dato che vanno scritte in 2 dischi diversi, il RAID 6 ha un 30% di penalità in più rispetto al RAID 5. per la scrittura invece, si equivalgono
+>- per le operazioni di scrittura, dato che vanno scritte in 2 dischi diversi, il RAID 6 ha un 30% di penalità in più rispetto al RAID 5. per la lettura invece, si equivalgono
 
 >[!example] riassunto
 ![[Pasted image 20241118102631.png]]
 # page cache in Linux
-esista una unica page cache per tutti i trasferimenti tra disco e memoria principale, compresi quelli dovuti alla gestione della memoria virtuale
+esiste una unica page cache per tutti i trasferimenti tra disco e memoria principale, compresi quelli dovuti alla gestione della memoria virtuale
 - è nell’area della memoria virtuale destinata ai processi utenti, quindi combatte con essi (si amplia e si restringe a seconda di quanti processi sono presenti, e non può occupare tutto lo spazio disponibile)
 - il page buffering ricade nella page cache
 si scrive su disco quando: 
