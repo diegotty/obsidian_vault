@@ -1,6 +1,6 @@
 ---
 created: 2024-10-05T22:37
-updated: 2025-01-20T15:15
+updated: 2025-01-20T15:35
 ---
 >[!index]
 >
@@ -24,7 +24,7 @@ in particolare, hanno accesso a:
 pensata per i programmi utente, a cui molte operazioni sono vietate
 ## passaggio da kernel mode a user mode
 anche se un processo utente inizia sempre in modalità utente, spesso è necessario che un processo venga eseguito in kernel mode (per esempio, l’utilizzo di I/O). ciò è possibile, e segue una logica:
-- la modalità di un processo cambia in seguito ad un interrupt(la prima cosa che fa l’hardware, prima di invocare l’handler, è cambiare modalità da utente a sitema del processo; inoltre l’ultima istruzione dell’interrupt handler è lo switch a modalità utente del processo)
+- la modalità di un processo cambia in seguito ad un interrupt(la prima cosa che fa l’hardware, prima di invocare l’handler, è cambiare modalità da utente a sistema del processo; inoltre l’ultima istruzione dell’interrupt handler è lo switch a modalità utente del processo)
 in questo modo, l’interrupt handler può essere eseguito in modalità kernel
 - ma dato che l’interrupt handler è dentro il kernel del SO, non ci sono problemi
 in questo modo, un processo utente può cambiare la modalità a se stesso, ma **solo per eseguire software di sistema**

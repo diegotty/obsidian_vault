@@ -1,6 +1,6 @@
 ---
 created: 2024-10-05T21:59
-updated: 2025-01-20T15:15
+updated: 2025-01-20T15:33
 ---
 >[!index]-
 >
@@ -142,9 +142,9 @@ il SO è solo un insieme di programmi, ed è eseguito dal procesore come altro o
 - è quindi lui stesso un processo?
 ## gestione del SO senza processi
 - il Kernel è eseguito al di fuori dei processi, infatti il concetto di processo si applica solo ai programmi utente.
-- l’SO è quindi eseguito come un’entità separata, con privilegi più elevati, una sua zona di memoria dedicata sia per i dati che per il codice sorgente che per lo stack
+- il SO è quindi eseguito come un’entità separata, con privilegi più elevati, una sua zona di memoria dedicata sia per i dati che per il codice sorgente che per lo stack
 >[!figure] ![[Pasted image 20241006130751.png]]
-## esecuzione dell’SO all’interno dei processi utente
+## esecuzione del SO all’interno dei processi utente
 - il SO viene eseguito nel contesto di un processo utente: il SO non è pensato come una entità separata o dei processi a se stanti, bensì viene eseguito dai processi utente (cambiando la modalità di esecuzione)
 - in questo modo, non c’è bisogno di un process switch per eseguire una funzione del SO, in quando viene utilizzato il processo running
 - lo stack delle chiamate rimane separato: esiste lo user stack e il kernel stack, mentre i dati e il codice macchina vengono condivisi con i processi
