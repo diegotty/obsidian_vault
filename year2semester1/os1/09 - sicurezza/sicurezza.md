@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2025-01-20T15:15
+updated: 2025-01-21T20:15
 ---
 >[!index]
 >
@@ -18,7 +18,7 @@ updated: 2025-01-20T15:15
 >- [accesso ai file](#accesso%20ai%20file)
 >- [SETUID e STGID](#SETUID%20e%20STGID)
 
-dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology:
+dal manuale sulla sicurezza informatica del NIST (national institute of standards and technology):
 la **sicurezza** è la protezione offerta da un sistema informatico automatico al fine di conservare integrità, disponibilità e confidenzialità dalle risorse del sistema stesso
 >[!info] la triade
 >![[Pasted image 20241217171022.png]]
