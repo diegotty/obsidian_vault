@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[intro al filesystem]]"
-updated: 2025-01-20T21:29
+updated: 2025-01-21T14:10
 ---
 >[!index]
 >
@@ -116,7 +116,7 @@ si usa un vettore con un bit per ogni blocco su disco: 0 vuol dire libero, 1 vuo
 ha però dei problemi: 
 - se il disco è quasi pieno, la ricerca di uno spazio libero può richiedere molto tempo (risolvibile con delle tabelle riassuntive di porzioni della tabella di bit)
 ## porzioni libere concatenate
-come allocazione libera: le porzioni libere possono essere concatenate le une alle latre, usando, per ogni blocco libero, un puntatore ed un intero per la dimensione
+come allocazione libera: le porzioni libere possono essere concatenate le une alle altre, usando, per ogni blocco libero, un puntatore ed un intero per la dimensione
 - questa soluzione non ha praticamente overhead
 ha però dei problemi:
 - occorre leggere un blocco libero per conoscere il prossimo: se occorre allocarne molti, diventa time consuming 
@@ -140,7 +140,7 @@ un volume potrebbe essere il risultato dell’unione di volumi più piccoli !
 **dati**: contenuto del file
 **metadati**: lista di blocchi liberi, lista di blocchi all’interno dei file, data di ultima modifica, …
 - i metadati devono essere su dicsco, perchè devono essere persistenti
-- per efficienza, vengono anche tenuti in memoria principale, ma mantere sempre consistenti i metadati in memoria principale e su disco è inefficiente, quindi si fa solo di tanto in tanto, quando il disco è poco usato, e con più aggioronamenti in sieme (buffering)
+- per efficienza, vengono anche tenuti in memoria principale, ma mantere sempre consistenti i metadati in memoria principale e su disco è inefficiente, quindi si fa solo di tanto in tanto, quando il disco è poco usato, e con più aggiornamenti insieme (buffering)
 ## jounaling
 zona dedicata del disco(**log**) in cui scrivere le operazioni, prima di farne il commit nel file system
 - in caso di reboot dopo un crash, basta leggere il log !!
