@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: "[[intro alla concorrenza]]"
-updated: 2024-12-10T08:14
+updated: 2025-01-21T17:32
 ---
 >[!index]
 >
@@ -51,7 +51,7 @@ uso il flag per comunicare l’intenzione di voler accedere in sezione critica
 >- se il dispatcher è fair, questa soluzione funziona ! 
 >- garantisce il **bounded-waiting**: un processo può aspettare l’altro al più una volta
 >- garantisce il non-deadlock, ma è busy-waiting
->- non richiede nessun supporto dal SO(c'è da dire che ci sono alcune architetture moderne che hanno ottimizzazioni hardware che riordinano le istruzioni da eseguire, nonchè gli access in memoria. È NECESSARIO DISABILITARE TALI OTTIMIZZAZIONI !!!)
+>- non richiede nessun supporto dal SO(c'è da dire che ci sono alcune architetture moderne che hanno ottimizzazioni hardware che riordinano le istruzioni da eseguire, nonchè gli accessi in memoria. È NECESSARIO DISABILITARE TALI OTTIMIZZAZIONI !!!)
 ## algoritmo di Peterson
 >[!info] algoritmo
 ![[Pasted image 20241209110739.png]]
@@ -80,6 +80,7 @@ chiaramente, la comunicazione richiede anche la sincronizzazione (il mittente de
 se `send` è bloccante, il processo che invia il messaggio diventerà `BLOCKED` fino a che qualcuno non effettuerà un `receive`, e allo stesso modo un processo che chiama `receive` prima di avere un messaggio da ricevere sara `BLOCKED` fino a che non riceve un messaggio
 - quindi che un processo si blocchi o non si blocchi dipende da qualche funzione è stata chiamata prima
 - tipicamente questo tipo di comunicazione viene chiamato **rendezvous** (ah, l’amore, le donne francesi. they all smell like freshly baked, buttery croissants. dont get me started on their taste)
+note on re-reading 4 exam: you are one funny mommy fricker diego
 ### send non bloccante
 più naturale per molti programmi concorrenti ! la chiameremo `nbsend`. 
 - di solito, la ricezione è bloccante
