@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: "[[intro alla concorrenza]]"
-updated: 2025-01-21T17:32
+updated: 2025-01-21T17:41
 ---
 >[!index]
 >
