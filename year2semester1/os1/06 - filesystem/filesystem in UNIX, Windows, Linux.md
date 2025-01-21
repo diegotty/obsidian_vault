@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2024-11-25T09:51
+updated: 2025-01-21T14:32
 ---
 >[!index]
 >
@@ -75,11 +75,11 @@ più file sono messi in una directory, più grande è la directory (anche se di 
 
 >[!info] regioni del volume
 ![[Pasted image 20241123124845.png]]
-**regione boot sector**: simile a blocco di boot per [[#FAT]], contienele informazioni e i dati necessari per il bootstrap
+**regione boot sector**: simile a blocco di boot per [[#FAT]], contiene le informazioni e i dati necessari per il bootstrap
 **regione superblock**: contiene informazioni sui metadati del filesystem (dimensione della partizione, dimensione dei blocchi, puntatore alla lista dei blocchi liberi, etc). esistono copie multiple di questa regione, in caso di corruzione, e sono salvate in gruppi di blocchi sparsi nel file system (la prima copia è sempre in una parte prefissata della partizione, in modo da consentire recovery in modo semplice)
 **regione lista degli inode**: la i-list !!
 ## gestione file condivisi
-come gestire i file che devono essere condivis in più directory ? fare una copia del file è inutilmente costoso. esisono 2 soluzioni:
+come gestire i file che devono essere condivisi in più directory ? fare una copia del file è inutilmente costoso. esisono 2 soluzioni:
 **symbolic links**: esiste un solo descrittore (inode) del file originale, e i symlinks contengono il cammino completo sul filesystem verso tale file (stanno quindi dove dove NON si trova il file, altrimenti sarebbe inutile)
 - possono esiste symlinks a file non più esistenti
 **hard links**: sono un puntatore diretto al descrittore del file originale(inode), e il file condiviso non può essere cancellato finchè esiste un hard link collegato ad esso
