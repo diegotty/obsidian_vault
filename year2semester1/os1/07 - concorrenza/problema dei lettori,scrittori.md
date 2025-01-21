@@ -1,7 +1,7 @@
 ---
 created: 2024-12-09
 related to: "[[mutua esclusione, soluzioni software]]"
-updated: 2024-12-10T08:13
+updated: 2025-01-21T17:48
 ---
 >[!index]
 >
@@ -77,6 +77,7 @@ void reader(){
 			readcount--;
 			if(readcount == 0) semSignal(wsem);
 		semSignal(x);
+// upon re-reading: WHAT THE FUCK
 	}
 }
 
