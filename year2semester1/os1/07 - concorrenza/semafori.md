@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[mutua esclusione, soluzioni hardware]]"
-updated: 2025-01-21T16:13
+updated: 2025-01-21T16:35
 ---
 `1>[!index]
 >
@@ -160,8 +160,8 @@ void main() {
 }
 ```
 se 2 processi sono eseguiti concorrentemente (P1, P2), dato che `semWait` è un’operazione atomica, solo uno dei due la eseguirà, nella usa interezza, per primo (in questo caso, per esempio P1). P1 non verrà messo in `BLOCKED`, mentre P2, quando eseguirà `semWait`, si (`s.count`diventerà -1), e in questo modo non c’è busy-waiting !!! (pazzesco ngl). inoltre, quando P1 avrà finito la sua sezione critica, chiamerà `semSignal`, che riporterà P2 da `BLOCKED` a `READY`, e quando P2 verrà eseguito finirà la chiamata `semWait`, e farà la sua sezione critica.
-- con 2 processi, la starvation è evitata anche unsando weak semaphores, mentre con 3+ processi la starvation è sicuramente evitata solo usando strong semaphores, in quanto un weak semaphore potrebbe scegliere sempre uno tra i processi da mandare sempre da `BLOCKED` a `READY`, mandandone in starvation almeno un altro
->[!warning] è fondamenta che il semaforo sia inzializzato con count = 1 !!!
+- con 2 processi, la starvation è evitata anche usando weak semaphores, mentre con 3+ processi la starvation è sicuramente evitata solo usando strong semaphores, in quanto un weak semaphore potrebbe scegliere sempre uno tra i processi da mandare sempre da `BLOCKED` a `READY`, mandandone in starvation almeno un altro
+>[!warning] è fondamentale che il semaforo sia inzializzato con count = 1 !!!
 
 >[!figure] rappresentazione grafica di un esempio
 ![[Pasted image 20241208171636.png]]
