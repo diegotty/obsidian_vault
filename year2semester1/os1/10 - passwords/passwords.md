@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2025-01-20T15:15
+updated: 2025-01-21T21:01
 ---
 >[!index]
 >
@@ -25,7 +25,7 @@ entrambi sono normali file di testo con una sintassi simile, ma hanno funzionali
 - per ogni riga (utente) in `\etc\passwd`, esiste un a riga in `\etc\shadow` che indica la sua password
 - originariamente, esisteva solo il file *passwd*, che includeva la password dell’utente in plaintext….. la struttura è stata cambiata x ovvi motivi
 ## \etc\passwd
-è un file in plaintex, che contiene l’intera lista di utenti presenti nel sistema
+è un file in plaintext, che contiene l’intera lista di utenti presenti nel sistema
 - include non solo gli utenti “normali”, ma anche utenti standard di sistemi e utenti speciali (ad esempio l’utente *nobody*, che solitamente è usato per dare il minimo set di permessi possibili ad un processo)
 di default, `\etc\passwd` ha i seguenti permessi:
 ```
@@ -59,9 +59,9 @@ di default, ha i seguenti permessi:
 >4. min age: il minimo numero di giorni dall’ultimo cambio prima che la password possa essere nuovamente cambiata
 >5. max age: il massimo numero di giorni dopo dei quali è necessario cambiare la password
 >6. warn: quanti giorni prima della scadenza della password va avvisato l’utente
-esistono anche altri 2 campi (possiamo vedere dall’imagine che in questo caaso sono vuoti): inactive (numero di giorni dopo la scadenza della password dopo di chè l’account viene disabilitato), expire(data di scadenza dell’account)
+esistono anche altri 2 campi (possiamo vedere dall’imagine che in questo caso sono vuoti): inactive (numero di giorni dopo la scadenza della password dopo di chè l’account viene disabilitato), expire(data di scadenza dell’account)
 ## modular crypt format
-è il formatoo usato nello shadow file per salvare gli hash delle password, ed è il seguente formato:
+è il formato usato nello shadow file per salvare gli hash delle password, ed è il seguente formato:
 $$$ID$salt$hash$$
 **ID**: indica l’algoritmo di salting usato per questa password (ID=1 corrisponde a MD5, ID = 6 corrisponde all’algritmo SHA512, e ne esistono tanti altri: blowfish, SHA256, …)
 **salt**: senquenza randomica data in input ad una funzione hash, per garantire un risultato unico
