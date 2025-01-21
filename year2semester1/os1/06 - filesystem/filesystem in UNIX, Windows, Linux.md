@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2025-01-21T14:32
+updated: 2025-01-21T15:01
 ---
 >[!index]
 >
@@ -125,7 +125,7 @@ per le directory, al posto di essere una lista con entrate del tipo “nomefile-
 - supporta file di dimensione massima 4GB (32 bit nel campo dimensione file nelle directory)
 - non implementa journaling
 - non consente alcun meccanismo di controllo di accessi ai file/directory
-- limite dimensione partizioni: 2TB ($2^32$ settori da 512B)
+- limite dimensione partizioni: 2TB ($2^{32}$ settori da 512B)
 ## NTFS
  sta per **new technology file system**, è il file sytem adottato a partire da Windows NT in poi
  - usa UNICODE per l’encoding dei nomi dei file, con 255 caratteri come limite massimo
@@ -135,7 +135,7 @@ per le directory, al posto di essere una lista con entrate del tipo “nomefile-
  >[!info] formato del volume
  ![[Pasted image 20241123121915.png]]
  **regione boot sector**: basata sull’equivalente FAT, alcuni campi sono in posizioni diverse ma per il resto è uguale
- **master file table**: contiene la MTF
+ **master file table**: contiene la MFT
 ### MFT
 la **master file table** è la principale struttura dati del file system: è unica per ciascun volume, ed è implementata come un file
 - la MFT è una sequenza lineare di record (massimo $2^{48}$, la cui dimensione va da 1KB 4KB(penso funzioni a scelta in fase di formattazione come in FAT)), e ogni record descrive un file
