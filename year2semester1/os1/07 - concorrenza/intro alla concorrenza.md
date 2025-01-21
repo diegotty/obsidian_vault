@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2025-01-20T15:15
+updated: 2025-01-21T15:41
 ---
 >[!index]
 >
@@ -62,7 +62,7 @@ void echo(){
 >[!example] esempio su un processore
 se il codice venisse eseguito da 2 processi su un solo processore, lo scheduler protrebbe decidere di assegnare il processore in questo modo:
 ![[Pasted image 20241125111107.png]]
-in questo caso, il carattere preso in input dal processo P1 viene preso, in quanto chin è globale e viene sovrascritta prima che P1 possa salvarla (e stamparla)
+in questo caso, il carattere preso in input dal processo P1 viene perso, in quanto chin è globale e viene sovrascritta prima che P1 possa salvarla (e stamparla)
 
 >[!example] esempio su più processori
 ![[Pasted image 20241208125616.png]]
