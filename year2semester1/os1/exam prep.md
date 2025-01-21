@@ -1,6 +1,6 @@
 ---
 created: 2025-01-18T14:10
-updated: 2025-01-21T21:31
+updated: 2025-01-21T21:44
 ---
 # chiarimenti
 ## dma
@@ -36,3 +36,4 @@ shellcode ? libc ?
 
 ## gestione io
 what the fuck is a driver
+dove si trova il buffer in buffering i/o ? 
