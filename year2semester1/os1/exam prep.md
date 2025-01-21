@@ -1,6 +1,6 @@
 ---
 created: 2025-01-18T14:10
-updated: 2025-01-21T21:18
+updated: 2025-01-21T21:31
 ---
 # chiarimenti
 ## dma
@@ -33,3 +33,6 @@ non me ne frega nulla …. non me ne frega nulla ……………. stack smashing
 come funzionano gli stack frame ?
 whats stack smashing
 shellcode ? libc ?
+
+## gestione io
+what the fuck is a driver
