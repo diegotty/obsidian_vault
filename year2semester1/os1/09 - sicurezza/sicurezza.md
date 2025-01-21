@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2025-01-21T20:15
+updated: 2025-01-21T20:41
 ---
 >[!index]
 >
@@ -119,7 +119,7 @@ inoltre la tabella deve poter evolvere: deve essere possibile scrivere nella tab
  ![[Pasted image 20241217194925.png|350]]
 
 >[!info] matrice del controllo di accesso: rappresentazione RBAC
-in questo caso, sono cecessarie 2 matrici: 
+in questo caso, sono necessarie 2 matrici: 
 la prima identifica i permessi che ha ogni ruolo:
 ![[Pasted image 20241217195102.png]]
 >
@@ -129,7 +129,7 @@ la seconda tiene traccia di che ruoli ha ogni utente:
 in UNIX, la sicurezza è tipicamente basata sull’autenticazione dell’utente (**User-Oriented Access Control**)
 - ci possono essere altri meccanismi (es: NIS, LDAP, Kerberos)
 per ogni utente c’è uno *username*(alfanumerico) e un *uid*(numerico intero)
-- lo uid è usato ogni volta che occorre dare un proprietaro ad una risorsa (file, processi, etc)
+- lo uid è usato ogni volta che occorre dare un proprietario ad una risorsa (file, processi, etc)
 ogni utente appartiene ad un gruppo, ed ogni gruppo è identificato da *groupname* e *gid*
 le informazioni riguardo i gruppi stessi ed i gruppi a cui appartiene un utente sono contenute in alcuni file di sistema: `/etc/group`, `/etc/passwd`(talvolta in combinazione con `/etc/shadow`)
 - dentro `/etc/passwd` potremmo trovare: `sabinar:x:6335:283:Sabrina Rossi:/home/sabinar:/bin/csh`
