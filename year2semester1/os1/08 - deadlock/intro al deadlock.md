@@ -1,7 +1,7 @@
 ---
 created: 2024-12-10
 related to: "[[intro alla concorrenza]]"
-updated: 2025-01-20T15:15
+updated: 2025-01-21T19:12
 ---
 >[!index]
 >
@@ -41,7 +41,7 @@ usabili da un solo processo alla volta,  e il fatto di essere usate non le “co
 per le risorse riusabili, lo stallo può esistere solo se un processo ha una risorsa e ne richiede un’altra
 >[!example] esempio 1 con 2 processi
 ![[Pasted image 20241210091149.png]]
-perform funzion: sezione critica
+perform function: sezione critica
 i lock sono semplificazioni dei semafori (`request(D) + lock(D) == semWait(D)`)
 
 >[!example] esempio 2 con 2 processi
