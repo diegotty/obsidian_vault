@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: 
-updated: 2025-01-21T15:41
+updated: 2025-01-21T16:00
 ---
 >[!index]
 >
@@ -185,4 +185,4 @@ in questo modo, tolgo al dispatcher la possibilità di interrompere il processo 
 i problemi di questa strategia:
 - se i processi abusano della disabilitazione, peggiorano le prestazioni del SO (in quanto cala la multiprogrammazione e quindi l’uso del processore)
 la disabilitazione degli interrupt funziona “localmente” su ogni processore, quindi su sistemi con più processori questa strategia non funziona ( un altro processo può accedere alla zona critica semplicemente perchè è in esecuzione su un altro processore)
-inoltre, di solito la disabilitazione dei processi è una cosa che si fa solo in kernel mode
+inoltre, di solito la disabilitazione degli interrupt è una cosa che si fa solo in kernel mode
