@@ -1,7 +1,7 @@
 ---
 created: 2024-12-22
 related to: "[[intro al deadlock]]"
-updated: 2024-12-22T13:55
+updated: 2025-01-21T19:47
 ---
 >[!index]
 >
@@ -127,7 +127,7 @@ si usa la stesse strutture dati dell’algortimo del banchiere, tranne per la **
 ### algoritmo
 1. marca tutti i processi che non hanno allocato nulla
 2. $w \leftarrow V$
-3. (inizio ciclo) sia $i$ un processo non marcato t.c. $Q_{ik}\leq w_{k}$, $\forall 1\leq k \leq m$(cioè che il suo vettore di richiesta è soddisfabile). le sue risorse possono essere accordate
+3. (inizio ciclo) sia $i$ un processo non marcato t.c. $Q_{ik}\leq w_{k}$ , $\forall 1\leq k \leq m$(cioè che il suo vettore di richiesta è soddisfabile). le sue risorse possono essere accordate
  4. se $i$ non esiste, vai al passo 6 (c’è almeno un processo non marcato)
  5. marca $i$ e aggiorna $w \leftarrow w + A_i$ , poi ritorna al passo 3 (facciamo finta il processo venga eseguito a termine e che le sue risorse vengano liberate)
  6. (fine ciclo)
@@ -138,7 +138,7 @@ si usa la stesse strutture dati dell’algortimo del banchiere, tranne per la **
 
 una volta rilevato il deadlock, si può:
 - terminare forzosamente tutti i processi coinvolti nel deadlock (soluzione più comune, e almeno un processo non in deadlock resta sempre)
-- mantenere dei punti di riprisitino, ed effettuare il ripristino al punto precedente ( lo stallo può verificarsi nuovamente, ma è improbabile che lo faci all’infinito)
+- mantenere dei punti di riprisitino, ed effettuare il ripristino al punto precedente ( lo stallo può verificarsi nuovamente, ma è improbabile che lo faccia all’infinito)
 - terminare forzosamente i processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
 - sottrarre forzosamente risorse ai processi coinvolti nel deadlock **uno ad uno**, finchè lo stallo non c’e più
 ## ignorare 
