@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2025-01-21T15:01
+updated: 2025-01-21T15:11
 ---
 >[!index]
 >
@@ -138,7 +138,7 @@ per le directory, al posto di essere una lista con entrate del tipo “nomefile-
  **master file table**: contiene la MFT
 ### MFT
 la **master file table** è la principale struttura dati del file system: è unica per ciascun volume, ed è implementata come un file
-- la MFT è una sequenza lineare di record (massimo $2^{48}$, la cui dimensione va da 1KB 4KB(penso funzioni a scelta in fase di formattazione come in FAT)), e ogni record descrive un file
+- la MFT è una sequenza lineare di record (massimo $2^{48}$, la cui dimensione va da 1KB a 4KB(penso funzioni a scelta in fase di formattazione come in FAT)), e ogni record descrive un file
 #### record di MFT
 ogni record è identificato da un puntatore di 48bit, mentre i rimanenti 16bit sono usati come numero di sequenza
 - ogni record contiene una lista di attributi (nella forma “attributo(intero, che indica il tipo di attributo)-valore(sequenza di byte)”)
@@ -174,7 +174,7 @@ file di larghe dimensioni (e/o sfortunati con la contiguità), possono necessita
 ![[Pasted image 20241123124504.png]]
 
 # gestione file system in Linux
-il file system originario di Linux è **ext2**, che è l’evoluzione (se non la copia) del file system originario di UNIlX
+il file system originario di Linux è **ext2**, che è l’evoluzione (se non la copia) del file system originario di UNlX
 in seguito, è stato creato **ext3**, che aggiungeva il journaling all’ext2
 ancora in seguito, è stato creato **ext4**(l’attualmente più utilizzato), una versione migliore dell’ext3 in grado di memorizzare singoli file più grandi di 2TB e filesystem più grandi di 16TB
 in generale, quindi, il file sytem di Linux è fortemente basato sugli inode, che sono memorizzati nella parte iniziale del file sytem
