@@ -1,7 +1,7 @@
 ---
 created: 2024-12-17
 related to: 
-updated: 2025-01-21T21:01
+updated: 2025-01-21T21:08
 ---
 >[!index]
 >
@@ -78,7 +78,7 @@ inoltre, una funzione hash è detta **crittografica** se:
 - è computazionalmente difficile trovare due input diversi di lunghezz arbitraria $x_1$ ed $x_2$ che abbiano lo stesso hash $d$
 
 >[!important] collisioni
->se due sequenze arbitrarie, di lunghezze diverse, finiscono ad avere lo stesso hash, allora si è verificata una **collisione*
+>se due sequenze arbitrarie, di lunghezze diverse, finiscono ad avere lo stesso hash, allora si è verificata una **collisione**
 
 perchè non cifrare direttamente le password ? in entrambi casi, le password non sono leggibili da un attaccante. però:
 - se si usa una cifratura ed un attaccante ottiene la chiave, potrebbe decifrare ed ottenere tutte le password in plaintext
@@ -109,7 +109,7 @@ svantaggi:
 - la password può non essere presente nel dizionario
 ## attacco rainbow table
 è nato come miglioramento dell’attacco dizionario
-le funzioni hash sono deterministiche: data una lista di passwords ed una funzione has, l’hash computato sarà sempre lo stess per ciascuna password
+le funzioni hash sono deterministiche: data una lista di passwords ed una funzione hash, l’hash computato sarà sempre lo stesso per ciascuna password
 - perchè allora calcolare l’hash delle password del dizionario in real time, durante l’attacco ? meglio precomputarle !
 il **rainbow table** è un dizionario di coppie (valore hash, plaintext password) usato per trovare velocemente quale password corrisponde ad un hash
 - viene creato offline, e riutilizzato più volte per molti attacchi
@@ -125,7 +125,7 @@ svantaggi:
 ci pensa il sale ! (salt)
 al posto di avere una funzione di hash $h(x) = d$, ne usiamo una di questo tipo: $h(x, s) = d$ (il salt viene preso come parametro)
 il salt viene salvato in chiaro assieme all’hash calcolato, e ciò rende impossibile l’uso di rainbow tables, in quanto: se per ogni utente c’è un salt randomico diverso, non posso precomputare gli hash
-- inoltre, è utile la proprietà che due utenti con la stess identica password avranno due hash diversi, perchè molto probabilmente il salt saranno diversi
+- inoltre, è utile la proprietà che due utenti con la stessa identica password avranno due hash diversi, perchè molto probabilmente i salt saranno diversi
 
 l’attacco dizionario bruteforce funziona ancora, ma quello è inevitabile !
 # sviluppi futuri

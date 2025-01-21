@@ -1,7 +1,7 @@
 ---
 created: 2024-12-18
 related to: 
-updated: 2025-01-20T15:15
+updated: 2025-01-21T21:16
 ---
 >[!index]
 >
@@ -14,7 +14,7 @@ updated: 2025-01-20T15:15
 >- [difese a tempo di compilazione](#difese%20a%20tempo%20di%20compilazione)
 >- [difese a tempo di esecuzione](#difese%20a%20tempo%20di%20esecuzione)
 
-l’area di memoria di un processo caricare in memoria (principale) è diviso nelle sezioni seguenti:
+l’area di memoria di un processo caricato in memoria (principale) è diviso nelle sezioni seguenti:
 >[!figure] area di memoria di un processo
 ![[Pasted image 20241218131014.png]]
 
@@ -96,7 +96,7 @@ così una volta completata la chiamata a `foo()`, il processore salterà all’i
 ![[Pasted image 20241221103902.png]]
 ## return-to-libc
 non è sempre possibile inserire shellcode arbitrario (buffer piccoli, o meccanismi di difesa possono impedirlo). tuttavia, esiste del codice utile ad attacchi, che è sempre presente in RAM ed è sempre raggiungibile dal nostro processo: le librerie dinamiche e di sistema
-- invece di usare shellcode, possiamo quindi usare come indirizzo di ritorno l’indirizzo di una funzione di sistema utile per un attacco (es: sysem)
+- invece di usare shellcode, possiamo quindi usare come indirizzo di ritorno l’indirizzo di una funzione di sistema utile per un attacco (es: system)
 - l’attacco è chiamato return-to-libc perchè modifica l’indirizzo di ritorno solitamente con l’indirizzo di una funzione standard della libreria C
 
 asumendo di conoscere l’indirizzo di `system()`, possiamo effettuare così l’attacco:
