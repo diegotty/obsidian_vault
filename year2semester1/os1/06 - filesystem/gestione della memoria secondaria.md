@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[intro al filesystem]]"
-updated: 2025-01-20T21:19
+updated: 2025-01-20T21:29
 ---
 >[!index]
 >
@@ -85,7 +85,7 @@ per migliorare l’accesso non sequenziale, si ricorre al **consolidamento**, ch
 
 ### allocazione indicizzata
 via di mezzo tra allocazione contigua e allocazione concatenata !
-la tabella di allocazione contiene una sola entry, con l’indirizzo di un blocco: questo blocco, in realtà, ha una enty per ogni porzione allocata al file (guarda foto). quindi funziona da tabella, anche se si trova in un blocco apparentemente indistinguibile dagli altri
+la tabella di allocazione contiene una sola entry, con l’indirizzo di un blocco: questo blocco, in realtà, ha una entry per ogni porzione allocata al file (guarda foto). quindi funziona da tabella, anche se si trova in un blocco apparentemente indistinguibile dagli altri
 -  perchè ciò sia possibile, ci deve essere un bit che indica se un blocco è composto da dati o è un indice
 - se il file è troppo grande, si creano più livelli
 
