@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[partizionamento e paginazione]]"
-updated: 2025-01-20T17:33
+updated: 2025-01-22T20:07
 ---
 fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che:
 - i riferimenti alla memoria avvengono tramite indirizzi logici, che vengono tradotti ad indirizzi fisici a tempo di esecuzione
@@ -55,7 +55,7 @@ precisazione sulla somma: il **page #**, prima di essere sommato al **page table
 
 affinchè lo schema funzioni, ad ogni process switch il SO deve caricare la tabella delle pagine, del processo che andrà in esecuzione, in un registro dipendente dall’hardware
 ## problema delle PTE
-le page tables potrebbero avere molte entry !  e quando un processo è in esecuzione, viene assicurato che almeno un parte della sua page table sia in RAM
+le page tables potrebbero avere molte entry !  e quando un processo è in esecuzione, viene assicurato che almeno un parte della sua page table sia in RAM(in verità alla fine serve sempre che tutta la page table sia in ram (il primo livello))
 >[!example]
 supponiamo di avere 8GB di spazio virtuale, e che ogni pagina pesi 1kB. ogni page table \\\QUE>STION
 
