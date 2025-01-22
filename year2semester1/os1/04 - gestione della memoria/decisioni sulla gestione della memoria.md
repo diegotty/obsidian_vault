@@ -1,7 +1,7 @@
 ---
-created: "2024-11-03"
+created: 2024-11-03
 related to: 
-updated: "2024-11-03, 23:09"
+updated: 2025-01-22T20:41
 ---
 >[!index]
 >
@@ -58,36 +58,7 @@ decide cosa fare se occorre portare una pagina in RAM, e tutti i frame sono già
 in questa situazione qualche pagina va sostituita, sovrascrivendo il rispettivo frame
 per gesitre ciò esistono vari agoritmi (replacement policy), in quanto bisogna minimizzare la probabilià che la pagina appena sostituita venga richiesta di nuovo subito dopo
 - quando viene swappata una pagina, bisogna aggiornare la sua PTE !! (in particolare, il bit M)
-## gestione del resident set
-racchiude due problemi:
-- **gestione del resident set**: quanti frame di RAM da allocare per ogni processo da eseguire\in esecuzione ( ad alcuni processi potrebbero bastare un paio di frame, ad altri ne potrebbero service centinaia. ciò si gestisce in 2 modi:
-	- allocazione fissa: numero di frame deciso al tempo di creazione di un processo
-	- allocazione dinamica: numero di frame varia durante la vita del processo, magari basandosi sulle statistiche che a mano a mano vengono raccolte
-- **gestione del replacement scope**: scelta, in fase di rimpiazzo di un frame, tra i frame che appartengono al processo corrente **oppure** anche tra i frame di un processo qualsiasi. ciò si gestisce in 2 modi:
-	- politica locale: si sceglie solo tra gli altri frame dello stesso processo
-	- politica globale: si può scegliere qualsiasi frame (basta che non sia del SO), ciò comporta un calcolo in più !
-
-si nota come, pur avendo 4 politiche da poter combinare (a coppie di 2), si possono avere in tutto 3 possibili strategie, in quanto con l’allocazione fissa, la politica globale non è applicabile, altrimenti si potrebbe ampliare il resident set di un processo scegliendo un frame di un altro processo per il rimpiazzo (e quindi non sarebbe più allocazione fissa)
->[!figure] ![[Pasted image 20241102103108.png]]
->si nota come nel secondo grafico, lo “sweet spot” è W, non N (se carico tutte le pagine di un processo in RAM, la multiprogrammazione diminuisce drasticamente)
-### frame locking
-si può “bloccare” un frame, cioè, rendere impossibile il rimpiazzamento di esso: se un frame è locked, non si può sostituire !
-questa caratteristica è usata a livello di kernel del SO, e si gestisce con un bit ( gestito a livello hardware)
-## politica di pulitura
-come nella cache, può capitare che una pagina caricata in RAM venga modificata(sempre in RAM). la politica di pulitura gestisce quando riportare la modifica al disco (se riportarla quando avviene la modifica, o quando la pagina viene sostituito )
-- si fa tipicamente una via di mezzo (intrecciata con il page buffering), cioè si raccolgono un po’ di richieste di frame da modificare e li si esegue
-# medium term scheduler
-torniamo al [[intro allo scheduling#medium-term scheduling|medium term scheduling]], con più informazioni riguardo al suo lavoro !
->[!figure] ![[Pasted image 20241102105949.png]]
->si nota come dopo il picco del grafico, l’utilizzo del processore decresce in quanto ci sono troppi page fault e si spende troppo tempo ad aspettare le risposte del disco (per il rimpiazzo)
-## controllo del carico
-significa cercare di tenere la multiprogrammazione alta, ma senza avere resident sets così bassi da avere troppi page fault
-il carico viene controllato aumentando e diminuendo il numero di processi attivi, aumentando la multiprogrammazione ma senza arrivare al thrashing
-- cambiando lo stato da `READY` a `READY/SUSPEND` oppure da `BLOCKED` a `BLOCKED/SUSPEND` e viceversa ! (inoltre si cerca di sospendere processi che non possono o in futuro non saranno ready, e di portare in RAM processi che potranno essere eseguiti (es: non stanno aspettando risposte di richieste I/O))
->[!info] un processo è suspended quando il suo resident set è 0
-
-periodicamente, un processo del SO controlla la situazione della multiprogrammazione, e decide se è necessario aumentare o diminuire i processi attivi
-## algoritmi di sostituzione
+### algoritmi di sostituzione
 **soluzione ottimale**
 - si sostiuisce la pagina che verrà richiesta a più distanza (tenendo quindi le pagine che serviranno nel futuro più prossimo)
 - ovviamente non è implementabile, però è ben definibile sperimentalmente e viene usata come confronto per gli altri algoritmi
@@ -123,6 +94,36 @@ l’algoritmo usato attualmente (+ o -, e con variazioni)
 ![[Pasted image 20241102123028.png]]
 >- primo fault: dopo la quarta richiesta, il puntatore è sul frame 1. quando arriva la richiesta 5 e bisogna effettuare un rimpiazzo, viene controllato il frame su cui si troava il puntatore. lo use bit è 1, quindi lo use bit del frame 1 viene messo a 0, e il puntatore passa al frame 2. il caso è lo stesso, e lo use bit del frame 2 viene messo a 0. succede anche la stessa cosa per il frame 3, e il puntatore si muove avanti sul frame 1 (coda circolare). dato che lo use bit del frame 1 è stato messo a 0, la pagina contenuta viene rimpiazzata con la pagina 5.
 >- decima richiesta: lo use bit del frame 2, visto che contiene la pagina necessaria, passa da 0 a 1.
+
+## gestione del resident set
+racchiude due problemi:
+- **gestione del resident set**: quanti frame di RAM da allocare per ogni processo da eseguire\in esecuzione ( ad alcuni processi potrebbero bastare un paio di frame, ad altri ne potrebbero service centinaia. ciò si gestisce in 2 modi:
+	- allocazione fissa: numero di frame deciso al tempo di creazione di un processo
+	- allocazione dinamica: numero di frame varia durante la vita del processo, magari basandosi sulle statistiche che a mano a mano vengono raccolte
+- **gestione del replacement scope**: scelta, in fase di rimpiazzo di un frame, tra i frame che appartengono al processo corrente **oppure** anche tra i frame di un processo qualsiasi. ciò si gestisce in 2 modi:
+	- politica locale: si sceglie solo tra gli altri frame dello stesso processo
+	- politica globale: si può scegliere qualsiasi frame (basta che non sia del SO), ciò comporta un calcolo in più !
+
+si nota come, pur avendo 4 politiche da poter combinare (a coppie di 2), si possono avere in tutto 3 possibili strategie, in quanto con l’allocazione fissa, la politica globale non è applicabile, altrimenti si potrebbe ampliare il resident set di un processo scegliendo un frame di un altro processo per il rimpiazzo (e quindi non sarebbe più allocazione fissa)
+>[!figure] ![[Pasted image 20241102103108.png]]
+>si nota come nel secondo grafico, lo “sweet spot” è W, non N (se carico tutte le pagine di un processo in RAM, la multiprogrammazione diminuisce drasticamente)
+### frame locking
+si può “bloccare” un frame, cioè, rendere impossibile il rimpiazzamento di esso: se un frame è locked, non si può sostituire !
+questa caratteristica è usata a livello di kernel del SO, e si gestisce con un bit ( gestito a livello hardware)
+## politica di pulitura
+come nella cache, può capitare che una pagina caricata in RAM venga modificata(sempre in RAM). la politica di pulitura gestisce quando riportare la modifica al disco (se riportarla quando avviene la modifica, o quando la pagina viene sostituito )
+- si fa tipicamente una via di mezzo (intrecciata con il page buffering), cioè si raccolgono un po’ di richieste di frame da modificare e li si esegue
+# medium term scheduler
+torniamo al [[intro allo scheduling#medium-term scheduling|medium term scheduling]], con più informazioni riguardo al suo lavoro !
+>[!figure] ![[Pasted image 20241102105949.png]]
+>si nota come dopo il picco del grafico, l’utilizzo del processore decresce in quanto ci sono troppi page fault e si spende troppo tempo ad aspettare le risposte del disco (per il rimpiazzo)
+## controllo del carico
+significa cercare di tenere la multiprogrammazione alta, ma senza avere resident sets così bassi da avere troppi page fault
+il carico viene controllato aumentando e diminuendo il numero di processi attivi, aumentando la multiprogrammazione ma senza arrivare al thrashing
+- cambiando lo stato da `READY` a `READY/SUSPEND` oppure da `BLOCKED` a `BLOCKED/SUSPEND` e viceversa ! (inoltre si cerca di sospendere processi che non possono o in futuro non saranno ready, e di portare in RAM processi che potranno essere eseguiti (es: non stanno aspettando risposte di richieste I/O))
+>[!info] un processo è suspended quando il suo resident set è 0
+
+periodicamente, un processo del SO controlla la situazione della multiprogrammazione, e decide se è necessario aumentare o diminuire i processi attivi
 
 # buffering delle pagine
 una cache software (uso i frame, quindi sottraggo frame ai processi) usata per le pagine, creata come modifica della soluzione FIFO(e lo avvicina alla soluzione clock !), che però può essere usata anche con LRU e/o clock
