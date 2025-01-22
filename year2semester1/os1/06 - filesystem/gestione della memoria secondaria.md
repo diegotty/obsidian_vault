@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[intro al filesystem]]"
-updated: 2025-01-21T14:10
+updated: 2025-01-22T12:18
 ---
 >[!index]
 >
@@ -91,7 +91,7 @@ la tabella di allocazione contiene una sola entry, con l’indirizzo di un blocc
 
 >[!info] allocazione indicizzata con porzioni di lunghezza fissa
 ![[Pasted image 20241121211238.png]]
-> l’allocazione con blocchi di lunghezza fissa evita la frammentazione esterna, in quanto \\QUESTION
+> l’allocazione con blocchi di lunghezza fissa evita la frammentazione esterna, in quanto non ho nessità di allocare blocchi contigui
 >- a volte occore il consolidamento, per migliorare la località
 
 >[!allocazione indicizzata con porzioni di lunghezza variabile]
