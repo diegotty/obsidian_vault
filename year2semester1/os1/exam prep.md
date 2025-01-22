@@ -1,6 +1,6 @@
 ---
 created: 2025-01-18T14:10
-updated: 2025-01-22T12:40
+updated: 2025-01-22T13:53
 ---
 # chiarimenti
 ## dma
@@ -41,3 +41,6 @@ dove si trova il buffer in buffering i/o ?
 ## filesystem
 allocation table
 cos’è un blocco ? blocco vs porzione
+
+## concorrenza
+le soluzioni hw funzionano anche su più processori

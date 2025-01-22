@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
-related to: 
-updated: 2025-01-21T16:00
+related to: "[[intro allo scheduling]]"
+updated: 2025-01-22T13:38
 ---
 >[!index]
 >
