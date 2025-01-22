@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2025-01-22T13:35
+updated: 2025-01-22T22:13
 ---
 >[!index]
 >
@@ -86,7 +86,7 @@ come gestire i file che devono essere condivisi in più directory ? fare una cop
 - per gestire ciò, l’inode contiene un contatore dei file che lo referenziano
 # gestione dei file su windows
 esistono 2 tipi di file system su windows:
-- FAT(file sytem vecchio): si basa su allocazione concatenata, con blocchi (chiamati **cluster**) di dimensione fissa
+- FAT(file sytem vecchio): si basa su allocaz*ione concatenata, con blocchi (chiamati **cluster**) di dimensione fissa
 - NTFS(file system nuovo): si basa su alloaczione **con bitmap**, con cluster di dimensione fissa
 ## FAT
 è molto limitato (andava bene per i vecchi dischi, soprattutto i floppy), ma è usato ancora oggi per le chiavette USB
