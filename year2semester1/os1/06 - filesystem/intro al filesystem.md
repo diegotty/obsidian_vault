@@ -1,8 +1,20 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2025-01-20T21:00
+updated: 2025-01-22T11:55
 ---
+>[!index]
+>
+>- [terminologia](#terminologia)
+>- [sistemi per la gestione di file](#sistemi%20per%20la%20gestione%20di%20file)
+>- [obiettivi](#obiettivi)
+>- [requisiti](#requisiti)
+>- [directory](#directory)
+>- [schemi per le directory](#schemi%20per%20le%20directory)
+>	- [struttura semplice](#struttura%20semplice)
+>	- [schema a due livelli](#schema%20a%20due%20livelli)
+>	- [schema gerarchico ad albero per le directory](#schema%20gerarchico%20ad%20albero%20per%20le%20directory)
+
 l file system è una delle parti del SO che sono più imporanti per l’utente
 proprietà desiderabili
 - esistenza a lungo termine
