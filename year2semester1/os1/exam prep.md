@@ -43,4 +43,4 @@ allocation table
 cos’è un blocco ? blocco vs porzione
 
 ## concorrenza
-le soluzioni hw funzionano anche su più processori
+le soluzioni hw funzionano anche su più processori ?
