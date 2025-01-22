@@ -1,6 +1,6 @@
 ---
 created: 2025-01-18T14:10
-updated: 2025-01-22T12:11
+updated: 2025-01-22T12:37
 ---
 # chiarimenti
 ## dma
@@ -40,4 +40,4 @@ dove si trova il buffer in buffering i/o ?
 
 ## filesystem
 allocation table
-cos’è un blocco ?
+cos’è un blocco ? blocco vs porzione
