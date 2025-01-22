@@ -1,7 +1,7 @@
 ---
 created: 2024-11-17
 related to: intro
-updated: 2025-01-20T20:42
+updated: 2025-01-22T22:04
 ---
 >[!index]
 >
@@ -49,9 +49,9 @@ se i dati sono tanti, potrebbero essere su più settori o addirittura più tracc
 ![[Pasted image 20241117173234.png]]
 >- esistono dischi con più canali (hanno più dischi fisici, e bisogna quindi anche selezionare il disco: wait for channel)
 
-il tempo di accesso (**access time**) è quindi la somma di:
-- **seek time**: tempo necessario perchè la testina si posizioni sulla traccia desiderata
-- **rotational delay**: tempo necessario affinchè l’inizio del settore raggiunga la testina
+- il tempo di accesso (**access time**) è quindi la somma di:
+	- **seek time**: tempo necessario perchè la testina si posizioni sulla traccia desiderata
+	- **rotational delay**: tempo necessario affinchè l’inizio del settore raggiunga la testina
 - **transfer time**: tempo necessario a trasferire di dati che scorrono sotto la testina
 a parte (non fanno parte delle effettive prestazioni del disco):
 - **wait for device**: attesa che il dispositivo sia assegnato alla richiesta
