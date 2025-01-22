@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2025-01-21T15:11
+updated: 2025-01-22T13:35
 ---
 >[!index]
 >
@@ -159,7 +159,6 @@ NTFS cerca sempre di assegnare ad un file sequenze contigue di blocchi
 - per i file piccoli (< 1KB), i dati sono salvati direttamente nell’MFT (nel record penso intenda, in particolare nell’attributo `$DATA`)
 - per i file grandi, il valore dell’attributo(`$DATA`) indica la sequenza ordinata dei blocchi sul disco dove risiede il file
 per ogni file, esiste un record base nell’MFT
-- \\QUESTION
 >[!info] record base
 ![[Pasted image 20241123123952.png]]
 in questo esempio, il file ha dimensione 9 blocchi, divisi in 3 **run** (dal blocco 20, 4 blocchi contigui hanno dati del file. dal blocco 64, 2 blocchi contigui hanno dati del file, etc)
