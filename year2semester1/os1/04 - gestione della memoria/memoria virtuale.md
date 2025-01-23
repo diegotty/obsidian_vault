@@ -1,8 +1,21 @@
 ---
 created: 2024-10-27
 related to: "[[partizionamento e paginazione]]"
-updated: 2025-01-22T20:07
+updated: 2025-01-23T16:36
 ---
+>[!index]
+>
+>- [conseguenze](#conseguenze)
+>- [memoria virtuale](#memoria%20virtuale)
+>- [terminologia](#terminologia)
+>- [thrashing](#thrashing)
+>- [supporto hardware](#supporto%20hardware)
+>- [traduzione degli indirizzi](#traduzione%20degli%20indirizzi)
+>	- [page table entry](#page%20table%20entry)
+>- [problema delle PTE](#problema%20delle%20PTE)
+>- [TLB](#TLB)
+>- [process switch](#process%20switch)
+
 fino ad ora abbiamo come costanti, attraverso i vari modi di gestire la memoria, che:
 - i riferimenti alla memoria avvengono tramite indirizzi logici, che vengono tradotti ad indirizzi fisici a tempo di esecuzione
 - un processo può essere spezzato in più parti, che non necessariamente occupano una zona contigua di memoria
