@@ -1,6 +1,6 @@
 ---
 created: 2025-01-18T14:10
-updated: 2025-01-22T13:53
+updated: 2025-01-23T12:29
 ---
 # chiarimenti
 ## dma
@@ -44,3 +44,6 @@ cos’è un blocco ? blocco vs porzione
 
 ## concorrenza
 le soluzioni hw funzionano anche su più processori ?
+
+
+TLB non completamente hardware in quanto il SO deve poter resettarlo
