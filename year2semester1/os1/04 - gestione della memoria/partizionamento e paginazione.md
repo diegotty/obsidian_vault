@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[intro allo scheduling]]"
-updated: 2025-01-23T14:43
+updated: 2025-01-23T14:44
 ---
 studiamo ora i diversi tipi di strategie usate nel tempo per gestire la memoria
 # partizionamento
@@ -106,7 +106,7 @@ la segmentazione funziona allo stesso modo della paginazione a livello di organi
 >[!figure]  traduzione degli indirizzi
 >![[Pasted image 20241101191441.png]]
 
-i puntatori, salti (if, per esempio), vengono convertiti in indirizzi relativi
+i puntatori, salti (if, per esempio), vengono convertiti in indirizzi relativi in compilazione, e poi tradotti in indirizzi virtuali con preprocessing o run time processing, dalla CPU
 ## paginazione insieme a segmentazione
 la paginazione è trasparente al programmatore, che non ne è (o non ne deve essere a conoscenza), mentre la segmentazione è visibile al programmatore ( se programma in assembler), e se il programmatore decide di non usarla ci pensa il compilatore ad usare i segmenti
 l’idea, in alcuni processori (ad esempio i Pentium), è di combinare paginazione e segmentazione
