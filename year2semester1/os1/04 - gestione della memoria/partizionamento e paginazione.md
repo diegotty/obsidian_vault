@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[intro allo scheduling]]"
-updated: 2025-01-20T19:04
+updated: 2025-01-23T14:43
 ---
 studiamo ora i diversi tipi di strategie usate nel tempo per gestire la memoria
 # partizionamento
@@ -82,8 +82,8 @@ bisogna quindi:
 >lo stesso processo, ma in base 2, può essere descritto con questa immagine
 # segmentazione
 ## segmentazione semplice
-molto simile alla paginazione (i programmi vengono divisi in segmenti), però:
-- i segmenti hanno una lunghezza variabile e dinamica, e un limite massimo di dimensione
+molto simile alla paginazione, però:
+- i segmenti hanno una lunghezza variabile e dinamica, e un limite massimo di dimensione: è il programmatore a decidere come segmentare un processo(tipicamente viene fatto un segmento per il codice sorgente, uno per i dati, e uno per lo stack delle chiamate)
 - un indirizzo di memoria è un numero di segmento, e uno spiazzamento al suo interno
 - il programmatore deve gestire esplicitamente la segmentazione, dicendo quanti segmenti ci sono e qual è la loro dimensione (a dove piazzarli in RAM e risolvere gli indirizzi ci pensa il SO)
 - sempre con aiuto hardware
@@ -106,6 +106,7 @@ la segmentazione funziona allo stesso modo della paginazione a livello di organi
 >[!figure]  traduzione degli indirizzi
 >![[Pasted image 20241101191441.png]]
 
+i puntatori, salti (if, per esempio), vengono convertiti in indirizzi relativi
 ## paginazione insieme a segmentazione
 la paginazione è trasparente al programmatore, che non ne è (o non ne deve essere a conoscenza), mentre la segmentazione è visibile al programmatore ( se programma in assembler), e se il programmatore decide di non usarla ci pensa il compilatore ad usare i segmenti
 l’idea, in alcuni processori (ad esempio i Pentium), è di combinare paginazione e segmentazione
