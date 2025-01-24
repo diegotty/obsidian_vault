@@ -1,6 +1,6 @@
 ---
 created: 2024-10-08T08:10
-updated: 2025-01-20T15:15
+updated: 2025-01-24T06:03
 ---
 [notes](https://notability.com/n/09RFEo5Tp3tuhqWcVh77u0) (fino a s-cicli)
 [notes part 2](https://notability.com/n/2WAIZWctOBtO3IhjY3_OHz)

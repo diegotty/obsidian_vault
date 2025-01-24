@@ -1,7 +1,7 @@
 ---
 created: 2024-11-18
 related to: "[[dispositivi IO, buffering]]"
-updated: 2025-01-22T11:55
+updated: 2025-01-24T06:03
 ---
 >[!index]
 >
