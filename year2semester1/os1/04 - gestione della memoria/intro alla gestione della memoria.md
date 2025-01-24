@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: 
-updated: 2025-01-24T06:03
+updated: 2025-01-24T06:18
 ---
 >[!index]
 >
@@ -32,7 +32,7 @@ il programmatore non sa e non deve sapere in quale zona della memoria il program
 	- ciò si può fare in 2 modi: preprocessing o run-time(che richiede supporto hardware)
 >[!info] esempio di compilazione
 ![[Pasted image 20241023080141.png]]
-il linker genera un load moudle, che può essere caricato dal loader nella memoria principale
+il linker genera un load module, che può essere caricato dal loader nella memoria principale
 
 >[!info] esempio di moduli diversi
 ![[Pasted image 20241023080709.png]]
