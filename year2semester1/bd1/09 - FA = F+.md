@@ -1,7 +1,7 @@
 ---
 created: 2024-10-18
 related to: "[[08 - chiusure di dipendenze funzionali]]"
-updated: 2024-11-18T20:01
+updated: 2025-01-28T18:28
 ---
 >[!index]
 >
@@ -12,7 +12,7 @@ updated: 2024-11-18T20:01
 >- [a cosa ci serve conoscere $F^+$](#a%20cosa%20ci%20serve%20conoscere%20$F%5E+$)
 # teorema
 >[!note] teorema
-Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
+Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^+$, cioè
 $$F^A \subseteq F^+ \land F^+ \subseteq F^A$$
 
 dimostriamo quindi il teorema dimostrando la doppia inclusione di sopra, che singifica:
@@ -22,7 +22,7 @@ dimostriamo quindi il teorema dimostrando la doppia inclusione di sopra, che sin
 ## $F^+ \supseteq F^A$
 data una dipendenza $X \to Y \in F^A$ dimostriamo che $X \to Y \in F^+$ per induzione sul numero $i$ di applicazioni di **uno degli assiomi di Armstrong**
 caso base: $i=0$ 
-- $X \to Y \in F^+$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
+- $X \to Y \in F$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
 ipotesi induttiva: $i-1$
 - $X \to Y \in F^A \implies X \to Y \in F^+$, quindi $X \to Y$ è soddisfatta da ogni istanza legale
 passo induttivo, $i$:
