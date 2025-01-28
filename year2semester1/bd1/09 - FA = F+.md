@@ -1,7 +1,7 @@
 ---
 created: 2024-10-18
 related to: "[[08 - chiusure di dipendenze funzionali]]"
-updated: 2025-01-28T18:47
+updated: 2025-01-28T19:00
 ---
 >[!index]
 >
@@ -68,6 +68,7 @@ dimostreremo che :
 >- se le due tuple di r hanno gli stessi valori per V, allora $V \subseteq X^+$, perchè le tuple sono uguali solo per $X^+$
 >	- inoltre, per il lemma 1, $X \to V \in F^A$, e per l’assioma della transitività, $X \to W \in F^A$
 >	- quindi, di nuovo per il lemma 1, $W \subseteq X^+$, quindi le due tuple sono uguali sui valori di $W$, quindi $V \to W$ è soddisfatta, e poichè abbiamo considerato una qualunque dipendenza in F, r le soddisfa tutte, quindi è legale.
+funziona che verifichiamo se la dipendenza è rispettata.meh
 
 >[!info] dimostrazione di 2.
 supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$
