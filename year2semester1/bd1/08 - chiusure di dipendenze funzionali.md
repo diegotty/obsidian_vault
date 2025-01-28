@@ -1,7 +1,7 @@
 ---
 created: 2024-10-17
 related to: "[[06, 07 - progettazione, problemi e vincoli#dipendenze funzionali]]"
-updated: 2024-11-18T20:01
+updated: 2025-01-28T18:01
 ---
 >[!index]
 >
@@ -132,7 +132,7 @@ quindi la chiusura di X rispetto ad F contiene gli attributi che sono determinat
  dimostreremo che se le tuple sono uguali su X, lo devono essere anche su IDKIDKIDKDIKDKIDK
 # lemma 1
 Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. Si ha che:
-- $X \to Y \in F^A$ se e solo se $Y \subseteq X^+$
+- $X \to Y \in F^A \iff Y \subseteq X^+$
 >[!info] dimostrazione
 >- sia $Y=A_{1},A_{2},\dots,A_{n}$
 >**parte se:**

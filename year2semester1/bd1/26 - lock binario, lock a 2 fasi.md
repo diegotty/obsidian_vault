@@ -1,9 +1,9 @@
 ---
 created: 2024-12-19
 related to: "[[25 - controllo della concorrenza]]"
-updated: 2024-12-22T14:03
+updated: 2025-01-28T17:57
 ---
->>[!index]
+>[!index]
 >
 >- [schedule legale](#schedule%20legale)
 >- [lock binario](#lock%20binario)

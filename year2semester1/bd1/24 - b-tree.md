@@ -1,8 +1,8 @@
 ---
 created: 2025-01-18T12:27
-updated: 2025-01-28T17:32
+updated: 2025-01-28T17:57
 ---
->>[!tsindex]
+>[!tsindex]
 >
 >- [ricerca](#ricerca)
 >	- [altezza di un b-tree](#altezza%20di%20un%20b-tree)

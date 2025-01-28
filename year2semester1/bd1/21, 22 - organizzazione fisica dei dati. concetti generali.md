@@ -1,11 +1,6 @@
 ---
-created: 2024-11-29
-related to: 
-<<<<<<< HEAD
-updated: 2025-01-16T06:01
-=======
-updated: 2025-01-10T19:49
->>>>>>> origin/main
+created: 2025-01-16T17:08
+updated: 2025-01-28T17:49
 ---
 >[!index]
 >
