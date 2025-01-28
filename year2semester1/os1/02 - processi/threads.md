@@ -1,7 +1,7 @@
 ---
 created: 2024-10-15
 related to: "[[gestione dei processi]]"
-updated: 2025-01-20T15:15
+updated: 2025-01-24T06:03
 ---
 >[!index]
 >

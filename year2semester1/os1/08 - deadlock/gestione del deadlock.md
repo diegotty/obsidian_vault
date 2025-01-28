@@ -1,7 +1,7 @@
 ---
 created: 2024-12-22
 related to: "[[intro al deadlock]]"
-updated: 2025-01-21T19:47
+updated: 2025-01-24T06:03
 ---
 >[!index]
 >
