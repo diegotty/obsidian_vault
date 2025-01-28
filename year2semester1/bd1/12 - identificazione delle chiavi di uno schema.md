@@ -1,8 +1,13 @@
 ---
 created: 2024-11-07
 related to: 
-updated: 2025-01-24T06:03
+updated: 2025-01-28T17:40
 ---
+
+>[!index]
+>
+>- [test di unicità della chiave](#test%20di%20unicit%C3%A0%20della%20chiave)
+>- [chiavi e 3FN](#chiavi%20e%203FN)
 
 >[!example] esempio 1
 dato il seguente schema di relazione:

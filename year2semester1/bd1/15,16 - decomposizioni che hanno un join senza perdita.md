@@ -1,12 +1,15 @@
 ---
-created: 2024-11-15
-related to: "[[10 - decomposizione]]"
-<<<<<<< HEAD
-updated: 2025-01-16T05:55
-=======
-updated: 2025-01-15T17:20
->>>>>>> origin/main
+created: 2025-01-16T17:08
+updated: 2025-01-28T17:41
 ---
+>[!index]
+>
+>- [teorema](#teorema)
+>- [verifica di $\rho$ senza perdita](#verifica%20di%20$%5Crho$%20senza%20perdita)
+>- [teorema sulla correttezza dell’algoritmo per la verifica di ‘$\rho$ ha join senza perdita’](#teorema%20sulla%20correttezza%20dell%E2%80%99algoritmo%20per%20la%20verifica%20di%20%E2%80%98$%5Crho$%20ha%20join%20senza%20perdita%E2%80%99)
+>- [dimostrazione](#dimostrazione)
+>- [esempi](#esempi)
+
 come abbiamo visto nelle [[10 - decomposizione#condizioni della decomposizione| condizioni per una decomposizione corretta]], l’ultima condizione, che non sappiamo anche verificare in una decomposizione, è che deve permettere di **ricostruire mediante join naturale** ogni **istanza legale dello schema originario**(senza aggiunta di informazione estranea)
 
 inoltre, nell [[10 - decomposizione|esempio 2 della decomposizione]] abbiamo visto cosa signfica, e come capita, di avere perdita di informazioni in una decomposizione

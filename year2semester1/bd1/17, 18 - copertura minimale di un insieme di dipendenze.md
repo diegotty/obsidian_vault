@@ -1,7 +1,7 @@
 ---
 created: 2024-11-21
 related to: "[[10 - decomposizione]]"
-updated: 2025-01-24T06:03
+updated: 2025-01-28T17:32
 ---
 >[!index]
 >
