@@ -1,11 +1,6 @@
 ---
-created: 2024-11-09
-related to: "[[10 - decomposizione]]"
-<<<<<<< HEAD
-updated: 2025-01-16T05:57
-=======
-updated: 2025-01-15T17:17
->>>>>>> origin/main
+created: 2025-01-16T17:08
+updated: 2025-01-29T17:06
 ---
 >[!index]
 >
