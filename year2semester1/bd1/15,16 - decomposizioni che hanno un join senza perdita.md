@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-28T17:41
+updated: 2025-01-29T19:42
 ---
 >[!index]
 >
@@ -93,7 +93,10 @@ per dimostrare il teorema, occorre dimostare che:
 $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) $\iff$ quando l’algoritmo termina, la tabella $r$ ha una tupla con tutte ‘$a$’
 
 # dimostrazione
-none
+>[!info] dimostrazione
+occorre dimostrare che: 
+$$\rho \text{ ha un join senza perdita} \iff \text{quando l'algoritmo termina} r \text{ha una tupla con tutte} 'a'$$
+$\implies$
 # esempi
 >[!example] esempio 1
 >dato il seguente schema di relazione: $R =(A,B,C,D,E)$
