@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-29T13:12
+updated: 2025-01-29T13:22
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -31,4 +31,6 @@ scrivere dim ker sottogruppo normale se f omom
 
 lontanamente possibili dimostrazioni 
 irriducibili, primi ?
-f omom $\implies$$Ker(f) 
+f omom $\implies$$Ker(f) <| G_1$
+$H <| G \implies H = Ker(\pi_{H})$
+dimostrazione $g^Z isom. \frac{Z}{nZ}$
