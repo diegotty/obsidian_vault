@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-29T20:03
+updated: 2025-01-29T21:27
 ---
 >[!index]
 >
@@ -105,7 +105,7 @@ la tabella può essere interpretata come un’istanza legale di $R$ ( basta sost
 >- $R_i$ e $R_j$ condividono (almeno) un attributo, quindi il risultato del join naturale sarà un’istanza con un’unica tupla contenente sole $’a’$(in quanto facciamo un join tra 2 tuple che hanno solo $’a’$, e se hanno almeno un attributo in comune, verrà effettuato il join su quell’attributo e il resto degli attributi sono $’a’$)
 >- $R_i$ e $R_j$ non condividono alcun attributo, quindi il join naturale degenera in un prodotto cartesiano, che conterra, tra tutte le tuple, quella con sole $’a’$ ($t_i$, $t_j$
 >in entrambi i casi, il join naturale ci poterà ad unire $t_i$ e $t_j$ in una tupla con sole $’a’$
->visto che $m_{\rho}(r) è il join naturale di tutte le proiezioni, esso contiene anche una tupla con tutte $’a’$ contraddicendo quindi l’ipotesi per assurdo
+>visto che $m_{\rho}(r)$ è il join naturale di tutte le proiezioni, esso contiene anche una tupla con tutte $’a’$ contraddicendo quindi l’ipotesi per assurdo
 
 
 # esempi
