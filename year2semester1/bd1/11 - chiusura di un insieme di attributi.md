@@ -1,7 +1,7 @@
 ---
 created: 2024-10-31
 related to: "[[10 - decomposizione]]"
-updated: 2024-11-18T20:06
+updated: 2025-01-29T17:52
 ---
 >[!index]
 >
@@ -87,7 +87,7 @@ per dimostrare la seconda parte dell’implicazione, usiamo un’istanza legale 
 mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme di dipendenze funzionali $F$:
 - prendo una qualsiasi dipendenza $V \to W \in F$, assumiamo per assurdo che essa non sia soddisfatta. 
 - in questo caso, $t_{1}[V]=t_{2}[V] \land t_{1}[W] \neq t_{2}[W]$ , e ciò implica che $V \subseteq Z^{(f)}$ e $W \cap (R - Z^{(f)}) \neq \varnothing$
-- uhhhh ufff godfkndammit sono passati 2 giorni e non riesco + a capire 
+- però, dato che $V \implies W \in F$, $W \in Z^{(f)}$, e l’unico modo in cui $W \notin Z^{(f)}$ è se $Z^{(f)}$ non è l’ultima iterazione dell’algoritmo. ciò è una contraddizione  con la costruzione della nostra istanza !!
 - quindi $r$ è un’istanza legale
 -  la dipendenza funzionale $X \to A \implies t_{1}[X]=t_{2}[X] \implies t_{1}[A]=t_{2}[A]$ è soddisfatta da $r$ istanza legale, e visto che $X \subseteq Z^{(f)}$, sappiamo che $t_{1}[X]=t_{2}[X]$, e quindi $A \in Z^{(f)}$
 # proprietà dell’insieme vuoto
