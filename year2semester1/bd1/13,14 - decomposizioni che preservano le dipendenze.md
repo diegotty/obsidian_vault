@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-29T17:06
+updated: 2025-01-29T18:54
 ---
 >[!index]
 >
@@ -55,8 +55,8 @@ $\forall X \to Y \in F$, cerco se $Y \subseteq X^+_G$ se ciò è vero, $X \to Y 
 
 >[!info] dimostrazione
 sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
->- per ipotesi del lemma, $F \subseteq G^+$, quindi ogni dipendenza funzionale si può ricavare da $G$ (applicando gli assiomi di Armstrong su $G$, arrivo a $G^+$, e nel “tragitto” avrò quindi ricavato ogni dipendenza in $F$) (inoltre abbiamo dimostrato che $F^+=F^A$, altrimenti se $F^+ \neq $F^A$ questo passo non funzionerebbe)
-> - sempre per il teorema che dimostra che $F^+ = F^A$, sappiamo che $F \in F^+$ è ricavabile da $F$ applicando gli assiomi di Armstrong. 
+>- per ipotesi del lemma, $F \subseteq G^+$, quindi ogni dipendenza funzionale  di $F$ si può ricavare da $G$ (applicando gli assiomi di Armstrong su $G$, arrivo a $G^+$, e nel “tragitto” avrò quindi ricavato ogni dipendenza in $F$) (inoltre abbiamo dimostrato che $F^+=F^A$, altrimenti se $F^+ \neq F^A$ questo passo non funzionerebbe)
+> - sempre per il teorema che dimostra che $F^+ = F^A$, sappiamo che $f \in F^+$ è ricavabile da $F$ applicando gli assiomi di Armstrong. 
 > - quindi, $f$ è derivabile da $G$ mediante gli assiomi di armstrong:
 > $$G \to^A F \to^A F^+$$
 (con $\to^A$ denotiamo la derivazione tramite gli assiomi di Armstrong)
