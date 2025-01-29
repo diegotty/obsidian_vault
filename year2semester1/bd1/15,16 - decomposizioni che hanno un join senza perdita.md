@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-29T19:42
+updated: 2025-01-29T19:53
 ---
 >[!index]
 >
@@ -97,6 +97,14 @@ $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) 
 occorre dimostrare che: 
 $$\rho \text{ ha un join senza perdita} \iff \text{quando l'algoritmo termina} r \text{ha una tupla con tutte} 'a'$$
 $\implies$
+la tabella può essere interpretata come un’istanza legale di $R$ ( basta sostituire i simboli $’a’$ e $’b’$ con valori presi dai domini dei corrispondenti attributi in modo tale che ad uno stesso simbolo venga sostituito lo stesso valore) in quanto l’algoritmo termina quando non ci sono più violazioni delle dipendenze in $F$.
+>
+>la tabella $r$ (iniziale) contiene $’a’$ in ogni riga per gli attributi che appartengono al sottoschema a cui fa riferimento quella riga
+> quindi ogni proiezione $\pi_{R_i}(r)$ della tabella su un sottoschema avrà una tupla di tutte $’a’$, cioè la riga che corrisponde ad $R_i$
+> quando si fa il join naturale tra 2 proiezioni $\pi_{R_i}(r)$ e $\pi_{R_j}(r)$ , si ottengono 2 possibili casi:
+>- $R_i$ e $R_j$ condividono (almeno) un attributo, quindi il risultato del join naturale sarà un’istanza con un’unica tupla contenente sole $’a’$
+
+
 # esempi
 >[!example] esempio 1
 >dato il seguente schema di relazione: $R =(A,B,C,D,E)$
