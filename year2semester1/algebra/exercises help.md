@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-29T13:40
+updated: 2025-01-29T13:49
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -37,3 +37,5 @@ dimostrazione $g^Z isom. \frac{Z}{nZ}$
 
 fun stuff:
 tutti i sistemi omogenei sono compatibili, accettano come soluzione $0_n$
+sol(A|B) è sottospazio vettoriale  di $K^n$ $\iff b = 0$
+riguarda pag 53 ?? parametro ?
