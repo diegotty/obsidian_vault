@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-29T18:54
+updated: 2025-01-29T18:57
 ---
 >[!index]
 >
@@ -64,7 +64,7 @@ sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
 
 
 quindi, per il lemma delle chiusure, visto che sappiamo che $G \subseteq F^+ \implies G^+ \subseteq F^+$
-- per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq F^+$
+- per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq G^+$
 - le dipendenze che ci danno problemi nel verificare $F^+ \subseteq G^+$ sono le dipendenze $X \to Y \in F$ in cui $X$ e $Y$ non sono mai contenute insieme in un sottoschema (sono quindi, “a cavallo” di due tabelle)
 # verifica di $F \subseteq G^+$
 la verifica può essere fatta con il seguente algoritmo:
