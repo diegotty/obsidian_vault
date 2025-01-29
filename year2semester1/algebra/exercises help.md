@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-29T13:22
+updated: 2025-01-29T13:40
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -34,3 +34,6 @@ irriducibili, primi ?
 f omom $\implies$$Ker(f) <| G_1$
 $H <| G \implies H = Ker(\pi_{H})$
 dimostrazione $g^Z isom. \frac{Z}{nZ}$
+
+fun stuff:
+tutti i sistemi omogenei sono compatibili, accettano come soluzione $0_n$
