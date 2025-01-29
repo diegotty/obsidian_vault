@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-29T19:53
+updated: 2025-01-29T20:03
 ---
 >[!index]
 >
@@ -102,7 +102,10 @@ la tabella può essere interpretata come un’istanza legale di $R$ ( basta sost
 >la tabella $r$ (iniziale) contiene $’a’$ in ogni riga per gli attributi che appartengono al sottoschema a cui fa riferimento quella riga
 > quindi ogni proiezione $\pi_{R_i}(r)$ della tabella su un sottoschema avrà una tupla di tutte $’a’$, cioè la riga che corrisponde ad $R_i$
 > quando si fa il join naturale tra 2 proiezioni $\pi_{R_i}(r)$ e $\pi_{R_j}(r)$ , si ottengono 2 possibili casi:
->- $R_i$ e $R_j$ condividono (almeno) un attributo, quindi il risultato del join naturale sarà un’istanza con un’unica tupla contenente sole $’a’$
+>- $R_i$ e $R_j$ condividono (almeno) un attributo, quindi il risultato del join naturale sarà un’istanza con un’unica tupla contenente sole $’a’$(in quanto facciamo un join tra 2 tuple che hanno solo $’a’$, e se hanno almeno un attributo in comune, verrà effettuato il join su quell’attributo e il resto degli attributi sono $’a’$)
+>- $R_i$ e $R_j$ non condividono alcun attributo, quindi il join naturale degenera in un prodotto cartesiano, che conterra, tra tutte le tuple, quella con sole $’a’$ ($t_i$, $t_j$
+>in entrambi i casi, il join naturale ci poterà ad unire $t_i$ e $t_j$ in una tupla con sole $’a’$
+>visto che $m_{\rho}(r) è il join naturale di tutte le proiezioni, esso contiene anche una tupla con tutte $’a’$ contraddicendo quindi l’ipotesi per assurdo
 
 
 # esempi
