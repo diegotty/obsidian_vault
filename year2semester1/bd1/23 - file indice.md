@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T06:07
-updated: 2025-01-28T17:32
+updated: 2025-01-30T21:29
 ---
 >[!index]
 >
@@ -55,7 +55,7 @@ per ricercare un record con valore della chiave $k$, occorre cercare sul file in
 - $k' \leq k$
 - se il record $k’$ non è l’ultimo record del file indice e $k’’$ è il valore della chiave nel record successivo, $k < k''$
 la ricerca di un record con chiave $k$ richiede:
-- 1 ricerca sul file indice ($n$ accessi per caricare l’$n$ esimo blocco, che contiene $k’$)
+- 1 ricerca sul file indice ($n$ accessi per caricare l’$n$ esimo blocco, che contiene $k’$, in quanto il file indice ha più blocchi)
 - 1 accesso in lettura sul file principale
 ## ricerca binaria
 poichè il file indice è ordinato in base al valore della chiave, la ricerca di un valore che ricopre la chiave può essere fatta in modo efficiente mediante la **ricerca binaria**
