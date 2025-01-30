@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-01-28T17:49
+updated: 2025-01-30T21:12
 ---
 >[!index]
 >
@@ -42,8 +42,8 @@ in particolare, all’inizio di un record alcuni byte possono essere utilizzati 
 - specificare il tipo del record (**è necessario quando in uno stesso blocco sono memorizzati record di tipo diverso, cioè record appartenenti a più file**)
 - specificare la lungheza del record (se il record ha campi a lunghezza variabile (varchar in sql))
 - contenere un bit di “cancellazione” o un bit di “usato/non usato” (tipo dirty bit ?)
-- **offset**: numero di byte del record che predono il campo
-	- se tutti i campi del record hanno lunghezza fissa, l’inizio di ciascun campo sarà sempre ad un numero fisso dall’inizio del record, e non ci servono gli offset immmagino ? almeno non per ogni record)
+- **offset**: numero di byte del record che prende il campo
+	- se tutti i campi del record hanno lunghezza fissa, l’inizio di ciascun campo sarà sempre ad un numero fisso dall’inizio del record (e non ci servono gli offset immmagino ? almeno non per ogni record)
 	- se invece il record contiene campi  a lunghezza variabile, all’inizio di ogni campo c’è un contatore che specifica la lunghezza del campo in numero di byte, **oppure** all’inizio del record ci sono gli offset dei campi a lunghezza variabile (**tutti i campi a lunghezza fissa precedono quelli a lunghezza variabile**)
 		- notare che nel primo caso, per individuare la posizione di un campo,  bisogna esaminare tutti i campi precedenti per vedere quanto sono lunghi ! quindi la prima strategia è meno efficiente della seconda
 ## puntatori
@@ -78,7 +78,7 @@ di un record !
 la ricerca è quindi alla base di tutte le altre operazioni !!
 # organizzazioni dei file
 esaminiamo ora diversi tipi di organizzazione fisica, che consentono la ricerca di record in base al valore di uno o più **campi chiave**
->[!warning] il termine “chiave” non va inteso nel senso in cui viene usato nella teoria relazionale, in quanto un valore della chiave in questo contesto (ricerca) non necessessariamente identifica univocamente un record nel file
+>[!warning] il termine “chiave” non va inteso nel senso in cui viene usato nella teoria relazionale, in quanto un valore della chiave in questo contesto (ricerca) non necessariamente identifica univocamente un record nel file
 ## file heap
 >[!warning] non parliamo dell’heap - struttura dati studiata in algoritmi
 
@@ -115,7 +115,7 @@ per calcolare il costo medio della ricerca, calcoliamo la media degli accessi ne
 abbiamo $n$ blocchi, e in ogni blocco abbiamo $R$ record. nel primo blocco, ognuno dei $R$ record richiede 1 accesso in memoria per accedere a tale record. nel secondo blocco, ognuno dei $R$ record richiede 2 accessi (caricare il primo blocco, che scorriamo e in cui non troviamo il record, e con il puntatore alla fine del primo blocco carichiamo il secondo blocco in memoria principale). nel terzo blocco, ognuno dei $R$ record richiede 3 accessi, e così via.
 >
 > quindi, la somma degli accessi necessari per tutti i record è $R \cdot1 + R \cdot2+ \dots+ R \cdot n$, che dividiamo per il numero di record ($N$)
->mettiamo poi in evidenza $R$, e notiamo che $\frac{R}{N}$ è il reciproco di $n$, quindi lo possiamo sostituire con $\frac{1}{n}$. inoltre $(1 +2 + \dots + i +\dots+n)$ è la sommatoria di Gauss, che possiamo quindi sostituire con il risultato chiuso $n(n+1)$. 
+>mettiamo poi in evidenza $R$, e notiamo che $\frac{R}{N}$ è il reciproco di $n$, quindi lo possiamo sostituire con $\frac{1}{n}$. inoltre $(1 +2 + \dots + i +\dots+n)$ è la sommatoria di Gauss, che possiamo quindi sostituire con il risultato chiuso $\frac{n(n+1)}{2}$. 
 >a questo punto, possiamo semplificare per $n$, e arriviamo alla conclusione che il costo medio della ricerca è $\simeq \frac{n}{2}$
 
 $$
@@ -139,7 +139,6 @@ per la cancellazione, è necessario:
 - costo medio della ricerca
 - 1 accesso in lettura (per riutilizzare spazio ed evitare buchi, prendiamo l’ulitmo record e lo inseriamo al posto del record che cancelleremo)
 - 2 accessi in scrittura (per riscrivere in memoria secondaria il blocco modificato(da cui abbiamo rimosso un record e aggiunto un record nello stesso posto) e l’ultimo blocco (da cui abbiamo rimosso un record))
->[!info] poichè l’inserimento di un record viene effettuato sull’ultimo blocco del bucket, è opportuno che la bucket directory contenga anche, per ogni bucket, un puntatore all’ultimo record del bucket
 ## file hash
 in questa organizzazione fisica, il file è diviso in **bucket**, cioè secchi numerati da $0$ a $B-1$
 - ciascun **bucket** è costituito da uno o più blocchi (collegati mediante puntatori), ogni bucket è organizzato come un file heap
