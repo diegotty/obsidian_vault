@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2025-01-31T17:55
+updated: 2025-01-31T17:56
 ---
 >[!index]
 >
@@ -60,7 +60,7 @@ quindi in questo schedule, l’aggiornamento di $X$ prodotto da $T_1$ viene pers
 >[!example] esempio 2: dato sporco
 consideriamo il seguente schedule: se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule, il valore di $X$ è $X_0-N+M$ invece di $X_0 + M$
 ![[Pasted image 20241219094444.png]]
-il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita. per atomicità quindi bisogna pulire i dati w e viene fatto attraverso un rollback
+il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita. per atomicità quindi bisogna pulire i dati e viene fatto attraverso un rollback a cascata
 
 >[!example] esempio 3: aggiornamento non corretto
 consideriamo il seguente schedule: se il valore inziale di $X$ è $X_0$ e il valore iniziale di $Y$ è $Y_0$, al termine dell’esecuzione dello schedule il valore di somma è $X_0 - N + Y_0$ invece di $X_0 + Y_0$
