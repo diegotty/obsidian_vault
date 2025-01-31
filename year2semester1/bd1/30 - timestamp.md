@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: "[[25 - controllo della concorrenza]]"
-updated: 2025-01-31T20:56
+updated: 2025-01-31T21:07
 ---
 >[!index]
 >
@@ -69,7 +69,7 @@ quando $T$ cerca di eseguire una `read(X)`:
 1. se `write_TS(X) > TS(T)`, $T$ viene rolled back
 2. se `write_TS(X) <= TS(T)`, allora:
 	- `read(X)` viene eseguita
-	- `read_TS(X) := TS(X)`
+se `read_TS(X) < TS(T)` allora `read_TS(X) := TS(X)`
 >[!example] esempio
 ![[Pasted image 20241221093607.png]]
 con `TS(T1) = 100, TS(T2) = 100, TS(T3) = 105`
