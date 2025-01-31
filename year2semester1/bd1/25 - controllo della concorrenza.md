@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2025-01-31T17:56
+updated: 2025-01-31T18:18
 ---
 >[!index]
 >
@@ -97,8 +97,8 @@ i 2 metodi che studieremo sono:
 - usare i [[30 - timestamp|timestamp]] delle transazioni, cioè degli identificatori delle transazioni che vengono generati dal sistema, e in base ai quali le operazioni delle transazioni possono essere ordinate in modo da garantire la serializzabilità
 ### item
 entrambi i metodi fanno usato del concetto di **item**, cioè un’unità della BD a cui l’accesso è controllato 
-- può essere una tupla,, un campo di una tupla, una intera tabella
-le dimensioni degli item devono essere definite in base all’uso che viene fatto dalla base di dati in modo tale, in media, una transazione acceda a pochi item
+- può essere una tupla, un campo di una tupla, una intera tabella
+le dimensioni degli item devono essere definite in base all’uso che viene fatto dalla base di dati in modo tale che, in media, una transazione acceda a pochi item
 - le dimensioni degli item usate da un sistema sono dette la sua **granularità**, e quella degli item va dal singolo campo all’intera tabella e oltre
 	- una granularità grande permette una gestione efficiente della concorrenza
 	- una granularità piccola può sovraccaricare il sistema, ma aumenta il **livello di concorrenza** (multiprogrammazione) , cioè consente l’esecuzione concorrente di molte transazioni)
