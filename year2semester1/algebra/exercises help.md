@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-29T13:49
+updated: 2025-01-31T12:08
 ---
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
@@ -26,8 +26,6 @@ se dobbiamo controllare se un dato insieme è sottogruppo:
 $A^X$ chiuso per il prodotto
 
 scrivere dim ker sottogruppo normale se f omom
-
-
 
 lontanamente possibili dimostrazioni 
 irriducibili, primi ?
