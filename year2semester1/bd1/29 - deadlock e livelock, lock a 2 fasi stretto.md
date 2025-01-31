@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: "[[26 - lock binario, lock a 2 fasi]]"
-updated: 2024-12-22T14:03
+updated: 2025-01-31T20:35
 ---
 >[!index]
 >
@@ -20,7 +20,7 @@ un deadlock si verifica quando:
 - ogni transazione in un insieme $T$ è in attesa di ottenere un lock su un item sul quale qualche altra transazione nell’insieme $T$ mantiene un lock, e quindi:
 - ogni transazione rimane bloccata
 - nessuna transazione rilascia i lock (essendo bloccata su `lock(X)`, non arriva alla riga di codice `unlock(Y)`(Y item su cui ha il lock))
-- ciò può bloccar anche transazioni che non sono in $T$ !
+- ciò può bloccare anche transazioni che non sono in $T$ !
 
 ## soluzioni per il deadlock
 per verificare la presenza di una situazione di deadlock, si mantiene il **grafo di attesa**:
