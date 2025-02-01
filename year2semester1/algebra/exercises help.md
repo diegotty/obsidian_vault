@@ -1,18 +1,13 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-02-01T11:02
+updated: 2025-02-01T11:34
 ---
 # misc
-scrivere dim ker sottogruppo normale se f omom
-
-lontanamente possibili dimostrazioni 
-irriducibili, primi ?
-
-DA DIMOSTRARE:
-f omom $\implies$$Ker(f) <| G_1$
-$H <| G \implies H = Ker(\pi_{H})$
-dimostrazione $g^Z isom. \frac{Z}{nZ}$
+- irriducibili, primi ?
+- f omom $\implies$$Ker(f) <| G_1$
+- $H <| G \implies H = Ker(\pi_{H})$
+- dimostrazione $g^Z isom. \frac{Z}{nZ}$
 
 fun stuff:
 tutti i sistemi omogenei sono compatibili, accettano come soluzione $0_n$
