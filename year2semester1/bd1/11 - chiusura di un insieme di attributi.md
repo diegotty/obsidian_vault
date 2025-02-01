@@ -1,7 +1,7 @@
 ---
 created: 2024-10-31
 related to: "[[10 - decomposizione]]"
-updated: 2025-01-29T17:52
+updated: 2025-02-01T15:46
 ---
 >[!index]
 >
@@ -89,7 +89,7 @@ mostriamo che $r$ è un’istanza legale di $R$, cioè che rispetta l’insieme 
 - in questo caso, $t_{1}[V]=t_{2}[V] \land t_{1}[W] \neq t_{2}[W]$ , e ciò implica che $V \subseteq Z^{(f)}$ e $W \cap (R - Z^{(f)}) \neq \varnothing$
 - però, dato che $V \implies W \in F$, $W \in Z^{(f)}$, e l’unico modo in cui $W \notin Z^{(f)}$ è se $Z^{(f)}$ non è l’ultima iterazione dell’algoritmo. ciò è una contraddizione  con la costruzione della nostra istanza !!
 - quindi $r$ è un’istanza legale
--  la dipendenza funzionale $X \to A \implies t_{1}[X]=t_{2}[X] \implies t_{1}[A]=t_{2}[A]$ è soddisfatta da $r$ istanza legale, e visto che $X \subseteq Z^{(f)}$, sappiamo che $t_{1}[X]=t_{2}[X]$, e quindi $A \in Z^{(f)}$
+-  la dipendenza funzionale $X \to A \implies t_{1}[X]=t_{2}[X] \implies t_{1}[A]=t_{2}[A]$ è soddisfatta da $r$ istanza legale, e visto che $X \subset eq$, $Z^{(0())} \subseteq Z^{(f)}$, sappiamo che $t_{1}[X]=t_{2}[X]$, e quindi $A \in Z^{(f)}$
 # proprietà dell’insieme vuoto
 - la notazione $\{\varnothing\}$ indica l’insieme che contiene l’insieme vuoto (insieme di insiemi) e non va confusa con il semplice $\varnothing$
 - l’insieme vuoto è un sottoinsieme di ogni insieme A : $$\forall A : A \supseteq \varnothing$$
