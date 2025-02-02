@@ -1,11 +1,6 @@
 ---
-created: 2024-11-09
-related to: "[[10 - decomposizione]]"
-<<<<<<< HEAD
-updated: 2025-01-16T05:57
-=======
-updated: 2025-01-15T17:17
->>>>>>> origin/main
+created: 2025-01-16T17:08
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >
@@ -60,8 +55,8 @@ $\forall X \to Y \in F$, cerco se $Y \subseteq X^+_G$ se ciò è vero, $X \to Y 
 
 >[!info] dimostrazione
 sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
->- per ipotesi del lemma, $F \subseteq G^+$, quindi ogni dipendenza funzionale si può ricavare da $G$ (applicando gli assiomi di Armstrong su $G$, arrivo a $G^+$, e nel “tragitto” avrò quindi ricavato ogni dipendenza in $F$) (inoltre abbiamo dimostrato che $F^+=F^A$, altrimenti se $F^+ \neq $F^A$ questo passo non funzionerebbe)
-> - sempre per il teorema che dimostra che $F^+ = F^A$, sappiamo che $F \in F^+$ è ricavabile da $F$ applicando gli assiomi di Armstrong. 
+>- per ipotesi del lemma, $F \subseteq G^+$, quindi ogni dipendenza funzionale  di $F$ si può ricavare da $G$ (applicando gli assiomi di Armstrong su $G$, arrivo a $G^+$, e nel “tragitto” avrò quindi ricavato ogni dipendenza in $F$) (inoltre abbiamo dimostrato che $F^+=F^A$, altrimenti se $F^+ \neq F^A$ questo passo non funzionerebbe)
+> - sempre per il teorema che dimostra che $F^+ = F^A$, sappiamo che $f \in F^+$ è ricavabile da $F$ applicando gli assiomi di Armstrong. 
 > - quindi, $f$ è derivabile da $G$ mediante gli assiomi di armstrong:
 > $$G \to^A F \to^A F^+$$
 (con $\to^A$ denotiamo la derivazione tramite gli assiomi di Armstrong)
@@ -69,7 +64,7 @@ sia $f \in F^+ - F$, cioè una dipendenza che compare in $F^+$ ma non in $F$
 
 
 quindi, per il lemma delle chiusure, visto che sappiamo che $G \subseteq F^+ \implies G^+ \subseteq F^+$
-- per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq F^+$
+- per verificare che $G^+=F^+$, dobbiamo solo dimostrare che $F^+ \subseteq G^+$
 - le dipendenze che ci danno problemi nel verificare $F^+ \subseteq G^+$ sono le dipendenze $X \to Y \in F$ in cui $X$ e $Y$ non sono mai contenute insieme in un sottoschema (sono quindi, “a cavallo” di due tabelle)
 # verifica di $F \subseteq G^+$
 la verifica può essere fatta con il seguente algoritmo:

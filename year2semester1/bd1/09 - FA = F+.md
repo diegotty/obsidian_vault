@@ -1,7 +1,7 @@
 ---
 created: 2024-10-18
 related to: "[[08 - chiusure di dipendenze funzionali]]"
-updated: 2024-11-18T20:01
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >
@@ -12,7 +12,7 @@ updated: 2024-11-18T20:01
 >- [a cosa ci serve conoscere $F^+$](#a%20cosa%20ci%20serve%20conoscere%20$F%5E+$)
 # teorema
 >[!note] teorema
-Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^A$, cioè
+Siano R uno schema di relazione ed F un insieme di dipendenze funzionali su R. si ha $F^A = F^+$, cioè
 $$F^A \subseteq F^+ \land F^+ \subseteq F^A$$
 
 dimostriamo quindi il teorema dimostrando la doppia inclusione di sopra, che singifica:
@@ -22,7 +22,7 @@ dimostriamo quindi il teorema dimostrando la doppia inclusione di sopra, che sin
 ## $F^+ \supseteq F^A$
 data una dipendenza $X \to Y \in F^A$ dimostriamo che $X \to Y \in F^+$ per induzione sul numero $i$ di applicazioni di **uno degli assiomi di Armstrong**
 caso base: $i=0$ 
-- $X \to Y \in F^+$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
+- $X \to Y \in F$, quindi, visto che $F \subseteq F^+$, $X \to Y \in F^+$
 ipotesi induttiva: $i-1$
 - $X \to Y \in F^A \implies X \to Y \in F^+$, quindi $X \to Y$ è soddisfatta da ogni istanza legale
 passo induttivo, $i$:
@@ -49,8 +49,7 @@ passo induttivo, $i$:
 3. **assioma della transitività**
 	- ipotiziamo di aver usato l’assioma dell’additività per ricavare $X \to Y$. ciò vuol dire che abbiamo utilizzato due dipendenze, create in $i-1$ applicazioni di assiomi di Armstrong: $X \to Y \in F^A \,\,\ ,\,\,\,\,Z \to Y \in F^A$, che per ipotesi induttiva $\in F^+$
 	- verifichiamo che $X \to Y$ sia verificata per ogni istanza legale.
-		- $\forall r \text{, (r istanza legale di R)}, t_{1}[X]=t_{2}[X]$
-		- per ipotesi induttiva, $t_{1}[X]=t_{2}[X] \implies t_{1}[Y]=t_{2}[Y]$, e sempre per ipotesi induttiva, $t_{1}[Z]=t_{2}[Z] \implies t_{1}[Y]=t_{2}[Y]$
+		- $\forall r \text{, (r istanza legale di R)}$,  per ipotesi induttiva, $t_{1}[X]=t_{2}[X] \implies t_{1}[Y]=t_{2}[Y]$, e sempre per ipotesi induttiva, $t_{1}[Z]=t_{2}[Z] \implies t_{1}[Y]=t_{2}[Y]$
 
 il ragionamento dovrebbe essere di questo tipo: prendendo una istanza legale r, sapendo che l’ipotesi induttiva è vera, la dipendenza del passo induttivo deve essere obbligatoriamente soddisfatta. altrimenti r non sarebbe legale. in questo caso, la dipendenza del passo induttivo belongs in $F^+$
 ## $F^+ \subseteq F^A$
@@ -69,6 +68,7 @@ dimostreremo che :
 >- se le due tuple di r hanno gli stessi valori per V, allora $V \subseteq X^+$, perchè le tuple sono uguali solo per $X^+$
 >	- inoltre, per il lemma 1, $X \to V \in F^A$, e per l’assioma della transitività, $X \to W \in F^A$
 >	- quindi, di nuovo per il lemma 1, $W \subseteq X^+$, quindi le due tuple sono uguali sui valori di $W$, quindi $V \to W$ è soddisfatta, e poichè abbiamo considerato una qualunque dipendenza in F, r le soddisfa tutte, quindi è legale.
+funziona che verifichiamo se la dipendenza è rispettata.meh
 
 >[!info] dimostrazione di 2.
 supponiamo per assurdo che esista una dipendenza funzionale $X \to Y \in F^+$ tale che $X \to Y \notin F^A$

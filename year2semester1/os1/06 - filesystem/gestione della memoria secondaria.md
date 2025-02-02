@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[intro al filesystem]]"
-updated: 2025-01-24T06:03
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >

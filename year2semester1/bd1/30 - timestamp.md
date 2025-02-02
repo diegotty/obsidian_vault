@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: "[[25 - controllo della concorrenza]]"
-updated: 2024-12-22T14:03
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >
@@ -14,7 +14,7 @@ il timestamp identifica una transazione, ed è assegnato alla transazione dallo 
 esso può essere:
 - il valore di un contatore
 - l’ora di inizio della transazione
-quindi: il timestamp della transazione $T_{1}$ è minore del timestamp della transazione $T_{2}$, la transazione $T_{1}$  è inGiziata prima della transazione $T_{2}$
+quindi: il timestamp della transazione $T_{1}$ è minore del timestamp della transazione $T_{2}$, la transazione $T_{1}$  è iniziata prima della transazione $T_{2}$
 - quindi, se la transazioni fossero eseguite in modo seriale, verrebbe eseguita $T_{1}$ e poi $T_{2}$
 ## serializzabilità
 uno schedule è serializzabile se è equivalente allo schedule seriale in cui le transazioni compaiono ordinate in base al loro timestamp
@@ -69,7 +69,7 @@ quando $T$ cerca di eseguire una `read(X)`:
 1. se `write_TS(X) > TS(T)`, $T$ viene rolled back
 2. se `write_TS(X) <= TS(T)`, allora:
 	- `read(X)` viene eseguita
-	- `read_TS(X) := TS(X)`
+se `read_TS(X) < TS(T)` allora `read_TS(X) := TS(X)`
 >[!example] esempio
 ![[Pasted image 20241221093607.png]]
 con `TS(T1) = 100, TS(T2) = 100, TS(T3) = 105`

@@ -1,9 +1,9 @@
 ---
 created: 2024-12-19
 related to: "[[25 - controllo della concorrenza]]"
-updated: 2024-12-22T14:03
+updated: 2025-02-02T21:18
 ---
->>[!index]
+>[!index]
 >
 >- [schedule legale](#schedule%20legale)
 >- [lock binario](#lock%20binario)
@@ -22,7 +22,7 @@ updated: 2024-12-22T14:03
 - fra l’esecuzione di un’operazione di locking su un dato item $X$ e l’operazione di unlocking su tale $X$, la transazione **mantiene un lock** su $X$
 il locking agisce quindi come primitiva di sincronizzazione !
 ## schedule legale
-uno schedule è detto **legale** se una transazione effettua un locking ogni volta che deve leggere o scrivere un item, e ciascuan transazione rilascia ogni lock che ha ottenuto
+uno schedule è detto **legale** se una transazione effettua un locking ogni volta che deve leggere o scrivere un item, e ciascuna transazione rilascia ogni lock che ha ottenuto
 ## lock binario
 un lock binario può assumere solo 2 valori: `locked` e `unlocked`
 le transazioni fanno uso di due operazioni: 

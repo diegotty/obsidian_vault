@@ -1,8 +1,19 @@
 ---
 created: 2024-11-29
 related to: 
-updated: 2025-01-24T06:03
+updated: 2025-02-02T21:18
 ---
+# misc
+- irriducibili, primi ?
+- f omom $\implies$$Ker(f) <| G_1$
+- $H <| G \implies H = Ker(\pi_{H})$
+- dimostrazione $g^Z isom. \frac{Z}{nZ}$
+
+fun stuff:
+tutti i sistemi omogenei sono compatibili, accettano come soluzione $0_n$
+sol(A|B) è sottospazio vettoriale  di $K^n$ $\iff b = 0$
+riguarda pag 53 ?? parametro ?
+# schtuff
 se dobbiamo controllare se un dato insieme è sottogruppo:
 - controllare se è un sottogruppo generato
 - controllare se la cardinalità è divisore della cardinalità del gruppo
@@ -24,11 +35,4 @@ se dobbiamo controllare se un dato insieme è sottogruppo:
 - ogni sottogruppo di indice 2 è normale (card di gruppo / card di sottogruppo = 2, indice visto quando abbiamo fatto lagrange)
 ## anelli
 $A^X$ chiuso per il prodotto
-
-scrivere dim ker sottogruppo normale se f omom
-
-
-
-lontanamente possibili dimostrazioni 
-irriducibili, primi ?
 

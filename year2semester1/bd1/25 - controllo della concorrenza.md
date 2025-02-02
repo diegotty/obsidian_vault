@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2025-01-24T06:03
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >
@@ -28,7 +28,7 @@ le transazioni sono dotate di proprietà **ACID** (Atomicity, Consistency, Isola
 
 - **atomicità**: una transazione è **indivisibile** nella sua esecuzione, e la sua esecuzione deve essere **o totale, o nulla**, non sono ammesse esecuzioni parziali.
 
-- **consistenza**: quando inizia una transazione, la BD si trova in uno stato consistente, e quando la transazione termina la BD deve **essere in un altro stato consistente**, ovver non deve violare eventuali vingoli di integrità, quindi non devono verificarsi contraddizioni (inconsistenza) tra i dati archiviati nella BD
+- **consistenza**: quando inizia una transazione, la BD si trova in uno stato consistente, e quando la transazione termina la BD deve **essere in un altro stato consistente**, ovver non deve violare eventuali [[02 - modello relazionale#vincoli di integrita’|vincoli di integrità]], quindi non devono verificarsi contraddizioni (inconsistenza) tra i dati archiviati nella BD
  
  - **isolamento**: ogni transazione deve essere eseguita in modo isolato ed indipendente dalle altre transazioni, e l’eventuale fallimeno di una transazione non deve interferire con le altre transazioni in esecuzione
 	 - una transazione ben progettata non deve dipendere da altre transazioni (il risultato non deve dipendere dal fatto che altre transazioni vengano eseguite prima o dopo (il risultato può cambiare, )) se ho 3 transazioni $T_1,T_2, T_3$, qualunque permutazione delle transazioni deve essere eseguibile
@@ -60,7 +60,7 @@ quindi in questo schedule, l’aggiornamento di $X$ prodotto da $T_1$ viene pers
 >[!example] esempio 2: dato sporco
 consideriamo il seguente schedule: se il valore iniziale di $X$ è $X_0$, al termine dell’esecuzione dello schedule, il valore di $X$ è $X_0-N+M$ invece di $X_0 + M$
 ![[Pasted image 20241219094444.png]]
-il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita
+il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita. per atomicità quindi bisogna pulire i dati e viene fatto attraverso un rollback a cascata
 
 >[!example] esempio 3: aggiornamento non corretto
 consideriamo il seguente schedule: se il valore inziale di $X$ è $X_0$ e il valore iniziale di $Y$ è $Y_0$, al termine dell’esecuzione dello schedule il valore di somma è $X_0 - N + Y_0$ invece di $X_0 + Y_0$
@@ -97,8 +97,8 @@ i 2 metodi che studieremo sono:
 - usare i [[30 - timestamp|timestamp]] delle transazioni, cioè degli identificatori delle transazioni che vengono generati dal sistema, e in base ai quali le operazioni delle transazioni possono essere ordinate in modo da garantire la serializzabilità
 ### item
 entrambi i metodi fanno usato del concetto di **item**, cioè un’unità della BD a cui l’accesso è controllato 
-- può essere una tupla,, un campo di una tupla, una intera tabella
-le dimensioni degli item devono essere definite in base all’uso che viene fatto dalla base di dati in modo tale, in media, una transazione acceda a pochi item
+- può essere una tupla, un campo di una tupla, una intera tabella
+le dimensioni degli item devono essere definite in base all’uso che viene fatto dalla base di dati in modo tale che, in media, una transazione acceda a pochi item
 - le dimensioni degli item usate da un sistema sono dette la sua **granularità**, e quella degli item va dal singolo campo all’intera tabella e oltre
 	- una granularità grande permette una gestione efficiente della concorrenza
 	- una granularità piccola può sovraccaricare il sistema, ma aumenta il **livello di concorrenza** (multiprogrammazione) , cioè consente l’esecuzione concorrente di molte transazioni)

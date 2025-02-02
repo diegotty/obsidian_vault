@@ -1,7 +1,7 @@
 ---
 created: 2024-10-27
 related to: "[[intro allo scheduling]]"
-updated: 2025-01-24T06:03
+updated: 2025-02-02T21:18
 ---
 studiamo ora i diversi tipi di strategie usate nel tempo per gestire la memoria
 # partizionamento

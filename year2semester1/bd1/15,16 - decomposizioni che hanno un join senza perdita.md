@@ -1,12 +1,15 @@
 ---
-created: 2024-11-15
-related to: "[[10 - decomposizione]]"
-<<<<<<< HEAD
-updated: 2025-01-16T05:55
-=======
-updated: 2025-01-15T17:20
->>>>>>> origin/main
+created: 2025-01-16T17:08
+updated: 2025-02-02T21:18
 ---
+>[!index]
+>
+>- [teorema](#teorema)
+>- [verifica di $\rho$ senza perdita](#verifica%20di%20$%5Crho$%20senza%20perdita)
+>- [teorema sulla correttezza dell’algoritmo per la verifica di ‘$\rho$ ha join senza perdita’](#teorema%20sulla%20correttezza%20dell%E2%80%99algoritmo%20per%20la%20verifica%20di%20%E2%80%98$%5Crho$%20ha%20join%20senza%20perdita%E2%80%99)
+>- [dimostrazione](#dimostrazione)
+>- [esempi](#esempi)
+
 come abbiamo visto nelle [[10 - decomposizione#condizioni della decomposizione| condizioni per una decomposizione corretta]], l’ultima condizione, che non sappiamo anche verificare in una decomposizione, è che deve permettere di **ricostruire mediante join naturale** ogni **istanza legale dello schema originario**(senza aggiunta di informazione estranea)
 
 inoltre, nell [[10 - decomposizione|esempio 2 della decomposizione]] abbiamo visto cosa signfica, e come capita, di avere perdita di informazioni in una decomposizione
@@ -90,7 +93,21 @@ per dimostrare il teorema, occorre dimostare che:
 $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) $\iff$ quando l’algoritmo termina, la tabella $r$ ha una tupla con tutte ‘$a$’
 
 # dimostrazione
-none
+>[!info] dimostrazione
+occorre dimostrare che: 
+$$\rho \text{ ha un join senza perdita} \iff \text{quando l'algoritmo termina} r \text{ha una tupla con tutte} 'a'$$
+$\implies$
+la tabella può essere interpretata come un’istanza legale di $R$ ( basta sostituire i simboli $’a’$ e $’b’$ con valori presi dai domini dei corrispondenti attributi in modo tale che ad uno stesso simbolo venga sostituito lo stesso valore) in quanto l’algoritmo termina quando non ci sono più violazioni delle dipendenze in $F$.
+>
+>la tabella $r$ (iniziale) contiene $’a’$ in ogni riga per gli attributi che appartengono al sottoschema a cui fa riferimento quella riga
+> quindi ogni proiezione $\pi_{R_i}(r)$ della tabella su un sottoschema avrà una tupla di tutte $’a’$, cioè la riga che corrisponde ad $R_i$
+> quando si fa il join naturale tra 2 proiezioni $\pi_{R_i}(r)$ e $\pi_{R_j}(r)$ , si ottengono 2 possibili casi:
+>- $R_i$ e $R_j$ condividono (almeno) un attributo, quindi il risultato del join naturale sarà un’istanza con un’unica tupla contenente sole $’a’$(in quanto facciamo un join tra 2 tuple che hanno solo $’a’$, e se hanno almeno un attributo in comune, verrà effettuato il join su quell’attributo e il resto degli attributi sono $’a’$)
+>- $R_i$ e $R_j$ non condividono alcun attributo, quindi il join naturale degenera in un prodotto cartesiano, che conterra, tra tutte le tuple, quella con sole $’a’$ ($t_i$, $t_j$
+>in entrambi i casi, il join naturale ci poterà ad unire $t_i$ e $t_j$ in una tupla con sole $’a’$
+>visto che $m_{\rho}(r)$ è il join naturale di tutte le proiezioni, esso contiene anche una tupla con tutte $’a’$ contraddicendo quindi l’ipotesi per assurdo
+
+
 # esempi
 >[!example] esempio 1
 >dato il seguente schema di relazione: $R =(A,B,C,D,E)$
