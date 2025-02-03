@@ -1,3 +1,7 @@
+---
+created: 2024-11-21T14:24
+updated: 2025-02-03T17:34
+---
 >[!index]
 >- [relazioni](#relazioni)
 >- [dominio](#dominio)
@@ -27,9 +31,9 @@ tutti i valori (possibilmente infiniti) di un insieme (che poi detteranno i valo
 - le tuple non hanno un ordinamento
 di solito si usano i domini predefiniti: String, Integer, Real, etc….
 ### NULL
-inoltre, tutti i campi (se non specificato altrimenti o se esistono altri vincoli impliciti (chiavi)) possono avere il valore NULL, che rappresenta mancanza di informazione o il fatto che l’informazione non sia applicabile per quella tupla
+inoltre, tutti i campi (se non specificato altrimenti o se non esistono altri vincoli impliciti (chiavi)) possono avere il valore NULL, che rappresenta mancanza di informazione o il fatto che l’informazione non sia applicabile per quella tupla
 NULL, infatti, non appartiene a nessun dominio ma puo’ sostituire valori in qualsiasi dominio
->[!] e’ meglio usare null per rappresentare la mancanza di informazione, al posto che valori del dominio inutilizzati(potrebbero falsare i calcoli/dare problemi)
+>[!info] e’ meglio usare null per rappresentare la mancanza di informazione, al posto che valori del dominio inutilizzati(potrebbero falsare i calcoli/dare problemi)
 - inoltre, due valori NULL, anche se sullo stesso dominio, sono considerati diversi
 ### grado e cardinalita’ di una relazione
 - grado → numero dei domini (attributi)
