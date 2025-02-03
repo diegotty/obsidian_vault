@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[25 - controllo della concorrenza]]"
-updated: 2025-02-03T17:17
+updated: 2025-02-03T18:56
 ---
 >[!index]
 >
@@ -78,6 +78,7 @@ pertanto, lo schedule non è serializzabile, in quanto produce per $X$ un valore
 >basta concludere che le formule siano diverse anche per un solo item per concludere che gli schedule non sono equivalenti
 
 # testare la serializzabilità
+# PORCODIO
 ## algoritmo 1
 dato uno schedule $S$:
 **passo 1**: crea un grafo diretto(con archi diretti) $G$ (**grafo di serializzazione**)
