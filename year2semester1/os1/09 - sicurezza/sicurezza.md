@@ -1,7 +1,11 @@
 ---
 created: 2024-12-17
 related to: 
+<<<<<<< HEAD
+updated: 2025-01-24T07:11
+=======
 updated: 2025-01-28T17:32
+>>>>>>> origin/main
 ---
 >[!index]
 >
@@ -29,6 +33,7 @@ esistono 2 obiettivi che vengono aggiunti al nucleo della sicurezza informatica:
 **confidenzialità**: riferita tipicamente ai dati, che non devono essere letti senza le dovute autorizzazioni
 **disponiblità**: riferita tipicamente ai servizi, che devono essere disponibili senza interruzioni
 **autenticità**: riferita tipicamente agli utenti, che devono essere chi dichiarano di essere (per estensione, vale anche per dati e messaggi)
+**tracciabilità**:
 ## minacce
 l’RFC 2828 descrive quattro conseguenze delle minacce informatiche:
 - **unauthorized disclosure**(accesso non autorizzato): un’entità ottiene l’accesso a dati per quali non ha l’autorizzazione (minacciando la confidenzialità)

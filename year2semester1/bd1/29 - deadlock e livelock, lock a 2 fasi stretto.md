@@ -1,7 +1,7 @@
 ---
 created: 2024-12-21
 related to: "[[26 - lock binario, lock a 2 fasi]]"
-updated: 2025-01-31T20:35
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >

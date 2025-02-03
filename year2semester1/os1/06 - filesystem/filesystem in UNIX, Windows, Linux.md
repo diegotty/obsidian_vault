@@ -1,7 +1,7 @@
 ---
 created: 2024-11-25
 related to: "[[gestione della memoria secondaria]]"
-updated: 2025-01-28T17:32
+updated: 2025-02-02T21:18
 ---
 >[!index]
 >
