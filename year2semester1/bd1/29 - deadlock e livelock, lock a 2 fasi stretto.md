@@ -1,9 +1,9 @@
 ---
 created: 2024-12-21
 related to: "[[26 - lock binario, lock a 2 fasi]]"
-updated: 2025-02-03T17:17
+updated: 2025-02-04T15:59
 ---
->[!index]
+[!index]
 >
 >- [soluzioni per il deadlock](#soluzioni%20per%20il%20deadlock)
 >- [livelock](#livelock)
@@ -31,7 +31,7 @@ se in tale grafo c’è un ciclo, si sta verificando una situazione di stallo ch
 per risolvere una situazione di deadlock, una transazione nel ciclo viene **rolled-back** e successivamente viene fatta ripartire
 quando avviene un **roll-back**:
 1. la transazione è abortita
-2. i suoi effetti sulla BD vengono annullati, ripristinando i valori dei dati precedenti l’inizio della sua esecuzione
+2. i suoi e>ffetti sulla BD vengono annullati, ripristinando i valori dei dati precedenti l’inizio della sua esecuzione
 3. tutti i lock mantenuti dalla transazione vengono rilasciati
 
 per evitare il deadlock, si adottano protocolli opportuni
