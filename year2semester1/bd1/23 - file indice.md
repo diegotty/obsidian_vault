@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T06:07
-updated: 2025-02-03T17:17
+updated: 2025-02-04T14:28
 ---
 >[!index]
 >
@@ -100,22 +100,26 @@ la modifica richiede:
 >[!important] se la modifica coinvolge la chiave, la modifica diventa cancellazione + inserimento
 # file con record puntati
 consideriamo ora il caso in cui il file principale contiene record puntati (ovvero, se esistono da qualche parte, dei puntatori che puntano alla posizione dei record del file principale)
-in questo caso, nella fase di inizializzazione è preferibile lasciare più spazio libero nei blocchi per successivi inserimenti, visto che poichè i record sono puntati, **non possono essere spostati** per mantenere l’ordinamento quando si inseriscono nuovi record
-- se non c’è spazio sufficiente in un blocco B per l’inserimento di un nuovo record, occorre chiedere al sistema un nuovo blocco che viene collegato a B **tramite un puntatore** ( bisogna quindi tenere conto dello spazio del puntatore nei blocchi del file principale !)
 	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket**(e i blocchi oltre al primo sono chiamati **liste di overflow**) e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
+
+consideriamo ora il caso in cui il file principale contiene dei record puntati (ovvero se, per mantenere l’ordine (logico, non fisico), ogni record puntasse ad un altro record, il successivo seguendo l’ordinamento in base alla chiave)
+
+in questo caso, nella fase di inizializzazione è preferibile lasciare più spazio libero nei blocchi per successivi inserimenti, visto che poichè i record sono puntati, **non possono essere spostati** per mantenere l’ordinamento quando si inseriscono nuovi record (principalmente perchè vengono gestiti in un altro modo, non perchè è impossibile)
+- se non c’è spazio sufficiente in un blocco B per l’inserimento di un nuovo record, occorre chiedere al sistema un nuovo blocco(**di overflow**) che viene collegato a B **tramite un puntatore** ( bisogna quindi tenere conto dello spazio del puntatore nei blocchi del file principale !)
 ## ricerca
-la ricerca di un record con chiave $v$ richiede la ricerca di una chiave nel file principale che ricopre $v$, e poi la scansione del bucket corrispondente (**il file principale non è più ordinato !!!!!!!!**)
+la ricerca di un record con chiave $v$ richiede la ricerca di una chiave nel file principale che ricopre $v$, e poi la scansione del bucket corrispondente (**il file principale non è più ordinato !!**: è ordinato all’inizio, ma facendo operazioni non viene mantenuto l’ordine fisico, ma solo quello logico con i puntatori)
 ## cancellazione
 la cancellazione di un record richiede la ricerca del record e poi la modifica dei bit di cancellazione nell’intestazione del blocco 
 >[!info] conspiracy theory
 >non credo abbia spiegato questa cosa, ma immagino che nell’itestazione del blocco (nel caso file con record puntati), visto che non è possibile veramente cancellare record(in quanto avremmo puntatori che puntano ai record sbagliati), esista un’area usata per tenere dei flag, tra cui se un dato record dovrebbe apparire cancellato
+> edit: è scritto nelle slide di 2 powerpoint fa, dummy
 >in questo caso, nella modifica avrebbe senso fare quello che è scritto nelle slide
 ## modifica
 la modifica di un record richiede la ricerca del record, poi:
 - se la modifica non coinvolge campi chiave, il record viene modificato
-- altrimenti, la modifica equivale ad una cancellazione seguita da un inserimento (in questo caso, non è sufficiente modificare il bit di cancellazione del record cancellato, ma è necessario inserire in esso un puntatore al nuovo record inserito in modo che questo sia raggiungibile da qualsiasi record che contenga un puntatore al record cancellato)
->[!important] poichè non è possibile mantenere il file principale ordinato, se si vuole avere la possibilità di esaminare il file seguendo l’ordinamento della chiave, occorre inserire in ogni record un puntatore al record successivo nell’ordinamento (werid ? weird)
-## indice secondario
+- altrimenti, la modifica equivale ad una cancellazione seguita da un inserimento (in questo caso, non è sufficiente modificare il bit di cancellazione del record cancellato, ma è necessario inserire in esso un puntatore al nuovo record inserito in modo che questo sia raggiungibile da qualsiasi record che contenga un puntatore al record cancellato(certo !!! molto meglio che modificare il puntatore di ogni record che puntava al record modificato/ cancellato !!))
+>[!important] poichè non è possibile mantenere il file principale ordinato, se si vuole avere la possibilità di esaminare il file seguendo l’ordinamento della chiave, occorre inserire in ogni record un puntatore al record successivo nell’ordinamento
+## indice secondario / denso
 l’indice secondario è un **indice denso** (cioè esiste un record nell’indice secondario per ogni record del file principale) su un’altra chiave(**sempre univoca** ?)
 - viene usato in caso si vuole ordinare anche su un’altra chiave
 - anche queto indice è fatto a blocchi
