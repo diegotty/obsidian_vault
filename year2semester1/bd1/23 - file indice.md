@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T06:07
-updated: 2025-02-04T14:28
+updated: 2025-02-04T16:12
 ---
 >[!index]
 >
@@ -99,7 +99,6 @@ la modifica richiede:
 - 1 accesso in scrittura sul blocco modificato
 >[!important] se la modifica coinvolge la chiave, la modifica diventa cancellazione + inserimento
 # file con record puntati
-consideriamo ora il caso in cui il file principale contiene record puntati (ovvero, se esistono da qualche parte, dei puntatori che puntano alla posizione dei record del file principale)
 	- in questo modo, ogni record del file indice punta al primo blocco **di un bucket**(e i blocchi oltre al primo sono chiamati **liste di overflow**) e il file indicie non viene mai modificato (a meno che le dimensioni del bucket non siano diventate tali da dover richiedere una riorganizzazione dell’intero file)
 
 consideriamo ora il caso in cui il file principale contiene dei record puntati (ovvero se, per mantenere l’ordine (logico, non fisico), ogni record puntasse ad un altro record, il successivo seguendo l’ordinamento in base alla chiave)
