@@ -1,7 +1,7 @@
 ---
 created: 2024-12-19
 related to: "[[intro alla concorrenza]]"
-updated: 2025-02-03T17:17
+updated: 2025-02-05T10:53
 ---
 >[!index]
 >
@@ -62,7 +62,7 @@ consideriamo il seguente schedule: se il valore iniziale di $X$ è $X_0$, al ter
 ![[Pasted image 20241219094444.png]]
 il valore di $X$ letto da $T_2$ è un **dato sporco**(temporaneo), in qunto è prodotto da una transazione fallita. per atomicità quindi bisogna pulire i dati e viene fatto attraverso un rollback a cascata
 
->[!example] esempio 3: aggiornamento non corretto
+>[!example] esempio 3: aggregato non corretto
 consideriamo il seguente schedule: se il valore inziale di $X$ è $X_0$ e il valore iniziale di $Y$ è $Y_0$, al termine dell’esecuzione dello schedule il valore di somma è $X_0 - N + Y_0$ invece di $X_0 + Y_0$
 ![[Pasted image 20241219094643.png]]
 il valore di `somma` è un dato **aggregato non corretto**(abbiamo preso un valore aggiornato di X e non aggiornato di Y)
