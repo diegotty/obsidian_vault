@@ -1,6 +1,6 @@
 ---
 created: 2025-01-16T17:08
-updated: 2025-02-03T17:17
+updated: 2025-02-05T11:07
 ---
 >[!index]
 >
@@ -95,7 +95,7 @@ $\rho$ ha un join senza perdita ($m_{\rho}(r) = r$ per ogni $r$ istanza legale) 
 # dimostrazione
 >[!info] dimostrazione
 occorre dimostrare che: 
-$$\rho \text{ ha un join senza perdita} \iff \text{quando l'algoritmo termina} r \text{ha una tupla con tutte} 'a'$$
+$$\rho \text{ ha un join senza perdita} \iff \text{quando l'algoritmo termina } r \text{ha una tupla con tutte} 'a'$$
 $\implies$
 la tabella può essere interpretata come un’istanza legale di $R$ ( basta sostituire i simboli $’a’$ e $’b’$ con valori presi dai domini dei corrispondenti attributi in modo tale che ad uno stesso simbolo venga sostituito lo stesso valore) in quanto l’algoritmo termina quando non ci sono più violazioni delle dipendenze in $F$.
 >
