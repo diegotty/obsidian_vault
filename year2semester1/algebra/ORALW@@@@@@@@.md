@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T10:34
+updated: 2025-02-06T10:48
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -41,7 +41,9 @@ cose da ricordare:
 	- $A^+$
 	- $A^X$ + ragionamento
 	 - roba di $a|b \land b|a$
-	 - $K[X]$ è dominio !
+	 - $K[X]$ è dominio ! (dim facile :))
+	 - $\frac{A}{HA}$
+	 MCD monico …… (dim ???)
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
