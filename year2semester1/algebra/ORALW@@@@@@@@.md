@@ -1,8 +1,9 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T12:35
+updated: 2025-02-06T12:44
 ---
 cose nuove imparate:
+- $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
 - (m) sottospazio generato
 - prodotto vett linea, vett colonna
 - matrice identità (?)
@@ -48,6 +49,7 @@ cose da ricordare:
 	 MCD monico …… (dim ???)
 	 - lemma su soluzioni di polinomi (immagine inversa di evaluazione)
 - esponenziale eulero
+- coniugazione complessa ($z \in R \iff z = z^-$ ), a cosa corrisponde su asse
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
