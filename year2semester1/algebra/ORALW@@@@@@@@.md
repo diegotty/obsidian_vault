@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T13:10
+updated: 2025-02-06T13:24
 ---
 cose nuove imparate:
 - $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
@@ -37,6 +37,7 @@ esercizi carini:
 - basi polinomi
 
 cose da ricordare: 
+- condizioni anello
 - POLINOMI
 	- polinomi invertibili
 	- lemma su proprietà grado
@@ -61,4 +62,5 @@ cose da ricordare:
 - solo le matrici quadrate sono invertibili !!!
 
 cose saltate:
-- fattorizza
+- fattorizzazione $X^n-1$
+- teorema di struttura per le applicazioni
