@@ -1,8 +1,9 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T14:04
+updated: 2025-02-06T14:31
 ---
 cose nuove imparate:
+- Z dominio ! quindi lemma cancellazione
 - $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
 - (m) sottospazio generato
 - prodotto vett linea, vett colonna
@@ -72,3 +73,8 @@ cose da ricordare:
 cose saltate:
 - fattorizzazione $X^n-1$
 - teorema di struttura per le applicazioni
+- primo teo iso
+- tcr
+- teo fondamentale aritmetica
+- er fibbo
+- dim ptf
