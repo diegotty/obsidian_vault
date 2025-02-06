@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T14:31
+updated: 2025-02-06T17:08
 ---
 cose nuove imparate:
 - Z dominio ! quindi lemma cancellazione
@@ -23,7 +23,7 @@ dimostrazioni:
 - dimostrazione $\frac{Z}{nZ}$ anello
 - P ha una radice $\iff (X-x)|P$
 - $(X-x)$ sempre irriducibile
-- ker = ${\{1_G}\}$
+- ker = ${\{1_G}\} \iff$ f iniettiva
 - f omom. $\implies$ immagine sottogruppo
 - sottogruppo coniugato sottogruppo
 - condizioni equivalenti sottogruppo normale
