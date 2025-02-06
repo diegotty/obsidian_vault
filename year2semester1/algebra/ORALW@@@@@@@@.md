@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T12:44
+updated: 2025-02-06T13:10
 ---
 cose nuove imparate:
 - $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
@@ -49,9 +49,16 @@ cose da ricordare:
 	 MCD monico …… (dim ???)
 	 - lemma su soluzioni di polinomi (immagine inversa di evaluazione)
 - esponenziale eulero
+- formula fondamentale
+- valore assoluto
 - coniugazione complessa ($z \in R \iff z = z^-$ ), a cosa corrisponde su asse
+- rappresentazione polare
+- def algebricamente chiuso
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
 - prop.
 - solo le matrici quadrate sono invertibili !!!
+
+cose saltate:
+- fattorizza
