@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T13:54
+updated: 2025-02-06T14:04
 ---
 cose nuove imparate:
 - $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
@@ -16,8 +16,9 @@ cose nuove imparate:
 - somma e intersezione di sottospazi è sottospazio
 
 dimostrazioni:
-- $aZ = bZ = $
-- MCD
+- (m) lemma di Gauss
+- $aZ = bZ = \delta Z$
+- $\delta =$MCD
 - dimostrazione $\frac{Z}{nZ}$ anello
 - P ha una radice $\iff (X-x)|P$
 - $(X-x)$ sempre irriducibile
@@ -43,6 +44,8 @@ cose da ricordare:
 - mini def valore assoluto
 - condizioni anello
 - $\frac{Z}{nZ}$ anello
+- lemma di Gauss
+- PTF
 - POLINOMI
 	- polinomi invertibili
 	- lemma su proprietà grado
