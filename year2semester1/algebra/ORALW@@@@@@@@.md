@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T10:24
+updated: 2025-02-06T10:34
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -37,6 +37,11 @@ cose da ricordare:
 - POLINOMI
 	- polinomi invertibili
 	- lemma su proprietà grado
+	- valore assoluto
+	- $A^+$
+	- $A^X$ + ragionamento
+	 - roba di $a|b \land b|a$
+	 - $K[X]$ è dominio !
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
