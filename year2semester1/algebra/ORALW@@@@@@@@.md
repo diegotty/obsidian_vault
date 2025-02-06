@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T13:24
+updated: 2025-02-06T13:36
 ---
 cose nuove imparate:
 - $C$ è campo ! usiamo formula fondamentale per dimostrarlo 
@@ -16,6 +16,7 @@ cose nuove imparate:
 - somma e intersezione di sottospazi è sottospazio
 
 dimostrazioni:
+- dimostrazione $\frac{Z}{nZ}$ anello
 - P ha una radice $\iff (X-x)|P$
 - $(X-x)$ sempre irriducibile
 - ker = ${\{1_G}\}$
