@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T19:43
+updated: 2025-02-06T20:09
 ---
 cose nuove imparate:
 - Z dominio ! quindi lemma cancellazione
@@ -49,7 +49,7 @@ cose da ricordare:
 - PTF
 - POLINOMI
 	- polinomi invertibili
-	- lemma su proprietà grado
+	- proprietà grado
 	- valore assoluto
 	- $A^+$
 	- $A^X$ + ragionamento
