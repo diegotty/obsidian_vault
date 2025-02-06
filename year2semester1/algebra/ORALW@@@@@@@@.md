@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T17:08
+updated: 2025-02-06T18:46
 ---
 cose nuove imparate:
 - Z dominio ! quindi lemma cancellazione
@@ -72,9 +72,9 @@ cose da ricordare:
 
 cose saltate:
 - fattorizzazione $X^n-1$
-- teorema di struttura per le applicazioni
-- primo teo iso
+- teorema di struttura per le applicazioni (fatto)
+- primo teo iso (fatto)
 - tcr
 - teo fondamentale aritmetica
-- er fibbo
+- er fibbo (sticazzzi)
 - dim ptf
