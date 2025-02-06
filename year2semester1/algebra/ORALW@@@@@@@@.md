@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T11:49
+updated: 2025-02-06T11:58
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -15,6 +15,8 @@ cose nuove imparate:
 - somma e intersezione di sottospazi è sottospazio
 
 dimostrazioni:
+- P ha una radice $\iff (X-x)|P$
+- $(X-x)$ sempre irriducibile
 - ker = ${\{1_G}\}$
 - f omom. $\implies$ immagine sottogruppo
 - sottogruppo coniugato sottogruppo
