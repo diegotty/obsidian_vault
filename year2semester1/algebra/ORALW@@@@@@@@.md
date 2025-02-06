@@ -1,8 +1,11 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T09:51
+updated: 2025-02-06T10:10
 ---
 cose nuove imparate:
+- (m) sottospazio generato
+- prodotto vett linea, vett colonna
+- matrice identità (?)
 - nuove basi applicando gauss su un vettore di una base
 - rango trasposta uguale, simm/antisimm., proprietà trasposizione matrici (quindi traspozione di matrici è applicazione lineare !!)
 - def di sottospazio vettoriale, condizioni equivalenti
@@ -11,9 +14,17 @@ cose nuove imparate:
 - per dimostrare biettività, possiamo trovare inversa e calcolare le identità sulle composizioni
 - somma e intersezione di sottospazi è sottospazio
 
-dimostrazioni piccole e carine:
+dimostrazioni:
+- dim isom <g> 
+- LAGRANGE (riguardare)
 - base canonica è base
 - ogni vettore si scrive come comb. lin. unica della base
 
 esercizi carini:
 - basi polinomi
+
+cose da ricordare: 
+- (m) prop mcm
+- def spazio vettoriale
+- condizioni equivalenti sottospazi vettoriali
+- prop.
