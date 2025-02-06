@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T10:48
+updated: 2025-02-06T11:21
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -48,3 +48,4 @@ cose da ricordare:
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
 - prop.
+- solo le matrici quadrate sono invertibili !!!
