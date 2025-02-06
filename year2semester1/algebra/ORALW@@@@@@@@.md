@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T10:10
+updated: 2025-02-06T10:24
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -15,15 +15,28 @@ cose nuove imparate:
 - somma e intersezione di sottospazi è sottospazio
 
 dimostrazioni:
-- dim isom <g> 
-- LAGRANGE (riguardare)
+- ker = ${\{1_G}\}$
+- f omom. $\implies$ immagine sottogruppo
+- sottogruppo coniugato sottogruppo
+- condizioni equivalenti sottogruppo normale
+- H = Ker($\pi_{H}$)
+- f omom $\implies$ Ker sottogruppo normale
+- (guardare) primo teo. isom. gruppi
+- intersezione sottogruppi è sottogruppo
+- dim esiste n t.c sottogruppo di Z = nZ
+- dim isom $<g> ~= \frac{Z}{nZ}$
+- (riguardare) LAGRANGE
 - base canonica è base
 - ogni vettore si scrive come comb. lin. unica della base
 
 esercizi carini:
+- mcd polinomi 06/11/2024
 - basi polinomi
 
 cose da ricordare: 
+- POLINOMI
+	- polinomi invertibili
+	- lemma su proprietà grado
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
