@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T20:09
+updated: 2025-02-06T20:31
 ---
 cose nuove imparate:
 - Z dominio ! quindi lemma cancellazione
@@ -66,6 +66,7 @@ cose da ricordare:
 - rappresentazione polare
 - def algebricamente chiuso
 - (m) prop mcm
+- se f omom. im sottogruppo, ker sottogruppo normale
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
 - prop.
