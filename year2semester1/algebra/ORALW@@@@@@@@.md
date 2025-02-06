@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T18:46
+updated: 2025-02-06T19:43
 ---
 cose nuove imparate:
 - Z dominio ! quindi lemma cancellazione
@@ -11,7 +11,7 @@ cose nuove imparate:
 - nuove basi applicando gauss su un vettore di una base
 - rango trasposta uguale, simm/antisimm., proprietà trasposizione matrici (quindi traspozione di matrici è applicazione lineare !!)
 - def di sottospazio vettoriale, condizioni equivalenti
-- i sottospazi vettoriali sono gruppi abeliani con operazione di somma vettoriale
+- i sottospazi vettoriali sono gruppi abeliani con operazione di somma vettoriale(come gli spazi vettoriali, per def(come gli sazi vett9:3paziv ettorial vettoriali, per def(come gli sazi vett9:3paziv ettorial vettoriali, per def7)7))
 - def applicazione vettoriale (è anche un omom. !), e ker e im sono sottospazi di V e V’ (da dimostrare chiusura per prodotto scalare)
 - per dimostrare biettività, possiamo trovare inversa e calcolare le identità sulle composizioni
 - somma e intersezione di sottospazi è sottospazio
@@ -58,6 +58,7 @@ cose da ricordare:
 	 - $\frac{A}{HA}$
 	 MCD monico …… (dim ???)
 	 - lemma su soluzioni di polinomi (immagine inversa di evaluazione)
+	 - possibii fattorizzazioni
 - esponenziale eulero
 - formula fondamentale
 - valore assoluto
