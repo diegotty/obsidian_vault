@@ -1,6 +1,6 @@
 ---
 created: 2025-02-06T09:35
-updated: 2025-02-06T11:21
+updated: 2025-02-06T11:49
 ---
 cose nuove imparate:
 - (m) sottospazio generato
@@ -44,6 +44,7 @@ cose da ricordare:
 	 - $K[X]$ è dominio ! (dim facile :))
 	 - $\frac{A}{HA}$
 	 MCD monico …… (dim ???)
+	 - lemma su soluzioni di polinomi (immagine inversa di evaluazione)
 - (m) prop mcm
 - def spazio vettoriale
 - condizioni equivalenti sottospazi vettoriali
