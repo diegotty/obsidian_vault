@@ -1,8 +1,8 @@
 ---
 created: 2025-01-18T12:27
-updated: 2025-02-02T21:18
+updated: 2025-02-04T14:43
 ---
->[!tsindex]
+>[!index]
 >
 >- [ricerca](#ricerca)
 >	- [altezza di un b-tree](#altezza%20di%20un%20b-tree)
@@ -27,7 +27,7 @@ ogni blocco di un file indice è costituito di record contenenti una coppia $(v,
 > - ogni altro quadrato fa parte di un rettangolo (di lunghezza 2 quadrati), che infatti comprende valore e puntatore.
 > - anche questa spiegazione è scritta con i piedi però vabbè
 
->[!important] ogni record di un file indice, ha una chaive che ricopre quelle del sottoalbero che parte dal blocco puntato
+>[!important] ogni record di un file indice, ha una chiave che ricopre quelle del sottoalbero che parte dal blocco puntato
 ![[Pasted image 20241213115342.png]]
 ## ricerca
 durante la ricerca di un record con un dato valore della chiave, si accede agli indici a partire da quello più alto, e si segue il puntatore del record con la chiave che copre il valore di ricerca, findo ad arrivare ad un unico blocco, del file principale.

@@ -1,6 +1,6 @@
 ---
 created: 2024-09-28T09:11
-updated: 2025-02-02T21:18
+updated: 2025-02-03T17:47
 ---
 >[!info] index !
 >- [proiezione](#proiezione)
@@ -15,7 +15,7 @@ updated: 2025-02-02T21:18
 >	- [casi limite nel join naturale](#casi%20limite%20nel%20join%20naturale)
 >- [$\theta$ join](#$%5Ctheta$%20join)
 
-linguaggio usato per interrogare una base di dati relazionale, consiste di un insieme di operatori che possono essere applicati ad una o due istande di relazione, e forniscono come risultato una nuova istanza di relazione
+linguaggio usato per interrogare una base di dati relazionale, consiste di un insieme di operatori che possono essere applicati ad una o due istanze di relazione, e forniscono come risultato una nuova istanza di relazione
 viene definito linguaggio procedurale, in quanto l’interrogazione consiste in un’espressione in cui compaiono operatori dell’algebra e istanze di relazioni, in una sequenza che prescrive in maniera puntuale l’ordine delle operazioni
 ## proiezione
 taglio verticale su una relazione(selezionare solo alcuni attributi)

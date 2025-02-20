@@ -1,7 +1,7 @@
 ---
-created: "2024-10-10"
+created: 2024-10-10
 related to: 
-updated: "2024-10-10, 22:34"
+updated: 2025-02-03T18:24
 ---
 >[!index]
 >
@@ -24,7 +24,7 @@ supponiamo di voler crerae una base di dati contente i seguenti dati di studenti
 	- per ogni esame sostenuto: voto, data, codice, titolo e docente del corso
 # ipotesi 1
 per avere tutti i dati a portata di mano, creo una sola relazione con schema: 
-- Curriculum(Matr, CF, Cogn, Nome, DataN, Com, Prov, C#, Tit, Doc, DataE, Voto)
+- Curriculum(Matr, CF, Cogn, Nome, DataN, Com, Prov, C#, TitC, Doc, DataE, Voto)
 >[!figure] ![[Pasted image 20241010224236.png]]
 
 questa relazione è piena di ridondanza: i dati necessari sono ripetuti molteplici volte nella tabella, e ciò da luogo a:
