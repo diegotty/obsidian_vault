@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T21:52
+updated: 2025-03-02T22:40
 completed: false
 ---
 # grafi
@@ -20,9 +20,12 @@ altrimenti un grafo si dice denso se $m=\Omega(n^2)$
 - inoltre un grafo si dice completo se ha tutt gli archi ($m=\Theta(n^2)$)
 - un grafo diretto si dice **torneo** se tra ogni coppia di nodi c’è esattamente un arco ($m=\Theta(n^2)$)
 >[!warning] un grafo non sparso non è necessariamente denso, ad esempio può avere $\Theta(n\log n)$ archi
+
+**grado**(di un nodo): il numero di archi che incidono su un nodo
 ## alberi
 un albero è un grafo **connesso** senza cicli
 - un albero ha sempre $m=n-1$ archi (è quindi un grafo sparso), e ciò si dimostra per induzione
+si parla di **foglia** di un albero non radicato se un nodo ha un solo arco
 ## grafi planari
 i grafi planari sono quei grafi che posso disegnare sul piano senza che gli archi si intersechino
 >[!example] esempio di grafo planare
@@ -46,3 +49,14 @@ utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del gr
 
 >[!exercise] esercizio
 risolvere il problema del pozzo universale in tempo $O(n)$, avendo il grafo diretto rappresentato tramite una matrice di adiacenza
+quindi devo controllare che ogni arco che non sia x ha un arco uscente verso x, e che x non ha archi uscenti
+quindi G[x] = [], per ogni i diverso sa x, g[x] contiene x. devo sicuramente controllare la lista di ogni nodo.
+
+```python
+pozzo_universale = false;
+for i,list in G:
+	if i != x:
+		if x not in list:
+			pozzo_universale = false;
+		
+```
