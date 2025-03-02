@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T20:51
+updated: 2025-03-02T22:51
 ---
 lil ripasso
 # theta-notation
@@ -38,4 +38,4 @@ nella ricerca dell’eventuale divisore, fermarsi alla radice velocizza l’algo
 >[!example] spiegazione 2
 $$ O(\sqrt{ n })=O(2^{\log \sqrt{ n }})=O(2^{\frac{1}{2}\log n})=2^{\theta(\log n)} $$
 
-fin dagli anni 70 erano noti algoritmi sub-esponenziali, o algoritmi probabilistici (che possono sbagliare con una probabilità che si può rendere piccola a piacere), ma solo nel 2004 si è trovato un algoritmo polinomiale deterministico di tempo $O(\log^{12}n)$ che è stato poi velocizzato a $O(\log^3n)$ ,anche se con costanti moltiplicative molto alte che non lo rendono competitivo con i ben noti algoritmi probabilistici
+fin dagli anni 70 erano noti algoritmi sub-esponenziali, o algoritmi probabilistici (che possono sbagliare con una probabilità che si può rendere piccola a piacere), ma solo nel 2004 si è trovato un algoritmo polinomiale deterministico di tempo $O(\log^{12}n)$ che è stato poi velocizzato a $O(\log^3n)$ ,anche se con costanti moltiplicative molto alte che non lo rendono competitivo con i ben noti algoritmi probabilistici. !
