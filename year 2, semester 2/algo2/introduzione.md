@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T20:32
+updated: 2025-03-02T20:48
 ---
 lil ripasso
 # theta-notation
@@ -24,4 +24,16 @@ i problemi di cui si conoscono algoritmi sub-esponenziali e non polinomiali (qui
 ### test di primalità
 l’algoritmo banale è esponenziale perchè ha complessità $O(n)$, e dato che la dimensione dell’input è $\log n$, l’algoritmo ha dimensione $O(2^{\log n})$
 >[!example] spiegazione
->ogni operazione di divisione ha un costo che è proporzionale al numero di bit in $n$, che è $O(\log n)$, poichè il numero di bit di un numero $n$ è sempre $\log_{2}n$ (nei sistemi )
+>ogni operazione di divisione ha un costo che è proporzionale al numero di bit in $n$, che è $O(\log n)$, poichè il numero di bit di un numero $n$ è proporzionale $\log_{2}n$ 
+quindi:
+$$T(n)=O(n \cdot\log n)$$
+
+
+un algoritmo efficiente per questo problema dovrebbe avere complessità $O(\log n)$
+
+nella ricerca dell’eventuale divisore, fermarsi alla radice velocizza l’algoritmo ma non ne cambia la complessità asintotica che resta esponenenziale
+>[!example] spiegazione
+>potremmo fermarci a $\sqrt{ n }$ perchè, se consideriamo $n=ab$, se $a > \sqrt{n}\,\,\land b > \sqrt{n} \implies ab > n$, e quindi $n$ sarebbe primo
+
+>[!example] spiegazione 2
+$$ O(\sqrt{ n })=O(2^{\log \sqrt{ n }})=O(2^{\frac{1}{2}\log n})=2^{\theta(\log n)} $$
