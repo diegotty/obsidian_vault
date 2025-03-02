@@ -3,7 +3,8 @@
     "custom": [
       "tuff",
       "figure",
-      "dimostrazione"
+      "dimostrazione",
+      "exercise"
     ],
     "settings": {
       "tuff": [
@@ -48,6 +49,14 @@
         {
           "changes": {
             "icon": "lucide-alert-triangle"
+          }
+        }
+      ],
+      "exercise": [
+        {
+          "changes": {
+            "icon": "lucide-blocks",
+            "color": "86, 202, 240"
           }
         }
       ]

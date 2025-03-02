@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T21:40
+updated: 2025-03-02T21:52
 completed: false
 ---
 # grafi
@@ -32,3 +32,17 @@ i grafi planari sono quei grafi che posso disegnare sul piano senza che gli arch
 ![[Pasted image 20250302213839.png]]
 ### teorema di eulero
 un grafo planare di $n>2$ nodi ha al più $3n-6$ archi.
+- da ciò si può dedurre che da $n=5$ in poi esistono di certo grafi non planari (i grafi completi)
+# rappresentazione di grafi
+## matrici binarie
+>[!info] immagine autoesplicativa
+![[Pasted image 20250302214314.png]]
+## liste di adiacenza
+utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del grafo $G$. $G[x]$ è una lista contenente i nodi **adiacenti** al nodo $x$ , vale a dire quelli raggiunti da archi che partono da $x$
+- rispetto alla rappresentazione con matrice binaria, c’è un notevole risparmio di spazio nel caso di grafi sparsi, ma vedere se due archi sono connessi o meno può costare ora anche $O(n)$
+>[!example] esempio
+![[Pasted image 20250302214556.png]]
+![[Pasted image 20250302214618.png]]
+
+>[!exercise] esercizio
+risolvere il problema del pozzo universale in tempo $O(n)$, avendo il grafo diretto rappresentato tramite una matrice di adiacenza
