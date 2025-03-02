@@ -5,7 +5,7 @@
       "name": "uni note",
       "type": "Macro",
       "command": false,
-      "macroId": "d183dfca-883d-4d43-846f-19f516698427"
+      "macroId": "ce4b0ab3-8bd6-46d3-a861-8f3f127d344f"
     },
     {
       "id": "479e630e-7ee1-44ce-affa-4d856539817c",
@@ -31,8 +31,8 @@
             "command": false,
             "templatePath": "templates/uni note.md",
             "fileNameFormat": {
-              "enabled": false,
-              "format": ""
+              "enabled": true,
+              "format": "{{value}}"
             },
             "folder": {
               "enabled": true,
@@ -63,16 +63,16 @@
         {
           "name": "Untitled Template Choice",
           "type": "NestedChoice",
-          "id": "512f968d-9a3e-4cd1-988d-86f18be570ee",
+          "id": "04bd2063-96be-421d-abd0-1ae628142e62",
           "choice": {
-            "id": "c6f782b6-9aac-4c65-9715-e050edadc145",
+            "id": "2aeb0295-067c-4cf4-a718-275191fd1757",
             "name": "Untitled Template Choice",
             "type": "Template",
             "command": false,
-            "templatePath": "templates/raw note.md",
+            "templatePath": "templates/uni note.md",
             "fileNameFormat": {
               "enabled": true,
-              "format": "{{date}}"
+              "format": ""
             },
             "folder": {
               "enabled": true,
