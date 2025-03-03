@@ -69,10 +69,10 @@
             "name": "Untitled Template Choice",
             "type": "Template",
             "command": false,
-            "templatePath": "templates/uni note.md",
+            "templatePath": "templates/raw note.md",
             "fileNameFormat": {
               "enabled": true,
-              "format": ""
+              "format": "{{date}}"
             },
             "folder": {
               "enabled": true,
