@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T22:40
+updated: 2025-03-04T10:09
 completed: false
 ---
 # grafi
@@ -9,13 +9,15 @@ un grafo è rappresentato da $G(V,E)$, con:
 - $V=$ l’insieme dei nodi($|V|=n$) e 
 - $E=$ l’insieme degli archi ($|E|=m$)
 
+### grafi diretti e indiretti
 i grafi si distinguono in:
 - **grafi diretti**: gli archi sono con direzione 
 	- $0\leq m\leq n(n-1)=O(n^2)$
 - **grafi indiretti**: gli archi non hanno direzione 
 	- $0\leq m\leq \frac{n(n-1)}{2}=O(n^2)$
 
-un grafo si dice **sparso** se $m=O(n)$,
+### grafi sparsi e densi
+un grafo si dice **sparso** se $m=O(n)$ (ha pochi archi),
 altrimenti un grafo si dice denso se $m=\Omega(n^2)$
 - inoltre un grafo si dice completo se ha tutt gli archi ($m=\Theta(n^2)$)
 - un grafo diretto si dice **torneo** se tra ogni coppia di nodi c’è esattamente un arco ($m=\Theta(n^2)$)
@@ -23,8 +25,14 @@ altrimenti un grafo si dice denso se $m=\Omega(n^2)$
 
 **grado**(di un nodo): il numero di archi che incidono su un nodo
 ## alberi
-un albero è un grafo **connesso** senza cicli
+un albero è un grafo **connesso**(ogni nodo è connesso agli altri) senza cicli
 - un albero ha sempre $m=n-1$ archi (è quindi un grafo sparso), e ciò si dimostra per induzione
+>[!dimostrazione]-  dim
+induzione sul numero $n$ di nodi
+>- c.b, $n=0$ → ci sono 0 archi
+>- h.p → assumiamo che sia vero che per alberi con fino a $n-1$ nodi
+>- passo induttivo → per un albero da $n$ nodi, mettendo da parte una foglia e l’arc che incide su di essa, rimane un albero di $n-1$ nodi. per ipotesi induttiva, tale albero avrà $n-2$ archi. aggiungendo l’arco che collega tale albero al nuovo nodo, si ottengon $n-1$ archi totali
+
 si parla di **foglia** di un albero non radicato se un nodo ha un solo arco
 ## grafi planari
 i grafi planari sono quei grafi che posso disegnare sul piano senza che gli archi si intersechino
