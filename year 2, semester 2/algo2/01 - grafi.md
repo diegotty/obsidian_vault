@@ -1,9 +1,18 @@
 ---
-related to: 
+related to: "[[year 2, semester 2/algo2/introduzione|introduzione]]"
 created: 2025-03-02T17:41
-updated: 2025-03-04T10:27
-completed: false
+updated: 2025-03-04T10:37
+completed: true
 ---
+>[!index]
+>- [grafi diretti e indiretti](#grafi%20diretti%20e%20indiretti)
+>- [grafi sparsi e densi](#grafi%20sparsi%20e%20densi)
+>- [alberi](#alberi)
+>- [grafi planari](#grafi%20planari)
+>- [teorema di eulero](#teorema%20di%20eulero)
+>- [rappresentazione di grafi](#rappresentazione%20di%20grafi)
+>- [matrici binarie](#matrici%20binarie)
+>- [liste di adiacenza](#liste%20di%20adiacenza)
 # grafi
 un grafo è rappresentato da $G(V,E)$, con: 
 - $V=$ l’insieme dei nodi($|V|=n$) e 
@@ -68,15 +77,31 @@ un pozzo universale viene rappresentato in questo modo con una matrice di adiace
 notiamo che esiste un semplice test, con cui è possibile **sempre** eliminare uno dei nodi dai possibili pozzi universali:
 $$
 M[i][j] = \begin{cases}
-1 & i \text{non è pozzo}
+1 & i \ \text{non è pozzo} \\
+0  & j \ \text{non è pozzo universale}
 \end{cases}
 $$
+perchè se $i$ ha un nodo uscente, per definizione non è un pozzo, e se $j$ non ha un nodo entrante da parte di $i$, esso non è un pozzo universale
 
+quindi, un algoritmo che risolve il problema in $\Theta(n)$
 ```python
-pozzo_universale = false;
-for i,list in G:
-	if i != x:
-		if x not in list:
-			pozzo_universale = false;
-		
+def pozzoU2(M):
+	n=len(M)
+	L = [x for x in range(n)]
+	while len(L)>1:
+		a = L.pop();
+		b = L.pop();
+		if M[a][b]:
+			L.append(b)
+		else:
+			L.append(a)
+	x = L.pop()
+	for j in range(n):
+		if M[x][j]:
+			return False
+	for i in range(n):
+		if i != x and M[i][x] == 0:
+			return False
+	return True
+	
 ```
