@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T21:59
+updated: 2025-03-04T22:09
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -33,20 +33,19 @@ i dispositivi di interconnessione **rigenerano**/modificano il segnale che ricev
 ## collegamenti
 i dispositivi di rete vengono collegati utilizzando mezzi trasmissivi cablati o wireless, genericamente chiamati **link** 
 ### mezzi trasmissivi cablati
-- bit: viaggia da un sistema terminale ad un altro, passando per una serie di coppie trasmittente-ricevente
-- mezzo fisico: ciò che sta tra il trasmittente ed il ricevente
-	- i segnali si propagano in un mezzo fisico: fibra ottica, filo di rame o cavo coassiale
-	- **doppino intrecciato**: due fili di rame distinti (tradizionale cavo telefonico)
-	- **
+i dati viaggiano da un sistema terminale ad un altro, passando per una serie di coppie trasmittente-ricevente, attraverso mezzi fisici
+sempi di mezzi fisici: doppino intrecciato, cavo ethernet,
+- cavo coassiale: 2 conduttori concentrici in rame, usato per cablatura di reti locali ad alta velocità.
+- fibra ottica: conduce impulsi di luce, in cui ciascun impulso rappresenta un bit. ad alta frequenza trasmissiva (da 10 a 100 Gbps), e basso tasso di errore (anche immune all’interferenza elettromagnetica). è il mezzo prevalente delle dorsali di internet
 
 >[!warning] i nodi sono trasmittente E ricevente alllo stesso tempo 
 >si parla di nodo trasmittente/ricevente solo per indicare la direzione della commutazione
 
 
 ### mezzi trasmissivi wireless
-canali radio
-soffrono dell’ambiente circostante
-propagandosi in tutte le direzioni, si rifeltte quando trova degli ostacoli
+i segnali si propagano nell’atmosfera e nello spazio esterno
+- soffrono dell’ambiente circostante
+- propagandosi in tutte le direzioni, si riflettono quando trovano degli ostacoli
 - ci sono dei materiali che ostruiscono il passaggio 
 - ci possono essere interferenze da altre tecnologie
 
@@ -54,17 +53,24 @@ propagandosi in tutte le direzioni, si rifeltte quando trova degli ostacoli
 
 | scale    | type                                   | example        |
 | -------- | -------------------------------------- | -------------- |
-| vicinity |                                        |                |
-| building |                                        |                |
-| city     |                                        |                |
-| country  |                                        |                |
+| vicinity | PAN(personal area network)             | bluetooth      |
+| building | LAN(local area network)                | wifi, ethernet |
+| city     | MAN(metropolitan area network)         | cable, DSL     |
+| country  | WAN(wide area network)                 | large ISP      |
 | planet   | the Internet (network of all networks) | the Internet ! |
 
 ## reti LAN
-### esempio di LAN con cavo condiviso (rete broadcast)
-broadcast: quando un nodo trasmette, tutti gli altri ricevono la trasmissione
-- può trasmettere un nodo alla volta: 
-### esempio d LAN con switch di interconnessione (topologia a stella)
+solitamente, è una rete privata che collega sistemi terminali in un singolo ufficio (azienda, università)
+- ogni sistema terminale ha un indirizzo univoco che lo identifica nella rete
+>[!info] esempio di LAN con cavo condiviso (rete broadcast)
+![[Pasted image 20250304220823.png]]
+obsoleto !!!
+>- il pacchetto inviato da un dispositivo viene ricevuto da tutti gli altri (broadcast)
+>- solo il destinatario elabora il pacchetto, tutti gli altri lo ignorano
+>- può trasmettere un nodo alla volta
+
+>[!info] esempio d LAN con switch di interconnessione (topologia a stella)
+![[Pasted image 20250304220948.png]]
 lo switch gestisce a chi inviare i pacchetti che gli arrivano 
 lo swtich è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ()
 
