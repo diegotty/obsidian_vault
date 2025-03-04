@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T10:09
+updated: 2025-03-04T10:27
 completed: false
 ---
 # grafi
@@ -48,17 +48,29 @@ un grafo planare di $n>2$ nodi ha al più $3n-6$ archi.
 ## matrici binarie
 >[!info] immagine autoesplicativa
 ![[Pasted image 20250302214314.png]]
+>si nota che nei grafi indiretti, dato che ogni arco entrante è anche uscente, la rappresentazione è **simmetrica rispetto alla diagonale della matrice**
+- uno dei problemi principali delle matrici binarie, è lo spreco di spazio (sopratutto se un grafo è sparso)
+- uno dei vantaggi invece è la velocità con cui si può controllare la presenza di un arco: basta accedere all’elemento in posizione $(u,v)$, e ciò costa $O(1)$
 ## liste di adiacenza
 utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del grafo $G$. $G[x]$ è una lista contenente i nodi **adiacenti** al nodo $x$ , vale a dire quelli raggiunti da archi che partono da $x$
 - rispetto alla rappresentazione con matrice binaria, c’è un notevole risparmio di spazio nel caso di grafi sparsi, ma vedere se due archi sono connessi o meno può costare ora anche $O(n)$
 >[!example] esempio
 ![[Pasted image 20250302214556.png]]
 ![[Pasted image 20250302214618.png]]
+- rispetto alla matrice binaria, il risparmio di spazio è notevole
+- controllare la presenza di un arco può arrivare a costare $O(n)$, in quanto bisogna scorrere la lista dei nodi adiacenti al nodo $u$ per verificare $v$ sia presente (e anche se accedere a $G[u]$ è costante, la lista potrebbe contenere $n$ elementi !)
 
 >[!exercise] esercizio
-risolvere il problema del pozzo universale in tempo $O(n)$, avendo il grafo diretto rappresentato tramite una matrice di adiacenza
-quindi devo controllare che ogni arco che non sia x ha un arco uscente verso x, e che x non ha archi uscenti
-quindi G[x] = [], per ogni i diverso sa x, g[x] contiene x. devo sicuramente controllare la lista di ogni nodo.
+risolvere il problema del pozzo universale in tempo $O(n)$, avendo il grafo diretto rappresentato tramite matrice di adiacenza
+un pozzo universale viene rappresentato in questo modo con una matrice di adiacenza:
+![[Pasted image 20250304102416.png]]
+
+notiamo che esiste un semplice test, con cui è possibile **sempre** eliminare uno dei nodi dai possibili pozzi universali:
+$$
+M[i][j] = \begin{cases}
+1 & i \text{non è pozzo}
+\end{cases}
+$$
 
 ```python
 pozzo_universale = false;
