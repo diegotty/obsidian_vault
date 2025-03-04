@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T21:25
+updated: 2025-03-04T21:35
 completed: false
 ---
 # shell
@@ -38,4 +38,6 @@ sinossi del comando `man`: `man [sezione] comando`
 esistono molti gruppi definiti per scopi “amministrativi”
 ## su e sudo
 utente **sudoer**: utente che appartiene al gruppo predefinito **sudo**
-- gli utenti che appartengono al gruppo sudo possono eseguire comandi da `root` 
+- gli utenti che appartengono al gruppo sudo possono eseguire comandi da `root` usando il comando `sudo`
+il comando `su`(switch user ?) invece permette di cambiare utente
+- `su -`, `su - root`, `su -l root` permettono di diventare root per il resto della sessione sulla shell ! 
