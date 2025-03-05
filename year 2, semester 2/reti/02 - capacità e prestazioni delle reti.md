@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T23:52
+updated: 2025-03-06T00:06
 completed: false
 ---
 # Internet
@@ -68,4 +68,30 @@ $$
 >il link tra due router è spesso dedicato a più di un flusso di dati, e raccoglie il flusso da varie sorgenti e/o lo distribuisce a varie destinazioni. il rate del link tra due router è quindi condiviso tra flussi di dati
 >>[!example] esempio
 ![[Pasted image 20250305235205.png]]
+iin questo caso la velocità del link principale è solo 200 kpbs in quanto il link è condiviso, e il throughput end-to-end ha lo stesso valore
 crazy nesting grazie aglaia
+### delay and loss
+**delay**: quanto tempo serve affinchè un pacchetto arrivi completamente a destinazione dal momento in cui il primo bit parte dalla sorgente
+- nella commutazione di pacchetto, i pacchetti si accodano nei buffer dei router. se il tasso di arrivo dei pacchetti sul collegamento eccede la capacità del collegamento di evaderli, i pacchetti si accodano, in attesa del proprio turno
+vediamo le quattro cause di ritardo per i pacchetti: 
+#### ritardo di elaborazione del nodo
+comprende:
+- controllo sugli errori: il pacchetto è integro ? se no, viene tipicamente scartato
+- determinazione del canale di uscita
+- tempo dalla ricezione dalla porta di input alla consegna alla porta di output
+#### ritardo di accodamento
+comprende:
+- attesa di trasmissione (possibile sia nella coda di input che nella coda di output)
+- livello di congestione del router
+#### ritardo di trasmissione
+tempo richiesto per trasmettere tutti i bit del pacchetto sul collegamento. (quindi delta tra primo bit trasmesso e ultimo bit trasmesso)
+questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
+$$
+\text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
+$$
+#### ritardo di propagazione
+tempo che **un bit** impiega per propagarsi sul collegamento
+$$
+\text{ritardo di propagazione = } \frac{d}{s} = \frac{\text{lunghezza del collegamento fisico}}{\text{velocità di propagazione del collegamento}}
+$$
+tipicamente $s$ corrisponde alla velocità della luce !
