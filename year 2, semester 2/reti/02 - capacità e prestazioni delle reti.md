@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T23:37
+updated: 2025-03-05T23:52
 completed: false
 ---
 # Internet
@@ -45,5 +45,27 @@ si indicano 2 concetti leggermente diversi, ma strettamente legati:
 	- si misura in Hz
 - **bit rate**: quantità di bit al secondo (bps) che un link garantisce di trasmettere
 
-il bit rate è proporzionale  sia dalla banda, che dalla specifica tecnica di trasmissione, o formato di modulazione digitale
-- il bit rate è proporzionale alla banda
+il bit rate è proporzionale alla banda, ma dipende anche dalla specifica tecnica di trasmissione, o formato di modulazione digitale
+>[!info] per banda di un tipo di rete si intende il bit rate garantito dai suoi link
+>il rate di un link Fast Ethernet è 100 mpbs, può inviare al massimo 100 mbps
+
+### throughput
+indica quanto velocemente riusciamo **effettivamente** a inviare dati tramite una rete: è quindi il numero di bit al secondo che passano attraverso un punto della rete
+>[!warning] bit rate e throughput
+>il rate è una misura della potenziale velocità di un link, mentre il throughput è una misura dell’effettiva velocità di un link (irl)
+
+in un percorso da una sorgente a una destinazione, un pacchetto può passare attraverso numerosi link, ognuno con throughput diverso. bisogna calcolare il throughput **end-to-end** (totale)
+>[!example] throughput su un percorso con 3 link
+![[Pasted image 20250305234547.png]]
+notiamo come link3 è il **collo di bottiglia** (collegamento su un percorso punto-punto che vincola il throughput end-to-end)
+in questo esempio, il throughput dei dati per il percorso è 100 kpbs
+
+in generale, in un percorso con $n$ link in serie, abbiamo:
+$$
+\text{throughput = min}\{T_{1},T_{2}, \dots,T_{n}\}
+$$
+>[!info] thoughput nei link condivisi
+>il link tra due router è spesso dedicato a più di un flusso di dati, e raccoglie il flusso da varie sorgenti e/o lo distribuisce a varie destinazioni. il rate del link tra due router è quindi condiviso tra flussi di dati
+>>[!example] esempio
+![[Pasted image 20250305235205.png]]
+crazy nesting grazie aglaia
