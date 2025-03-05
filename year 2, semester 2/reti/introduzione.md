@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T11:01
+updated: 2025-03-05T11:14
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -74,13 +74,22 @@ obsoleto !!!
 lo switch gestisce a chi inviare i pacchetti che gli arrivano, ed è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ! (se non vi sono sorgente e destinazione comune)
 
 ## reti WAN
-interconnette switch, router, e modem
+rete geografica: interconnette dispositivi quali switch, router, e modem, e può servire una città, una regione, o una nazione
 - gestita da un ISP (internet service provider)
--WAN punto-punto
--WAN a commutazione (usata nelle dorsali di internet)
 
-WAN punto-punto per avere una rete preivata (slide 25)
+>[!info] WAN punto-punto
+![[Pasted image 20250305110714.png]]
+>collega due mezzi di comunicazione tramite un mezzo trasmissivo (cavo o wireless)
+> - usata per avere una rete privata
 
+>[!info] WAN a commutazione
+![[Pasted image 20250305110800.png]]
+è una rete con più di due punti di terminazione usata nelle dorsali di internet !
+
+>[!example]- internetwork composta da due LAN e una WAN punto-punto
+![[Pasted image 20250305111149.png]]
+azienda con 2 uffici in città differenti: in ciascun ufficio esiste una LAN che consente agli impiegati di comunicare l’uno con l’altro. 
+per mettere in comunicazione le due LAN, l’azienda usa una apposita WAN punto-punto da un ISP, realizzando una internetwork (o internet privata)
 ### la rete GARR
 interconnette ad altissima capacità 
 
