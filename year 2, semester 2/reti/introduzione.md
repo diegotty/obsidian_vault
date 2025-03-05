@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T22:09
+updated: 2025-03-05T11:37
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -71,34 +71,58 @@ obsoleto !!!
 
 >[!info] esempio d LAN con switch di interconnessione (topologia a stella)
 ![[Pasted image 20250304220948.png]]
-lo switch gestisce a chi inviare i pacchetti che gli arrivano 
-lo swtich è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ()
+lo switch gestisce a chi inviare i pacchetti che gli arrivano, ed è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ! (se non vi sono sorgente e destinazione comune)
 
 ## reti WAN
-interconnette switch, router, e modem
+rete geografica: interconnette dispositivi quali switch, router, e modem, e può servire una città, una regione, o una nazione
 - gestita da un ISP (internet service provider)
--WAN punto-punto
--WAN a commutazione (usata nelle dorsali di internet)
+>[!warning] generalmente non hanno a che fare con dispositivi terminali !
 
-WAN punto-punto per avere una rete preivata (slide 25)
+>[!info] WAN punto-punto
+![[Pasted image 20250305110714.png]]
+>collega due mezzi di comunicazione tramite un mezzo trasmissivo (cavo o wireless)
+> - usata per avere una rete privata
 
+>[!info] WAN a commutazione
+![[Pasted image 20250305110800.png]]
+è una rete con più di due punti di terminazione usata nelle dorsali di internet !
+
+>[!example]- internetwork composta da due LAN e una WAN punto-punto
+![[Pasted image 20250305111149.png]]
+azienda con 2 uffici in città differenti: in ciascun ufficio esiste una LAN che consente agli impiegati di comunicare l’uno con l’altro. 
+per mettere in comunicazione le due LAN, l’azienda usa una apposita WAN punto-punto da un ISP, realizzando una internetwork (o internet privata)
 ### la rete GARR
-interconnette ad altissima capacità 
+interconnette, ad altissima capacità, luoghi in cui si fa istruzione, scienza, cultura e innovazione su tutto il territorio nazionale
+è un’infrastruttura in **fibra ottica**, si sviluppa su circa 15.000km tra collegamenti di dorsale e di accesso, e utilizza le più avanzate tecnologie di comunicazione
+>[!info]- more info
+![[Pasted image 20250305112144.png]]
 
 # switching
-o commutazione
+i sistemi terminali comunicano tra di loro per mezzo di dispositivi come **switch** e **router**, che si trovano nella rotta tra i sistemi sorgente e destinazione
+ci sono 2 tipi di reti basate su switch:
 router: switch di livello 3
 switch: switch di livello 2
 ci sono 2 tipi di reti basate su switch:
 ## reti a commutazione di circuito
-viene decisono un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
-	- ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita, 
-	- banda: capacità di trasmissione: quanti bit posso trasmettere in un unità di tempo
-	- slide 32: tutti i dispositivi possono comunicare allo stesso tempo, a ogni dispositivo viene dato 1/4 della banda (quindi potrebbe essere sottuitilizzata)
-suddividere la banda: 
-- **FDM**
-- **TDM**
+viene deciso un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
+- le informazioni riguardanti il circuito vengon mantenute dalla rete
+- ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita
+le risorse vengono quindi suddivise in “pezzi”, e ciascun pezzo viene allocato ai vari collegamenti.
+- le risorse rimangono **inattive** se non utilizzate
+>[!figure] rete a commutazione di circuito
+![[Pasted image 20250305112910.png]]
+> comunicazioni diverse tra gli stessi dispositivi possono usare percorsi diversi (stabiliti a priori)
 
+>[!example] efficienza
+>![[Pasted image 20250305113116.png]]
+in questo esempio, la linea tra i due switch può gestire contemporaneamente 4 canali voce. ad ogni persona viene allocata 1/4 della capacità
+>- se tutte e 4 le persone comunicano con le 4 persone dall’altro lato, allora la capacità della linea verràc completamente utilizzata, altrimenti verrà sottoutilizzata
+### suddivisione della banda
+>[!info] FDM: frequency divison multiplexing
+![[Pasted image 20250305113633.png]]
+
+>[!info] TDM: time division multiplexing
+![[Pasted image 20250305113728.png]]
 ## reti a commutazione di pacchetto (store and forward)
 modo in cui funziona la rete internet oggi 
 utente spedice i pacchetti al router, che li riceve tutti. li mette in una coda (canale seriale), e spedisce i pacchetti al prossimo router
