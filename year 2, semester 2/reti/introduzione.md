@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T22:09
+updated: 2025-03-05T11:01
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -71,8 +71,7 @@ obsoleto !!!
 
 >[!info] esempio d LAN con switch di interconnessione (topologia a stella)
 ![[Pasted image 20250304220948.png]]
-lo switch gestisce a chi inviare i pacchetti che gli arrivano 
-lo swtich è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ()
+lo switch gestisce a chi inviare i pacchetti che gli arrivano, ed è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ! (se non vi sono sorgente e destinazione comune)
 
 ## reti WAN
 interconnette switch, router, e modem
