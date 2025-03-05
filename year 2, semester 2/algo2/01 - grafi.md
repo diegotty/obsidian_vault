@@ -1,7 +1,7 @@
 ---
-related to: "[[year 2, semester 2/algo2/introduzione|introduzione]]"
+related to: "[[00 - algoritmi efficienti|00 - algoritmi efficienti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-04T10:37
+updated: 2025-03-05T22:13
 completed: true
 ---
 >[!index]
