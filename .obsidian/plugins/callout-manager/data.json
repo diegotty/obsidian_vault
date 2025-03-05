@@ -4,7 +4,8 @@
       "tuff",
       "figure",
       "dimostrazione",
-      "exercise"
+      "exercise",
+      "index"
     ],
     "settings": {
       "tuff": [
@@ -57,6 +58,27 @@
           "changes": {
             "icon": "lucide-blocks",
             "color": "86, 202, 240"
+          }
+        }
+      ],
+      "index": [
+        {
+          "changes": {
+            "icon": "lucide-book-key"
+          }
+        },
+        {
+          "condition": {
+            "colorScheme": "light"
+          },
+          "changes": {}
+        },
+        {
+          "condition": {
+            "colorScheme": "dark"
+          },
+          "changes": {
+            "color": "108, 191, 254"
           }
         }
       ]

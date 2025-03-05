@@ -1,9 +1,33 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T21:52
-completed: false
+updated: 2025-03-05T22:06
+completed: true
 ---
+>[!index]
+>- [le reti](#le%20reti)
+>	- [dispositivi terminali](#dispositivi%20terminali)
+>		- [host](#host)
+>		- [server](#server)
+>	- [dispositivi di interconnessione](#dispositivi%20di%20interconnessione)
+>	- [collegamenti](#collegamenti)
+>		- [mezzi trasmissivi cablati](#mezzi%20trasmissivi%20cablati)
+>		- [mezzi trasmissivi wireless](#mezzi%20trasmissivi%20wireless)
+>- [classificazione delle reti](#classificazione%20delle%20reti)
+>	- [reti LAN](#reti%20LAN)
+>	- [reti WAN](#reti%20WAN)
+>		- [la rete GARR](#la%20rete%20GARR)
+>- [switching](#switching)
+>	- [reti a commutazione di circuito](#reti%20a%20commutazione%20di%20circuito)
+>		- [suddivisione della banda](#suddivisione%20della%20banda)
+>	- [reti a commutazione di pacchetto (store and forward)](#reti%20a%20commutazione%20di%20pacchetto%20(store%20and%20forward))
+>- [Internet](#Internet)
+>		- [ARPANET](#ARPANET)
+>	- [accesso ad internet](#accesso%20ad%20internet)
+>		- [via rete telefonica](#via%20rete%20telefonica)
+>		- [accesso tramite ethernet](#accesso%20tramite%20ethernet)
+>		- [accesso wire less](#accesso%20wire%20less)
+
 >[!info] scopo del corso: capire cosa succede all’interno della rete
 >- imparare come funziona internet
 >- acquisire i concetti fondamentali relativi alle reti di elaboratori: livelli, servizi, protocolli
@@ -137,16 +161,27 @@ blocchi di dati, anche se dello stesso file o comunicazione, possono prendere pe
 questa commutazione è molto più flessibile in termini di prestazioni: se solo 2 dispositivi, uno per lato, comunicano tra di loro, viene utilizzata l’intera banda della rete per tale comunicazione. se 2 dispositivi per lato comunicano, la banda verrà dimezzata, etc
 - un percorso si può sovraccaricare, e i router si posssono congestionare. a quel punto può essere utile cambiare percorso per inviare il pacchetto ( le code del router congestionato saranno piene, e i pacchetti che arrivano vengono scartati)
 
-# internet
+# Internet
 una internete è costituita da due o più reti interconnesse: l’internet più famosa è chiamata **Internet**, ed è composta da migliaia di reti interconnesse (è una rete a commutazione di pacchetto)
 > [!info] rappresentazione concettuale di Internet
 ![[Pasted image 20250305215209.png]]
 ### ARPANET
+**advanced research projects agency network**
+- prima rete packet-switched ad implementare lo stack **TCP/IP**
+- progettata per scopi accademici di ricerca, inizialmente collegava 4 università. in 2 anni si è estesa a 15 !
+>[!figure]- arpanet
+![[Pasted image 20250305215412.png]]
+## accesso ad internet
+per accedere all’Internet, l’utente deve essere fisicamente collegato a un ISP, solitamente mediante una WAN punto-punto. il collegamento che connette l’utente al primo router di Internet è detto **rete di accesso**
+### via rete telefonica
+è possibile collegarsi ad Internet modificando la linea telefonica
+- limitazioni: bassa velocità, non si possono inviare contemporaneamente dati e voce
+il servizio **DSL** (digital subscriber line) è una tecnologia che supporta la comunicazone digitale ad alta velocità sulla linea telefonica, dividendo il collegamento tra abitazione ed ISP in tre bande di frequenza non sovrapposte
+>[!figure] DSL
+![[Pasted image 20250305215922.png]]
 
-rete di accesso a internet: 
-## via rete telefonica
-limitazione: velocità, non si possono inviare contemporaneamente dati e voce (L) (dsl fixa ciò)
-dsl: un filtro che prende sia dati voce che dati dal modem
-
-- tramite reti wirless ( + utilizzato )
-- collegamento diretto
+### accesso tramite ethernet
+- ethernet
+### accesso wire less
+- wifi: access point connesso alla ethernet cablata. raggio di azione di qualche decina di metri
+- cellulare: si usa la rete cellulare. access point della compagnia telefonica cellulare, con raggio di azione di decine di kilometri
