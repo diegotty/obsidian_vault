@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T00:06
+updated: 2025-03-06T00:10
 completed: false
 ---
 # Internet
@@ -84,13 +84,13 @@ comprende:
 - attesa di trasmissione (possibile sia nella coda di input che nella coda di output)
 - livello di congestione del router
 #### ritardo di trasmissione
-tempo richiesto per trasmettere tutti i bit del pacchetto sul collegamento. (quindi delta tra primo bit trasmesso e ultimo bit trasmesso)
+tempo richiesto per trasmettere tutti i bit del pacchetto **sul collegamento**. (quindi delta tra primo bit **fatto usicre** dal nodo e ultimo bit **fatto uscire** dal nodo)
 questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
 $$
 \text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
 $$
 #### ritardo di propagazione
-tempo che **un bit** impiega per propagarsi sul collegamento
+tempo che **un bit** impiega per propagarsi **sul collegamento**
 $$
 \text{ritardo di propagazione = } \frac{d}{s} = \frac{\text{lunghezza del collegamento fisico}}{\text{velocità di propagazione del collegamento}}
 $$
