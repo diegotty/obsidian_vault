@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T11:31
+updated: 2025-03-05T11:37
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -107,20 +107,22 @@ ci sono 2 tipi di reti basate su switch:
 viene deciso un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
 - le informazioni riguardanti il circuito vengon mantenute dalla rete
 - ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita
+le risorse vengono quindi suddivise in “pezzi”, e ciascun pezzo viene allocato ai vari collegamenti.
+- le risorse rimangono **inattive** se non utilizzate
 >[!figure] rete a commutazione di circuito
 ![[Pasted image 20250305112910.png]]
 > comunicazioni diverse tra gli stessi dispositivi possono usare percorsi diversi (stabiliti a priori)
 
 >[!example] efficienza
 >![[Pasted image 20250305113116.png]]
-in questo esempio, la linea
+in questo esempio, la linea tra i due switch può gestire contemporaneamente 4 canali voce. ad ogni persona viene allocata 1/4 della capacità
+>- se tutte e 4 le persone comunicano con le 4 persone dall’altro lato, allora la capacità della linea verràc completamente utilizzata, altrimenti verrà sottoutilizzata
+### suddivisione della banda
+>[!info] FDM: frequency divison multiplexing
+![[Pasted image 20250305113633.png]]
 
-	- banda: capacità di trasmissione: quanti bit posso trasmettere in un unità di tempo
-	- slide 32: tutti i dispositivi possono comunicare allo stesso tempo, a ogni dispositivo viene dato 1/4 della banda (quindi potrebbe essere sottuitilizzata)
-suddividere la banda: 
-- **FDM**
-- **TDM**
-
+>[!info] TDM: time division multiplexing
+![[Pasted image 20250305113728.png]]
 ## reti a commutazione di pacchetto (store and forward)
 modo in cui funziona la rete internet oggi 
 utente spedice i pacchetti al router, che li riceve tutti. li mette in una coda (canale seriale), e spedisce i pacchetti al prossimo router
