@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T11:14
+updated: 2025-03-05T11:31
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -76,6 +76,7 @@ lo switch gestisce a chi inviare i pacchetti che gli arrivano, ed è in grado di
 ## reti WAN
 rete geografica: interconnette dispositivi quali switch, router, e modem, e può servire una città, una regione, o una nazione
 - gestita da un ISP (internet service provider)
+>[!warning] generalmente non hanno a che fare con dispositivi terminali !
 
 >[!info] WAN punto-punto
 ![[Pasted image 20250305110714.png]]
@@ -91,16 +92,29 @@ rete geografica: interconnette dispositivi quali switch, router, e modem, e può
 azienda con 2 uffici in città differenti: in ciascun ufficio esiste una LAN che consente agli impiegati di comunicare l’uno con l’altro. 
 per mettere in comunicazione le due LAN, l’azienda usa una apposita WAN punto-punto da un ISP, realizzando una internetwork (o internet privata)
 ### la rete GARR
-interconnette ad altissima capacità 
+interconnette, ad altissima capacità, luoghi in cui si fa istruzione, scienza, cultura e innovazione su tutto il territorio nazionale
+è un’infrastruttura in **fibra ottica**, si sviluppa su circa 15.000km tra collegamenti di dorsale e di accesso, e utilizza le più avanzate tecnologie di comunicazione
+>[!info]- more info
+![[Pasted image 20250305112144.png]]
 
 # switching
-o commutazione
+i sistemi terminali comunicano tra di loro per mezzo di dispositivi come **switch** e **router**, che si trovano nella rotta tra i sistemi sorgente e destinazione
+ci sono 2 tipi di reti basate su switch:
 router: switch di livello 3
 switch: switch di livello 2
 ci sono 2 tipi di reti basate su switch:
 ## reti a commutazione di circuito
-viene decisono un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
-	- ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita, 
+viene deciso un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
+- le informazioni riguardanti il circuito vengon mantenute dalla rete
+- ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita
+>[!figure] rete a commutazione di circuito
+![[Pasted image 20250305112910.png]]
+> comunicazioni diverse tra gli stessi dispositivi possono usare percorsi diversi (stabiliti a priori)
+
+>[!example] efficienza
+>![[Pasted image 20250305113116.png]]
+in questo esempio, la linea
+
 	- banda: capacità di trasmissione: quanti bit posso trasmettere in un unità di tempo
 	- slide 32: tutti i dispositivi possono comunicare allo stesso tempo, a ogni dispositivo viene dato 1/4 della banda (quindi potrebbe essere sottuitilizzata)
 suddividere la banda: 
