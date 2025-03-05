@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T11:37
+updated: 2025-03-05T21:52
 completed: false
 ---
 >[!info] scopo del corso: capire cosa succede all’interno della rete
@@ -10,11 +10,12 @@ completed: false
 >- conoscere le problematiche fondamentali,e le relative soluzioni, incontrate nella definizione dello stack protocollare di una moderna architettura di rete (affidabilità, sicurezza, etc)
 >- conoscere caratteristiche e funzionamento dei vari livelli e protocolli dell’architettura di rete **TCP/IP**
 # le reti
+una **rete** è composta da dispostivi in grado di **scambiarsi informazioni** (end system), e dispositivi di interconessione (che permettono di far viaggiare le informazioni)
+
 **pacchetti**: blocchi di dati che viaggiano in rete
 
->[!info] rete  
+>[!info]- rete 
 >![[Pasted image 20250302183128.png]]
-rete è composta da dispostivi in grado di **scambiarsi informazioni** (end system), e dispositivi di interconessione (che permettono di far viaggiare le informazioni)
 ![[Pasted image 20250304214229.png]]
 ## dispositivi terminali
 i sistemi terminali possono essere di 2 tipi:
@@ -48,7 +49,6 @@ i segnali si propagano nell’atmosfera e nello spazio esterno
 - propagandosi in tutte le direzioni, si riflettono quando trovano degli ostacoli
 - ci sono dei materiali che ostruiscono il passaggio 
 - ci possono essere interferenze da altre tecnologie
-
 # classificazione delle reti
 
 | scale    | type                                   | example        |
@@ -58,7 +58,6 @@ i segnali si propagano nell’atmosfera e nello spazio esterno
 | city     | MAN(metropolitan area network)         | cable, DSL     |
 | country  | WAN(wide area network)                 | large ISP      |
 | planet   | the Internet (network of all networks) | the Internet ! |
-
 ## reti LAN
 solitamente, è una rete privata che collega sistemi terminali in un singolo ufficio (azienda, università)
 - ogni sistema terminale ha un indirizzo univoco che lo identifica nella rete
@@ -125,16 +124,23 @@ in questo esempio, la linea tra i due switch può gestire contemporaneamente 4 c
 ![[Pasted image 20250305113728.png]]
 ## reti a commutazione di pacchetto (store and forward)
 modo in cui funziona la rete internet oggi 
-utente spedice i pacchetti al router, che li riceve tutti. li mette in una coda (canale seriale), e spedisce i pacchetti al prossimo router
+ogni utente spedice i pacchetti (in cui viene suddiviso il messaggio. i pacchetti hanno una lunghezza massima) al router, che li riceve tutti, li mette in una coda (canale seriale), e spedisce i pacchetti al prossimo router
+- non viene riservata alcuna risorsa per la comunicazione
+- invece di avere una comunicazione continua, i due dispositivi comunicano scambiandosi pacchetti di dati
+>[!example] esempio di rete a commutazione di pacchetto
+![[Pasted image 20250305214432.png]]
 router hanno code in ingresso e code in uscita (nell’esempio i router hanno 5 code in ingresso e 5 code in uscita)
 
-un percorso si può sovraccaricare, e i router si posssono congestionare. a quel punto può essere utile cambiare percorso per inviare il pacchetto ( le code del router congestionato saranno piene, e i pacchetti che arrivano vengono scartati)
+blocchi di dati, anche se dello stesso file o comunicazione, possono prendere percorsi diversi nel viaggio dalla sorgente alla destinazione, e possono arrivare a destinazione in un ordine diverso
+- quindi analogamente ad il sistema postale, perchè le cose viaggiano indipendentemente e non si sa se due cose mandate allo stesso tempo, allo stesso destinatario, arriveranno insieme o molto distanti
 
-analogia con sistema postale perchè le cose viaggiano indipendentemente e non sai se due cose mandate allo stesso tempo allo stesso destinatario arriveranno insieme o molto distanti
+questa commutazione è molto più flessibile in termini di prestazioni: se solo 2 dispositivi, uno per lato, comunicano tra di loro, viene utilizzata l’intera banda della rete per tale comunicazione. se 2 dispositivi per lato comunicano, la banda verrà dimezzata, etc
+- un percorso si può sovraccaricare, e i router si posssono congestionare. a quel punto può essere utile cambiare percorso per inviare il pacchetto ( le code del router congestionato saranno piene, e i pacchetti che arrivano vengono scartati)
 
-molto più flessibile in termini di prestazioni: se io sono solo posso utilizzare la rete al massimo,se siamo in 2 a metà, etc
-
-## rappresentazione concettuali di Internet
+# internet
+una internete è costituita da due o più reti interconnesse: l’internet più famosa è chiamata **Internet**, ed è composta da migliaia di reti interconnesse (è una rete a commutazione di pacchetto)
+> [!info] rappresentazione concettuale di Internet
+![[Pasted image 20250305215209.png]]
 ### ARPANET
 
 rete di accesso a internet: 
