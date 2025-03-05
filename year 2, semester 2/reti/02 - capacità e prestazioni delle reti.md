@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T22:35
+updated: 2025-03-05T23:37
 completed: false
 ---
 # Internet
@@ -32,3 +32,18 @@ Internet ha una struttura fondamentalmente gerarchica:
 possibile routing di un pacchetto !
 ![[Pasted image 20250305223454.png]]
 # capacità e prestazioni delle reti
+nel caso di una rete a commutazione di pacchetto, le metriche che ne determinano le prestazioni si misurano in termini di:
+- **ampiezza di banda**
+- **bit rate**
+- **throughput**
+- **latenza (ritardo)**
+- **perdita di pacchetti**
+### ampiezza di banda
+si indicano 2 concetti leggermente diversi, ma strettamente legati:
+- **bandwidth**: rappresenta la larghezza dell’intervallo di frequenze utilizzato dal sistema trasmissivo (ovvero l’intervallo di frequenze che un mezzo fisico consente di trasmettere senza danneggiare il segnale in maniera irrecuperabile). 
+	- maggiore è l’ampiezza di banda, maggiore è la quantità di informazione che può essere veicolata attraverso un mezzo trasmissivo
+	- si misura in Hz
+- **bit rate**: quantità di bit al secondo (bps) che un link garantisce di trasmettere
+
+il bit rate è proporzionale  sia dalla banda, che dalla specifica tecnica di trasmissione, o formato di modulazione digitale
+- il bit rate è proporzionale alla banda
