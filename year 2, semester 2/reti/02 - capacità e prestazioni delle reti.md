@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T00:10
+updated: 2025-03-06T10:24
 completed: false
 ---
 # Internet
@@ -38,7 +38,7 @@ nel caso di una rete a commutazione di pacchetto, le metriche che ne determinano
 - **throughput**
 - **latenza (ritardo)**
 - **perdita di pacchetti**
-### ampiezza di banda
+## ampiezza di banda
 si indicano 2 concetti leggermente diversi, ma strettamente legati:
 - **bandwidth**: rappresenta la larghezza dell’intervallo di frequenze utilizzato dal sistema trasmissivo (ovvero l’intervallo di frequenze che un mezzo fisico consente di trasmettere senza danneggiare il segnale in maniera irrecuperabile). 
 	- maggiore è l’ampiezza di banda, maggiore è la quantità di informazione che può essere veicolata attraverso un mezzo trasmissivo
@@ -49,7 +49,7 @@ il bit rate è proporzionale alla banda, ma dipende anche dalla specifica tecnic
 >[!info] per banda di un tipo di rete si intende il bit rate garantito dai suoi link
 >il rate di un link Fast Ethernet è 100 mpbs, può inviare al massimo 100 mbps
 
-### throughput
+## throughput
 indica quanto velocemente riusciamo **effettivamente** a inviare dati tramite una rete: è quindi il numero di bit al secondo che passano attraverso un punto della rete
 >[!warning] bit rate e throughput
 >il rate è una misura della potenziale velocità di un link, mentre il throughput è una misura dell’effettiva velocità di un link (irl)
@@ -70,28 +70,48 @@ $$
 ![[Pasted image 20250305235205.png]]
 iin questo caso la velocità del link principale è solo 200 kpbs in quanto il link è condiviso, e il throughput end-to-end ha lo stesso valore
 crazy nesting grazie aglaia
-### delay and loss
+## delay and loss
 **delay**: quanto tempo serve affinchè un pacchetto arrivi completamente a destinazione dal momento in cui il primo bit parte dalla sorgente
 - nella commutazione di pacchetto, i pacchetti si accodano nei buffer dei router. se il tasso di arrivo dei pacchetti sul collegamento eccede la capacità del collegamento di evaderli, i pacchetti si accodano, in attesa del proprio turno
 vediamo le quattro cause di ritardo per i pacchetti: 
-#### ritardo di elaborazione del nodo
+### ritardo di elaborazione del nodo
 comprende:
 - controllo sugli errori: il pacchetto è integro ? se no, viene tipicamente scartato
 - determinazione del canale di uscita
 - tempo dalla ricezione dalla porta di input alla consegna alla porta di output
-#### ritardo di accodamento
+### ritardo di accodamento
 comprende:
 - attesa di trasmissione (possibile sia nella coda di input che nella coda di output)
 - livello di congestione del router
-#### ritardo di trasmissione
+
+il ritardo di accodamento può variare da pacchetto a pacchetto, e dipende da:
+$R=\text{rate di trasmissione (bps)}$
+$L= \text{lunghezza del pacchetto (bit)}$
+$a = \text{tasso medio di arrivo dei pacchetti (pkt/s)}$
+$$
+\frac{L \cdot a}{R} = \text{intensità di traffico}
+$$
+- $La/R \sim 0$ → poco ritardo
+- $La/R \rightarrow 1$ → il ritardo si fa consistente
+- $La/R>1$ → più “lavoro” in arrivo di quanto possa essere effettivamente svolto
+### ritardo di trasmissione
 tempo richiesto per trasmettere tutti i bit del pacchetto **sul collegamento**. (quindi delta tra primo bit **fatto usicre** dal nodo e ultimo bit **fatto uscire** dal nodo)
 questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
 $$
 \text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
 $$
-#### ritardo di propagazione
+### ritardo di propagazione
 tempo che **un bit** impiega per propagarsi **sul collegamento**
 $$
 \text{ritardo di propagazione = } \frac{d}{s} = \frac{\text{lunghezza del collegamento fisico}}{\text{velocità di propagazione del collegamento}}
 $$
 tipicamente $s$ corrisponde alla velocità della luce !
+>[!info] ritardo di nodo
+quindi, il ritardo dotale di un nodo è:
+>$$
+d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}
+>$$
+$d_{proc}$ → ritardo di trasmissione (significativo sui collegamenti a bassa velocità)
+$d_{queue}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
+$d_{trans}$ → ritardo di elaborazione (in genere pochi microsecondi o anche meno)
+$d_{prop}$ → ritardo di accodamento (dipende dalla congestione)
