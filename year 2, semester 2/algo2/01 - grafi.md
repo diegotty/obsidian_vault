@@ -1,7 +1,7 @@
 ---
 related to: "[[00 - algoritmi efficienti|00 - algoritmi efficienti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-05T22:13
+updated: 2025-03-06T09:09
 completed: true
 ---
 >[!index]
@@ -68,6 +68,14 @@ utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del gr
 ![[Pasted image 20250302214618.png]]
 - rispetto alla matrice binaria, il risparmio di spazio è notevole
 - controllare la presenza di un arco può arrivare a costare $O(n)$, in quanto bisogna scorrere la lista dei nodi adiacenti al nodo $u$ per verificare $v$ sia presente (e anche se accedere a $G[u]$ è costante, la lista potrebbe contenere $n$ elementi !)
+- l’algoritmo per calcolare i
+### dizionario o lista di adiacenza
+lista di adiacenza:
+- non posso avere nodi non consecutivi (visto accediamo alla lista di ogni nodo con il proprio indice, se ci fosse un buco nell’indicizzazione dei nodi (es: 0,1,2,4,5), ci sarebbe un buco nell’indice 3, e una lista vuota non andrebbe bene per rappresentarlo in quanto ambigua)
+dizionario:
+- cancellare da un dizionarcio costa $\Theta(n)$: dipende da quanti items ci sono al suo interno (il caso medio è $O(1)$)
+
+
 
 >[!exercise] esercizio
 risolvere il problema del pozzo universale in tempo $O(n)$, avendo il grafo diretto rappresentato tramite matrice di adiacenza
