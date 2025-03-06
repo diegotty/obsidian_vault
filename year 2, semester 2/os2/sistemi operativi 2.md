@@ -1,6 +1,8 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-03T16:38
+updated: 2025-03-06T09:48
 completed: true
 ---
+[[01 - introduzione alla shell]]
+[[02 - filesystem]]

@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T09:39
+updated: 2025-03-06T09:44
 completed: false
 ---
 # DFS
@@ -24,7 +24,7 @@ visitiamo il nodo in DFS e teniamo traccia dei nodi già visitati (per i cicli, 
 >```
 >la complessità di questo algortimo è $O(n^2)$, in quanto il for-loop verrà eseguito al massimo $n$ volte
 >- notiamo che nell’istruzione `return`, usiamo una lista, perchè l’inserimento in un set costa $O(n)$ (bisgona controllare se l’elemento può essere inserito), mentre l’inserimento in coda di una lista costa $\Theta(1)$
->- se però avessimo usato un insieme al posto della lista `visitati[i]`, la complessità dimensionale (che in questo caso è $O(n)$) sarebbe stata minore, e proporzionale ai nodi visit
+>- se però avessimo usato un insieme al posto della lista `visitati[i]`, la complessità dimensionale (che in questo caso è $O(n)$) sarebbe stata minore, e proporzionale ai nodi visitati
 
 
 >[!info] versione iterativa per lista di adiacenza
@@ -52,5 +52,18 @@ quindi c’è una differenza tra matrice binaria e lista di adiacenza ! sopratut
 >[!dimostrazione]- la correttezza dell’algorrimo per la visita DFS si dimostra con l’induzione
 >(assumiamo che un nodo $i$ è raggiungibile e visitati[i] == 0)
 
-
-usare un insieme al posto della lista visitati[i], la complessità dimensionale sarebbe minore e proporzionale ai nodi visitati
+>[!info] versione iterativa per lista di adiacenza
+>```python
+>def DFS_iterativo(u, G):
+>	visitati = [0] * len(G)
+>	pila = [u]
+>	while pila:
+>		u = pila.pop()
+>		if not visitati[u]:
+>			visitati[u] = 1
+>			for v in G[u]:
+>				if not visitati[v]:
+>					pila.append(v)
+>	return [x for x in range(len(G)) if visitati[x]]
+>```
+l’algoritmo ha complessità temporale $O(n+m)$, e complessità dimensionale $O(n)$
