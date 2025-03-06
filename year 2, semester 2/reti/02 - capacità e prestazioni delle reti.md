@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T10:39
+updated: 2025-03-06T10:49
 completed: false
 ---
 # Internet
@@ -70,8 +70,8 @@ $$
 ![[Pasted image 20250305235205.png]]
 iin questo caso la velocità del link principale è solo 200 kpbs in quanto il link è condiviso, e il throughput end-to-end ha lo stesso valore
 crazy nesting grazie aglaia
-## delay and loss
-**delay**: quanto tempo serve affinchè un pacchetto arrivi completamente a destinazione dal momento in cui il primo bit parte dalla sorgente
+## delay
+**delay** (ritardo): quanto tempo serve affinchè un pacchetto arrivi completamente a destinazione dal momento in cui il primo bit parte dalla sorgente
 - nella commutazione di pacchetto, i pacchetti si accodano nei buffer dei router. se il tasso di arrivo dei pacchetti sul collegamento eccede la capacità del collegamento di evaderli, i pacchetti si accodano, in attesa del proprio turno
 vediamo le quattro cause di ritardo per i pacchetti: 
 ### ritardo di elaborazione del nodo
@@ -120,6 +120,17 @@ $d_{prop}$ → ritardo di accodamento (dipende dalla congestione)
 ## packet loss
 se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso
 il pacchetto può poi essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
+
+# concetto $rate \cdot ritardo$
+il prodotto $rate \cdot ritardo$ rappresenta il massimo numero di bit che possono riempire un collegamento
+>[!info] spiegazione
+pensiamo al link come un tubo: la sezione trasversale del tubo rappresenta il rate, e la lunghezza rappresenta il ritardo. possiamo allora dire che il volume del tubo definisce il prodotto $rate \cdot ritardo$
+![[Pasted image 20250306104755.png]]
+
+>[!example]- esempio
+>supponiamo di avere un link con rate di 1 bps (il link trasmette un bit al secondo) e un ritardo di 5s(un bit ci mette 5s da quando parte dalla sorgente ad arrivare al destinatario)
+![[Pasted image 20250306104536.png]]
+il massimo numero di bit che possono riempire il collegamento è 5
 # traceroute
 `tracert` è un programma diagnostico che fornisce una misura del ritardo dalla sorgente a tutti i router lungo il percorso Internet punto-punto verso la destinazione
 - invia gruppi di tre pacchetti, ogni gruppo con **tempo di vita incrementale**(da 1 a $n$, con massimo valore = 30) , che raggiungeranno il router $i$ (con $i = 1,n$) che si trova sul percorso della destinazione
@@ -136,6 +147,9 @@ l’output di `tracert` presenta 6 colonne:
 5. RTT del secondo pacchetto
 6. RTT del terzo pacchetto
 **RTT**: round trip time (tempo di andata e ritorno), include i 4 ritardi visti precedentemente !
+- può accadere che il RTT del router $n$ sia maggiore del RTT del router $n+1$ a causa dei ritardi di accodamento (dipendono dallo stato attuale della rete)
+- se la sorgente non riceve risposta da un router intermedio (o ne riceve meno di 3), allora pone un asterisco al posto del tempo RTT
+
 >[!example] `traceroute` da `gaia.cs.umass.edu` a `www.eurecom.fr`
 ![[Pasted image 20250306103620.png]]
 damn !!!!! crazy !!! collegamento transoceanico too !!
