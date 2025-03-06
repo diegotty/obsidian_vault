@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T10:24
+updated: 2025-03-06T10:39
 completed: false
 ---
 # Internet
@@ -91,9 +91,11 @@ $a = \text{tasso medio di arrivo dei pacchetti (pkt/s)}$
 $$
 \frac{L \cdot a}{R} = \text{intensità di traffico}
 $$
-- $La/R \sim 0$ → poco ritardo
-- $La/R \rightarrow 1$ → il ritardo si fa consistente
-- $La/R>1$ → più “lavoro” in arrivo di quanto possa essere effettivamente svolto
+- $L \cdot a/R \sim 0$ → poco ritardo
+- $L \cdot a/R \rightarrow 1$ → il ritardo si fa consistente
+- $L \cdot a/R>1$ → più “lavoro” in arrivo di quanto possa essere effettivamente svolto
+>[!info]- grafo
+![[Pasted image 20250306102621.png]]
 ### ritardo di trasmissione
 tempo richiesto per trasmettere tutti i bit del pacchetto **sul collegamento**. (quindi delta tra primo bit **fatto usicre** dal nodo e ultimo bit **fatto uscire** dal nodo)
 questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
@@ -115,3 +117,26 @@ $d_{proc}$ → ritardo di trasmissione (significativo sui collegamenti a bassa v
 $d_{queue}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
 $d_{trans}$ → ritardo di elaborazione (in genere pochi microsecondi o anche meno)
 $d_{prop}$ → ritardo di accodamento (dipende dalla congestione)
+## packet loss
+se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso
+il pacchetto può poi essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
+# traceroute
+`tracert` è un programma diagnostico che fornisce una misura del ritardo dalla sorgente a tutti i router lungo il percorso Internet punto-punto verso la destinazione
+- invia gruppi di tre pacchetti, ogni gruppo con **tempo di vita incrementale**(da 1 a $n$, con massimo valore = 30) , che raggiungeranno il router $i$ (con $i = 1,n$) che si trova sul percorso della destinazione
+- il router $i$ restituirà poi i pacchetti al mittente
+- il mittente calcola l’intervallo tra trasmissione e risposta
+>[!figure] img
+![[Pasted image 20250306103239.png]]
+
+l’output di `tracert` presenta 6 colonne:
+1. il numero di router sulla rotta
+2. nome del router
+3. indirizzo del router
+4. RTT del primo pacchetto
+5. RTT del secondo pacchetto
+6. RTT del terzo pacchetto
+**RTT**: round trip time (tempo di andata e ritorno), include i 4 ritardi visti precedentemente !
+>[!example] `traceroute` da `gaia.cs.umass.edu` a `www.eurecom.fr`
+![[Pasted image 20250306103620.png]]
+damn !!!!! crazy !!! collegamento transoceanico too !!
+>- \\question come fa a raggruppare le network ?
