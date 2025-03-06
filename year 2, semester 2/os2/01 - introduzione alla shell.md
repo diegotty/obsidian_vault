@@ -1,8 +1,8 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-04T21:35
-completed: false
+updated: 2025-03-06T09:47
+completed: true
 ---
 # shell
 la shell è un’interprete di comandi: un programma che esegue altri comandi

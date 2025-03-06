@@ -1,0 +1,142 @@
+---
+related to: 
+created: 2025-03-02T17:41
+updated: 2025-03-06T10:39
+completed: false
+---
+# Internet
+Internet è una rete di reti, composta da reti di accesso e dal **backbone Internet**
+## rete di accesso
+(o **access network**)
+collegamenti fisici, che connetto un sistema al primo **edge router**
+- quindi collegano il sistema di origine al primo router sul percorso per il sistema di destinazione
+le modalità sono state viste in [[01 - introduzione alle reti#accesso ad internet| accesso ad internet]]
+## backbone Internet
+è la rete composta esclusivamente da router e collegamenti tra router. può essere a commutazione di circuito, o a commutazione di pacchetto ! [[01 - introduzione alle reti#switching|(switching !)]]
+## struttura di Internet
+Internet ha una struttura fondamentalmente gerarchica:
+- **ISP di livello 1**: al centro, offrono copertura nazionale/internazionale, e comunicano tra di loro come pari
+>[!info]- dorsali sottomarine
+>sono stati posati cavati sottomarini (?), per connettere diversi continenti a velocità elevate ! 
+>esempi: TAT-14, MAREA, SEA-ME-WE 6 (foto sottostante)
+![[Pasted image 20250305223100.png]]
+
+- **ISP di livello 2**: ISP nazionali o distrettuali, e si possono connettere solo **ad alcuni** ISP di livello 1, e possibilmente ad altri ISP di livello 2
+>[!info]- situazione monetaria
+>un ISP di livello 2 paga l’ISP di livello 1 che gli fornisce la connettività per il resto della rete ! un ISP di livello 2 è quindi un cliente di un ISP di livello 1
+
+**ISP di livello 3** e **ISP locali**: anche chiamate **last hop networks**, sono le più vicine ai sistemi terminali
+- sono clienti degli ISP di livello superiore
+
+>[!example] in pratica !
+possibile routing di un pacchetto !
+![[Pasted image 20250305223454.png]]
+# capacità e prestazioni delle reti
+nel caso di una rete a commutazione di pacchetto, le metriche che ne determinano le prestazioni si misurano in termini di:
+- **ampiezza di banda**
+- **bit rate**
+- **throughput**
+- **latenza (ritardo)**
+- **perdita di pacchetti**
+## ampiezza di banda
+si indicano 2 concetti leggermente diversi, ma strettamente legati:
+- **bandwidth**: rappresenta la larghezza dell’intervallo di frequenze utilizzato dal sistema trasmissivo (ovvero l’intervallo di frequenze che un mezzo fisico consente di trasmettere senza danneggiare il segnale in maniera irrecuperabile). 
+	- maggiore è l’ampiezza di banda, maggiore è la quantità di informazione che può essere veicolata attraverso un mezzo trasmissivo
+	- si misura in Hz
+- **bit rate**: quantità di bit al secondo (bps) che un link garantisce di trasmettere
+
+il bit rate è proporzionale alla banda, ma dipende anche dalla specifica tecnica di trasmissione, o formato di modulazione digitale
+>[!info] per banda di un tipo di rete si intende il bit rate garantito dai suoi link
+>il rate di un link Fast Ethernet è 100 mpbs, può inviare al massimo 100 mbps
+
+## throughput
+indica quanto velocemente riusciamo **effettivamente** a inviare dati tramite una rete: è quindi il numero di bit al secondo che passano attraverso un punto della rete
+>[!warning] bit rate e throughput
+>il rate è una misura della potenziale velocità di un link, mentre il throughput è una misura dell’effettiva velocità di un link (irl)
+
+in un percorso da una sorgente a una destinazione, un pacchetto può passare attraverso numerosi link, ognuno con throughput diverso. bisogna calcolare il throughput **end-to-end** (totale)
+>[!example] throughput su un percorso con 3 link
+![[Pasted image 20250305234547.png]]
+notiamo come link3 è il **collo di bottiglia** (collegamento su un percorso punto-punto che vincola il throughput end-to-end)
+in questo esempio, il throughput dei dati per il percorso è 100 kpbs
+
+in generale, in un percorso con $n$ link in serie, abbiamo:
+$$
+\text{throughput = min}\{T_{1},T_{2}, \dots,T_{n}\}
+$$
+>[!info] thoughput nei link condivisi
+>il link tra due router è spesso dedicato a più di un flusso di dati, e raccoglie il flusso da varie sorgenti e/o lo distribuisce a varie destinazioni. il rate del link tra due router è quindi condiviso tra flussi di dati
+>>[!example] esempio
+![[Pasted image 20250305235205.png]]
+iin questo caso la velocità del link principale è solo 200 kpbs in quanto il link è condiviso, e il throughput end-to-end ha lo stesso valore
+crazy nesting grazie aglaia
+## delay and loss
+**delay**: quanto tempo serve affinchè un pacchetto arrivi completamente a destinazione dal momento in cui il primo bit parte dalla sorgente
+- nella commutazione di pacchetto, i pacchetti si accodano nei buffer dei router. se il tasso di arrivo dei pacchetti sul collegamento eccede la capacità del collegamento di evaderli, i pacchetti si accodano, in attesa del proprio turno
+vediamo le quattro cause di ritardo per i pacchetti: 
+### ritardo di elaborazione del nodo
+comprende:
+- controllo sugli errori: il pacchetto è integro ? se no, viene tipicamente scartato
+- determinazione del canale di uscita
+- tempo dalla ricezione dalla porta di input alla consegna alla porta di output
+### ritardo di accodamento
+comprende:
+- attesa di trasmissione (possibile sia nella coda di input che nella coda di output)
+- livello di congestione del router
+
+il ritardo di accodamento può variare da pacchetto a pacchetto, e dipende da:
+$R=\text{rate di trasmissione (bps)}$
+$L= \text{lunghezza del pacchetto (bit)}$
+$a = \text{tasso medio di arrivo dei pacchetti (pkt/s)}$
+$$
+\frac{L \cdot a}{R} = \text{intensità di traffico}
+$$
+- $L \cdot a/R \sim 0$ → poco ritardo
+- $L \cdot a/R \rightarrow 1$ → il ritardo si fa consistente
+- $L \cdot a/R>1$ → più “lavoro” in arrivo di quanto possa essere effettivamente svolto
+>[!info]- grafo
+![[Pasted image 20250306102621.png]]
+### ritardo di trasmissione
+tempo richiesto per trasmettere tutti i bit del pacchetto **sul collegamento**. (quindi delta tra primo bit **fatto usicre** dal nodo e ultimo bit **fatto uscire** dal nodo)
+questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
+$$
+\text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
+$$
+### ritardo di propagazione
+tempo che **un bit** impiega per propagarsi **sul collegamento**
+$$
+\text{ritardo di propagazione = } \frac{d}{s} = \frac{\text{lunghezza del collegamento fisico}}{\text{velocità di propagazione del collegamento}}
+$$
+tipicamente $s$ corrisponde alla velocità della luce !
+>[!info] ritardo di nodo
+quindi, il ritardo dotale di un nodo è:
+>$$
+d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}
+>$$
+$d_{proc}$ → ritardo di trasmissione (significativo sui collegamenti a bassa velocità)
+$d_{queue}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
+$d_{trans}$ → ritardo di elaborazione (in genere pochi microsecondi o anche meno)
+$d_{prop}$ → ritardo di accodamento (dipende dalla congestione)
+## packet loss
+se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso
+il pacchetto può poi essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
+# traceroute
+`tracert` è un programma diagnostico che fornisce una misura del ritardo dalla sorgente a tutti i router lungo il percorso Internet punto-punto verso la destinazione
+- invia gruppi di tre pacchetti, ogni gruppo con **tempo di vita incrementale**(da 1 a $n$, con massimo valore = 30) , che raggiungeranno il router $i$ (con $i = 1,n$) che si trova sul percorso della destinazione
+- il router $i$ restituirà poi i pacchetti al mittente
+- il mittente calcola l’intervallo tra trasmissione e risposta
+>[!figure] img
+![[Pasted image 20250306103239.png]]
+
+l’output di `tracert` presenta 6 colonne:
+1. il numero di router sulla rotta
+2. nome del router
+3. indirizzo del router
+4. RTT del primo pacchetto
+5. RTT del secondo pacchetto
+6. RTT del terzo pacchetto
+**RTT**: round trip time (tempo di andata e ritorno), include i 4 ritardi visti precedentemente !
+>[!example] `traceroute` da `gaia.cs.umass.edu` a `www.eurecom.fr`
+![[Pasted image 20250306103620.png]]
+damn !!!!! crazy !!! collegamento transoceanico too !!
+>- \\question come fa a raggruppare le network ?
