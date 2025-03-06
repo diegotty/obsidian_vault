@@ -1,18 +1,20 @@
 ---
 related to: "[[00 - algoritmi efficienti|00 - algoritmi efficienti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-06T09:09
+updated: 2025-03-06T09:16
 completed: true
 ---
 >[!index]
->- [grafi diretti e indiretti](#grafi%20diretti%20e%20indiretti)
->- [grafi sparsi e densi](#grafi%20sparsi%20e%20densi)
->- [alberi](#alberi)
->- [grafi planari](#grafi%20planari)
->- [teorema di eulero](#teorema%20di%20eulero)
+>- [grafi](#grafi)
+>		- [grafi diretti e indiretti](#grafi%20diretti%20e%20indiretti)
+>		- [grafi sparsi e densi](#grafi%20sparsi%20e%20densi)
+>	- [alberi](#alberi)
+>	- [grafi planari](#grafi%20planari)
+>		- [teorema di eulero](#teorema%20di%20eulero)
 >- [rappresentazione di grafi](#rappresentazione%20di%20grafi)
->- [matrici binarie](#matrici%20binarie)
->- [liste di adiacenza](#liste%20di%20adiacenza)
+>	- [matrici binarie](#matrici%20binarie)
+>	- [liste di adiacenza](#liste%20di%20adiacenza)
+>		- [dizionario o lista di adiacenza](#dizionario%20o%20lista%20di%20adiacenza)
 # grafi
 un grafo è rappresentato da $G(V,E)$, con: 
 - $V=$ l’insieme dei nodi($|V|=n$) e 
@@ -22,7 +24,7 @@ un grafo è rappresentato da $G(V,E)$, con:
 i grafi si distinguono in:
 - **grafi diretti**: gli archi sono con direzione 
 	- $0\leq m\leq n(n-1)=O(n^2)$
-- **grafi indiretti**: gli archi non hanno direzione 
+- **grafi indiretti**: gli archi non hanno direzione (e quindi valgono sia come archi uscenti che entranti)
 	- $0\leq m\leq \frac{n(n-1)}{2}=O(n^2)$
 
 ### grafi sparsi e densi
@@ -33,6 +35,7 @@ altrimenti un grafo si dice denso se $m=\Omega(n^2)$
 >[!warning] un grafo non sparso non è necessariamente denso, ad esempio può avere $\Theta(n\log n)$ archi
 
 **grado**(di un nodo): il numero di archi che incidono su un nodo
+- per grafi diretti, esistono **grado entrante** e **grado uscente**
 ## alberi
 un albero è un grafo **connesso**(ogni nodo è connesso agli altri) senza cicli
 - un albero ha sempre $m=n-1$ archi (è quindi un grafo sparso), e ciò si dimostra per induzione
@@ -60,6 +63,7 @@ un grafo planare di $n>2$ nodi ha al più $3n-6$ archi.
 >si nota che nei grafi indiretti, dato che ogni arco entrante è anche uscente, la rappresentazione è **simmetrica rispetto alla diagonale della matrice**
 - uno dei problemi principali delle matrici binarie, è lo spreco di spazio (sopratutto se un grafo è sparso)
 - uno dei vantaggi invece è la velocità con cui si può controllare la presenza di un arco: basta accedere all’elemento in posizione $(u,v)$, e ciò costa $O(1)$
+- l’algoritmo per calcolare il grado di un nodo ha complessità $\Theta(n)$, in quanto devo controllare un’intera riga della matrice
 ## liste di adiacenza
 utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del grafo $G$. $G[x]$ è una lista contenente i nodi **adiacenti** al nodo $x$ , vale a dire quelli raggiunti da archi che partono da $x$
 - rispetto alla rappresentazione con matrice binaria, c’è un notevole risparmio di spazio nel caso di grafi sparsi, ma vedere se due archi sono connessi o meno può costare ora anche $O(n)$
@@ -68,7 +72,7 @@ utilizzo una lista di liste $G$, che ha tanti elementi quanti sono i nodi del gr
 ![[Pasted image 20250302214618.png]]
 - rispetto alla matrice binaria, il risparmio di spazio è notevole
 - controllare la presenza di un arco può arrivare a costare $O(n)$, in quanto bisogna scorrere la lista dei nodi adiacenti al nodo $u$ per verificare $v$ sia presente (e anche se accedere a $G[u]$ è costante, la lista potrebbe contenere $n$ elementi !)
-- l’algoritmo per calcolare i
+	- l’algoritmo per calcolare il grado di un nodo ha complessità $O(1)$, in quanto basta controllare la lista del nodo in questione
 ### dizionario o lista di adiacenza
 lista di adiacenza:
 - non posso avere nodi non consecutivi (visto accediamo alla lista di ogni nodo con il proprio indice, se ci fosse un buco nell’indicizzazione dei nodi (es: 0,1,2,4,5), ci sarebbe un buco nell’indice 3, e una lista vuota non andrebbe bene per rappresentarlo in quanto ambigua)
