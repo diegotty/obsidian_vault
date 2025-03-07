@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-07T22:15
+updated: 2025-03-07T22:43
 completed: false
 ---
 # DFS
@@ -82,3 +82,24 @@ dato un albero DFS con $n$ nodi, esso si può memorizzare con un vettore $P$ di 
 - se $i$ non è un nodo dell’albero, $P[i]$ per convenzione contiene $-1$
 >[!example] esempi !
 ![[Pasted image 20250307221515.png]]
+
+>[!warning] per le seguenti procedure, diamo per scontato che nella lista di adiacenza, ogni lista al suo interno contiene elementi in ordine crescente
+
+>[!info] algoritmo per vettore dei padri al posto di vettore dei visitati
+>```python
+>def Padri(u, G):
+>	n = len(G)
+>	P = [-1]*n
+>	P[u] = u
+>	DFSr(u, G, P)
+>	return P
+>
+>def DFSr(x, G, P):
+>	for y in G[x]:
+>		if P[y] == -1:
+>			P[y] = x
+>			DFSr(y, G, P)
+>```
+
+inoltre, in molte applicazioni, non ci basta sapere se un nodo $y$ è raggiungibile dal nodo $x$, ma, se la risposta è positiva, vogliamo anche saper determinare un cammino che ci consenta di andare da $x$ a $y$. il vettore dei padri, radicato in $x$, ci permette facilmente di farlo! basta partire da $P[y]$ e “risalire” l’albero dei padri
+>
