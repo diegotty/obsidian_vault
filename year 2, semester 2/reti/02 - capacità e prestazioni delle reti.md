@@ -1,8 +1,8 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T10:49
-completed: false
+updated: 2025-03-06T10:50
+completed: true
 ---
 # Internet
 Internet è una rete di reti, composta da reti di accesso e dal **backbone Internet**
