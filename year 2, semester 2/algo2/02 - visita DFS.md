@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T09:44
+updated: 2025-03-07T22:13
 completed: false
 ---
 # DFS
@@ -67,3 +67,14 @@ quindi c’è una differenza tra matrice binaria e lista di adiacenza ! sopratut
 >	return [x for x in range(len(G)) if visitati[x]]
 >```
 l’algoritmo ha complessità temporale $O(n+m)$, e complessità dimensionale $O(n)$
+# albero DFS
+con una visita DFS, gli archi del grafo si bipartiscono in:
+- quelli che nel corso della visita sono stati attraversati
+- quelli che nel corso della visita non sono stati attraversati
+i nodi visitati e gli archi attraversati formano un albero detto **albero DFS**
+>[!example] esempio
+![[Pasted image 20250307221055.png]]
+a sinistra un grafo $G$, a destra i tre alberi DFS che si ottengono facendo partire , rispettivamente, tre visite dai nodi 9, 4 e 3.
+## vettore dei padri
+(vettore dei **patri** in dialetto)
+dato un albero DFS con $n$ nodi, esso si può memorizzare con un un vettore di $n$ componenti ()

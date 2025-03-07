@@ -870,34 +870,49 @@
             "type": "tabs",
             "children": [
               {
-                "id": "ba033baf44c391fb",
+                "id": "8b759ed21a800a73",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/algo2/raw notes/2025-03-03.md",
+                    "file": "year 2, semester 2/algo2/algoritmi 2.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2025-03-03"
+                  "title": "algoritmi 2"
                 }
               },
               {
-                "id": "78d0192bac489fa5",
+                "id": "94bd8771b016f320",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/algo2/grafi.md",
+                    "file": "year 2, semester 2/algo2/01 - grafi.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "grafi"
+                  "title": "01 - grafi"
+                }
+              },
+              {
+                "id": "6d7303806bb6559c",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/algo2/02 - visitare un grafo.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "02 - visitare un grafo"
                 }
               }
-            ]
+            ],
+            "currentTab": 2
           }
         ],
         "direction": "vertical"
@@ -1054,8 +1069,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "ba033baf44c391fb",
-      "mtime": "2025-03-03T16:37:30+01:00"
+      "active": "6d7303806bb6559c",
+      "mtime": "2025-03-06T09:45:13+01:00"
     },
     "reti": {
       "main": {
@@ -1063,11 +1078,11 @@
         "type": "split",
         "children": [
           {
-            "id": "3220ee411a739bcb",
+            "id": "c2b74ee2d80b86f7",
             "type": "tabs",
             "children": [
               {
-                "id": "181e93165d30d8f6",
+                "id": "30e62db903be5622",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -1081,17 +1096,17 @@
                 }
               },
               {
-                "id": "ad5c6e6d744689d4",
+                "id": "65e4885eb26cd18a",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/introduzione.md",
+                    "file": "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "introduzione"
+                  "title": "02 - capacità e prestazioni delle reti"
                 }
               }
             ],
@@ -1152,8 +1167,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1252,8 +1266,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "ad5c6e6d744689d4",
-      "mtime": "2025-03-05T10:58:14+01:00"
+      "active": "65e4885eb26cd18a",
+      "mtime": "2025-03-07T22:06:48+01:00"
     },
     "os2": {
       "main": {
@@ -1265,20 +1279,49 @@
             "type": "tabs",
             "children": [
               {
+                "id": "e0a53a011cb48c23",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/os2/sistemi operativi 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "sistemi operativi 2"
+                }
+              },
+              {
                 "id": "4eaf0c1d31631e96",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/os2/raw notes/2025-03-05.md",
+                    "file": "year 2, semester 2/os2/01 - introduzione alla shell.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2025-03-05"
+                  "title": "01 - introduzione alla shell"
+                }
+              },
+              {
+                "id": "590db4bc6d4c1f67",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/os2/02 - filesystem.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "02 - filesystem"
                 }
               }
-            ]
+            ],
+            "currentTab": 2
           }
         ],
         "direction": "vertical"
@@ -1435,8 +1478,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "4eaf0c1d31631e96",
-      "mtime": "2025-03-05T10:58:43+01:00"
+      "active": "590db4bc6d4c1f67",
+      "mtime": "2025-03-06T10:09:48+01:00"
     }
   },
   "active": "algo2"
