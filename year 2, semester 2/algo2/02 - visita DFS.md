@@ -1,9 +1,13 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-07T22:43
-completed: false
+updated: 2025-03-07T22:52
+completed: true
 ---
+>[!index]
+>- [DFS](#DFS)
+>- [albero DFS](#albero%20DFS)
+>	- [vettore dei padri](#vettore%20dei%20padri)
 # DFS
 >[!info] versione iterativa per matrice di adiacenza
 visitiamo il nodo in DFS e teniamo traccia dei nodi già visitati (per i cicli, problema che non avevamo con gli alberi)
@@ -100,6 +104,31 @@ dato un albero DFS con $n$ nodi, esso si può memorizzare con un vettore $P$ di 
 >			P[y] = x
 >			DFSr(y, G, P)
 >```
+essendo una visita DFS per lista di adiacenza, la sua complessità è $O(n)$
 
 inoltre, in molte applicazioni, non ci basta sapere se un nodo $y$ è raggiungibile dal nodo $x$, ma, se la risposta è positiva, vogliamo anche saper determinare un cammino che ci consenta di andare da $x$ a $y$. il vettore dei padri, radicato in $x$, ci permette facilmente di farlo! basta partire da $P[y]$ e “risalire” l’albero dei padri
->
+>[!info] algoritmo iterativo per la ricerca del cammino
+>```python
+>def Cammino(u, P):
+>	if P[u] == -1: return []
+>	path = []
+>	while P[u] != u: #O(n)
+>		path.append(u)
+>		u = P[u]
+>	path.append(u) #O(1)
+>	path.reverse() #O(n)
+>	return path
+>```
+la sua complessità è $O(n)$
+
+>[!info] algoritmo ricorsivo per la ricerca del cammino
+>possibile domanda orale !!
+>```python
+>def CamminoR(u, P):
+>	if P[u] == -1: return []
+>	if P[u] == u: return [u]
+>	return CamminoR(P[u], P) + [u] ```
+la complessità temporale rimane $O(n)$
+
+>[!warning] cammino minimo
+c’e da notare che se esistono più cammini che dal nodo $x$ portano al nodo $y$, l’algoritmo di sopra **non** garantisce di restituire il **cammino minimo**
