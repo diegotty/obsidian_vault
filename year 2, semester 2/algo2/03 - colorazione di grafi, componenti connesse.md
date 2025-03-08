@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T10:52
+updated: 2025-03-08T11:07
 completed: false
 ---
 # colorazione di grafi
@@ -122,5 +122,15 @@ dato un grafo diretto $G$, per trovare i nodi della componente fortemente connes
 
 calcoliamo ora la complessità temporale:
 - il passo 1 richiede $O(n+m)$, in quanto è una semplice visita DFS da $u$
-- 2
-- il passo 3 costa $O(n)$, in quanto lo facciamo in questo modo: $A$ e $B$ sono due vettori con tanti elementi quanti sono i nodi in $G$. se in $G[i]$ troviamo 
+- passo 2 ?
+- il passo 3 costa $O(n)$, in quanto lo facciamo in questo modo: $A$ e $B$ sono due vettori con tanti elementi quanti sono i nodi in $G$. 
+	- $A[i] =1 \iff i \text{ è raggiunto da } u$
+	- $B[i] =1 \iff u \text{ è raggiunto da } i$
+
+per eseguire efficientemente il passo 2, ricorriamo al **grafo trasposto di G**
+### grafo trasposto
+dato un grafo diretto $G$, il grafo trasposto di $G$, denotato con $G^T$, ha gli stessi nodi di $G$, ma gli archi hanno direzione opposta
+>[!example] esempio di grafo trasposto
+![[Pasted image 20250308110502.png]]
+
+>[!warning] i nodi che in $G$ portano ad 
