@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T09:51
+updated: 2025-03-08T10:06
 completed: false
 ---
 # colorazione di grafi
@@ -36,4 +36,36 @@ usiamo un algoritmo per 2-colorare il grafo, che per ipotesi non ha cicli dispar
 >[!dimostrazione] prova di correttezza dell’algoritmo di sopra
 siano $x$ e $y$ due nodi adiacenti in $G$. consideriamo i due possibili casi e facciamo vedere che in entrambi i casi i due nodi al termine dell’algoritmo avranno colori opposti:
 - l’arco $(x,y)$ viene attraversato durante la visita: in questo caso banalmente i due nodi hanno colori distinti
-- l’arco $(x,y)$ non viene attraversato durante la visita: 
+- l’arco $(x,y)$ non viene attraversato durante la visita: ciò vuol dire che esiste un cammino in $G$ che da $x$ porta a $y$ (il cammino seguito dalla visita), e questo cammino si chiude a formare un ciclo con l’arco $(x,y)$. per ipotesi, il ciclo è di lunghezza pari, quindi il cammino è di lunghezza dispari. poichè i colori si alternano, il primo nodo ($x$) avrà un colore diverso dall’ultimo nodo ($y$)
+>[!info] algoritmo per 2-colorare un grafo **connesso** $G$ senza cicli dispari
+>```python
+>def Colora(G):
+>	Colore = [-1] * len(G)
+>	DFSr(0, G, Colore, 0)
+>	return Colore
+>
+>def DFSr(x, G, Colore, c):
+>	Colore[x] = c
+>	for y in G[x]:
+>		if Colore[y] == -1:
+>			DFSr(y, G, Colore, 1-c)
+>```
+(se il grafo contiene cicli dispari, l’algoritmo produce un assegnamento di colori sbagliato)
+
+>[!info] algoritmo che 2-colora un albero se possibile, altrimenti ritorna una lista vuota
+>```python
+>def Colora(G):
+>	Colore = [-1] * len(G)
+>	if DFSr(0, G, Colore, 0):
+>		return Colore
+>	return []
+>
+>def DFSr(x, G, Colore, c):
+>	Colore[x] = c
+>	for y in G[x]:
+>		if Colore[y] == -1:
+>			if not DFSr(y, G, Colore, 1-c):
+>				return False
+>		elif Colore[y] == Colore[x]:
+>			return False	
+>```
