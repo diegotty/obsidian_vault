@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T11:07
+updated: 2025-03-08T11:21
 completed: false
 ---
 # colorazione di grafi
@@ -133,4 +133,42 @@ dato un grafo diretto $G$, il grafo trasposto di $G$, denotato con $G^T$, ha gli
 >[!example] esempio di grafo trasposto
 ![[Pasted image 20250308110502.png]]
 
->[!warning] i nodi che in $G$ portano ad 
+>[!warning] i nodi che in $G$ portano ad $u$, sono i nodi che in $G^T$ sono raggiungibili a partire da $u$, e viceversa !
+
+possiamo quindi trovare l’insieme $B$, nel passo 2, cercando i nodi raggiungibili da $u$ in $G^T$(che andrà prima costruito), quindi una visita ($O(n+m)$)
+>[!info] algoritmo per componente fortemente connessa contenente $x$
+>```python
+>def ComponenteFC(x, G):
+>	visitati1 = DFS(x, G)
+>	G1 = Trasposto(G)
+>	visitati2 = DFS(x, G1)
+>	componente = []
+>	for i in range((lenG)):
+>		if visitati1[i] == visitati2[i] == 1:
+>			componente.append()
+>	return componente
+>
+>def Trasposto(G):
+>	GT = [[] for _ in G] 
+>	for i in range (len(G)):
+>		for v in G[i]:
+>			GT[v].append(i)
+>	return GT
+>```
+l’algoritmo ha complessità $O(n+m)$, in quanto calcolare il grafo traposto di $G$ costa $O(n+m)$, e non va a superare la complessità delle 2 visite.
+
+>[!info] algoritmo per il calcolo del **vettore CF** delle componenti fortemente connesse
+```python
+def compFC(G):
+	FC = [0] * len(G)
+	c = 0
+	for i in range(len(G)):
+		if FC[i] == 0:
+			E = ComponenteFC(i, G)
+			c += 1
+			for x in E:
+				FC[x] = c
+	return FC
+```
+
+la complessità dell’algoritmo è $n\cdot O(n+m) = O(n^2 + m \cdot n) = O\left( n^2 + \frac{n^2}{2} \cdot n \right) = O(n^3)$
