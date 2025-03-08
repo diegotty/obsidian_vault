@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T10:22
+updated: 2025-03-08T10:35
 completed: false
 ---
 # colorazione di grafi
@@ -86,15 +86,27 @@ per questo grafo, il vettore delle componenti è questo:
 ![[Pasted image 20250308101940.png]]
 
 >[!info] algoritmo per calcolo del vettore delle componenti
-```python
-def Componenti(G):
-	c = [0] * len(G)
-	c = 0
-	for x in range(len(G)):
-		if C[x] == 0:
-			c += 1
-			DFSr(x, G, C, c)
-	return C
+>```python
+>def Componenti(G):
+>	c = [0] * len(G)
+>	c = 0
+>	for x in range(len(G)):
+>		if C[x] == 0:
+>			c += 1
+>			DFSr(x, G, C, c)
+>	return C
+>
+>def DFSr(x, G, C, c):
+>	C[x]= c
+>	for y in G[x]:
+>		if C[y] == 0:
+>			DFSr(y, G, C, c)
+>```
+>la complessità della procedura è $O(n+m)$,  perchè pur facendo più volte una visita, ogni visita verrà fatta su parti diverse del grafo !
+# componente fortemente connessa
+la **componente fortemente connessa** di un grafo diretto è un sottografo composto da un insieme massimale di nodi connessi da cammini
+>[!warning] un grafo diretto si dice fortemente connesso se ha **una sola** componente
 
-def DFSr(x, G, C, )
-```
+il vettore $C$ delle componenti fortemente connesse di un grafo ha la stessa struttura del vettore per le componenti connesse di un grafo
+>[!example] esempio
+![[Pasted image 20250308103454.png]]
