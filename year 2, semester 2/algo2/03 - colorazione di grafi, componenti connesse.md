@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T10:35
+updated: 2025-03-08T10:52
 completed: false
 ---
 # colorazione di grafi
@@ -110,3 +110,17 @@ la **componente fortemente connessa** di un grafo diretto è un sottografo compo
 il vettore $C$ delle componenti fortemente connesse di un grafo ha la stessa struttura del vettore per le componenti connesse di un grafo
 >[!example] esempio
 ![[Pasted image 20250308103454.png]]
+![[Pasted image 20250308103735.png]]
+
+si nota come l’algoritmo per trovare le componenti connesse non funziona nel caso di componenti fortemente connesse (basta pensare ad una catena, $0 \to1 \to 2 \to 3 \to 4$)
+- questo perchè non basta avere un cammino che da $x$ mi porta ad $y$, ma deve esistere anche un cammino che da $y$ porta ad $x$
+## algoritmo per componenti fortemente connesse
+dato un grafo diretto $G$, per trovare i nodi della componente fortemente connessa che contiene $u$, strutturiamo l’algoritmo in questo modo:
+1. calcola l’insieme $A$ dei nodi di $G$ raggiungibili da $u$
+2. calcola l’insieme $A$ dei nodi di $G$ che portano a$u$
+3. restituisci l’intersezione dei due insiemi $A$ e $B$
+
+calcoliamo ora la complessità temporale:
+- il passo 1 richiede $O(n+m)$, in quanto è una semplice visita DFS da $u$
+- 2
+- il passo 3 costa $O(n)$, in quanto lo facciamo in questo modo: $A$ e $B$ sono due vettori con tanti elementi quanti sono i nodi in $G$. se in $G[i]$ troviamo 
