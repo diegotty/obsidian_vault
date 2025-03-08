@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-07T23:10
+updated: 2025-03-08T09:51
 completed: false
 ---
 # colorazione di grafi
@@ -35,4 +35,5 @@ usiamo un algoritmo per 2-colorare il grafo, che per ipotesi non ha cicli dispar
 
 >[!dimostrazione] prova di correttezza dell’algoritmo di sopra
 siano $x$ e $y$ due nodi adiacenti in $G$. consideriamo i due possibili casi e facciamo vedere che in entrambi i casi i due nodi al termine dell’algoritmo avranno colori opposti:
-- l’alco $(x,y)$ viene attraversato durante la visita
+- l’arco $(x,y)$ viene attraversato durante la visita: in questo caso banalmente i due nodi hanno colori distinti
+- l’arco $(x,y)$ non viene attraversato durante la visita: 
