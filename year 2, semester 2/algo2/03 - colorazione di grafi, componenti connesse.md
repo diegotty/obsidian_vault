@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T11:21
+updated: 2025-03-08T11:31
 completed: false
 ---
 # colorazione di grafi
@@ -158,17 +158,22 @@ possiamo quindi trovare l’insieme $B$, nel passo 2, cercando i nodi raggiungib
 l’algoritmo ha complessità $O(n+m)$, in quanto calcolare il grafo traposto di $G$ costa $O(n+m)$, e non va a superare la complessità delle 2 visite.
 
 >[!info] algoritmo per il calcolo del **vettore CF** delle componenti fortemente connesse
-```python
-def compFC(G):
-	FC = [0] * len(G)
-	c = 0
-	for i in range(len(G)):
-		if FC[i] == 0:
-			E = ComponenteFC(i, G)
-			c += 1
-			for x in E:
-				FC[x] = c
-	return FC
-```
+>```python
+>def compFC(G):
+>	FC = [0] * len(G)
+>	c = 0
+>	for i in range(len(G)):
+>		if FC[i] == 0:
+>			E = ComponenteFC(i, G)
+>			c += 1
+>			for x in E:
+>				FC[x] = c
+>	return FC
+>```
+>la complessità dell’algoritmo è $n\cdot O(n+m) = O(n^2 + m \cdot n) = O\left( n^2 + \frac{n^2}{2} \cdot n \right) = O(n^3)$
 
-la complessità dell’algoritmo è $n\cdot O(n+m) = O(n^2 + m \cdot n) = O\left( n^2 + \frac{n^2}{2} \cdot n \right) = O(n^3)$
+>[!example] caso pessimo
+>consideriamo un grafo diretto $G$ avente un arco da $u$ a $v$ per ogni coppia di nodi ($u$, $v$) con $u \leq v$
+questo grafo ha $\Theta(n^2)$ archi e $n$ componenti fortemente connesse(ognuna da un singolo nodo)
+
+>[!warning] per il calcolo del vettore CF esistono diversi algoritmi non banali che lavorano in tempo $O(n+m)$ !! (algoritmo di tarjan, o kosaraju)
