@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-08T10:06
+updated: 2025-03-08T10:22
 completed: false
 ---
 # colorazione di grafi
@@ -68,4 +68,33 @@ siano $x$ e $y$ due nodi adiacenti in $G$. consideriamo i due possibili casi e f
 >				return False
 >		elif Colore[y] == Colore[x]:
 >			return False	
+>	return True
 >```
+la magia della ricorsione
+la complessità dell’algoritmo per testare se un grafo è bicolorabile è quella di una semplice visita del grafo connesso da colorare !! quindi $O(n+m)=O(m)$(in quanto in un grafo connesso $m\geq n-1$)
+# componente connessa
+una **componente connessa** (anche chiamata semplicemente **componente**) di un grafo (**indiretto**), è un sottografo composto da un insieme massimale di nodi connessi da cammini
+>[!warning] un grafo si dice connessoo se ha **solo una** componente connessa
+
+per calcolare il vettore $C$ delle componenti connesse di un grafo $G$, $C$ dovrà avere tanti elementi quanti sono i nodi del grafo, e 
+$$
+C[u]=C[v] \iff  u \text{ e } v \text{ sono della stessa componente connessa}
+$$  
+>[!example] esempio
+![[Pasted image 20250308101529.png]]
+per questo grafo, il vettore delle componenti è questo:
+![[Pasted image 20250308101940.png]]
+
+>[!info] algoritmo per calcolo del vettore delle componenti
+```python
+def Componenti(G):
+	c = [0] * len(G)
+	c = 0
+	for x in range(len(G)):
+		if C[x] == 0:
+			c += 1
+			DFSr(x, G, C, c)
+	return C
+
+def DFSr(x, G, C, )
+```
