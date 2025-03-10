@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-10T09:55
+updated: 2025-03-10T10:10
 completed: false
 ---
 >[!warning] esattamente ciò che abbiamo fatto a [[26 - lock binario, lock a 2 fasi#ordinamento topologico|bd1]] ! 
@@ -15,6 +15,40 @@ notiamo quindi che un grafo diretto può catturare relazioni di propedeuticità,
 ![[Pasted image 20250310095216.png]]
 
 un grafo diretto può avere da $0$ fino ad $n!$ ordinamenti topologici, ma un algoritmo **esaustivo** (che genera sistematicamente i differenti ordinamenti dei nodi del grafo, e per ciascuno testa se è topologico) ha complessità $\Omega (n!)$, ed è quindi improponibile.
-usiamo quindi un’altra strada per testare se il lavoro è completabile
+usiamo quindi un’altra strada per testare se il lavoro è completabile !
 ## DAG
 **DAG**: direct acyclic graph (grafo diretto aciclico)
+>[!warning] si nota come affinchè $G$ possa avere un ordinamento topologico, è **necessario** che sia un DAG:
+>la presenza di un ciclo nel grafo implica che nessuno dei nodi possa comparire nell’ordine giusto, infatti ognuno di essi richiede di apparire, nell’ordinamento, alla destra di chi lo precede
+
+quindi:
+$$
+G \text{ ha un ordinamento topologico} \implies G \text{ è un DAG}
+$$
+mostreremo ora che la condizione che il grafo sia una DAG è anche **sufficiente** perchè l’ordinamento topologico esista. ci basta in fatti notare che:
+**un DAG ha sempre un nodo sorgente**(cioè un nodo in cui non entrano archi)
+
+grazie a questa proprietà, possiamo trovare un ordinamento topologico in questo modo:
+- inizio la sequenza dei nodi una una sorgente
+- cancello dal DAG quel nodo sorgente e le frecce che partono da lui. in questo modo ottengo un nuovo DAG
+- itero questo ragionamento finchè non ho sistemato in ordine lineare tutti i nodi
+>[!info] algoritmo per un sort topologico
+>```python
+>def sortTop(G):
+>	n = len(G)
+>	gradoEnt = [0]*n
+>	for i in range(n):
+>		for j in G[i];
+>			gradoEnt[j] += 1
+>	sorgenti = [i for i in range(len(G)) if gradoEnt[i] == 0]
+>	ST = []
+>	while sorgenti:
+>		u = sorgenti.pop()
+>		ST.append(u)
+>		for v in G[u]:
+>			gradoEnt[v] -=1
+>			if gradoEnt[v] == 0:
+>				sorgenti.append(v)	
+>	if len(ST) == len(G): return ST
+>	return []
+>```
