@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-10T10:10
+updated: 2025-03-10T10:14
 completed: false
 ---
 >[!warning] esattamente ciò che abbiamo fatto a [[26 - lock binario, lock a 2 fasi#ordinamento topologico|bd1]] ! 
@@ -36,7 +36,7 @@ grazie a questa proprietà, possiamo trovare un ordinamento topologico in questo
 >```python
 >def sortTop(G):
 >	n = len(G)
->	gradoEnt = [0]*n
+>	gradoEnt = [0]*n ##conto quanti archi entranti ha ogni nodo
 >	for i in range(n):
 >		for j in G[i];
 >			gradoEnt[j] += 1
@@ -52,3 +52,7 @@ grazie a questa proprietà, possiamo trovare un ordinamento topologico in questo
 >	if len(ST) == len(G): return ST
 >	return []
 >```
+il costo dell’algoritmo è $O(n+m)$, in quanto:
+>- inizializzare il vettore dei gradi entranti costa $O(n+m)$
+>- inizializzare l’insieme delle sorgenti costa $O(n)$ 
+ >- il while viene iterato $O(n)$ volte,  e il for-loop al suo interno verrà eseguito al massimo $m$ volte
