@@ -1,9 +1,14 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T09:39
+updated: 2025-03-11T09:47
 completed: false
 ---
+>[!index]
+>- [ordinamento topologico](#ordinamento%20topologico)
+>	- [DAG](#DAG)
+>	- [sort topologico con DFS](#sort%20topologico%20con%20DFS)
+
 >[!warning] esattamente ciò che abbiamo fatto a [[26 - lock binario, lock a 2 fasi#ordinamento topologico|bd1]] ! 
 
 >[!example] esempio problema
@@ -75,8 +80,18 @@ consideriamo due nodi $a$ e $b$, e un arco tra di loro $(a,b)$. valutiamo i due 
 >		if visitati[u] == 0:
 >			DFSr(u, G, visitati, lista)
 >	lista.reverse() #O(n)
+>	return lista
+>def DFSr(u, G, visitati, lista):
+>	visitati[u] = 1
+>	for v in G[u]:
+>		if visitati[v] == 0:
+>			DFSr(v, G, visitati, lista)
+>	lista.append(u)
 >```
-la complessità dell’algoritmo è $O(n+m) + O(n) = O(n+m)$
+>la complessità dell’algoritmo è $O(n+m) + O(n) = O(n+m)$
+
+>[!info]- perche non appendere in testa ?
+>il costo dell’append in testa costa proporzionalmente alla dimensione della lista, quindi l’append dell’ultimo elemento costa $O(n)$(sommatoria di gauss, arriva ad essere $\Theta\left( \frac{n(n-1)}{2}\right) = \Theta (n^2)$. appendere in coda invece costa sempre $O(1)$, il reverse costa $O(n)$
 
 >[!example] esempio di sort topologico con DFS
 ![[Pasted image 20250311093815.png]]
