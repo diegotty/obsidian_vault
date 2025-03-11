@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-10T10:14
+updated: 2025-03-11T09:39
 completed: false
 ---
 >[!warning] esattamente ciò che abbiamo fatto a [[26 - lock binario, lock a 2 fasi#ordinamento topologico|bd1]] ! 
@@ -56,3 +56,29 @@ il costo dell’algoritmo è $O(n+m)$, in quanto:
 >- inizializzare il vettore dei gradi entranti costa $O(n+m)$
 >- inizializzare l’insieme delle sorgenti costa $O(n)$ 
  >- il while viene iterato $O(n)$ volte,  e il for-loop al suo interno verrà eseguito al massimo $m$ volte
+
+## sort topologico con DFS
+esiste anche un algoritmo alternativo, basato sulla visita DFS del DAG, che si basa sulla seguente logica:
+- effettua una visita DFS del DAG a partire dal nodo 0
+- man mano **che termina** la visita dei vari nodi, inseriscili in una lista
+- restituisci come ordinamento dei nodi, il **reverse** della lista
+come fa questa logica a funzionare ?
+consideriamo due nodi $a$ e $b$, e un arco tra di loro $(a,b)$. valutiamo i due casi possibili, e noteremo che in entrambi i casi, prima di effettuare il reverse, $b$ si troverà prima di $a$ 
+1. l’arco $(a,b)$ viene attraversato durante la visita: in questo caso, banalmente, la visita di $b$ finirà prima della visita di $a$ (se non finisce la visita di $b$, non si può risalire e quindi finire la visita di $a$)
+2. l’arco $(a,b)$ non viene attraversato durante la visita: ciò vuol dire che durante la visita, il nodo $b$ è stato già visitato e la sua visita è anche già terminata (in quanto non esiste un arco $(b,a)$, in quanto altrimenti si formerebbe un ciclo (impossible per ipotesi DAG)). quindi anche in questo caso $b$ apparirà nella lista prima di $a$
+>[!info] algoritmo alternativo basato sulla visita DFS del DAG
+>```python
+>def sortTop(G):
+>	visitati = [0]*len(G)
+>	lista = []
+>	for u in range(len(G)): #O(n+m)
+>		if visitati[u] == 0:
+>			DFSr(u, G, visitati, lista)
+>	lista.reverse() #O(n)
+>```
+la complessità dell’algoritmo è $O(n+m) + O(n) = O(n+m)$
+
+>[!example] esempio di sort topologico con DFS
+![[Pasted image 20250311093815.png]]
+ordine di fine visita: [4,3,2,1,5,0,6]
+sort topologico: [6,0,5,1,2,3,4]
