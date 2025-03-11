@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T16:02
+updated: 2025-03-11T16:17
 completed: true
 ---
 # Internet
@@ -89,17 +89,7 @@ $R=\text{rate di trasmissione (bps)}$
 $L= \text{lunghezza del pacchetto (bit)}$
 $a = \text{tasso medio di arrivo dei pacchetti (pkt/s)}$
 $$
-\frac{L \cdot a}{R} = \text{intensità di traffico}
-$$
-- $L \cdot a/R \sim 0$ → poco ritardo
-- $L \cdot a/R \rightarrow 1$ → il ritardo si fa consistente
-- $L \cdot a/R>1$ → più “lavoro” in arrivo di quanto possa essere effettivamente svolto
->[!info]- grafo
-![[Pasted image 20250306102621.png]]
-### ritardo di trasmissione
-tempo richiesto per trasmettere tutti i bit del pacchetto **sul collegamento**. (quindi delta tra primo bit **fatto usicre** dal nodo e ultimo bit **fatto uscire** dal nodo)
-questo ritardo si può stimare con una formula, in quanto dipende dal rate del collegamento e dalla lunghezza del pacchetto:
-$$
+
 \text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
 $$
 ### ritardo di propagazione
@@ -157,8 +147,24 @@ damn !!!!! crazy !!! collegamento transoceanico too !!
 
 >[!info] esercizio
 >- quanto tempo impiega un pachetto di 1000 byte per propagarsi su un collegamento di 2500km, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di 2 mbps
->-  ritardo di propagazione: $T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$ 
-> $T_{tr} = \frac{L}{r} = \frac{8000b}{}$
-
+>-  ritardo di propagazione: $$T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$$ 
+> $$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}= 4 \cdot 10^{-3} = 4ms$$
 >- questo ritardo dipende dall lunghezza del pacchetto ?
 >- calcolare il ritardo di trasmissione
+
+
+>[!question] esercizio 2
+>si consideri un host A che trasmette pacchetti, ognuno di lunghezza $L=3000 bit$, su un canale di trasmissione con rate $10Mbps$, verso un host B all’altro estremo del link. Si supponga inoltre il ritardo di propagazione pari a $0,2ms$
+>1. quanto tempo impiega l’host A a trasmettere un pacchetto ?
+>2. dopo quanto tempo l’host B avrà ricevuto l’intero pacchetto ?
+>3. quando l’host A ha terminato di trasmetere un pacchetto, l’host B ha già ricevuto parte di esso ?
+
+>[!info] soluzione
+$L = 3000b$
+$R = 10Mbps$
+$T_{pr} = 0,2ms$
+>1. chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
+$$
+T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = 3 \cdot 10^4 
+$$
+>1. chiede il ritardo totale di un pacchetto ($d_{a}$)
