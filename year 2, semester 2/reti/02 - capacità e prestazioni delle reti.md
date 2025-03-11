@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T16:17
+updated: 2025-03-11T17:10
 completed: true
 ---
 # Internet
@@ -165,6 +165,19 @@ $R = 10Mbps$
 $T_{pr} = 0,2ms$
 >1. chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
 $$
-T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = 3 \cdot 10^4 
+T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = \frac{3 \cdot 10^3}{10 \cdot 10^6} = 0,3ms
 $$
->1. chiede il ritardo totale di un pacchetto ($d_{a}$)
+>2. chiede il ritardo totale di un pacchetto ($d_{a}$)
+>$$
+0,3 + 0,2 = 0,5ms
+>$$
+3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega 0,3 a immettere **tutto** il pacchetto, e 
+
+prodotto rate*ritardo:
+$$
+10Mpbs \cdot 0,5ms = 10 \cdot 10^6 \cdot 5 \cdot 10^{-3}= (10 \cdot 0,2 ) \cdot 10^3 = 
+$$
+
+
+
+xke impiegato è una classe: ha vita propria ed esiste indipendentemente dalle altre classi
