@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T17:27
+updated: 2025-03-11T17:42
 completed: true
 ---
 # Internet
@@ -146,15 +146,20 @@ damn !!!!! crazy !!! collegamento transoceanico too !!
 >- \\question come fa a raggruppare le network ?
 
 >[!question] esercizio 1
->- quanto tempo impiega un pachetto di $1000byte$ per propagarsi su un collegamento di $2500km$, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di $2mbps$
+>1. quanto tempo impiega un pachetto di $1000byte$ per propagarsi su un collegamento di $2500km$, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di $2mbps$
+>2. questo ritardo dipende dalla lunghezza del pacchetto ?
+>3. calcolare il ritardo di trasmissione
+>
 >$L=1000byte$
 >$R=2mbps$
 >$T_{pr}=2,5 \cdot 10^8 \text{m/s}$
 >>[!done]- soluzione
->>-  ritardo di propagazione: $$T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$$ 
->> $$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}= 4 \cdot 10^{-3} = 4ms$$
->>- questo ritardo dipende dall lunghezza del pacchetto ?
->>- calcolare il ritardo di trasmissione
+>>1.
+ritardo di propagazione: $$T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$$ 
+>>2.
+il ritardo non dipende dall lunghezza del pacchetto
+>>3.
+$$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}= 4 \cdot 10^{-3} = 4ms$$
 
 
 >[!question] esercizio 2
@@ -165,9 +170,8 @@ damn !!!!! crazy !!! collegamento transoceanico too !!
 >$L = 3000b$
 >$R = 10Mbps$
 >$T_{pr} = 0,2ms$
-
 >>[!done]- soluzione
->>1chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
+>>4. chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
 >>$$
 >T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = \frac{3 \cdot 10^3}{10 \cdot 10^6} = 0,3ms
 >>$$
@@ -175,7 +179,7 @@ damn !!!!! crazy !!! collegamento transoceanico too !!
 >>$$
 >0,3 + 0,2 = 0,5ms
 >>$$
->>3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega 0,3 a immettere **tutto** il pacchetto, e 
+>>3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega $0,3 \text{m/s}$ a immettere **tutto** il pacchetto. il tempo di immisione del primo bit sarà tipo un microsecondo e quindi sarà sicuramente arrivato prima dell’immissione dell’ultimo byte
 
 prodotto rate*ritardo:
 $$
