@@ -1086,12 +1086,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/introduzione.md",
+                    "file": "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "introduzione"
+                  "title": "02 - capacità e prestazioni delle reti"
                 }
               }
             ],
@@ -1152,8 +1152,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1253,7 +1252,7 @@
         }
       },
       "active": "ad5c6e6d744689d4",
-      "mtime": "2025-03-05T10:58:14+01:00"
+      "mtime": "2025-03-11T17:16:03+01:00"
     },
     "os2": {
       "main": {

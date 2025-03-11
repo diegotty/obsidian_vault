@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T17:10
+updated: 2025-03-11T17:27
 completed: true
 ---
 # Internet
@@ -145,12 +145,16 @@ l’output di `tracert` presenta 6 colonne:
 damn !!!!! crazy !!! collegamento transoceanico too !!
 >- \\question come fa a raggruppare le network ?
 
->[!info] esercizio
->- quanto tempo impiega un pachetto di 1000 byte per propagarsi su un collegamento di 2500km, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di 2 mbps
->-  ritardo di propagazione: $$T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$$ 
-> $$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}= 4 \cdot 10^{-3} = 4ms$$
->- questo ritardo dipende dall lunghezza del pacchetto ?
->- calcolare il ritardo di trasmissione
+>[!question] esercizio 1
+>- quanto tempo impiega un pachetto di $1000byte$ per propagarsi su un collegamento di $2500km$, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di $2mbps$
+>$L=1000byte$
+>$R=2mbps$
+>$T_{pr}=2,5 \cdot 10^8 \text{m/s}$
+>>[!done]- soluzione
+>>-  ritardo di propagazione: $$T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$$ 
+>> $$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}= 4 \cdot 10^{-3} = 4ms$$
+>>- questo ritardo dipende dall lunghezza del pacchetto ?
+>>- calcolare il ritardo di trasmissione
 
 
 >[!question] esercizio 2
@@ -158,20 +162,20 @@ damn !!!!! crazy !!! collegamento transoceanico too !!
 >1. quanto tempo impiega l’host A a trasmettere un pacchetto ?
 >2. dopo quanto tempo l’host B avrà ricevuto l’intero pacchetto ?
 >3. quando l’host A ha terminato di trasmetere un pacchetto, l’host B ha già ricevuto parte di esso ?
+>$L = 3000b$
+>$R = 10Mbps$
+>$T_{pr} = 0,2ms$
 
->[!info] soluzione
-$L = 3000b$
-$R = 10Mbps$
-$T_{pr} = 0,2ms$
->1. chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
-$$
-T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = \frac{3 \cdot 10^3}{10 \cdot 10^6} = 0,3ms
-$$
->2. chiede il ritardo totale di un pacchetto ($d_{a}$)
->$$
-0,3 + 0,2 = 0,5ms
->$$
-3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega 0,3 a immettere **tutto** il pacchetto, e 
+>>[!done]- soluzione
+>>1chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
+>>$$
+>T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = \frac{3 \cdot 10^3}{10 \cdot 10^6} = 0,3ms
+>>$$
+>>2. chiede il ritardo totale di un pacchetto ($d_{a}$)
+>>$$
+>0,3 + 0,2 = 0,5ms
+>>$$
+>>3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega 0,3 a immettere **tutto** il pacchetto, e 
 
 prodotto rate*ritardo:
 $$
