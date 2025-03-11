@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T14:20
+updated: 2025-03-11T16:02
 completed: true
 ---
 # Internet
@@ -154,3 +154,11 @@ l’output di `tracert` presenta 6 colonne:
 ![[Pasted image 20250306103620.png]]
 damn !!!!! crazy !!! collegamento transoceanico too !!
 >- \\question come fa a raggruppare le network ?
+
+>[!info] esercizio
+>- quanto tempo impiega un pachetto di 1000 byte per propagarsi su un collegamento di 2500km, con velocità di propagazione pari a $2,5 \cdot 10^8 \text{m/s}$ e rate di 2 mbps
+>-  ritardo di propagazione: $T_{pr} = \frac{d}{v} = \frac{2500}{2,5 \cdot 10^8} = \frac{2,5 \cdot 10^3}{2,5 \cdot 10^8} = 10^{-2}s$ 
+> $T_{tr} = \frac{L}{r} = \frac{8000b}{}$
+
+>- questo ritardo dipende dall lunghezza del pacchetto ?
+>- calcolare il ritardo di trasmissione
