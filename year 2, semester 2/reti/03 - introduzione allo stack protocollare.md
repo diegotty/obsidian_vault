@@ -1,11 +1,14 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T17:49
+updated: 2025-03-12T19:17
 completed: false
 ---
 # introduzione allo stack protocollare
-**protocollo**:
+
+abbiamo una panoriamica della struttura e delle varie prestazioni di Internet: sappiamo che è costituita da numerose reti di varie dimensioni, interconnesse tramite opportuni dispositivi di comunicazione. tuttavia, per poter comunicare non è sufficiente assicurare questi collegamenti, ma è necessario utilizzare sia l’hardware che del software !
+>[!example] esempio di comunicazione
+![[Pasted image 20250312191705.png]]
 ## strutturazione a livelli
 la strutturazion
 
