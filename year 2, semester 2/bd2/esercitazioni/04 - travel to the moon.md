@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T16:40
+updated: 2025-03-12T16:43
 completed: false
 ---
 # raffinazione
@@ -33,4 +33,4 @@ completed: false
 			2. numero d’ordine del giorno(rispetto alla data d’inizio della crociera)
 5. posti da vedere
 	1. nome
-	2. fascia oraria
+	2. orari di apertura (una mappa che associa ad ogni giorno della settimana una fascia oraria, definita in termini di una coppia di orari)
