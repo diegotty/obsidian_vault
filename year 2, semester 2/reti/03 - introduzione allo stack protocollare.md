@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T19:39
+updated: 2025-03-12T20:01
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -36,15 +36,16 @@ tatoo it on your forhead
 è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:
 - TCP, UDP
 ## livello 3: rete
-è il livello che si occupa dell’instradamento dei segmenti dall’origine alla destinazione (rotte end-to-end)
-
-rete: trova le rotte(end-to-end), fa si che i pacchetti (datagrammi) seguano il percorso corretto per arrivare a destinazione 
-
-link: si occupa della trasmissione della singola tratta (hop to hop)
-
-fisico: trasferimento dei singoli bit su lungo un canale di comunicazione
-
-essendo le porte dello swtich omogenee, c’è solo un protocollo (una tecnologia )
+è il livello che si occupa dell’instradamento dei segmenti dall’origine alla destinazione (rotte end-to-end). fa si che i pacchetti seguano il percorso corretto per arrivare a destinazione !
+## livello 2: link
+è il livello che si occupa della trasmissione dei pacchetti nella singola tratta (hop to hop): da un nodo a quello successivo sul percorso. 
+## livello 1: fisico
+è il livello che gestisce il trasferimento dei singoli bit su lungo un canale di comunicazione
+>[!info] comunicazione in una internet
+![[Pasted image 20250312195732.png]]
+>- grazie al layering, i sistemi implementano solo i livelli necessari, riducendo la complessità !
+>- nel router, ci possono essere fino a $n$ livelli fisico e livello collegamento, dove $n$ è il numero di link a cui è collgato (questo perchè possono avere protocolli di collegamento diversi)
+>- invece essendo le porte dello swtich omogenee, c’è solo un protocollo (una tecnologia )
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
 
