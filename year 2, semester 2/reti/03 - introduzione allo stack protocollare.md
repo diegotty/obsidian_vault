@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T23:01
+updated: 2025-03-12T23:16
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -22,6 +22,7 @@ un **protocollo** definisce le regole che il mittente, destinatario e tutti i si
 oltre a consentire la suddivisione di un compito complesso in più compiti semplici, la strutturazione a livelli permette di avere livelli indipendenti tra loro (**modularizzazione**).
 - in particolare, possiamo considerare un **modulo** come una black box (con oppurtuni ingressi e uscite), senza preoccuparci delle modalità con cui i dati vengono elaborati per avere un output. in questo modo **un livello usa servizi dal livello inferiore e offe servizi al livello superiore**, indipendentemente da come sia implementato
 - inoltre, se due macchine forniscono lo stesso output dato il medesimo input, possono essere considerate equivalenti e possono quindi essere acquistate da fornitori diversi (se equivalenti)
+	- e ciascun costruttre puo ado
 # stack protocollare TCP/IP
 **TCP/IP** è una famiglia di protocolli attualmente utilizzata in Internet, costruita come una **gerarchia di protocolli** (ogni livello si basa sui servizi forniti dai livelli inferiori) costituita da moduli interagenti, ciascuno dei quali fornisce funzionalità specifiche
 - si chiama così perchè TCP e IP sono i 2 protocolli principali dello stack
@@ -60,8 +61,34 @@ tatoo it on your forhead
 >- la comunicazione reale, che attraversa quindi ogni livello dello stack protocollare, è disegnata in blu
 
 ## incapsulamento e decapsulamento
-durante la comunicazione, host mittente effettua **l’incapsulamento**: prende il pacchetto dal livello superiore, lo considera come payload e aggiunge un header.
+durante la comunicazione, l’host mittente effettua **l’incapsulamento**: prende il pacchetto dal livello superiore, lo considera come payload e aggiunge un header.
+l’host destinatario invece effettua il decapsulamento
+>[!tip] il router effettua sia incapsulamento che decapsulamento
+>perchè è collegato a due link (??) quindi decapsula quando riceve il pacchetto, per poi incapsularlo (presumibilmente con informazioni diverse) e mandarlo al prossimo link
 
+in particolare, i pacchetti cambiano nome ad ogni livello in cui si trovano (in quanto vengono aggiunge informazioni ad ogni livello). abbiamo:
+- livello 5: messaggio (nessun header)
+- livello 4: segmento/datagramma utente (aggiunta di header a livello di trasporto)
+- livello 3: datagramma (aggiunta di header a livello di rete)
+- livello 2: frame (aggiunta di header a livello di collegamento)
+- livello 1: bit (roba seria)
+>[!example]- esempio
+![[Pasted image 20250312230642.png]]
+
+### multiplexing e demultiplexing
+dato che lo stack TCP/IP prevede più protocolli nello stesso livello, è necessario:
+- eseguire **multiplexing** alla sorgente: un protocollo può dover incapsulare, uno alla volta, pacchetti ottenuti da più protocolli del livello superiore
+- eseguire **demultiplexing** alla destinazione: un protocollo può dover decapsulare e consegnare pacchetti ottenuti da protocolli diversi dal livello inferiore, da consegnare al livello superiore
+>[!info] è quindi necessario un campo nel proprio header per identificare a quale protocollo appartengano i pacchetti incapsulati
+![[Pasted image 20250312231210.png]]
+
+>[!figure] img
+![[Pasted image 20250312231119.png]]
+
+## indirizzamento nel modello TCP/IP
+dato che il modello TCP/IP prevede una comunicazione logica tra coppie di livelli, è necessario avere un indirizzo sorgente ed un indirizzo destinazione ad ogni livello (ad ogni livello, devo dire a chi devo mandarlo: devo usare un indirizzo del livello pari ! in quanto, per modularità, i livelli sono indipendenti e la comunicazione è logica)
+>[!info] immagine riassuntiva
+![[Pasted image 20250312231514.png]]
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
 
