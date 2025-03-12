@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-11T17:42
+updated: 2025-03-11T17:48
 completed: true
 ---
 # Internet
@@ -171,21 +171,22 @@ $$T_{tr} = \frac{L}{r} = \frac{8000b}{2 \cdot 10^6s}= \frac{4 \cdot 10^3}{10^6}=
 >$R = 10Mbps$
 >$T_{pr} = 0,2ms$
 >>[!done]- soluzione
->>4. chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
+>>1.
+chiede il ritardo di trasmissione(che è parte del ritardo di accodamento): 
 >>$$
 >T_{tr}= \frac{L}{R} = \frac{3000b}{10Mbps} = \frac{3000}{10 \cdot 10^6} = \frac{3 \cdot 10^3}{10 \cdot 10^6} = 0,3ms
 >>$$
->>2. chiede il ritardo totale di un pacchetto ($d_{a}$)
+>>2.
+>>chiede il ritardo totale di un pacchetto ($d_{a}$)
 >>$$
 >0,3 + 0,2 = 0,5ms
 >>$$
->>3. si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega $0,3 \text{m/s}$ a immettere **tutto** il pacchetto. il tempo di immisione del primo bit sarà tipo un microsecondo e quindi sarà sicuramente arrivato prima dell’immissione dell’ultimo byte
+>>3.
+si, perchè il tempo di propagazione è minore del tempo di trasmissione (host A impiega $0,3 \text{m/s}$ a immettere **tutto** il pacchetto. il tempo di immisione del primo bit sarà tipo un microsecondo e quindi sarà sicuramente arrivato prima dell’immissione dell’ultimo byte
 
-prodotto rate*ritardo:
-$$
+>[!info] prodotto rate*ritardo
+>$$
 10Mpbs \cdot 0,5ms = 10 \cdot 10^6 \cdot 5 \cdot 10^{-3}= (10 \cdot 0,2 ) \cdot 10^3 = 
 $$
 
 
-
-xke impiegato è una classe: ha vita propria ed esiste indipendentemente dalle altre classi
