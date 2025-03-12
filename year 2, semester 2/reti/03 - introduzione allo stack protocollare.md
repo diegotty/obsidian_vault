@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T20:08
+updated: 2025-03-12T23:01
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -48,7 +48,20 @@ tatoo it on your forhead
 >- invece essendo le porte dello swtich omogenee, c’è solo un protocollo (una tecnologia )
 
 >[!warning] servizi e protocolli sono concetti ben distinti !
-> - un servizio è un insieme di primitive che uno strato offre a quello superiore
+> - un servizio è un insieme di primitive che uno strato offre a quello superiore (non dice nulla su come sono implementate le operazioni che offre il livello)
+>- un protocollo è un insieme di regole che controllano il formato e il significato dei pacchetti, o messaggi scambiati tra le entità pari all’interno di uno strato
+![[Pasted image 20250312224953.png]]
+
+>[!info] esempio più dettagliato
+![[Pasted image 20250312225518.png]]
+>- **interfacce**: definiscono le operazioni elementari e i servizi che lo strato inferiore rende disponibili a quello soprastante
+>- i processi di ogni stato (o almeno quelli più alti), modellano la loro comunicazione come se fosse “orizzontale”: avranno funzioni del tipo `sendToOtherSide`, `getFromOtherSide` (quindi non si preoccupano del resto dello stack sottostante, ma usano i serivizi dei livelli inferiori). queste procedure di alto livello comunicano, in verità, mediante strati inferiori
+>- la comunicazione virtuale, cioè la comunicazione modellata da ogni strato, è disegnata in rosso
+>- la comunicazione reale, che attraversa quindi ogni livello dello stack protocollare, è disegnata in blu
+
+## incapsulamento e decapsulamento
+durante la comunicazione, host mittente effettua **l’incapsulamento**: prende il pacchetto dal livello superiore, lo considera come payload e aggiunge un header.
+
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
 
@@ -58,10 +71,4 @@ il pacchetto ha un nome diverso ad ogni livello perchè ad ogni livello aggiungo
 con il layering possiamo gestire tecnologie diverse (wireless, con fili) senza dover reimplementare tutto
 
 il modello OSI non si è diffuso. non ha messo abbastanza tiktok virali
-
-
 # modello TCP/IP
-
-
-	
-	
