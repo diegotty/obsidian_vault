@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T19:31
+updated: 2025-03-12T19:39
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -22,16 +22,21 @@ un **protocollo** definisce le regole che il mittente, destinatario e tutti i si
 oltre a consentire la suddivisione di un compito complesso in più compiti semplici, la strutturazione a livelli permette di avere livelli indipendenti tra loro (**modularizzazione**).
 - in particolare, possiamo considerare un **modulo** come una black box (con oppurtuni ingressi e uscite), senza preoccuparci delle modalità con cui i dati vengono elaborati per avere un output. in questo modo **un livello usa servizi dal livello inferiore e offe servizi al livello superiore**, indipendentemente da come sia implementato
 - inoltre, se due macchine forniscono lo stesso output dato il medesimo input, possono essere considerate equivalenti e possono quindi essere acquistate da fornitori diversi (se equivalenti)
-## stack protocollare TCP/IP
+# stack protocollare TCP/IP
+**TCP/IP** è una famiglia di protocolli attualmente utilizzata in Internet, costruita come una **gerarchia di protocolli** (ogni livello si basa sui servizi forniti dai livelli inferiori) costituita da moduli interagenti, ciascuno dei quali fornisce funzionalità specifiche
+- si chiama così perchè TCP e IP sono i 2 protocolli principali dello stack
+>[!info] stack TCP/IP
+![[Pasted image 20250312193517.png]]
+tatoo it on your forhead
 
-slide 9
-
-TCP e IP: 2 protocolli principali di tutto lo stack
-- gerarchia di protocolli
-
-web: applicazione. http: protocollo che regola la comunicazione
-
-trasporto> trasferisce i messaggi da un client ad un server
+## livello 5: applicazione
+è il livello in cui si interagisce con le applicazioni di rete, attraverso vari protocolli che regolano la comunicazione (tra utente e applicazione ?): 
+- HTTP, SMTP, FTP, DNS, ….
+## livello 4: trasporto
+è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:
+- TCP, UDP
+## livello 3: rete
+è il livello che si occupa dell’instradamento dei segmenti dall’origine alla destinazione (rotte end-to-end)
 
 rete: trova le rotte(end-to-end), fa si che i pacchetti (datagrammi) seguano il percorso corretto per arrivare a destinazione 
 
