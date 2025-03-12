@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T23:16
+updated: 2025-03-12T23:31
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -20,9 +20,14 @@ un **protocollo** definisce le regole che il mittente, destinatario e tutti i si
 - potrebbe bastare un solo protocollo, o potrebbe essere necessario dividere i compiti in livelli, dove in ogni livello è richiesto un protocollo: si parla di **layering di protocolli**
 ## strutturazione a livelli
 oltre a consentire la suddivisione di un compito complesso in più compiti semplici, la strutturazione a livelli permette di avere livelli indipendenti tra loro (**modularizzazione**).
+**vantaggi**:
 - in particolare, possiamo considerare un **modulo** come una black box (con oppurtuni ingressi e uscite), senza preoccuparci delle modalità con cui i dati vengono elaborati per avere un output. in questo modo **un livello usa servizi dal livello inferiore e offe servizi al livello superiore**, indipendentemente da come sia implementato
+	- in questo modo, è inoltre possibile modificare un modulo in modo trasparente, se le interfacce con gli altri livelli rimangono le stesse
+- possiamo gestire tecnologie diverse (wireless, con fili) senza dover reimplementare tutto
 - inoltre, se due macchine forniscono lo stesso output dato il medesimo input, possono essere considerate equivalenti e possono quindi essere acquistate da fornitori diversi (se equivalenti)
-	- e ciascun costruttre puo ado
+	- e ciascun costruttre può adottare la proprima implementazione di un livello, purchè soddisfi i requisiti sulle interfacce
+**svantaggi**:
+- a volte può essere necessario lo scambio di informazioni tra livelli non adiacenti, non rispettando quindi il principio della stratificazione
 # stack protocollare TCP/IP
 **TCP/IP** è una famiglia di protocolli attualmente utilizzata in Internet, costruita come una **gerarchia di protocolli** (ogni livello si basa sui servizi forniti dai livelli inferiori) costituita da moduli interagenti, ciascuno dei quali fornisce funzionalità specifiche
 - si chiama così perchè TCP e IP sono i 2 protocolli principali dello stack
@@ -90,12 +95,14 @@ dato che il modello TCP/IP prevede una comunicazione logica tra coppie di livell
 >[!info] immagine riassuntiva
 ![[Pasted image 20250312231514.png]]
 
+# modello OSI
+l’ISO ha definito il **modello OSI** come modello alternativo al TCP/IP, ma non si è diffuso, in quanto alla sua pubblicazione, il TCP/IP era già ampiamente diffuso, e non riuscirono a dimostare delle prestazioni tali da convincere le autorità di Internet a sostituire il TCP/IP
+>[!info] confronto tra OSI e TCP/IP
+![[Pasted image 20250312232356.png]]
+
+>[!info] Internet lore
+# Internet standard
+nello studio di Internet e dei suoi protocolli, si incontrano spesso riferimenti a standard o entità amministrative: uno **standard Internet** è una specifica che è stata rigorosamente esaminata e controllata, ritenuta utile ed accettata da chi utilizza la rete Internet. è quindi un insieme di regole formalizzate, che devono essere necessariamente seguite
+>[!in]
+
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
-
-il pacchetto ha un nome diverso ad ogni livello perchè ad ogni livello aggiungo infomazioni
-
-
-con il layering possiamo gestire tecnologie diverse (wireless, con fili) senza dover reimplementare tutto
-
-il modello OSI non si è diffuso. non ha messo abbastanza tiktok virali
-# modello TCP/IP
