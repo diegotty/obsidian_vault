@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T23:31
+updated: 2025-03-12T23:34
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -38,6 +38,12 @@ tatoo it on your forhead
 ## livello 5: applicazione
 è il livello in cui si interagisce con le applicazioni di rete, attraverso vari protocolli che regolano la comunicazione (tra utente e applicazione ?): 
 - HTTP, SMTP, FTP, DNS, ….
+>[!info] la comunicazione è fornita mediante una **connessione logica**
+![[Pasted image 20250312233350.png]]
+si può immaginare che esista un canale logico bidirezionale tra i due host, attraverso il quale si possono inviare messaggi
+
+dato che il livello applicazione è l’unico che fornisce servizi agli utenti di Internet, la sua f
+
 ## livello 4: trasporto
 è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:
 - TCP, UDP
@@ -103,6 +109,7 @@ l’ISO ha definito il **modello OSI** come modello alternativo al TCP/IP, ma no
 >[!info] Internet lore
 # Internet standard
 nello studio di Internet e dei suoi protocolli, si incontrano spesso riferimenti a standard o entità amministrative: uno **standard Internet** è una specifica che è stata rigorosamente esaminata e controllata, ritenuta utile ed accettata da chi utilizza la rete Internet. è quindi un insieme di regole formalizzate, che devono essere necessariamente seguite
->[!in]
+>[!info] processo di creazione di un Internet standard
+![[Pasted image 20250312233137.png]]
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
