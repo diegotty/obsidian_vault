@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T20:01
+updated: 2025-03-12T20:08
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -46,6 +46,9 @@ tatoo it on your forhead
 >- grazie al layering, i sistemi implementano solo i livelli necessari, riducendo la complessità !
 >- nel router, ci possono essere fino a $n$ livelli fisico e livello collegamento, dove $n$ è il numero di link a cui è collgato (questo perchè possono avere protocolli di collegamento diversi)
 >- invece essendo le porte dello swtich omogenee, c’è solo un protocollo (una tecnologia )
+
+>[!warning] servizi e protocolli sono concetti ben distinti !
+> - un servizio è un insieme di primitive che uno strato offre a quello superiore
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
 
