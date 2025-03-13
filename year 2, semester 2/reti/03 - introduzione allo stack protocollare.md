@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-12T23:34
+updated: 2025-03-13T08:29
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -42,7 +42,10 @@ tatoo it on your forhead
 ![[Pasted image 20250312233350.png]]
 si può immaginare che esista un canale logico bidirezionale tra i due host, attraverso il quale si possono inviare messaggi
 
-dato che il livello applicazione è l’unico che fornisce servizi agli utenti di Internet, la sua f
+dato che il livello applicazione è l’unico che fornisce servizi agli utenti di Internet, la sua flessibilità ci consente di aggiungere nuovi protocolli con estrema facilità
+### protocolli standard
+esistono diversi protocolli, di livello applicazione, che sono standardizzati e documentati dagli enti responsabili della gestione di Internet. ogni protocollo è costituito da **una coppia di programmi** che interagiscono con l’utente e con il livello inferiore (livello 4: trasporto) per fornire un servizio specifico. (es)
+### protocolli non standard
 
 ## livello 4: trasporto
 è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:
@@ -106,10 +109,16 @@ l’ISO ha definito il **modello OSI** come modello alternativo al TCP/IP, ma no
 >[!info] confronto tra OSI e TCP/IP
 ![[Pasted image 20250312232356.png]]
 
->[!info] Internet lore
+>[!info]- lore
+>- prima del 1960 esistevano già alcune reti di telecomunicazione, come le reti telegrafiche e le reti telefoniche. erano reti adatte a un tipo di comunicazione a velocità costante, in quanto era necessario stabilire una connessione (fisica) fra i due utenti prima di poter trasmettere il messaggio codificato/voce
+>- a metà degli anni 60, l’**ARPA** (advanced research projects agency) andò alla ricerca di un metodo per connetere i calcolatori dei loro centri di ricerca, in modo che i ricercatori finanziati con i suoi fondi potessero facilmente condividere il risultato del loro lavoro. naque l’**ARPANET**, una piccola rete di calcolatori connessi tra di loro: ogni calcolatore era collegato ad una macchina dedicata, l’**IMP**(interface message processor), e gli IMP erano a loro volta collegati tra di loro, in modo tale che ogni IMP potesse essere capace di comunicare con gli altri IMP e con il calcolatore host connesso
+>- nel 1972, iniziò l’Internetting project, con scopo il collegare diverse reti in modo che un host di una delle reti potesse comunicare con un altro host di un’altra rete
 # Internet standard
-nello studio di Internet e dei suoi protocolli, si incontrano spesso riferimenti a standard o entità amministrative: uno **standard Internet** è una specifica che è stata rigorosamente esaminata e controllata, ritenuta utile ed accettata da chi utilizza la rete Internet. è quindi un insieme di regole formalizzate, che devono essere necessariamente seguite
->[!info] processo di creazione di un Internet standard
+nello studio di Internet e dei suoi protocolli, si incontrano spesso riferimenti a **standard o entità amministrative**: 
+- uno **standard Internet** è una specifica che è stata rigorosamente esaminata e controllata, ritenuta utile ed accettata da chi utilizza la rete Internet. è quindi un insieme di regole formalizzate, che devono essere necessariamente seguite
+>[!info]- procedura di creazione di uno Internet standard
 ![[Pasted image 20250312233137.png]]
+- le entità amministrative invece, sono i gruppi che coordinano aspetti diversi della rete Internet e ne hanno guidato la sua crescita e il suo sviluppo
+	- es: **ISOC**(internet society), **IAB**(internet architecture board), bla bla bla ngl 
 
 la velocità che ci permette un protocollo non affidabile può esere un buon compromesso per usarlo (purchè non perdiamo troppi dati)
