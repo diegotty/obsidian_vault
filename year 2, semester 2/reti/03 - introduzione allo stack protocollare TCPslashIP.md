@@ -1,10 +1,10 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-13T08:40
+updated: 2025-03-13T08:45
 completed: false
 ---
-# introduzione allo stack protocollare
+# introduzione allo stack protocollare TCP/IP
 
 abbiamo una panoriamica della struttura e delle varie prestazioni di Internet: sappiamo che è costituita da numerose reti di varie dimensioni, interconnesse tramite opportuni dispositivi di comunicazione. tuttavia, per poter comunicare non è sufficiente assicurare questi collegamenti, ma è necessario utilizzare sia l’hardware che del software !
 >[!example]- esempio di comunicazione
