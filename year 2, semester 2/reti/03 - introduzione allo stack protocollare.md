@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-13T08:29
+updated: 2025-03-13T08:40
 completed: false
 ---
 # introduzione allo stack protocollare
@@ -44,8 +44,48 @@ si può immaginare che esista un canale logico bidirezionale tra i due host, att
 
 dato che il livello applicazione è l’unico che fornisce servizi agli utenti di Internet, la sua flessibilità ci consente di aggiungere nuovi protocolli con estrema facilità
 ### protocolli standard
-esistono diversi protocolli, di livello applicazione, che sono standardizzati e documentati dagli enti responsabili della gestione di Internet. ogni protocollo è costituito da **una coppia di programmi** che interagiscono con l’utente e con il livello inferiore (livello 4: trasporto) per fornire un servizio specifico. (es)
+esistono diversi protocolli, di livello applicazione, che sono standardizzati e documentati dagli enti responsabili della gestione di Internet. ogni protocollo è costituito da **una coppia di programmi** che interagiscono con l’utente e con il livello inferiore (livello 4: trasporto) per fornire un servizio specifico. (es: HTTP)
 ### protocolli non standard
+dato che non è necessario chiedere autorizzazioni,  è possibile creare un’applicazione non standard scrivendo due programmi che forniscono servizi agli utenti. 
+
+>[!example] alcune applicazioni di rete
+>- posta elettronica
+>- web
+>- messaggistica istantanea
+>- SSH
+>- condivisione file P2P
+>- giochi multiutente via rete
+>- streaming
+>- telefono via internet
+>- videochiamate
+### creare un’applicazione di rete
+per creare un’applicazione di rete, è necessario scrivere programmi che:
+- girano su sistemi terminali diversi
+- comunicano attraverso la rete (es: il software di un server Web comunica con il software di un browser)
+- sono in grado di funzionare su più macchine
+- sono indipendenti dalla tecnologia che c’è sotto
+
+è necessario quindi avere un piano architetturale:
+- che tipo di **architettura** si vuole creare ? (client server, peer-to-peer)
+- come **comunicano** i processi dell’applicazione ?
+- che tipo di **servizi**(di rete) richiede l’applicazione ? (affidabilità, banda)
+#### architettura dell’applicazione
+- i due programmi devono essere entrambi in grado di richiedere e offrire servizi (peer-to-peer)
+- ciascuno dei due programmi deve occuparsi di **uno** dei due compiti (client-server)
+- ibrido (client-server e peer-to-peer)
+##### paradigma client-server
+in questo paradigma, il ruolo delle due entità è totalmente differente: non è possibile eseguire un client come programma server e viceversa. infatti:
+- **client**: richiedente del servizio, è in esecuzione solo quando è necessario il servizio. (di solito ci sono numerosi client che richiedono il servizio)
+- **server**: fornitore del servizio, è sempre in esecuzione, in attesa di richieste dal client. esiste un numero limitato di processi server pronti a offrire uno specifico servizio !
+**svantaggi**:
+- il carico della comunicazione risulta concentrato sul  server, che deve essere molto potente, ed è necessaria una server farm per creare un potente server virtuale
+- costi di gestione per offrire il servizio
+>[!example] esempi di applicazioni client-server
+>- WWW
+>- posta elettronica
+>- FTP
+>- SSH
+
 
 ## livello 4: trasporto
 è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:
