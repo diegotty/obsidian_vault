@@ -1067,49 +1067,35 @@
             "type": "tabs",
             "children": [
               {
-                "id": "181e93165d30d8f6",
+                "id": "ca95f61781d2094c",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                    "file": "year 2, semester 2/bd2/01 - azienda1.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "reti di elaboratori"
+                  "title": "01 - azienda1"
                 }
               },
               {
-                "id": "ad5c6e6d744689d4",
+                "id": "6e9158e95d8f0d30",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
+                    "file": "year 2, semester 2/bd2/esercitazioni/04 - travel to the moon.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "02 - capacità e prestazioni delle reti"
-                }
-              },
-              {
-                "id": "ec63c144e62da029",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/03 - introduzione allo stack protocollare.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "03 - introduzione allo stack protocollare"
+                  "title": "04 - travel to the moon"
                 }
               }
             ],
-            "currentTab": 2
+            "currentTab": 1
           }
         ],
         "direction": "vertical"
@@ -1166,8 +1152,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1266,8 +1251,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "ec63c144e62da029",
-      "mtime": "2025-03-12T16:11:53+01:00"
+      "active": "6e9158e95d8f0d30",
+      "mtime": "2025-03-13T14:21:09+01:00"
     },
     "os2": {
       "main": {
