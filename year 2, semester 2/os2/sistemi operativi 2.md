@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-13T14:21
+updated: 2025-03-14T10:29
 completed: true
 ---
 [[01 - introduzione alla shell]]
