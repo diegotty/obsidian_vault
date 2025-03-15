@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T19:23
+updated: 2025-03-15T19:32
 completed: false
 ---
 # filesytem
@@ -58,6 +58,14 @@ it pains me to write it a 3rd time, here is a table
 ### permessi speciali
 esistono permessi speciali, applicabili a file e directory
 #### sticky bit
-viene applicato su directory (inutile su file) per correggere il comportamento di `w+x`, permettendo la cancellazione di file se si hanno i permessi di scrittura su essi
+viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file se si hanno i permessi di scrittura su essi
+- grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
+lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other`
 #### setuid bit
+si usa solo per file eseguibili: quando vengono eseguiti, i privilegi con cui opera il corrispondente processo non sono quelli dell’utente che esegue il file, bensì quelli dell’utente proprietario del file ! (se il proprietario è `root`, il processo viene eseguito con i privilegi di `root` indipendentemente da chi lo ha eseguito)
+- es: il comando `passwd` ha il setuid, che permette ad un utente di modificare la propria password (il proprietario del comando è root)
+il setuid bit viene visualizzato al posto del bit di esecuzione nella terna `user`
 #### setgid bit
+simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del gruppo che è proprietario del file
+- può essere applicato anche ad una directory, e allora ogni file creato al suo interno ha il gruppo della directory, anzichè quello primario di chi crea i files !
+il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
