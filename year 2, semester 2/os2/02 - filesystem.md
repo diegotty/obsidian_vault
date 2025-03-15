@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T19:06
+updated: 2025-03-15T19:23
 completed: false
 ---
 # filesytem
@@ -43,8 +43,21 @@ come visto in [[filesystem in UNIX, Windows, Linux#inode]], ogni file nel filesy
 - la cancellazione di un file libera l’inode number che verrà riutilizzato quando necessario per un nuovo file
 >[!info] come viene seguito un path
 ![[Pasted image 20250315190353.png]]
-
+## `ls`
 per visualizzare gli inode, basta usare il flag `-i` con il comando `ls`
 >[!info] ls -l
 ![[Pasted image 20250315190629.png]]
-la dimensione
+>- la dimensione (quinta colonna) indica quanto effettivamente è occupato dal file: per le directory, la dimensione del file speciale, contenente la lista di coppie è solitamente 4kb, ma più file ci sono più la dimensione è grande (es: `/lost+found`)
+>- il numero dopo i diritti di accesso invece indica il numero di directory all’interno della directory, in cui vengono contate anche `.` e`..` (infatti per il file è 1)
+>- la prima riga invece, `totale 44` indica la dimensione della directory in blocchi su disco (tipicamente un blocco ha dimensione tra 1kb e 4kb). ma solo della directory attuale, non per tutto il sottoalbero !! per ogni sottodirectory, considera solo la dimensione del file speciale contenente le coppie
+## permessi di accesso a file
+it pains me to write it a 3rd time, here is a table
+>[!info]- @@@@
+![[Pasted image 20250315191911.png]]
+![[Pasted image 20250315191857.png]]
+### permessi speciali
+esistono permessi speciali, applicabili a file e directory
+#### sticky bit
+viene applicato su directory (inutile su file) per correggere il comportamento di `w+x`, permettendo la cancellazione di file se si hanno i permessi di scrittura su essi
+#### setuid bit
+#### setgid bit
