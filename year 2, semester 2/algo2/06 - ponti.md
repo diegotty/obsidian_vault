@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T20:53
+updated: 2025-03-15T21:08
 completed: false
 ---
 # ponti
@@ -30,7 +30,18 @@ basta infatti arrivare all’intuizione che devo controllare solo gli archi che 
 quindi i ponti in un grafo non possono essere più di $n-1$ (numero di archi in un albero di $n$ nodi) (con questa ottimizzazione arriviamo a $O(n^3)$, ma si può fare molto di meglio !)
 
 ci serve una caratterizzazione facile da calcolare, che ci consenta, durante la visita, di determinare se un arco dell’albero DFS è ponte o meno: notiamo che gli archi che non sono ponti sono **coperti** da archi non attraversati nella visita !
+arriviamo allora alla seguente proprietà:
+>[!warning] **proprietà**
+> sia ${u,v}$ un arco dell’albero DFS con $u$ padre di $v$. 
+> l’arco $u-v$ è ponte $\iff$ non ci sono archi tra i nodi del sottoalbero radicato in $v$ e il nodo $u$ o antenati di $u$
+>>[!dimostrazione] dimostrazione
+>$\implies$
+>assumiamo per assurdo che $u-v$ sia ponte e che ci siano archi tra il sottoalbero radicato in $u$ e il nodo $u$ o suoi antenati, e che quindi esista un arco $x-y$, con $x$ antenato di $u$ e $y$ discendente di $v$ 
+>dopo l’eliminazione di $u-v$, tutti i nodi dell’albero resteranno comunque collegato grazie all’arco $x-y$
+>$\impliedby$
+>l’eliminazione dell’arco $u-v$ disconnette i nodi dell’albero radicato in $v$ dal resto del grafo. infatti, in questo caso, tutti gli archi che non appartengono all’albero e che pardono da nodi del sottoalbero radicato in $v$, andrebbero verso $v$ o suoi discendenti
 
+basta quindi fare in modo che il nodo $u$, dopo aver visitato $v$ e i suoi discendenti, sappia se esitono nodi che partono da $v$ o discendenti verso antenati di $u$. con questa informazione, si può capire se l’aco $u-v$ è ponte
 un nodo scopre se è ponte solo dopo che la visita di suo figlio è finita
 
 
