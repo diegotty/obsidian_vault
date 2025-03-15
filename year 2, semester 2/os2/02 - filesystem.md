@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T18:53
+updated: 2025-03-15T19:06
 completed: false
 ---
 # filesytem
@@ -36,4 +36,15 @@ come sappiamo da [[filesystem in UNIX, Windows, Linux|os1]], esistono diversi ti
 
 `mount` è il comando per montare un filesystem, e visualizzare i filesystem montati
 ## file `passwd` e `group`
-si trovano entrambi in `/e`
+si trovano entrambi in `/etc/`, e il loro uso rappresenta una delle filosofie di linux: usare file di testo con una struttura definita e conosciuta dai programmi che devono interagire con quei file (in questo caso, `adduser` conosce la struttura di questi due file)
+la struttura è stata spiegata in [[sicurezza]]
+## i file
+come visto in [[filesystem in UNIX, Windows, Linux#inode]], ogni file nel filesystem è rappresentato da una struttura dati **inode**, e ogni file è unicamente identificato da un **inode number**. 
+- la cancellazione di un file libera l’inode number che verrà riutilizzato quando necessario per un nuovo file
+>[!info] come viene seguito un path
+![[Pasted image 20250315190353.png]]
+
+per visualizzare gli inode, basta usare il flag `-i` con il comando `ls`
+>[!info] ls -l
+![[Pasted image 20250315190629.png]]
+la dimensione
