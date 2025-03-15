@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T20:08
+updated: 2025-03-15T20:14
 completed: false
 ---
 # filesytem
@@ -70,7 +70,7 @@ simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del
 - può essere applicato anche ad una directory, e allora ogni file creato al suo interno ha il gruppo della directory, anzichè quello primario di chi crea i files !
 il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
 # comandi
-## umask`
+## `umask`
 ```
 umask [mode]
 ```
@@ -84,3 +84,19 @@ cp [-r] [-i] [-a] [-u] {filesorgenti} filedestinazione
 - `-i` interactive, per essere avvisati in caso di sovrascrittura
 - `-u` la sovrascrittura avviene solo sel l’`mtime` del sorgente è più recente di quello della destinazione (cool !)
 ## `mv`
+```
+mv [-i] [-u] [-f] {filesorgenti} filedestinazione
+```
+sposta un file o lo rinomina !
+- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
+## `rm`
+```
+rm [-f] [-i] [-r] {file}
+```
+- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
+- `-f` forza la cancellazione (senza chiedere)
+## `ln`
+```
+ln [-s] sorgente [destinazione]
+```
+-`-s` per symbolic link, altrimenti hard link(copia effettiva) !
