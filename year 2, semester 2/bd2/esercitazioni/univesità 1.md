@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T16:53
+updated: 2025-03-15T16:55
 completed: false
 ---
 **usando solo i costrutti di classe, associazione, attributo**
@@ -37,4 +37,6 @@ completed: false
 ```
 
 domande:
-- id o non }
+- id o non {id}
+- abbiamo deciso di mettere molteplicità di studente verso corso a 1..1
+- abbiamo deciso di mettere le molteplicità dell’assegnamento di 
