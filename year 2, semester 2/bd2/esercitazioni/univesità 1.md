@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T15:31
+updated: 2025-03-15T16:53
 completed: false
 ---
 **usando solo i costrutti di classe, associazione, attributo**
@@ -35,3 +35,6 @@ completed: false
 	5.1 nome x
 	
 ```
+
+domande:
+- id o non }

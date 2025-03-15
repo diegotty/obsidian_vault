@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T16:04
+updated: 2025-03-15T16:53
 completed: false
 ---
 ```
@@ -22,3 +22,5 @@ completed: false
 	3.2 anno di fondazione x
 	3.3 città in cui ha sede la direzione x
 ```
+
+
