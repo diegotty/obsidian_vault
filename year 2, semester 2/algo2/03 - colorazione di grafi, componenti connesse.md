@@ -1,7 +1,7 @@
 ---
-related to: 
+related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-08T11:31
+updated: 2025-03-15T20:33
 completed: false
 ---
 # colorazione di grafi
