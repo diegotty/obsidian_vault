@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T19:32
+updated: 2025-03-15T20:08
 completed: false
 ---
 # filesytem
@@ -69,3 +69,18 @@ il setuid bit viene visualizzato al posto del bit di esecuzione nella terna `use
 simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del gruppo che è proprietario del file
 - può essere applicato anche ad una directory, e allora ogni file creato al suo interno ha il gruppo della directory, anzichè quello primario di chi crea i files !
 il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
+# comandi
+## umask`
+```
+umask [mode]
+```
+setta la maschera dei file(cioè i diritti di accesso al fileo alle directory nel momento della loro creazione) a `mode`
+- per i file però, il diritto di esecuzione non viene settato (quindi le opzioni speciali non hanno effetto, in quanto prendono il posto del bit di esecuzione in terne diverse)
+## `cp`
+```
+cp [-r] [-i] [-a] [-u] {filesorgenti} filedestinazione
+```
+- `-r`: recursive, per directory
+- `-i` interactive, per essere avvisati in caso di sovrascrittura
+- `-u` la sovrascrittura avviene solo sel l’`mtime` del sorgente è più recente di quello della destinazione (cool !)
+## `mv`
