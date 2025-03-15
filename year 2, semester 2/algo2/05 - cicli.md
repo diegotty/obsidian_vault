@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T20:34
+updated: 2025-03-15T21:18
 completed: false
 ---
 >[!info] problema
@@ -17,6 +17,8 @@ partiamo da un’idea intuitiva ma sbagliata: visitiamo il grafo, e se nel corso
 ## archi verso nodi già visitati
 (grafi diretti)
 **archi in avanti**:archi che collegano un antenato ad un suo discendente (non suo figlio, ma almeno il grado dopo)
+>[!info] in archi non diretti è impossibile trovare archi in aventi, in quanto si troverebbe prima un arco all’indietro (visiterò il nodo discendente attraverso un altro cammino, e arrivato al nodo troverò l’arco all’indietro !)
+
 **archi all’indietro**: il contario di un arco in avanti
 **archi di attraversamento**: archi $(a,b)$ in cui cui il padre di $a$ arriva a $b$ anche senza l’arco $(a,b)$, con un altro cammino
 >[!example] esempi di archi verso nodi già visitati

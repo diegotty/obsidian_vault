@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T21:08
+updated: 2025-03-15T21:23
 completed: false
 ---
 # ponti
@@ -42,18 +42,33 @@ arriviamo allora alla seguente proprietà:
 >l’eliminazione dell’arco $u-v$ disconnette i nodi dell’albero radicato in $v$ dal resto del grafo. infatti, in questo caso, tutti gli archi che non appartengono all’albero e che pardono da nodi del sottoalbero radicato in $v$, andrebbero verso $v$ o suoi discendenti
 
 basta quindi fare in modo che il nodo $u$, dopo aver visitato $v$ e i suoi discendenti, sappia se esitono nodi che partono da $v$ o discendenti verso antenati di $u$. con questa informazione, si può capire se l’aco $u-v$ è ponte
-un nodo scopre se è ponte solo dopo che la visita di suo figlio è finita
+>[!info] logica dell’algoritmo
+per ogni arco **padre-figlio** ${u,v}$ presente nell’albero DFS di $G$, il nodo $u$ è in grado di scoprire se l’arco ${u,v}$ è o meno un ponte usando la seguente strategia:
+per ogni nodo $v$(figlio di $u$):
+>1. $v$ calcola la sua altezza nell’albero
+>2. $v$ calcola e restituisce al padre ($u$) l’altezza **minima** che si può raggiungere con archi che partono dai nodi del suo sottoalbero diversi da ${v,u}$(che è l’arco da testare)
+>
+il nodo $u$, una volta ricevuta l’informazione dal figlio $v$, confronta la sua altezza con l’altezza minima restituita da $v$. se l’altezza minima è maggiore dell’altezza di $u$, allora l’arco ${u,v}$ è ponte.
 
+>[!example] esempio
+![[Pasted image 20250315211518.png]]
 
+>[!info] algoritmo per individuazione di archi ponte
+
+```python
+def trova_ponti(G): #grafo connesso indiretto
+	altezza = [-1]*len(G)
+	ponti = []
+	dfs(0, -1, altezza, ponti)
+	return ponti
+def dfs(x, padre, altezza, ponti):
+	if padre == -1: #vero solo per root !
+		altezza[x] = 0
+	else:
+		altezza[x] = altezza[padre] + 1
+	min_
+```
 fare procedura che individua archi di attraversamento(va da nodo a nodo già visitato e i due nodi non sono padre-figlio) e archi in avanti 
-
-in grafi non diretti è impossibie trovare archi in avanti ! in quanto si troverebbe prima un arco all’indietro
-
-
-durante una visita, ogni nodo può conoscere la sua altezza. ogni figlio gli comunica il nodo più in alto(con altezza più bassa) che è possibile raggiungere da lui o da un suo sottoalbero
-
-se l’altezza del padre è minore del minimo raggiungibile, l’arco è un ponte
-
 
 albero ha tutti punti di articolazione tranne le foglie ! 
 # BFS
