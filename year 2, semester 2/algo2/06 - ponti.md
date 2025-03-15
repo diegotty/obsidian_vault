@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T21:23
+updated: 2025-03-15T21:32
 completed: false
 ---
 # ponti
@@ -54,42 +54,33 @@ il nodo $u$, una volta ricevuta l’informazione dal figlio $v$, confronta la su
 ![[Pasted image 20250315211518.png]]
 
 >[!info] algoritmo per individuazione di archi ponte
+>```python
+>def trova_ponti(G): #grafo connesso indiretto
+>	altezza = [-1]*len(G)
+>	ponti = []
+>	dfs(0, -1, altezza, ponti)
+>	return ponti
+>def dfs(x, padre, altezza, ponti):
+>	if padre == -1: #vero solo per root !
+>		altezza[x] = 0
+>	else:
+>		altezza[x] = altezza[padre] + 1
+>	min_raggiungibile = altezza[x]
+>	for y in G[x]:
+>		if altezza[y] == -1: #nodo non ancora visitato
+>			b = dfs(y, x, altezza, ponti)
+>			if b > altezza[x]:
+>				ponti.append((x,y))
+>			min_raggiungibile = min(min_raggiungibile, b) 
+>			elif y != padre: #nodo già visitato, (x,y) è arco 
+># all'indietro,il suo min_raggiungibile è sicuramente <= altezza[y]
+>				min_raggiunbile = min(min_raggiungibile, altezza[y])
+>	return min_raggiungibile
+>```
+la complessità dell’algoritmo è $O(n+m)$, in quanto sto solamente modificando una visita DFS
+ 
+# punti di articolazione
+un **punto di articolazione** è un nodo la cui rimozione è in grado di sconnettere il grafo
 
-```python
-def trova_ponti(G): #grafo connesso indiretto
-	altezza = [-1]*len(G)
-	ponti = []
-	dfs(0, -1, altezza, ponti)
-	return ponti
-def dfs(x, padre, altezza, ponti):
-	if padre == -1: #vero solo per root !
-		altezza[x] = 0
-	else:
-		altezza[x] = altezza[padre] + 1
-	min_
-```
-fare procedura che individua archi di attraversamento(va da nodo a nodo già visitato e i due nodi non sono padre-figlio) e archi in avanti 
-
+u
 albero ha tutti punti di articolazione tranne le foglie ! 
-# BFS
-```python
-def BFS(x, G):
-	visitati = [0]*len(G)
-	visitati[x] = 1
-	coda = [x]
-	while coda:
-		u = coda.pop(0)
-		for y in G[u]:
-			if visitati[y] == 0:
-				visitati[y] = 1
-				coda.append(y) # y va in coda solo se non visitato
-	return visitati	
-```
- anche questa costa $O(n+m)$
- 
- se implemento coda con lista, la complessità è :
- $$
- \Theta(n) + \Theta(1) + O(m) + O(n^2) = O(n^2)
- $$
- - usiamo BFS o DFS in base al problema che dobbiamo risolvere !
- 
