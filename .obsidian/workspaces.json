@@ -866,20 +866,33 @@
         "type": "split",
         "children": [
           {
+<<<<<<< HEAD
             "id": "3220ee411a739bcb",
             "type": "tabs",
             "children": [
               {
                 "id": "181e93165d30d8f6",
+=======
+            "id": "64c116353e6a52be",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4c4264422de242dc",
+>>>>>>> origin/main
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
+<<<<<<< HEAD
                     "file": "year 2, semester 2/reti/reti di elaboratori.md",
+=======
+                    "file": "year 2, semester 2/algo2/raw notes/2025-03-13.md",
+>>>>>>> origin/main
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
+<<<<<<< HEAD
                   "title": "reti di elaboratori"
                 }
               },
@@ -943,6 +956,8 @@
                     "source": false
                   },
                   "icon": "lucide-file",
+=======
+>>>>>>> origin/main
                   "title": "2025-03-13"
                 }
               }
@@ -1103,8 +1118,13 @@
           "workspaces:Manage workspace layouts": false
         }
       },
+<<<<<<< HEAD
       "active": "cd69e74193c6dcfd",
       "mtime": "2025-03-15T14:43:27+01:00"
+=======
+      "active": "4c4264422de242dc",
+      "mtime": "2025-03-14T14:09:30+01:00"
+>>>>>>> origin/main
     },
     "reti": {
       "main": {
@@ -1142,9 +1162,23 @@
                   "icon": "lucide-file",
                   "title": "2025-03-13"
                 }
+              },
+              {
+                "id": "3e657f625c7e83e5",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/reti/2025-03-14.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "2025-03-14"
+                }
               }
             ],
-            "currentTab": 1
+            "currentTab": 2
           }
         ],
         "direction": "vertical"
@@ -1301,8 +1335,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "d173bfa73d047745",
-      "mtime": "2025-03-13T16:09:31+01:00"
+      "active": "3e657f625c7e83e5",
+      "mtime": "2025-03-14T16:05:31+01:00"
     },
     "os2": {
       "main": {
