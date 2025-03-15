@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-06T10:08
+updated: 2025-03-15T18:38
 completed: false
 ---
 # filesytem
@@ -22,3 +22,8 @@ li filesystem root (`/`) contiene elementi eterogenei:
 - filesystem di rete
 - filesytem virtuali (usati dal kernel per gestire risorse)
 - filesystem in memoria principale..
+una qualsiasi directory $D$ dell’albero gerarchico può diventare il punto di mount per un altro (nuovo) filesystem $F$ se e solo se la directory root di $F$ può essere accessibilie di $D$
+- se $D$ è vuota, dopo il mount conterrà $F$
+- se $D$ non è vuota, dopo il mout conterrà $F$, ma ciò non significa che i dati che vi erano dentro sono persi: saranno di nuovo accessibili dopo l’unmount di $F$
+>[!info] partizioni e mounting
+un singo
