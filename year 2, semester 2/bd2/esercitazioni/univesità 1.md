@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T15:19
+updated: 2025-03-15T15:31
 completed: false
 ---
 **usando solo i costrutti di classe, associazione, attributo**
@@ -11,9 +11,9 @@ completed: false
 	1.2 codice fiscale x
 	1.3 numero di matricola x
 	1.4 data di nascita x
-	1.5 luogo di nascita
-		1.5.1 regione
-		1.5.1 città
+	1.5 luogo di nascita x
+		1.5.1 regione x
+		1.5.1 città x
 	1.6 corso di laurea a cui è iscritto (vedi req. 4) x
 	1.7 anno di iscrizione x
 	1.8 insegnamenti di cui ha superato l'esame (vedi req. 3) x
@@ -21,7 +21,7 @@ completed: false
 	2.1 nome x
 	2.2 data di nascita x
 	2.3 codice fiscale x
-	2.4 luogo di nascita
+	2.4 luogo di nascita x
 	2.5 insegnamenti erogati (vedi req.3) x
 3 insegnamenti
 	3.1 codice x
