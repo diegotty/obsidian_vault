@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T23:35
+updated: 2025-03-16T23:50
 completed: false
 ---
 # livello applicazione
@@ -64,13 +64,52 @@ esistono due modalità per ricevere più oggetti dallo stesso server:
 	- un solo RTT di connessione per tutti gli oggetto referenziati + un RTT per ogni oggetto ricevuto dal server
 ### RTT
 **RTT**(round trip time): tempo impiegato da un **piccolo** pacchetto per andare da client a server e ritornare al client. include i ritardi di propagazione, di accodamento e di elaborazione del pacchetto
-prestazioni per 
+>[!example]- tempo di risposta
+![[Pasted image 20250316233652.png]]
+il tempo di risposta per una connessione è:
+>- un RTT per iniziare la connessione TCP
+>- un RTT per la richiesta HTTP e i primi byte della risposta HTTP
+>- tempo di trasmissione del file
+## messaggi HTTP
+>[!info] richiesta HTTP
+![[Pasted image 20250316233849.png]]
+esempio di richiesta HTTP:
+>```js
+>GET /somedir/page.html HTTP/1.1 # request line
+>Host: www.someschool.edu # header line
+>Connection: close # header line
+>User-agent: Mozilla/4.0 # header line
+>Accept-Language:fr # header line
+>(carriage return e line feed extra) # blank line
+>```
+### metodi di richiesta
 
-slide 19
-2 crlf per far capire che gli header sono finiti
+| metodo di richiesta | descrizione                                                                                                                                                                                           |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| GET                 | usato quando il client vuole scaricare, da un server, il documento specificato nell’URL. il server risponde con il documento richiesto nel corpo nel messaggio di risposta                            |
+| HEAD                | usato quando il client non vuole scaricare il documento, ma solo alcune informazioni sul documento (es: data dell’ultima modifica). nella risposta, il server inserisce solo degli header informativi |
+| POST                | usato per fornire input al server (es: contenuto dei campi di un form). l’input viene inserito nel corpo dell’identità                                                                                |
+| PUT                 | utilizzato per memorizzare un documento nel server. il documento viene fornito nel corpo del messaggo, e la posizione di memorizzazione nell’URL                                                      |
+>[!info] è posibile inviare info al server anche attraverso una richiesta GET
+utilizzando gli `&` nell’url:
+```js
+GET www.somesite.com/animalsearch?monkeys&banana
+```
+### header nella richiesta
 
-
-da ricordare come sono strutturate richieste/risposte 
+| intestazione      | descrizione                                                     |
+| ----------------- | --------------------------------------------------------------- |
+| User-Agent        |                                                                 |
+| Accept            |                                                                 |
+| Accept-charset    |                                                                 |
+| Accept-encoding   |                                                                 |
+| Accept-language   |                                                                 |
+| Authorization     |                                                                 |
+| Host              |                                                                 |
+| Date              | data e ora del messaggio<br>                                    |
+| Upgrade           | specifica il protocollo di comunicazione preferito              |
+| Cookie            | comunica il cookie al server                                    |
+| If-Modified-State | invia il documento solo se è più recente della data specificata |
 
 # cookie
 HTTP è un protocollo “**senza stato**”: una volta che il server ha servito un client, se ne dimentica (non mantiene informazioni sulle richieste fatte)
