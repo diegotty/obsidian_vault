@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-16T19:34
+updated: 2025-03-16T19:41
 completed: false
 ---
 >[!example] problema
@@ -39,8 +39,12 @@ notiamo però che possiamo sostituire un arco da $x$ a $y$ di costo $C$ con un c
 
 in questo modo, per risolvere il problema basta eseguire una visita BFS nel nuovo grafo, a partire dal nodo $(4,7,0)$ che si ferma non appena trova il nodo $(-1,-1,-1)$
 l’algoritmo avrà complessità $O(n'+m')$, dove $n'$ ed $m'$ sono rispettivamente i nodi e gli archi del nuovo grafo
-- nel nostro caso, il peso degli archi non può superare 7
+- nel nostro caso, il peso degli archi non può superare 7 (massimo numero di litri spostati in una mossa se ci pensi), quindi $n'<7n$ e $m'<7m$ , con $n$ ed $m$ sono rispettivamente archi e nodi del grafo pesato
+>[!warning] l’approccio di ricondursi al problema dei cammini minimi in cui tutti gli archi hanno lo stesso valore unitario è possibile quando il peso degli archi è un valore **intero** e relativamente **piccolo**
+>inoltre i problemi con caratteristiche simili al problema affronato sono molti, ad esempio:
+>abbiamo una mappa stradale, vogliamo determinare il percorso più breve tra due località. i nodi del grafo sono le località e un arco da una località ad un altra avrà un costo pari alla lunghezza della strada che collega i due posti
+>
+> in questo caso la trasformazione del grafo pesato in grafo non pesato potrebbe non essere possibile nel caso le distanze tra le località non fossero numero interi, e comunque sarebbe improponibile perchè farebbe esplodere il numero di nodi ed archi nel grafo
 
-so che i nodi raggiungibili devono avere per forza somma totale di 11
-
-- in alcuni casi, può essere un grafo indiretto perche posso sempre tornare indietro , ma non è sempre cosi
+# algoritmo di Dijkstra
+vediamo allora un algoritmo che ci permette di trovare i cammini minimi lavorando direttamente su grafi pesati (con pesi anche non interi).
