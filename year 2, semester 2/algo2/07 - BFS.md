@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T17:20
+updated: 2025-03-16T17:30
 completed: false
 ---
 # BFS
@@ -28,7 +28,18 @@ per effettuare questo tipo di visita, manteniamo in una **coda** i nodi esaminat
 >				coda.append(y) # y va in coda solo se non visitato
 >	return visitati	
 >```
-la complessità di questo algoritmo è $O(n^2) 
+la complessità di questo algoritmo è $O(n^2) !!!! perche:
+>- un nodo finisce in coda al più una volta, quindi il while verrà eseguito $O(n)$ volte
+>- allo stesso modo, le liste di adiacenza verrano scorse al più una volta, quindi il costo totale dei `for` loop sarà $O(m)$
+>- il problema però è l’implementazione della coda: l’`append` in coda costa $O(1)$, mentre il `pop(0)` ha un costo proporzionale alla dimensione della lista, e può quindi arrivare a costare $O(n)$
+
+>[!example]- caso pessimo dell’algoritmo di sopra
+![[Pasted image 20250316172631.png]]
+
+>[!dimostrazione] dimostrazione della correttezza dell’algoritmo
+alla fine dell’esecuzione dell’algoritmo, `visitati[i]` contiene 1 $\iff$ il nodo $u$ è raggiungibile da $x$
+>- **se $u$ è raggiungibile da $x$, allora `visitati[u]`=1**: esiste quindi un cammino $P$ da $x$ a $u$. supponiamo per assurdo che al termine dell’algoritmo, `visitati[u]`=0
+>- 
 
 ## vettore delle distanze 
 dati due nodi $a$ e $b$ di un grafo $G$, definiamo **distanza(minima)** in $G$ di $a$ da $b$ il numero minimo di archi che bisogna attraversare per raggiungere $b$ partendo da $a$.
