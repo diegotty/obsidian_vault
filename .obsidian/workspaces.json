@@ -866,84 +866,21 @@
         "type": "split",
         "children": [
           {
-            "id": "3220ee411a739bcb",
+            "id": "e7cdac2b92daef0f",
             "type": "tabs",
             "children": [
               {
-                "id": "181e93165d30d8f6",
+                "id": "6241c44da69aa67b",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                    "file": "year 2, semester 2/algo2/algoritmi 2.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "reti di elaboratori"
-                }
-              },
-              {
-                "id": "d5f907b6668bdcb7",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/01 - introduzione alle reti.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "01 - introduzione alle reti"
-                }
-              },
-              {
-                "id": "fc00206f02a611ab",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
-                    "mode": "preview",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "02 - capacità e prestazioni delle reti"
-                }
-              },
-              {
-                "id": "cd69e74193c6dcfd",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/04 - livello applicazione.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "04 - livello applicazione"
-                }
-              }
-            ],
-            "currentTab": 3
-          },
-          {
-            "id": "f7907557c49d8568",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "5340fa56313265ba",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "2025-03-13"
+                  "title": "algoritmi 2"
                 }
               }
             ]
@@ -1003,8 +940,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1103,8 +1039,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "cd69e74193c6dcfd",
-      "mtime": "2025-03-15T14:43:27+01:00"
+      "active": "6241c44da69aa67b",
+      "mtime": "2025-03-16T19:42:22+01:00"
     },
     "reti": {
       "main": {
@@ -1485,7 +1421,204 @@
       },
       "active": "91c0f09ac8395861",
       "mtime": "2025-03-15T20:31:56+01:00"
+    },
+    "bd2": {
+      "main": {
+        "id": "3ff226ac07ffcebf",
+        "type": "split",
+        "children": [
+          {
+            "id": "c1e9ad377508320c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "d173bfa73d047745",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "univesità 1"
+                }
+              },
+              {
+                "id": "6c9e322b56ef4a51",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/bd2/esercitazioni/voli aerei 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "voli aerei 2"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "2580565fda491a15",
+        "type": "split",
+        "children": [
+          {
+            "id": "950cd4eb7cffbb95",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "87bff695949ea9dc",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f16576e6e03b4de",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "TODO",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "9fa7d86a6957ee3d",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "de0dbddde79edade",
+        "type": "split",
+        "children": [
+          {
+            "id": "9ab4274e7a6a8dc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9d2182ef633ad10f",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for notes + index"
+                }
+              },
+              {
+                "id": "ea40e6a61abfcdb1",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from notes + index"
+                }
+              },
+              {
+                "id": "bbe3d339f336a373",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "952f10de0643e940",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md"
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of notes + index"
+                }
+              },
+              {
+                "id": "819fa9583f1812c9",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              }
+            ],
+            "currentTab": 3
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "omnisearch:Omnisearch": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "6c9e322b56ef4a51",
+      "mtime": "2025-03-16T19:43:29+01:00"
     }
   },
-  "active": "algo2"
+  "active": "bd2"
 }
