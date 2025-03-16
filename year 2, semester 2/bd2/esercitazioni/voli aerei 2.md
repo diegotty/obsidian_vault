@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T21:47
+updated: 2025-03-16T21:51
 completed: false
 ---
 ```
@@ -22,6 +22,6 @@ completed: false
 		2. numero di abitanti
 		3. nazione
 4. voli charter
-	1. modello veivolo
+	1. modello velivolo
 	2. tappe intermedie, ordinate
 ```
