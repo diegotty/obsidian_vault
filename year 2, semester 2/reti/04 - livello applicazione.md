@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T00:05
+updated: 2025-03-17T00:07
 completed: false
 ---
 # livello applicazione
@@ -109,8 +109,21 @@ GET www.somesite.com/animalsearch?monkeys&banana
 | Host              | host e numero di porta del client                                     |
 | Date              | data e ora del messaggio                                              |
 | Upgrade           | specifica il protocollo di comunicazione preferito                    |
-| Cookie            | comunica                                                              |
-| If-Modified-Since |                                                                       |
+| Cookie            | comunica il cookie al server                                          |
+| If-Modified-Since | invia il documento solo se è più recente della data specificata       |
+### risposta HTTP
+>[!info] risposta HTTP
+#### codici di risposta
+
+| code | meaning      | examples |
+| ---- | ------------ | -------- |
+| 1xx  | information  |          |
+| 2xx  | success      |          |
+| 3xx  | redirection  |          |
+| 4xx  | client error |          |
+| 5xx  | server error |          |
+
+#### intestazioni nella risposta
 
 | intestazione     | descrizione                                               |
 | ---------------- | --------------------------------------------------------- |
