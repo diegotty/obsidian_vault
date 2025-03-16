@@ -1,9 +1,13 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T21:18
-completed: false
+updated: 2025-03-16T17:59
+completed: true
 ---
+>[!index]
+>- [cicli](#cicli)
+>	- [archi verso nodi già visitati](#archi%20verso%20nodi%20gi%C3%A0%20visitati)
+
 >[!info] problema
 dato un grafo $G$ (diretto o non diretto), ed un suo nodo $u$, vogliamo sapere se da $u$ è possibile raggiungere un ciclo in $G$
 ![[Pasted image 20250311095011.png]]

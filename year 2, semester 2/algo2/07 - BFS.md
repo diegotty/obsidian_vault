@@ -1,9 +1,14 @@
 ---
-related to: 
+related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-16T17:58
-completed: false
+updated: 2025-03-16T17:59
+completed: true
 ---
+>[!index]
+>- [BFS](#BFS)
+>	- [albero BFS](#albero%20BFS)
+>	- [vettore delle distanze](#vettore%20delle%20distanze)
+
 # BFS
 la **BFS** (breath-first-search) ci permette di visitare un albero con una logica diversa (e opposta) alla DFS:
 la BFS esplora i nodi del grafo partendo da quelli a distanza 1 dalla sorgente $s$. poi visita quelli a distanza 2, e così via.

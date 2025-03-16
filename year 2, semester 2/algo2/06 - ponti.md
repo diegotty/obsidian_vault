@@ -1,9 +1,13 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-15T21:32
-completed: false
+updated: 2025-03-16T17:59
+completed: true
 ---
+>[!index]
+>- [ponti](#ponti)
+>- [punti di articolazione](#punti%20di%20articolazione)
+
 # ponti
 un **ponte** è un arco la cui eliminazione disconnette il grafo
 - i ponti rappresentano criticità del grafo ed è quindi utile identificarli
