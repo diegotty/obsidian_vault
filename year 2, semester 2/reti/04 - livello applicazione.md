@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T23:20
+updated: 2025-03-16T23:35
 completed: false
 ---
 # livello applicazione
@@ -28,29 +28,43 @@ componenti:
 
 >[!info] terminologia
 >- una pagina web è costituita da **oggetti**
->- ogni oggetto puo essere un file HTML, un’imma
-una richiesta da parte del client ad un server può scaricare richieste ad altri server (tipo collegamenti )
-
-oggetti rifererenziati si possono recuperare attraverso l’URL
-
+>- ogni oggetto puo essere un file HTML, un’immagine, un’applet, un file audio, …
+>- una pagina web è formata da un file base HTML, che include diversi oggetti referenziati (una richiesta da parte del client ad un server può scaricare richieste ad altri server
+>- ogni oggetto è referenziato da un **URL**
+## URL
+gli oggetti rifererenziati si possono recuperare attraverso l’**URL**(Uniform Resource Locator), che è composto di 3 parti:
+1. il protocollo
+2. il nome della macchina in cui è situata la pagina
+3. il percorso del file (localmente alla macchina), che indica la pagina, il nome del file e la posizione nel filesystem
+```
+protocol://host/path #utilizzato quando la porta è standard
+protocol://host:porta/path #utilizzato quando è necessario specificare il numero di porta
+```
 ## documenti web
-- documento statico
-- documento dinamico: alcune delle informazion vengono generate dal web server alla ricezione della richiesta
+- documento statico: contenuto predeterminato e memorizzato sul server
+- documento dinamico: alcune delle informazioni vengono generate dal web server alla ricezione della richiesta (es: date)
 - documento attivo: contiene script(es: applet java) o programmi che verranno eseguiti nel browser (ovvero lato client)
-
-due modalità per ricevere più oggetti dallo stesso server:
-- connessioni non persistenti: viene stabilita una connessione TCP per ogni file
-- connessioni persistenti (modalità di default): la connessione viene chiusa quando rimane inattiva per un lasso di tempo configurabile
-
 # HTTP
-come abbiamo visto, il protocollo **HTTP** è uno dei protocolli di comunicazione usati per accedere ai document richiesti dall’utente (lato client)
+come abbiamo visto, il protocollo **HTTP**(hypertext transfer protocol) è uno dei protocolli di comunicazione usati per accedere ai documenti richiesti dall’utente (lato client)
+- definisce quindi in che modo i client web richiedono le pagine ai server web, e come queseti le trasferiscono ai client
+caratteristiche:
+- si basa sul modello client/server
+	- client: il browser, che richiede, riceve e visualizza gli oggetti del Web
+	- server: il server web che invia oggetti in risposta a una richiesta
+>[!example]- esempio di connessione HTTP
+![[Pasted image 20250316232817.png]]
 
+## connessioni HTTP
+esistono due modalità per ricevere più oggetti dallo stesso server:
+- connessioni non persistenti: viene stabilita una connessione TCP per ogni file. prima di inviare una richiesta al server è necessario stabilire una connessione
+	- le richieste non persistenti si possono parallelizzare(tipicamente da 5 a 10 connessioni), quindi potenzialmente sono più veloci ma con più overhead
+	- richiedono 2 RTT per oggetto
+- connessioni persistenti (modalità di default): la connessione viene chiusa quando rimane inattiva per un lasso di tempo configurabile
+	- le richieste persistenti sono sequenziali 
+	- un solo RTT di connessione per tutti gli oggetto referenziati + un RTT per ogni oggetto ricevuto dal server
+### RTT
+**RTT**(round trip time): tempo impiegato da un **piccolo** pacchetto per andare da client a server e ritornare al client. include i ritardi di propagazione, di accodamento e di elaborazione del pacchetto
 prestazioni per 
-
-
-richieste non persistenti: si possono paralelizzare quindi potenzialmente più veloci ma con più overhead
-mentre in richieste persistenti le richieste sono sequenziali
-
 
 slide 19
 2 crlf per far capire che gli header sono finiti
