@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T17:50
+updated: 2025-03-16T17:58
 completed: false
 ---
 # BFS
@@ -31,7 +31,10 @@ per effettuare questo tipo di visita, manteniamo in una **coda** i nodi esaminat
 la complessità di questo algoritmo è $O(n^2) !!!! perche:
 >- un nodo finisce in coda al più una volta, quindi il while verrà eseguito $O(n)$ volte
 >- allo stesso modo, le liste di adiacenza verrano scorse al più una volta, quindi il costo totale dei `for` loop sarà $O(m)$
->- il problema però è l’implementazione della coda: l’`append` in coda costa $O(1)$, mentre il `pop(0)` ha un costo proporzionale alla dimensione della lista, e può quindi arrivare a costare $O(n)$
+>- il problema però è l’implementazione della coda: l’`append` in coda costa $O(1)$, mentre il `pop(0)` ha un costo proporzionale alla dimensione della lista, e può quindi arrivare a costare $O(n)$, per una complessità totale:
+>$$
+> \Theta(n) + \Theta(1) + O(m) + O(n^2) = O(n^2)
+> $$
 
 >[!example]- caso pessimo dell’algoritmo di sopra
 ![[Pasted image 20250316172631.png]]
@@ -59,6 +62,9 @@ alla fine dell’esecuzione dell’algoritmo, `visitati[i]` contiene 1 $\iff$ il
 >```
 in questa implementazione, effettuiamo solo cancellazioni logiche: usiamo un puntatore che che indica l’inizio della coda ! in questo modo la complessità di questo algoritmo è $O(n+m)$
 
+>[!warning] le visite BFS e DFS, se implementate nel modo giusto, hanno la stessa complessità
+>si sceglie quindi l’una al posto dell’altra in base al tipo di problema che si affronta
+
 >[!info] implementazione con uso di `deque`
 possiamo importare, dal modulo `collections` di python, la struttura dati `deque`(double ended queue), che consente di effettuare inserimenti e cancellazioni da entrambi i lati in $O(1)$
 >- la `deque` è implementata da python tramite una double linked list, ottimizzata per operazioni efficienti in entrambi gli estremi
@@ -84,24 +90,27 @@ modifichiamo la procedura in modo che restituisca in $O(n+m)$ l’albero di vist
 >[!example]- esempi di alberi BFS
 ![[Pasted image 20250316174703.png]]
 
-```python
-def BFSpadri(x, G):
-	P = [-1]*len(G)
-	P[x] = x
-	coda = [x]
-	i = 0
-	while len(coda) > i:
-		u = coda[i]
-		i++
-		for y in G[u]:
-			if P[y] == -1:
-				P[y] = u
-				coda.append(y)
-	return P
-```
+>[!info] implementazione di BFS che ritorna albero BFS
+>```python
+>def BFSpadri(x, G):
+>	P = [-1]*len(G)
+>	P[x] = x
+>	coda = [x]
+>	i = 0
+>	while len(coda) > i:
+>		u = coda[i]
+>		i++
+>		for y in G[u]:
+>			if P[y] == -1:
+>				P[y] = u
+>				coda.append(y)
+>	return P
+>```
 
 >[!warning] proprietà
->la distanza minima di un vertice $x$ da $s$ nel grafo $G$ equivale alla profondità di $x$ nell’albero BFS
+>la **distanza minima** di un vertice $x$ da $s$(sorgente) nel grafo $G$ equivale alla profondità di $x$ nell’albero BFS. è per questo che l’albero BFS è anche detto **albero dei cammini minimi**
+>>[!dimostrazione]- dimostrazione
+>> you caught me lacking. i aint got time for this ngl
 ## vettore delle distanze 
 dati due nodi $a$ e $b$ di un grafo $G$, definiamo **distanza(minima)** in $G$ di $a$ da $b$ il numero minimo di archi che bisogna attraversare per raggiungere $b$ partendo da $a$.
 - la distanza è posta a $+\infty$ se $b$ non è raggiungibile da $a$
@@ -109,13 +118,21 @@ dati due nodi $a$ e $b$ di un grafo $G$, definiamo **distanza(minima)** in $G$ d
 ![[Pasted image 20250316171248.png]]
 
 il **vettore delle distanze** $D$ contiene quindi, in $D[y]$ la distanza di $y$ da $a$
+modifichiamo quindi la visita BFS per far ritornare il vettore delle distanze:
+>[!info] visita BFS che ritorna vettore delle distanze
 
-
- anche questa costa $O(n+m)$
- 
- se implemento coda con lista, la complessità è :
- $$
- \Theta(n) + \Theta(1) + O(m) + O(n^2) = O(n^2)
- $$
- - usiamo BFS o DFS in base al problema che dobbiamo risolvere !
- 
+```python
+def BFSdistanze(x, G):
+	D = [-1]*len(G)
+	D[x] = 0
+	coda = [x]
+	i = 0
+	while len(G) > i:
+		u = coda[i]
+		i++
+		for y in G[u]:
+			if D[y] == -1:
+				D[y] = D[u] + 1
+				coda.append(y)
+	return D
+```
