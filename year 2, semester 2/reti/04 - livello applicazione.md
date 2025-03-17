@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T20:03
+updated: 2025-03-17T22:52
 completed: false
 ---
 # livello applicazione
@@ -216,7 +216,10 @@ stimiamo il tempo di risposta:
 valutiamo [[02 - capacità e prestazioni delle reti#ritardo di accodamento|l’intensità di traffico]]: 
 
 $$
-\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
+\text{intensità di traffico su LAN= }\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
+$$
+$$
+\text{intensità di traffico su collegamento d'accesso} = \frac{L\cdot a}{R}= \frac{15req/s \cdot 1Mb}{15Mbps} = 100\%
 $$
 
 
