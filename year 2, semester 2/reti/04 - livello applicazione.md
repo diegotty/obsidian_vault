@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T00:07
+updated: 2025-03-17T19:07
 completed: false
 ---
 # livello applicazione
@@ -113,15 +113,27 @@ GET www.somesite.com/animalsearch?monkeys&banana
 | If-Modified-Since | invia il documento solo se è più recente della data specificata       |
 ### risposta HTTP
 >[!info] risposta HTTP
+![[Pasted image 20250317185404.png]]
+```js
+HTTP/1.1 200 OK //riga di stato
+Connection close
+Date: Thu, 06 Aug 1998 12:00:15 GMT
+Server: Apache/1.3.0 (Unix)
+Last-Modified: Mon, 22 Jun 1998 ...
+Content-Length: 6821 //in byte
+Content-Type: text/html
+(carriage return e line feed extra)
+dati dati dati dati dati //ad esempio, file HTML
+```
 #### codici di risposta
 
-| code | meaning      | examples |
-| ---- | ------------ | -------- |
-| 1xx  | information  |          |
-| 2xx  | success      |          |
-| 3xx  | redirection  |          |
-| 4xx  | client error |          |
-| 5xx  | server error |          |
+| code | meaning      | examples                                               |
+| ---- | ------------ | ------------------------------------------------------ |
+| 1xx  | information  | 100 = server agrees to handle client’s request         |
+| 2xx  | success      | 200 = request succeeded; 204 = no content present      |
+| 3xx  | redirection  | 301 = page moved; 304 = cached page still valid        |
+| 4xx  | client error | 403 = forbidden page; 404 = page not found             |
+| 5xx  | server error | 500 = internal server error; 503 = try again later (L) |
 
 #### intestazioni nella risposta
 
@@ -137,12 +149,24 @@ GET www.somesite.com/animalsearch?monkeys&banana
 | Content-Type     | specifica la tipologia di contenuto                       |
 | Location         | chiede al client di inviare la richiesta ad un altro sito |
 | Last-Modified    | fornisce data e ora di ultima modifca del documento       |
+>[!example]- esempio di richiesta GET
+![[Pasted image 20250317185937.png]]
 
+>[!example]- esempio di richiesta PUT
+![[Pasted image 20250317190049.png]]
+note: 
+>- il corpo del messaggio di richiesta contiene la pagina web inviata
+>- il documento creato, un documento CGI, è incluso nel corpo del messaggio di risposta
 # cookie
 HTTP è un protocollo “**senza stato**”: una volta che il server ha servito un client, se ne dimentica (non mantiene informazioni sulle richieste fatte)
-può essere però necessario tenere traccia dell’utente: ci sono molti casi ! ( x offrire navigazione più personalizzata)
+- i protocolli che mantengono lo “stato” sono complesi, in quanto la storia passata deve essere memorizzata in qualche modo, e se il server/client si bloccano, le loro viste dello “stato” potrebbero essere inconsistenti
+può essere però necessario tenere traccia dell’utente: ci sono molti casi !
+- in particolare x offrire navigazione più personalizzata (profilare le persone ….), mantenere il carrello nei siti di commercio elettronico, …
+- non si può semplicemente tenere traccia degli indirizzi IP in quanto gli utenti possono lavorare su computer condivisi, e molti ISP assegnano lo stesso IP ai pacchetti in uscita provenienti da tutti gli utenti (es: in caso di NAT)
+la soluzione a questa esigenza sono i **cookie** ! essi consentono ai siti di tener traccia degli utenti:
+- grazie al meccanismo dei cookie, è possibile creare una sessione di richieste e risposte HTTP **“con stato”**(stateful)
+- la sessione rappresenta un contesto più largo della singola richiesta/risposta, 
 
-gli indirizzi IP non sono adatti in quanto gli utenti possono lavorare su computer condivisi, e molti ISP
 
 si cerca quindi di creare una sessione
 
