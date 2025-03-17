@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T19:37
+updated: 2025-03-17T19:52
 completed: false
 ---
 # livello applicazione
@@ -197,6 +197,25 @@ i file cookie possono contenere:
 >[!warning] i cookie permettono quindi ai siti di imparare molte cose sugli utenti (bad)
 quando l’utilizzzo di avvicina alla capacità della ret (intensità vicina al 100%), il ritardo si fa consistente (minuti)
 # web caching
-l’obiettivo del **web caching** è quello di migliorare le prestazioni
+l’obiettivo del **web caching** è quello di migliorare le prestazioni dell’applicazione web
+- un modo semplice per fare ciò consiste nel salvare le pagine richieste per riutilizzarle in seguito, senza doverle richiedere al server. questa tecnica è efficiente con pagine che vengono visitate molto spesso !
+il caching può essere eseguito sia dal browser, che da un **server proxy**
+- il browser può mantenere una cache delle pagine visitate (che è anche personalizzabile dall’utente), ed esistono vari meccanismi per la gestione della cache
+- un **server proxy** serve a soddisfare una richiesta del client senza coinvolgere il server d’origine: ha una memoria per mantenere copie delle pagine visitate, e se il proxy possiede una pagina, la richiesta al server d’origine non viene eseguita
+>[!example] server proxy in una LAN
+![[Pasted image 20250317194144.png]]
+>anche gli ISP possono mantenere un proxy per le richieste dei vari utenti (smart)
 
-inviare messaggi più piccoli migliora le prestazioni perchè il carico è minore
+vantaggi:
+- riduce i tempi di risposta alle richieste dei client
+- riduce il traffio sul collegamento di accesso a Internet
+- Internet arricchita di cache consente ai provider meno efficienti di fornire dati con efficacia
+>[!info] validazione dell’oggetto
+>la cache, anche se ha l’oggetto, prima di inviarlo al client deve verificare che non sia **scaduto**, cioè modificato sul server di origine
+>- la cache esegue quindi una richiesta verso il Web server che mantiene l’oggetto, per verificarne la validità mediante il metodo `GET condizionale`
+### GET condizionale
+l’obiettivo del `GET condizionale` è di evitare l’invio di un oggetto se la cache ha una copia aggiornata di esso. come ?
+- la cache specifica la data della copia dell’oggetto nella richiesta HTTP
+- il server **non** invia l’oggetto se la copia nella cache è aggiornata
+>[!example] esempio di GET condizionale
+![[Pasted image 20250317195153.png]]
