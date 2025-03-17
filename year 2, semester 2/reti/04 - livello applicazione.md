@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T19:22
+updated: 2025-03-17T19:37
 completed: false
 ---
 # livello applicazione
@@ -180,12 +180,23 @@ ci possono essere diversi tipi di sessione, in base al tipo di informazioni scam
 >- l’utente A invierà ogni futura richiesta inserendo l’ID nella richiesta
 >![[Pasted image 20250317192106.png]]
 
-esiste quindi un file cookie mantenuto sul sistema terminale dell’utente, e gestito dal browser dell’utente
+esiste quindi un file cookie mantenuto sul sistema terminale dell’utente, che viene consultato ogni vlta che il client manda una richiesta al server: il browser consulta il file cookie, estrae il numero di cookie per il sito che si vuole visitare e lo inserisce nella richiesta http
+il server invece mantiene tutte le informazioni riguardanti il client su un file e gli assegna l’identificatore fornito dal client
+- per evitare che il cookie sia utilizzato da utenti "maligni", l’ID è composto da una stringa di numeri (e quindi ?)
+>[!example]- another cookie example
+![[Pasted image 20250317192621.png]]
 
-esiste quindi un database sul server, che mantiene l’**ID**
-file cookie mantenuto sul sistema terminale !!! (dell’utente) e gestito dal browser dell’utente
+il server chiude una sessione inviando al client una intestazione `Set-Cookie` nel messaggio, con `Max-Age=0`
+- l’attributo`Max-Age` definisce il tempo di vita in secondi di un cookie, dopo i guali il client dovrebbe rimuovere il cookie. 0 vuol dire che il cookie deve essere rimosso subito
 
-
+i file cookie possono contenere:
+- autorizzazione
+- carta per acquisti
+- preferenze sull’utente
+- stato della sessione dell’utente (email)
+>[!warning] i cookie permettono quindi ai siti di imparare molte cose sugli utenti (bad)
 quando l’utilizzzo di avvicina alla capacità della ret (intensità vicina al 100%), il ritardo si fa consistente (minuti)
+# web caching
+l’obiettivo del **web caching** è quello di migliorare le prestazioni
 
 inviare messaggi più piccoli migliora le prestazioni perchè il carico è minore
