@@ -1,9 +1,25 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T19:59
+updated: 2025-03-17T23:05
 completed: true
 ---
+>[!index]
+>- [Internet](#Internet)
+>	- [rete di accesso](#rete%20di%20accesso)
+>	- [backbone Internet](#backbone%20Internet)
+>	- [struttura di Internet](#struttura%20di%20Internet)
+>- [capacità e prestazioni delle reti](#capacit%C3%A0%20e%20prestazioni%20delle%20reti)
+>	- [ampiezza di banda](#ampiezza%20di%20banda)
+>	- [throughput](#throughput)
+>	- [delay](#delay)
+>		- [ritardo di elaborazione del nodo](#ritardo%20di%20elaborazione%20del%20nodo)
+>		- [ritardo di accodamento](#ritardo%20di%20accodamento)
+>		- [ritardo di propagazione](#ritardo%20di%20propagazione)
+>	- [packet loss](#packet%20loss)
+>- [concetto $rate \cdot ritardo$](#concetto%20$rate%20%5Ccdot%20ritardo$)
+>- [traceroute](#traceroute)
+
 # Internet
 Internet è una rete di reti, composta da reti di accesso e dal **backbone Internet**
 ## rete di accesso

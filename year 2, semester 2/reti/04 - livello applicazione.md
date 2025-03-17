@@ -1,9 +1,29 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T22:52
-completed: false
+updated: 2025-03-17T23:07
+completed: true
 ---
+>[!index]
+>- [livello applicazione](#livello%20applicazione)
+>	- [WWW](#WWW)
+>	- [URL](#URL)
+>	- [documenti web](#documenti%20web)
+>- [HTTP](#HTTP)
+>	- [connessioni HTTP](#connessioni%20HTTP)
+>		- [RTT](#RTT)
+>	- [messaggi HTTP](#messaggi%20HTTP)
+>		- [richiesta HTTP](#richiesta%20HTTP)
+>			- [metodi di richiesta](#metodi%20di%20richiesta)
+>			- [header nella richiesta](#header%20nella%20richiesta)
+>		- [risposta HTTP](#risposta%20HTTP)
+>			- [codici di risposta](#codici%20di%20risposta)
+>			- [intestazioni nella risposta](#intestazioni%20nella%20risposta)
+>- [cookie](#cookie)
+>	- [sessioni](#sessioni)
+>- [web caching](#web%20caching)
+>		- [GET condizionale](#GET%20condizionale)
+
 # livello applicazione
 come abbiamo visto nel [[03 - introduzione allo stack protocollare TCPslashIP#livello 5 applicazione|livello applicazione]], i protocolli in questo livello sono spesso parte di app
 >[!info] evoluzione app Internet
@@ -214,14 +234,28 @@ vantaggi:
 ![[Pasted image 20250317195329.png]]
 stimiamo il tempo di risposta:
 valutiamo [[02 - capacità e prestazioni delle reti#ritardo di accodamento|l’intensità di traffico]]: 
+>$$
+>\text{intensità di traffico su LAN= }\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
+>$$
+>$$
+>\text{ ``` su collegamento d'accesso} = \frac{L\cdot a}{R}= \frac{15req/s \cdot 1Mb}{15Mbps} = 100\%
+>$$
+>
+>$$
+>\text{ ritardo totale = ritardo di Internet + ritardo di accesso + ritardo LAN}
+>$$
+>$$
+>\text{ritardo totale = 2sec + minuti + millisecondi}
+>$$
+>una soluzione possibile potrebbe essere aumentare l’ampiezza di banda del collegamento d’accesso a 100mbps, per esempio. in questo caso, l’utilizzo sul collegamento d’accesso sarebbe del 15% (millisecondi), e il ritardo totale sarebbe più che gestibile. ciò però non è sempre attuabile, e comunque risulta costoso aggiornare il collegamento
 
-$$
-\text{intensità di traffico su LAN= }\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
-$$
-$$
-\text{ ``` su collegamento d'accesso} = \frac{L\cdot a}{R}= \frac{15req/s \cdot 1Mb}{15Mbps} = 100\%
-$$
-
+>[!example] esempio in presenza di cache
+>![[Pasted image 20250317225929.png]]
+>supponiamo un **hit rate** di 0,4:
+>- il 40% delle richieste sarà soddisfatto quasi immediatamente (circa 10ms) (inoltre, anche se la cache proxy deve comunque inviare richieste al server per verificare che la pagina non sia obsoleta, i messaggi ricevuti saranno più piccoli, e ciò migliora le prestazioni perchè il carico è minore)
+>- il 60% delle richieste sarà soddisfatto dal server d’origine
+>- l’utilizzo del collegamento d’accesso si è ridotto al 60%, determinando ritardi trascurabili (circa 10ms)
+>- ritardo totale medio = ritardo di Internet + ritardo di accesso + ritardo della LAN $\simeq 1,2\sec$
 
 >[!info] validazione dell’oggetto
 >la cache, anche se ha l’oggetto, prima di inviarlo al client deve verificare che non sia **scaduto**, cioè modificato sul server di origine
