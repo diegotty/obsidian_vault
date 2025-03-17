@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T19:52
+updated: 2025-03-17T20:03
 completed: false
 ---
 # livello applicazione
@@ -210,6 +210,16 @@ vantaggi:
 - riduce i tempi di risposta alle richieste dei client
 - riduce il traffio sul collegamento di accesso a Internet
 - Internet arricchita di cache consente ai provider meno efficienti di fornire dati con efficacia
+>[!example] esempio in assenza di cache
+![[Pasted image 20250317195329.png]]
+stimiamo il tempo di risposta:
+valutiamo [[02 - capacità e prestazioni delle reti#ritardo di accodamento|l’intensità di traffico]]: 
+
+$$
+\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
+$$
+
+
 >[!info] validazione dell’oggetto
 >la cache, anche se ha l’oggetto, prima di inviarlo al client deve verificare che non sia **scaduto**, cioè modificato sul server di origine
 >- la cache esegue quindi una richiesta verso il Web server che mantiene l’oggetto, per verificarne la validità mediante il metodo `GET condizionale`

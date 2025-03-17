@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T14:43
+updated: 2025-03-17T19:59
 completed: true
 ---
 # Internet
@@ -92,6 +92,12 @@ $$
 
 \text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
 $$
+$$
+\text{intensità di traffico}= \frac{L \cdot a}{R}
+$$
+- $\frac{L\cdot a}{r} \simeq 0$: poco ritardo
+- $\frac{L\cdot a}{r} \to 1$: il ritardo si fa consistente
+- $\frac{L\cdot a}{r} > 1$: più “lavoro” in arrivo di quanto possa essere effettivamente svolto ! (ritardo medio infinito)
 ### ritardo di propagazione
 tempo che **un bit** impiega per propagarsi **sul collegamento**
 $$
