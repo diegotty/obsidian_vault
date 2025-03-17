@@ -219,7 +219,7 @@ $$
 \text{intensità di traffico su LAN= }\frac{L \cdot a}{R} = \frac{15req/s \cdot 1mb/req}{100Mbps}=15\%
 $$
 $$
-\text{intensità di traffico su collegamento d'accesso} = \frac{L\cdot a}{R}= \frac{15req/s \cdot 1Mb}{15Mbps} = 100\%
+\text{ ``` su collegamento d'accesso} = \frac{L\cdot a}{R}= \frac{15req/s \cdot 1Mb}{15Mbps} = 100\%
 $$
 
 
