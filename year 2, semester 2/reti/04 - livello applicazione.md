@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-17T19:07
+updated: 2025-03-17T19:22
 completed: false
 ---
 # livello applicazione
@@ -164,14 +164,25 @@ può essere però necessario tenere traccia dell’utente: ci sono molti casi !
 - in particolare x offrire navigazione più personalizzata (profilare le persone ….), mantenere il carrello nei siti di commercio elettronico, …
 - non si può semplicemente tenere traccia degli indirizzi IP in quanto gli utenti possono lavorare su computer condivisi, e molti ISP assegnano lo stesso IP ai pacchetti in uscita provenienti da tutti gli utenti (es: in caso di NAT)
 la soluzione a questa esigenza sono i **cookie** ! essi consentono ai siti di tener traccia degli utenti:
-- grazie al meccanismo dei cookie, è possibile creare una sessione di richieste e risposte HTTP **“con stato”**(stateful)
-- la sessione rappresenta un contesto più largo della singola richiesta/risposta, 
+- grazie al meccanismo dei cookie, è possibile creare una sessione di richieste e risposte HTTP **“con stato”**(stateful): la sessione rappresenta quindi un contesto più largo della singola richiesta/risposta
+## sessioni
+ci possono essere diversi tipi di sessione, in base al tipo di informazioni scambiate e la natura del sito. in generale, una sessione:
+- ha un inizio e una fine
+- ha un tempo di vita relativamente corto
+- sia il client che il server possono chiudere la sessione
+- la sessione è **implicita** nello scambio di informazioni di stato
+>[!warning] per “sessione” non si intende connessione persistente, ma una sessione **logica** creata da richieste e risposte HTTP. una sessione può essere creat su connessioni persistenti e non persistenti
 
+>[!info] interazione utente-server: i cookie
+>- l’utente A accede sempre a Internet dallo stesso PC(non necessariamente con lo stesso IP)
+>- visita per la prima volta un particolare sito di commercio elettronico
+>- quando la richiesta HTTP iniziale giunge al sito, il sito crea un **ID**(identificativo unico), e una entry nel database per ogni ID
+>- l’utente A invierà ogni futura richiesta inserendo l’ID nella richiesta
+>![[Pasted image 20250317192106.png]]
 
-si cerca quindi di creare una sessione
+esiste quindi un file cookie mantenuto sul sistema terminale dell’utente, e gestito dal browser dell’utente
 
-la sessione è implicita nello scambio di informazioni
-
+esiste quindi un database sul server, che mantiene l’**ID**
 file cookie mantenuto sul sistema terminale !!! (dell’utente) e gestito dal browser dell’utente
 
 
