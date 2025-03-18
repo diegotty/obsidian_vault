@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T22:00
+updated: 2025-03-19T00:32
 completed: false
 ---
 
@@ -106,7 +106,9 @@ DNS sfrutta il caching per migliorare le prestazioni di ritardo e per ridurre il
 	- quindi i server DNS radice non vengono vistati spesso !
 ## DNS record
 il **mapping** è contenuto nei database sotto forma di **resource record**(**RR**): ogni RR mantiene un mapping(es: tra hostname e indirizzo IP, oppure tra alias e nome canonico, etc)
-i record vengono quindi
+i record vengono quindi spediti tra server e all’host richiedente all’interno di messaggi DNS
+- un messaggio può contenere più RR !
+
 
 
 i resource record vengono iniviati all’interno dei messaggi DNS
