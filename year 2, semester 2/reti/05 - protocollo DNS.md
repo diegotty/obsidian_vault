@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T21:34
+updated: 2025-03-18T21:49
 completed: false
 ---
 
@@ -53,9 +53,46 @@ la **gerarchia DNS** è organizzata in questo modo: le informazioni si organizza
 - **root**
 - **TLD**(top-level domain)
 - authoritative
-- ci sono poi i din
-i primi 2 livelli sono stati creati per rendere la ricerca veloce !
+- ci sono poi i server DNS **locali** con cui interagiscono direttamente le applicazioni
+>[!figure] gerarchia server DNS
+![[Pasted image 20250318213556.png]]
+### server DNS root
+in Internet ci sono 13 server DNS root, e ognuno di questi server è replicato per motivi di **sicurezza** e **affidabilità**: in totale diventano 247 root server (19 copie per ogni server)
+>[!figure] disposizione DNS root server
+![[Pasted image 20250318213903.png]]
+### TLD
+i server TLD si occupano dei domini `com`, `org`, `net`, `edu`, etc …, e di tutti i domini locali di alto livello, quali `it`, `uk`, `fr`, `ca`,  e`jp`.
+- in particolare la compagnia Verisign Global Registry Services gestisce i server TLD per il dominio `com`
+- in particolare il registro.it che ha sede a Pisa al CNR gestice il dominio `it`
+#### etichette dei domini generici
 
+### authoritative server
+gli authoritative server (o server di comptetenza) possono essere mantenuti:
+- dall’organizzazione che, essendo dotata di hosts Internet pubblicamente accessibili, deve fornire i record DNS di pubblico dominio che mappano i nomi di tali host in indirizzi IP
+- da un ISP per l’organizzazione
+in genere sono due server, primario e secondario !
+>[!example] esempio di gerarchia server DNS
+![[Pasted image 20250318214607.png]]
+
+#### etichette dei domini generici
+
+| etichetta | descrizione                            |
+| --------- | -------------------------------------- |
+| aero      | companie aree e aziende aerospaziali   |
+| biz       | aziende (simile a com)                 |
+| com       | organizzazioni commerciali             |
+| coop      | associazioni di cooperazione           |
+| edu       | istituzioni educative                  |
+| gov       | istituzioni governative                |
+| info      | fornitori di servizi informatici       |
+| int       | organizzazioni internazionali          |
+| mil       | organizzazioni militari                |
+| museum    | musei                                  |
+| name      | nomi di persone                        |
+| net       | organizzazioni che si occupano di reti |
+| org       | organizzazioni senza scopo di lucro    |
+| pro       | organizzazioni professionali           |
+### server DNS locale
 
 ### DNS caching
 
