@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T21:49
+updated: 2025-03-18T22:00
 completed: false
 ---
 
@@ -89,7 +89,24 @@ in genere sono due server, primario e secondario !
 >[!example] esempio di gerarchia server DNS
 ![[Pasted image 20250318214607.png]]
 ### server DNS locale
+quando un host effettua una richiesta DNS, la query viene inviata al suo server DNS locale, che opera da proxy e inoltra la query in una gerarchia di server DNS !
+- il server DNS locale non appartiene strettamente alla gerarchia dei server, e ciascun ISP ha un server DNS locale, detto anche “default name server”
+## query DNS
+>[!info] query iterativa
+![[Pasted image 20250318215327.png]]
+ogni volta che il DNS locale fa una query, esso stesso riceve la risposta da uno dei livelli della gerarchia DNS e si occupa di inviare un’altra richiesta al livello della gerarchia DNS inferiore !
 
-### DNS caching
+>[!info] query ricorsiva
+![[Pasted image 20250318215502.png]]
+in questo tipo di query, l’host richiedente (e il server DNS locale per lui) affida il compito di tradurre il nome al server DNS contattato
+## DNS caching
+DNS sfrutta il caching per migliorare le prestazioni di ritardo e per ridurre il numero di messaggi DNS che “rimbalzano” in Internet: una volta che un server DNS impara la mappatura, la mette nella **cache** (duh), secondo i criteri:
+- le informazioni nella cache vengono invalidate, e quindi spariscono, dopo un certo periodo di tempo
+- tipicamente un server DNS locale memorizza nella cache gli indirizzi IP dei server TLD, ma anche quellli di competenza
+	- quindi i server DNS radice non vengono vistati spesso !
+## DNS record
+il **mapping** è contenuto nei database sotto forma di **resource record**(**RR**): ogni RR mantiene un mapping(es: tra hostname e indirizzo IP, oppure tra alias e nome canonico, etc)
+i record vengono quindi
+
 
 i resource record vengono iniviati all’interno dei messaggi DNS
