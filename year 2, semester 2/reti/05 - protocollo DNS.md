@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T20:55
+updated: 2025-03-18T21:14
 completed: false
 ---
 
@@ -46,7 +46,7 @@ inoltre, DNS non può essere centralizzato, in quanto se si memorizzasse tutto i
 - il volume di traffico sarebbe troppo elevato 
 - ci sarebbe sempre, per qualcuno, troppa distanza dal database centralizzato
 - la manutenzione sarebbe ingestibile: il server dovrebbe essere aggiornato di continuo per includere nuovi nomi di host
-quindi un database centralizzato 
+quindi un database centralizzato su un singolo server DNS non è scalabile :(
 
 i primi 2 livelli sono stati creati per rendere la ricerca veloce !
 
