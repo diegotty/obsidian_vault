@@ -65,17 +65,6 @@ i server TLD si occupano dei domini `com`, `org`, `net`, `edu`, etc …, e di tu
 - in particolare la compagnia Verisign Global Registry Services gestisce i server TLD per il dominio `com`
 - in particolare il registro.it che ha sede a Pisa al CNR gestice il dominio `it`
 #### etichette dei domini generici
-
-### authoritative server
-gli authoritative server (o server di comptetenza) possono essere mantenuti:
-- dall’organizzazione che, essendo dotata di hosts Internet pubblicamente accessibili, deve fornire i record DNS di pubblico dominio che mappano i nomi di tali host in indirizzi IP
-- da un ISP per l’organizzazione
-in genere sono due server, primario e secondario !
->[!example] esempio di gerarchia server DNS
-![[Pasted image 20250318214607.png]]
-
-#### etichette dei domini generici
-
 | etichetta | descrizione                            |
 | --------- | -------------------------------------- |
 | aero      | companie aree e aziende aerospaziali   |
@@ -92,6 +81,13 @@ in genere sono due server, primario e secondario !
 | net       | organizzazioni che si occupano di reti |
 | org       | organizzazioni senza scopo di lucro    |
 | pro       | organizzazioni professionali           |
+### authoritative server
+gli authoritative server (o server di comptetenza) possono essere mantenuti:
+- dall’organizzazione che, essendo dotata di hosts Internet pubblicamente accessibili, deve fornire i record DNS di pubblico dominio che mappano i nomi di tali host in indirizzi IP
+- da un ISP per l’organizzazione
+in genere sono due server, primario e secondario !
+>[!example] esempio di gerarchia server DNS
+![[Pasted image 20250318214607.png]]
 ### server DNS locale
 
 ### DNS caching
