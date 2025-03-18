@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T12:32
+updated: 2025-03-18T12:44
 completed: false
 ---
 
@@ -33,14 +33,13 @@ il DNS offre il servizio di **aliasing**: un host può avere uno o più **alias*
 >- `relay1.west-coast.enterprise.com` è un **hostname canonico**
 >- `enterprise.com` e `www.enterprise.com` sono **alias**
 
-gli alias sono più facili da ricordare
-
-questa infomazione deve essere accessibile in tempi veloci e distribuirla (tanti ip ….)
-
-
-distribuzione del carico !! grazie a server replicati e DNS
-
+gli alias sono più facili da ricordare obv
+## distribuzione del carico
+DNS viene utilizzato per distribuire il carico tra **server replicati**: i siti con molto traffico vengono replicati su più server, e ciascuno di questi gira su un sistema terminale diverso, con indirizzo IP differente
+con il DNS è possibile associare un hostname canonico ad un insieme di indirizzi IP (contenuto dal DNS). in questo modo, quando viene fatta una richiesta al DNS per tale hostname, il server risponde con l’insieme di indirizzi, ma variando l’ordinamento ogni volta, effettivamente distribuendo il traffico sui server replicati
 ## gerarchia server DNS
+>[!info] lore 
+>ai tempi di ARPANET, il DNS era un file `host.txt`, mentre ora è un’applicazione che gira su ogni host, con un grande numero di server DNS distribuiti per il mondo, ed un relativo protocollo a livello applicazione che specifica la comunicazione tra server DNS e host richiedenti
 i primi 2 livelli sono stati creati per rendere la ricerca veloce !
 
 
