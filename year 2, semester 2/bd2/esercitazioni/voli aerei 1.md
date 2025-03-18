@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-15T16:53
+updated: 2025-03-18T18:24
 completed: false
 ---
 ```
@@ -23,4 +23,11 @@ completed: false
 	3.3 città in cui ha sede la direzione x
 ```
 
+in questo caso ha senso creare una classe Nazione in quanto la nazione può essere ““utile”” x query ……. (è d’interesse)
+- può vivere di vita propria 
+- possiamo immaginare che le istanze di nazioni non vengano create quando servono, ma da una lista, alla creazione del sistema
+
+
+
+meglio chiedere: ha senso impedire questa cosa ? al posto di: questa cosa capita ? 
 
