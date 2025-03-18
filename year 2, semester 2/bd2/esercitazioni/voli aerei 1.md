@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T17:22
+updated: 2025-03-18T18:24
 completed: false
 ---
 ```
@@ -26,3 +26,8 @@ completed: false
 in questo caso ha senso creare una classe Nazione in quanto la nazione può essere ““utile”” x query ……. (è d’interesse)
 - può vivere di vita propria 
 - possiamo immaginare che le istanze di nazioni non vengano create quando servono, ma da una lista, alla creazione del sistema
+
+
+
+meglio chiedere: ha senso impedire questa cosa ? al posto di: questa cosa capita ? 
+
