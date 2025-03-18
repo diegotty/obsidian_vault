@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-14T14:15
+updated: 2025-03-16T19:42
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -10,3 +10,6 @@ completed: true
 [[03 - colorazione di grafi, componenti connesse]]
 [[04 - ordinamento topologico]]
 [[05 - cicli]]
+[[06 - ponti]]
+[[07 - BFS]]
+[[08 - grafi pesati]]

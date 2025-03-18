@@ -1,9 +1,30 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-13T08:45
+updated: 2025-03-17T23:04
 completed: false
 ---
+>[!index]
+>- [introduzione allo stack protocollare TCP/IP](#introduzione%20allo%20stack%20protocollare%20TCP/IP)
+>	- [protocollo](#protocollo)
+>	- [strutturazione a livelli](#strutturazione%20a%20livelli)
+>- [stack protocollare TCP/IP](#stack%20protocollare%20TCP/IP)
+>	- [livello 5: applicazione](#livello%205:%20applicazione)
+>		- [protocolli standard](#protocolli%20standard)
+>		- [protocolli non standard](#protocolli%20non%20standard)
+>		- [creare un’applicazione di rete](#creare%20un%E2%80%99applicazione%20di%20rete)
+>			- [architettura dell’applicazione](#architettura%20dell%E2%80%99applicazione)
+>				- [paradigma client-server](#paradigma%20client-server)
+>	- [livello 4: trasporto](#livello%204:%20trasporto)
+>	- [livello 3: rete](#livello%203:%20rete)
+>	- [livello 2: link](#livello%202:%20link)
+>	- [livello 1: fisico](#livello%201:%20fisico)
+>	- [incapsulamento e decapsulamento](#incapsulamento%20e%20decapsulamento)
+>		- [multiplexing e demultiplexing](#multiplexing%20e%20demultiplexing)
+>	- [indirizzamento nel modello TCP/IP](#indirizzamento%20nel%20modello%20TCP/IP)
+>- [modello OSI](#modello%20OSI)
+>- [Internet standard](#Internet%20standard)
+
 # introduzione allo stack protocollare TCP/IP
 
 abbiamo una panoriamica della struttura e delle varie prestazioni di Internet: sappiamo che è costituita da numerose reti di varie dimensioni, interconnesse tramite opportuni dispositivi di comunicazione. tuttavia, per poter comunicare non è sufficiente assicurare questi collegamenti, ma è necessario utilizzare sia l’hardware che del software !
@@ -85,7 +106,6 @@ in questo paradigma, il ruolo delle due entità è totalmente differente: non è
 >- posta elettronica
 >- FTP
 >- SSH
-
 
 ## livello 4: trasporto
 è il livello in cui vengono trasferiti i messaggi a livello di appplicazone, da un client ad un server. si può scegliere tra i protocolli:

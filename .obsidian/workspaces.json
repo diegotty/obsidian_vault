@@ -866,16 +866,212 @@
         "type": "split",
         "children": [
           {
-            "id": "64c116353e6a52be",
+            "id": "e7cdac2b92daef0f",
             "type": "tabs",
             "children": [
               {
-                "id": "4c4264422de242dc",
+                "id": "6241c44da69aa67b",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/algo2/raw notes/2025-03-13.md",
+                    "file": "year 2, semester 2/algo2/algoritmi 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "algoritmi 2"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "2580565fda491a15",
+        "type": "split",
+        "children": [
+          {
+            "id": "950cd4eb7cffbb95",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "87bff695949ea9dc",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f16576e6e03b4de",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "TODO",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "9fa7d86a6957ee3d",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "de0dbddde79edade",
+        "type": "split",
+        "children": [
+          {
+            "id": "9ab4274e7a6a8dc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9d2182ef633ad10f",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for notes + index"
+                }
+              },
+              {
+                "id": "ea40e6a61abfcdb1",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from notes + index"
+                }
+              },
+              {
+                "id": "bbe3d339f336a373",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "952f10de0643e940",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md"
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of notes + index"
+                }
+              },
+              {
+                "id": "819fa9583f1812c9",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              }
+            ],
+            "currentTab": 3
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "omnisearch:Omnisearch": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "6241c44da69aa67b",
+      "mtime": "2025-03-16T19:42:22+01:00"
+    },
+    "reti": {
+      "main": {
+        "id": "3ff226ac07ffcebf",
+        "type": "split",
+        "children": [
+          {
+            "id": "c1e9ad377508320c",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "5bb253d349a6346b",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "reti di elaboratori"
+                }
+              },
+              {
+                "id": "d173bfa73d047745",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
                     "mode": "source",
                     "source": false
                   },
@@ -883,7 +1079,8 @@
                   "title": "2025-03-13"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           }
         ],
         "direction": "vertical"
@@ -1040,10 +1237,192 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "4c4264422de242dc",
-      "mtime": "2025-03-14T14:09:30+01:00"
+      "active": "d173bfa73d047745",
+      "mtime": "2025-03-13T16:09:31+01:00"
     },
-    "reti": {
+    "os2": {
+      "main": {
+        "id": "3ff226ac07ffcebf",
+        "type": "split",
+        "children": [
+          {
+            "id": "14eca13ab6e14ac9",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "91c0f09ac8395861",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/os2/02 - filesystem.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "02 - filesystem"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "2580565fda491a15",
+        "type": "split",
+        "children": [
+          {
+            "id": "950cd4eb7cffbb95",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "87bff695949ea9dc",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical",
+                    "autoReveal": false
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "9f16576e6e03b4de",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "TODO",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "byModifiedTime"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "9fa7d86a6957ee3d",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300
+      },
+      "right": {
+        "id": "de0dbddde79edade",
+        "type": "split",
+        "children": [
+          {
+            "id": "9ab4274e7a6a8dc2",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9d2182ef633ad10f",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for notes + index"
+                }
+              },
+              {
+                "id": "ea40e6a61abfcdb1",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from notes + index"
+                }
+              },
+              {
+                "id": "bbe3d339f336a373",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "952f10de0643e940",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "year2semester1/cp/notes + index.md"
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of notes + index"
+                }
+              },
+              {
+                "id": "819fa9583f1812c9",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {},
+                  "icon": "spreadsheet",
+                  "title": "Advanced Tables"
+                }
+              }
+            ],
+            "currentTab": 3
+          }
+        ],
+        "direction": "horizontal",
+        "width": 300,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "omnisearch:Omnisearch": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "91c0f09ac8395861",
+      "mtime": "2025-03-15T20:31:56+01:00"
+    },
+    "bd2": {
       "main": {
         "id": "3ff226ac07ffcebf",
         "type": "split",
@@ -1053,45 +1432,45 @@
             "type": "tabs",
             "children": [
               {
-                "id": "5bb253d349a6346b",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/reti/reti di elaboratori.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "reti di elaboratori"
-                }
-              },
-              {
                 "id": "d173bfa73d047745",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
+                    "file": "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2025-03-13"
+                  "title": "univesità 1"
                 }
               },
               {
-                "id": "3e657f625c7e83e5",
+                "id": "6c9e322b56ef4a51",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/2025-03-14.md",
+                    "file": "year 2, semester 2/bd2/esercitazioni/voli aerei 2.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2025-03-14"
+                  "title": "voli aerei 2"
+                }
+              },
+              {
+                "id": "761ebda115b133be",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "year 2, semester 2/bd2/esercitazioni/voli aerei 2.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "voli aerei 2"
                 }
               }
             ],
@@ -1152,8 +1531,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1252,191 +1630,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "3e657f625c7e83e5",
-      "mtime": "2025-03-14T16:05:31+01:00"
-    },
-    "os2": {
-      "main": {
-        "id": "3ff226ac07ffcebf",
-        "type": "split",
-        "children": [
-          {
-            "id": "3a075300bf22039f",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "4eaf0c1d31631e96",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "year 2, semester 2/os2/raw notes/2025-03-05.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "2025-03-05"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical"
-      },
-      "left": {
-        "id": "2580565fda491a15",
-        "type": "split",
-        "children": [
-          {
-            "id": "950cd4eb7cffbb95",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "87bff695949ea9dc",
-                "type": "leaf",
-                "state": {
-                  "type": "file-explorer",
-                  "state": {
-                    "sortOrder": "alphabetical",
-                    "autoReveal": false
-                  },
-                  "icon": "lucide-folder-closed",
-                  "title": "Files"
-                }
-              },
-              {
-                "id": "9f16576e6e03b4de",
-                "type": "leaf",
-                "state": {
-                  "type": "search",
-                  "state": {
-                    "query": "TODO",
-                    "matchingCase": false,
-                    "explainSearch": false,
-                    "collapseAll": false,
-                    "extraContext": false,
-                    "sortOrder": "byModifiedTime"
-                  },
-                  "icon": "lucide-search",
-                  "title": "Search"
-                }
-              },
-              {
-                "id": "9fa7d86a6957ee3d",
-                "type": "leaf",
-                "state": {
-                  "type": "bookmarks",
-                  "state": {},
-                  "icon": "lucide-bookmark",
-                  "title": "Bookmarks"
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
-      },
-      "right": {
-        "id": "de0dbddde79edade",
-        "type": "split",
-        "children": [
-          {
-            "id": "9ab4274e7a6a8dc2",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "9d2182ef633ad10f",
-                "type": "leaf",
-                "state": {
-                  "type": "backlink",
-                  "state": {
-                    "file": "year2semester1/cp/notes + index.md",
-                    "collapseAll": false,
-                    "extraContext": false,
-                    "sortOrder": "alphabetical",
-                    "showSearch": false,
-                    "searchQuery": "",
-                    "backlinkCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-coming-in",
-                  "title": "Backlinks for notes + index"
-                }
-              },
-              {
-                "id": "ea40e6a61abfcdb1",
-                "type": "leaf",
-                "state": {
-                  "type": "outgoing-link",
-                  "state": {
-                    "file": "year2semester1/cp/notes + index.md",
-                    "linksCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-going-out",
-                  "title": "Outgoing links from notes + index"
-                }
-              },
-              {
-                "id": "bbe3d339f336a373",
-                "type": "leaf",
-                "state": {
-                  "type": "tag",
-                  "state": {
-                    "sortOrder": "frequency",
-                    "useHierarchy": true
-                  },
-                  "icon": "lucide-tags",
-                  "title": "Tags"
-                }
-              },
-              {
-                "id": "952f10de0643e940",
-                "type": "leaf",
-                "state": {
-                  "type": "outline",
-                  "state": {
-                    "file": "year2semester1/cp/notes + index.md"
-                  },
-                  "icon": "lucide-list",
-                  "title": "Outline of notes + index"
-                }
-              },
-              {
-                "id": "819fa9583f1812c9",
-                "type": "leaf",
-                "state": {
-                  "type": "advanced-tables-toolbar",
-                  "state": {},
-                  "icon": "spreadsheet",
-                  "title": "Advanced Tables"
-                }
-              }
-            ],
-            "currentTab": 3
-          }
-        ],
-        "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
-      },
-      "left-ribbon": {
-        "hiddenItems": {
-          "switcher:Open quick switcher": false,
-          "graph:Open graph view": false,
-          "canvas:Create new canvas": false,
-          "daily-notes:Open today's daily note": false,
-          "templates:Insert template": false,
-          "command-palette:Open command palette": false,
-          "table-editor-obsidian:Advanced Tables Toolbar": false,
-          "omnisearch:Omnisearch": false,
-          "workspaces:Manage workspace layouts": false
-        }
-      },
-      "active": "4eaf0c1d31631e96",
-      "mtime": "2025-03-05T10:58:43+01:00"
+      "active": "761ebda115b133be",
+      "mtime": "2025-03-16T22:32:50+01:00"
     }
   },
   "active": "reti"

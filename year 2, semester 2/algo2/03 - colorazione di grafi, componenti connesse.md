@@ -1,8 +1,8 @@
 ---
-related to: 
+related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-08T11:31
-completed: false
+updated: 2025-03-16T17:59
+completed: true
 ---
 # colorazione di grafi
 >[!info] il problema: 
