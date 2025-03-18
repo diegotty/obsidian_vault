@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-18T21:14
+updated: 2025-03-18T21:34
 completed: false
 ---
 
@@ -41,13 +41,19 @@ con il DNS è possibile associare un hostname canonico ad un insieme di indirizz
 >[!info] lore 
 >ai tempi di ARPANET, il DNS era un file `host.txt`, mentre ora è un’applicazione che gira su ogni host, con un grande numero di server DNS distribuiti per il mondo, ed un relativo protocollo a livello applicazione che specifica la comunicazione tra server DNS e host richiedenti
 
-inoltre, DNS non può essere centralizzato, in quanto se si memorizzasse tutto il database su un singolo server:
-- ci sarebbe un singolo punto di fallimento
-- il volume di traffico sarebbe troppo elevato 
-- ci sarebbe sempre, per qualcuno, troppa distanza dal database centralizzato
-- la manutenzione sarebbe ingestibile: il server dovrebbe essere aggiornato di continuo per includere nuovi nomi di host
-quindi un database centralizzato su un singolo server DNS non è scalabile :(
+>[!info]- DNS centralizzato
+>inoltre, DNS non può essere centralizzato, in quanto se si memorizzasse tutto il database su un singolo server:
+>- ci sarebbe un singolo punto di fallimento
+>- il volume di traffico sarebbe troppo elevato 
+>- ci sarebbe sempre, per qualcuno, troppa distanza dal database centralizzato
+>- la manutenzione sarebbe ingestibile: il server dovrebbe essere aggiornato di continuo per includere nuovi nomi di host
+>quindi un database centralizzato su un singolo server DNS non è scalabile :(
 
+la **gerarchia DNS** è organizzata in questo modo: le informazioni si organizzano in base al dominio, e ci sono 3 classi di server DNS organizzati in una gerarchia:
+- **root**
+- **TLD**(top-level domain)
+- authoritative
+- ci sono poi i din
 i primi 2 livelli sono stati creati per rendere la ricerca veloce !
 
 
