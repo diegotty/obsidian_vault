@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-19T00:32
+updated: 2025-03-19T00:49
 completed: false
 ---
 
@@ -108,7 +108,49 @@ DNS sfrutta il caching per migliorare le prestazioni di ritardo e per ridurre il
 il **mapping** è contenuto nei database sotto forma di **resource record**(**RR**): ogni RR mantiene un mapping(es: tra hostname e indirizzo IP, oppure tra alias e nome canonico, etc)
 i record vengono quindi spediti tra server e all’host richiedente all’interno di messaggi DNS
 - un messaggio può contenere più RR !
+>[!figure] formato RR
+![[Pasted image 20250319003522.png]]
 
+### tipi di record
 
+| tipo  | interpretazione del campo valore                                                        |
+| ----- | --------------------------------------------------------------------------------------- |
+| A     | indirizzo IPv4 a 32 bit                                                                 |
+| NS    | identifica i server autoritativi di una zona                                            |
+| CNAME | indica che un nome di dominio è un alias per il nome di un dominio ufficiale (canonico) |
+| SOA   | specifica una serie di informazioni autoritative riguardo una zona                      |
+| MX    | indica il server di posta del dominio                                                   |
+| AAAA  | indirizzo IPv6                                                                          |
+
+>[!info] type A
+>$$
+>\text{hostname} \Rightarrow \text{IP \textcolor{red}{a}ddress}
+>$$
+>- `name` è il nome dell’host
+>- `value` è l’indirizzo IP
+es: `(relay1.bar.foo.com, 45.37.93.126, A)`
+
+>[!info] type CNAME
+>$$
+>\text{alias} \Rightarrow \text{\textcolor{red}{c}anonical \textcolor{red}{name}}
+>$$
+>- `name` è il nome alias di qualche nome canonico
+>- `value` è il nome canonico
+es: `(foo.com, relay1.bar.foo.com, CNAME)`
+
+>[!info] type NS
+>$$
+>\text{domain name} \Rightarrow \text{\textcolor{red}{n}ame \textcolor{red}{s}erver}
+>$$
+>- `name` è il dominio (es: `foo.com`)
+>- `value` è il nome dell’host del server di competenza di questo dominio
+es: `(foo.com, dns.foo.com, NS)`
+
+>[!info] type MX
+>$$
+>\text{alias} \Rightarrow \text{\textcolor{red}{m}ail server canonical name}
+>$$
+>- `value` è il nome canonico del server di posta associato a `name`
+es: `(foo.com, mail.bar.foo.com, MX)`
 
 i resource record vengono iniviati all’interno dei messaggi DNS
