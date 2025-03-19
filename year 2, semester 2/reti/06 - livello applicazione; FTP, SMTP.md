@@ -1,8 +1,6 @@
 ---
-related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
-created: 2025-03-02T17:41
-updated: 2025-03-19T18:57
-completed: false
+created: 2025-03-19T18:58
+updated: 2025-03-19T19:10
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -32,27 +30,58 @@ si occupa del trasferimento del file: quando il server riceve un comando per tra
 ![[Pasted image 20250319113753.png]]
 
 ## comandi e risposte FTP
+### principali comandi FTP
 
+| comando | argomenti              | descrizione                                     |
+| ------- | ---------------------- | ----------------------------------------------- |
+| `ABOR`  |                        | interruzione del comando precedente             |
+| `CDUP`  |                        | sale di un livello nell’albero delle dir        |
+| `CWD`   | nome della dir         | cambia la dir corrente                          |
+| `DELE`  | nome del file          | cancella il file                                |
+| `LIST`  | nome della dir         | elenca il contenuto della dir                   |
+| `MKD`   | nome della dir         | crea una nuova dir                              |
+| `PASS`  | password utente        | password                                        |
+| `PASV`  |                        | il server sceglie la porta                      |
+| `PORT`  | numero di porta        | il client sceglie la porta                      |
+| `PWD`   |                        | mostra il nome della directory corrente         |
+| `QUIT`  |                        | uscita dal sistema                              |
+| `RETR`  | nome di uno o più file | trasferisce uno o più file dal server al client |
+| `RMD`   | nome della dir         | cancella la dir                                 |
+| `RNTO`  | nome (del nuovo) file  | cambia il nome del file                         |
+| `STOR`  | nome di uno o più file | trasferisce uno o più file dal client al server |
+| `USER`  | identificativo         | identificazione dell’utente                     |
+### esempi di risposte FTP
+le risposte sono composta da due parti:
+- un numero di 3 cifre: il codice della risposta
+- un testo: i parametri necessari o informazioni supplementari
+la tabella seguente riporta solo i codici
 
-| comando | argomenti | descrizione |
-| ------- | --------- | ----------- |
-| `ABOR`  |           |             |
-| `CDUP`  |           |             |
-| `CWD`   |           |             |
-| `DELE`  |           |             |
-| `LIST`  |           |             |
-| `MKD`   |           |             |
-| `PASS`  |           |             |
-| `PASV`  |           |             |
-| `PORT`  |           |             |
-| `PWD`   |           |             |
-| `QUIT`  |           |             |
-| `RETR`  |           |             |
-| `RMD`   |           |             |
-| `RNTO`  |           |             |
-| `STOR`  |           |             |
-| `USER`  |           |             |
+| codice | descrizione                                        |
+| ------ | -------------------------------------------------- |
+| 125    | connessione dati aperta                            |
+| 150    | stato del file OK                                  |
+| 200    | comando OK                                         |
+| 220    | servizio pronto                                    |
+| 221    | servizio in chiusura                               |
+| 225    | connessione dati aperta (?)                        |
+| 226    | connesione dati in chiusura                        |
+| 230    | login dell’utente OK                               |
+| 250    | azione sul file OK                                 |
+| 331    | nome dell’utente OK: in attesa della password      |
+| 425    | non è possibile aprire la connesione dati          |
+| 450    | azione sul file non eseguita; file non disponibile |
+| 452    | azione interrotta; spazio insufficiente            |
+| 500    | errore di sintassi; comando non riconosciuto       |
+| 501    | errore di sintassi nei parametri o negli argomenti |
+| 530    | login dell’utente fallito                          |
 
+>[!example] esempio richiesta e risposta FTP
+![[Pasted image 20250319190752.png]]
+# posta elettronica
+esistono 3 componenti principali nel funzionamento della posta elettronica:
+- **user agent**: usato per scrivere e inviare un messaggio o leggerlo
+- **message transfer agent**: usato per trasferire il messaggio attraverso Internet
+- **message access agent**: usato per leggere la mail in arrivo
 come funziona il servizio mail ?
 
 2 protocolli x realizzare posta elettronica !
