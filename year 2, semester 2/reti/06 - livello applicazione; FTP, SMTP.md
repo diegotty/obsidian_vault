@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-19T19:10
+updated: 2025-03-19T19:23
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -79,9 +79,31 @@ la tabella seguente riporta solo i codici
 ![[Pasted image 20250319190752.png]]
 # posta elettronica
 esistono 3 componenti principali nel funzionamento della posta elettronica:
-- **user agent**: usato per scrivere e inviare un messaggio o leggerlo
-- **message transfer agent**: usato per trasferire il messaggio attraverso Internet
-- **message access agent**: usato per leggere la mail in arrivo
+- **user agent**(UA): detto anche “mail reader”, è usato per scrivere e inviare un messaggio o leggerlo. viene attivato dall’utente o da un timer: se c’è una nuova email informa l’utente, ma si occupa anche di composizione, editing e lettura dei messaggi di posta elettronica. inoltre passa al MTA il messaggio da inviare
+	- esempi: eudora, outlook, thunderbird
+- **message transfer agent**(MTA): usato per trasferire il messaggio attraverso Internet
+>[!info] come comunicano gli MTA ?
+![[Pasted image 20250319191644.png]]
+
+>gli MTA comunicano attraverso il protocollo **SMTP**(simple mail transfer protocol), e sono costituiti da:
+>- casella di posta: contiene i messaggi in arrivo per l’utente
+>- coda di messaggi: i messaggi da trasmettere (tentativi ogni $x$ minuti per alcuni giorni)
+- **message access agent**(MAA): usato per leggere la mail in arrivo
+vediamo il loro funzionamento nell’esempio:
+>[!example] l’esempio
+![[Pasted image 20250319191229.png]]
+
+## SMTP
+il protocollo **SMTP** usa [[06 - livello applicazione; FTP, SMTP#FTP|FTP]] per trasferire in modo affidabile i messaggi di posta elettronica dal client al server, utilizzando la porta 25
+- il trasferimento è diretto: dal server trasmittente al server ricevente, e si divide in 3 fasi:
+	- handshaking
+	- trasferimento di messaggi
+	- chiusura
+i messaggi devono essere in formato ASCII, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
+>[!example]
+![[Pasted image 20250319192341.png]]
+![[Pasted image 20250319192356.png]]
+
 come funziona il servizio mail ?
 
 2 protocolli x realizzare posta elettronica !
