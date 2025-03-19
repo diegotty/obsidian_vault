@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-19T00:49
+updated: 2025-03-19T01:04
 completed: false
 ---
 
@@ -17,6 +17,11 @@ il **DNS**(domain name system) è un protocollo del livello applicazione che ren
 - **accessibilità** → protocollo a livello di applicazione che consente agli host di interrogare il database distribuito per **risolvere**(tradurre) i nomi(in indirizzi)
 >[!info] il DNS viene quindi usato dagli altri protocolli di livello applicazione per tradurre hostname in indirizzi IP
 >utilizza il trasporto UDP e indirizza la porta 53 ! wooooo (…)
+
+>[!] perchè UDP ?
+>- less overhead:
+>	- messaggi corti
+>	- tempo per se
 
 >[!example] esempio di interazione con HTTP
 un bowser(ossia client HTTP) di un host utente richiede l’URL `www.someschool.edu`
@@ -153,4 +158,25 @@ es: `(foo.com, dns.foo.com, NS)`
 >- `value` è il nome canonico del server di posta associato a `name`
 es: `(foo.com, mail.bar.foo.com, MX)`
 
-i resource record vengono iniviati all’interno dei messaggi DNS
+>[!example] esempio
+>un server di competenza conterrà un record di tipo A per l’hostname, mentre un server non di competenza conterrà un record di tipo NS per il dominio che include l’hostname, e un record di tipo A che fornisce l’indirizzo ip per il server DNS nel campo `value` del record NS
+## messaggi DNS
+nel protocollo DNS, le query e i messaggi di risposta hanno lo stesso formato:
+>[!info] messaggio DNS
+![[Pasted image 20250319005312.png]]
+>- identificazione: numero di 16 bit per domanda: la risposta alla domanda usa lo stesso numero
+>- flag: 
+>	- domanda o risposta
+>	- richiesta di ricorsione
+>	- richiesta disponibile
+>	- risposta di competenza (il server è competente per il nome richiesto)
+>- numero di domande/RR di riposta/….: numero di occorrenze delle quattro sezioni di tipo dati che seguono
+>- nel corpo del messaggio (celeste) si hanno, in ordine:
+>	- campi per il nome richiesto e il tipo di domanda (A, MX (?) )
+>	- RR nella risposta alla domanda (insieme di RR nel caso di server replicati)
+>	-  record per i server di competenza
+>	- informazioni extra che possono essere usate (nel caso di una risposta MX, il campo di risposta contiene il RR MX, mentre la sezione aggiuntiva contiene un record di tipo A con l’indirizzo IP relativo all’hostname canonico del server di posta)
+## inserire record nel database DNS
+
+>[!example] esempio di richiesta DNS 
+![[Pasted image 20250319010339.png]]
