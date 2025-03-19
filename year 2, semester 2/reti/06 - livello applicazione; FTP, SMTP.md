@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-19T19:56
+updated: 2025-03-19T20:02
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -100,7 +100,7 @@ il protocollo **SMTP** usa [[06 - livello applicazione; FTP, SMTP#FTP|FTP]] per 
 	- trasferimento di messaggi
 	- chiusura
 i messaggi devono essere in formato ASCII a 7 bit, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
-- in questo protocollo, più oggetti vengono trasmessi in un unico messaggio
+- SMTP usa conessioni persistenti, e più oggetti vengono trasmessi in un unico messaggio
 >[!example] esempio …
 >1. alice usa il suo agente utente per comporre il messaggio da inviare a `rob@someschool.edu`
 >2. l’agente utente di alice invia un messaggio al server di posta di alice: il messagio è posto nella coda di messaggi
@@ -120,7 +120,20 @@ i messaggi devono essere in formato ASCII a 7 bit, così come i comandi inviati 
 >se ci sono altri messaggi, si usa la stessa connessione (in quanto è una connessione persistente), altrimenti il client invia richiesta di chiusura di connessione
 
 
-come funziona il servizio mail ?
+## formato dei messaggi di posta elettronica
+## MIME
+il protocollo **MIME** viene usato per inviare messaggi in formati che non sono ASCII
+>[!info] utilizzo di MIME
+![[Pasted image 20250319195741.png]]
+>MIME si occupa di tradurre da entrambe le parti il codice non-ASCII in ASCII e poi di nuovo in non-ASCII (in quanto SMTP richiede che i messaggi siano in ASCII a 7 bit)
+### messaggi con MIME
+- vengono usate intestazioni aggiuntive per dichiarare il tipo di contenuto MIME
+>[!example] messaggio con oggetto MIME
+invio:
+![[Pasted image 20250319200022.png]]
+>-`Content-Transfer-Encoding` indica il metodo usato per codificare i dati in ASCII
+ricezione:
+![[Pasted image 20250319200146.png]]
 
 2 protocolli x realizzare posta elettronica !
 
