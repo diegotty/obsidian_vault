@@ -1,10 +1,26 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T10:58
+updated: 2025-03-19T11:07
 completed: false
 ---
-
+>[!index]
+>- [indirizzo IP](#indirizzo%20IP)
+>- [DNS](#DNS)
+>	- [aliasing](#aliasing)
+>	- [distribuzione del carico](#distribuzione%20del%20carico)
+>	- [gerarchia server DNS](#gerarchia%20server%20DNS)
+>		- [server DNS root](#server%20DNS%20root)
+>		- [TLD](#TLD)
+>			- [etichette dei domini generici](#etichette%20dei%20domini%20generici)
+>		- [authoritative server](#authoritative%20server)
+>		- [server DNS locale](#server%20DNS%20locale)
+>	- [query DNS](#query%20DNS)
+>	- [DNS caching](#DNS%20caching)
+>	- [DNS record](#DNS%20record)
+>		- [tipi di record](#tipi%20di%20record)
+>	- [messaggi DNS](#messaggi%20DNS)
+>	- [inserire record nel database DNS](#inserire%20record%20nel%20database%20DNS)
 # indirizzo IP
 gli host Internt hanno i propri **hostname** (`www.google.com`, `w3.uniroma1.it`, ….), ma i nomi, anche se facili da ricoradare, forniscono poca informazione sulla collocazione degli host all’interno dell’Internet(`.it` ci dice che l’host si trova probabilmente in Italia, ma non dove)
 un **indirizzo IP** ci permette di identificare un host in una rete, e anche si sapere dove si trova tale host !

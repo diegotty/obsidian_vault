@@ -1,12 +1,12 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T10:58
+updated: 2025-03-19T11:08
 completed: false
 ---
-
-ciaociaociaociao
 # FTP
+**FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto
+>[!example]
 
 | comando | argomenti | descrizione |
 | ------- | --------- | ----------- |
