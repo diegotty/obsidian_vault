@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T13:53
+updated: 2025-03-19T14:02
 completed: false
 ---
 # FTP
@@ -34,24 +34,24 @@ si occupa del trasferimento del file: quando il server riceve un comando per tra
 ## comandi e risposte FTP
 
 
-| comando | argomenti | descrizione |
-| ------- | --------- | ----------- |
-| `ABOR`  |           |             |
-| `CDUP`  |           |             |
-| `CWD`   |           |             |
-| `DELE`  |           |             |
-| `LIST`  |           |             |
-| `MKD`   |           |             |
-| `PASS`  |           |             |
-| `PASV`  |           |             |
-| `PORT`  |           |             |
-| `PWD`   |           |             |
-| `QUIT`  |           |             |
-| `RETR`  |           |             |
-| `RMD`   |           |             |
-| `RNTO`  |           |             |
-| `STOR`  |           |             |
-| `USER`  |           |             |
+| comando | argomenti              | descrizione                                     |
+| ------- | ---------------------- | ----------------------------------------------- |
+| `ABOR`  |                        | interruzione del comando precedente             |
+| `CDUP`  |                        | sale di un livello nell’albero delle dir        |
+| `CWD`   | nome della dir         | cambia la dir corrente                          |
+| `DELE`  | nome del file          | cancella il file                                |
+| `LIST`  | nome della dir         | elenca il contenuto della dir                   |
+| `MKD`   | nome della dir         |                                                 |
+| `PASS`  | password utente        |                                                 |
+| `PASV`  |                        |                                                 |
+| `PORT`  | numero di porta        |                                                 |
+| `PWD`   |                        |                                                 |
+| `QUIT`  |                        |                                                 |
+| `RETR`  | nome di uno o più file | trasferisce uno o più file dal server al client |
+| `RMD`   | nome della dir         | cancella la dir                                 |
+| `RNTO`  | nome (del nuovo) file  | cambia il nome del file                         |
+| `STOR`  | nome di uno o più file | trasferisce uno o più file dal client al server |
+| `USER`  | identificativo         | identificazione dell’utente                     |
 
 come funziona il servizio mail ?
 
