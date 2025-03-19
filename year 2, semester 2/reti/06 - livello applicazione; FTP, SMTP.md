@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T11:38
+updated: 2025-03-19T11:41
 completed: false
 ---
 # FTP
@@ -30,6 +30,8 @@ si occupa del trasferimento del file: quando il server riceve un comando per tra
 - è quindi **non persistente**
 >[!figure] connessioni FTP
 ![[Pasted image 20250319113753.png]]
+
+## comandi e risposte FTP
 
 
 | comando | argomenti | descrizione |
