@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-19T19:23
+updated: 2025-03-19T19:29
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -100,9 +100,16 @@ il protocollo **SMTP** usa [[06 - livello applicazione; FTP, SMTP#FTP|FTP]] per 
 	- trasferimento di messaggi
 	- chiusura
 i messaggi devono essere in formato ASCII, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
->[!example]
+>[!example] esempio …
+>1. alice usa il suo agente utente per comporre il messaggio da inviare a `rob@someschool.edu`
+>2. l’agente utente di alice invia un messaggio al server di posta di alice: il messagio è posto nella coda di messaggi
+>3. il lato client di SMTP apre una connessione TCP con il server di posta di rob
+>4. il client SMTP invia il messaggio di alice sulla connessione TCP
+>5. il server di posta di rob riceve il messaggio e lo pone nella casella di posta di rob
+>6. rob invoca il suo agente utente per leggere il messagio
 ![[Pasted image 20250319192341.png]]
 ![[Pasted image 20250319192356.png]]
+
 
 come funziona il servizio mail ?
 
