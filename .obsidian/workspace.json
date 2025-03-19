@@ -27,26 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
+                "file": "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "voli aerei 1"
-            }
-          },
-          {
-            "id": "241ee5916538af24",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "06 - livello applicazione; FTP, SMTP"
             }
           },
           {
@@ -92,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -248,11 +234,17 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "241ee5916538af24",
+  "active": "c8b7a4f042c45bb7",
   "lastOpenFiles": [
+    "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
+    "year 2, semester 2/reti/01 - introduzione alle reti.md",
+    "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
+    "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
+    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
+    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
     "conflict-files-obsidian-git.md",
-    "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
     "year 2, semester 2/reti/raw notes/2025-03-14 @d.md",
     "year 2, semester 2/reti/images/Pasted image 20250319010339.png",
     "year 2, semester 2/reti/images/Pasted image 20250319005312.png",
@@ -263,10 +255,6 @@
     "year 2, semester 2/reti/images/Pasted image 20250318214607.png",
     "year 2, semester 2/reti/images/Pasted image 20250318213903.png",
     "year 2, semester 2/reti/images/Pasted image 20250318213556.png",
-    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
-    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
-    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
-    "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
     "Pasted image 20250319113753.png",
     "year 2, semester 2/bd2/2025-03-18.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
@@ -284,8 +272,6 @@
     "year 2, semester 2/algo2/raw notes/2025-03-17.md",
     "year 2, semester 2/reti/04 - livello applicazione.md",
     "year 2, semester 2/algo2/raw notes/2025-03-14.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-13.md",
-    "year 2, semester 2/reti/raw notes/2025-03-13.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",

@@ -1,12 +1,6 @@
 ---
-related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
-created: 2025-03-02T17:41
-<<<<<<< HEAD:year 2, semester 2/reti/04 - livello applicazione.md
-updated: 2025-03-19T06:40
-=======
-updated: 2025-03-19T10:58
->>>>>>> origin/main:year 2, semester 2/reti/04 - livello applicazione; HTTP.md
-completed: true
+created: 2025-03-19T13:44
+updated: 2025-03-19T13:46
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)

@@ -1,12 +1,6 @@
 ---
-related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
-created: 2025-03-02T17:41
-<<<<<<< HEAD:year 2, semester 2/reti/05 - protocollo DNS.md
-updated: 2025-03-19T06:40
-=======
-updated: 2025-03-19T11:07
->>>>>>> origin/main:year 2, semester 2/reti/05 - livello applicazione; DNS.md
-completed: false
+created: 2025-03-19T13:44
+updated: 2025-03-19T13:45
 ---
 >[!index]
 >- [indirizzo IP](#indirizzo%20IP)
