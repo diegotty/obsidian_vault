@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T13:53
+updated: 2025-03-19T18:57
 completed: false
 ---
 # FTP
