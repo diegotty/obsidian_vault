@@ -1,0 +1,300 @@
+{
+  "main": {
+    "id": "3ff226ac07ffcebf",
+    "type": "split",
+    "children": [
+      {
+        "id": "c1e9ad377508320c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5bb253d349a6346b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "reti di elaboratori"
+            }
+          },
+          {
+            "id": "c8b7a4f042c45bb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "voli aerei 1"
+            }
+          },
+          {
+            "id": "241ee5916538af24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
+          },
+          {
+            "id": "d173bfa73d047745",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-03-13"
+            }
+          },
+          {
+            "id": "3e657f625c7e83e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/reti/2025-03-14.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-03-14"
+            }
+          },
+          {
+            "id": "7c9e2edca676f68d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/reti/raw notes/2025-03-18.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-03-18"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2580565fda491a15",
+    "type": "split",
+    "children": [
+      {
+        "id": "950cd4eb7cffbb95",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "87bff695949ea9dc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9f16576e6e03b4de",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "TODO",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "byModifiedTime"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "9fa7d86a6957ee3d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "de0dbddde79edade",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ab4274e7a6a8dc2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9d2182ef633ad10f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "year2semester1/cp/notes + index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for notes + index"
+            }
+          },
+          {
+            "id": "ea40e6a61abfcdb1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "year2semester1/cp/notes + index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from notes + index"
+            }
+          },
+          {
+            "id": "bbe3d339f336a373",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "952f10de0643e940",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "year2semester1/cp/notes + index.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of notes + index"
+            }
+          },
+          {
+            "id": "819fa9583f1812c9",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "omnisearch:Omnisearch": false,
+      "workspaces:Manage workspace layouts": false
+    }
+  },
+  "active": "241ee5916538af24",
+  "lastOpenFiles": [
+    "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
+    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
+    "year 2, semester 2/reti/raw notes/2025-03-14 @d.md",
+    "year 2, semester 2/reti/images/Pasted image 20250319010339.png",
+    "year 2, semester 2/reti/images/Pasted image 20250319005312.png",
+    "year 2, semester 2/reti/images/Pasted image 20250319003734.png",
+    "year 2, semester 2/reti/images/Pasted image 20250319003522.png",
+    "year 2, semester 2/reti/images/Pasted image 20250318215502.png",
+    "year 2, semester 2/reti/images/Pasted image 20250318215327.png",
+    "year 2, semester 2/reti/images/Pasted image 20250318214607.png",
+    "year 2, semester 2/reti/images/Pasted image 20250318213903.png",
+    "year 2, semester 2/reti/images/Pasted image 20250318213556.png",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
+    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
+    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
+    "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
+    "Pasted image 20250319113753.png",
+    "year 2, semester 2/bd2/2025-03-18.md",
+    "year 2, semester 2/reti/reti di elaboratori.md",
+    "year 2, semester 2/reti/raw notes/2025-03-14.md",
+    "year 2, semester 2/reti/raw notes/2025-03-13 @d.md",
+    "year 2, semester 2/reti/raw notes/2025-03-11 @d.md",
+    "year 2, semester 2/reti/05 - protocollo DNS.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-14 @d.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-13 @d.md",
+    "year 2, semester 2/algo2/08 - grafi pesati.md",
+    "year 2, semester 2/algo2/07 - BFS.md",
+    "year 2, semester 2/algo2/06 - ponti.md",
+    "year 2, semester 2/reti/raw notes/2025-03-18.md",
+    "year 2, semester 2/reti/2025-03-14.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-17.md",
+    "year 2, semester 2/reti/04 - livello applicazione.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-14.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-13.md",
+    "year 2, semester 2/reti/raw notes/2025-03-13.md",
+    "year 2, semester 2/bd2/esercitazioni",
+    "year 2, semester 2/bd2",
+    "year 2, semester 2/reti/images",
+    "year 2, semester 2/os2/images",
+    "year 2, semester 2/algo2/images",
+    "year 2, semester 2/os2/raw notes",
+    "year 2, semester 2/os2",
+    "templates",
+    "year 2, semester 2/algo2/raw notes",
+    "year 2, semester 2/algo2"
+  ]
+}

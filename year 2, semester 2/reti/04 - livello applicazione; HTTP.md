@@ -1,7 +1,11 @@
 ---
-related to: 
+related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
+<<<<<<< HEAD:year 2, semester 2/reti/04 - livello applicazione.md
 updated: 2025-03-19T06:40
+=======
+updated: 2025-03-19T10:58
+>>>>>>> origin/main:year 2, semester 2/reti/04 - livello applicazione; HTTP.md
 completed: true
 ---
 >[!index]
@@ -25,7 +29,7 @@ completed: true
 >		- [GET condizionale](#GET%20condizionale)
 
 # livello applicazione
-come abbiamo visto nel [[03 - introduzione allo stack protocollare TCPslashIP#livello 5 applicazione|livello applicazione]], i protocolli in questo livello sono spesso parte di app
+come abbiamo visto nel [[03 - introduzione allo stack protocollare TCP-IP#livello 5 applicazione|livello applicazione]], i protocolli in questo livello sono spesso parte di app
 >[!info] evoluzione app Internet
 ![[Pasted image 20250316230932.png]]
 ## WWW

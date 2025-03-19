@@ -1,7 +1,11 @@
 ---
-related to: 
+related to: "[[introduzione alle"
 created: 2025-03-02T17:41
+<<<<<<< HEAD
 updated: 2025-03-19T06:40
+=======
+updated: 2025-03-19T10:57
+>>>>>>> origin/main
 completed: true
 ---
 >[!index]

@@ -1,7 +1,11 @@
 ---
-related to: 
+related to: "[[01 - introduzione alle reti]]"
 created: 2025-03-02T17:41
+<<<<<<< HEAD:year 2, semester 2/reti/03 - introduzione allo stack protocollare TCPslashIP.md
 updated: 2025-03-19T06:40
+=======
+updated: 2025-03-19T10:57
+>>>>>>> origin/main:year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md
 completed: false
 ---
 >[!index]
