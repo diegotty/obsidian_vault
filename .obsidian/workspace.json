@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "d3a378ef9fb2ff95",
+            "id": "d173bfa73d047745",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -192,11 +193,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "d3a378ef9fb2ff95",
+  "active": "d173bfa73d047745",
   "lastOpenFiles": [
+    "year 2, semester 2/bd2/esercitazioni/accademia 1.md",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/reti/images/Pasted image 20250319110917.png",
-    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
     "year 2, semester 2/reti/01 - introduzione alle reti.md",
     "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",

@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-16T20:49
+updated: 2025-03-19T13:50
 completed: false
 ---
 ```
@@ -29,3 +29,5 @@ completed: false
 	3. data di fine
 	4. progetto a cui fa riferimento (vedi req. 2)
 ```
+
+la specializzazione dei dati è statica: `intero > 0` è ok ma `intero > altro tipo` non è ok

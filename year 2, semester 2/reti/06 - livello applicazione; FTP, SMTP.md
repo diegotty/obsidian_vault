@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T11:41
+updated: 2025-03-19T13:53
 completed: false
 ---
 # FTP
@@ -38,20 +38,20 @@ si occupa del trasferimento del file: quando il server riceve un comando per tra
 | ------- | --------- | ----------- |
 | `ABOR`  |           |             |
 | `CDUP`  |           |             |
-| CWD     |           |             |
-| DELE    |           |             |
-| LIST    |           |             |
-| M`KD    |           |             |
-| PASS    |           |             |
-| PASV    |           |             |
-| PORT    |           |             |
-| PWD     |           |             |
-| QUIT    |           |             |
-| RETR    |           |             |
-| RMD     |           |             |
-| RNTO    |           |             |
-| STOR    |           |             |
-| `USER   |           |             |
+| `CWD`   |           |             |
+| `DELE`  |           |             |
+| `LIST`  |           |             |
+| `MKD`   |           |             |
+| `PASS`  |           |             |
+| `PASV`  |           |             |
+| `PORT`  |           |             |
+| `PWD`   |           |             |
+| `QUIT`  |           |             |
+| `RETR`  |           |             |
+| `RMD`   |           |             |
+| `RNTO`  |           |             |
+| `STOR`  |           |             |
+| `USER`  |           |             |
 
 come funziona il servizio mail ?
 
