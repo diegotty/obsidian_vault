@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-19T19:29
+updated: 2025-03-19T19:56
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -99,7 +99,8 @@ il protocollo **SMTP** usa [[06 - livello applicazione; FTP, SMTP#FTP|FTP]] per 
 	- handshaking
 	- trasferimento di messaggi
 	- chiusura
-i messaggi devono essere in formato ASCII, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
+i messaggi devono essere in formato ASCII a 7 bit, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
+- in questo protocollo, più oggetti vengono trasmessi in un unico messaggio
 >[!example] esempio …
 >1. alice usa il suo agente utente per comporre il messaggio da inviare a `rob@someschool.edu`
 >2. l’agente utente di alice invia un messaggio al server di posta di alice: il messagio è posto nella coda di messaggi
@@ -108,7 +109,15 @@ i messaggi devono essere in formato ASCII, così come i comandi inviati durante 
 >5. il server di posta di rob riceve il messaggio e lo pone nella casella di posta di rob
 >6. rob invoca il suo agente utente per leggere il messagio
 ![[Pasted image 20250319192341.png]]
+
+>[!esempio] a livello di protocollo:
 ![[Pasted image 20250319192356.png]]
+>1. il client SMTP, che cira sull’host server di posta in invio, fa stabilire una connessione sulla porta 25 verso il server SMTP: se il server è inattivo, il client riprova più tardi, altrimenti viene stabilita la connessione
+>2. il server e il client effettuano una forma di handshaking (il client indica indirizzo email del mittente e del destinatario)
+>3. il client invia il messaggio
+>4. il messaggio arriva al server destinatario grazie all’affidabilità di TCP
+>
+>se ci sono altri messaggi, si usa la stessa connessione (in quanto è una connessione persistente), altrimenti il client invia richiesta di chiusura di connessione
 
 
 come funziona il servizio mail ?
