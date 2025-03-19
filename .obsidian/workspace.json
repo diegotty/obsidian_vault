@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "c8b7a4f042c45bb7",
+            "id": "d3a378ef9fb2ff95",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -33,48 +33,6 @@
               },
               "icon": "lucide-file",
               "title": "06 - livello applicazione; FTP, SMTP"
-            }
-          },
-          {
-            "id": "d173bfa73d047745",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-03-13"
-            }
-          },
-          {
-            "id": "3e657f625c7e83e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/reti/2025-03-14.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-03-14"
-            }
-          },
-          {
-            "id": "7c9e2edca676f68d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/reti/raw notes/2025-03-18.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-03-18"
             }
           }
         ],
@@ -234,15 +192,17 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c8b7a4f042c45bb7",
+  "active": "d3a378ef9fb2ff95",
   "lastOpenFiles": [
+    "year 2, semester 2/reti/reti di elaboratori.md",
+    "year 2, semester 2/reti/images/Pasted image 20250319110917.png",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
     "year 2, semester 2/reti/01 - introduzione alle reti.md",
     "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
     "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
     "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
     "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
-    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
     "conflict-files-obsidian-git.md",
     "year 2, semester 2/reti/raw notes/2025-03-14 @d.md",
@@ -255,9 +215,7 @@
     "year 2, semester 2/reti/images/Pasted image 20250318214607.png",
     "year 2, semester 2/reti/images/Pasted image 20250318213903.png",
     "year 2, semester 2/reti/images/Pasted image 20250318213556.png",
-    "Pasted image 20250319113753.png",
     "year 2, semester 2/bd2/2025-03-18.md",
-    "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/reti/raw notes/2025-03-14.md",
     "year 2, semester 2/reti/raw notes/2025-03-13 @d.md",
     "year 2, semester 2/reti/raw notes/2025-03-11 @d.md",
@@ -271,7 +229,6 @@
     "year 2, semester 2/reti/2025-03-14.md",
     "year 2, semester 2/algo2/raw notes/2025-03-17.md",
     "year 2, semester 2/reti/04 - livello applicazione.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-14.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",
