@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-19T01:04
+updated: 2025-03-19T01:10
 completed: false
 ---
 
@@ -18,10 +18,12 @@ il **DNS**(domain name system) è un protocollo del livello applicazione che ren
 >[!info] il DNS viene quindi usato dagli altri protocolli di livello applicazione per tradurre hostname in indirizzi IP
 >utilizza il trasporto UDP e indirizza la porta 53 ! wooooo (…)
 
->[!] perchè UDP ?
+>[!info] perchè UDP ?
 >- less overhead:
 >	- messaggi corti
->	- tempo per se
+>	- tempo per setup conessione breve, al contrario di TCP
+>	- un unico messaggio deve essere scambiato tra una coppia di server, e vanno contattati diversi server per una risposta (mettere su una connessione, come richiesto da TCP, sarebbe un enorme spreco di tempo)
+>- se un messaggio non ha risposta entro un timeout, viene semplicemente ri-inviato dal resolver !
 
 >[!example] esempio di interazione con HTTP
 un bowser(ossia client HTTP) di un host utente richiede l’URL `www.someschool.edu`
@@ -177,6 +179,8 @@ nel protocollo DNS, le query e i messaggi di risposta hanno lo stesso formato:
 >	-  record per i server di competenza
 >	- informazioni extra che possono essere usate (nel caso di una risposta MX, il campo di risposta contiene il RR MX, mentre la sezione aggiuntiva contiene un record di tipo A con l’indirizzo IP relativo all’hostname canonico del server di posta)
 ## inserire record nel database DNS
+per aggiungere nuovi domini al DNS, si può contattare un **registar**(aziende commerciali accreditate dall’ICANN), che in cambio di un compenso verifica l’unicità del dominio richiesto e lo inserisce nel database (TLD)
+- nel nostro server di competenza, dovremo poi aggiungere i relativi RR necessari (almeno un RR di tipo A)
 
 >[!example] esempio di richiesta DNS 
 ![[Pasted image 20250319010339.png]]
