@@ -1,7 +1,7 @@
 ---
-related to: 
+related to: "[[01 - introduzione alle reti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-18T21:04
+updated: 2025-03-19T10:57
 completed: false
 ---
 >[!index]
