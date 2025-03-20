@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-16T19:41
+updated: 2025-03-20T11:15
 completed: false
 ---
 >[!example] problema
@@ -46,5 +46,4 @@ l’algoritmo avrà complessità $O(n'+m')$, dove $n'$ ed $m'$ sono rispettivame
 >
 > in questo caso la trasformazione del grafo pesato in grafo non pesato potrebbe non essere possibile nel caso le distanze tra le località non fossero numero interi, e comunque sarebbe improponibile perchè farebbe esplodere il numero di nodi ed archi nel grafo
 
-# algoritmo di Dijkstra
-vediamo allora un algoritmo che ci permette di trovare i cammini minimi lavorando direttamente su grafi pesati (con pesi anche non interi).
+vediamo allora un algoritmo che ci permette di trovare i cammini minimi lavorando direttamente su grafi pesati (con pesi anche non interi). [[09 - algoritmo di dijkstra|l’algoritmo di dijkstra !!]]
