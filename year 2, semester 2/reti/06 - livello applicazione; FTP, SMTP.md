@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-20T09:10
+updated: 2025-03-20T09:25
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -126,6 +126,17 @@ una delle differenze sostanziali tra HTTP ed STMP, che sono entrambi protocolli 
 
 
 ## formato dei messaggi di posta elettronica
+>[!info] formato dei messaggi
+![[Pasted image 20250320092444.png]]
+### esempi di header
+
+| header | descrizione |
+| ------ | ----------- |
+| to     |             |
+| from   |             |
+| Cc     |             |
+|        |             |
+
 ## MIME
 il protocollo **MIME** viene usato per inviare messaggi in formati che non sono ASCII
 >[!info] utilizzo di MIME
@@ -156,4 +167,16 @@ il protocollo **POP3** permette al client ricevente la posta di aprire una conne
 >- in questo esempio, viene usata la modalità “scarica e cancella”: rob non potrà rileggere le e-mail se cambia il client(in quanto saranno eliminate sul server, e salvate solo sul client da cui le ha lette e scaricate)
 >- si può anche usare la modalità “scarica e mantieni”, in cui i messaggi vengono mantenuti sul server dopo essere stati scaricati dal client
 
-POP3 è un protocollo senza strato tra le varie sessioni (?)
+POP3 è un protocollo senza strato tra le varie sessioni (?), e non fornisce all’utente alcuna procedura per creare cartelle remote ed assetnare loro messaggi, ma l’utente può crearle solo localmente sul suo computer !
+### IMAP
+a differenza di **POP3**, il protocollo **IMAP**:
+- mantiene tutti i messaggi in un unico posto: il server
+	- in particolare, un **server IMAP** asssocia a una **inbox**(una cartella) ogni messaggio arrivato al server (quindi ogni messaggio si trova in una inbox)
+- consente all’utente di organizzare i messaggi in cartelle, fornendo comandi agli utenti per creare cartelle, spostare messaggi tra cartelle, ed effettuare ricerche nelle cartelle remote
+- conserva lo stato dell’utente tra le varie sessioni: i nomi delle cartelle e le associazioni messaggi-cartelle(conservano praticamente la struttura del ““““filesystem ad un livello””””””’ ?)
+- fornisce comandi che permettono agli utenti di ottenere componenti di un messaggio (es: intestazione, parte di un messaggio)
+### HTTP
+si torna sempre dove si è stati bene ! infatti alcuni mail server forniscono accesso alla mail via web (ovvero mediante il protocollo HTTP). l’agente utente è quindi il browser (che fa richiesta al MTA usando client-side HTTP (?))
+- SMTP rimane il protocollo di comunicazione tra mail server, ovviamente
+>[!example] esempio
+![[Pasted image 20250320092142.png]]
