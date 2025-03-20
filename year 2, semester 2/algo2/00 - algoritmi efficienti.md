@@ -1,8 +1,14 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-02T22:51
+updated: 2025-03-20T12:02
 ---
+>[!index]
+>- [theta-notation](#theta-notation)
+>- [algoritmi efficienti](#algoritmi%20efficienti)
+>	- [problemi sub-esponenziali](#problemi%20sub-esponenziali)
+>		- [test di primalità](#test%20di%20primalit%C3%A0)
+
 lil ripasso
 # theta-notation
 $$\Theta(f(n))=\{g(n) | \exists k_{1},k_{2}, n_{0}\,\,\,t.c. \,\, k_{1}f(n)\leq g(n)\leq k_{2}f(n), \forall n \geq n_{0}\}$$

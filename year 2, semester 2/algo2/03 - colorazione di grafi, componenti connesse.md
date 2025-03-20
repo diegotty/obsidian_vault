@@ -1,9 +1,16 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-19T18:57
+updated: 2025-03-20T12:01
 completed: true
 ---
+>[!index]
+>- [colorazione di grafi](#colorazione%20di%20grafi)
+>	- [algoritmo per 2-colorabilità](#algoritmo%20per%202-colorabilit%C3%A0)
+>- [componente connessa](#componente%20connessa)
+>- [componente fortemente connessa](#componente%20fortemente%20connessa)
+>	- [algoritmo per componenti fortemente connesse](#algoritmo%20per%20componenti%20fortemente%20connesse)
+>		- [grafo trasposto](#grafo%20trasposto)
 # colorazione di grafi
 >[!info] il problema: 
 >dato un grafo connesso **e indiretto** $G$ ed un intero $k$, vogliamo sapere se è possible colorare i nodi del grafo in modo che i nodi adiacenti abbiano sempre colori distinti. in quel caso, il grafo si dice $k \text{-colorabile}$

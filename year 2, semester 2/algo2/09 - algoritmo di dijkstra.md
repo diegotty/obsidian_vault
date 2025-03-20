@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T11:55
+updated: 2025-03-20T12:07
 completed: false
 ---
 # algoritmo di dijkstra
@@ -54,14 +54,21 @@ caso base: $i=0$
 >- sia $T_{i}$ l’albero dei cammini minimi costruito fino al passo $i>0$, e sia $(u,v)$ l’arco aggiunto all’albero al passo $i+1$. faremo vedere che $D[v]$ è la distanza minima da $s$ a $v$. per fare ciò, basta mostrare che il costo di un eventuale cammino alternativo è sempre superiore o uguale a $D[v]$
 >	- sia $C$ un qualsiasi cammino da $s$ a $v$ alternativo a quello presente nell’albero, e $(x,y)$ il primo arco che incontriamo percorrendo tale cammino $C$ all’indietro, tale che $x$ è nell’albero $T_{i}$ e $y$ no (tale arco deve esistere perchè $s$ è in $T_{i}$ mentre $v$ no). (prendiamo quindi in considerazione cammini che l’algoritmo non avrebbe potuto scegliere alla $i+1$-esima iterazione, in quanto $y$ non è stato ancora visitato.)
 >	- per ipotesi induttiva, $\text{costo(C)} \geq \text{Dist(x) + peso(x,y)}$. (**questa affermazione è vera perchè i pesi del grafo sono tutti negativi**) (se non ci fosse stata una menzione del fatto che i pesi devono essere per forza positivi, la dimostrazione sarebbe stata sbagliata !)
+>	- l’algoritmo ha preferito estendere l’albero $T_{i}$ con l’arco $(u,v)$ anzichè l’arco $(x,y)$, e in base alla regola con cui l’algorimo sceglie l’arco con cui estende l’ablero, deve quindi aversi: $D[x] + p(x,y) >= D[u]+p(u,v)$
+>	- da cui segue che $\text{costo(C)} >= D[x] + \text{peso(x,y)} >= D[u] + p(u,v) = D[v]$
+>	- quindi il cammino alternativo ha costo superiore a $D[v]$
+![[Pasted image 20250320120024.png]]
 
 
+## implementazione
+>[!info] rappresentazione di grafi pesati
+rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista di adiacenza di $x$, invece di trovare solo il nodo di destinazione $y$, ci sarà la coppia $(y,c)$ dove $c$ è il peso dell’arco
 
-dimostrazione: induzione sui passi
-i = 0 : uso il fatto che i pesi sono non-negativi per sapere che il cammnimo ninimo tra la sorgente e la sorgente è 0
-i-1 le distanze settate sono corrette( ipotesi ind)
-i: passo induttivo: ipotiziamo per assurdo che esiste un cammino alternativo con distanza minore: questo ipotetico camino, ad un certo punto deve raggiungere $s$, la sorgente. e tale cammino non può costare meno di $f+c_{1}$. ma ciò è impossibile perchè dijkstra ha scelto $f+c_{1}$ xke costava di meno
+>[!] implementazione con lista
 
+```
+
+```
 qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
 implementazione facile/stupida è $O(n^2)$, senza uso di strutture dati particolari
 - se il grafo non è sparso (m=$O(n^2)$), questa implementazione è ottima !

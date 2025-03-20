@@ -1,9 +1,12 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-20T11:15
+updated: 2025-03-20T12:01
 completed: false
 ---
+>[!index]
+>- [grafi pesati](#grafi%20pesati)
+
 >[!example] problema
 >abbiamo tre contenitori di capienza 4, 7 e 10 libri. inizialmente i contenitori da 4 e 7 litri sono pieno d’acqua e quello da 10 è vuoto.
 >possiamo effettuare un solo tipo di operazione: versare acqua da un contenitore ad un altro fermandoci quando il contenitore sorgente è vuoto o uello destinazione è pieno.
