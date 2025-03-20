@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T12:24
+updated: 2025-03-20T12:40
 completed: false
 ---
 # algoritmo di dijkstra
@@ -64,36 +64,40 @@ caso base: $i=0$
 >[!info] rappresentazione di grafi pesati
 rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista di adiacenza di $x$, invece di trovare solo il nodo di destinazione $y$, ci sarà la coppia $(y,c)$ dove $c$ è il peso dell’arco
 
->[!] implementazione con lista
+>[!info] implementazione con lista
+>```python
+>def dijkstra(s, G):
+>	n = len(G)
+>	lista = [0, float('inf'), -1] * n
+>	lista[s] = (1, 0, s)
+>	for (y, costo) in G[s]: # aggiorno i nodi vicini di s
+>		lista[y] = (0, costo, s)
+>	while True:
+>		minimo, x = float('inf'), -1
+>		for i in range(n):
+>			if lista[i][0] == 0 and lista[i][1] < minimo:
+>				minimo, x = min(lista[i][1], i
+>		if minimo == float('inf'): #non ci sono nuovi nodi raggiungibili
+>			break
+>		definitivo, costo_x, origine = lista[x]
+>		lista[x] = (1, costo_x, origine) #setto solo definitivo
+>		for y, costo_arco in G[x]: #aggiorno eventuali vicini di x (n.d)
+>			if lista[y][0] == 0 and minimo+costo_arco < lista[y][1]:
+>				lista[y] = (0, minimo + costo_arco, x)	
+>	D, P = [costo for _, costo, _ in lista], [origine for _, _, origine in lista]
+>	return D, P
+>```
+>costo computazionale:
 
-```python
-def dijkstra(s, G):
-	n = len(G)
-	lista = [0, float('inf'), -1] * n
-	lista[s] = (1, 0, s)
-	for (y, costo) in G[s]:
-		lista[y] = (0, costo, s)
-	while True:
-		minimo, x = float('inf'), -1
-		for i in range(n):
-			if lista[i][0] == 0 and lista[i][1] < minimo:
-				minimo, x = min(lista[i][1], i
-		if minimo == float('inf'):
-			break
-		definitivo, costo_x, origine = lista[x]
-		lista[x] = (1, costo_x, origine )
-
-
-```
-qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
-implementazione facile/stupida è $O(n^2)$, senza uso di strutture dati particolari
-- se il grafo non è sparso (m=$O(n^2)$), questa implementazione è ottima !
+>[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
+implementazione con lista è $O(n^2)$ (senza uso di strutture particolari)
+>- se il grafo non è sparso (m=$O(n^2)$), questa implementazione è ottima !
+>
 implementazione con heap : $O((n+m) \log n)$
-- se il grafo è sparso, questa è la soluzione ottima ! se è denso, questa costa $O(n^2\log n)$ !!! quindi non ottima
-terza implementazione: $O(n\log n + m)$ algo usato dal dijkstra di python, uitilizza un’heap particolare (heap di fibonacci) che ha prestazioni migliori
+>- se il grafo è sparso, questa è la soluzione ottima ! se è denso, questa costa $O(n^2\log n)$, quindi non ottima !
+>
+terza implementazione: $O(n\log n + m)$: utilizza l’heap di fibonacci, che ha prestazioni migliori. 
+>- è l’algoritmo usato dal dijkstra di python (no ? non esiste pre-build dijkstra in python )
 
-esiste un lower bound per dijkstra $\Omega(n\log^*n + m)$ ($\log^*n$ è il logaritmo iterato, cresce lentissimamente, è quasi una costante !) (la funzione di hackermann è l’inverso (huh, fatto da piperno))
-
-in generale i grafi sono sparsi ! 
-## rappresentazione di grafi pesati
-ogni arco è rappresentato da un coppia (destinazione, costo)
+>[!info] lower bound più preciso
+>esiste un lower bound più preciso di $\Omega(n+m)$ per dijkstra: $\Omega(n\log^*n + m)$, dove $\log^*n$ è il logaritmo iterato: cresce lentissimamente, è quasi una costante(come funzione di ackermann (??)) 
