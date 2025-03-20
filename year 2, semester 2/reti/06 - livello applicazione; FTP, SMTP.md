@@ -1,7 +1,26 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-20T09:25
+updated: 2025-03-20T09:31
 ---
+>[!index]
+>- [FTP](#FTP)
+>	- [connessioni FTP](#connessioni%20FTP)
+>		- [connessione di controllo](#connessione%20di%20controllo)
+>		- [connessione dati](#connessione%20dati)
+>	- [comandi e risposte FTP](#comandi%20e%20risposte%20FTP)
+>		- [principali comandi FTP](#principali%20comandi%20FTP)
+>		- [esempi di risposte FTP](#esempi%20di%20risposte%20FTP)
+>- [posta elettronica](#posta%20elettronica)
+>	- [SMTP](#SMTP)
+>	- [formato dei messaggi di posta elettronica](#formato%20dei%20messaggi%20di%20posta%20elettronica)
+>		- [esempi di header](#esempi%20di%20header)
+>	- [MIME](#MIME)
+>		- [messaggi con MIME](#messaggi%20con%20MIME)
+>	- [protocolli di accesso alla posta](#protocolli%20di%20accesso%20alla%20posta)
+>		- [POP3](#POP3)
+>		- [IMAP](#IMAP)
+>		- [HTTP](#HTTP)
+>
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
 - **client**: il lato che inizia il trasferimento 
@@ -130,13 +149,17 @@ una delle differenze sostanziali tra HTTP ed STMP, che sono entrambi protocolli 
 ![[Pasted image 20250320092444.png]]
 ### esempi di header
 
-| header | descrizione |
-| ------ | ----------- |
-| to     |             |
-| from   |             |
-| Cc     |             |
-|        |             |
+| header  | descrizione                                                                      |
+| ------- | -------------------------------------------------------------------------------- |
+| to      | indirizzo di uno o più destinatari                                               |
+| from    | indirizzo del mittente                                                           |
+| cc      | indirizzo di uno o più destinatari a cui si invia per conoscenza (crack cocaina) |
+| bcc     | blind cc: gli altri destinatari non sanno che anche lui riceve il messaggio      |
+| subject | argomento del messaggio                                                          |
+| sender  | chi materialmente effettua l’invio (es: nome della segretaria)                   |
 
+>[!example] ulteriore esempio
+![[Pasted image 20250320092814.png]]
 ## MIME
 il protocollo **MIME** viene usato per inviare messaggi in formati che non sono ASCII
 >[!info] utilizzo di MIME
