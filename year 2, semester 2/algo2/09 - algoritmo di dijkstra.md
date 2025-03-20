@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T11:40
+updated: 2025-03-20T11:55
 completed: false
 ---
 # algoritmo di dijkstra
@@ -45,8 +45,15 @@ return P, D
 ad ogni iterazione del while viene assegnata una nuova distanza ad un nodo. per induzione sul numero di iterazioni, mostreremo che la distanza assegnata è quella minima
 >[!dimostrazione] dimostrazione
 caso base: $i=0$
->- i pesi sono non-negativi, quindi non esiste un cammino
-
+>- i pesi sono non-negativi, quindi non esiste un cammino minimo tra $s$ ed $s$ minore di 0, di conseguenza il cammino minimo è 0 (non ci si muove)
+>
+>ipotesi induttiva: $i$
+>- assumiamo che i cammini scelti dall’algoritmo per i primi $i$ passi siano cammini minimi
+>
+>passo induttivo: $i+1$
+>- sia $T_{i}$ l’albero dei cammini minimi costruito fino al passo $i>0$, e sia $(u,v)$ l’arco aggiunto all’albero al passo $i+1$. faremo vedere che $D[v]$ è la distanza minima da $s$ a $v$. per fare ciò, basta mostrare che il costo di un eventuale cammino alternativo è sempre superiore o uguale a $D[v]$
+>	- sia $C$ un qualsiasi cammino da $s$ a $v$ alternativo a quello presente nell’albero, e $(x,y)$ il primo arco che incontriamo percorrendo tale cammino $C$ all’indietro, tale che $x$ è nell’albero $T_{i}$ e $y$ no (tale arco deve esistere perchè $s$ è in $T_{i}$ mentre $v$ no). (prendiamo quindi in considerazione cammini che l’algoritmo non avrebbe potuto scegliere alla $i+1$-esima iterazione, in quanto $y$ non è stato ancora visitato.)
+>	- per ipotesi induttiva, $\text{costo(C)} \geq \text{Dist(x) + peso(x,y)}$. (**questa affermazione è vera perchè i pesi del grafo sono tutti negativi**) (se non ci fosse stata una menzione del fatto che i pesi devono essere per forza positivi, la dimostrazione sarebbe stata sbagliata !)
 
 
 
