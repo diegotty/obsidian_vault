@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T11:25
+updated: 2025-03-20T11:40
 completed: false
 ---
 # algoritmo di dijkstra
@@ -17,27 +17,38 @@ completed: false
 >- alla nuova destinazione assegna come distanza il costo del cammino
 >
 > a fine algoritmo, ogni nodo avrà la sua distanza minima dalla sorgente !
+>- è quindi una visita, ma più intelligente di DFS e BFS, in quanto non prende sempre una decisione scelta a priori  
 
 ## tecnica greedy
 l’algoritmo è il primo esempio che affrontiamo del **paradigma della tecnica greedy**:
 - **si prendono una sequenza di decisioni irrevocabili**: ad ogni passo si decide il cammino dal nodo sorgente ad un nuovo nodo, e una volta deciso il cammino, non si può più tornare indietro sulla decisione !
 - **le decisioni vengono prese in base ad un criterio “locale”**: tra tutti i nuovi cammini che si possono trovare estendendo i vecchi cammini di un arco, si sceglie quello che costa meno
+>[!warning] svantaggi della tecnica greedy
+l’applicazione di queste due regole porta ad algoritmi molto efficienti, infatti la tecnica greedy è infatti la prima tecnica che dovremmo provare ad applicare, di fronte ad un problema. 
+>spesso però, produce una soluzione **subottimale**, in quanto non capita sempre che la scelta di una soluzione “locale” ottimale porti ad una soluzione globale ottimale
+>- gli algoritmi greedy sono infatti spesso usati se non esistono algoritmi che trovano una soluzione corretta in tempo polinomiale, e si può dimostrare che l’algoritmo greedy ha un margine di errore piccolo
 
-- ad ogni iterazione, calcola il prossimo passo in base al cammino minimo che porta ad una nuova destinazione
+>[!tip] in questo caso l’algoritmo in porta alla soluzione **ottima** nei casi in cui l’algoritmo è corretto.
+> infatti bisogna subito notare che l’algoritmo di dijkstra non è corretto nel caso di grafi con pesi anche negativi ! (può sbagliare, ma non è detto che sbagli sempre !)
+## correttezza
+dimostriamo la correttezza dell’algoritmo di dijkstra ! introduciamo lo pseudocodice dell’algoritmo:
+```
+Dijkstra(s, G):
+- P[0...n-1] vettore dei padri inizializzato a -1
+- D[0...n-1] vettore delle distanze inizializzato a +inf
+- D[s], P[s] = 0, s
+- while esistono archi {x, y} con P[x] != -1 e P[y] == -1:
+	- sia {x,y} quello per cui è minimo D[x] + peso(x,y)
+	- D[y], P[y] = D[x] + peso(x,y), x
+return P, D
+```
+ad ogni iterazione del while viene assegnata una nuova distanza ad un nodo. per induzione sul numero di iterazioni, mostreremo che la distanza assegnata è quella minima
+>[!dimostrazione] dimostrazione
+caso base: $i=0$
+>- i pesi sono non-negativi, quindi non esiste un cammino
 
-a fine algoritmo, ogni nodo avrà la sua distanza minima dalla sorgente
 
-l’algorito di dijkstra è una visita + intelligente di DFS e BFS !
 
-l’algoritmo è una semplice applicazione della tecnica greedy: ad ogni passo io prendo una decisione irrevocabile, in base ad una regola locale → algoritmi efficienti ! è infatti la prima tecnica che dovremmo provare ad applicare
-- spesso però produce una soluzione subottimale, e spesso è usato se non esistono algoritmi che trovano la soluzione corretta in tempo polinomiale, e si può dimostrare che l’algoritmo greedy ha margine di errore piccolo
-
-in questo caso l’algoritmo porta alla soluzione ottima !
-
-dimostriamo che l’algoritmo è corretto
->[!warning] gli algoritmi greedy di solito non funzionano. lol
-
-dijkstra non funziona nel caso in cui alcuni pesi degli alberi sono negativi ! (può sbagliare, non è detto che sbagli)
 
 dimostrazione: induzione sui passi
 i = 0 : uso il fatto che i pesi sono non-negativi per sapere che il cammnimo ninimo tra la sorgente e la sorgente è 0
