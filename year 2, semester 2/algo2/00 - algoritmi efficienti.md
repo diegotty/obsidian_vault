@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T12:02
+updated: 2025-03-20T13:00
 ---
 >[!index]
 >- [theta-notation](#theta-notation)
