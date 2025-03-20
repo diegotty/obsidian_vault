@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T12:07
+updated: 2025-03-20T12:24
 completed: false
 ---
 # algoritmo di dijkstra
@@ -66,7 +66,23 @@ rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista 
 
 >[!] implementazione con lista
 
-```
+```python
+def dijkstra(s, G):
+	n = len(G)
+	lista = [0, float('inf'), -1] * n
+	lista[s] = (1, 0, s)
+	for (y, costo) in G[s]:
+		lista[y] = (0, costo, s)
+	while True:
+		minimo, x = float('inf'), -1
+		for i in range(n):
+			if lista[i][0] == 0 and lista[i][1] < minimo:
+				minimo, x = min(lista[i][1], i
+		if minimo == float('inf'):
+			break
+		definitivo, costo_x, origine = lista[x]
+		lista[x] = (1, costo_x, origine )
+
 
 ```
 qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
