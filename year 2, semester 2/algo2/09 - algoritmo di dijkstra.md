@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T12:40
+updated: 2025-03-20T12:47
 completed: false
 ---
 # algoritmo di dijkstra
@@ -65,6 +65,7 @@ caso base: $i=0$
 rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista di adiacenza di $x$, invece di trovare solo il nodo di destinazione $y$, ci sarà la coppia $(y,c)$ dove $c$ è il peso dell’arco
 
 >[!info] implementazione con lista
+**IDEA**:
 >```python
 >def dijkstra(s, G):
 >	n = len(G)
@@ -88,6 +89,12 @@ rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista 
 >	return D, P
 >```
 >costo computazionale:
+>- il costo delle istruzioni al di fuori del `while` è $\Theta(n)$
+>- il `while` viene eseguito al più $n-1$ volte, e all’interno del while c’è:
+>	- un primo `for` loop che viene iterato esattamente $n$ volte
+>	- un secondo $for$ che viene eseguito al più $n$ volte
+>
+> il costo del `while` è quindi $\Theta(n^2)$, che è la complessità dell’algoritmo
 
 >[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
 implementazione con lista è $O(n^2)$ (senza uso di strutture particolari)
@@ -98,6 +105,30 @@ implementazione con heap : $O((n+m) \log n)$
 >
 terza implementazione: $O(n\log n + m)$: utilizza l’heap di fibonacci, che ha prestazioni migliori. 
 >- è l’algoritmo usato dal dijkstra di python (no ? non esiste pre-build dijkstra in python )
+
+>[!info] implementazione con heap
+>se si potesse evitare di scorrere ogni volta il vettore `lista` alla ricerca della posizione in cui è presente il minimo, eviteremmo di pagare $O(n)$ ad ogni iterazione del while.
+>sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’elemento in tempo logaritmico nel numero di elementi presenti nell’heap !
+>**IDEA**:
+>```python
+>def dijkstra1(s, G):
+>	n = len(G)
+>	D = [float('inf')] * n
+>	P = [-1] * n
+>	D[s] = 0
+>	H = []
+>	for y, costo in G[s]:
+>		heappush(H, (costo, s, y))
+>	while H:
+>		costo, x, y heappop(H)
+>		if P[y] = -1:
+>			P[y] = x
+>			D[y] = costo
+>			for v, peso in G[y]:
+>				if P[v] == -1:
+>					heappush(H, (D[v] + peso, y, v))
+>	return D, P
+>```
 
 >[!info] lower bound più preciso
 >esiste un lower bound più preciso di $\Omega(n+m)$ per dijkstra: $\Omega(n\log^*n + m)$, dove $\log^*n$ è il logaritmo iterato: cresce lentissimamente, è quasi una costante(come funzione di ackermann (??)) 
