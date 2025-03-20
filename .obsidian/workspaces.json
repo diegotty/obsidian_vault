@@ -1052,7 +1052,7 @@
             "type": "tabs",
             "children": [
               {
-                "id": "5bb253d349a6346b",
+                "id": "534a8c7e372c06a1",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
@@ -1066,17 +1066,17 @@
                 }
               },
               {
-                "id": "d173bfa73d047745",
+                "id": "9b8d740dd9afb1e3",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/reti/raw notes/2025-03-13.md",
+                    "file": "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2025-03-13"
+                  "title": "06 - livello applicazione; FTP, SMTP"
                 }
               }
             ],
@@ -1237,8 +1237,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "d173bfa73d047745",
-      "mtime": "2025-03-13T16:09:31+01:00"
+      "active": "9b8d740dd9afb1e3",
+      "mtime": "2025-03-20T09:31:39+01:00"
     },
     "os2": {
       "main": {
@@ -1634,5 +1634,5 @@
       "mtime": "2025-03-16T22:32:50+01:00"
     }
   },
-  "active": "reti"
+  "active": "algo2"
 }
