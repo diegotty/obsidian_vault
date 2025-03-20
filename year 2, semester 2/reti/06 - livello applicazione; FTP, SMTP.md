@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-19T20:02
+updated: 2025-03-20T09:10
 ---
 # FTP
 **FTP** (file transfer protocol) è un programma di trasferimento file da/a un host remoto. segue il modello client/server:
@@ -101,6 +101,11 @@ il protocollo **SMTP** usa [[06 - livello applicazione; FTP, SMTP#FTP|FTP]] per 
 	- chiusura
 i messaggi devono essere in formato ASCII a 7 bit, così come i comandi inviati durante la comunicazione. le risposte invece sono composte da codice di stato ed espressione
 - SMTP usa conessioni persistenti, e più oggetti vengono trasmessi in un unico messaggio
+>[!warning] HTTP ed STMP
+una delle differenze sostanziali tra HTTP ed STMP, che sono entrambi protocolli utilizzati per trasferire file da un host all’altro è:
+>- HTTP è un protocollo di **pull**: gli utenti iniziano le connessioni TCP e scaricano i file da loro richiesti
+>- SMTP è un protocollo di **push**: il server di posta inizia la connessione TCP e spedisce il file
+
 >[!example] esempio …
 >1. alice usa il suo agente utente per comporre il messaggio da inviare a `rob@someschool.edu`
 >2. l’agente utente di alice invia un messaggio al server di posta di alice: il messagio è posto nella coda di messaggi
@@ -135,8 +140,20 @@ invio:
 ricezione:
 ![[Pasted image 20250319200146.png]]
 
-2 protocolli x realizzare posta elettronica !
+## protocolli di accesso alla posta
+come abbiamo visto, SMTP è un protocollo di **push**: si occupa della consegna del messaggio sul sever del destinatario. di conseguenza, non può essere usato dall’agente utente del destinatario perchè l’utente, per leggere la mail, deve eseguire un’operazione di **pull**
+per eseguire un’operazione di **pull**, ci si può affidare a:
+- **POP3**
+- **IMAP**
+- **HTTP**
+### POP3
+il protocollo **POP3** permette al client ricevente la posta di aprire una connessione TCP verso il server di posta, sulla porta 110. una volta che la connessione è stabilita, si procede in 3 fasi:
+- **autorizzazione**: l’agente utente invia nome utente e password per essere identificato
+- **transazione**: l’agente utente recupera i messaggi
+- **aggiornamento**: dopo che il client ha inviato `QUIT`, e quindi conclusa la connessione, vengono cancellati i messaggi marcati per la rimozione
+>[!info] comandi POP3
+![[Pasted image 20250320090746.png]]
+>- in questo esempio, viene usata la modalità “scarica e cancella”: rob non potrà rileggere le e-mail se cambia il client(in quanto saranno eliminate sul server, e salvate solo sul client da cui le ha lette e scaricate)
+>- si può anche usare la modalità “scarica e mantieni”, in cui i messaggi vengono mantenuti sul server dopo essere stati scaricati dal client
 
-MTA: server mittente parla direttamnete al sever destinatario ! (a livello di comunicazione/connessione)
-
-se il client dovesse mandare + mail, nella slide 21 si clicla nella parte da DAtA in poi
+POP3 è un protocollo senza strato tra le varie sessioni (?)
