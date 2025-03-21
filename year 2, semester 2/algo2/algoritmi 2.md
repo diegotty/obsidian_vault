@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T08:41
+updated: 2025-03-21T09:39
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -14,3 +14,4 @@ completed: true
 [[07 - BFS]]
 [[08 - grafi pesati]]
 [[09 - algoritmo di dijkstra]]
+[[10 - spanning tree]]
