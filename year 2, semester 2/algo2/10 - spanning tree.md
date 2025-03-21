@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T10:38
+updated: 2025-03-21T10:56
 completed: false
 ---
 # spanning tree
@@ -58,13 +58,31 @@ devo rifare per forza la visita (che pero costa $O(n)$, perchè n+m = massimo $n
 >- con un pre-processing, ordino gli archi della lista $E$ cosicchè scorrendo la lista ottengo di volta in volta l’arco di costo minimo in tempo $O(1)$
 >- verifico che l’arco $(x,y)$ non formi ciclo in $T$ controllando se $y$ è raggiungibile da $x$ in $T$ !!!
 >```python
+>de kursal(G):
+>	E = [(c, u, v) for u in range (len(G)) for v, c in G[u] if u<v]
+>	E.sort()
+>	T = [[] for _ in G]
+>	for c, u, v in E:
+>		if not connessi(u, v T):
+>			T[u].append(v)
+>			T[u].append(u)
+>	return T
+>	
 >def connessi(x, y, T);
 >	visitati = [0] * len(T)
->	return connessiR(x, y, T)
->def connessiR(a, b, T):
+>	return DFSr(x, y, T)
+>
+>def DFSr(a, b, T):
 >	visitati[a] = 1
 >	for z in T[a]:
 >		if z == b: return True
->		if not visitati[z] and connessiR(z, b, T): return True
+>		if not visitati[z and connessiR(z, b, T): return True
 >	return False	
 >```
+> complessità temporale:
+>- l’ordinamento costa $O(m\log n) = O(m\log n^2) = O(m\log n)$
+>- il `for`-loop viene iterato $m$ volte:
+>	- controllare che un arco non crei ciclo richiede il costo di una visita di un grafo aciclico, quindi $O(n)$(un grafo aciclico conesha $n-1$ nodi). il `for` richiede quindi $O(n\cdot m)$
+>
+>la complessità dell’algoritmo è quindi $O(m \cdot n)$
+
