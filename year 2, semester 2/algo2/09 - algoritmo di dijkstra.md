@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T09:10
+updated: 2025-03-21T09:26
 completed: false
 ---
 # algoritmo di dijkstra
@@ -122,13 +122,13 @@ sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’el
 >def dijkstra1(s, G):
 >	n = len(G)
 >	D = [float('inf')] * n
->	P = [-1] * n
->	D[s] = 0
+>	P = [-1] * n #vettore dei padri
+>	D[s] = 0 #vettore delle distanze
 >	H = []
 >	for y, costo in G[s]:
 >		heappush(H, (costo, s, y))
 >	while H:
->		costo, x, y heappop(H)
+>		costo, x, y = heappop(H)
 >		if P[y] = -1:
 >			P[y] = x
 >			D[y] = costo
@@ -138,7 +138,12 @@ sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’el
 >	return D, P
 >```
 >costo computazionale:
+>nell’heap ci possono essere anche $O(m)$ elementi, e quindi i costi di inserimento ed estrazione saranno $O(\log m) = O(\log n^2) = O(\log n)$ (proprietà dei logaritmi !)
+>- l’inizializzazione di $D$ e $P$ costa $\Theta(n)$, e l’inserimento dei vicini di $s$ nell’heap ha un costo di $O(n\log n)$
 >
+>abbiamo poi un `while`-loop con dentro un `for`-loop:
+>- ad ogni iterazione del `while`, si elimina un elemento da $H$ e 
+>la complessità di questa implementazione è dunque $O(n\log n) + O(m\log n) = O((n+m)\log n)$
 
 >[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
 implementazione con lista è $O(n^2)$ (senza uso di strutture particolari)
