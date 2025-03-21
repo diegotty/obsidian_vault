@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T12:50
+updated: 2025-03-21T13:09
 completed: false
 ---
 # livello trasporto
@@ -132,3 +132,11 @@ il ricevente esegue gli stessi passi, e se il valore del checksum calcolato dal 
 >[!info] DNS usa UDP !
 >quando vuole effettuare una query, DNS costruisce un messaggio di query, lo passa a UDP e aspetta una risposta. se non ne riceve, tenta di inviarla a un altro server dei nomi (server dei nomi ? server DNS ?)
 ## TCP
+il protocollo di trasporto **TCP** fornisce i servizi di:
+- comunicazione tra processi
+- incapsulamento/decapsulamento
+- multiplexing/demultiplexing
+- trasporto orientato alla connessione
+- controllo di flusso
+- controllo degli errori
+- controllo della congestione
