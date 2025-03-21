@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T13:41
+updated: 2025-03-21T13:56
 completed: false
 ---
 # livello trasporto
@@ -76,7 +76,7 @@ dato che l’interazione tra client e server è bidirezionale, è necessaria una
 ### individuare i socket
 come vengono individuati questi indirizzi ?
 >[!info] individuare i socket lato client
->- **socket adress locale**: fornito dal SO, in quanto conosce l’indirizzo ip del computer su cui il client è in esecuzione. il numero di porta è assegnato temporaneamente dal SO 
+>- **socket adress locale**: fornito dal SO, in quanto conosce l’indirizzo ip del computer su cui il client è in esecuzione. il numero di porta è assegnato temporaneamente dal SO(un socket dedicato a user apps \\QUESTION ……)
 >- **socket address remoto**: il numero di porta è conosciuto in base all’applicazione, mentre l’indirizzo IP è fornito dal DNS 
 
 >[!info] individuare i socket lato server
@@ -160,7 +160,9 @@ viene stabilita una **connessione logica** prima di scambiarsi i dati !
 quando un’entità produce dati che un’altra entità deve consumare, deve esistere un equilibrio fra la velocità di produzione e la velocità di consumo dei dati
 - velocità di produzione > velocità di consumo: il consumatore potrebbe essere sovraccaricato e costretto ad eliminare dati
 - velocità di produzione < velocità di consumo: il consumatore rimane in attesa riducendo efficienza del sistema (migliore delle due opzioni, non è grave)
-il **controllo del flusso** è legato alla prima problematica per evitare di perdere dati !
+>[!warning]il **controllo del flusso** è legato alla prima problematica per evitare di perdere dati !
+si riferisce al flusso di dati tra mittente e destinatario al contrario del [[#controllo della congestione]], che si riferisce alla rete, ed è quindi più generale
+
 >[!info] controlli di flusso a livello trasporto
 ![[Pasted image 20250321132830.png]]
 
@@ -184,3 +186,18 @@ ogni pacchetto viene etichettato con un **numero di sequenza**, utile al destina
 - i pacchetti duplicati
 in questo modo il destinatario può scartare i pacchetti corrotti e duplicati. se un pacchetto viene perso invece, il mittente se ne accorge per la mancanza di **numero di riscontro**(acknowledgement/ack/conferma), che permette al destinatario di notificare al mittente la corretta ricezione di un pacchetto
 ### integrazione di controllo di errori e controllo di flusso
+la combinazione dei due meccanismi avviene mediante un **buffer numerato** presso mittente e destinatario:
+>[!info] integrazione per mittente
+>- quando prepara un nuovo pacchetto, usa come numero di sequenza il numero ($x$) della prima locazione libera nel buffer
+>- quando invia il pacchetto ne memorizza una copia nella locazione $x$
+>- quando riceve un `ack` di un pacchetto, libera la posizione di memoria che era occupata da quel pacchetto
+
+>[!info] integrazione per destinatario
+>- quando riceve un pacchetto con numero di sequenza $y$, lo memorizza nella locazione $y$ fin quando il livello applicazione è pronto a riceverlo
+>- quando passa il pacchetto $y$ al livello applicazione, invia `ack` al mittente
+
+poichè i numeri di sequenza sono calcolati in modulo $2^m$(il numero di posti nel buffer è un potenza di 2), possono essere rappresentati in un cerchio
+- il buffer viene rappresentato con un insieme di settori, chiamati **sliding windows**, che in ogni ist
+### controllo della congestione
+nella [[01 - introduzione alle reti#reti a commutazione di pacchetto (store and forward)|commutazione a pacchetto]], la congestione avviene se il **carico**(numero di pacchetti inviati alla rete) della rete è superiore alla **capacità**(numero di pacchetti che la rete può gestire) della rete
+- il controllo della congestione si concretizza quindi in una serie di meccanismi e tecniche per controllare la congestione, manetenendo il carico della rete al di sotto della sua capacità
