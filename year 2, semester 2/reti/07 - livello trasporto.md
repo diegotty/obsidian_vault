@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T13:09
+updated: 2025-03-21T13:22
 completed: false
 ---
 # livello trasporto
@@ -140,3 +140,23 @@ il protocollo di trasporto **TCP** fornisce i servizi di:
 - controllo di flusso
 - controllo degli errori
 - controllo della congestione
+### demultiplexing orientato alla connessione
+la socket TCP è identificata da 4 parametri:
+- indirizzo IP di origine
+- numero di porta di origine
+- indirizzo IP di destinazione
+- numero di porta di destinazione
+l’host ricevente usa i quattro parametri per inviare il segmento alla socket appropriata
+- un host server può supportare più socket TCP contemporaneamente !
+- i socket web hanno socket differenti per ogni connessione client
+- con HTTP non persistente, si avrà una socket differente anche per ogni richiesta dallo stesso client
+>[!info] img
+![[Pasted image 20250321131641.png]]
+### servizio connection-oriented
+viene stabilita una **connessione logica** prima di scambiarsi i dati !
+>[!info] gestione di messaggi in ordine errato
+![[Pasted image 20250321132102.png]]
+### controllo di flusso
+quando un’entità produce dati che un’altra entità deve consumare, deve esistere un equilibrio fra la velocità di produzione e la velocità di consumo dei dati
+- velocità di produzione > velocità di consumo:
+- velocità di produzione < velocità di consumo:
