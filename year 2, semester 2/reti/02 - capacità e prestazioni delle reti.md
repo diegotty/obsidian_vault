@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-20T13:00
+updated: 2025-03-21T08:41
 ---
 >[!index]
 >- [Internet](#Internet)

@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-20T12:47
+updated: 2025-03-21T08:54
 completed: false
 ---
 # algoritmo di dijkstra
@@ -63,9 +63,18 @@ caso base: $i=0$
 ## implementazione
 >[!info] rappresentazione di grafi pesati
 rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista di adiacenza di $x$, invece di trovare solo il nodo di destinazione $y$, ci sarà la coppia $(y,c)$ dove $c$ è il peso dell’arco
-
+	
 >[!info] implementazione con lista
 **IDEA**:
+>nel vettore `lista`, per ogni nodo memorizziamo una terna nella forma `(definitivo, costo, origine)`, in cui, per un nodo $x$:
+>- **definitivo**: è un flag che assume il valore 1 se il costo per raggiungere $x$ è stato stabilito “definitivamente”, cioè è stato scelto come nuovo nodo da raggiungere ad un dato passo
+>- **costo**: rappresenta il costo corrente minimo notoi per raggiungere $x$ dalla sorgente $s$. all’inizio, per ogni nodo diverso da $s$, questo valore sarà inizializzato a $+\infty$, e per $s$ a 0. durante l’esecuzione dell’algoritmo, i valori possono essere aggiornati quando si trova un percorso migliore
+>- **origine**: indica l’ultimo predecessore di $x$ lungo il cammino dalla sorgente $s$ a $x$. se ancora non è stato trovato un percorso per $x$ oppure $x$ non ha predecessore, questo valore è inizialmente impostato a -1
+>
+>all’inizio l’unico nodo nell’albero è la sorgente, e di conseguenza la lista è inizializzata come segue:
+>$$
+>ciao
+>$$
 >```python
 >def dijkstra(s, G):
 >	n = len(G)
