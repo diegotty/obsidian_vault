@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T11:58
+updated: 2025-03-21T12:41
 completed: false
 ---
 # livello trasporto
@@ -101,3 +101,23 @@ come vengono individuati questi indirizzi ?
 è più veloce, ed è usato quando non interessa che arrivi sempre tutto e in ordine perfetto. 
 ## UDP
 il protocollo **UDP** è quindi un protcollo di trasporto inaffidabile e privo di connessione
+fornisce i servizi di:
+- comunicazione tra processi utilizzando i socket
+- multiplexing/demultiplexing dei pacchetti
+- incapsulamento e decapsulamento 
+	- i datagrammi sono indipendenti e non numerati
+- controllo checksum per errori (unico controllo che fornisce)
+>[!info] diagramma di comunicazione
+il mittente invia pacchetti un dopo l’altro senza pensare al destinatario
+>- ne può inviare a raffica in quanto non c’è un controllo di flusso o di congestione
+![[Pasted image 20250321123345.png]]
+
+UDP è connectionless: non c’è coordinazione tra livello di trasporto del mittente e del destinatario: il mittente divide i suoi messaggi in porzioni di dimensioni accettabili dal livello di trasporto, a cui lo consegna uno per uno.
+- la sequenza di arrivo può essere diversa da quella di spedizione, in quanto i pacchetti sono **indipendenti** l’uno dall’altro
+### datagrammi UDP
+nel procollo UDP, i messaggi devono avere dimensione inferiore a 65507 byte (65535 - 8 byte di intestazione UDP e 20 byte di intestazione IP)
+>[!info] struttura dei datagrammi UDP
+![[Pasted image 20250321124006.png]]
+>i primi 4 campi occupano ognuno 2 byte (insieme sono quindi gli 8 byte di intestazione UDP !)
+### checksum UDP
+l’obbiett
