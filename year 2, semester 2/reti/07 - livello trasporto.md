@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T11:56
+updated: 2025-03-21T11:58
 completed: false
 ---
 # livello trasporto
@@ -86,17 +86,18 @@ come vengono individuati questi indirizzi ?
 # servizi di trasporto
 ## overview
 **TCP**:
-- orientato alla connessione: è richiesto un setup fra processi client e server, che permette la “““creazione di un”
+- orientato alla connessione: è richiesto un setup fra processi client e server, che permette la “““creazione di un tubo”””” in cui i bit arrivano in ordine di spedizione
 - trasporto affidabile
-- controllo di flusso
-- controllo della congestione
-- non offre:
+- controllo di flusso: il mittente non vuole sovraccaricare il destinatario
+- controllo della congestione: “strozza” il processo d’invio quando la rete è sovraccaricata (kinky)
+- non offre: temporizzazione, garanzie su ampiezza di banda minima, sicurezza
 **UDP**
-- senza connessione:
-- trasporto inaffidabile:
-- non offre:
+- senza connessione
+- trasporto inaffidabile
+- non offre: setup della connessione, affidabilità, controllo di flusso, controllo della congestione, temporizzazione, ampiezza di banda minima, sicurezza
 
 >[!info]- perchè usare UDP ? 
 ![[Pasted image 20250321115511.png]]
 è più veloce, ed è usato quando non interessa che arrivi sempre tutto e in ordine perfetto. 
 ## UDP
+il protocollo **UDP** è quindi un protcollo di trasporto inaffidabile e privo di connessione
