@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "ce7e72fdbdbaae01",
+            "id": "351874757622a5e5",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -36,17 +36,17 @@
             }
           },
           {
-            "id": "1bc6d02011f89cd1",
+            "id": "ce7e72fdbdbaae01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
+                "file": "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20 @d"
+              "title": "09 - algoritmo di dijkstra"
             }
           }
         ],
@@ -207,12 +207,13 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ce7e72fdbdbaae01",
+  "active": "351874757622a5e5",
   "lastOpenFiles": [
     "year 2, semester 2/algo2/algoritmi 2.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
-    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
+    "year 2, semester 2/algo2/08 - grafi pesati.md",
+    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
     "year 2, semester 2/reti/raw notes/2025-03-20.md",
     "year 2, semester 2/algo2/00 - algoritmi efficienti.md",
     "year 2, semester 2/algo2/01 - grafi.md",
@@ -222,7 +223,6 @@
     "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/algo2/06 - ponti.md",
     "year 2, semester 2/algo2/07 - BFS.md",
-    "year 2, semester 2/algo2/08 - grafi pesati.md",
     "Pasted image 20250320120024.png",
     "year 2, semester 1/bd1/09 - FA = F+.md",
     "Pasted image 20250320111744.png",

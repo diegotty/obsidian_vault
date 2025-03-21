@@ -1,26 +1,25 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T09:40
+updated: 2025-03-21T09:56
 completed: false
 ---
-1. esonero 
-2. esercizi pubblicati x mail (algo)
-3. slide
 # spanning tree
 uno **spanning tree**(albero di copertura) è l’albero in cui esiste una unica componente connessa, con il minimo numero di archi
 - il costo dello spanning tree è la somma dei pesi di tutti gli archi 
 >[!info] problema: minimo spanning tree
 >dato un grafo non diretto, pesato e connesso $G$, vogliamo conoscere lo spanning tree con costo minimo
 
-la soluzione è detta albero perchè qualunque ciclo sarebbe una ridondanza (l’eliminazione di un qualunque arco del ciclo non farebbe perdere la connessione e diminuirebbe il costo della soluzione)
+la soluzione è un albero(grafo connesso aciclico) perchè qualunque ciclo sarebbe una ridondanza (l’eliminazione di un qualunque arco del ciclo non farebbe perdere la connessione e diminuirebbe il costo della soluzione). andiamo quindi alla ricerca in $G$ di un albero che **“copre”** l’intero grafo e la somma dei costi dei suoi archi sia minima !
+data l’importanza di di questo problema, esistono diversi algoritmi per risolvere questo problema. noi vedremo il seguente:
 ## algoritmo di Kruskal
 >[!info] logica
->parti con il grafo $T$ che contiene tutti i nodi di $G$ e nessun arco di $G$. considera uno dopo l’altro gli archi del grafo $G$ in ordine di costo crescente. se l’arco forma ciclo in $T$ con gli archi già presi, allora non prenderlo, altrimenti inseriscilo in $T$.
->al termine restituisci $T$
+>- parti con il grafo $T$ che contiene tutti i nodi di $G$ e nessun arco di $G$.
+>- considera uno dopo l’altro gli archi del grafo $G$ in ordine di costo crescente.
+>- se l’arco forma ciclo in $T$ con gli archi già presi, allora non prenderlo, altrimenti inseriscilo in $T$.
+>- al termine restituisci $T$
 
 l’algoritmo rientra perfettamente nel paradigma nella tecnica greedy !
-
 ### correttezza
 introduciamo lo pseudocodice dell’algoritmo:
 ```
@@ -35,10 +34,10 @@ kursal(G):
 ```
 per dimostrare la correttezza dell’algoritmo, dobbiamo far vedere che al termine dell’algoritmo $T$ è un spanning tree e che non c’è un altro spanning tree che costa meno
 
->[!dimostrazione]
+>[!dimostrazione] dimostrazione
 >**produce uno spanning tree**: 
 >supponiamo per assurdo che al termine in $T$ ci sia più di una componente. 
->dato che il grafo x ipotesi all’inizio è connesso, ci deve essere un arco che connette le due componenti. dato che non è stato inserito, vuol dire che creava ciclo. ma per creare ciclo, vuol dire che esisteva già un cammino che collegava le due componenti. CONTRADD
+>dato che il grafo di partenza $G$ per ipotesi è connesso, deve esistere (in $G$) un arco che connette le due componenti. dato che non è stato scelto dall’algoritmo, ciò implica che quando è stato considerato, avrebbbe creato un ciclo. ma per creare un ciclo, sarebbe dovuto esistere già un cammino che collegava le due componenti. ma dato che non crea ciclo ad algoritmo terminato, non creava ciclo neanche al momento in cui è stato estratto, quindi sarebbe stato aggiunto a $T$ e non scartato
 >
 **non c’è uno spanning tree per $G$ che costa meno di $T$**:
 supponiamo per assurdo che il costo dell’albero $T$ prodotto dall’algoritmo abbia costo maggiore dell’effettivo minimo spanning tree, $T^*$. necessariamente ci sarà un arco che compare in $T$ e non in $T^*$ (in quanto i due spanning tree sono diversi). se io aggiungo tale arco in $T^*$, si crea un ciclo. ciò vuol dire che non è possibile che tutti gli alberi partecipanti al ciclo appartengano a $T$ (in quanto $T$ non ha cicli). ne esiste almeno uno che non appartiene. se io toglo tale arco a $T^*$. quindi ora $T^*$ è più simile a $T$. ma in questo modo, ho trovato un altro albero che è ottimo e ha più archi in comune con $T$. inoltre tale nuovo albero non può costare più di $T^*$ in quanto gli archi in $T$ sono scelti per ordine crescente, quindi l’arco che ho copiato da $T$ ha costo minore o uguale a quello tolto da $T^*$, in quanto altrimenti $T$ avrebbe considerato prima l’arco tolto da $T^*$.  quindi il nuovo albero ha sicuramente costo ≤ a $T^*$

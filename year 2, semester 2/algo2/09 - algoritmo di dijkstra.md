@@ -1,9 +1,14 @@
 ---
-related to: 
+related to: "[[08 - grafi pesati]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T09:35
-completed: false
+updated: 2025-03-21T09:47
+completed: true
 ---
+>[!index]
+>- [algoritmo di dijkstra](#algoritmo%20di%20dijkstra)
+>	- [tecnica greedy](#tecnica%20greedy)
+>	- [correttezza](#correttezza)
+>	- [implementazione](#implementazione)
 # algoritmo di dijkstra
 >[!info] problema
 > dato un grafo pesato, vogliamo troare i cammini minimi e quindi anche le distanze da un certo nodo $s$(sorgente) a tutti gli altri nodi del grafo
