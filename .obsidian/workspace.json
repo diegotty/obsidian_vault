@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "351874757622a5e5",
+            "id": "ce7e72fdbdbaae01",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -33,20 +33,6 @@
               },
               "icon": "lucide-file",
               "title": "10 - spanning tree"
-            }
-          },
-          {
-            "id": "ce7e72fdbdbaae01",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "09 - algoritmo di dijkstra"
             }
           }
         ],
@@ -107,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -207,9 +192,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "351874757622a5e5",
+  "active": "ce7e72fdbdbaae01",
   "lastOpenFiles": [
     "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
+    "year 2, semester 2/algo2/images/Pasted image 20250320120024.png",
+    "year 2, semester 2/algo2/images/Pasted image 20250320111744.png",
     "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/08 - grafi pesati.md",
@@ -223,9 +210,7 @@
     "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/algo2/06 - ponti.md",
     "year 2, semester 2/algo2/07 - BFS.md",
-    "Pasted image 20250320120024.png",
     "year 2, semester 1/bd1/09 - FA = F+.md",
-    "Pasted image 20250320111744.png",
     "year 2, semester 2/algo2/raw notes/2025-03-17 @d.md",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
@@ -244,7 +229,6 @@
     "personal stuff/nvim notes/orgmode(org-mode and its nvim plugin).md",
     "personal stuff/nvim notes/misc.md",
     "personal stuff/arduino/misc.md",
-    "personal stuff/arduino/esp32.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",

@@ -82,7 +82,7 @@ devo rifare per forza la visita (che pero costa $O(n)$, perchè n+m = massimo $n
 > complessità temporale:
 >- l’ordinamento costa $O(m\log n) = O(m\log n^2) = O(m\log n)$
 >- il `for`-loop viene iterato $m$ volte:
->	- controllare che un arco non crei ciclo richiede il costo di una visita di un grafo aciclico, quindi $O(n)$(un grafo aciclico conesha $n-1$ nodi). il `for` richiede quindi $O(n\cdot m)$
+>	- controllare che un arco non crei ciclo richiede il costo di una visita di un grafo aciclico, quindi $O(n)$(un grafo aciclico conesso ha $n-1$ nodi). il `for` richiede quindi $O(n\cdot m)$
 >
 >la complessità dell’algoritmo è quindi $O(m \cdot n)$
 
