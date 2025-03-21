@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T10:12
+updated: 2025-03-21T10:38
 completed: false
 ---
 # spanning tree
@@ -42,22 +42,29 @@ per dimostrare la correttezza dell’algoritmo, dobbiamo far vedere che al termi
 **non c’è uno spanning tree per $G$ che costa meno di $T$**:
 >tra tutti i minimi spanning tree per $G$, prendiamo quello che differisce nel minor numero di archi da $T$: lo spanning tree $T^*$.
 supponiamo per assurdo che il costo dell’albero $T$ prodotto dall’algoritmo abbia costo maggiore (e quindi sia diverso) di, $T^*$. faremo vedere che questa assuzione porterebbe all’assurdo perchè avrebbe come conseguenza l’esistenza di un altro minimo spanning tree per $G$ che differisce da $T$ in meno archi di $T^*$.
-necessariamente ci sarà un arco che compare in $T$ e non in $T^*$ (in quanto i due spanning tree sono diversi). se io aggiungo tale arco in $T^*$, si crea un ciclo. ciò vuol dire che non è possibile che tutti gli alberi partecipanti al ciclo appartengano a $T$ (in quanto $T$ non ha cicli). ne esiste almeno uno che non appartiene. se io toglo tale arco a $T^*$. quindi ora $T^*$ è più simile a $T$. ma in questo modo, ho trovato un altro albero che è ottimo e ha più archi in comune con $T$. inoltre tale nuovo albero non può costare più di $T^*$ in quanto gli archi in $T$ sono scelti per ordine crescente, quindi l’arco che ho copiato da $T$ ha costo minore o uguale a quello tolto da $T^*$, in quanto altrimenti $T$ avrebbe considerato prima l’arco tolto da $T^*$.  quindi il nuovo albero ha sicuramente costo ≤ a $T^*$
-
+siano $e_{1},e_{2},\dots$ gli archi, in ordine, che sono stati considerati dall’algoritmo e sia $e$ il primo arco preso che non compare in $T^*$. aggiungendo $e$ a $T^*$, si crea sicuramente un ciclo $C$. il ciclo $C$ a sua volta, conterrà sicuraemtene un arco $e’$ che non appartiene a $T$,($T$ non può avere tutti gli archi del ciclo $C$,  altrimenti $e$ non sarebbe stato preso nell’algoritmo).
+consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a $T^*$. $$\text{costo (T') = costo(T*) - costo(e') + costo (e)}$$
+>inoltre $\text{costo(e)} <= \text{costo(e')}$, infatti tra i due archi $e$ ed $e’$ che non creavano ciclo, l’algoritmo ha considerato prima l’arco $e$.
+>ma allora $T’$ è un altro minimo spanning tree che differisce da $T$, ma in meno archi di quanto faccia $T^*$. ciò contraddice l’ipotesi che $T^*$ differisce da $T$ nel minor numero di archi.
 `sort()` - flavio sperandeo
+
+### implementazione
 
 sort() su una lista di tuple sorta sul primo valore di ogni tupla
 
 devo rifare per forza la visita (che pero costa $O(n)$, perchè n+m = massimo $n+(n-1)$)
-
-```python
-def connessi(x, y, T);
-	visitati = [0] * len(T)
-	return connessiR(x, y, T)
-def connessiR(a, b, T):
-	visitati[a] = 1
-	for z in T[a]:
-		if z == b: return True
-		if not visitati[z] and connessiR(z, b, T): return True
-	return False	
-```
+>[!info] implementazione
+>**IDEE**:
+>- con un pre-processing, ordino gli archi della lista $E$ cosicchè scorrendo la lista ottengo di volta in volta l’arco di costo minimo in tempo $O(1)$
+>- verifico che l’arco $(x,y)$ non formi ciclo in $T$ controllando se $y$ è raggiungibile da $x$ in $T$ !!!
+>```python
+>def connessi(x, y, T);
+>	visitati = [0] * len(T)
+>	return connessiR(x, y, T)
+>def connessiR(a, b, T):
+>	visitati[a] = 1
+>	for z in T[a]:
+>		if z == b: return True
+>		if not visitati[z] and connessiR(z, b, T): return True
+>	return False	
+>```
