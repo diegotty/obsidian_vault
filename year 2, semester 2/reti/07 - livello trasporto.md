@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T11:41
+updated: 2025-03-21T11:56
 completed: false
 ---
 # livello trasporto
@@ -53,11 +53,12 @@ l’host usa quindi indirizzi IP e numeri di porta per inviare il segmento al pr
 >[!info] huh
 ![[Pasted image 20250321113643.png]]
 
-il **socket** 
-
+il **socket** è un’astrazione (?): una struttura dati creata e utilizzata dal programma applicativo, che permette di comunicare, attraverso il socket,  tra un processo client e un processo server (???????)
+>[!info] illustrazione
+![[Pasted image 20250321114427.png]]
 ### numeri di porta
 i numeri di porta sono indirizzi di 16bit, che vanno quindi da 0 a 65535, divisi in:
-- **well known ports**: porte registrate per server comuni
+- **well known ports**: porte riservate per server comuni e noti
 	- FTP 20
 	- TELNET 23
 	- SMTP 25
@@ -65,5 +66,37 @@ i numeri di porta sono indirizzi di 16bit, che vanno quindi da 0 a 65535, divisi
 	- POP3 110
 	- ….
 - **assigned ports**
-	- 0 non usata
-	- 1-255 riservate per 
+	- 0: non usata
+	- 1-255: **well known ports**
+	- 256-1023: riservate per altri processi
+	- 1024-65535: dedicate a user apps (utilizzabili da tutti per nuove applicazioni)
+
+dato che l’interazione tra client e server è bidirezionale, è necessaria una coppia di indirizzi socket: **locale**(mittente) e **remoto**(destinatario)
+- l’indirizzo locale in una direzione è l’indirizzo remoto nell’altra direzione !
+### individuare i socket
+come vengono individuati questi indirizzi ?
+>[!info] individuare i socket lato client
+>- **socket adress locale**: fornito dal SO, in quanto conosce l’indirizzo ip del computer su cui il client è in esecuzione. il numero di porta è assegnato temporaneamente dal SO 
+>- **socket address remoto**: il numero di porta è conosciuto in base all’applicazione, mentre l’indirizzo IP è fornito dal DNS 
+
+>[!info] individuare i socket lato server
+>- **socket address locale**: fornito dal SO, in quanto conosce l’indirizzo IP del computer su cui il server è in esecuzione. il numero di porta è noto al server perchè assegnato dal progettista ! (numero well known o scelto)
+>- **socket address remoto**: è il socket address locale del client che si connette ! lo trova quindi all’interno del pacchetto di richiesta
+>[!warning] il socket address locale di un server non cambia(rimane fisso e invariato), mentre il socket address remoto varia ad ogni interazione con client diversi ( o stesso client su connessioni diverse)
+# servizi di trasporto
+## overview
+**TCP**:
+- orientato alla connessione: è richiesto un setup fra processi client e server, che permette la “““creazione di un”
+- trasporto affidabile
+- controllo di flusso
+- controllo della congestione
+- non offre:
+**UDP**
+- senza connessione:
+- trasporto inaffidabile:
+- non offre:
+
+>[!info]- perchè usare UDP ? 
+![[Pasted image 20250321115511.png]]
+è più veloce, ed è usato quando non interessa che arrivi sempre tutto e in ordine perfetto. 
+## UDP
