@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T12:41
+updated: 2025-03-21T12:50
 completed: false
 ---
 # livello trasporto
@@ -97,7 +97,7 @@ come vengono individuati questi indirizzi ?
 - non offre: setup della connessione, affidabilità, controllo di flusso, controllo della congestione, temporizzazione, ampiezza di banda minima, sicurezza
 
 >[!info]- perchè usare UDP ? 
-![[Pasted image 20250321115511.png]]
+![[Pasted image 20250321125022.png]]
 è più veloce, ed è usato quando non interessa che arrivi sempre tutto e in ordine perfetto. 
 ## UDP
 il protocollo **UDP** è quindi un protcollo di trasporto inaffidabile e privo di connessione
@@ -120,4 +120,15 @@ nel procollo UDP, i messaggi devono avere dimensione inferiore a 65507 byte (655
 ![[Pasted image 20250321124006.png]]
 >i primi 4 campi occupano ognuno 2 byte (insieme sono quindi gli 8 byte di intestazione UDP !)
 ### checksum UDP
-l’obbiett
+l’obbiettivo del **checksum** è di rilevare i bit alterati nel datagramma trasmesso
+il procedimento è il seguente:
+1. il messaggio del mittente viene diviso in parole da 16bit
+2. il valore del checksum viene inizialmente posto a 0
+3. tutte le parole del messaggio, incluso il checksum, vengono sommate usando l’addizione complemento ad 1 (ca1)
+4. viene fatto il complemento ad uno della somma e il risultato è il checksum
+5. il checksum viene inviato assieme ai dati
+il ricevente esegue gli stessi passi, e se il valore del checksum calcolato dal mittente è 0, allora il messaggio viene accettato, altrimenti viene scartato
+
+>[!info] DNS usa UDP !
+>quando vuole effettuare una query, DNS costruisce un messaggio di query, lo passa a UDP e aspetta una risposta. se non ne riceve, tenta di inviarla a un altro server dei nomi (server dei nomi ? server DNS ?)
+## TCP
