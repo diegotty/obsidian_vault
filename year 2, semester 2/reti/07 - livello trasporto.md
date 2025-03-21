@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T13:22
+updated: 2025-03-21T13:41
 completed: false
 ---
 # livello trasporto
@@ -158,5 +158,29 @@ viene stabilita una **connessione logica** prima di scambiarsi i dati !
 ![[Pasted image 20250321132102.png]]
 ### controllo di flusso
 quando un’entità produce dati che un’altra entità deve consumare, deve esistere un equilibrio fra la velocità di produzione e la velocità di consumo dei dati
-- velocità di produzione > velocità di consumo:
-- velocità di produzione < velocità di consumo:
+- velocità di produzione > velocità di consumo: il consumatore potrebbe essere sovraccaricato e costretto ad eliminare dati
+- velocità di produzione < velocità di consumo: il consumatore rimane in attesa riducendo efficienza del sistema (migliore delle due opzioni, non è grave)
+il **controllo del flusso** è legato alla prima problematica per evitare di perdere dati !
+>[!info] controlli di flusso a livello trasporto
+![[Pasted image 20250321132830.png]]
+
+come viene realizzato il controllo di flusso ?
+- esiste un **buffer** contenente pacchetti
+vengono comunicate informazioni di controllo d flusso tramite segnali dal consumatore al produttore:
+- **il livello di trasporto del destinatario segnala al livello trasporto del mittente** di sospendere l’invio di messaggi quando ha il buffer **mittente** saturo (e segnala di poter riprendere l’invio quando si libera spazio nel buffer)
+- **il livello di trasporto del mittente segnala al livello applicazione** di sospendere l’invio di messaggi quando ha il buffer **destinatario** saturo (come sopra)
+>[!warning] esistono quindi 2 buffer ! uno del mittente e uno del destinatario
+### controllo degli errori
+poichè il livello di rete è inaffidabile, è necesario implementare l’affidabilità al livello di trasporto, implementando un **controllo degli errori** sui pacchetti che permette di:
+- rilevare e scartare pacchetti corrotti
+- tenere traccia dei pacchetti persi e gestirne il rinvio
+- riconoscere pacchetti duplicati e scartarli
+- bufferizzare i pacchetti fuori sequenza finchè arrivano i pacchetti mancanti
+il controllo degli errori coinvolge solo i livelli trasporto di mittente e destinatario, attraverso segnalazioni da parte del destinatario al mittente
+#### realizzazione
+ogni pacchetto viene etichettato con un **numero di sequenza**, utile al destinatario per capire:
+- la sequenza di pacchetti in arrivo
+- i pacchetti persi
+- i pacchetti duplicati
+in questo modo il destinatario può scartare i pacchetti corrotti e duplicati. se un pacchetto viene perso invece, il mittente se ne accorge per la mancanza di **numero di riscontro**(acknowledgement/ack/conferma), che permette al destinatario di notificare al mittente la corretta ricezione di un pacchetto
+### integrazione di controllo di errori e controllo di flusso
