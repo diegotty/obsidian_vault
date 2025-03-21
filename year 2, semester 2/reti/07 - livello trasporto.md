@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T13:56
+updated: 2025-03-21T13:58
 completed: false
 ---
 # livello trasporto
@@ -197,7 +197,12 @@ la combinazione dei due meccanismi avviene mediante un **buffer numerato** press
 >- quando passa il pacchetto $y$ al livello applicazione, invia `ack` al mittente
 
 poichè i numeri di sequenza sono calcolati in modulo $2^m$(il numero di posti nel buffer è un potenza di 2), possono essere rappresentati in un cerchio
-- il buffer viene rappresentato con un insieme di settori, chiamati **sliding windows**, che in ogni ist
+- il buffer viene rappresentato con un insieme di settori, chiamati **sliding windows**, che in ogni istante occupano una parte del cerchio
+>[!figure] buffer come cerchio
+![[Pasted image 20250321135647.png]]
+
+>[!figure] buffer come sliding window
+![[Pasted image 20250321135812.png]]
 ### controllo della congestione
 nella [[01 - introduzione alle reti#reti a commutazione di pacchetto (store and forward)|commutazione a pacchetto]], la congestione avviene se il **carico**(numero di pacchetti inviati alla rete) della rete è superiore alla **capacità**(numero di pacchetti che la rete può gestire) della rete
 - il controllo della congestione si concretizza quindi in una serie di meccanismi e tecniche per controllare la congestione, manetenendo il carico della rete al di sotto della sua capacità
