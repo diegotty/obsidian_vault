@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T08:54
+updated: 2025-03-21T09:10
 completed: false
 ---
 # algoritmo di dijkstra
@@ -73,7 +73,12 @@ rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista 
 >
 >all’inizio l’unico nodo nell’albero è la sorgente, e di conseguenza la lista è inizializzata come segue:
 >$$
->ciao
+>\text{Lista}[x]=
+>\begin{cases}
+>(1,0,s)&\text{se } x=s \\
+>(0, costo, s)&\text{se }(costo,x)\in G[s] \\
+>(0,+\infty,-1)&\text{altrimenti}
+>\end{cases}
 >$$
 >```python
 >def dijkstra(s, G):
@@ -105,20 +110,14 @@ rappresenteremo il grafo pesato tramite lista di adiacenza, in cui: nella lista 
 >
 > il costo del `while` è quindi $\Theta(n^2)$, che è la complessità dell’algoritmo
 
->[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
-implementazione con lista è $O(n^2)$ (senza uso di strutture particolari)
->- se il grafo non è sparso (m=$O(n^2)$), questa implementazione è ottima !
->
-implementazione con heap : $O((n+m) \log n)$
->- se il grafo è sparso, questa è la soluzione ottima ! se è denso, questa costa $O(n^2\log n)$, quindi non ottima !
->
-terza implementazione: $O(n\log n + m)$: utilizza l’heap di fibonacci, che ha prestazioni migliori. 
->- è l’algoritmo usato dal dijkstra di python (no ? non esiste pre-build dijkstra in python )
+se si potesse evitare di scorrere ogni volta il vettore `lista` alla ricerca della posizione in cui è presente il minimo, eviteremmo di pagare $O(n)$ ad ogni iterazione del while.
+sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’elemento in tempo logaritmico nel numero di elementi presenti nell’heap !
 
 >[!info] implementazione con heap
->se si potesse evitare di scorrere ogni volta il vettore `lista` alla ricerca della posizione in cui è presente il minimo, eviteremmo di pagare $O(n)$ ad ogni iterazione del while.
->sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’elemento in tempo logaritmico nel numero di elementi presenti nell’heap !
 >**IDEA**:
+>manteniamo un **heap minimo** contenente triple $(\text{costo}, u, v)$ dove $u$ è un nodo già inserito nell’albero dei cammini minimi e $\text{costo}$ rappresenta la distanza che si avrebbe qualora il nodo $y$ venisse inserito nell’albero dei cammini minimi attraverso il nodo $x$
+>in questo modo, a ogni estrazione dall’heap possiamo individuare in tempo logaritmico nella dimensione dell’heap il nodo $v$ da inserire nell’albero, il costo da assegnargli come distanza da $s$ e il padre $u$ a cui collegarlo
+>- ogni volta che aggiungiamo un nodo $x$ all’albero, aggiorniamo anche l’heap inserendo, per ogni vicino $y$ di $x$, una nuova tripla $\text{(distanza\_aggiornata, x, y)}$. poichè ogni inserimento ha costo logaritmico nella dimensione dell’heap, il tempo complessivo rimange gestibile. inoltre, dato che non rimuoviamo elementi già presenti nell’heap, possono esistere più entri dello stesso nodo $y$ con distanze differenti, e dopo aver inserito per la prima volta $y$, gli altri cammini possono essere ignorati
 >```python
 >def dijkstra1(s, G):
 >	n = len(G)
@@ -138,6 +137,18 @@ terza implementazione: $O(n\log n + m)$: utilizza l’heap di fibonacci, che ha 
 >					heappush(H, (D[v] + peso, y, v))
 >	return D, P
 >```
+>costo computazionale:
+>
+
+>[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)
+implementazione con lista è $O(n^2)$ (senza uso di strutture particolari)
+>- se il grafo non è sparso (m=$O(n^2)$), questa implementazione è ottima !
+>
+implementazione con heap : $O((n+m) \log n)$
+>- se il grafo è sparso, questa è la soluzione ottima ! se è denso, questa costa $O(n^2\log n)$, quindi non ottima !
+>
+terza implementazione: $O(n\log n + m)$: utilizza l’heap di fibonacci, che ha prestazioni migliori. 
+>- è l’algoritmo usato dal dijkstra di python (no ? non esiste pre-build dijkstra in python )
 
 >[!info] lower bound più preciso
 >esiste un lower bound più preciso di $\Omega(n+m)$ per dijkstra: $\Omega(n\log^*n + m)$, dove $\log^*n$ è il logaritmo iterato: cresce lentissimamente, è quasi una costante(come funzione di ackermann (??)) 
