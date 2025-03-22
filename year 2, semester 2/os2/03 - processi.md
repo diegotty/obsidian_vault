@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T13:53
+updated: 2025-03-22T14:08
 completed: false
 ---
 # processi
@@ -56,3 +56,23 @@ l’esecuzione in background è possibile con il carattere `&`
 >- `bg` porta un processo in background
 >- `fg%n` dove `%n` è il numero del job, lo riporta in foreground
 >- `bg%n` dove `%n` è il numero del job, lo porta in background
+
+## pipelining dei comandi
+è possibile eseguire un job composto da più comandi:
+```
+comando1 | comando2 | .... comando n
+```
+dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
+- se uso `|&`, viene ridirezionato lo standard error invece dello standard output allo standard input del comando successivo !
+## comandi
+### $\verb |ps [opzioni] [pid ...]|$
+mostra le informazioni dei process in esecuzione, e legge le informazioni dai file virtuali in `/proc`
+- `ps` senza argomenti mostra i processi dell’utente attuale lanciati dalla shell corrente ! (x ogni processo mostra PID, TTY, TIME e CMD)
+- `[-e]`: tutti i figli del processo 0, cioè tutti i processi di tutti gli utenti lanciati da tutte le shell o al boot
+- `[-u] {utente}`: tutti i processi degli utenti nella lista
+- `[-p] {pid, ..}`: tutti i processi con i PID nella lista
+- `[-f]`: full-format listing
+- `[-l]`: display BSD long format
+- `[-o] {field, ...}`: user defind format, per scegliere i campi da visualizzare 
+### $\verb |top [-b] [-n \nu m] [-p {pid,}]|$
+`ps` interattivo
