@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "personal stuff/arch linux notes/user hierarchy, permissions.md",
+                "file": "year 2, semester 2/os2/02 - filesystem.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "user hierarchy, permissions"
+              "title": "02 - filesystem"
+            }
+          },
+          {
+            "id": "4872a69e7936d4df",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/os2/03 - processi.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "03 - processi"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,9 +193,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "91c0f09ac8395861",
+  "active": "4872a69e7936d4df",
   "lastOpenFiles": [
     "year 2, semester 2/os2/02 - filesystem.md",
+    "year 2, semester 2/os2/03 - processi.md",
+    "personal stuff/arch linux notes/user hierarchy, permissions.md",
     "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
     "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
     "year 2, semester 2/bd2/esercitazioni/università 2.md",
@@ -214,8 +231,6 @@
     "year 2, semester 2/algo2/04 - ordinamento topologico.md",
     "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/algo2/06 - ponti.md",
-    "year 2, semester 2/algo2/07 - BFS.md",
-    "year 2, semester 1/bd1/09 - FA = F+.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
