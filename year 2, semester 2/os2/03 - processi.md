@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T14:08
+updated: 2025-03-22T14:09
 completed: false
 ---
 # processi
@@ -75,4 +75,6 @@ mostra le informazioni dei process in esecuzione, e legge le informazioni dai fi
 - `[-l]`: display BSD long format
 - `[-o] {field, ...}`: user defind format, per scegliere i campi da visualizzare 
 ### $\verb |top [-b] [-n \nu m] [-p {pid,}]|$
-`ps` interattivo
+`ps` interattivo, dinamico e real-time
+- `[-b]`: non accetta più comandi interattivi, ma continua a fare refresh ogni pochi secondi
+- `[-n num]`: fa solo `num` refresh
