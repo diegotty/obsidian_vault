@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T14:09
+updated: 2025-03-22T15:23
 completed: false
 ---
 # processi
@@ -78,3 +78,19 @@ mostra le informazioni dei process in esecuzione, e legge le informazioni dai fi
 `ps` interattivo, dinamico e real-time
 - `[-b]`: non accetta più comandi interattivi, ma continua a fare refresh ogni pochi secondi
 - `[-n num]`: fa solo `num` refresh
+### $\verb |kill [-l [signal]] [-signal] [pid]|$
+invia segnali ad un processo (non solo la teriminazione !)
+- `[-l]` non mostra la lista dei segnali (i segnali sono identificati dal numero oppure dal come con `SIG` o senza `SIG`)
+- i segnali verranno presi in considerazione solo se il **real user** del processo è lo stesso che inivia il segnale (o se lo invia un superuser)
+- `CTRL+z` invia un `SIGSTOP` !
+- `CTRL+c` invia un `SIGINT` !
+- se non viene specificato nessun segnale, viene inviato il segnale `TERM`
+### $\verb |nice [-n num] [comando]|$
+senza opzioni, dice quant’è il **niceness** di partenza (valore da aggiungere al nice ogni ms(credo ?), va da -19 a +20, con default 0)
+- `nice [-n num] comando` lancia un comando con niceness `num`
+### $\verb |renice priority {pid}|$
+internviene su processi già in esecuzione (infatti chiede un PID), e altera la loro priorità
+### $\verb |strace [-p pid] [comando]|$
+- lancia `comando` visualizzando tutte le sue syscall
+- `[-o] filename` ridireziona l’output su un file
+- utile per il debug di programmi ch
