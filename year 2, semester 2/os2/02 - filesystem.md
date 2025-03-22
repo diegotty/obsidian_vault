@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T12:38
+updated: 2025-03-22T12:51
 completed: false
 ---
 # filesytem
@@ -70,26 +70,38 @@ simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del
 - può essere applicato anche ad una directory, e allora ogni file creato al suo interno ha il gruppo della directory, anzichè quello primario di chi crea i files !
 il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
 ## comandi
-### $\verb |umask [mode]|$
-setta la maschera dei file(cioè i diritti di accesso al fileo alle directory nel momento della loro creazione) a `mode`
-- per i file però, il diritto di esecuzione non viene settato (quindi le opzioni speciali non hanno effetto, in quanto prendono il posto del bit di esecuzione in terne diverse)
-### $\verb |cp [-r] [-i] [-a] [-u] {filesorgenti} filedestinazione|$
-- `-r`: recursive, per directory
-- `-i` interactive, per essere avvisati in caso di sovrascrittura
-- `-u` la sovrascrittura avviene solo sel l’`mtime` del sorgente è più recente di quello della destinazione (cool !)
-### $\verb |mv [-i] [-u] [-f] {filesorgenti} filedestinazione|$
-sposta un file o lo rinomina !
-- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
-### $\verb |rm [-f] [-i] [-r] {file}|$
-- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
-- `-f` forza la cancellazione (senza chiedere)
-### $\verb | ln [-s] sorgente [destinazione]|$
--`-s` per symbolic link, altrimenti hard link(copia effettiva) !
-### $\verb |touch [-a] [-m] [-t timestamp] {file}|$
-- serve per creare un file, o modificare il suo timestamp
-- può essere applicato anche su dir
-- `-t` setta il timestamp desiderato
-### $\verb |du [-c] [-s] [-a] [-h] [--exclude=PATTERN] [files]|$
-```
-df [-h] []
-```
+>[!info] comandi
+>### $\verb |umask [mode]|$
+>setta la maschera dei file(cioè i diritti di accesso al fileo alle directory nel momento della loro creazione) a `mode`
+>- per i file però, il diritto di esecuzione non viene settato (quindi le opzioni speciali non hanno effetto, in quanto prendono il posto del bit di esecuzione in terne diverse)
+>### $\verb |cp [-r] [-i] [-a] [-u] {filesorgenti} filedestinazione|$
+>- `-r`: recursive, per directory
+>- `-i` interactive, per essere avvisati in caso di sovrascrittura
+>- `-u` la sovrascrittura avviene solo sel l’`mtime` del sorgente è più recente di quello della destinazione (cool !)
+>### $\verb |mv [-i] [-u] [-f] {filesorgenti} filedestinazione|$
+>sposta un file o lo rinomina !
+>- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
+>### $\verb |rm [-f] [-i] [-r] {file}|$
+>- `-i` e`-u` hanno lo stesso significato che hanno in `cp`
+>- `-f` forza la cancellazione (senza chiedere)
+>### $\verb | ln [-s] sorgente [destinazione]|$
+>-`-s` per symbolic link, altrimenti hard link(copia effettiva) !
+>### $\verb |touch [-a] [-m] [-t timestamp] {file}|$
+>- serve per creare un file, o modificare il suo timestamp
+>- può essere applicato anche su dir
+>- `-t` setta il timestamp desiderato
+>### $\verb |du [-c] [-s] [-a] [-h] [--exclude=PATTERN] [files]|$
+>- calcola la dimensione dei file e/o dir dati come argomento 
+>### $\verb |df [-h] [-l] [-i] [file]|$
+>- mostra la dimensione e l’atttuale uso del filesystem
+### $\verb | dd [opzioni] |$
+**convert and copy a file**
+- serve per creare file in modo elaborato: le opzioni sono una sequenza `variabile=valore`, e le variabili più importanti sono:
+- - `bs`: dimensione di un singolo blocco in lettura/scrittura
+- `count`: numero di blocchi da copiare
+- `convert`: il valore specifica una conversione, per esempio di codifica (da miniuscolo a maiuscolo e viceversa (??))
+- `if` file di input (se non dato, legge da tastiera)
+- `of` file di output (se non dato, scrive su schermo)
+oltre che per le conversioni, si usa per copiare file speciali che non possono essere copiati con `cp`
+### $\verb |mkfs [-t type fsoptions] device|$
+- crea un filesystem su device (preparea i file a memorizzare file secondo un dato formato, es [[filesystem in UNIX, Windows, Linux#gestione file system in Linux|ext4]])
