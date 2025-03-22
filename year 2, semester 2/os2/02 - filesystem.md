@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T08:41
+updated: 2025-03-22T10:41
 completed: false
 ---
 # filesytem
@@ -100,3 +100,14 @@ rm [-f] [-i] [-r] {file}
 ln [-s] sorgente [destinazione]
 ```
 -`-s` per symbolic link, altrimenti hard link(copia effettiva) !
+## `touch`
+```
+touch [-a] [-m] [-t timestamp] {file}
+```
+- serve per creare un file, o modificare il suo timestamp
+- può essere applicato anche su dir
+- `-t` setta il timestamp desiderato
+## `du`
+```
+du [-c] [-s] [-a] [-h] [--exclude=PATTERN] [files]
+```
