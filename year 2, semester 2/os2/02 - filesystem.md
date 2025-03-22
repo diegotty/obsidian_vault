@@ -1,9 +1,22 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T12:51
-completed: false
+updated: 2025-03-22T15:37
+completed: true
 ---
+>[!index]
+>- [filesytem](#filesytem)
+>	- [mounting](#mounting)
+>		- [tipi di filesystem](#tipi%20di%20filesystem)
+>	- [file `passwd` e `group`](#file%20%60passwd%60%20e%20%60group%60)
+>	- [i file](#i%20file)
+>	- [`ls`](#%60ls%60)
+>	- [permessi di accesso a file](#permessi%20di%20accesso%20a%20file)
+>		- [permessi speciali](#permessi%20speciali)
+>			- [sticky bit](#sticky%20bit)
+>			- [setuid bit](#setuid%20bit)
+>			- [setgid bit](#setgid%20bit)
+>	- [comandi](#comandi)
 # filesytem
 i file regolari contengono sequenze di bit dell’area di memoria sulla quale c’è il filesystem 
 - possono essere ASCII o binari
@@ -94,14 +107,14 @@ il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `gro
 >- calcola la dimensione dei file e/o dir dati come argomento 
 >### $\verb |df [-h] [-l] [-i] [file]|$
 >- mostra la dimensione e l’atttuale uso del filesystem
-### $\verb | dd [opzioni] |$
-**convert and copy a file**
-- serve per creare file in modo elaborato: le opzioni sono una sequenza `variabile=valore`, e le variabili più importanti sono:
-- - `bs`: dimensione di un singolo blocco in lettura/scrittura
-- `count`: numero di blocchi da copiare
-- `convert`: il valore specifica una conversione, per esempio di codifica (da miniuscolo a maiuscolo e viceversa (??))
-- `if` file di input (se non dato, legge da tastiera)
-- `of` file di output (se non dato, scrive su schermo)
-oltre che per le conversioni, si usa per copiare file speciali che non possono essere copiati con `cp`
-### $\verb |mkfs [-t type fsoptions] device|$
+>### $\verb | dd [opzioni] |$
+>**convert and copy a file**
+>- serve per creare file in modo elaborato: le opzioni sono una sequenza `variabile=valore`, e le variabili più importanti sono:
+>- - `bs`: dimensione di un singolo blocco in lettura/scrittura
+>- `count`: numero di blocchi da copiare
+>- `convert`: il valore specifica una conversione, per esempio di codifica (da miniuscolo a maiuscolo e viceversa (??))
+>- `if` file di input (se non dato, legge da tastiera)
+>- `of` file di output (se non dato, scrive su schermo)
+>oltre che per le conversioni, si usa per copiare file speciali che non possono essere copiati con `cp`
+>### $\verb |mkfs [-t type fsoptions] device|$
 - crea un filesystem su device (preparea i file a memorizzare file secondo un dato formato, es [[filesystem in UNIX, Windows, Linux#gestione file system in Linux|ext4]])

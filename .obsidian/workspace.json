@@ -8,6 +8,20 @@
         "type": "tabs",
         "children": [
           {
+            "id": "b419d07a8098bc42",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/os2/sistemi operativi 2.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "sistemi operativi 2"
+            }
+          },
+          {
             "id": "91c0f09ac8395861",
             "type": "leaf",
             "state": {
@@ -35,8 +49,7 @@
               "title": "03 - processi"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,11 +206,13 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "4872a69e7936d4df",
+  "active": "b419d07a8098bc42",
   "lastOpenFiles": [
-    "Pasted image 20250322134008.png",
     "year 2, semester 2/os2/02 - filesystem.md",
+    "year 2, semester 2/os2/sistemi operativi 2.md",
+    "year 2, semester 1/os1/sistemi operativi 1.md",
     "year 2, semester 2/os2/03 - processi.md",
+    "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
     "personal stuff/arch linux notes/user hierarchy, permissions.md",
     "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
     "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
@@ -217,7 +232,6 @@
     "year 2, semester 2/reti/images/Pasted image 20250321125022.png",
     "year 2, semester 2/reti/images/Pasted image 20250321124006.png",
     "year 2, semester 2/reti/images/Pasted image 20250321123345.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321115511.png",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
@@ -230,7 +244,6 @@
     "year 2, semester 2/algo2/02 - visita DFS.md",
     "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
     "year 2, semester 2/algo2/04 - ordinamento topologico.md",
-    "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
