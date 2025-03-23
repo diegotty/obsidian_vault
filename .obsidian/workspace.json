@@ -39,14 +39,10 @@
             "id": "4872a69e7936d4df",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/os2/03 - processi.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "03 - processi"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -209,9 +205,10 @@
   "active": "b419d07a8098bc42",
   "lastOpenFiles": [
     "year 2, semester 2/os2/02 - filesystem.md",
-    "year 2, semester 2/os2/sistemi operativi 2.md",
-    "year 2, semester 1/os1/sistemi operativi 1.md",
     "year 2, semester 2/os2/03 - processi.md",
+    "year 2, semester 2/os2/sistemi operativi 2.md",
+    "year 2, semester 2/algo2/10 - spanning tree.md",
+    "year 2, semester 1/os1/sistemi operativi 1.md",
     "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
     "personal stuff/arch linux notes/user hierarchy, permissions.md",
     "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
@@ -234,7 +231,6 @@
     "year 2, semester 2/reti/images/Pasted image 20250321123345.png",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
-    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
     "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/08 - grafi pesati.md",
