@@ -1478,14 +1478,12 @@
                 "id": "d173bfa73d047745",
                 "type": "leaf",
                 "state": {
-                  "type": "markdown",
+                  "type": "image",
                   "state": {
-                    "file": "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
-                    "mode": "source",
-                    "source": false
+                    "file": "year 2, semester 2/bd2/images/Pasted image 20250323124111.png"
                   },
-                  "icon": "lucide-file",
-                  "title": "univesità 1"
+                  "icon": "lucide-image",
+                  "title": "Pasted image 20250323124111"
                 }
               },
               {
@@ -1502,8 +1500,7 @@
                   "title": "impiegati e studenti"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           }
         ],
         "direction": "vertical"
@@ -1560,8 +1557,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1660,9 +1656,9 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "6bac030fc6b1686c",
-      "mtime": "2025-03-22T10:13:29+01:00"
+      "active": "87bff695949ea9dc",
+      "mtime": "2025-03-23T14:31:22+01:00"
     }
   },
-  "active": "bd2"
+  "active": "algo2"
 }

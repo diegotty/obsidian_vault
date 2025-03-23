@@ -4,33 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "c1e9ad377508320c",
+        "id": "e7cdac2b92daef0f",
         "type": "tabs",
         "children": [
           {
-            "id": "d173bfa73d047745",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "year 2, semester 2/bd2/images/Pasted image 20250323124111.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250323124111"
-            }
-          },
-          {
-            "id": "6bac030fc6b1686c",
+            "id": "6241c44da69aa67b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
+                "file": "year 2, semester 2/algo2/05 - cicli.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "impiegati e studenti"
+              "title": "05 - cicli"
+            }
+          },
+          {
+            "id": "ce7e72fdbdbaae01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10 - spanning tree"
             }
           }
         ]
@@ -65,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "TODO",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -189,10 +191,17 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "87bff695949ea9dc",
+  "active": "6241c44da69aa67b",
   "lastOpenFiles": [
-    "year 2, semester 2/bd2/images",
+    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
+    "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
+    "year 2, semester 2/algo2/01 - grafi.md",
+    "year 2, semester 2/algo2/02 - visita DFS.md",
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/algo2/06 - ponti.md",
+    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
+    "year 2, semester 2/bd2/images",
     "Pasted image 20250323123630.png",
     "year 2, semester 2/bd2/esercitazioni/università 2.md",
     "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
@@ -200,7 +209,6 @@
     "year 2, semester 2/os2/02 - filesystem.md",
     "year 2, semester 2/os2/sistemi operativi 2.md",
     "year 2, semester 2/os2/03 - processi.md",
-    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 1/os1/sistemi operativi 1.md",
     "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
     "personal stuff/arch linux notes/user hierarchy, permissions.md",
@@ -220,13 +228,8 @@
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
-    "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/08 - grafi pesati.md",
     "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
-    "year 2, semester 2/algo2/00 - algoritmi efficienti.md",
-    "year 2, semester 2/algo2/01 - grafi.md",
-    "year 2, semester 2/algo2/02 - visita DFS.md",
-    "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
@@ -235,7 +238,6 @@
     "year 2, semester 2/bd2/images",
     "year 2, semester 2/algo2/images",
     "year 2, semester 2/reti/raw notes",
-    "year 2, semester 2/os2/raw notes",
-    "year 2, semester 2/algo2/raw notes"
+    "year 2, semester 2/os2/raw notes"
   ]
 }
