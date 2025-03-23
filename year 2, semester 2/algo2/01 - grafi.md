@@ -1,7 +1,7 @@
 ---
 related to: "[[00 - algoritmi efficienti|00 - algoritmi efficienti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-21T08:41
+updated: 2025-03-23T17:16
 completed: true
 ---
 >[!index]
@@ -30,7 +30,7 @@ i grafi si distinguono in:
 ### grafi sparsi e densi
 un grafo si dice **sparso** se $m=O(n)$ (ha pochi archi),
 altrimenti un grafo si dice denso se $m=\Omega(n^2)$
-- inoltre un grafo si dice completo se ha tutt gli archi ($m=\Theta(n^2)$)
+- inoltre un grafo si dice completo se ha tutti gli archi ($m=\Theta(n^2)$)
 - un grafo diretto si dice **torneo** se tra ogni coppia di nodi c’è esattamente un arco ($m=\Theta(n^2)$)
 >[!warning] un grafo non sparso non è necessariamente denso, ad esempio può avere $\Theta(n\log n)$ archi
 
