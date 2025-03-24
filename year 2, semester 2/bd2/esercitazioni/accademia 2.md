@@ -1,7 +1,13 @@
 ---
 created: 2025-03-24T09:19
-updated: 2025-03-24T09:47
+updated: 2025-03-24T10:03
 ---
+>[!index]
+>- [obiettivi](#obiettivi)
+>- [specifica dei requisiti](#specifica%20dei%20requisiti)
+>- [raffinamento dei requisiti](#raffinamento%20dei%20requisiti)
+>- [diagramma UML](#diagramma%20UML)
+>- [specifica dei tipi di dato](#specifica%20dei%20tipi%20di%20dato)
 ## obiettivi
 Si vuole progettare un sistema informativo per la gestione delle tabelle orarie relative al
 ruolo di docente universitario.
@@ -52,7 +58,7 @@ lavorativa, pertanto la loro durata va misurata in giorni; altri impegni ed altr
 	1. nome
 	2. data di inizio e di fine
 ## diagramma UML
-
+![[Pasted image 20250324100239.png]]
 ## specifica dei tipi di dato
 - PosizioneUniversitaria: {ricercatore, professore_associato, professore_ordinario}
 - Periodo: (inizio: Data, fine: Data)
