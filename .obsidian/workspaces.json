@@ -875,12 +875,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "year 2, semester 2/algo2/01 - grafi.md",
+                    "file": "year 2, semester 2/algo2/algoritmi 2.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "01 - grafi"
+                  "title": "algoritmi 2"
                 }
               },
               {
@@ -897,7 +897,8 @@
                   "title": "10 - spanning tree"
                 }
               }
-            ]
+            ],
+            "currentTab": 1
           }
         ],
         "direction": "vertical"
@@ -929,7 +930,7 @@
                 "state": {
                   "type": "search",
                   "state": {
-                    "query": "",
+                    "query": "TODO",
                     "matchingCase": false,
                     "explainSearch": false,
                     "collapseAll": false,
@@ -954,8 +955,7 @@
           }
         ],
         "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
+        "width": 300
       },
       "right": {
         "id": "de0dbddde79edade",
@@ -1054,8 +1054,8 @@
           "workspaces:Manage workspace layouts": false
         }
       },
-      "active": "6241c44da69aa67b",
-      "mtime": "2025-03-24T09:19:35+01:00"
+      "active": "87bff695949ea9dc",
+      "mtime": "2025-03-21T10:57:09+01:00"
     },
     "reti": {
       "main": {
@@ -1660,5 +1660,5 @@
       "mtime": "2025-03-23T14:31:22+01:00"
     }
   },
-  "active": "bd2"
+  "active": "algo2"
 }

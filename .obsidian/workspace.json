@@ -4,95 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "c1e9ad377508320c",
+        "id": "e7cdac2b92daef0f",
         "type": "tabs",
         "children": [
           {
-            "id": "5bb253d349a6346b",
+            "id": "6241c44da69aa67b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                "file": "year 2, semester 2/algo2/algoritmi 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "reti di elaboratori"
+              "title": "algoritmi 2"
             }
           },
           {
-            "id": "d173bfa73d047745",
+            "id": "ce7e72fdbdbaae01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
+                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06 - livello applicazione; FTP, SMTP"
+              "title": "10 - spanning tree"
             }
           },
           {
-            "id": "289d849c66a1dee6",
+            "id": "ef0e2bbe1dcda71c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/raw notes/2025-03-20.md",
+                "file": "year 2, semester 2/algo2/raw notes/2025-03-24.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-20"
-            }
-          },
-          {
-            "id": "251348542effd905",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/algo2/raw notes/2025-03-20.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2025-03-20"
-            }
-          },
-          {
-            "id": "bce40ac0604dece7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/algo2/02 - visita DFS.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "02 - visita DFS"
-            }
-          },
-          {
-            "id": "7d68b2cd5619c01c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
+              "title": "2025-03-24"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -249,10 +207,13 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "7d68b2cd5619c01c",
+  "active": "ce7e72fdbdbaae01",
   "lastOpenFiles": [
-    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-24.md",
+    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/02 - visita DFS.md",
+    "conflict-files-obsidian-git.md",
     "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
     "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
     "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
@@ -274,7 +235,6 @@
     "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
     "year 2, semester 2/bd2/esercitazioni/azienda 1.md",
     "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
-    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/raw notes/2025-03-20.md",
     "year 2, semester 2/reti/raw notes/2025-03-20.md",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
@@ -286,8 +246,6 @@
     "year 2, semester 2/reti/01 - introduzione alle reti.md",
     "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
     "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
-    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
-    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",
