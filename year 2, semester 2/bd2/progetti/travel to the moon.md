@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T14:08
+updated: 2025-03-24T18:01
 completed: false
 ---
 ```
@@ -109,3 +109,6 @@ completed: false
 5. posti da vedere
 	1. nome
 	2. orari di apertura (una mappa che associa ad ogni giorno della settimana ad un insieme di  fasce oraria, definita in termini di una coppia di orari)
+## specifica dei tipi
+- Periodo: (data_inizio: Data, data_fine: Data)
+- Continente: {A}

@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T14:08
+updated: 2025-03-24T17:46
 completed: false
 ---
  **settimana 2** (assegnati):
