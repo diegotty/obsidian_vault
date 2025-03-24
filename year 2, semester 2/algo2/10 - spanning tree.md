@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T19:29
+updated: 2025-03-24T19:44
 completed: false
 ---
 # spanning tree
@@ -83,8 +83,42 @@ consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a 
 >la complessità dell’algoritmo è quindi $O(m \cdot n)$
 
 per migliorare l’implementazione, non possiamo permetterci di pagare tempo $O(n)$ per ogni iterazione del `for` a causa della visita per testare la raggiungibilità.
-## UNION e FIND
-ricorriamo quindi alla struttura dati **UNION e FIND**, che permette di testare efficientemente se due nodi appartengano o meno alla stessa componente connessa
+## algoritmo di Kruskal con UNION-FIND
+ricorriamo quindi alla struttura dati **UNION-FIND** (anche conosciuta come **disjoint-set** o **DSU**), che permette di testare efficientemente se due nodi appartengano o meno alla stessa componente connessa
 è quindi una struttura dati $C$ che contiene le componenti connesse di un grafo di $n$ nodi, in modo tale che sia possibile **”efficientemente”** effetturare:
 - `UNION(a, b, C)`: fonde due componenti connesse $a$ e $b$ in $C$ in tempo $O(1)$
 - `FIND(x, C)`: trova in $C$ la componente connessa in cui si trova il nodo $x$, in tempo $O(\log n)$
+studieremo più a fondo **UNION-FIND** ([[11 - union-find|qui]]), per ora implementiamo l’algoritmo di Kruskal usando la struttura dati union-find
+### implementazione
+```python
+def kruskal(G):
+	E = [(c, u ,v) for u in G for v,c in G[u] if u < v] # damn....
+	E.sort()
+	T = [[] for _ in G]
+	C = crea(T)
+	for c, u ,v in E:
+		cu = find(u, C)
+		cv = find(v, C)
+		if cu != cv:
+			T[x].append(y)
+			T[y].append(x) # grafo non diretto
+	return T
+
+def Crea(G):
+	C = [(i, 1) for i in range(len(G))] # ogni nodo è una componente
+	return C
+
+def Find(u, C): # componenti memorizzate come vettore dei padri
+	while u != C[u]
+		u = C[u]
+	return u
+
+def Union(a, b, C):
+	tota, totb = C[a][1], C[b][1] # numero di nodi in componente
+	if tota >= totb:
+		C[a] = (a, tota + totb)
+		C[b] = (a, totb)
+	else:
+		C[b] = (b, tota + totb)
+		C[a] = (b, tota)
+```
