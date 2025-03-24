@@ -76,9 +76,23 @@
               "icon": "lucide-file",
               "title": "02 - visita DFS"
             }
+          },
+          {
+            "id": "7d68b2cd5619c01c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "conflict-files-obsidian-git"
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -235,8 +249,14 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "bce40ac0604dece7",
+  "active": "7d68b2cd5619c01c",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/algo2/02 - visita DFS.md",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
+    "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
+    "templates/esercitazione bd2.md",
     "year 2, semester 2/reti/raw notes/2025-03-20 @d.md",
     "year 2, semester 2/reti/images/Pasted image 20250321135812.png",
     "year 2, semester 2/reti/images/Pasted image 20250321135647.png",
@@ -246,8 +266,6 @@
     "year 2, semester 2/reti/images/Pasted image 20250321125022.png",
     "year 2, semester 2/reti/images/Pasted image 20250321124006.png",
     "year 2, semester 2/reti/images/Pasted image 20250321123345.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321115511.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321114427.png",
     "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/os2/03 - processi.md",
     "year 2, semester 2/bd2/images",
@@ -258,7 +276,6 @@
     "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/raw notes/2025-03-20.md",
-    "year 2, semester 2/algo2/02 - visita DFS.md",
     "year 2, semester 2/reti/raw notes/2025-03-20.md",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/algo2/raw notes/2025-03-17 @d.md",
@@ -271,9 +288,6 @@
     "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
     "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
     "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
-    "year 2, semester 2/bd2/esercitazioni/voli aerei 1.md",
-    "conflict-files-obsidian-git.md",
-    "year 2, semester 2/reti/raw notes/2025-03-14 @d.md",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",

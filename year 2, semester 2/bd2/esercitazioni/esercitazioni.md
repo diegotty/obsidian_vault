@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T15:58
+updated: 2025-03-24T14:08
 completed: false
 ---
  **settimana 2** (assegnati):
@@ -16,3 +16,4 @@ completed: false
 **settimana 4**:
 [[università 2]]
 [[impiegati e studenti]]
+[[accademia 2]]
