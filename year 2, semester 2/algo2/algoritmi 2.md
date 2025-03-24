@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T17:46
+updated: 2025-03-24T19:47
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -15,6 +15,7 @@ completed: true
 [[08 - grafi pesati]]
 [[09 - algoritmo di dijkstra]]
 [[10 - spanning tree]]
+[[11 - union-find]]
 
 
 ## greedy

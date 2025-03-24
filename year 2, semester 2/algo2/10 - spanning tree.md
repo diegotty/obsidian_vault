@@ -1,9 +1,16 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T19:44
-completed: false
+updated: 2025-03-24T19:55
+completed: true
 ---
+>[!index]
+>- [spanning tree](#spanning%20tree)
+>	- [algoritmo di Kruskal](#algoritmo%20di%20Kruskal)
+>		- [correttezza](#correttezza)
+>		- [implementazione](#implementazione)
+>	- [algoritmo di Kruskal con UNION-FIND](#algoritmo%20di%20Kruskal%20con%20UNION-FIND)
+>		- [implementazione](#implementazione)
 # spanning tree
 uno **spanning tree**(albero di copertura) è l’albero in cui esiste una unica componente connessa, con il minimo numero di archi
 - il costo dello spanning tree è la somma dei pesi di tutti gli archi 
@@ -90,35 +97,46 @@ ricorriamo quindi alla struttura dati **UNION-FIND** (anche conosciuta come **di
 - `FIND(x, C)`: trova in $C$ la componente connessa in cui si trova il nodo $x$, in tempo $O(\log n)$
 studieremo più a fondo **UNION-FIND** ([[11 - union-find|qui]]), per ora implementiamo l’algoritmo di Kruskal usando la struttura dati union-find
 ### implementazione
-```python
-def kruskal(G):
-	E = [(c, u ,v) for u in G for v,c in G[u] if u < v] # damn....
-	E.sort()
-	T = [[] for _ in G]
-	C = crea(T)
-	for c, u ,v in E:
-		cu = find(u, C)
-		cv = find(v, C)
-		if cu != cv:
-			T[x].append(y)
-			T[y].append(x) # grafo non diretto
-	return T
+>[!info] implementazione dell’algoritmo di kruskal con union-find
+>```python
+>def kruskal(G):
+>	E = [(c, u ,v) for u in G for v,c in G[u] if u < v] # damn....
+>	E.sort()
+>	T = [[] for _ in G]
+>	C = crea(T)
+>	for c, u ,v in E:
+>		cu = find(u, C)
+>		cv = find(v, C)
+>		if cu != cv:
+>			T[x].append(y)
+>			T[y].append(x) # grafo non diretto
+>	return T
+>
+>def Crea(G):
+>	C = [(i, 1) for i in range(len(G))] # ogni nodo è una componente
+>	return C
+>
+>def Find(u, C): # componenti memorizzate come vettore dei padri
+>	while u != C[u]
+>		u = C[u]
+>	return u
+>
+>def Union(a, b, C):
+>	tota, totb = C[a][1], C[b][1] # numero di nodi in componente
+>	if tota >= totb:
+>		C[a] = (a, tota + totb)
+>		C[b] = (a, totb)
+>	else:
+>		C[b] = (b, tota + totb)
+>		C[a] = (b, tota)
+>```
+>calcoliamo la complessità temporale:
+>- l’ordinamento costa $O(m\log n)$
+>- il `for`-loop viene iterato $m$ volte:
+>	- l’estrazione dell’arco minimo costa $O(1)$, in quanto iteriamo su $E$
+>	- eseguire `FIND` costa $O(\log n)$
+>	- eseguire `UNION` costa $\Theta(1)$, e viene eseguito esattamente $n-1$ volte (sono necessari $n-1$ archi)
+>
+>il costo del `for` è quindi $O(m\log n)$, che è la complessità totale dell’algoritmo
 
-def Crea(G):
-	C = [(i, 1) for i in range(len(G))] # ogni nodo è una componente
-	return C
-
-def Find(u, C): # componenti memorizzate come vettore dei padri
-	while u != C[u]
-		u = C[u]
-	return u
-
-def Union(a, b, C):
-	tota, totb = C[a][1], C[b][1] # numero di nodi in componente
-	if tota >= totb:
-		C[a] = (a, tota + totb)
-		C[b] = (a, totb)
-	else:
-		C[b] = (b, tota + totb)
-		C[a] = (b, tota)
-```
+>[!info]
