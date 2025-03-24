@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -207,11 +207,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ce7e72fdbdbaae01",
+  "active": "ef0e2bbe1dcda71c",
   "lastOpenFiles": [
+    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/os2/03 - processi.md",
     "year 2, semester 2/os2/02 - filesystem.md",
-    "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/raw notes/2025-03-24.md",
     "year 2, semester 2/algo2/02 - visita DFS.md",
