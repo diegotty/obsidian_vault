@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T19:15
+updated: 2025-03-24T19:29
 completed: false
 ---
 # spanning tree
@@ -84,4 +84,7 @@ consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a 
 
 per migliorare l’implementazione, non possiamo permetterci di pagare tempo $O(n)$ per ogni iterazione del `for` a causa della visita per testare la raggiungibilità.
 ## UNION e FIND
-ricorriamo quindi alla struttura dati **UNION e FIND**, che permette di testare efficientemente se due nodi appartengono o 
+ricorriamo quindi alla struttura dati **UNION e FIND**, che permette di testare efficientemente se due nodi appartengano o meno alla stessa componente connessa
+è quindi una struttura dati $C$ che contiene le componenti connesse di un grafo di $n$ nodi, in modo tale che sia possibile **”efficientemente”** effetturare:
+- `UNION(a, b, C)`: fonde due componenti connesse $a$ e $b$ in $C$ in tempo $O(1)$
+- `FIND(x, C)`: trova in $C$ la componente connessa in cui si trova il nodo $x$, in tempo $O(\log n)$
