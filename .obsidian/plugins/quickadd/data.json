@@ -13,6 +13,37 @@
       "type": "Macro",
       "command": false,
       "macroId": "d183dfca-883d-4d43-846f-19f516698427"
+    },
+    {
+      "id": "ba0059c6-cc2c-4831-afb1-c6e1350473c9",
+      "name": "esercitazione bd2",
+      "type": "Template",
+      "command": false,
+      "templatePath": "templates/esercitazione bd2.md",
+      "fileNameFormat": {
+        "enabled": false,
+        "format": ""
+      },
+      "folder": {
+        "enabled": true,
+        "folders": [
+          "",
+          "year 2, semester 2/bd2/esercitazioni"
+        ],
+        "chooseWhenCreatingNote": false,
+        "createInSameFolderAsActiveFile": false,
+        "chooseFromSubfolders": false
+      },
+      "appendLink": false,
+      "openFileInNewTab": {
+        "enabled": false,
+        "direction": "vertical",
+        "focus": true
+      },
+      "openFile": true,
+      "openFileInMode": "default",
+      "fileExistsMode": "Increment the file name",
+      "setFileExistsBehavior": false
     }
   ],
   "macros": [
