@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-21T10:56
+updated: 2025-03-24T19:15
 completed: false
 ---
 # spanning tree
@@ -49,10 +49,6 @@ consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a 
 `sort()` - flavio sperandeo
 
 ### implementazione
-
-sort() su una lista di tuple sorta sul primo valore di ogni tupla
-
-devo rifare per forza la visita (che pero costa $O(n)$, perchè n+m = massimo $n+(n-1)$)
 >[!info] implementazione
 >**IDEE**:
 >- con un pre-processing, ordino gli archi della lista $E$ cosicchè scorrendo la lista ottengo di volta in volta l’arco di costo minimo in tempo $O(1)$
@@ -86,3 +82,6 @@ devo rifare per forza la visita (che pero costa $O(n)$, perchè n+m = massimo $n
 >
 >la complessità dell’algoritmo è quindi $O(m \cdot n)$
 
+per migliorare l’implementazione, non possiamo permetterci di pagare tempo $O(n)$ per ogni iterazione del `for` a causa della visita per testare la raggiungibilità.
+## UNION e FIND
+ricorriamo quindi alla struttura dati **UNION e FIND**, che permette di testare efficientemente se due nodi appartengono o 

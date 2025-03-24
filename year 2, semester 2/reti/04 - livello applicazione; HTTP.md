@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-24T17:46
+updated: 2025-03-24T19:13
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)
@@ -107,7 +107,7 @@ esempio di richiesta HTTP:
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | GET                 | usato quando il client vuole scaricare, da un server, il documento specificato nell’URL. il server risponde con il documento richiesto nel corpo nel messaggio di risposta                            |
 | HEAD                | usato quando il client non vuole scaricare il documento, ma solo alcune informazioni sul documento (es: data dell’ultima modifica). nella risposta, il server inserisce solo degli header informativi |
-| POST                | usato per fornire input al server (es: contenuto dei campi di un form). l’input viene inserito nel corpo dell’identità                                                                                |
+| POST                | usato per fornire input al server (es: contenuto dei campi di un form). l’input viene inserito nel corpo dell’entità                                                                                  |
 | PUT                 | utilizzato per memorizzare un documento nel server. il documento viene fornito nel corpo del messaggo, e la posizione di memorizzazione nell’URL                                                      |
 >[!info] è posibile inviare info al server anche attraverso una richiesta GET
 utilizzando gli `&` nell’url:
