@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-24T18:31
+updated: 2025-03-24T18:32
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -41,40 +41,33 @@ completed: false
 		2. arrivo:
 			1. il numero d'ordine del giorno (rispetto alla data di inizio della crociera)
 			2. ora
-
 		3. ripartenza	
 			1. il numero d'ordine del giorno (rispetto alla data di inizio della crociera)
-			.1.3.2. ora
-
+			2. ora
 
 5. Requisiti sui posti da vedere:
-	5.1. nome
-	5.2. descrizione
-	5.3. orari di apertura, nella forma di una mappa che associa ad ogni giorno della settimana (lunedì, ..., domenica) un insieme di fasce orarie, dove ogni fascia oraria è definita in termini di una coppia di orari
+	1. nome
+	2. descrizione
+	3. orari di apertura, nella forma di una mappa che associa ad ogni giorno della settimana (lunedì, ..., domenica) un insieme di fasce orarie, dove ogni fascia oraria è definita in termini di una coppia di orari
 
 6. Requisiti sui clienti:
-	6.1. nome
-	6.2. cognome 
-	6.3. età 
-	6.4. indirizzo
+	1. nome
+	2. cognome 
+	3. età 
+	4. indirizzo
 
 7. Requisiti sulle prenotazioni di crociere da parte dei clienti:
-	7.1. cliente
-	7.2. crociera
-	7.3. istante di prenotazione
-	7.4. numero di posti prenotati
-
-
+	1. cliente
+	2. crociera
+	3. istante di prenotazione
+	4. numero di posti prenotati
 
 8. Requisiti sulle funzionalità
-	8.1. Accedute dal personale dell'Ufficio Prenotazioni:
-		8.1.1. Effettuare la prenotazione, per conto di un cliente, di un certo numero di posti per una crociera (non ancora partita), solo se la nave ha ancora un numero di posti disponibili sufficiente
-
-	8.2. Accedute dall'Ufficio Marketing:
-		8.2.1. Dato un periodo 'p', calcolare l'età media dei clienti che hanno prenotato, durante 'p', almeno una crociera che prevede una destinazione esotica (v. req. 3.5)
-
-		8.2.2. Dato un periodo 'p', calcolare la percentuale delle destinazioni 'gettonate' in 'p', ovvero raggiunte, durante 'p', da almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
-```
+	1. Accedute dal personale dell'Ufficio Prenotazioni:
+		1. Effettuare la prenotazione, per conto di un cliente, di un certo numero di posti per una crociera (non ancora partita), solo se la nave ha ancora un numero di posti disponibili sufficiente
+	2. Accedute dall'Ufficio Marketing:
+		1. Dato un periodo 'p', calcolare l'età media dei clienti che hanno prenotato, durante 'p', almeno una crociera che prevede una destinazione esotica (v. req. 3.5)
+		2. Dato un periodo 'p', calcolare la percentuale delle destinazioni 'gettonate' in 'p', ovvero raggiunte, durante 'p', da almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
 ## diagramma UML
 ![[Pasted image 20250324182923.png]]
 ## specifica dei tipi
