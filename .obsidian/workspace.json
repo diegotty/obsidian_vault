@@ -4,24 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "c1e9ad377508320c",
+        "id": "e7cdac2b92daef0f",
         "type": "tabs",
         "children": [
           {
-            "id": "0223fc90620eaaf9",
+            "id": "6241c44da69aa67b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/bd2/progetti/travel to the moon.md",
+                "file": "year 2, semester 2/algo2/algoritmi 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "travel to the moon"
+              "title": "algoritmi 2"
+            }
+          },
+          {
+            "id": "ce7e72fdbdbaae01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "10 - spanning tree"
+            }
+          },
+          {
+            "id": "ef0e2bbe1dcda71c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/algo2/raw notes/2025-03-24.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2025-03-24"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -178,53 +207,53 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "0223fc90620eaaf9",
+  "active": "ef0e2bbe1dcda71c",
   "lastOpenFiles": [
-    "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
-    "year 2, semester 2/bd2/esercitazioni/ciao.md",
-    "year 2, semester 2/bd2/progetti/travel to the moon.md",
-    "templates/esercitazione bd2.md",
-    "templates/uni note.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
-    "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
-    "year 2, semester 2/bd2/esercitazioni/accademia 1.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
-    "year 2, semester 2/algo2/01 - grafi.md",
-    "year 2, semester 2/algo2/05 - cicli.md",
-    "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
-    "year 2, semester 2/algo2/07 - BFS.md",
-    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
-    "year 2, semester 2/algo2/02 - visita DFS.md",
-    "year 2, semester 2/algo2/algoritmi 2.md",
-    "year 2, semester 2/algo2/06 - ponti.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
-    "year 2, semester 2/bd2/images",
-    "Pasted image 20250323123630.png",
-    "year 2, semester 2/bd2/esercitazioni/università 2.md",
-    "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
-    "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
-    "year 2, semester 2/os2/02 - filesystem.md",
-    "year 2, semester 2/os2/sistemi operativi 2.md",
     "year 2, semester 2/os2/03 - processi.md",
-    "year 2, semester 1/os1/sistemi operativi 1.md",
-    "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
-    "personal stuff/arch linux notes/user hierarchy, permissions.md",
-    "year 2, semester 2/bd2/2025-03-18.md",
-    "year 2, semester 2/reti/images/Pasted image 20250321110954.png",
-    "year 2, semester 2/bd2/esercitazioni/voli aerei 2.md",
+    "year 2, semester 2/os2/02 - filesystem.md",
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-24.md",
+    "year 2, semester 2/algo2/02 - visita DFS.md",
+    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
+    "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
+    "templates/esercitazione bd2.md",
+    "year 2, semester 2/reti/raw notes/2025-03-20 @d.md",
     "year 2, semester 2/reti/images/Pasted image 20250321135812.png",
     "year 2, semester 2/reti/images/Pasted image 20250321135647.png",
     "year 2, semester 2/reti/images/Pasted image 20250321132830.png",
     "year 2, semester 2/reti/images/Pasted image 20250321132102.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321131641.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321125022.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321124006.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321123345.png",
+    "year 2, semester 2/reti/07 - livello trasporto.md",
+    "year 2, semester 2/bd2/images",
+    "year 2, semester 2/bd2/esercitazioni/università 2.md",
+    "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
+    "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
+    "year 2, semester 2/bd2/esercitazioni/azienda 1.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-20.md",
+    "year 2, semester 2/reti/raw notes/2025-03-20.md",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-17 @d.md",
+    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
+    "year 2, semester 2/bd2/esercitazioni/accademia 1.md",
+    "year 2, semester 2/reti/reti di elaboratori.md",
+    "year 2, semester 2/reti/raw notes/2025-03-18 @d.md",
+    "year 2, semester 2/reti/01 - introduzione alle reti.md",
+    "year 2, semester 2/reti/02 - capacità e prestazioni delle reti.md",
     "year 2, semester 2/bd2/esercitazioni",
-    "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",
     "year 2, semester 2/os2/images",
-    "year 2, semester 2/bd2/images",
     "year 2, semester 2/algo2/images",
-    "year 2, semester 2/reti/raw notes",
-    "year 2, semester 2/os2/raw notes"
+    "year 2, semester 2/os2/raw notes",
+    "year 2, semester 2/os2",
+    "templates",
+    "year 2, semester 2/algo2/raw notes"
   ]
 }
