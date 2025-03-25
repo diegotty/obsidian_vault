@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T09:27
+updated: 2025-03-25T09:35
 completed: false
 ---
 # union-find
@@ -53,7 +53,30 @@ per implementare la struttura dati per $n$ elementi  nel modo più semplice, man
 ha anche senso bilanciare i costi, cioè rendere `union()` meno costosa, anche a costo di pagare qualcosa in più per `find()`
 >[!info] `union()` in $O(1)$, `find()` in $O(n)$
 **IDEA**:
->se usiamo il vettore dei padri per rappresentare le componenti connesse, `union()` d
+>se usiamo il vettore dei padri per rappresentare le componenti connesse, `union()` dovrà cambiare solo un elemento del vettore, mentre `find()` dovrà semplicemente risalire l’albero(vettore dei padri è un albero) fino alla radice
+>```python
+>def Crea(G):
+>	C = [i for i in range(len(G))]
+>	return C
+>
+>def Find(u, C):
+>	while u != C[u]:
+>		u = C[u]
+>	return u
+>
+>def Union(a, b, C):
+>	if a > b:
+>		C[b] = a
+>	else
+>		C[a] = b
+>```
+>in questa implementazione:
+>- `crea()` ha costo $\Theta(n)$
+>- `find()` ha costo $\Theta(n)$
+>- `union()` ha costo $\Theta(1)$
+
+per miglioare questa implementazione, è necessario evitare che i cammini per raggiungere le radici del vettore dei padri non diventino troppo lunghi
+- dobbiamo quindi mantenere gli alberi bilanciati !
 
 se ho due alberi da unire, devo rendere figlio l’albero con meno nodi
 - in questo modo la profondità dell’albero creato dalle fusioni non avrà mai altezza maggiore di logn
