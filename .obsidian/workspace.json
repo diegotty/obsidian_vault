@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -207,10 +207,10 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "8dbbc08c515ecef7",
+  "active": "1b859af76ebb0944",
   "lastOpenFiles": [
-    "year 2, semester 2/algo2/11 - union-find.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
+    "year 2, semester 2/algo2/11 - union-find.md",
     "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/raw notes/2025-03-24 @d.md",
     "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
