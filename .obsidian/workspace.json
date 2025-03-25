@@ -8,77 +8,77 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0223fc90620eaaf9",
+            "id": "534a8c7e372c06a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/algoritmi 2.md",
+                "file": "year 2, semester 2/reti/reti di elaboratori.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "algoritmi 2"
+              "title": "reti di elaboratori"
             }
           },
           {
-            "id": "b49f55867c26047f",
+            "id": "9b8d740dd9afb1e3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/04 - ordinamento topologico.md",
+                "file": "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04 - ordinamento topologico"
+              "title": "06 - livello applicazione; FTP, SMTP"
             }
           },
           {
-            "id": "1b859af76ebb0944",
+            "id": "254a00312682a670",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/11 - union-find.md",
+                "file": "year 2, semester 2/reti/07 - livello trasporto.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "11 - union-find"
+              "title": "07 - livello trasporto"
             }
           },
           {
-            "id": "dacc2dd284d9d57c",
+            "id": "02ca33aa9ae53d85",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/05 - cicli.md",
+                "file": "year 2, semester 2/reti/raw notes/2025-03-25.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05 - cicli"
+              "title": "2025-03-25"
             }
           },
           {
-            "id": "8dbbc08c515ecef7",
+            "id": "c9edea987c0ed689",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
+                "file": "year 2, semester 2/reti/raw notes/2025-03-20 @d.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10 - spanning tree"
+              "title": "2025-03-20 @d"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -135,8 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "de0dbddde79edade",
@@ -235,53 +234,53 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "b49f55867c26047f",
+  "active": "02ca33aa9ae53d85",
   "lastOpenFiles": [
-    "year 2, semester 2/algo2/07 - BFS.md",
-    "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
-    "year 2, semester 2/algo2/algoritmi 2.md",
-    "year 2, semester 2/algo2/01 - grafi.md",
-    "year 2, semester 2/algo2/05 - cicli.md",
-    "year 2, semester 2/algo2/11 - union-find.md",
-    "year 2, semester 2/os2/04 - introduzione a C.md",
-    "year 2, semester 2/os2/sistemi operativi 2.md",
-    "year 2, semester 2/os2/02 - filesystem.md",
+    "year 2, semester 2/reti/07 - livello trasporto.md",
+    "year 2, semester 2/reti/raw notes/2025-03-25.md",
+    "year 2, semester 2/reti/2025-03-25.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-24 @d.md",
-    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
-    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
-    "year 2, semester 2/bd2/progetti/travel to the moon.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-24.md",
+    "year 2, semester 2/os2/04 - introduzione a C.md",
     "year 2, semester 2/bd2/images/Pasted image 20250324182923.png",
-    "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
-    "year 2, semester 2/bd2/esercitazioni/ciao.md",
-    "templates/esercitazione bd2.md",
-    "templates/uni note.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
-    "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
-    "year 2, semester 2/bd2/esercitazioni/accademia 1.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
-    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-24 @d.md",
+    "year 2, semester 2/algo2/11 - union-find.md",
+    "year 2, semester 2/os2/03 - processi.md",
+    "year 2, semester 2/os2/02 - filesystem.md",
+    "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/02 - visita DFS.md",
-    "year 2, semester 2/algo2/06 - ponti.md",
-    "year 2, semester 2/bd2/images",
-    "Pasted image 20250323123630.png",
-    "year 2, semester 2/bd2/esercitazioni/università 2.md",
-    "year 2, semester 2/bd2/esercitazioni/univesità 1.md",
-    "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321110954.png",
+    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
+    "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
+    "year 2, semester 2/bd2/esercitazioni/accademia 2.md",
+    "templates/esercitazione bd2.md",
+    "year 2, semester 2/reti/raw notes/2025-03-20 @d.md",
     "year 2, semester 2/reti/images/Pasted image 20250321135812.png",
     "year 2, semester 2/reti/images/Pasted image 20250321135647.png",
     "year 2, semester 2/reti/images/Pasted image 20250321132830.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321132102.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321131641.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321125022.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321124006.png",
+    "year 2, semester 2/bd2/images",
+    "year 2, semester 2/bd2/esercitazioni/università 2.md",
+    "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
+    "year 2, semester 2/bd2/esercitazioni/esercitazioni.md",
+    "year 2, semester 2/bd2/esercitazioni/azienda 1.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-20 @d.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-20.md",
+    "year 2, semester 2/reti/raw notes/2025-03-20.md",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-17 @d.md",
+    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
     "year 2, semester 2/bd2/esercitazioni",
-    "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",
     "year 2, semester 2/os2/images",
-    "year 2, semester 2/bd2/images",
     "year 2, semester 2/algo2/images",
-    "year 2, semester 2/reti/raw notes",
-    "year 2, semester 2/os2/raw notes"
+    "year 2, semester 2/os2/raw notes",
+    "year 2, semester 2/os2",
+    "templates",
+    "year 2, semester 2/algo2/raw notes"
   ]
 }

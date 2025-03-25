@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-24T19:13
+updated: 2025-03-25T13:14
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)
