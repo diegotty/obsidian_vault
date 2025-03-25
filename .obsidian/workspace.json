@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "c30ca1f31134554e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/algo2/01 - grafi.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "01 - grafi"
+            }
+          },
+          {
             "id": "b49f55867c26047f",
             "type": "leaf",
             "state": {
@@ -235,11 +249,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "b49f55867c26047f",
+  "active": "c30ca1f31134554e",
   "lastOpenFiles": [
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
     "year 2, semester 2/algo2/07 - BFS.md",
     "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
-    "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/01 - grafi.md",
     "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/algo2/11 - union-find.md",
@@ -262,7 +277,6 @@
     "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
     "year 2, semester 2/bd2/esercitazioni/accademia 1.md",
     "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
-    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
     "year 2, semester 2/algo2/02 - visita DFS.md",
     "year 2, semester 2/algo2/06 - ponti.md",
     "year 2, semester 2/bd2/images",
