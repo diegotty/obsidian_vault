@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T08:57
+updated: 2025-03-25T09:12
 completed: false
 ---
 # union-find
@@ -23,9 +23,23 @@ per implementare la struttura dati per $n$ elementi  nel modo più semplice, man
 - in questo modo, quando la componente $i$ verrà fusa con la componente $j$, se $i > j$ allora tutte le occorrenze di $j$ nel vettore $C$ verranno sostituite da $i$
 >[!warning] esistono diverse implementazioni della struttura union-find, e in ognuna variano i costi per le operazioni `find()` e `union()`! 
 >noi ne studieremo 2:
->- 
+>- `union()` in $O(n)$ e `find()` in $O(1)$
+>- `union()` in $O(1)$ e `find()` in $O(\log n)$
+>
+> esistono poi implementazioni con euristica e altre cose molto cool
 
+>[!info] `union()` in $\Theta(n)$, `find()` in $\Theta(1)$
 
+```python
+def Crea(G):
+	C = [i for i in range(len(G))]
+	return C
+
+def Find(u, C):
+	return C[u]
+
+def Union(a, b, C)
+```
 
 se ho due alberi da unire, devo rendere figlio l’albero con meno nodi
 - in questo modo la profondità dell’albero creato dalle fusioni non avrà mai altezza maggiore di logn
