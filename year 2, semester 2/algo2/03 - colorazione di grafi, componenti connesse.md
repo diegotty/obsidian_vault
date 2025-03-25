@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-24T17:46
+updated: 2025-03-25T11:01
 completed: true
 ---
 >[!index]
@@ -81,7 +81,7 @@ la magia della ricorsione
 la complessità dell’algoritmo per testare se un grafo è bicolorabile è quella di una semplice visita del grafo connesso da colorare !! quindi $O(n+m)=O(m)$(in quanto in un grafo connesso $m\geq n-1$)
 # componente connessa
 una **componente connessa** (anche chiamata semplicemente **componente**) di un grafo (**indiretto**), è un sottografo composto da un insieme massimale di nodi connessi da cammini
->[!warning] un grafo si dice connessoo se ha **solo una** componente connessa
+>[!warning] un grafo si dice connesso se ha **solo una** componente connessa
 
 per calcolare il vettore $C$ delle componenti connesse di un grafo $G$, $C$ dovrà avere tanti elementi quanti sono i nodi del grafo, e 
 $$
