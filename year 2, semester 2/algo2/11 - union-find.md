@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T09:12
+updated: 2025-03-25T09:27
 completed: false
 ---
 # union-find
@@ -29,17 +29,31 @@ per implementare la struttura dati per $n$ elementi  nel modo più semplice, man
 > esistono poi implementazioni con euristica e altre cose molto cool
 
 >[!info] `union()` in $\Theta(n)$, `find()` in $\Theta(1)$
+>```python
+>def Crea(G):
+>	C = [i for i in range(len(G))]
+>	return C
+>
+>def Find(u, C):
+>	return C[u]
+>
+>def Union(a, b, C):
+>	if a > b:
+>		for i in range(len(C)):
+>			if C[i] == b: C[i]=a
+>	else:	
+>		for i in range(len(C)):
+>			if C[i] == a: C[i]=b
+>```
+>in questa implementazione:
+>- `crea()` ha costo $\Theta(n)$
+>- `find()` ha costo $\Theta(1)$
+>- `union()` ha costo $\Theta(n)$
 
-```python
-def Crea(G):
-	C = [i for i in range(len(G))]
-	return C
-
-def Find(u, C):
-	return C[u]
-
-def Union(a, b, C)
-```
+ha anche senso bilanciare i costi, cioè rendere `union()` meno costosa, anche a costo di pagare qualcosa in più per `find()`
+>[!info] `union()` in $O(1)$, `find()` in $O(n)$
+**IDEA**:
+>se usiamo il vettore dei padri per rappresentare le componenti connesse, `union()` d
 
 se ho due alberi da unire, devo rendere figlio l’albero con meno nodi
 - in questo modo la profondità dell’albero creato dalle fusioni non avrà mai altezza maggiore di logn
