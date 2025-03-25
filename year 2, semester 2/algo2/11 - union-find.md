@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T09:35
+updated: 2025-03-25T09:56
 completed: false
 ---
 # union-find
@@ -77,13 +77,41 @@ ha anche senso bilanciare i costi, cioè rendere `union()` meno costosa, anche a
 
 per miglioare questa implementazione, è necessario evitare che i cammini per raggiungere le radici del vettore dei padri non diventino troppo lunghi
 - dobbiamo quindi mantenere gli alberi bilanciati !
+**IDEA**:
+quando eseguo `union()` per fondere due componenti, scelgo sempre come nuova radice la componente che contiene il maggior numero di elementi
+- in questo modo, per **almeno la metà** dei nodi presenti nelle due componenti coinvolte nella fusione, la lunghezza del cammino non aumenta (per le altre aumenta di 1)
+inoltre(soprattutto) con quest’accorgimento garantiamo la seguente proprietà:
+>[!dimostrazione]- se un insieme ha altezza $h$, allora l’insieme contiene almeno $2^h$ elementi
 
-se ho due alberi da unire, devo rendere figlio l’albero con meno nodi
-- in questo modo la profondità dell’albero creato dalle fusioni non avrà mai altezza maggiore di logn
-prova x induzione
-- se un albero ha altezza k, avrà al suo interno almeno 2^k nodi (dimostreremo)
+quindi l’altezza delle componenti non potrà mai superare $\log_{2} n$ (altrimenti avrei la componente con più di $n$ nodi)
 
-- quindi se h=log, al suo interno ci possono essere almeno n nodi
+>[!info] `union()` in $O(1)$, `find()` in $O(\log n)$
+in questa implementazione devo fare in modo che ai nodi radice sia associato anche il numero di elementi che la componente contiene (quindi una volta che il nodo non è radice, non ci interessa più quel numero ?)
+>- ogni elemento in $C$ è caratterizzato da una copia $\text{(x, numero)}$ dove $x$ è il nome dell’elemento e $\text{numero}$ è **il numero di nodi dell’albero radicato in $x$**
+>```python
+>def Crea(G):
+>	C = [(i, 1) for i in range(len(G))] # ogni nodo è una componente
+>	return C
+>
+>def Find(u, C): # componenti memorizzate come vettore dei padri
+>	while u != C[u]
+>		u = C[u]
+>	return u
+>
+>def Union(a, b, C):
+>	tota, totb = C[a][1], C[b][1] # numero di nodi in componente
+>	if tota >= totb:
+>		C[a] = (a, tota + totb)
+>		C[b] = (a, totb)
+>	else:
+>		C[b] = (b, tota + totb)
+>		C[a] = (b, tota)
+>```
+>in questa implementazione:
+>- `crea()` ha costo $\Theta(n)$
+>- `find()` ha costo $\Theta(\log n)$
+>- `union()` ha costo $\Theta(1)$
+
 
 esercizio ::::
 - dato che è un dag, so che il costo da u a u è 0.
