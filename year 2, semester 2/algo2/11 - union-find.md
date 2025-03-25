@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T09:56
+updated: 2025-03-25T10:02
 completed: false
 ---
 # union-find
@@ -82,6 +82,10 @@ quando eseguo `union()` per fondere due componenti, scelgo sempre come nuova rad
 - in questo modo, per **almeno la metà** dei nodi presenti nelle due componenti coinvolte nella fusione, la lunghezza del cammino non aumenta (per le altre aumenta di 1)
 inoltre(soprattutto) con quest’accorgimento garantiamo la seguente proprietà:
 >[!dimostrazione]- se un insieme ha altezza $h$, allora l’insieme contiene almeno $2^h$ elementi
+>assumiamo per assurdo che durante una delle fusioni si sia formata una nuova componente di altezza $h$, che non rispetta la proprietà. consideriamo la prima volta in cui accade, siano $ca$ e $cb$ le componenti che si fondono.
+>possono essere accadute 2 cose: 
+>-**$ca$ e $cb$ erano componenti con la stessa altezza**: allora avevano entrambe altezza $h-1$, ed ognuna aveva almeno $2^{h-1}$ elementi (in quanto nelle fusioni precedenti la proprietà era sempre stata verificata). quindi il numero totale di elementi della nuova componente è $2^{h-1} + 2^{h-1}=2^h$, e la proprietà è verificata
+>-**$ca$ e $cb$ erano componenti con altezza diversa**: allora l’altezza dopo la fusione è quella della componente di altezza maggiore, che doveva essere già di altezza $h$ e conteneva già da sola $2^h$ elementi 
 
 quindi l’altezza delle componenti non potrà mai superare $\log_{2} n$ (altrimenti avrei la componente con più di $n$ nodi)
 
