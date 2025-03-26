@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-26T22:58
+updated: 2025-03-26T23:13
 completed: false
 ---
 # intro a C
@@ -32,20 +32,17 @@ la “compilazione” di un programma in C mediante **gcc** invece, produce un �
 >	return 0;
 >}
 >```
+>con `#` si indicano le direttive al preprocessore
 >`stdio.h` è un **file header**(`.h`) che contiene costanti, funzioni per input, output e file handling
 >- `<>` indicano che il file header è un file standard del C in `/usr/include`
 >- `""` indicano che il file header è dell’utente e si trova nella directory corrente o in un path specificato
+>- `-I` permette di specificare le directory in cui cercare gli header file
 
 ### compilare ed eseguire
-
-per **compilare ed eseguire**: `gcc `
-flags:
+per **compilare ed eseguire**: `gcc -Wall prog-name.c -o executable-name.o` (per compilare), `./executable-name.o` (per eseguire)
+flags per `gcc`:
 - `-Wall`: vengono stampati tutti i messasggi di warning (se ci sono)
 - `-lm`: va specificato se si includono le librerie matematiche `<math.h` (ad esempio per usare funzioni come `sin, cos, log, ln, ...`)
-
-il risultato è un file eseguibile `a.out`
-- `-o nomefile.o` per specificare il nome del file eseguibile
-
 per **solo precompilare/preprocessare** un file: `cpp helloworld.c > precompilato.c`
 - in questo modo, vegnono eseguite tutte le direttive del compilatore; vengono eliminati i commenti
 per **solo compilare** (un file precompilato): `gcc -c precompilato.c -o compilato.o`
@@ -60,4 +57,15 @@ per **solo linkare** il file: `gcc file.o`
 per **linkare più file**: `gcc file1.o file2.o file3.o`
 - si possono anche mischiare file `.c` e `.o` !
 per fare **tutto**: `gcc file.c`/`gcc file1.c ... filen.c`
-## direttie al preprocessore (#)
+## input e output
+l’ambiente run-time di C, quando un programma viene eseguito, apre 2 file: `stdin` e `stdout`
+- tutte le funzioni essenziali per l’I/O sono nel file `stdio.h`
+### output
+```c
+printf("format string", value-list);
+```
+- `value-list` può contenere sequenze di caratteri, variabili, costanti, espressioni logico-matematice
+- `printf` riceve valori, ma C permette di manipolare anche indirizzi di memoria e passarli come input a funzioni (anche se per stampare il contenuto di una locazione di memoria, si usa `scanf`)
+>[!figure] format string
+
+
