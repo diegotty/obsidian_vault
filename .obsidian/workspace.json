@@ -90,9 +90,19 @@
               "icon": "lucide-file",
               "title": "10 - spanning tree"
             }
+          },
+          {
+            "id": "e5971b0882869632",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -249,10 +259,10 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c30ca1f31134554e",
+  "active": "e5971b0882869632",
   "lastOpenFiles": [
-    "year 2, semester 1/os1/05 - gestione dell'IO/dischi.md",
     "year 2, semester 2/algo2/01 - grafi.md",
+    "year 2, semester 1/os1/05 - gestione dell'IO/dischi.md",
     "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/04 - ordinamento topologico.md",
     "year 2, semester 2/algo2/07 - BFS.md",
