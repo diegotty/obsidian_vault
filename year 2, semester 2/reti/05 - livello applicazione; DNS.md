@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-24T17:46
+updated: 2025-03-26T22:21
 ---
 >[!index]
 >- [indirizzo IP](#indirizzo%20IP)
@@ -40,7 +40,7 @@ il **DNS**(domain name system) è un protocollo del livello applicazione che ren
 >- se un messaggio non ha risposta entro un timeout, viene semplicemente ri-inviato dal resolver !
 
 >[!example] esempio di interazione con HTTP
-un bowser(ossia client HTTP) di un host utente richiede l’URL `www.someschool.edu`
+un browser(ossia client HTTP) di un host utente richiede l’URL `www.someschool.edu`
 >1. l’host esegue il lato client dell’applicazione DNS
 >2. il browser estrae il nome dell’host, `www.someschool.edu` dall’URL e lo passa al lato client dell’applicazione DNS
 >3. il cient DNS invia un query contenente l’hostname a un server DNS
