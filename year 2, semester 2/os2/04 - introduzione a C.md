@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-26T23:13
+updated: 2025-03-26T23:18
 completed: false
 ---
 # intro a C
@@ -66,6 +66,10 @@ printf("format string", value-list);
 ```
 - `value-list` può contenere sequenze di caratteri, variabili, costanti, espressioni logico-matematice
 - `printf` riceve valori, ma C permette di manipolare anche indirizzi di memoria e passarli come input a funzioni (anche se per stampare il contenuto di una locazione di memoria, si usa `scanf`)
->[!figure] format string
-
-
+>[!figure] format string values
+![[Pasted image 20250326231401.png]]
+## variabili
+sappiamo cos’è una variabile, poco da dire ….
+### dichiarazione di variabili
+le variabili locali possono essere dichiarate tutte all’inizio di una funzione o possono essere dichiarate nel punto più vicino al loro primo uso.
+esistono dei vantaggi per entrambi:
