@@ -32,23 +32,9 @@
               "icon": "lucide-image",
               "title": "Pasted image 20250324182923"
             }
-          },
-          {
-            "id": "3232f18685ad872a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "conflict-files-obsidian-git.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "conflict-files-obsidian-git"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -204,10 +190,10 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "3232f18685ad872a",
+  "active": "eec9012f1260a4c7",
   "lastOpenFiles": [
-    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
     "conflict-files-obsidian-git.md",
+    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
     "year 2, semester 2/bd2/images/Pasted image 20250324182923.png",
     "Pasted image 20250326231401.png",
     "Pasted image 20250326222745.png",
