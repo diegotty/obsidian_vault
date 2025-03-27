@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-27T14:59
+updated: 2025-03-27T15:30
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -14,11 +14,21 @@ in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengo
 
 
 molto efficiente (non ci permette di utilizzare la rete al meglio)
-## protocolli con pipeline
+# protocolli con pipeline
 nel **pipelining**, il mittente amette più pacchetti in transito, ancora da notificare
 
-### go back N
+## go back N
 l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente
 >[!info] finestra di invio
 ### dimensione finestra d’invio
-possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^{}$
+possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^m-1$
+## ripetizione selettiva
+cerchiamo di evitare il comportamento del meccanismo GBN
+- sembra essere un GBN senza ack cumulativo
+
+timer per ogni pacchet
+### dimensione finestra d’invio e ricezione
+possono capitare impicci (slide 31)
+prendiamo quind dimensione $2^{m-1}$
+## protocolli bidirezionali
+ack è piggyback-ato. lo ficco addosso ai pacchetti che devo mandare (se sono sia mittente che destinatario)
