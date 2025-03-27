@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-27T15:30
+updated: 2025-03-27T15:31
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -22,11 +22,15 @@ l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso
 >[!info] finestra di invio
 ### dimensione finestra d’invio
 possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^m-1$
+
+
+se la rete funziona bene, è effettivamente il meccansimo più efficiente
 ## ripetizione selettiva
 cerchiamo di evitare il comportamento del meccanismo GBN
 - sembra essere un GBN senza ack cumulativo
 
-timer per ogni pacchet
+timer per ogni pacchetto spedito
+più costoso a livello di risorse, e si inviano meno pachetti
 ### dimensione finestra d’invio e ricezione
 possono capitare impicci (slide 31)
 prendiamo quind dimensione $2^{m-1}$
