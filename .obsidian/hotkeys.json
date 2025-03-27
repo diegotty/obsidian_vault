@@ -69,5 +69,13 @@
       ],
       "key": "["
     }
+  ],
+  "editor:focus-right": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "L"
+    }
   ]
 }
