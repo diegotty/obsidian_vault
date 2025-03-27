@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-26T15:52
+updated: 2025-03-27T14:29
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -77,8 +77,6 @@ completed: false
 - DataTappa(giorno: Intero > 0, ora: Orario) 
 - Orario: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - TipoLunaDiMiele: {tradizionale, alternativa}
-
-
 ### modifiche
 - dataFine non è un dato. è calcolabile. usiamo quinid un’operazione `fine()`
 - in comfort non è necessario mettere intero, in quanto i range sono usati solo con interi
