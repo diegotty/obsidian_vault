@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-27T14:43
+updated: 2025-03-27T14:59
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -18,5 +18,7 @@ molto efficiente (non ci permette di utilizzare la rete al meglio)
 nel **pipelining**, il mittente amette più pacchetti in transito, ancora da notificare
 
 ### go back N
-l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza dell’ack sono stati ricevuti correttamente
+l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente
 >[!info] finestra di invio
+### dimensione finestra d’invio
+possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^{}$
