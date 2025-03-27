@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T10:02
+updated: 2025-03-26T13:38
 completed: false
 ---
 # union-find
@@ -115,7 +115,6 @@ in questa implementazione devo fare in modo che ai nodi radice sia associato anc
 >- `crea()` ha costo $\Theta(n)$
 >- `find()` ha costo $\Theta(\log n)$
 >- `union()` ha costo $\Theta(1)$
-
 
 esercizio ::::
 - dato che è un dag, so che il costo da u a u è 0.

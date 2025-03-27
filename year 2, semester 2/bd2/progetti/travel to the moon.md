@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-25T13:14
+updated: 2025-03-26T15:52
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -74,6 +74,23 @@ completed: false
 - Periodo: (data_inizio: Data, data_fine: Data)
 - Continente: {Africa, Asia, America, Europa, Oceania}
 - TipoDestinazione: {divertente, romantica}
-- DataTappa(giorno: Intero > 0, ora: Orario)
+- DataTappa(giorno: Intero > 0, ora: Orario) 
 - Orario: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - TipoLunaDiMiele: {tradizionale, alternativa}
+
+
+### modifiche
+- dataFine non è un dato. è calcolabile. usiamo quinid un’operazione `fine()`
+- in comfort non è necessario mettere intero, in quanto i range sono usati solo con interi
+- `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione
+attributi opzionali potrebbero hintare a generalizzazioni non fatte ! e sempre meglio modellare la struttura, senza perderla in ragionamenti impliciti (es: crocieraperfamiglie)
+- tipo di luna di miele: `tipo(): {trad, alt}`, perchè devi contare le tappe,
+- estotica: avendo il continente, ce lo possiamo calcolare (non è un attributo, ma un’operazione)
+- bisogna creare classe continente, in quanto in questo caso ci interessano i continenti a se stanti, e se non ci fosse una destinazione in continente x, il continente non “esisterebbe” nella base di dati, che è sbagliato
+- tipo destinazione: è una classe, con cui credo un’associazione con destinazione
+- per l’ordine delle tappe, gestissco attraverso 
+- un itinerario deve avere arrivo e partenza(quindi uso 2 associazioni, destinazione_arrivo e dest_partenza)
+	- partenza ha association class con attributo ora (utile saperlo)
+	- la data dell’arivvo la ricaviamo dalla durata della crociera (`fine()` ?)
+
+differenza tra use case e operazione: use-case modifica il livello estensionale, mentre operazione no
