@@ -4,67 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "6a197ff96e6e61af",
+        "id": "a84a9a8ced698dbf",
         "type": "tabs",
         "children": [
           {
-            "id": "a6c5d885eb29ed22",
+            "id": "86d87d67cbb2b0fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/algoritmi 2.md",
+                "file": "year 2, semester 2/reti/reti di elaboratori.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "algoritmi 2"
+              "title": "reti di elaboratori"
             }
           },
           {
-            "id": "7ef7cf938e74208f",
+            "id": "bceb055dfcf0a16b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/raw notes/2025-03-27.md",
+                "file": "year 2, semester 2/reti/07 - livello trasporto.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-27"
+              "title": "07 - livello trasporto"
             }
           },
           {
-            "id": "19398ecb206664c4",
+            "id": "370bba574f98fd01",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
+                "file": "year 2, semester 2/reti/08 - meccankismi di trasferimento affidabile.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "10 - spanning tree"
-            }
-          },
-          {
-            "id": "d8f31267339a5480",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/algo2/11 - union-find.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "11 - union-find"
+              "title": "08 - meccankismi di trasferimento affidabile"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -221,53 +207,53 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "7ef7cf938e74208f",
+  "active": "370bba574f98fd01",
   "lastOpenFiles": [
-    "year 2, semester 2/algo2/algoritmi 2.md",
-    "year 2, semester 2/algo2/11 - union-find.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-27.md",
-    "year 2, semester 2/algo2/10 - spanning tree.md",
-    "year 2, semester 2/reti/08 - meccankismi di trasferimento affidabile.md",
-    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
-    "conflict-files-obsidian-git.md",
-    "year 2, semester 2/bd2/general tips.md",
+    "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
+    "year 2, semester 2/reti/08 - meccankismi di trasferimento affidabile.md",
     "year 2, semester 2/os2/04 - introduzione a C.md",
     "year 2, semester 2/os2/sistemi operativi 2.md",
-    "year 2, semester 2/y2s2.md",
-    "year 2, semester 2/reti/images/Pasted image 20250302183128.png",
-    "year 2, semester 2/reti/07 - livello trasporto.md",
-    "year 2, semester 2/bd2/progetti/travel to the moon.md",
+    "year 2, semester 2/algo2/11 - union-find.md",
+    "year 2, semester 2/algo2/01 - grafi.md",
+    "year 2, semester 2/algo2/09 - algoritmo di dijkstra.md",
+    "year 2, semester 2/algo2/10 - spanning tree.md",
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/bd2/general tips.md",
     "year 2, semester 2/bd2/esercitazioni.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324182923.png",
-    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-27.md",
+    "year 2, semester 2/bd2/progetti/travel to the moon.md",
+    "conflict-files-obsidian-git.md",
+    "year 2, semester 2/reti/raw notes/2025-03-25.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-25.md",
+    "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
     "Pasted image 20250326231401.png",
     "Pasted image 20250326222745.png",
     "Pasted image 20250326222525.png",
-    "year 2, semester 2/bd2/esercitazioni/impiegati e studenti.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250323124111.png",
-    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-25.md",
-    "year 2, semester 2/reti/01 - introduzione alle reti.md",
-    "year 2, semester 2/reti/03 - introduzione allo stack protocollare TCP-IP.md",
-    "year 2, semester 2/reti/raw notes/2025-03-25.md",
-    "year 2, semester 2/reti/raw notes/2025-03-20 @d.md",
-    "year 2, semester 2/reti/2025-03-25.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-24.md",
+    "year 2, semester 2/reti/05 - livello applicazione; DNS.md",
+    "year 2, semester 1/os1/05 - gestione dell'IO/dischi.md",
+    "year 2, semester 2/algo2/04 - ordinamento topologico.md",
+    "year 2, semester 2/algo2/07 - BFS.md",
+    "year 2, semester 2/algo2/03 - colorazione di grafi, componenti connesse.md",
+    "year 2, semester 2/algo2/05 - cicli.md",
+    "year 2, semester 2/os2/02 - filesystem.md",
     "year 2, semester 2/algo2/raw notes/2025-03-24 @d.md",
+    "year 2, semester 2/reti/04 - livello applicazione; HTTP.md",
+    "year 2, semester 2/bd2/images/Pasted image 20250324182923.png",
     "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
     "year 2, semester 2/bd2/images/Pasted image 20250324100215.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321135812.png",
-    "year 2, semester 2/reti/images/Pasted image 20250321135647.png",
     "year 2, semester 2/bd2/images",
+    "Pasted image 20250323123630.png",
+    "year 2, semester 2/os2/images/Pasted image 20250322134008.png",
+    "year 2, semester 2/reti/images/Pasted image 20250321110954.png",
     "year 2, semester 2/bd2/esercitazioni",
+    "year 2, semester 2/bd2/progetti",
     "year 2, semester 2/bd2",
     "year 2, semester 2/reti/images",
     "year 2, semester 2/os2/images",
+    "year 2, semester 2/bd2/images",
     "year 2, semester 2/algo2/images",
-    "year 2, semester 2/os2/raw notes",
-    "year 2, semester 2/os2",
-    "templates",
-    "year 2, semester 2/algo2/raw notes"
+    "year 2, semester 2/reti/raw notes",
+    "year 2, semester 2/os2/raw notes"
   ]
 }

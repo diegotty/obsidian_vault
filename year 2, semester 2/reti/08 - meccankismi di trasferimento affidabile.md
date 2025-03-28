@@ -1,12 +1,16 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-27T15:31
+updated: 2025-03-28T06:54
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
 ## stop and wait
 il meccanismo **stop and wait** è un meccanismo orientato alla connessione, che implementa controllo di flusso e controllo degli errori
+- il mittente ed il destinatario usano una [[07 - livello trasporto#integrazione di controllo di errori e controllo di flusso|finestra scorrevole]] di dimensione 1
+- quando il pacchetto arriva al destinatario, viene calcolato il checksum:
+	- se il pacchetto è corretto, viene inviato l’ack al mittente
+	- se il pachetto è **corrotto**, viene scartato senza informare il mittente
 il controllo di flusso è intrinseco, in quanto viene inviato un pacchetto alla volta (e si aspetta l’ack per inviare il prossimo, quindi non si sovraccarica mai il destnatario)
 ### numeri di sequenza
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
