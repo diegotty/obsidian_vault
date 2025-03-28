@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T20:31
+updated: 2025-03-28T20:47
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -86,11 +86,21 @@ ciascuna delle due parti coinvolta nello scambio di dati può richiedere la chiu
 - **riscontri + timer di ritrasmissione**(RTO): vengono usati `ACK` cumulatici e timer associato al più vecchio pacchetto non riscontrato (vedremo perchè più avanti ! )
 - **ritrasmissione**: del segmento all’inizio della coda di spedizione
 ### generazione di ack 
-esistono delle **regole** che caratterizzano il 
-1. ack viene trasportato in piggybacking
-2. aspetto 500ms perchè se mi arriva il primo segmento giusto, se nella rete non c’è congestione posso fare un ack cumulativo con un solo ack !
-3. the good ending del primo caso. appena li ho entrambi mando un ack cumulativo (per entrambi)
-4. segmento valido ma non ordinato: mando ack per il segmento prima che mi servee
+esistono delle **regole** che caratterizzano i possibili eventi nello scambio di pacchetti:
+
+| evento                                                                                                                                         | azione                                                                                                                                          |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2. arrivo **ordinato** di un segmento con numero di sequenza atteso. tutti i dati fino al numero di sequenza atteso sono già stati riscontrati | `ACK` viene ritardato (delayed). il destinatario attende fino a 500ms l’arrivo del prossimo segmento. se il segmento non arriva, invia un `ACK` |
+| 3. arrivo ordinato di un segmento con numero di sequenza atteso. un altro segmento è in attesa di trasmissione dell’`ACK`                      | invia immediatamente un singolo `ACK` cumulativo, riscontrando entrambi i segmenti ordinati                                                     |
+| 4. arrivo non ordinato di un segmento con numero di sequenza superiore a quello atteso. **viene rilevato un buco**                             | invia immediatamente un `ACK` duplicato, indicando il numero di sequenza del prossimo byte atteso (per indurre a **ritrasmissione rapida**)     |
+| 5. arrivo di un segmento mancante (uno o più dei successivi è stato ricevuto)                                                                  | invia immediatamente un `ACK`                                                                                                                   |
+| 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                 |
+nella regola 2, si aspettano 500ms perchè dato che il primo segmento è nell’ordine giusto, se la rete non è congestionata, mi arriverà il segmento successivo e potrò inviare un `ACK` cumulativo (proprio ciò che accade nella regola 3 !)
+### ritrasmissione dei segmenti
+
+quando un segmento viene inviato, una copia viene memorizzata in una coda **in attesa di essere riscontrato** (la finestra di invio). se il segmento non viene riscontrato, può accadere che:
+- scade il timer: ciò implica che il segmento non riscontrato è all’inizio dela coda. il segmento viene ritrasmesso e viene riavviato il timer
+- **vengono ricevuti 3 `ACK` duplicati**: avviene la **ritra
 dopo 3 ack di un segmento, lo ritrasmetto senza aspettare che finisca il timer (in modo veloce)
 
 
