@@ -1,19 +1,20 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T16:03
+updated: 2025-03-28T19:46
 completed: false
 ---
-**protocollo con pipeline**: permette di inviare diversi pacchetti
-**bidirezionale**(con piggybacking): 
-**orientato al flusso di dati**: può trasmettere dati sottoforma di flusso 
-**orientato alla connessione**:
-**affidabile**(controllo degli errori):
-**controllo del flusso**:
-**controllo della congestione**:
+approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
+- **protocollo con pipeline**: come [[08 - meccanismi di trasferimento affidabile#protocolli con pipeline|abbiamo visto]], ammette più pacchetti in transito contemporaneamente
+- **bidirezionale**(con piggybacking): un host è sia mittente che destinatario
+- **orientato al flusso di dati**: può trasmettere dati sottoforma di flusso: invia uno **stream di byte continuo**
+- **orientato alla connessione**: viene effettuato un handshake prima di iniziare il flusso di dati
+- **affidabile**(controllo degli errori)
+- **controllo del flusso**
+- **controllo della congestione**
 
-orientato al flusso di dati
-invia uno stream di byte continuo (immettiamo dati continuamente, il protcollo li trasporta dall’altra parte (il tcp segmenta i dati, ma non è visibile a livello applicativo, gestito tutto a livello trasporto))
+>[!info] orientato al flusso di dati
+possiamo immaginare la trasmissione con protocollo TCP come uno stream di byte continuo: immettiamo dati continuamente, e il protcollo li trasporta dall’altra parte (il TCP segmenta i dati, ma non è visibile a livello applicativo, i segmenti vengono gestiti a livello trasporto))
 ## struttura dei segmenti
 socket source e socket destinazione
 
