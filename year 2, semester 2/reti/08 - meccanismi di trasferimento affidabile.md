@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T07:33
+updated: 2025-03-28T11:09
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -26,6 +26,8 @@ per gestire pacchetti duplicati, lo stop&wait(crazy) utilizza i **numeri di sequ
 
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
 - l’`ack` indica il numero di sequenza del prossimo pacchetto atteso dal destinatario (se ha ricevuto il pacchetto 0, invierà ack 1)
+### finestra di ricezione
+la fin
 ### efficienza
 con questo meccanismo , il prodotto $\text{rate} \cdot \text{ritardo}$ (cioè la misure del numero di bit che il mittente può inviare prima di ricevere un ack (cioè il volume della pipe in bit)). se il rate è elevato ed il ritardo è consistente, lo stop and wait è inefficiente !
 >[!example]- esempio
