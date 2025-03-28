@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T15:28
+updated: 2025-03-28T16:03
 completed: false
 ---
 **protocollo con pipeline**: permette di inviare diversi pacchetti
@@ -61,3 +61,9 @@ dopo 3 ack di un segmento, lo ritrasmetto senza aspettare che finisca il timer (
 
 
 
+## controllo di flusso
+il destinatario comunica al mittente lo spazio disponibile includendo 
+**RWND**(receive window): permette al destinatario di comunicare al mittente quanto spazio ha all’interno della finestra di ricezione
+
+
+l’ultimo ack è stato mandato xke viene allargata la window (ma non è utile)

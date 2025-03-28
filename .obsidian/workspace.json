@@ -4,81 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "b1b0f53b82ae505f",
+        "id": "6a197ff96e6e61af",
         "type": "tabs",
         "children": [
           {
-            "id": "7e4fb1e4d01b7f9a",
+            "id": "a6c5d885eb29ed22",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/reti di elaboratori.md",
+                "file": "year 2, semester 2/algo2/algoritmi 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "reti di elaboratori"
+              "title": "algoritmi 2"
             }
           },
           {
-            "id": "922cc128efa807a7",
+            "id": "7ef7cf938e74208f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
+                "file": "year 2, semester 2/algo2/raw notes/2025-03-27.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08 - meccanismi di trasferimento affidabile"
+              "title": "2025-03-27"
             }
           },
           {
-            "id": "c2bbd013edd907f2",
+            "id": "19398ecb206664c4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/09 - protocollo TCP.md",
+                "file": "year 2, semester 2/algo2/10 - spanning tree.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "09 - protocollo TCP"
+              "title": "10 - spanning tree"
             }
           },
           {
-            "id": "8a33f50b157b2a7b",
+            "id": "d8f31267339a5480",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "year 2, semester 2/reti/07 - livello trasporto.md",
+                "file": "year 2, semester 2/algo2/11 - union-find.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07 - livello trasporto"
-            }
-          },
-          {
-            "id": "f2aabd575fabb2aa",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "06 - livello applicazione; FTP, SMTP"
+              "title": "11 - union-find"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -235,11 +221,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c2bbd013edd907f2",
+  "active": "7ef7cf938e74208f",
   "lastOpenFiles": [
-    "year 2, semester 2/reti/07 - livello trasporto.md",
+    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/09 - protocollo TCP.md",
     "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
+    "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/algo2/raw notes/2025-03-27.md",
     "year 2, semester 2/reti/images/Pasted image 20250328114602.png",
@@ -257,7 +244,6 @@
     "year 2, semester 2/algo2/11 - union-find.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/reti/08 - meccankismi di trasferimento affidabile.md",
-    "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "conflict-files-obsidian-git.md",
     "year 2, semester 2/bd2/general tips.md",
     "year 2, semester 2/os2/04 - introduzione a C.md",
