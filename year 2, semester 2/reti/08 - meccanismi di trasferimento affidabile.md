@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T11:39
+updated: 2025-03-28T11:50
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -90,12 +90,26 @@ nella **ripetizione selettiva**(selective repeat), il mittente ritrasmette **sol
 
 ### dimensione finestra d’invio e ricezione
 in questo meccanismo, la dimensione delle finestre non può essere $2^m-1$, bensì $2^{m-1}$
->[!example] esempio problematico
+>[!example]- esempio problematico
 usando $2^{m}-1$:
 ![[Pasted image 20250328113857.png]]
 >usando $2^{m-1}$:
 >![[Pasted image 20250328113931.png]]
 
-più costoso a livello di risorse, e si inviano meno pachetti
+>[!tip] questo meccanismo è più costoso a livello di risorse(ci sono 2 buffer e diversi “stati” da gestire (es: quando avanzare il buffer o mandare pacchetti a livello applicazoine)), ma si inviano meno pachetti
 ## protocolli bidirezionali
+i meccanismi appena studiati sono unidirezionali: i pacchetti dati vanno in una direzione e gli `ack` nella direzione opposta. in realtà, entrambi viaggiano nelle due direzioni (**protocolli bidirezionali**), e viene usata la tecnica del **piggybacking** per migliorare la loro efficienza
+- **piggybacking**: quando un pacchetto trasporta dati da A a B, può trasportare anche i riscontri relativi ai pacchetti ricevuti da B, e viceversa
+
 ack è piggyback-ato. lo ficco addosso ai pacchetti che devo mandare (se sono sia mittente che destinatario)
+## riassunto dei meccanismi di trasferimento dati affidabile
+
+| meccanismo                      | uso                                    |
+| ------------------------------- | -------------------------------------- |
+| checksum                        | per gestire errori nel canale          |
+| acknowledgement                 | per gestire errori nel canale          |
+| numero di sequenza              | `ack` con errori, perdita di pacchetti |
+| timeout                         | perdita pacchetti                      |
+| finestra scorrevole, pipelining | maggior utilizzo della rete            |
+i primi 4 aiutano a gestire l’inaffidabilità della rete, mentre l’ultimo meccanismo migliora le prestazioni
+questi meccanismi sono utili/necessari per realizzare un trasferimento dati affidabile in un contesto generale. vedremo ora quali di questi usa TCP
