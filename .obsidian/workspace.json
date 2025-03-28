@@ -22,7 +22,7 @@
             }
           },
           {
-            "id": "7ef7cf938e74208f",
+            "id": "84a19e80f2ae3b7e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -221,14 +221,16 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "7ef7cf938e74208f",
+  "active": "84a19e80f2ae3b7e",
   "lastOpenFiles": [
+    "year 2, semester 2/algo2/algoritmi 2.md",
+    "year 2, semester 2/algo2/12 - algoritmo di bellman-ford-esposito-bevilacqua-sanchez-goggia.md",
+    "year 2, semester 2/algo2/raw notes/2025-03-27.md",
     "year 2, semester 2/reti/06 - livello applicazione; FTP, SMTP.md",
     "year 2, semester 2/reti/09 - protocollo TCP.md",
     "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
     "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
-    "year 2, semester 2/algo2/raw notes/2025-03-27.md",
     "year 2, semester 2/reti/images/Pasted image 20250328114602.png",
     "year 2, semester 2/reti/images/Pasted image 20250328113931.png",
     "year 2, semester 2/reti/images/Pasted image 20250328113857.png",
@@ -239,8 +241,6 @@
     "year 2, semester 2/reti/images/Pasted image 20250328072642.png",
     "year 2, semester 2/reti/images/Pasted image 20250328072405.png",
     "year 2, semester 2/reti/images/Pasted image 20250328071957.png",
-    "year 2, semester 2/algo2/12 - algoritmo di bellman-ford-esposito-bevilacqua-sanchez-goggia.md",
-    "year 2, semester 2/algo2/algoritmi 2.md",
     "year 2, semester 2/algo2/11 - union-find.md",
     "year 2, semester 2/algo2/10 - spanning tree.md",
     "year 2, semester 2/reti/08 - meccankismi di trasferimento affidabile.md",
