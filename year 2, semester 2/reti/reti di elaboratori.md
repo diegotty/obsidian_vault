@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-28T19:16
+updated: 2025-03-28T19:20
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -10,3 +10,4 @@ updated: 2025-03-28T19:16
 [[06 - livello applicazione; FTP, SMTP]]
 [[07 - livello trasporto]]
 [[08 - meccanismi di trasferimento affidabile]]
+[[09 - protocollo TCP]]
