@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T11:24
+updated: 2025-03-28T11:39
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -70,14 +70,32 @@ no, …….. deve esere quindi $2^m-1$
 anche se non è appropriato dire che un meccanismo è migliore di un altro (per motivi che non ricordo ngl)
 ## ripetizione selettiva
 cerchiamo di evitare il comportamento del meccanismo GBN, in cui vengono rispediti tutti i pacchetti per un solo pacchetto perso (se in rete c’è congestione, la rispedizione di tutti i pacchetti peggiora la congestione !!)
-nella **ripetizione selettiva**, il mittente ritrasmette **soltanto** i pacchetti per i quali non ha ricevuto un `ack` (esiste quindi un timer del mittente per ogni pacchetto non riscontrato)
-- il ricevente quindi invia **riscontri specifici** per tutti i pacchetti ricevuti correttamente (sia in ordine, sia fuori sequenza, in quanto )
-- sembra essere un GBN senza ack cumulativo
+nella **ripetizione selettiva**(selective repeat), il mittente ritrasmette **soltanto** i pacchetti per i quali non ha ricevuto un `ack` (esiste quindi un timer del mittente per ogni pacchetto non riscontrato)
+- il ricevente quindi invia **riscontri specifici** per tutti i pacchetti ricevuti correttamente (sia in ordine, sia fuori sequenza. )
+- può esistere un **buffer dei pacchetti** del destinatario, per eventuali consegne in sequenza al livello superiore !
+>[!info] schema generale
+![[Pasted image 20250328112614.png]]
+### finestra di invio e di ricezione
+>[!info] finestra di invio
+![[Pasted image 20250328112748.png]]
+>- la finestra può muoversi solo quando c’è una sequenza in ordine di pacchetti confermati (in questo esempio, si aspettano almeno 0 e 1)
+>- come specificato sopra, il selective repeat usa un **timer per ogni pacchetto** in attesa di riscontro, e quando scale il timer si invia solo il relativo pacchetto
 
-timer per ogni pacchetto spedito
-più costoso a livello di risorse, e si inviano meno pachetti
+>[!info] finestra di ricezione
+![[Pasted image 20250328112813.png]]
+>- l'`ack` non è comulativo, bensì individuale: indica il numero di sequenza di un pacchetto ricevuto correttamente (e non il prossimo atteso)
+>>[!warning] i pacchetti possono essere consegnati al livello applicazione se:
+>>- è stato ricevuto un insieme di pacchetti consecutivi
+>>- l’insieme deve partire dall’inizio della finestra
+
 ### dimensione finestra d’invio e ricezione
-possono capitare impicci (slide 31)
-prendiamo quind dimensione $2^{m-1}$
+in questo meccanismo, la dimensione delle finestre non può essere $2^m-1$, bensì $2^{m-1}$
+>[!example] esempio problematico
+usando $2^{m}-1$:
+![[Pasted image 20250328113857.png]]
+>usando $2^{m-1}$:
+>![[Pasted image 20250328113931.png]]
+
+più costoso a livello di risorse, e si inviano meno pachetti
 ## protocolli bidirezionali
 ack è piggyback-ato. lo ficco addosso ai pacchetti che devo mandare (se sono sia mittente che destinatario)
