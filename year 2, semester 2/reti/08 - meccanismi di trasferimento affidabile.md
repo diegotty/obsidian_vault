@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T06:54
+updated: 2025-03-28T07:10
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -11,8 +11,18 @@ il meccanismo **stop and wait** è un meccanismo orientato alla connessione, che
 - quando il pacchetto arriva al destinatario, viene calcolato il checksum:
 	- se il pacchetto è corretto, viene inviato l’ack al mittente
 	- se il pachetto è **corrotto**, viene scartato senza informare il mittente
-il controllo di flusso è intrinseco, in quanto viene inviato un pacchetto alla volta (e si aspetta l’ack per inviare il prossimo, quindi non si sovraccarica mai il destnatario)
+- per capire se un pacchetto è andato perso(e non aspettare un ack all’infinito), il mittente usa un timer. se il timer **scade senza ricevere un ack**, il pacchetto viene rinviato
+>[!info] illustrazione stop and wait
+![[Pasted image 20250328065652.png]]
+>- il mittente deve tenere una copia del pacchetto spedito finchè non riceve riscontro
+>- il controllo errori viene implementato mediante numero sequenza + ack + timer
+>- il controllo di flusso è intrinseco, in quanto viene inviato un pacchetto alla volta (e si aspetta l’ack per inviare il prossimo, quindi non si sovraccarica mai il destinatario)
 ### numeri di sequenza
+per gestire pacchetti duplicati, lo stop&wait(crazy) utilizza i **numeri di sequenza** (in particolare, si vuole identificare l’intervallo più piccolo possibile che possa consentire la comunicazione senza ambiguità) 
+>[!example] supponiamo che il mittente abbia inviato il pacchetto con numero di sequenza $x$. si possono verificare tre casi:
+>- il pacchetto arriva correttamente al destinatario, che invia un riscontro. il riscontro arriva al mittente che invia il pacchetto successio, $x+1$
+>- il pacchetto risulta corrotto o non arriva al destinatario. il mittente, allo scadere del timer, invia nuovamente il pac
+
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
 - l’`ack` indica il numer
 
