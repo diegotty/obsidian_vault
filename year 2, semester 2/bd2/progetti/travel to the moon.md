@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-27T12:34
+updated: 2025-03-27T14:29
 completed: false
 ---
 ## raffinamento dei requisiti
