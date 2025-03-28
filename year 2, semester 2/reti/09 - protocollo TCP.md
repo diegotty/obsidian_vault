@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:46
+updated: 2025-03-28T20:01
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -15,30 +15,43 @@ approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasport
 
 >[!info] orientato al flusso di dati
 possiamo immaginare la trasmissione con protocollo TCP come uno stream di byte continuo: immettiamo dati continuamente, e il protcollo li trasporta dall’altra parte (il TCP segmenta i dati, ma non è visibile a livello applicativo, i segmenti vengono gestiti a livello trasporto))
-## struttura dei segmenti
-socket source e socket destinazione
+## segmenti TCP
+>[!info] illustrazione
+![[Pasted image 20250328194753.png]]
+>- TCP riceve uno stream di byte dal processo mittente (livello applicazione)
+>- TCP utilizza il servizio di comunicazone tra host del livello di rete che invia i pacchetti: TCP deve raggruppare un certo numero di byte in **segmenti**, aggiungere un’intestazione e consegnare al livello di rete per la trasmissione
+### struttura dei segmenti
+>[!info] struttura dei segmenti !
+![[Pasted image 20250328195117.png]]
+>le informazioni mandatore di un header occupano quindi 20 byte.
+in particolare:
+>- il **numero di sequenza** indica il numero del primo byte di dati contenuto nel segmento
+>- l’`ACK` (**numero di riscontro**) indica il numero di sequenza del prossimo byte che il destinatario si aspetta di ricevere
 
-i numeri di sequenza si riferiscono all$i-esimo$ byte mandato. e viene mandato ack per ogni byte ricevuto correttamente (?)
-### flag di controllo
+i numeri di sequenza si riferiscono quindi all’$i-esimo$ byte inviato.
+#### flag di controllo
 
-| sigla | descrizione                                     |
-| ----- | ----------------------------------------------- |
-| `URG` |                                                 |
-| `ACK` |                                                 |
-| `PSH` | richiesta di push verso il livello applicazione |
-| `RST` |                                                 |
-| `SYN` |                                                 |
-| `FIN` |                                                 |
+| sigla | descrizione                                                          |
+| ----- | -------------------------------------------------------------------- |
+| `URG` | contiente messaggio urgente (puntatore urgente valido)               |
+| `ACK` | riscontro valido                                                     |
+| `PSH` | richiesta di push verso il livello applicazione                      |
+| `RST` | azzeramento della connessione                                        |
+| `SYN` | richiesta di connessione (e sincronizzazione dei numeri di sequenza) |
+| `FIN` | chiusura della connessione                                           |
 ## connessione TCP
-3 fasi:
-- apertura della connessione: 3 way handshake
+la connessione TCP è composta da 3 fasi:
+- apertura della connessione
 - trasferimento dei dati
 - chiusura della connessione
-
-3 way handshake:
-- mando byte con no dati, solo bit SYN ad 1, ed un numero random che sarebbe il numero di sequenza
-- anche il server vuole aprire una connessione ! manda ack e SYN
-- client manda ACK x il numero di sequenza inviato dal server
+### apertura della connessione
+viene effettuato un **3 way handshake**:
+>[!info] 3 way handshake
+![[Pasted image 20250328195908.png]]
+>il client manda un pacchetto composto da: `SYN=1`, `seq`: un numero generato**randomicamente** che diventerà il numero di sequenza durante il trasferimento
+>- mando byte con no dati, solo bit SYN ad 1, ed un numero random che sarebbe il numero di sequenza
+>- anche il server vuole aprire una connessione ! manda ack e SYN
+>- client manda ACK x il numero di sequenza inviato dal server
 
 dati urgenti: URG flag
 - bisogna anche guardare il puntatore urgente ( ci dice dove finiscono. vengono sempre messi all’inizio del segmento !)
