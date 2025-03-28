@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T07:25
+updated: 2025-03-28T07:33
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -49,15 +49,19 @@ nel **pipelining**, il mittente amette più pacchetti in transito, ancora da not
 nel meccanismo **go back N**:
 - i **numeri di sequenza** sono calcolati modulo $2^m$, dove $m$ è la dimensione del campo “numero di sequenza” in bit (huh ?)
 - l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente (ack=7: i pacchetti fino al 6 sono stati ricevuti correttamente, il destinatario attende il 7)
-
+- il mittente mantiene un timer per il più vecchio pacchetto non riscontrato, e allo scadere del timer,**go back N**, cioè vengono rispediti tutti i pacchetti in attesa di riscontro (il destinatario ha finestra di ricezione di dimensione 1, quindi non può bufferizzare i pacchetti fuori sequenza. li devo rinviare tutti)
+### finestre di invio e ricezione
 >[!info] finestra di invio
 ![[Pasted image 20250328072405.png]]
-la finestra di invio può scorrere uno o più posizioni quando viene ricevuto un riscontro privo di errori con `ackNo` maggiore o uguale a $$
-### dimensione finestra d’invio
-possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^m-1$
+la finestra di invio è un concetto astratto, che definisce una porzione immaginaria, con tre variabili: $S_{f}, S_{n}, S_{size}$
+>- la finestra di invio può scorrere uno o più posizioni quando viene ricevuto un riscontro privo di errori con `ackNo` maggiore o uguale a $S_{f}$ e minore di $S_{n}$ in artimetica modulare
 
+>[!example]- esempio di scorrimento
+![[Pasted image 20250328072642.png]]
 
-se la rete funziona bene, è effettivamente il meccansimo più efficiente
+intuiamo la dimensione della finestra d’invio: possiamo avere una finestra di dimensione $2^m$? 
+no, …….. deve esere quindi $2^m-1$
+>[!tip] se la rete funziona bene, questo è effettivamente il meccansimo più efficiente
 ## ripetizione selettiva
 cerchiamo di evitare il comportamento del meccanismo GBN
 - sembra essere un GBN senza ack cumulativo
