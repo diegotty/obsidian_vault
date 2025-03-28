@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T20:47
+updated: 2025-03-28T21:01
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -97,17 +97,37 @@ esistono delle **regole** che caratterizzano i possibili eventi nello scambio di
 | 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                 |
 nella regola 2, si aspettano 500ms perchè dato che il primo segmento è nell’ordine giusto, se la rete non è congestionata, mi arriverà il segmento successivo e potrò inviare un `ACK` cumulativo (proprio ciò che accade nella regola 3 !)
 ### ritrasmissione dei segmenti
-
 quando un segmento viene inviato, una copia viene memorizzata in una coda **in attesa di essere riscontrato** (la finestra di invio). se il segmento non viene riscontrato, può accadere che:
 - scade il timer: ciò implica che il segmento non riscontrato è all’inizio dela coda. il segmento viene ritrasmesso e viene riavviato il timer
-- **vengono ricevuti 3 `ACK` duplicati**: avviene la **ritra
-dopo 3 ack di un segmento, lo ritrasmetto senza aspettare che finisca il timer (in modo veloce)
+- **vengono ricevuti 3 `ACK` duplicati**: avviene la **ritrasmissione veloce** del segmento (veloce perchè non viene atteso il timeout)
+>[!info] timer
+esiste quindi un **unico** timer di ritrasmissione, associato al più vecchio segmento non riscontrato. quando arriva un `ACK`, si riavvia il timer sul più vecchio segmento non riscontrato
 
-
+>[!example]- esempi di varie situazioni  
+normale operatività:
+![[Pasted image 20250328204843.png]]
+>
+>segmento smarrito:
+![[Pasted image 20250328204937.png]]
+>
+>ritrasmissione rapida:
+>![[Pasted image 20250328205044.png]]
+>
+>ritrasmissione rapida: 3 `ACK` duplicati:
+![[Pasted image 20250328205211.png]]
+>
+>riscontro smarrito senza ritrasmissione:
+![[Pasted image 20250328205247.png]]
+>
+>riscontro smarrito con ritrasmissione
+![[Pasted image 20250328205319.png]]
 
 ## controllo di flusso
-il destinatario comunica al mittente lo spazio disponibile includendo 
-**RWND**(receive window): permette al destinatario di comunicare al mittente quanto spazio ha all’interno della finestra di ricezione
-
+l’obiettivo del **controllo di flusso** è quello di non sovraccaricare il buffer del destinatario trasmettendo troppi dati, troppo velocemente
+- bisogna quindi bilanciare la velocità d’invio con velocità di ricezione
+per gestire ciò, il destinatario invia del feedback esplicito: comunica al mittente lo spazio disponbile attraverso il valore di `RWND`(acronimo di receive window), che si trova nell’header TCP di ogni segmento
+l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi controllate dal destinatario (in quanto le due finestre devono avere la stessa dimensione (credo))
+>[!info] finestre di invio e ricezione
+![[Pasted image 20250328210149.png]]
 
 l’ultimo ack è stato mandato xke viene allargata la window (ma non è utile)
