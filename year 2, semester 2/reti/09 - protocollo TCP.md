@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T20:01
+updated: 2025-03-28T20:10
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -48,14 +48,15 @@ la connessione TCP è composta da 3 fasi:
 viene effettuato un **3 way handshake**:
 >[!info] 3 way handshake
 ![[Pasted image 20250328195908.png]]
->il client manda un pacchetto composto da: `SYN=1`, `seq`: un numero generato**randomicamente** che diventerà il numero di sequenza durante il trasferimento
->- mando byte con no dati, solo bit SYN ad 1, ed un numero random che sarebbe il numero di sequenza
->- anche il server vuole aprire una connessione ! manda ack e SYN
->- client manda ACK x il numero di sequenza inviato dal server
+>- il client manda un pacchetto composto da: `SYN=1`, `seq`: un numero generato**randomicamente** che diventerà il numero di sequenza durante il trasferimento
+>- il server risponde con un pacchetto composto da: `ACK` del pacchetto ricevuto, `SYN=1`(in quanto anche il server vuole aprire una connessione con il client), `rwnd` con la dimensione della finestra di ricezione (spiegato più avanti)
+>- il client risponde con un `ACK` del pacchetto ricevuto, risponde con la sua `rwnd`. la connessione è aperta da entrambi i lati, e può iniziare il trasferimento di dati
 
-dati urgenti: URG flag
-- bisogna anche guardare il puntatore urgente ( ci dice dove finiscono. vengono sempre messi all’inizio del segmento !)
-- in questo modo quando il destinatario riceve dati urgenti, li deve passare subito a livello applicazione
+### trasferimento dati
+>[!info] trasferimento dati: push
+>[!info] trasferimento dati : urgent
+>può capitare che ci sia la necessità di mandare dati **urgenti**, cioè da far arrivare al livello applicazione il prima possibile, senza aspettare il `push`. in questo caso, il flag `URG` sarà valido (il suo valore sarà 1). ciò indica che bisogna controllare il **puntatore urgente**:
+>- i dati urgenti vengono inseriti all’inizio di un nuovo segmento, che può contenere dati non urgenti a seguire. il puntatore urgente indica dove i dati urgenti finiscono
 
 x chiusura c’è un 3 way chiusura type beat
 esiste anche un half close
