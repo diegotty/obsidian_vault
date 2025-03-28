@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -235,8 +235,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "8a33f50b157b2a7b",
+  "active": "c2bbd013edd907f2",
   "lastOpenFiles": [
+    "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/reti/09 - protocollo TCP.md",
     "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
     "year 2, semester 2/reti/reti di elaboratori.md",
@@ -262,7 +263,6 @@
     "year 2, semester 2/os2/04 - introduzione a C.md",
     "year 2, semester 2/os2/sistemi operativi 2.md",
     "year 2, semester 2/y2s2.md",
-    "year 2, semester 2/reti/07 - livello trasporto.md",
     "year 2, semester 2/bd2/progetti/travel to the moon.md",
     "year 2, semester 2/bd2/esercitazioni.md",
     "year 2, semester 2/reti/05 - livello applicazione; DNS.md",

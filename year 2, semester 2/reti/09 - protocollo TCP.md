@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T14:24
+updated: 2025-03-28T14:40
 completed: false
 ---
 **protocollo con pipeline**:
@@ -14,4 +14,31 @@ completed: false
 
 orientato al flusso di dati
 invia uno stream di byte continuo (immettiamo dati continuamente, il protcollo li trasporta dall’altra parte (il tcp segmenta i dati, ma non è visibile a livello applicativo, gestito tutto a livello trasporto))
-### struttura dei segmenti
+## struttura dei segmenti
+socket source e socket destinazione
+
+i numeri di sequenza si riferiscono all$i-esimo$ byte mandato. e viene mandato ack per ogni byte ricevuto correttamente (?)
+### flag di controllo
+
+| sigla | descrizione                                     |
+| ----- | ----------------------------------------------- |
+| `URG` |                                                 |
+| `ACK` |                                                 |
+| `PSH` | richiesta di push verso il livello applicazione |
+| `RST` |                                                 |
+| `SYN` |                                                 |
+| `FIN` |                                                 |
+## connessione TCP
+3 fasi:
+- apertura della connessione: 3 way handshake
+- trasferimento dei dati
+- chiusura della connessione
+
+3 way handshake:
+- mando byte con no dati, solo bit SYN ad 1, ed un numero random che sarebbe il numero di sequenza
+- anche il server vuole aprire una connessione ! manda ack e SYN
+- client manda ACK x il numero di sequenza inviato dal server
+
+dati urgenti: URG flag
+- bisogna anche guardare il puntatore urgente ( ci dice dove finiscono )
+
