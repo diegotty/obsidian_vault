@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T07:10
+updated: 2025-03-28T07:25
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -21,19 +21,38 @@ il meccanismo **stop and wait** è un meccanismo orientato alla connessione, che
 per gestire pacchetti duplicati, lo stop&wait(crazy) utilizza i **numeri di sequenza** (in particolare, si vuole identificare l’intervallo più piccolo possibile che possa consentire la comunicazione senza ambiguità) 
 >[!example] supponiamo che il mittente abbia inviato il pacchetto con numero di sequenza $x$. si possono verificare tre casi:
 >- il pacchetto arriva correttamente al destinatario, che invia un riscontro. il riscontro arriva al mittente che invia il pacchetto successio, $x+1$
->- il pacchetto risulta corrotto o non arriva al destinatario. il mittente, allo scadere del timer, invia nuovamente il pac
+>- il pacchetto risulta corrotto o non arriva al destinatario. il mittente, allo scadere del timer, invia nuovamente il pacchetto $x$
+>- il pacchetto arriva correttamente al destinatario ma il riscontro viene perso o corrotto. scade il timer e il mittente rispedisce $x$. il destinatario riceve un duplicato. **se ne accorge ?**
 
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
-- l’`ack` indica il numer
-
-
+- l’`ack` indica il numero di sequenza del prossimo pacchetto atteso dal destinatario (se ha ricevuto il pacchetto 0, invierà ack 1)
+### efficienza
+con questo meccanismo , il prodotto $\text{rate} \cdot \text{ritardo}$ (cioè la misure del numero di bit che il mittente può inviare prima di ricevere un ack (cioè il volume della pipe in bit)). se il rate è elevato ed il ritardo è consistente, lo stop and wait è inefficiente !
+>[!example]- esempio
+in un sistema che utilizza stop and wait, abbiamo:
+>- rate = 1mbps
+>- ritardo di andata e ritorno di 1 bit: 20ms
+>
+>quanto vale $\text{rate} \cdot \text{ritardo}$ ?
+//cba sono preso a male
 molto efficiente (non ci permette di utilizzare la rete al meglio)
 # protocolli con pipeline
 nel **pipelining**, il mittente amette più pacchetti in transito, ancora da notificare
-
+- in questi meccanismi, l’intervallo dei numeri di sequenza deve essere incrementato
+- viene effettuato il **buffering**(vengono memorizzati diversi pacchetti in un buffer) dei pacchetti presso il mittente e/o ricevente
+>[!figure] illustrazione protocolli con pipeline
+![[Pasted image 20250328071913.png]]
 ## go back N
-l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente
+>[!info] schema generale
+![[Pasted image 20250328071957.png]]
+
+nel meccanismo **go back N**:
+- i **numeri di sequenza** sono calcolati modulo $2^m$, dove $m$ è la dimensione del campo “numero di sequenza” in bit (huh ?)
+- l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente (ack=7: i pacchetti fino al 6 sono stati ricevuti correttamente, il destinatario attende il 7)
+
 >[!info] finestra di invio
+![[Pasted image 20250328072405.png]]
+la finestra di invio può scorrere uno o più posizioni quando viene ricevuto un riscontro privo di errori con `ackNo` maggiore o uguale a $$
 ### dimensione finestra d’invio
 possiamo avere una finestra di dimensione $2^m$? no, in quanto potrebbero succedere casini (esempio). deve esere $2^m-1$
 
