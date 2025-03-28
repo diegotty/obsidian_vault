@@ -1,6 +1,6 @@
 ---
 created: 2025-03-27T08:01
-updated: 2025-03-28T19:14
+updated: 2025-03-28T19:16
 ---
 >[!index]
 >- [indirizzo IP](#indirizzo%20IP)
