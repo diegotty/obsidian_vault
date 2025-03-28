@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T20:10
+updated: 2025-03-28T20:31
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -51,23 +51,42 @@ viene effettuato un **3 way handshake**:
 >- il client manda un pacchetto composto da: `SYN=1`, `seq`: un numero generato**randomicamente** che diventerà il numero di sequenza durante il trasferimento
 >- il server risponde con un pacchetto composto da: `ACK` del pacchetto ricevuto, `SYN=1`(in quanto anche il server vuole aprire una connessione con il client), `rwnd` con la dimensione della finestra di ricezione (spiegato più avanti)
 >- il client risponde con un `ACK` del pacchetto ricevuto, risponde con la sua `rwnd`. la connessione è aperta da entrambi i lati, e può iniziare il trasferimento di dati
+>>[!warning] il numero di sequenza iniziale è scelto a caso
+>>ciò per evitare che un segmento di una precedente connessione ancora presente in rete possa essere interpretato come valido per una nuova connessione
 
 ### trasferimento dati
 >[!info] trasferimento dati: push
+![[Pasted image 20250328201717.png]]
+>- uhhh actually not really sure of whats happening with the `P` flag
+
 >[!info] trasferimento dati : urgent
 >può capitare che ci sia la necessità di mandare dati **urgenti**, cioè da far arrivare al livello applicazione il prima possibile, senza aspettare il `push`. in questo caso, il flag `URG` sarà valido (il suo valore sarà 1). ciò indica che bisogna controllare il **puntatore urgente**:
 >- i dati urgenti vengono inseriti all’inizio di un nuovo segmento, che può contenere dati non urgenti a seguire. il puntatore urgente indica dove i dati urgenti finiscono
 
-x chiusura c’è un 3 way chiusura type beat
-esiste anche un half close
+### chiusura della connessione
+ciascuna delle due parti coinvolta nello scambio di dati può richiedere la chiusura della connessione, sebbene sia solitamente richiesta dal client, oppure il server mantiene un timer alla cui scadenza chiede la chiusura (se non si servono richeste entro un determinato tempo !)
+- esiste anche un half close
+>[!info] chiusura della connessione
+![[Pasted image 20250328202033.png]]
+>- viene usato il flag `FIN` per indicare una richiesta di chiusura della connessione (in questo caso, inizialmente da pare del client), a cui il server risponde con un `FIN+ACK`
+
+>[!info] half-close
+>l’half-close permette la chiusura in una direzione della connessione
+![[Pasted image 20250328202254.png]]
+>- in questo caso, il client richiede la chiusura della connessione (in uscita), e il client risponde solo con un `ACK`. da quel momento in poi, il server potrà comunque mandare dati al client, finchè il server stesso non chiuderà la connessione 
 ## controllo degli errori
-tipo selective repeat, 
+### numeri di sequenza e ACK
+- **numeri di sequenza**: come abbiamo visto, corrispondono al “numero” del primo byte del segmento nel flusso di byte (il primo byte in assoluto è il $\text{random ISN- esimo}$ !)
+- `ACK`: TCP usa un `ACK` **cumulativo**, quindi l’`ACK` indica il numero di sequenza del prossimo byte atteso dall’altro lato
+>[!example] esempio di comunicazione con TCP
+![[Pasted image 20250328202754.png]]
 
-
-- **checksum**:
-- **riscontri + timer di ritrasmissione**(RTO):
-- **ritrasmissione**:
+### controllo degli errori
+- **checksum**: se un segmento arriva corrotto, viene scartato dal destinatario
+- **riscontri + timer di ritrasmissione**(RTO): vengono usati `ACK` cumulatici e timer associato al più vecchio pacchetto non riscontrato (vedremo perchè più avanti ! )
+- **ritrasmissione**: del segmento all’inizio della coda di spedizione
 ### generazione di ack 
+esistono delle **regole** che caratterizzano il 
 1. ack viene trasportato in piggybacking
 2. aspetto 500ms perchè se mi arriva il primo segmento giusto, se nella rete non c’è congestione posso fare un ack cumulativo con un solo ack !
 3. the good ending del primo caso. appena li ho entrambi mando un ack cumulativo (per entrambi)
