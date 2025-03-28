@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T12:39
+updated: 2025-03-28T12:52
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -78,12 +78,12 @@ completed: false
 - Orario: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - TipoLunaDiMiele: {tradizionale, alternativa}
 ### modifiche
-- dataFine non è un dato. è calcolabile. usiamo quinid un’operazione `fine()`
+- `fine()`: la data di fine della crociera è calcolabile(calcolabile → operazione)
 - `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione, in modo da sapere il numero di posti disponibili in un istante di tempo
 - tipo di luna di miele: `tipo(): {trad, alt}`, perchè bisogna contare le tappe (è quindi un calcolo → operazione)
 - `durata_g()`: durata in giorni del'l’itinerario
+- l’ordine delle tappe si gestisce da solo, in quanto sappiamo in che giorno (giorno relativo all’inizio) si arriva e si riparte da ogni tappa
 - `Continente` viene modellato come classe in quanto, in questo caso ci interessano i continenti “a se stanti” (magari per qualche interrogazione), e se non ci fosse una destinazione in uno dei continenti, tale continente non sarebbe presente (e ciò sarebbe errato)
-- `estotica()`: avendo il continente, possiamo calcolare se una destinazione è esotica (non è un attributo, ma un’operazione)
-- tipo destinazione: è una classe, con cui credo un’associazione con destinazione
-- per l’ordine delle tappe, gestissco attraverso 
+- `estotica()`: avendo il continente, possiamo calcolare se una destinazione è esotica (quindi non è un attributo, ma un’operazione)
 - `partenza_iniziale` e `arrivo_finale` vengono usate per specificare in modo diverso da delle tappe intermedie la partenza e l’arrivo. vengono usate association class per aggiungere attributi rilevanti 
+- `TipoDestinazione`: modellamo la classe e instanzieremo poi a livello estensionale i due tipi (divertente, romantica)
