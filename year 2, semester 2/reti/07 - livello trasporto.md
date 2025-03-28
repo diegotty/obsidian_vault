@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T13:13
+updated: 2025-03-28T19:14
 completed: false
 ---
 # livello trasporto
