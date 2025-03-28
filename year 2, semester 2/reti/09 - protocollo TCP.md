@@ -1,9 +1,24 @@
 ---
-related to: 
+related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T21:06
+updated: 2025-03-28T21:09
 completed: false
 ---
+>[!index]
+>- [segmenti TCP](#segmenti%20TCP)
+>	- [struttura dei segmenti](#struttura%20dei%20segmenti)
+>		- [flag di controllo](#flag%20di%20controllo)
+>- [connessione TCP](#connessione%20TCP)
+>	- [apertura della connessione](#apertura%20della%20connessione)
+>	- [trasferimento dati](#trasferimento%20dati)
+>	- [chiusura della connessione](#chiusura%20della%20connessione)
+>- [controllo degli errori](#controllo%20degli%20errori)
+>	- [numeri di sequenza e ACK](#numeri%20di%20sequenza%20e%20ACK)
+>	- [controllo degli errori](#controllo%20degli%20errori)
+>	- [generazione di ack](#generazione%20di%20ack)
+>	- [ritrasmissione dei segmenti](#ritrasmissione%20dei%20segmenti)
+>- [controllo di flusso](#controllo%20di%20flusso)
+
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
 - **protocollo con pipeline**: come [[08 - meccanismi di trasferimento affidabile#protocolli con pipeline|abbiamo visto]], ammette più pacchetti in transito contemporaneamente
 - **bidirezionale**(con piggybacking): un host è sia mittente che destinatario

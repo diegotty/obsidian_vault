@@ -1,9 +1,22 @@
 ---
-related to: 
+related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T11:50
-completed: false
+updated: 2025-03-28T21:09
+completed: true
 ---
+>[!index]
+>- [stop and wait](#stop%20and%20wait)
+>	- [numeri di sequenza](#numeri%20di%20sequenza)
+>	- [efficienza](#efficienza)
+>- [protocolli con pipeline](#protocolli%20con%20pipeline)
+>- [go back N](#go%20back%20N)
+>	- [finestre di invio e ricezione](#finestre%20di%20invio%20e%20ricezione)
+>- [ripetizione selettiva](#ripetizione%20selettiva)
+>	- [finestra di invio e di ricezione](#finestra%20di%20invio%20e%20di%20ricezione)
+>	- [dimensione finestra d’invio e ricezione](#dimensione%20finestra%20d%E2%80%99invio%20e%20ricezione)
+>- [protocolli bidirezionali](#protocolli%20bidirezionali)
+>- [riassunto dei meccanismi di trasferimento dati affidabile](#riassunto%20dei%20meccanismi%20di%20trasferimento%20dati%20affidabile)
+
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
 ## stop and wait
 il meccanismo **stop and wait** è un meccanismo orientato alla connessione, che implementa controllo di flusso e controllo degli errori

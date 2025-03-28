@@ -1,9 +1,32 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
-completed: false
+updated: 2025-03-28T21:08
+completed: true
 ---
+>[!index]-
+>- [livello trasporto](#livello%20trasporto)
+>	- [indirizzamento](#indirizzamento)
+>		- [incapsulamento/decapsulamento](#incapsulamento/decapsulamento)
+>		- [multiplexing/demultiplexing](#multiplexing/demultiplexing)
+>			- [demultiplexing](#demultiplexing)
+>	- [API di comunicazione](#API%20di%20comunicazione)
+>		- [numeri di porta](#numeri%20di%20porta)
+>		- [individuare i socket](#individuare%20i%20socket)
+>- [servizi di trasporto](#servizi%20di%20trasporto)
+>	- [overview](#overview)
+>	- [UDP](#UDP)
+>		- [datagrammi UDP](#datagrammi%20UDP)
+>		- [checksum UDP](#checksum%20UDP)
+>	- [TCP](#TCP)
+>		- [demultiplexing orientato alla connessione](#demultiplexing%20orientato%20alla%20connessione)
+>		- [servizio connection-oriented](#servizio%20connection-oriented)
+>		- [controllo di flusso](#controllo%20di%20flusso)
+>		- [controllo degli errori](#controllo%20degli%20errori)
+>			- [realizzazione](#realizzazione)
+>		- [integrazione di controllo di errori e controllo di flusso](#integrazione%20di%20controllo%20di%20errori%20e%20controllo%20di%20flusso)
+>		- [controllo della congestione](#controllo%20della%20congestione)
+
 # livello trasporto
 i protocolli di trasporto forniscono la **comunicazione logica** tra processi applicativi di host differenti
 - gli host eseguono i processi come se fossero direttamente connessi, anche se sono agli antipodi del pianeta (a loro non frega nulla !!!)
