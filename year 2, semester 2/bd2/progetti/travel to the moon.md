@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T06:49
+updated: 2025-03-28T12:39
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -79,16 +79,11 @@ completed: false
 - TipoLunaDiMiele: {tradizionale, alternativa}
 ### modifiche
 - dataFine non è un dato. è calcolabile. usiamo quinid un’operazione `fine()`
-- in comfort non è necessario mettere intero, in quanto i range sono usati solo con interi
-- `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione
-attributi opzionali potrebbero hintare a generalizzazioni non fatte ! e sempre meglio modellare la struttura, senza perderla in ragionamenti impliciti (es: crocieraperfamiglie)
-- tipo di luna di miele: `tipo(): {trad, alt}`, perchè devi contare le tappe,
-- estotica: avendo il continente, ce lo possiamo calcolare (non è un attributo, ma un’operazione)
-- bisogna creare classe continente, in quanto in questo caso ci interessano i continenti a se stanti, e se non ci fosse una destinazione in continente x, il continente non “esisterebbe” nella base di dati, che è sbagliato
+- `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione, in modo da sapere il numero di posti disponibili in un istante di tempo
+- tipo di luna di miele: `tipo(): {trad, alt}`, perchè bisogna contare le tappe (è quindi un calcolo → operazione)
+- `durata_g()`: durata in giorni del'l’itinerario
+- `Continente` viene modellato come classe in quanto, in questo caso ci interessano i continenti “a se stanti” (magari per qualche interrogazione), e se non ci fosse una destinazione in uno dei continenti, tale continente non sarebbe presente (e ciò sarebbe errato)
+- `estotica()`: avendo il continente, possiamo calcolare se una destinazione è esotica (non è un attributo, ma un’operazione)
 - tipo destinazione: è una classe, con cui credo un’associazione con destinazione
 - per l’ordine delle tappe, gestissco attraverso 
-- un itinerario deve avere arrivo e partenza(quindi uso 2 associazioni, destinazione_arrivo e dest_partenza)
-	- partenza ha association class con attributo ora (utile saperlo)
-	- la data dell’arivvo la ricaviamo dalla durata della crociera (`fine()` ?)
-
-differenza tra use case e operazione: use-case modifica il livello estensionale, mentre operazione no
+- `partenza_iniziale` e `arrivo_finale` vengono usate per specificare in modo diverso da delle tappe intermedie la partenza e l’arrivo. vengono usate association class per aggiungere attributi rilevanti 
