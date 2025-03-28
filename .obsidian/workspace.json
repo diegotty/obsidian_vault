@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "d4d5a4be530923e6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "08 - meccanismi di trasferimento affidabile"
+            }
+          },
+          {
             "id": "bceb055dfcf0a16b",
             "type": "leaf",
             "state": {
@@ -34,23 +48,9 @@
               "icon": "lucide-file",
               "title": "07 - livello trasporto"
             }
-          },
-          {
-            "id": "370bba574f98fd01",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "08 - meccanismi di trasferimento affidabile"
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -207,16 +207,18 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "370bba574f98fd01",
+  "active": "d4d5a4be530923e6",
   "lastOpenFiles": [
+    "year 2, semester 2/reti/reti di elaboratori.md",
+    "year 2, semester 2/reti/01 - introduzione alle reti.md",
+    "year 2, semester 2/reti/07 - livello trasporto.md",
+    "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
+    "Pasted image 20250328111410.png",
     "Pasted image 20250328072642.png",
     "Pasted image 20250328072405.png",
     "Pasted image 20250328071957.png",
     "Pasted image 20250328071913.png",
-    "year 2, semester 2/reti/07 - livello trasporto.md",
-    "year 2, semester 2/reti/08 - meccanismi di trasferimento affidabile.md",
     "Pasted image 20250328065652.png",
-    "year 2, semester 2/reti/reti di elaboratori.md",
     "year 2, semester 2/os2/04 - introduzione a C.md",
     "year 2, semester 2/os2/sistemi operativi 2.md",
     "year 2, semester 2/algo2/11 - union-find.md",
@@ -243,8 +245,6 @@
     "year 2, semester 2/algo2/05 - cicli.md",
     "year 2, semester 2/os2/02 - filesystem.md",
     "year 2, semester 2/algo2/raw notes/2025-03-24 @d.md",
-    "year 2, semester 2/bd2/images/Pasted image 20250324182923.png",
-    "year 2, semester 2/bd2/images/Pasted image 20250324100239.png",
     "year 2, semester 2/bd2/images",
     "year 2, semester 2/bd2/esercitazioni",
     "year 2, semester 2/bd2/progetti",

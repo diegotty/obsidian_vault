@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T11:09
+updated: 2025-03-28T11:24
 completed: false
 ---
 >[!warning] stiamo studiando i meccanismi di trasferimento, non dei protocolli ! (penso quindi siano parte di protocolli)
@@ -26,8 +26,6 @@ per gestire pacchetti duplicati, lo stop&wait(crazy) utilizza i **numeri di sequ
 
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
 - l’`ack` indica il numero di sequenza del prossimo pacchetto atteso dal destinatario (se ha ricevuto il pacchetto 0, invierà ack 1)
-### finestra di ricezione
-la fin
 ### efficienza
 con questo meccanismo , il prodotto $\text{rate} \cdot \text{ritardo}$ (cioè la misure del numero di bit che il mittente può inviare prima di ricevere un ack (cioè il volume della pipe in bit)). se il rate è elevato ed il ritardo è consistente, lo stop and wait è inefficiente !
 >[!example]- esempio
@@ -61,11 +59,19 @@ la finestra di invio è un concetto astratto, che definisce una porzione immagin
 >[!example]- esempio di scorrimento
 ![[Pasted image 20250328072642.png]]
 
+>[!info] finestra di ricezione
+![[Pasted image 20250328111410.png]]
+>- la finestra di ricezione ha dimensione 1
+>- il destinatario è sempre in attesa di uno specifico pacchetto, qualsiasi pacchetto arrivato fuori sequenza viene scartato !
+
 intuiamo la dimensione della finestra d’invio: possiamo avere una finestra di dimensione $2^m$? 
 no, …….. deve esere quindi $2^m-1$
 >[!tip] se la rete funziona bene, questo è effettivamente il meccansimo più efficiente
+anche se non è appropriato dire che un meccanismo è migliore di un altro (per motivi che non ricordo ngl)
 ## ripetizione selettiva
-cerchiamo di evitare il comportamento del meccanismo GBN
+cerchiamo di evitare il comportamento del meccanismo GBN, in cui vengono rispediti tutti i pacchetti per un solo pacchetto perso (se in rete c’è congestione, la rispedizione di tutti i pacchetti peggiora la congestione !!)
+nella **ripetizione selettiva**, il mittente ritrasmette **soltanto** i pacchetti per i quali non ha ricevuto un `ack` (esiste quindi un timer del mittente per ogni pacchetto non riscontrato)
+- il ricevente quindi invia **riscontri specifici** per tutti i pacchetti ricevuti correttamente (sia in ordine, sia fuori sequenza, in quanto )
 - sembra essere un GBN senza ack cumulativo
 
 timer per ogni pacchetto spedito
