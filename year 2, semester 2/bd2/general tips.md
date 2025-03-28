@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T12:39
+updated: 2025-03-28T13:13
 completed: false
 ---
 ## diagramma delle classi
