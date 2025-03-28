@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T21:01
+updated: 2025-03-28T21:06
 completed: false
 ---
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
@@ -129,5 +129,12 @@ per gestire ciò, il destinatario invia del feedback esplicito: comunica al mitt
 l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi controllate dal destinatario (in quanto le due finestre devono avere la stessa dimensione (credo))
 >[!info] finestre di invio e ricezione
 ![[Pasted image 20250328210149.png]]
+> si potrebbe ridurre la dimensione della finestra d’invio perchè la finestra di ricezione si è ridotta !
 
-l’ultimo ack è stato mandato xke viene allargata la window (ma non è utile)
+>[!example] esempio
+![[Pasted image 20250328210415.png]]
+>- l’ultimo `ACK` è stato mandato perchè è stata allargata la window (ma non è utile/di solito non viene mandato)
+>- perchè la finestra non si sposta, ma si chiude ? 
+
+>[!warning] in questi esempi di ipotizza una comunicazione unidirezionale, ma in verità ogni host ha 2 buffer: uno di ricezione ed uno di invio!
+>informazione non confermata yet
