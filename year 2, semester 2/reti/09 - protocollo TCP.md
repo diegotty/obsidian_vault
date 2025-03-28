@@ -1,10 +1,10 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T14:52
+updated: 2025-03-28T15:28
 completed: false
 ---
-**protocollo con pipeline**:
+**protocollo con pipeline**: permette di inviare diversi pacchetti
 **bidirezionale**(con piggybacking): 
 **orientato al flusso di dati**: può trasmettere dati sottoforma di flusso 
 **orientato alla connessione**:
@@ -53,8 +53,11 @@ tipo selective repeat,
 - **riscontri + timer di ritrasmissione**(RTO):
 - **ritrasmissione**:
 ### generazione di ack 
+1. ack viene trasportato in piggybacking
 2. aspetto 500ms perchè se mi arriva il primo segmento giusto, se nella rete non c’è congestione posso fare un ack cumulativo con un solo ack !
 3. the good ending del primo caso. appena li ho entrambi mando un ack cumulativo (per entrambi)
 4. segmento valido ma non ordinato: mando ack per il segmento prima che mi servee
 dopo 3 ack di un segmento, lo ritrasmetto senza aspettare che finisca il timer (in modo veloce)
+
+
 
