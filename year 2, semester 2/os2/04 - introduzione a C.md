@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T20:43
+updated: 2025-03-29T20:57
 completed: false
 ---
 # intro a C
@@ -57,32 +57,24 @@ per **solo linkare** il file: `gcc file.o`
 per **linkare più file**: `gcc file1.o file2.o file3.o`
 - si possono anche mischiare file `.c` e `.o` !
 per fare **tutto**: `gcc file.c`/`gcc file1.c ... filen.c`
-## input e output
-l’ambiente run-time di C, quando un programma viene eseguito, apre 2 file: `stdin` e `stdout`
-- tutte le funzioni essenziali per l’I/O sono nel file `stdio.h`
-### output
-```c
-printf("format string", value-list);
-```
-- `value-list` può contenere sequenze di caratteri, variabili, costanti, espressioni logico-matematice
-- `printf` riceve valori, ma C permette di manipolare anche indirizzi di memoria e passarli come input a funzioni (anche se per stampare il contenuto di una locazione di memoria, si usa `scanf`)
->[!figure] format string values
-![[Pasted image 20250326231401.png]]
-## variabili
+# variabili
 sappiamo cos’è una variabile, poco da dire ….
 `option_modifier data_type name_list;`
 - **option_modifier**: `signed`, `unsigned`, `short`, `long`, `const`
 - **data type**: specifica il tipo di valore, permette al compilatore di sapere quali sono le operazioni consentite sul tipo di dato e come deve essere rappresentato in memoria
 - **name list**: lista di nomi di variabili
-### tipi di variabili
+## tipi di variabili
 >[!info] data types for numbers
 ![[Pasted image 20250329201811.png]]
 >>[!info] characters + modifiers
 >![[Pasted image 20250329201845.png]]
-#### boolean 
-- `_Bool`: può memorizzare solo 0 e 1 (qualunque valore diverso da 0 viene memorizzato come 1)
-- `bool`: memorizza `true/false` (richiede l’uso di `<stdbool.h>)
-	- 0 significa `false`, 1/diverso da 0 significa `true`
+
+>[!info] booleani
+>- `_Bool`: può memorizzare solo 0 e 1 (qualunque valore diverso da 0 viene memorizzato come 1)
+>- `bool`: memorizza `true/false` (richiede l’uso di `<stdbool.h>)
+>	- 0 significa `false`, 1/diverso da 0 significa `true`
+
+## operatori
 ### dichiarazione di variabili
 le variabili locali possono essere dichiarate tutte all’inizio di una funzione o possono essere dichiarate nel punto più vicino al loro primo uso.
 esistono dei vantaggi per entrambi:
@@ -102,10 +94,6 @@ esistono dei vantaggi per entrambi:
 - svantaggi: 
 	- poco ordinato
 
-### output di variabili
-`format_string` (guarda sopra) deve contenere dei **placeholder**. un placeholder inizia con % e dice che al suo posto ci andrà il valore di una variabile e che tipo di dato deve essere scritto
-`printf("%d, %l", integerVar, longval);`
-
 | placeholder | tipo                                                                              |
 | ----------- | --------------------------------------------------------------------------------- |
 | `%d/%i`     | integer                                                                           |
@@ -114,4 +102,29 @@ esistono dei vantaggi per entrambi:
 | `%x`        | integer in esadecimale                                                            |
 | `%f/%e/%g`  | float, rispettivament: formato standard, notazione scientifica, scelta automatica |
 | `%lf`       | double                                                                            |
-## input da terminale
+# input e output
+l’ambiente run-time di C, quando un programma viene eseguito, apre 2 file: `stdin` e `stdout`
+- tutte le funzioni essenziali per l’I/O sono nel file `stdio.h`
+## output
+```c
+printf("format string", value-list);
+```
+- `value-list` può contenere sequenze di caratteri, variabili, costanti, espressioni logico-matematice
+- `printf` riceve valori, ma C permette di manipolare anche indirizzi di memoria e passarli come input a funzioni (anche se per stampare il contenuto di una locazione di memoria, si usa `scanf`)
+>[!figure] format string values
+![[Pasted image 20250326231401.png]]
+### output di variabili
+`format_string` (guarda sopra) deve contenere dei **placeholder**. un placeholder inizia con % e dice che al suo posto ci andrà il valore di una variabile e che tipo di dato deve essere scritto
+>[!example] esempio
+ `printf("%d, %l", integerVar, longval);`
+
+## input
+```c
+scanf(format-string, address-list);
+```
+- `format-string`: contiene placeholder che dicono a `scanf` in che tipo di dato la stringa input viene convertita
+- `address_list`: contiene gli indirizzi di memoria in cui devono essere memorizzati i valori ricevuti in input
+ - restituisce come risultato il numero di valori di input letti
+ >[!example] esempio
+ `scanf("%d", &peso);` 
+ > - `peso` è una variabile intera, `&` estrae il suo indirizzo di memoria e lo passa a `scanf`
