@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T16:06
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -71,12 +71,8 @@ completed: false
 ## diagramma UML
 ![[Pasted image 20250324182923.png]]
 ## specifica dei tipi
-- Periodo: (data_inizio: Data, data_fine: Data)
-- Continente: {Africa, Asia, America, Europa, Oceania}
-- TipoDestinazione: {divertente, romantica}
-- DataTappa(giorno: Intero > 0, ora: Orario) 
-- Orario: (ore: Intero in 0..24, minuti: Intero in 0..60)
-- TipoLunaDiMiele: {tradizionale, alternativa}
+- Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
+- Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
 ### modifiche
 - `fine()`: la data di fine della crociera è calcolabile(calcolabile → operazione)
 - `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione, in modo da sapere il numero di posti disponibili in un istante di tempo

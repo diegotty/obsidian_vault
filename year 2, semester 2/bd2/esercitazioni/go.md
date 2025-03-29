@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-29T15:58
+updated: 2025-03-29T16:06
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -45,7 +45,8 @@ Di un torneo interessa sapere il nome, una descrizione testuale, e l’edizione 
 		1. giocatore con le pietre bianche e giocatore con le pietre nere
 	6. esito (rinuncia o coppia di punti)
 ## diagramma UML
+![[Pasted image 20250329160126.png]]
 ## specifica dei tipi
-- regoleConteggio : {giapponesi, cinesi}
-- indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
-- esito : (rinuncia :  Booleano, punteggio_bianco : Intero > 0, punteggio_nero : Intero > 0)
+- RegoleConteggio : {giapponesi, cinesi}
+- Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
+- Esito : (rinuncia :  Booleano, punteggio_bianco : Intero > 0, punteggio_nero : Intero > 0)
