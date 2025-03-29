@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T20:23
+updated: 2025-03-29T20:43
 completed: false
 ---
 # intro a C
@@ -102,4 +102,16 @@ esistono dei vantaggi per entrambi:
 - svantaggi: 
 	- poco ordinato
 
-## output di variabili
+### output di variabili
+`format_string` (guarda sopra) deve contenere dei **placeholder**. un placeholder inizia con % e dice che al suo posto ci andrà il valore di una variabile e che tipo di dato deve essere scritto
+`printf("%d, %l", integerVar, longval);`
+
+| placeholder | tipo                                                                              |
+| ----------- | --------------------------------------------------------------------------------- |
+| `%d/%i`     | integer                                                                           |
+| `%l`        | long                                                                              |
+| `%o`        | integer in ottale                                                                 |
+| `%x`        | integer in esadecimale                                                            |
+| `%f/%e/%g`  | float, rispettivament: formato standard, notazione scientifica, scelta automatica |
+| `%lf`       | double                                                                            |
+## input da terminale
