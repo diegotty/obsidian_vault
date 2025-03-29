@@ -46,6 +46,7 @@ Di un torneo interessa sapere il nome, una descrizione testuale, e l’edizione 
 	6. esito (rinuncia o coppia di punti)
 ## diagramma UML
 ![[Pasted image 20250329160126.png]]
+
 ## specifica dei tipi
 - RegoleConteggio : {giapponesi, cinesi}
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)

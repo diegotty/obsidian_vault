@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T16:56
+updated: 2025-03-29T17:07
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -69,19 +69,11 @@ completed: false
 		1. Dato un periodo 'p', calcolare l'età media dei clienti che hanno prenotato, durante 'p', almeno una crociera che prevede una destinazione esotica (v. req. 3.5)
 		2. Dato un periodo 'p', calcolare la percentuale delle destinazioni 'gettonate' in 'p', ovvero raggiunte, durante 'p', da almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
 ## diagramma UML
-![[Pasted image 20250324182923.png]]
+![[Pasted image 20250329170726.png]]
 ## specifica dei tipi
 - Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
 - Orario: (apertura : Ora, chiusura : Ora)
 - Giorno : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
-### modifiche
-- `fine()`: la data di fine della crociera è calcolabile(calcolabile → operazione)
-- `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione, in modo da sapere il numero di posti disponibili in un istante di tempo
-- tipo di luna di miele: `tipo(): {trad, alt}`, perchè bisogna contare le tappe (è quindi un calcolo → operazione)
-- `durata_g()`: durata in giorni del'l’itinerario
-- l’ordine delle tappe si gestisce da solo, in quanto sappiamo in che giorno (giorno relativo all’inizio) si arriva e si riparte da ogni tappa
-- `Continente` viene modellato come classe in quanto, in questo caso ci interessano i continenti “a se stanti” (magari per qualche interrogazione), e se non ci fosse una destinazione in uno dei continenti, tale continente non sarebbe presente (e ciò sarebbe errato)
-- `estotica()`: avendo il continente, possiamo calcolare se una destinazione è esotica (quindi non è un attributo, ma un’operazione)
-- `partenza_iniziale` e `arrivo_finale` vengono usate per specificare in modo diverso da delle tappe intermedie la partenza e l’arrivo. vengono usate association class per aggiungere attributi rilevanti 
-- `TipoDestinazione`: modellamo la classe e instanzieremo poi a livello estensionale i due tipi (divertente, romantica)
+- Istante : (data : Data, ora : Ora, secondi : Intero in 0..60)
+- DeltaDataOra : (giorno: Intero > 0, ora: Ora)
