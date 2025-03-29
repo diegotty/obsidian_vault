@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T13:36
 completed: true
 ---
 >[!index]
@@ -12,7 +12,7 @@ completed: true
 >[!info] versione iterativa per matrice di adiacenza
 visitiamo il nodo in DFS e teniamo traccia dei nodi già visitati (per i cicli, problema che non avevamo con gli alberi)
 >```python
->## con lista di adiacenza
+>## con matrice di adiacenza
 >def DFS(u,M):
 >	###
 >	n = len(M) ##O(1)

@@ -1,7 +1,7 @@
 ---
 related to: "[[00 - algoritmi efficienti|00 - algoritmi efficienti]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T13:34
 completed: true
 ---
 >[!index]
@@ -78,7 +78,6 @@ lista di adiacenza:
 - non posso avere nodi non consecutivi (visto accediamo alla lista di ogni nodo con il proprio indice, se ci fosse un buco nell’indicizzazione dei nodi (es: 0,1,2,4,5), ci sarebbe un buco nell’indice 3, e una lista vuota non andrebbe bene per rappresentarlo in quanto ambigua)
 dizionario:
 - cancellare da un dizionarcio costa $\Theta(n)$: dipende da quanti items ci sono al suo interno (il caso medio è $O(1)$)
-
 
 
 >[!exercise] esercizio

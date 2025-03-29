@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T13:29
 ---
 >[!index]
 >- [theta-notation](#theta-notation)
@@ -13,7 +13,7 @@ lil ripasso
 # theta-notation
 $$\Theta(f(n))=\{g(n) | \exists k_{1},k_{2}, n_{0}\,\,\,t.c. \,\, k_{1}f(n)\leq g(n)\leq k_{2}f(n), \forall n \geq n_{0}\}$$
 # algoritmi efficienti
-un algoritmo di dice **efficiente** se la sua complessità è di ordine polinomiale nella dimensione $n$ nell’input, **ovvero** di complessità $O(n^c)$ per una qualche costante $c$
+un algoritmo si dice **efficiente** se la sua complessità è di ordine polinomiale nella dimensione $n$ nell’input, **ovvero** di complessità $O(n^c)$ per una qualche costante $c$
 
 di conseguenza, un algoritmo è **inefficiente** se la sua complesssità è di ordine **superpolinomiale**:
 - **esponenziale**:  è una funzione di ordine $\Theta(c^n) = 2^{\Theta(n)}$
