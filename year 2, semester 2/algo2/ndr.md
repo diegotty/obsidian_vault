@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T13:55
+updated: 2025-03-29T14:11
 completed: false
 ---
 visita DFS:
@@ -10,3 +10,13 @@ visita DFS:
 - albero dei padri
 colorazione(grafi indiretti !):
 - abbiamo fatto solo algo x 2-colorabilità (non deve avere cicli di lunghezza dispari)
+- algo x componente connessa
+- algo x componente fortemente connessa ($O(n^3)$)
+	- grafo trasposto ($O(n+m)$)
+ordinamento topologico:
+- algo iterativo
+- algo con DFS
+cicli:
+- archi all’inidetro, in avanti, di attraversamento
+- algo x controllare presenza di cicli (uso 3 stati)
+ponti:

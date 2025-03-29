@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-16T17:59
+updated: 2025-03-29T14:12
 completed: true
 ---
 >[!index]
@@ -85,6 +85,4 @@ la complessità dell’algoritmo è $O(n+m)$, in quanto sto solamente modificand
  
 # punti di articolazione
 un **punto di articolazione** è un nodo la cui rimozione è in grado di sconnettere il grafo
-
-u
-albero ha tutti punti di articolazione tranne le foglie ! 
+- albero ha tutti punti di articolazione tranne le foglie ! 
