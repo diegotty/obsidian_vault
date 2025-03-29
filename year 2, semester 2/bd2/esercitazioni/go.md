@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-29T19:19
+updated: 2025-03-29T19:32
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -45,7 +45,6 @@ Di un torneo interessa sapere il nome, una descrizione testuale, e l’edizione 
 		1. giocatore con le pietre bianche e giocatore con le pietre nere
 	6. esito (rinuncia o coppia di punti)
 ## diagramma UML
-![[Pasted image 20250329171410.png]]
 ![[Pasted image 20250329191855.png]]
 ## specifica dei tipi
 - Punteggio : (punteggio_bianco : Intero ≥ 0 , punteggio_nero ≥ 0)
