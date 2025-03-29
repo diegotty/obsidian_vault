@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T14:11
+updated: 2025-03-29T14:13
 completed: false
 ---
 visita DFS:
@@ -20,3 +20,5 @@ cicli:
 - archi all’inidetro, in avanti, di attraversamento
 - algo x controllare presenza di cicli (uso 3 stati)
 ponti:
+- condizione x arco ponte
+- algo x archi ponte
