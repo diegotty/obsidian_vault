@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-29T15:36
+updated: 2025-03-29T15:58
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -46,3 +46,6 @@ Di un torneo interessa sapere il nome, una descrizione testuale, e l’edizione 
 	6. esito (rinuncia o coppia di punti)
 ## diagramma UML
 ## specifica dei tipi
+- regoleConteggio : {giapponesi, cinesi}
+- indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
+- esito : (rinuncia :  Booleano, punteggio_bianco : Intero > 0, punteggio_nero : Intero > 0)
