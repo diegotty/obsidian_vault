@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T16:06
+updated: 2025-03-29T16:56
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -73,6 +73,8 @@ completed: false
 ## specifica dei tipi
 - Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
+- Orario: (apertura : Ora, chiusura : Ora)
+- Giorno : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
 ### modifiche
 - `fine()`: la data di fine della crociera è calcolabile(calcolabile → operazione)
 - `posti_disponibili(t: DataOra): Intero >= 0`: modelliamo un’operazione, in modo da sapere il numero di posti disponibili in un istante di tempo
