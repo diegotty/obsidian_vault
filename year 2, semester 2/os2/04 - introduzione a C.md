@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T20:57
+updated: 2025-03-29T21:05
 completed: false
 ---
 # intro a C
@@ -74,7 +74,11 @@ sappiamo cos’è una variabile, poco da dire ….
 >- `bool`: memorizza `true/false` (richiede l’uso di `<stdbool.h>)
 >	- 0 significa `false`, 1/diverso da 0 significa `true`
 
+>[!info] stringhe
+>- ultimo elemento dell’arrawy contiene carattere di fine stringa: `\0`(detto `NULL`)
 ## operatori
+fun facts:
+- `/`: il risultato è dello stesso tipo di dato dell’operando più grande (in termini di tipo di dato)
 ### dichiarazione di variabili
 le variabili locali possono essere dichiarate tutte all’inizio di una funzione o possono essere dichiarate nel punto più vicino al loro primo uso.
 esistono dei vantaggi per entrambi:
