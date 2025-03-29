@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T20:13
 completed: false
 ---
 # intro a C
@@ -73,3 +73,12 @@ sappiamo cos’è una variabile, poco da dire ….
 ### dichiarazione di variabili
 le variabili locali possono essere dichiarate tutte all’inizio di una funzione o possono essere dichiarate nel punto più vicino al loro primo uso.
 esistono dei vantaggi per entrambi:
+**dichiarazione all’inizio della funzione**:
+- vantaggi:
+	- **historical context**: era una convenzione all’inizio !
+	- **memory allocation**: dichiarare variabili all’inizio della funzione permette al compilatore di allocare la memoria per tutte le variabili una sola volta, il che può migliorare performance. il layout della memoria è anche più semplice e può essere ottimizzato più facilmente
+	- **scope visibiity**: lo scope delle variabili è più chiaro e prevedibile 
+	- **error prevention**: la dichiarazione all’inizio può evitare errori riguardo a uso prima della dichiarazione
+	- **code clarity**: il codie è più leggibile
+- svantaggi:
+	- 
