@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T20:13
+updated: 2025-03-29T20:23
 completed: false
 ---
 # intro a C
@@ -70,6 +70,19 @@ printf("format string", value-list);
 ![[Pasted image 20250326231401.png]]
 ## variabili
 sappiamo cos’è una variabile, poco da dire ….
+`option_modifier data_type name_list;`
+- **option_modifier**: `signed`, `unsigned`, `short`, `long`, `const`
+- **data type**: specifica il tipo di valore, permette al compilatore di sapere quali sono le operazioni consentite sul tipo di dato e come deve essere rappresentato in memoria
+- **name list**: lista di nomi di variabili
+### tipi di variabili
+>[!info] data types for numbers
+![[Pasted image 20250329201811.png]]
+>>[!info] characters + modifiers
+>![[Pasted image 20250329201845.png]]
+#### boolean 
+- `_Bool`: può memorizzare solo 0 e 1 (qualunque valore diverso da 0 viene memorizzato come 1)
+- `bool`: memorizza `true/false` (richiede l’uso di `<stdbool.h>)
+	- 0 significa `false`, 1/diverso da 0 significa `true`
 ### dichiarazione di variabili
 le variabili locali possono essere dichiarate tutte all’inizio di una funzione o possono essere dichiarate nel punto più vicino al loro primo uso.
 esistono dei vantaggi per entrambi:
@@ -81,4 +94,12 @@ esistono dei vantaggi per entrambi:
 	- **error prevention**: la dichiarazione all’inizio può evitare errori riguardo a uso prima della dichiarazione
 	- **code clarity**: il codie è più leggibile
 - svantaggi:
-	- 
+	- promuove il riuso di variabili per scopi differenti, che non è una buona abitudine
+**dichiarazione il più vicino possibile al punto di primo uso**:
+- vantaggi:
+	- riduce la vita delle variabili al minimo necessario
+	- non promuove il riuso 
+- svantaggi: 
+	- poco ordinato
+
+## output di variabili
