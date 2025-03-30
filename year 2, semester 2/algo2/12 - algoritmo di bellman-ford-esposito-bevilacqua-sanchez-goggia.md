@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T10:25
+updated: 2025-03-30T10:40
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -48,12 +48,21 @@ $$
 ci resta ora da definire la regola che permette di calcolare i valori delle celle $\text{T[i][j]}$ con $j \neq s$ della riga $i > 0$, in funzione delle celle già calcolate dalla riga $i-1$ 
 - ($T[i][s] = 0 \,\forall i>0$, e $T[0][j] = \infty$). 
 distinguiamo i due casi:
-- il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza inferiore ad $i$
-- il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza inferiore ad $i$
+1. il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza esattamente $i$
+	 $T[i][j] = T[i][j-1]$.
+2.  il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza inferiore ad $i$
+	nel secondo caso, invece, deve esistere un cammino minimo di lunghezza al più $i-1$ ad un nodo $x$, e poi un arco $(x,j)$. quindi:
+	$$
+	\text{T[i][j] = $min_{(x,j) \in E}$} \bigg(\text{ T[i-1][x] + costo(x,j)} \bigg)
+	$$
+>[!figure] illustrazione del secondo caso
+![[Pasted image 20250330103330.png]]
 
-
-
-
+non sapendo a priori in quale dei due casi siamo, la formula giusta è:
+$$
+\text{T[i][j]=} \Bigg(\text{min(T[i-1][j]), $min_{(x,j) \in E}$} \bigg( \text{T[i-1][x] + costo(x,j)}\bigg)\Bigg)
+$$
+love me some comically large parenthesis. oversized par
 
 
 
