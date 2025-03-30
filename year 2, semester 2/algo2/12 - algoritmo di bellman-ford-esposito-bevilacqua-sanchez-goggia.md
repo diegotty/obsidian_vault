@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T10:10
+updated: 2025-03-30T10:25
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -31,20 +31,37 @@ vediamo allora un algoritmo più adatto, basato sulla tecnica della **programmaz
 
 partiamo dall’intuizione di una proprietà: 
 >[!dimostrazione] proprietà
->se il grafo $G$ non contiene cicli negativi, allora per ogni nodo $t$ raggiungibile dalla sorgente $s$ esiste un cammino di costo minimo che attraversa al più $n-1$ archi
+>se il grafo $G$ non contiene cicli negativi, allora per ogni nodo $t$ raggiungibile dalla sorgente $s$ esiste un cammino di costo minimo che attraversa al più $n-1$ archi.
+>
+>infatti, se un cammino avesse più di $n-1$ archi, allora almeno un nodo verrebbe ripetuto, formando un ciclo. ma il ciclo deve essere per forza positivo, quindi rimuovere eventuali cicli dal cammino non può aumentare il suo costo complessivo.
+>di conseguenza, esiste sempre un cammino ottimale di lunghezza (massimo ?) $n-1$.
+>- questo garantisce che il costo minimo può essere calcolato considerando solo cammini di questa lunghezza !
 
-uso matrice $n-1 \cdot n-1$
-se ho cicli negativi, la n-1-esima riga sarà diversa dall n-esima iga 
+questa proprietà suggerisce di considerare sottoproblemi che si ottengono limitando la lunghezza dei cammini (aumentandola iterativamente, fino ad arrivare ad $n-1$). definiamo così la seguente tabella, di dimensione $n \cdot n$:
+$$
+\text{T[i][j]=costo di un cammino minimo da $s$ al nodo $j$, di lunghezza al più $i$}
+$$
+popolando la tabella ad ogni riga, la soluzione sarà data dagli $n$ valori che troviamo nell’ultima riga:
+$$
+\text{T[n-1][0], \, T[n-1][1], \, T[n-1][2], \, $\dots$  \,T[n-1][n-1]}
+$$
+ci resta ora da definire la regola che permette di calcolare i valori delle celle $\text{T[i][j]}$ con $j \neq s$ della riga $i > 0$, in funzione delle celle già calcolate dalla riga $i-1$ 
+- ($T[i][s] = 0 \,\forall i>0$, e $T[0][j] = \infty$). 
+distinguiamo i due casi:
+- il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza inferiore ad $i$
+- il cammino di lunghezza al più $i$ da $s$ a $j$ ha lunghezza inferiore ad $i$
 
-uso matrice pazza. riga 0: i cammini ottenibili con 0 archi
-riga 1: cammini 
+
+
+
+
+
+
+
 
 btw, ad ogni passo, a noi interessa solo la riga precedente ! non tutte le righe precedenti
-
 
 slide 10
 prendo l’arco minimo che va da un nodo x a j
 
-
 i due for all’interno costano insieme $O(n+m)$
-ciao
