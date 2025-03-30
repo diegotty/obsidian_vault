@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-29T13:55
+updated: 2025-03-30T22:05
 completed: true
 ---
 >[!index]
@@ -125,7 +125,7 @@ si nota come l’algoritmo per trovare le componenti connesse non funziona nel c
 ## algoritmo per componenti fortemente connesse
 dato un grafo diretto $G$, per trovare i nodi della componente fortemente connessa che contiene $u$, strutturiamo l’algoritmo in questo modo:
 1. calcola l’insieme $A$ dei nodi di $G$ raggiungibili da $u$
-2. calcola l’insieme $A$ dei nodi di $G$ che portano a$u$
+2. calcola l’insieme $A$ dei nodi di $G$ che portano a $u$
 3. restituisci l’intersezione dei due insiemi $A$ e $B$
 
 calcoliamo ora la complessità temporale:
