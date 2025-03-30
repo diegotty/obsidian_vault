@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-29T21:09
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -16,6 +16,7 @@ completed: true
 [[09 - algoritmo di dijkstra]]
 [[10 - spanning tree]]
 [[11 - union-find]]
+[[12 - algoritmo di bellman-ford-esposito-bevilacqua-sanchez-goggia]]
 
 
 ## greedy
