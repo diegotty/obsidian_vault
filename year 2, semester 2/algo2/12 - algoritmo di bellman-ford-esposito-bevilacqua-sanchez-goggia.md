@@ -1,9 +1,15 @@
 ---
-related to: 
+related to: "[[09 - algoritmo di dijkstra]]"
 created: 2025-03-02T17:41
-updated: 2025-03-30T11:25
-completed: false
+updated: 2025-03-30T11:33
+completed: true
 ---
+>[!index]
+>- [algoritmo di bellman-ford](#algoritmo%20di%20bellman-ford)
+>	- [cicli negativi](#cicli%20negativi)
+>	- [algoritmo di bellman-ford](#algoritmo%20di%20bellman-ford)
+>		- [implementazione](#implementazione)
+>	- [variazione: dal costo ai cammini](#variazione:%20dal%20costo%20ai%20cammini)
 # algoritmo di bellman-ford
 >[!info] problema
 >dato un grafo diretto e pesato $G$, in cui i pesi degli archi possono essere anche **negativi** e fissato un suo nodo $s$, vogliamo determinare il costo minimo dei cammini che conducono da $s$ a tutti gli altri nodi del grafo. (se non esiste un cammino verso un determinato nodo, il costo sarà considerato infinito)
@@ -100,34 +106,44 @@ per un’implementazione più efficiente, poichè nel calcolo della formula è n
 ## variazione: dal costo ai cammini
 per trovare anche i cammini oltre che al loro costo, con la tabella $T$ bisogna calcolare anche l’albero $P$ dei cammini minimi. questo si può fare facilmente mantenendo per ogni nodo $j$ il suo predecessore, cioè il nodo $u$ che precede $j$ nel cammino. il valore di $P[j]$ andrà aggiornato ogni volta che il valore di $\text{T[i][j]}$ cambia, in quanto abbiamo trovato un cammino migliore
 >[!info] implementazione dell’algoritmo per i cammini minimi
-
-```python
-def CostoCammini(G, s):
-	n = len(G)
-	inf = float('inf')
-	T = [ [inf]*n for _ in range(n)]
-	T[0][s] = 0
-	P = [-1]*n
-	P[s] = s
-	GT = Trasposto(G)
-	for i in range(1, n): #righe della matrice
-		for j in range(n): #nodi per ogni riga
-			T[i][j] = T[i-1][j]	
-			for x, costo in GT[j]:
-				if T[i-1][x] + costo < T[i][j]:
-					T[i][j] = T[i-1][x] + costo
-					P[j] = x
-	return T[n-1]
-
-def Trasposto(G):
-	n = len(G)
-	GT = [ [] for _ in G]
-	for i in range(n):
-		for j, costo in G[i]:
-			GT[j].append((i, costo))
-	return GT
-```
+>```python
+>def CostoCammini(G, s):
+>	n = len(G)
+>	inf = float('inf')
+>	T = [ [inf]*n for _ in range(n)]
+>	T[0][s] = 0
+>	P = [-1]*n
+>	P[s] = s
+>	GT = Trasposto(G)
+>	for i in range(1, n): #righe della matrice
+>		for j in range(n): #nodi per ogni riga
+>			T[i][j] = T[i-1][j]	
+>			for x, costo in GT[j]:
+>				if T[i-1][x] + costo < T[i][j]:
+>					T[i][j] = T[i-1][x] + costo
+>					P[j] = x
+>	return T[n-1]
+>
+>def Trasposto(G):
+>	n = len(G)
+>	GT = [ [] for _ in G]
+>	for i in range(n):
+>		for j, costo in G[i]:
+>			GT[j].append((i, costo))
+>	return GT
+>```
 >a fine algoritmo:
->- $\text{T[n-1][j] $\neq \infty$}$
+>- $\text{T[n-1][j]}\neq \infty$: $j$ è raggiungibile da $s$, e $P[j]$ conterrà il nodo che precede $j$ nel cammino minimo da $s$ a $j$
+>- $\text{T[n-1][j]} = \infty$: $j$ non è raggiungibile da $s$, e $P[j]$ conterrà -1
+(in pratica calcoliamo il vettore dei padri x i cammini minimi, non so se si può chiamare vettore dei padri visto che non è un albero)
 
+>[!tip] ottimizzazioni
+>il contenuto di una cella della riga $k$ dipende dal contenuto delle celle alla riga $k-1$, quindi:
+>- se la riga $k$ di $T$ è uguale alla riga $k-1$, anche le righe seguenti non varieranno, e si può terminare l’algoritmo (questo accorgimento non modifica la complessità asintotica, ma in pratica può contare molto)
+>- non serve memorizzare l’intera tabella $T$, ma bastano le ultime 2 righe. perciò l’algoritmo può essere facilmente modificato in modo da utilizzare memoria $O(n)$ anzichè $O(n^2)$
 
+>[!info] ps
+a priori noi non sappiamo se un albero ha cicli negativi o no, ma possiamo modificare l’algoritmo di bellman-ford per scoprire se il grafo contiene cicli negativi raggiungibili da $s$:
+>- calcola una riga in più della tabella: la riga $n$:
+>
+>e righe $n$ ed $n-1$ sono uguali $\iff$ non ci sono cicli negativi raggiungibili da $s$
