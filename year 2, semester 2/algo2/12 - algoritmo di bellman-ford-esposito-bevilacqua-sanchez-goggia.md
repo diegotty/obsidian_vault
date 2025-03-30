@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T11:07
+updated: 2025-03-30T11:25
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -97,9 +97,37 @@ per un’implementazione più efficiente, poichè nel calcolo della formula è n
 >
 >la complessità totlae è quindi di $O(n^2 + n \cdot m)$
 
-btw, ad ogni passo, a noi interessa solo la riga precedente ! non tutte le righe precedenti
+## variazione: dal costo ai cammini
+per trovare anche i cammini oltre che al loro costo, con la tabella $T$ bisogna calcolare anche l’albero $P$ dei cammini minimi. questo si può fare facilmente mantenendo per ogni nodo $j$ il suo predecessore, cioè il nodo $u$ che precede $j$ nel cammino. il valore di $P[j]$ andrà aggiornato ogni volta che il valore di $\text{T[i][j]}$ cambia, in quanto abbiamo trovato un cammino migliore
+>[!info] implementazione dell’algoritmo per i cammini minimi
 
-slide 10
-prendo l’arco minimo che va da un nodo x a j
+```python
+def CostoCammini(G, s):
+	n = len(G)
+	inf = float('inf')
+	T = [ [inf]*n for _ in range(n)]
+	T[0][s] = 0
+	P = [-1]*n
+	P[s] = s
+	GT = Trasposto(G)
+	for i in range(1, n): #righe della matrice
+		for j in range(n): #nodi per ogni riga
+			T[i][j] = T[i-1][j]	
+			for x, costo in GT[j]:
+				if T[i-1][x] + costo < T[i][j]:
+					T[i][j] = T[i-1][x] + costo
+					P[j] = x
+	return T[n-1]
 
-i due for all’interno costano insieme $O(n+m)$
+def Trasposto(G):
+	n = len(G)
+	GT = [ [] for _ in G]
+	for i in range(n):
+		for j, costo in G[i]:
+			GT[j].append((i, costo))
+	return GT
+```
+>a fine algoritmo:
+>- $\text{T[n-1][j] $\neq \infty$}$
+
+
