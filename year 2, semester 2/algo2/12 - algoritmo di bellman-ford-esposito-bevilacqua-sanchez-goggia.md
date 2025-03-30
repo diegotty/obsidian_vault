@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T10:47
+updated: 2025-03-30T11:07
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -66,29 +66,36 @@ love me some comically large parenthesis. oversized parenthesis.
 >[!info] ottimizzazione
 per un’implementazione più efficiente, poichè nel calcolo della formula è necessario più volte conoscere gli archi entranti nel generico nodo $j$, conviene precalcolare il grafo trasposto $G^T$ di $G$. questo permette di accedere rapidamente agli archi entranti di un nodo, migliorando l’efficienza
 ### implementazione
-```python
-def CostoCammini(G, s):
-	n = len(G)
-	inf = float('inf')
-	T = [ [inf]*n for _ in range(n)]
-	T[0][s] = 0
-	GT = Trasposto(G)
-	for i in range(1, n): #righe della matrice
-		for j in range(n): #nodi per ogni riga
-			T[i][j] = T[i-1][j]	
-			for x, costo in GT[j]:
-				T[i][j] = min(T[i][j], T[i-1][x] + costo)
-	return T[n-1]
-
-def Trasposto(G):
-	n = len(G)
-	GT = [ [] for _ in G]
-	for i in range(n):
-		for j, costo in G[i]:
-			GT[j].append((i, costo))
-	return GT
-```
-
+>[!info] implementazione dell’algoritmo di bellman-ford
+>```python
+>def CostoCammini(G, s):
+>	n = len(G)
+>	inf = float('inf')
+>	T = [ [inf]*n for _ in range(n)]
+>	T[0][s] = 0
+>	GT = Trasposto(G)
+>	for i in range(1, n): #righe della matrice
+>		for j in range(n): #nodi per ogni riga
+>			T[i][j] = T[i-1][j]	
+>			for x, costo in GT[j]:
+>				T[i][j] = min(T[i][j], T[i-1][x] + costo)
+>	return T[n-1]
+>
+>def Trasposto(G):
+>	n = len(G)
+>	GT = [ [] for _ in G]
+>	for i in range(n):
+>		for j, costo in G[i]:
+>			GT[j].append((i, costo))
+>	return GT
+>```
+>calcolo della complessità temporale:
+>- l’inizializzazione della tabella T richiede $O(n^2)$
+>- la costuzione del grafo traposto, $G^T$ richiede $O(n+m)$
+>- per i tre `for`-loop annidati, è ovvio l’upper bound di $O(n^3)$. tuttavia è possibile, con un’analisi più attenta, arrivare ad un limite più stretto:
+> 	- i due `for` interni hanno un costo totale di $O(m)$. sostanzialmente il tempo richiesto è quello di scorrere tutte le liste di adiacenza del grafo $G^T$, che hanno lunghezza totale $m$ (immagino sia $O(m+n)$)
+>
+>la complessità totlae è quindi di $O(n^2 + n \cdot m)$
 
 btw, ad ogni passo, a noi interessa solo la riga precedente ! non tutte le righe precedenti
 
