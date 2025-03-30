@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-30T09:17
+updated: 2025-03-30T09:32
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -45,5 +45,4 @@ Di ogni esercizio, il sistema deve rappresentare il testo e la o le relative sol
 	3. matricola
 
 ## diagramma UML
-- un’esercitazione può essere inclusa in insegnamenti di anni accademici diversi (riguardo a molteplicità di insegnament_esercitazione per il ruolo di esercitazione)
 ## specifica dei tipi
