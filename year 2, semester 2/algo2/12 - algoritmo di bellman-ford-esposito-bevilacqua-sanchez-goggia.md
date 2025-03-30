@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T09:55
+updated: 2025-03-30T10:10
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -23,8 +23,15 @@ si nota subito come, affichè esista un cammino negativo, non può esistere un *
 infatti, se in un cammino tra i nodi $s$ e $t$ è presente un nodo che appartiene ad un ciclo negativo $W$, allora non esiste un cammino minimo tra $s$ e $t$: ripassando più volte attraverso il ciclo $W$, possiamo abbassare arbitrariamente il costo del cammino da $s$ a $t$ !
 affinchè esista un cammino minimo, non devono esistestere cicli negativi (percorro molteplici volte il ciclo negativo e il costo del cammino diminuisce all’infinito)
 
+>[!info] dijkstra
+il problema affrontato è lo stesso problema che viene risolto dall’[[09 - algoritmo di dijkstra|algoritmo di dijkstra]], che però non prevede l’esistenza di archi negativi
+>- questo perchè l’algoritmo di dijkstra non permette di aggiornare i costi una volta decisi, e tale assunzione si rivela errata se esistono archi di peso negativo
+## algoritmo di bellman-ford
+vediamo allora un algoritmo più adatto, basato sulla tecnica della **programmazione dinamica**(uno dei due *sledgehammers* della creazione di algoritmi, applicabili su una vasta categoria di problemi, con compromesso un maggiore costo computazionale)
 
-
+partiamo dall’intuizione di una proprietà: 
+>[!dimostrazione] proprietà
+>se il grafo $G$ non contiene cicli negativi, allora per ogni nodo $t$ raggiungibile dalla sorgente $s$ esiste un cammino di costo minimo che attraversa al più $n-1$ archi
 
 uso matrice $n-1 \cdot n-1$
 se ho cicli negativi, la n-1-esima riga sarà diversa dall n-esima iga 
