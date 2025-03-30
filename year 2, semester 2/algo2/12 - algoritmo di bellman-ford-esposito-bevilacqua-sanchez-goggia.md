@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-30T10:40
+updated: 2025-03-30T10:47
 completed: false
 ---
 # algoritmo di bellman-ford
@@ -62,10 +62,32 @@ non sapendo a priori in quale dei due casi siamo, la formula giusta è:
 $$
 \text{T[i][j]=} \Bigg(\text{min(T[i-1][j]), $min_{(x,j) \in E}$} \bigg( \text{T[i-1][x] + costo(x,j)}\bigg)\Bigg)
 $$
-love me some comically large parenthesis. oversized par
+love me some comically large parenthesis. oversized parenthesis.
+>[!info] ottimizzazione
+per un’implementazione più efficiente, poichè nel calcolo della formula è necessario più volte conoscere gli archi entranti nel generico nodo $j$, conviene precalcolare il grafo trasposto $G^T$ di $G$. questo permette di accedere rapidamente agli archi entranti di un nodo, migliorando l’efficienza
+### implementazione
+```python
+def CostoCammini(G, s):
+	n = len(G)
+	inf = float('inf')
+	T = [ [inf]*n for _ in range(n)]
+	T[0][s] = 0
+	GT = Trasposto(G)
+	for i in range(1, n): #righe della matrice
+		for j in range(n): #nodi per ogni riga
+			T[i][j] = T[i-1][j]	
+			for x, costo in GT[j]:
+				T[i][j] = min(T[i][j], T[i-1][x] + costo)
+	return T[n-1]
 
-
-
+def Trasposto(G):
+	n = len(G)
+	GT = [ [] for _ in G]
+	for i in range(n):
+		for j, costo in G[i]:
+			GT[j].append((i, costo))
+	return GT
+```
 
 
 btw, ad ogni passo, a noi interessa solo la riga precedente ! non tutte le righe precedenti
