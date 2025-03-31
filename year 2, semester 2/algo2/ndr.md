@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-29T14:13
+updated: 2025-03-31T09:50
 completed: false
 ---
 visita DFS:
@@ -19,6 +19,8 @@ ordinamento topologico:
 cicli:
 - archi all’inidetro, in avanti, di attraversamento
 - algo x controllare presenza di cicli (uso 3 stati)
-ponti:
+ponti: (da rivedere meglio !!)
 - condizione x arco ponte
-- algo x archi ponte
+- algo x archi ponte (ogni nodo ritorna nodo minimo a cui può arrivare)
+visita BFS
+grafi pesati (dijkstra, bellman-ford)

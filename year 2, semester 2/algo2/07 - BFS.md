@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-03-16T17:59
+updated: 2025-03-31T09:49
 completed: true
 ---
 >[!index]
@@ -125,19 +125,18 @@ dati due nodi $a$ e $b$ di un grafo $G$, definiamo **distanza(minima)** in $G$ d
 il **vettore delle distanze** $D$ contiene quindi, in $D[y]$ la distanza di $y$ da $a$
 modifichiamo quindi la visita BFS per far ritornare il vettore delle distanze:
 >[!info] visita BFS che ritorna vettore delle distanze
-
-```python
-def BFSdistanze(x, G):
-	D = [-1]*len(G)
-	D[x] = 0
-	coda = [x]
-	i = 0
-	while len(G) > i:
-		u = coda[i]
-		i++
-		for y in G[u]:
-			if D[y] == -1:
-				D[y] = D[u] + 1
-				coda.append(y)
-	return D
-```
+>```python
+>def BFSdistanze(x, G):
+>	D = [-1]*len(G)
+>	D[x] = 0
+>	coda = [x]
+>	i = 0
+>	while len(G) > i:
+>		u = coda[i]
+>		i++
+>		for y in G[u]:
+>			if D[y] == -1:
+>				D[y] = D[u] + 1
+>				coda.append(y)
+>	return D
+>```
