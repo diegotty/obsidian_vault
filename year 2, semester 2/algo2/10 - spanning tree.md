@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-03-31T09:59
 completed: true
 ---
 >[!index]
@@ -12,8 +12,7 @@ completed: true
 >	- [algoritmo di Kruskal con UNION-FIND](#algoritmo%20di%20Kruskal%20con%20UNION-FIND)
 >		- [implementazione](#implementazione)
 # spanning tree
-uno **spanning tree**(albero di copertura) è l’albero in cui esiste una unica componente connessa, con il minimo numero di archi
-- il costo dello spanning tree è la somma dei pesi di tutti gli archi 
+uno **spanning tree**(albero di copertura) è l’albero in cui esiste una unica componente connessa, con il minimo costo ( in cui il costo dello spanning tree è la somma dei pesi di tutti gli archi)
 >[!info] problema: minimo spanning tree
 >dato un grafo non diretto, pesato e connesso $G$, vogliamo conoscere lo spanning tree con costo minimo
 

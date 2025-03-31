@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-31T09:50
+updated: 2025-03-31T10:00
 completed: false
 ---
 visita DFS:
@@ -23,4 +23,6 @@ ponti: (da rivedere meglio !!)
 - condizione x arco ponte
 - algo x archi ponte (ogni nodo ritorna nodo minimo a cui può arrivare)
 visita BFS
-grafi pesati (dijkstra, bellman-ford)
+grafi pesati (dijkstra $O(n^2)$, dijkstra con heap$O((n+m) \log n)$, bellman-ford)
+spanning tree (algoritmo di kruskal, algo di kruskal con union-find)
+union-find
