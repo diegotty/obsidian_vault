@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T16:00
+updated: 2025-04-01T16:18
 completed: false
 ---
 >[!index]
@@ -200,3 +200,10 @@ timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stan
 
 
 il misurato e su un singolo pacchetto ! quindi può oscillare molto ! è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
+
+
+
+
+socket per TCP : ip e porta mittente + ip e porta destinatario 
+socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
+interfaccia socket: un interfaccia di operazionie
