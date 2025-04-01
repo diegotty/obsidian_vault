@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T14:42
+updated: 2025-04-01T14:57
 completed: false
 ---
 >[!index]
@@ -177,9 +177,23 @@ l’algoritmo di controllo della congestione si basa su 3 componenti:
 #### slow start
 ho un **max**
 ha una crescita esponenziale
-la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia, da cui uso un algoritmo
+la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia (decisa all’inizio), da cui uso un altro algoritmo: 
 
 #### congestion avoidance
 cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
 
+#### fast recovery
 # versioni TCP
+
+## TCP Tahoe
+quando ho timeout, sshtresh diventa congestion window/2
+
+il timeout cambia !! dipende fortemente dal rtt (e l’rtt varia con la congestione della rete)
+
+affinamento:
+timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stanno arrivando, ma non in oridne
+- applico quindi tecniche di rallentamento divers
+## TCP Reno
+
+
+### tempo di andata e ritorno e timeout
