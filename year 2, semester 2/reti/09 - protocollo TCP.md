@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T14:28
+updated: 2025-04-01T14:42
 completed: false
 ---
 >[!index]
@@ -155,3 +155,31 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 >informazione non confermata yet
 
 ## controllo della congestione
+esistono due approcci principali al controllo della congestione: 
+**controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti)
+**controllo di congestione assistito dalla rete**:
+
+#### finestra di congestione
+per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione) 
+la dimensione della finestra del mittente sarà quindi 
+$$
+\text{}
+$$
+
+#### rilevare la congestione
+TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
+
+
+### controllo della congestione
+l’algoritmo di controllo della congestione si basa su 3 componenti:
+
+
+#### slow start
+ho un **max**
+ha una crescita esponenziale
+la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia, da cui uso un algoritmo
+
+#### congestion avoidance
+cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
+
+# versioni TCP
