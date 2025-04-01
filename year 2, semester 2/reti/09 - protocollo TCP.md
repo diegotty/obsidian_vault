@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T15:54
+updated: 2025-04-01T16:00
 completed: false
 ---
 >[!index]
@@ -103,13 +103,13 @@ ciascuna delle due parti coinvolta nello scambio di dati può richiedere la chiu
 ### generazione di ack 
 esistono delle **regole** che caratterizzano i possibili eventi nello scambio di pacchetti:
 
-| evento                                                                                                                                         | azione                                                                                                                                          |     |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| 2. arrivo **ordinato** di un segmento con numero di sequenza atteso. tutti i dati fino al numero di sequenza atteso sono già stati riscontrati | `ACK` viene ritardato (delayed). il destinatario attende fino a 500ms l’arrivo del prossimo segmento. se il segmento non arriva, invia un `ACK` |     |
-| 3. arrivo ordinato di un segmento con numero di sequenza atteso. un altro segmento è in attesa di trasmissione dell’`ACK`                      | invia immediatamente un singolo `ACK` cumulativo, riscontrando entrambi i segmenti ordinati                                                     |     |
-| 4. arrivo non ordinato di un segmento con numero di sequenza superiore a quello atteso. **viene rilevato un buco**                             | invia immediatamente un `ACK` duplicato, indicando il numero di sequenza del prossimo byte atteso (per indurre a **ritrasmissione rapida**)     |     |
-| 5. arrivo di un segmento mancante (uno o più dei successivi è stato ricevuto)                                                                  | invia immediatamente un `ACK`                                                                                                                   |     |
-| 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                 |     |
+| evento                                                                                                                                         | azione                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2. arrivo **ordinato** di un segmento con numero di sequenza atteso. tutti i dati fino al numero di sequenza atteso sono già stati riscontrati | `ACK` viene ritardato (delayed). il destinatario attende fino a 500ms l’arrivo del prossimo segmento. se il segmento non arriva, invia un `ACK` (`ACK` posticipato) |
+| 3. arrivo ordinato di un segmento con numero di sequenza atteso. un altro segmento è in attesa di trasmissione dell’`ACK`                      | invia immediatamente un singolo `ACK` cumulativo, riscontrando entrambi i segmenti ordinati                                                                         |
+| 4. arrivo non ordinato di un segmento con numero di sequenza superiore a quello atteso. **viene rilevato un buco**                             | invia immediatamente un `ACK` duplicato, indicando il numero di sequenza del prossimo byte atteso (per indurre a **ritrasmissione rapida**)                         |
+| 5. arrivo di un segmento mancante (uno o più dei successivi è stato ricevuto)                                                                  | invia immediatamente un `ACK` (cumulativo)                                                                                                                          |
+| 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                                     |
 nella regola 2, si aspettano 500ms perchè dato che il primo segmento è nell’ordine giusto, se la rete non è congestionata, mi arriverà il segmento successivo e potrò inviare un `ACK` cumulativo (proprio ciò che accade nella regola 3 !)
 ### ritrasmissione dei segmenti
 quando un segmento viene inviato, una copia viene memorizzata in una coda **in attesa di essere riscontrato** (la finestra di invio). se il segmento non viene riscontrato, può accadere che:
