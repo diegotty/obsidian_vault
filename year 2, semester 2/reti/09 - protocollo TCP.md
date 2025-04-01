@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T14:57
+updated: 2025-04-01T15:39
 completed: false
 ---
 >[!index]
@@ -197,3 +197,6 @@ timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stan
 
 
 ### tempo di andata e ritorno e timeout
+
+
+il misurato e su un singolo pacchetto ! quindi può oscillare molto ! è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
