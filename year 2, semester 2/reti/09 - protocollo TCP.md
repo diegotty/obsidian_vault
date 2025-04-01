@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-01T14:28
 completed: false
 ---
 >[!index]
@@ -153,3 +153,5 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 
 >[!warning] in questi esempi di ipotizza una comunicazione unidirezionale, ma in verità ogni host ha 2 buffer: uno di ricezione ed uno di invio!
 >informazione non confermata yet
+
+## controllo della congestione
