@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-01T17:51
 completed: false
 ---
 ## diagramma delle classi
@@ -22,3 +22,7 @@ completed: false
 - `estotica()`: avendo il continente, possiamo calcolare se una destinazione è esotica (quindi non è un attributo, ma un’operazione)
 - `partenza_iniziale` e `arrivo_finale` vengono usate per specificare in modo diverso da delle tappe intermedie la partenza e l’arrivo. vengono usate association class per aggiungere attributi rilevanti 
 - `TipoDestinazione`: modellamo la classe e instanzieremo poi a livello estensionale i due tipi (divertente, romantica)
+
+
+
+molteplicità 0..1 → 1 oppure 1 → 1 descrive il fatto che una classe è parte di un altra classe praticamente (o, nel caso della prima molteplicità, che è praticamente un attributo opzionale)
