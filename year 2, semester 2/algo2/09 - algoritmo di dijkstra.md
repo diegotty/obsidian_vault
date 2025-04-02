@@ -1,7 +1,7 @@
 ---
 related to: "[[08 - grafi pesati]]"
 created: 2025-03-02T17:41
-updated: 2025-04-02T10:22
+updated: 2025-04-02T23:29
 completed: true
 ---
 >[!index]
@@ -11,7 +11,7 @@ completed: true
 >	- [implementazione](#implementazione)
 # algoritmo di dijkstra
 >[!info] problema
-> dato un grafo pesato, vogliamo troare i cammini minimi e quindi anche le distanze da un certo nodo $s$(sorgente) a tutti gli altri nodi del grafo
+> dato un grafo pesato, vogliamo trovare i cammini minimi e quindi anche le distanze da un certo nodo $s$(sorgente) a tutti gli altri nodi del grafo
 >**esempio:**
 ![[Pasted image 20250320111744.png]]
 

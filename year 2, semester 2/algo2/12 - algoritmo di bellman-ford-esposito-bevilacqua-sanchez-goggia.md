@@ -1,7 +1,7 @@
 ---
 related to: "[[09 - algoritmo di dijkstra]]"
 created: 2025-03-02T17:41
-updated: 2025-04-02T10:22
+updated: 2025-04-02T23:30
 completed: true
 ---
 >[!index]
@@ -101,7 +101,7 @@ per un’implementazione più efficiente, poichè nel calcolo della formula è n
 >- per i tre `for`-loop annidati, è ovvio l’upper bound di $O(n^3)$. tuttavia è possibile, con un’analisi più attenta, arrivare ad un limite più stretto:
 > 	- i due `for` interni hanno un costo totale di $O(m)$. sostanzialmente il tempo richiesto è quello di scorrere tutte le liste di adiacenza del grafo $G^T$, che hanno lunghezza totale $m$ (immagino sia $O(m+n)$)
 >
->la complessità totlae è quindi di $O(n^2 + n \cdot m)$
+>la complessità totale è quindi di $O(n^2 + n \cdot m)$
 
 ## variazione: dal costo ai cammini
 per trovare anche i cammini oltre che al loro costo, con la tabella $T$ bisogna calcolare anche l’albero $P$ dei cammini minimi. questo si può fare facilmente mantenendo per ogni nodo $j$ il suo predecessore, cioè il nodo $u$ che precede $j$ nel cammino. il valore di $P[j]$ andrà aggiornato ogni volta che il valore di $\text{T[i][j]}$ cambia, in quanto abbiamo trovato un cammino migliore
