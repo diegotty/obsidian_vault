@@ -1,11 +1,12 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-29T19:32
+updated: 2025-04-01T17:30
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
 >- [specifica dei requisiti](#specifica%20dei%20requisiti)
->- [raffinamento dei requisiti](#raffinamento%20dei%20requisiti)
+
+- [raffinamento dei requisiti](#raffinamento%20dei%20requisiti)
 >- [diagramma UML](#diagramma%20UML)
 >- [specifica dei tipi](#specifica%20dei%20tipi)
 ## obiettivi
@@ -47,4 +48,5 @@ Di un torneo interessa sapere il nome, una descrizione testuale, e l’edizione 
 ## diagramma UML
 ![[Pasted image 20250329191855.png]]
 ## specifica dei tipi
+
 - Punteggio : (punteggio_bianco : Intero ≥ 0 , punteggio_nero ≥ 0)

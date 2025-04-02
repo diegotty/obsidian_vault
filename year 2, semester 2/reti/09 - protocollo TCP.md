@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-03-31T18:26
+updated: 2025-04-01T16:18
 completed: false
 ---
 >[!index]
@@ -103,13 +103,13 @@ ciascuna delle due parti coinvolta nello scambio di dati può richiedere la chiu
 ### generazione di ack 
 esistono delle **regole** che caratterizzano i possibili eventi nello scambio di pacchetti:
 
-| evento                                                                                                                                         | azione                                                                                                                                          |
-| ---------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2. arrivo **ordinato** di un segmento con numero di sequenza atteso. tutti i dati fino al numero di sequenza atteso sono già stati riscontrati | `ACK` viene ritardato (delayed). il destinatario attende fino a 500ms l’arrivo del prossimo segmento. se il segmento non arriva, invia un `ACK` |
-| 3. arrivo ordinato di un segmento con numero di sequenza atteso. un altro segmento è in attesa di trasmissione dell’`ACK`                      | invia immediatamente un singolo `ACK` cumulativo, riscontrando entrambi i segmenti ordinati                                                     |
-| 4. arrivo non ordinato di un segmento con numero di sequenza superiore a quello atteso. **viene rilevato un buco**                             | invia immediatamente un `ACK` duplicato, indicando il numero di sequenza del prossimo byte atteso (per indurre a **ritrasmissione rapida**)     |
-| 5. arrivo di un segmento mancante (uno o più dei successivi è stato ricevuto)                                                                  | invia immediatamente un `ACK`                                                                                                                   |
-| 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                 |
+| evento                                                                                                                                         | azione                                                                                                                                                              |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2. arrivo **ordinato** di un segmento con numero di sequenza atteso. tutti i dati fino al numero di sequenza atteso sono già stati riscontrati | `ACK` viene ritardato (delayed). il destinatario attende fino a 500ms l’arrivo del prossimo segmento. se il segmento non arriva, invia un `ACK` (`ACK` posticipato) |
+| 3. arrivo ordinato di un segmento con numero di sequenza atteso. un altro segmento è in attesa di trasmissione dell’`ACK`                      | invia immediatamente un singolo `ACK` cumulativo, riscontrando entrambi i segmenti ordinati                                                                         |
+| 4. arrivo non ordinato di un segmento con numero di sequenza superiore a quello atteso. **viene rilevato un buco**                             | invia immediatamente un `ACK` duplicato, indicando il numero di sequenza del prossimo byte atteso (per indurre a **ritrasmissione rapida**)                         |
+| 5. arrivo di un segmento mancante (uno o più dei successivi è stato ricevuto)                                                                  | invia immediatamente un `ACK` (cumulativo)                                                                                                                          |
+| 6. arrivo di un segmento duplicato                                                                                                             | invia immediatamente un riscontro con numero di sequenza atteso                                                                                                     |
 nella regola 2, si aspettano 500ms perchè dato che il primo segmento è nell’ordine giusto, se la rete non è congestionata, mi arriverà il segmento successivo e potrò inviare un `ACK` cumulativo (proprio ciò che accade nella regola 3 !)
 ### ritrasmissione dei segmenti
 quando un segmento viene inviato, una copia viene memorizzata in una coda **in attesa di essere riscontrato** (la finestra di invio). se il segmento non viene riscontrato, può accadere che:
@@ -153,3 +153,57 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 
 >[!warning] in questi esempi di ipotizza una comunicazione unidirezionale, ma in verità ogni host ha 2 buffer: uno di ricezione ed uno di invio!
 >informazione non confermata yet
+
+## controllo della congestione
+esistono due approcci principali al controllo della congestione: 
+**controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti)
+**controllo di congestione assistito dalla rete**:
+
+#### finestra di congestione
+per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione) 
+la dimensione della finestra del mittente sarà quindi 
+$$
+\text{}
+$$
+
+#### rilevare la congestione
+TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
+
+
+### controllo della congestione
+l’algoritmo di controllo della congestione si basa su 3 componenti:
+
+
+#### slow start
+ho un **max**
+ha una crescita esponenziale
+la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia (decisa all’inizio), da cui uso un altro algoritmo: 
+
+#### congestion avoidance
+cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
+
+#### fast recovery
+# versioni TCP
+
+## TCP Tahoe
+quando ho timeout, sshtresh diventa congestion window/2
+
+il timeout cambia !! dipende fortemente dal rtt (e l’rtt varia con la congestione della rete)
+
+affinamento:
+timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stanno arrivando, ma non in oridne
+- applico quindi tecniche di rallentamento divers
+## TCP Reno
+
+
+### tempo di andata e ritorno e timeout
+
+
+il misurato e su un singolo pacchetto ! quindi può oscillare molto ! è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
+
+
+
+
+socket per TCP : ip e porta mittente + ip e porta destinatario 
+socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
+interfaccia socket: un interfaccia di operazionie
