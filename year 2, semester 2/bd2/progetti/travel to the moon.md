@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-02T14:47
 completed: false
 ---
 ## raffinamento dei requisiti
@@ -77,3 +77,8 @@ completed: false
 - Giorno : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
 - Istante : (data : Data, ora : Ora, secondi : Intero in 0..60)
 - DeltaDataOra : (giorno: Intero > 0, ora: Ora)
+
+
+età è un’operazione (dalla nascita)
+un clietnte deve ptoer prenotare più volte da una crociera. bisogno di classe prenotazione 
+posti disponibili, specifica dell’operazione
