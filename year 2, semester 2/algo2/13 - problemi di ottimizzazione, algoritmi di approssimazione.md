@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-05T18:10
+updated: 2025-04-05T18:23
 completed: false
 ---
 # problemi di ottimizzazione
@@ -24,7 +24,7 @@ finchè ci sono archi non coperti, inserisci in $S$ il nodo che copre il **massi
 
 per questo problema (e moltissimi altri), definiti **computazionalmente difficili**, non si conoscono algoritmi neanche lontanamente efficienti (== non esistono algoritmi subesponenziali)
 - in questi casi, potrebbe esser già soddisfacente ottenere una soluzione **ammissibile** che sia soltanto **”vicina”** ad una soluzione ottima, e ovviamente, più vicina e meglio è.
->[!warning] !!!!!!!
+>[!warning] algoritmi di approssimazione ed euristiche
 > fra gli algoritmi che non trovano sempre una soluzione ammissibile **ottima**, è importante distinguere due categorie piuttosto differenti: **algoritmi di approssimazione** ed **euristiche**
 >- **gli algoritmi di approssimazione** sono algoritmi per cui si dimostra che la soluzione ammisibile prodotta approssima entro un certo grado una soluzione ottima !
 >- le **euristiche**, invece, sono algoritmi per cui **non** si riesce a dimostrare che la soluzione ammissibile prodotta ha sempre una certa vicinanza ad una soluzione ottima. sono infatti l’ultima spiaggia, quando non si riesce a trovare nè algoritmi corretti nè algoritmi di approssimazione efficienti
@@ -40,10 +40,23 @@ formalmente: si dice che $A$ approssima il problema di minimizzazione entro un f
 >\frac{A(I)}{OPT(I)} \leq \rho
 >$$
 dove $OPT(I)$ è il costo di una soluzione ottime per l’istanza $I$, e $A(I)$ il costo della soluzione prodotta dall’algoritmo $A$ per quell’istanza
+>
+>rattandosi di un problema di minimizzazione, risulta sempre che $A(I) \geq OTT(I)$, quindi $\rho \geq 1$ (ed ovviamo quando più il rapporto di approssimazione è vicino ad 1, tanto più l’algoritmo di approssimazione è buono)
+>- se $A$ approssima $P$ entro un fattore 2, allora $A$ trova sempre una soluzione di costo al più doppio di quello della soluzione ottima
 
 >[!info] problemi di massimizzazione
 >per i problemi di massimizzazione, dove ad ogni soluzione ammissibile è associato un valore, si considera il rapporto inverso, ovvero:
 >$$
-\frac{>OTT(I)}{A(I)} \leq \rho
+>\frac{OTT(I)}{A(I)} \leq \rho
 >$$
 
+### valutare il rapporto d’approssimazione di un algoritmo
+dall’esempio che abbiamo visto in precedenza, algoritmo greedy per il problema della copertura minimale tramite nodi ha un fattore di approssimazione di almeno $\frac{5}{4}>1$
+- infatti abbiamo trovato un’istanza per cui l’algoritmo produce una soluzione con 5 nodi mentre la soluzione ottima ha 4 nodi
+>[!example] un’altra istanza di P. … . .
+![[Pasted image 20250405181849.png]]
+
+si nota infine come per ogni costante $R$, si possono esibire grafi per cui l’algoritmi sbaglia di un fattore superiore ad $R$, **QUINDI** l’algoritmo greedy in esame non garantisce nessun fattore di approssimazione costante
+>[!dimostrazione] dimostrazione
+dimostriamo che per ogni intero $l$, possiamo costruire un grafo $G_l$ su cui l’algoritmo greedy avrà rapporto di approssimazione $\Omega(\log l)$. 
+>il grafo $G_{l}$ è definito come segue:
