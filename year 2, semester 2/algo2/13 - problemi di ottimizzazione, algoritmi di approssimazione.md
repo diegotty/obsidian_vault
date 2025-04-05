@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-05T17:54
+updated: 2025-04-05T18:10
 completed: false
 ---
 # problemi di ottimizzazione
@@ -11,7 +11,6 @@ un **problema di ottimizzazione** è un tipo di problmea in cui l’obiettivo è
 sebbene esistono problemi di ottimizzazione per cui trovare la soluzione ottima è possibile in tempo polinomiale, nella maggior parte dei problemi di ottimizzazione trovare una soluzione ottima risulta essere un compito molto più difficile. in molti casi, trovare una soluzione ottima può esser un problema **NP-difficile**, dove la complessità cresce esponenzialmente con la dimensione del problema
 >
 >quindi,  sebbene determinare se una soluzione è ammissibile può essere fatto in tempo polinomiale, trovare la soluzione ottime richiede spesso algoritmi molto più complessi
-
 
 ## algoritmi di approssimazione
 >[!info] problema della copertura tramite nodi
@@ -27,6 +26,24 @@ per questo problema (e moltissimi altri), definiti **computazionalmente difficil
 - in questi casi, potrebbe esser già soddisfacente ottenere una soluzione **ammissibile** che sia soltanto **”vicina”** ad una soluzione ottima, e ovviamente, più vicina e meglio è.
 >[!warning] !!!!!!!
 > fra gli algoritmi che non trovano sempre una soluzione ammissibile **ottima**, è importante distinguere due categorie piuttosto differenti: **algoritmi di approssimazione** ed **euristiche**
+>- **gli algoritmi di approssimazione** sono algoritmi per cui si dimostra che la soluzione ammisibile prodotta approssima entro un certo grado una soluzione ottima !
+>- le **euristiche**, invece, sono algoritmi per cui **non** si riesce a dimostrare che la soluzione ammissibile prodotta ha sempre una certa vicinanza ad una soluzione ottima. sono infatti l’ultima spiaggia, quando non si riesce a trovare nè algoritmi corretti nè algoritmi di approssimazione efficienti
+>
+>per una gran parte dei problemi computazionalmente difficili infatti, non si conoscono neanche buoni algoritmi di approssimazione. non è quindi sorprendente che fra tutti i tipi di algoritmi, gli algoritmi euristici costituiscano la classe più ampia e che ha dato luogo ad una letteratura **sterminata**
 
-**gli algoritmi di approssimazione** sono algoritmi per cui si dimostra che la soluzione ammisibile prodotta approssima entro un certo grado una soluzione ottima !
-le **euristiche**, invece, sono algoritmi per cui **non** si riesce a dimostrare che la soluzione ammissibile prodotta ha sempre una certa vicinanza ad una soluzione ottima. sono infatti l’ultima spiaggia, quando non si riesce a trovare nè algoritmi corretti nè algoritmi di approssimazione efficienti
+specifichiamo ora cosa si intende per “approssimazione entro un certo grado” (quando ci riferiamo ad algoritmi di approssimazione !)
+>[!info] problemi di minimizzazione
+>per i **minimizzazione**, dove ad ogni soluzione ammissibile è associato un costo, cerchiamo la soluzione ammissibile di costo minimo: il modo usuale di misurare il grado di approssimazione è il rapporto al **caso pessimo** tra il costo della soluzione prodotta dall’algoritmo e il costo della soluzione ottima.
+>
+formalmente: si dice che $A$ approssima il problema di minimizzazione entro un fattore di approssimazione $\rho$ se **per ogni istanza** $I$ del problema, vale:
+>$$
+>\frac{A(I)}{OPT(I)} \leq \rho
+>$$
+dove $OPT(I)$ è il costo di una soluzione ottime per l’istanza $I$, e $A(I)$ il costo della soluzione prodotta dall’algoritmo $A$ per quell’istanza
+
+>[!info] problemi di massimizzazione
+>per i problemi di massimizzazione, dove ad ogni soluzione ammissibile è associato un valore, si considera il rapporto inverso, ovvero:
+>$$
+\frac{>OTT(I)}{A(I)} \leq \rho
+>$$
+
