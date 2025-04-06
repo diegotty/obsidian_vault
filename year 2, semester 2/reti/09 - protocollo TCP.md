@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T17:18
+updated: 2025-04-06T17:33
 completed: false
 ---
 >[!index]
@@ -216,18 +216,29 @@ il **TCP Taho** considera timeout o 3 `ACK` duplicati come congestione, e ripart
 
 >[!example] esempio di TCP Taho
 ![[Pasted image 20250406171440.png]]
->- il tempo di timeout cambia !! dipende fortemente dall’RTT (e l’rtt varia con la congestione della rete)
 
-affinamento:
-timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stanno arrivando, ma non in oridne
-- applico quindi tecniche di rallentamento divers
+>[!warning] il tempo di timeout cambia !! dipende fortemente dall’RTT (e l’RTT varia con la congestione della rete)
+>kinda confused about this ngl applico quindi tecniche di rallentamento divers
 ## TCP Reno
+si può affinare la logica del TCP Taho, usando la seguente filosofia:
+- 3 `ACK` duplicati indicano (in positivo) la capacità della rete di consegnare qualche segmento (3 pacchetti oltre quello perso sono arrivati)
+- un timeout prima di 3 `ACK` duplicati invece è più allarmante, in quanto non sono arrivati nemmento i pacchetti seguenti !
+si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando la **fast recovery**:
+- **timeout**: indica congestione importante, e si riparte da 1
+- **3 `ACK` duplicati**: indica congestione lieve, si applica **fast recovery** a partire da `ssthresh + 3`
+>[!info] FSM TCP Reno
+![[Pasted image 20250406172555.png]]
 
-
-### tempo di andata e ritorno e timeout
-
-
-il misurato e su un singolo pacchetto ! quindi può oscillare molto ! è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
+>[!example] esempio di TCP Reno
+![[Pasted image 20250406172723.png]]
+## RTT e timeout
+**come impostare il valore del timeout di TCP ?**
+il timeout deve essere più grande dell’RTT  (altrimenti finirà sempre prima di dare il tempo ai pacchetti di arrivare. timeout prematuro e ritrasmissioni non necessarie !), ma non troppo grande da causare una reazione lenta alla perdita di segmenti.
+- **inoltre**, l’RTT viene misurato e su un singolo pacchetto, quindi può oscillare molto !
+**come stimare l’RTT** ? 
+viene usato il **SampleRTT**, il tempo misurato dalla trasmissione del segmento fino alla ricezione dell’`ACK`
+- ignora le trasmissioni ed è un valore solo per più segmenti trasmessi insieme
+ è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
 
 
 
