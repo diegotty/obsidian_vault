@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-02T10:22
+updated: 2025-04-06T12:48
 completed: false
 ---
 >[!index]
@@ -155,6 +155,7 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 >informazione non confermata yet
 
 ## controllo della congestione
+
 esistono due approcci principali al controllo della congestione: 
 **controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti)
 **controllo di congestione assistito dalla rete**:
