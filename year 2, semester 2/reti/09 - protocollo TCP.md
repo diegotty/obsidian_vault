@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T13:13
+updated: 2025-04-06T13:35
 completed: false
 ---
 >[!index]
@@ -199,6 +199,8 @@ l’algoritmo di controllo della congestione si basa su 3 componenti (possiamo p
 >[!example] rappresentazione di slow start
 ![[Pasted image 20250406131139.png]]
 ### congestion avoidance
+in questa modalità, la `CWND` cresce finchè non viene perso un pacchetto (in tale caso si pone `sstresh=CWND/2`) o finchè non raggiunge la `sstresh` 
+si arresta 
 cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
 
 #### fast recovery
