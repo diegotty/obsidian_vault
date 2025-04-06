@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T13:35
+updated: 2025-04-06T17:18
 completed: false
 ---
 >[!index]
@@ -191,25 +191,32 @@ l’algoritmo di controllo della congestione si basa su 3 componenti (possiamo p
 2. **congestion avoidance**
 3. **fast recovery**
 ### slow start
-`CWND` è inzializzata a 1MSS, e poichè la banda disponibile può essere molto maggiore, la `CWND` viene incrementata di 1MSS per ogni segmento riscontrato, fino al raggiungimento di una soglia: `sstresh`, decisa all’inizio. dopo il raggiungimento di tale soglia, si entra in **congestion avoidance**
+`CWND` è inzializzata a 1MSS, e poichè la banda disponibile può essere molto maggiore, la `CWND` viene incrementata di 1MSS per ogni segmento riscontrato, fino al raggiungimento di una soglia: `ssthresh`, decisa all’inizio. dopo il raggiungimento di tale soglia, si entra in **congestion avoidance**
 >[!info] incremento esponenziale
 ![[Pasted image 20250406131252.png]]
->la dimensione della finestra viene aumentata esponenzialmente fino al raggiungimento della soglia, `sstresh`
+>la dimensione della finestra viene aumentata esponenzialmente fino al raggiungimento della soglia, `ssthresh`
 
 >[!example] rappresentazione di slow start
 ![[Pasted image 20250406131139.png]]
 ### congestion avoidance
-in questa modalità, la `CWND` cresce finchè non viene perso un pacchetto (in tale caso si pone `sstresh=CWND/2`) o finchè non raggiunge la `sstresh` 
-si arresta 
-cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
+in questa modalità, la `CWND` cresce finchè non viene perso un pacchetto (in tale caso si pone `ssthresh=CWND/2`) o finchè non raggiunge la `ssthresh` 
+- l’incremento è lineare (ogni volta che viene riscontrata l’intera finestra di segmenti, si incrementa di 1 la `CWND`) finchè non si rileva congestione
+- al timeout, `ssthresh = CWND/2` e `CWND = 1`
+>[!info] incremento lineare
+![[Pasted image 20250406171050.png]]
 
-#### fast recovery
+>[!example] rappresentazione di congestion avoidance
+![[Pasted image 20250406171002.png]]
 # versioni TCP
 
-## TCP Tahoe
-quando ho timeout, sshtresh diventa congestion window/2
+## TCP Taho
+il **TCP Taho** considera timeout o 3 `ACK` duplicati come congestione, e riparte da 1 con `ssthresh=CWND/2`
+>[!info] FSM
+![[Pasted image 20250406171146.png]]
 
-il timeout cambia !! dipende fortemente dal rtt (e l’rtt varia con la congestione della rete)
+>[!example] esempio di TCP Taho
+![[Pasted image 20250406171440.png]]
+>- il tempo di timeout cambia !! dipende fortemente dall’RTT (e l’rtt varia con la congestione della rete)
 
 affinamento:
 timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stanno arrivando, ma non in oridne
