@@ -1,10 +1,23 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T17:47
+updated: 2025-04-06T18:03
 completed: false
 ---
+nel paradigma client/server, la comunicazione a livello applicazione avviene tra due programmi applicativi in esecuzione chiamati **processi**; un client e un server:
+- un **client** è un programma in esecuzione che inizia la comunicazione inviando una richiesta
+- un **server** è un altro programma applicativo che attende le richieste dai client
+## API
+anche se un linguaggio di programmazione prevede vari insiemi di istruzioni (es: istruzioni matematiche, manipolazione di stringhe, per la gestione dell’input/output), se si vuole sviluppare un programma capace di comunicare con un altro programma, è necessario un nuovo insieme di istruzioni, per chiedere ai primi 4 livelli dello stack TCP/IP di aprire la connessione, inviare/ricevere dati e chiudere la connessione
+un insieme di istruzioni di questo tipo viene chiamato **API** (application programming interface)
+>[!info] interfaccia socket nello stack TCP/IP
+![[Pasted image 20250406180128.png]]
+# socket
+il socket appare come un terminale o un file, ma non è un’entità fisica, bensi un’astrazione: una struttura dati creata e utilizzata dal programma applicativo
 
+>[!info] 
+![[Pasted image 20250406180327.png]]
+# 
 socket per TCP : ip e porta mittente + ip e porta destinatario 
 socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
 interfaccia socket: un interfaccia di operazionie
