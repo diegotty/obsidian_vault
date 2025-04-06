@@ -1,8 +1,8 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T17:33
-completed: false
+updated: 2025-04-06T17:47
+completed: true
 ---
 >[!index]
 >- [segmenti TCP](#segmenti%20TCP)
@@ -18,6 +18,16 @@ completed: false
 >	- [generazione di ack](#generazione%20di%20ack)
 >	- [ritrasmissione dei segmenti](#ritrasmissione%20dei%20segmenti)
 >- [controllo di flusso](#controllo%20di%20flusso)
+>- [controllo della congestione](#controllo%20della%20congestione)
+>	- [rilevare la congestione](#rilevare%20la%20congestione)
+>	- [limitare: finestra di congestione](#limitare:%20finestra%20di%20congestione)
+>- [gestione della congestione](#gestione%20della%20congestione)
+>	- [slow start](#slow%20start)
+>	- [congestion avoidance](#congestion%20avoidance)
+>- [versioni TCP](#versioni%20TCP)
+>- [TCP Taho](#TCP%20Taho)
+>- [TCP Reno](#TCP%20Reno)
+>- [RTT e timeout](#RTT%20e%20timeout)
 
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
 - **protocollo con pipeline**: come [[08 - meccanismi di trasferimento affidabile#protocolli con pipeline|abbiamo visto]], ammette più pacchetti in transito contemporaneamente
@@ -234,15 +244,29 @@ si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando
 ## RTT e timeout
 **come impostare il valore del timeout di TCP ?**
 il timeout deve essere più grande dell’RTT  (altrimenti finirà sempre prima di dare il tempo ai pacchetti di arrivare. timeout prematuro e ritrasmissioni non necessarie !), ma non troppo grande da causare una reazione lenta alla perdita di segmenti.
-- **inoltre**, l’RTT viene misurato e su un singolo pacchetto, quindi può oscillare molto !
+- inoltre, l’RTT viene misurato e su un singolo pacchetto, quindi può oscillare molto !
 **come stimare l’RTT** ? 
 viene usato il **SampleRTT**, il tempo misurato dalla trasmissione del segmento fino alla ricezione dell’`ACK`
 - ignora le trasmissioni ed è un valore solo per più segmenti trasmessi insieme
- è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
+ciononostante, SampleRTT varia a causa di congestione nei router e carico nei sistemi terminali, quindi occorre una stima più “livellata” di RTT: viene calcolata la media delle misure più recenti !!
+$$
+\text{EstimatedRTT$_{t+1}$ = (1-$\alpha$)$\cdot$EstmatedRTT$_t + \alpha \cdot$SampleRTT$_{t+1}$}
+$$
+**EstimatedRTT** rappresenta la media mobile esponenziale ponderata (mouthful), cioè una media in cui l’influenza delle misure passate descresce esponenzialmente ([[politiche di scheduling#stima del tempo di esecuzione|exponential averaging !!]])
+- tipicamente, $\alpha=0,125$
+>[!example] esempio di stima di RTT
+![[Pasted image 20250406173939.png]]
 
+il timeout è quindi la somma di **EstimatedRTT** ed un “margine di sicurezza”, in particolare:
+- si imposta un valore iniziale pari a 1 secondo
+- se avviene un timeout si raddoppia
+- avviene viene ricevuto un segmento e aggiornato **EstimatedRTT**, si usa la formula
+$$
+\text{TimeoutInterval = EstimatedRTT + 4 $\cdot$DevRTT}
+$$
+in cui **DevRTT** rappresenta di quanto **SampleRTT** si discosta da **EstimatedRTT**
 
-
-
-socket per TCP : ip e porta mittente + ip e porta destinatario 
-socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
-interfaccia socket: un interfaccia di operazionie
+$$
+\text{DevRTT = (1 - $\beta) \cdot$ DevRTT + $\beta \cdot$ |SampleRTT - EstimatedRTT|}
+$$
+- tipicamente, $\beta = 0,25$
