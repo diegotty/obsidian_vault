@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T13:03
+updated: 2025-04-06T13:13
 completed: false
 ---
 >[!index]
@@ -173,29 +173,32 @@ esistono due approcci principali al controllo della congestione:
 - **controllo di congestione assistito dalla rete**: i router forniscono un feedback ai sistemi terminali: un singolo bit per indicare la congestione, l’**ECN** (**explicit congestione notification**), una feature opzionale in TCP/IP che permette di comunicare in modo esplicito al mittente la frequenza trasmissiva
 
 per mitigare la congestione, i mittenti devono rilevarla, e limitare la frequenza di invio sulla propria connessione in base ad un algoritmo
+### rilevare la congestione
+la congestione può essere rilevata in base **eventi di perdita**, cioè`ACK` duplicati e timeout, che possono essere intesi come eventi di perdita (danno indicazione dello stato di rete)
+avviene poi una **reazione in base allo stato della rete**:
+- se gli `ACK` arrivano in sequenza e con buona frequenza, si può inviare e incrementare la quantità di segmenti inviati
+- se gli `ACK` sono duplicati, o ci sono timeout, è necessario ridurre la finestra dei pacchetti che si spediscono senza aver ricevuto riscontri
+TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
 ### limitare: finestra di congestione
 per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione), in cui
 $$
 \text{dimensione della finestra = min(rwnd, cwnd)}
 $$
-### rilevare la congestione
-la congestione può essere rilevata in base a:
-- **eventi di perdita**: `ACK` duplicati e timeout, che possono essere intesi come eventi di perdita (danno indicazione dello stato di rete)
-- **reazione in base allo stato della rete**: 
+## gestione della congestione
+l’idea di base è quindi: incrementare il rate di trasmissione se non c’è congestione, e diminurilo se c’è congestione
+l’algoritmo di controllo della congestione si basa su 3 componenti (possiamo pensarle come tre modalità, che si alternano a seconda dei feedback ricevuti. vedremo più avanti !)
+1. **slow start**
+2. **congestion avoidance**
+3. **fast recovery**
+### slow start
+`CWND` è inzializzata a 1MSS, e poichè la banda disponibile può essere molto maggiore, la `CWND` viene incrementata di 1MSS per ogni segmento riscontrato, fino al raggiungimento di una soglia: `sstresh`, decisa all’inizio. dopo il raggiungimento di tale soglia, si entra in **congestion avoidance**
+>[!info] incremento esponenziale
+![[Pasted image 20250406131252.png]]
+>la dimensione della finestra viene aumentata esponenzialmente fino al raggiungimento della soglia, `sstresh`
 
-TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
-
-
-### controllo della congestione
-l’algoritmo di controllo della congestione si basa su 3 componenti:
-
-
-#### slow start
-ho un **max**
-ha una crescita esponenziale
-la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia (decisa all’inizio), da cui uso un altro algoritmo: 
-
-#### congestion avoidance
+>[!example] rappresentazione di slow start
+![[Pasted image 20250406131139.png]]
+### congestion avoidance
 cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
 
 #### fast recovery
