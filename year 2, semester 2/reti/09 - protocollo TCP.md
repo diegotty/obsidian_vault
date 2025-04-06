@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T12:48
+updated: 2025-04-06T13:03
 completed: false
 ---
 >[!index]
@@ -155,19 +155,34 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 >informazione non confermata yet
 
 ## controllo della congestione
+mentre il controllo di flusso si occupa della comunicazione tra un mittente ed il destinatario, la congestione gestisce il caso in cui tante sorgenti trasmettono troppi dati, ad una velocità talmente elevata che la rete non è in grado di gestirli
+i sintomi della congestione sono:
+- **pacchetti smarriti** (overflow nei buffer dei router)
+- **lunghi ritardi** (accodamento nei buffer dei router)
+la congestione è uno dei dieci problemi più importanti nel networking !
+- la perdita di segmenti comporta la loro rispedizione, aumentando la congestione
+- la congestione è un problema che riguarda IP, ma viene gestito da TCP
+>[!warning] controllo di flusso in relazione alla congestione
+>con il controllo di flusso, la dimensione della finestra di invio è controllata dal destinatario tramite il valore `RWND`, che viene indicato in ogni segmento trasmesso nella direzione opposta
+>
+>la finestra del ricevente non viene mai sovraccaricata con i dati ricevuti, ma i **buffer intermedi, nei router**, possono comunque congestionarsi, in quanto un router riceve dati da più mittenti !
+>quindi anche se non vi è congestione agli estremi, vi può essere congestione nei nodi intermedi
 
 esistono due approcci principali al controllo della congestione: 
-**controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti)
-**controllo di congestione assistito dalla rete**:
+- **controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti). è il metodo adottato da TCP
+- **controllo di congestione assistito dalla rete**: i router forniscono un feedback ai sistemi terminali: un singolo bit per indicare la congestione, l’**ECN** (**explicit congestione notification**), una feature opzionale in TCP/IP che permette di comunicare in modo esplicito al mittente la frequenza trasmissiva
 
-#### finestra di congestione
-per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione) 
-la dimensione della finestra del mittente sarà quindi 
+per mitigare la congestione, i mittenti devono rilevarla, e limitare la frequenza di invio sulla propria connessione in base ad un algoritmo
+### limitare: finestra di congestione
+per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione), in cui
 $$
-\text{}
+\text{dimensione della finestra = min(rwnd, cwnd)}
 $$
+### rilevare la congestione
+la congestione può essere rilevata in base a:
+- **eventi di perdita**: `ACK` duplicati e timeout, che possono essere intesi come eventi di perdita (danno indicazione dello stato di rete)
+- **reazione in base allo stato della rete**: 
 
-#### rilevare la congestione
 TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
 
 
