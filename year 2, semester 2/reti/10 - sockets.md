@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-06T18:03
+updated: 2025-04-06T18:14
 completed: false
 ---
 nel paradigma client/server, la comunicazione a livello applicazione avviene tra due programmi applicativi in esecuzione chiamati **processi**; un client e un server:
@@ -14,9 +14,12 @@ un insieme di istruzioni di questo tipo viene chiamato **API** (application prog
 ![[Pasted image 20250406180128.png]]
 # socket
 il socket appare come un terminale o un file, ma non è un’entità fisica, bensi un’astrazione: una struttura dati creata e utilizzata dal programma applicativo
-
 >[!info] 
 ![[Pasted image 20250406180327.png]]
+>comunicare tra un processo client e un processo server signfica comunicare tra due socket create nei due lati di comunicazione
+
+>[!info] socket address
+![[Pasted image 20250406181407.png]]
 # 
 socket per TCP : ip e porta mittente + ip e porta destinatario 
 socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
