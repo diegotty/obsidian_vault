@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-24T10:06
+updated: 2025-04-07T08:55
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -12,4 +12,5 @@ updated: 2025-03-24T10:06
 ## specifica dei requisiti
 ## raffinamento dei requisiti
 ## diagramma UML
-## specifica dei tipi
+## specifica dei tipi di dato
+## specifica di classe
