@@ -1,13 +1,15 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-07T09:46
+updated: 2025-04-07T09:49
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
 >- [specifica dei requisiti](#specifica%20dei%20requisiti)
 >- [raffinamento dei requisiti](#raffinamento%20dei%20requisiti)
 >- [diagramma UML](#diagramma%20UML)
->- [specifica dei tipi](#specifica%20dei%20tipi)
+>- [specifica dei tipi di dato](#specifica%20dei%20tipi%20di%20dato)
+>- [specifica di classe](#specifica%20di%20classe)
+
 ## obiettivi
 Si vuole sviluppare un sistema informativo per la gestione dei dati di una catena di
 officine.
@@ -56,6 +58,7 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 	9. indirizzo
 	10. numero di telefono
 ## diagramma UML
+![[Pasted image 20250407094855.png]]
 ## specifica dei tipi di dato
 - Indirizzo : (via : Stringa, Civico : Intero > 0, CAP : Intero > 0)
 - NumeroTelefono: Stringa che rispetta i relativi standard
@@ -81,6 +84,5 @@ post-condizioni:
 - l’operazione non modifica il livello estensionale
 - il valore del risultato (“result”) è definito come segue:
 	- sia `(this, officina): afferisce `l’unico link dell’assoc. “afferisce” che coinvolge “this”
-
-	- sia $anno$ l’anno di adesso
-	- result = $N$
+	- sia `(this,officina).data_inizio.anno` la data dell’inizio dell’afferenza
+	- result = `adesso - (this, officina).data_inizio`
