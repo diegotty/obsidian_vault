@@ -1,9 +1,13 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-07T16:13
+updated: 2025-04-07T16:27
 completed: false
 ---
+>[!index]
+>- [problemi di ottimizzazione](#problemi%20di%20ottimizzazione)
+>	- [algoritmi di approssimazione](#algoritmi%20di%20approssimazione)
+>		- [valutare il rapporto d’approssimazione di un algoritmo](#valutare%20il%20rapporto%20d%E2%80%99approssimazione%20di%20un%20algoritmo)
 # problemi di ottimizzazione
 un **problema di ottimizzazione** è un tipo di problmea in cui l’obiettivo è trovare la **migliore** soluzione possibile tra un insieme di soluzioni ammissibili
 - ogni soluzione ammissibile, cioè una soluzione che soddisfa tutte le condizioni imposte dal problema, ha un valore assoiato che può essere un “costo” o un “beneficio”, e a seconda del tipo del problema, l’obiettivo può essere minimizzare o massimizzare questo valore
@@ -87,5 +91,21 @@ siano $e_{1}, e_{2}, \dots e_{k}$ gli archi di $G$ che vengono trovati non coper
 >2. ne deduciamo che $k \leq OTT(I)$
 >quindi $A(I)=2k \leq 2\cdot OTT(I) \implies \frac{A(I)}{OTT(I)} \leq 2$
 ![[Pasted image 20250407161313.png]]
+
+>[!info] implementazione dell’algoritmo
+>```python
+>def copertura1(G):
+>	n = len(G)
+>	E = [(x, y) for x in range(n) for y in G[x] if x < y]
+>	presi = [0]*n
+>	sol = []
+>	for a,b in E:
+>		if presi[a] == presi[b] == 0:
+>			S.append(a)
+>			S.append(b)
+>			presi[a] = presi[b] = 1
+>	return sol
+>```
+>la complessità dell’algoritmo è $O(n+m)$
 
 >[!tip] non sono noti algoritmi d’approssimazione con rapporto inferiore a 2 !
