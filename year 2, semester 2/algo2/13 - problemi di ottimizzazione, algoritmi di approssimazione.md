@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-05T18:23
+updated: 2025-04-07T15:57
 completed: false
 ---
 # problemi di ottimizzazione
@@ -57,6 +57,7 @@ dall’esempio che abbiamo visto in precedenza, algoritmo greedy per il problema
 ![[Pasted image 20250405181849.png]]
 
 si nota infine come per ogni costante $R$, si possono esibire grafi per cui l’algoritmi sbaglia di un fattore superiore ad $R$, **QUINDI** l’algoritmo greedy in esame non garantisce nessun fattore di approssimazione costante
->[!dimostrazione] dimostrazione
+>[!dimostrazione]- dimostrazione
 dimostriamo che per ogni intero $l$, possiamo costruire un grafo $G_l$ su cui l’algoritmo greedy avrà rapporto di approssimazione $\Omega(\log l)$. 
 >il grafo $G_{l}$ è definito come segue:
+DO YOU REALLY CARE ? do you really actually want to know how it works ? do you think your brain is capable enough to comprehend the madness that goes behind this proof ? you are a sick man. you should reconsider. there is no going back. 
