@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-07T08:59
+updated: 2025-04-07T09:08
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -57,5 +57,6 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 	10. numero di telefono
 ## diagramma UML
 ## specifica dei tipi di dato
+- Indirizzo : (via : Stringa, Civico : Intero > 0, CAP : Intero > 0)
 
 ## specifica di classe

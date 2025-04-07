@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-02T10:22
+updated: 2025-04-07T09:09
 completed: false
 ---
  **settimana 2** (assegnati):
@@ -21,3 +21,6 @@ completed: false
 **settimana 5**:
 [[go]]
 [[esercitazioni universitarie 1]]
+
+**settimana 6**:
+[[officine 1]]
