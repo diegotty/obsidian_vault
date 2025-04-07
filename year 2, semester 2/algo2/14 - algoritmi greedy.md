@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-07T16:58
+updated: 2025-04-07T17:00
 completed: false
 ---
 # algoritmi greedy
@@ -50,9 +50,17 @@ pseudocodice:
 >	return SOL
 >```
 **IDEE**
->- per l’implementazione, conviene fare un preprocessing ordinando gli eventi per tempo di fine crescente, pagando $O(n\log n)$ per l’ordinamento ma poi avendo l’estrazione delle attività in $\Theta(1)$
->- per eseguire efficien
-
-```python
-```
-
+>- per l’implementazione, conviene fare un preprocessing ordinando gli eventi per tempo di fine crescente, pagando $\Theta(n\log n)$ per l’ordinamento ma poi avendo l’estrazione delle attività in $\Theta(1)$
+>- per eseguire efficientemente il test richiesto dall’if, conviene mantere una variabile con il tempo di fine dell’ultima attività inserita in SOL. in questo modo il test richiederà $\Theta(1))$
+>```python
+>def selezione_a(lista):
+>	lista.sort(key = lambda x: x[1])
+>	libero = 0
+>	sol = []
+>	for inizio, fine in lista:
+>		if libero < inizio:
+>			sol.append((inizio, fine))
+>			libero = fine
+>	return sol
+>```
+>il costo totale dell’algoritmo è $\Theta(n\log n)$
