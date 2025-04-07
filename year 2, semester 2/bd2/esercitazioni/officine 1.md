@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-07T09:26
+updated: 2025-04-07T09:46
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -58,7 +58,29 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 ## diagramma UML
 ## specifica dei tipi di dato
 - Indirizzo : (via : Stringa, Civico : Intero > 0, CAP : Intero > 0)
-- Periodo : (data_inizio: DataOra, data_fine : DataOra)
-- DataOra : (data : Data, orario: Ora)
 - NumeroTelefono: Stringa che rispetta i relativi standard
 ## specifica di classe
+**Specifica della classe Officina**
+ogni istanza di questa classe rappresenta una officina
+**numero_dipendenti() :  Intero ≥ 0**
+pre-condizioni:
+- nessuna
+post-condizioni:
+- l’operazione non modifica il livello estensionale
+- il valore del risultato (“result”) è definito come segue:
+	- sia $E$ l’insieme dei link di assoc. “afferisce” che coinvolgono “this”
+	- sia $N$ la cardinalità di $E$
+	- result = $N$
+
+**Specifica della classe Dipendente**
+ogni istanza di questa classe rappresenta un dipendente
+**numero_anni_servizio() :  Intero ≥ 0**
+pre-condizioni:
+- nessuna
+post-condizioni:
+- l’operazione non modifica il livello estensionale
+- il valore del risultato (“result”) è definito come segue:
+	- sia `(this, officina): afferisce `l’unico link dell’assoc. “afferisce” che coinvolge “this”
+
+	- sia $anno$ l’anno di adesso
+	- result = $N$
