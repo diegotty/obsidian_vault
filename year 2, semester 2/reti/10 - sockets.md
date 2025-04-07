@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-07T17:43
+updated: 2025-04-07T17:47
 completed: false
 ---
 nel paradigma client/server, la comunicazione a livello applicazione avviene tra due programmi applicativi in esecuzione chiamati **processi**; un client e un server:
@@ -47,7 +47,16 @@ una socket è un’interfaccia di un host locale, creata dalle applicazioni, con
 ### programmazione socket con TCP
 >[!info] rappresentazione
 ![[Pasted image 20250407174137.png]]
-il client deve contattare il server (il processo server deve essere sempre in corso di esecuzione, e deve aver creato un socket che dà il benvenuto al contatto con il client) creando un socket TCP, specificando indirizzo IP e numero di porta del processo ser
+
+1. il client deve contattare il server (il processo server deve essere sempre in corso di esecuzione, e deve aver creato un socket che dà il benvenuto al contatto con il client) creando un socket TCP, specificando indirizzo IP e numero di porta del processo server. 
+2. quando il client crea il socket, il client TCP stabilisce una connessione con il server TCP
+3. quando viene contattato dal client, il server TCP crea un nuovo socket per il processo server **per comunicare con il client** (ciò consente al server di comunicare con più client)
+	- vengono usati i numeri di porta origine per distinguere i client
+
+>[!info] interazione client/server TCP
+![[Pasted image 20250407174604.png]]
+
+## terminologia
 # 
 socket per TCP : ip e porta mittente + ip e porta destinatario 
 socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
