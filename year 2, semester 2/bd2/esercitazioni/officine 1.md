@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-07T09:08
+updated: 2025-04-07T09:26
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -48,7 +48,7 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 	2. tipo
 	3. targa
 	4. anno di immatricolazione
-	5. proprietario (persona)
+	5. proprietario (vedi req. 6)
 6. persona
 	6. nome
 	7. cognome
@@ -58,5 +58,7 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 ## diagramma UML
 ## specifica dei tipi di dato
 - Indirizzo : (via : Stringa, Civico : Intero > 0, CAP : Intero > 0)
-
+- Periodo : (data_inizio: DataOra, data_fine : DataOra)
+- DataOra : (data : Data, orario: Ora)
+- NumeroTelefono: Stringa che rispetta i relativi standard
 ## specifica di classe
