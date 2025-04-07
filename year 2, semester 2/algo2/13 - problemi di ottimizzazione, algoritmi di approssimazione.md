@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-07T15:57
+updated: 2025-04-07T16:13
 completed: false
 ---
 # problemi di ottimizzazione
@@ -61,3 +61,31 @@ si nota infine come per ogni costante $R$, si possono esibire grafi per cui l’
 dimostriamo che per ogni intero $l$, possiamo costruire un grafo $G_l$ su cui l’algoritmo greedy avrà rapporto di approssimazione $\Omega(\log l)$. 
 >il grafo $G_{l}$ è definito come segue:
 DO YOU REALLY CARE ? do you really actually want to know how it works ? do you think your brain is capable enough to comprehend the madness that goes behind this proof ? you are a sick man. you should reconsider. there is no going back. 
+
+ovviamente, il fatto d’aver dimostrato che per un problema, un certo algoritmo d’approssimazione ha un cattivo rapporto d’approssimazione non impedisce che per il problema possano esistere altri algoritmi d’approssimazione con un fattore d’approssimazione costante.
+>[!example] algoritmo d’approssimazione
+consideriamo il seguente algoritmo **greedy** per la copertura di nodi:
+>considera i vari archi del grafo uno dopo l’altro, e ogni volta che ne trovi uno non coperto (nessuno dei suo estremi è in $S$), aggiungi entrambi gli estremi dell’arco alla soluzione $S$
+>```
+>def copertura1(G):
+>	inizializza la lista E con gli archi di G
+>	S = []
+>	while E != []:
+>		estrai da E un arco (x,y)
+>		if nè x nè y sono in S:
+>			S.append(x)
+>			S.append(y)
+>	return S
+>```
+l’algoritmo produrrà sicuramente una copertura, ma non è detto che sia minima, infatti l’algoritmo ha rapporto d’approssimazione almeno 2 (basta pensare ad un grafo con 2 nodi ed un arco)
+
+>[!dimostrazione] dimostrazione
+dimostriamo che il rapporto d’approssimazione è limitato da 2:
+siano $e_{1}, e_{2}, \dots e_{k}$ gli archi di $G$ che vengono trovati non coperti durante l’esecuzione dell’algoritmo.
+>1. per come funziona l’algoritmo, deduciamo che $A(I) = 2K$
+>- i $k$ archi non coperti sono tra loro disgiunti (infatti i due estremi di ciascuno di questi archi vengono incontrati per la prima volta quando viene esaminato l’arco). questo significa che in una qualunque delle soluzioni ottime, almeno un estremo di ciascuno di questi $k$ archi deve essere presente
+>2. ne deduciamo che $k \leq OTT(I)$
+>quindi $A(I)=2k \leq 2\cdot OTT(I) \implies \frac{A(I)}{OTT(I)} \leq 2$
+![[Pasted image 20250407161313.png]]
+
+>[!tip] non sono noti algoritmi d’approssimazione con rapporto inferiore a 2 !
