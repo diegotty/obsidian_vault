@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-04-08T12:18
+updated: 2025-04-08T12:39
 completed: true
 ---
 >[!index]-
@@ -118,6 +118,10 @@ come vengono individuati questi indirizzi ?
 - senza connessione
 - trasporto inaffidabile
 - non offre: setup della connessione, affidabilità, controllo di flusso, controllo della congestione, temporizzazione, ampiezza di banda minima, sicurezza
+
+>[!warning] sockets
+socket per TCP : ip e porta mittente + ip e porta destinatario 
+socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
 
 >[!info]- perchè usare UDP ? 
 ![[Pasted image 20250321125022.png]]

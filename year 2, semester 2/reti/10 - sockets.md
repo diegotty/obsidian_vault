@@ -1,9 +1,20 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-08T12:33
-completed: false
+updated: 2025-04-08T12:40
+completed: true
 ---
+>[!index]
+>- 
+>	- [API](#API)
+>- [socket](#socket)
+>	- [indirizzamento dei processi](#indirizzamento%20dei%20processi)
+>	- [utilizzo dei servizi di livello di trasporto](#utilizzo%20dei%20servizi%20di%20livello%20di%20trasporto)
+>	- [programmazione con socket](#programmazione%20con%20socket)
+>		- [programmazione socket con TCP](#programmazione%20socket%20con%20TCP)
+>		- [programmazione socket UDP](#programmazione%20socket%20UDP)
+
+# sockets
 nel paradigma client/server, la comunicazione a livello applicazione avviene tra due programmi applicativi in esecuzione chiamati **processi**; un client e un server:
 - un **client** è un programma in esecuzione che inizia la comunicazione inviando una richiesta
 - un **server** è un altro programma applicativo che attende le richieste dai client
@@ -216,7 +227,3 @@ class UDPServer {
 	}
 }
 ```
-
-socket per TCP : ip e porta mittente + ip e porta destinatario 
-socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
-interfaccia socket: un interfaccia di operazionie
