@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T17:24
+updated: 2025-04-08T19:41
 completed: false
 ---
 # intro a C
@@ -134,5 +134,8 @@ scanf(format-string, address-list);
  > - `peso` è una variabile intera, `&` estrae il suo indirizzo di memoria e lo passa a `scanf`
 ## stringhe
 array di carattere con `NULL` (`\0`)come ultimo elemento
->[!example]
+>[!info] carattere `\0`
 ![[Pasted image 20250408172419.png]]
+il carattere `\0` viene aggiunto automaticamente se inizializzato come nel primo modo, ma non nel secondo !
+>
+>inoltre se scriviamo `char r[10] = "L9 4apr"`, r[7
