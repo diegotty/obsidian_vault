@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T14:46
+updated: 2025-04-08T15:00
 completed: false
 ---
 ## funzioni chiave del livello di rete
@@ -33,3 +33,15 @@ inoltrare ad una interfaccia significa inoltrare ad un router (ogni interfaccia 
 tabella di routing PUÒ essere implementata su tutte le porte
 
 ### commutazione tramite bus
+
+
+nelle porte di uscita si possono accodare i pacchetti perhce può capitare che più porte di input mandino pacchetti alla stessa porta di output
+
+DHCP implementa funzioni di livello di rete, ma viene implementato a livello applicazione
+
+
+identificatore, flag e offset usati per la frammentazione (che è una cosa che si può fare ceh è ok)
+
+
+protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
+
