@@ -1,12 +1,6 @@
 ---
-related to: 
-created: 2025-03-02T17:41
-<<<<<<< HEAD
-updated: 2025-04-02T14:47
-=======
-updated: 2025-04-02T10:22
->>>>>>> origin/main
-completed: false
+created: 2025-04-08T11:45
+updated: 2025-04-08T17:15
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
