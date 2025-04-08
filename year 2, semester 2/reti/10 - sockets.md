@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-07T17:47
+updated: 2025-04-08T12:18
 completed: false
 ---
 nel paradigma client/server, la comunicazione a livello applicazione avviene tra due programmi applicativi in esecuzione chiamati **processi**; un client e un server:
@@ -56,7 +56,11 @@ una socket è un’interfaccia di un host locale, creata dalle applicazioni, con
 >[!info] interazione client/server TCP
 ![[Pasted image 20250407174604.png]]
 
-## terminologia
+>[!info] terminologia
+**stream** (flusso): sequenza di caratteri che fluisce da/verso un processo
+**input stream** (flusso d’ingresso): è collegato a un’origine di input per il processo, ad esempio la tastiera o la socket
+**output stream** (flusso di uscita): è collegato a un’uscita per il processo, ad esempio il monitor o la socket
+![[Pasted image 20250408121807.png]]
 # 
 socket per TCP : ip e porta mittente + ip e porta destinatario 
 socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
