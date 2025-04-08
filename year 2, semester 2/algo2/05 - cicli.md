@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-03-28T19:16
+updated: 2025-04-08T11:45
 completed: true
 ---
 >[!index]
@@ -31,7 +31,7 @@ partiamo da un’idea intuitiva ma sbagliata: visitiamo il grafo, e se nel corso
 >[!warning] solo la presenza di archi all’indietro testimonia la presenza di un ciclo !
 
 quindi, per risolvere il problema, durante la visita DFS devo poter distinguere la scoperta di nodi già visitati grazie ad un arco all’indietro dagli altri.
-posso fare ciò notando che solo nel caso di archi all’indietro **la visita del nodo già visitato ha terminato la sua ricorsione**
+posso fare ciò notando che solo nel caso di archi all’indietro **la visita del nodo già visitato non ha terminato la sua ricorsione**
 
 uso quindi un sistema a 3 valori per distinguere lo stato di ogni nodo
 - $V[i] = 0$ → il nodo non è stato ancora visitato

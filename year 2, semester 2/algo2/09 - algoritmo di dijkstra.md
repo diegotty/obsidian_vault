@@ -1,7 +1,7 @@
 ---
 related to: "[[08 - grafi pesati]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-08T11:45
 completed: true
 ---
 >[!index]
@@ -11,7 +11,7 @@ completed: true
 >	- [implementazione](#implementazione)
 # algoritmo di dijkstra
 >[!info] problema
-> dato un grafo pesato, vogliamo troare i cammini minimi e quindi anche le distanze da un certo nodo $s$(sorgente) a tutti gli altri nodi del grafo
+> dato un grafo pesato, vogliamo trovare i cammini minimi e quindi anche le distanze da un certo nodo $s$(sorgente) a tutti gli altri nodi del grafo
 >**esempio:**
 ![[Pasted image 20250320111744.png]]
 
@@ -149,7 +149,7 @@ sostituendo il vettore `lista`  con un **heap minimo**, potremmo estrarre l’el
 >abbiamo poi un `while`-loop con dentro un `for`-loop:
 >- ad ogni iterazione del `while`, si elimina un elemento da $H$ e si potrebbe scorrere la lista di adiacenza di un nodo per aggiungere elementi ad $H$. ogni lista di adiacenza può essere scorsa al massimo una volta, quindi ad $H$ possono essere aggiunti al più $O(m)$ elementi. quindi il numero di iterazioni del while è $O(m)$
 >- senza tener conto del `for` annidato, ogni iterazione costa $O(\log n)$ a causa dell’estrazione da $H$, portando il costo del while a $O(m\log n)$
->- il tempo totale richiesto dallae varie iterazioni del `for` annidato è $O(m\log n)$, in quanto in totale scorrerò $O(m)$ archi e per ogni arco pagherò $O(\log n)$ per l’inserimento in $H$
+>- il tempo totale richiesto dalle varie iterazioni del `for` annidato è $O(m\log n)$, in quanto in totale scorrerò $O(m)$ archi e per ogni arco pagherò $O(\log n)$ per l’inserimento in $H$
 >la complessità di questa implementazione è dunque $O(n\log n) + O(m\log n) + O(m\log n)= O((n+m)\log n)$
 
 >[!warning] qualunque implementazione dell’algo di dijkstra è $\Omega(n+m)$ (in quanto devo arrivare a tutti i nodi e guardare tutti gli archi x forza)

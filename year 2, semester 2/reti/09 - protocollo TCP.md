@@ -1,8 +1,8 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T16:18
-completed: false
+updated: 2025-04-08T11:45
+completed: true
 ---
 >[!index]
 >- [segmenti TCP](#segmenti%20TCP)
@@ -18,6 +18,16 @@ completed: false
 >	- [generazione di ack](#generazione%20di%20ack)
 >	- [ritrasmissione dei segmenti](#ritrasmissione%20dei%20segmenti)
 >- [controllo di flusso](#controllo%20di%20flusso)
+>- [controllo della congestione](#controllo%20della%20congestione)
+>	- [rilevare la congestione](#rilevare%20la%20congestione)
+>	- [limitare: finestra di congestione](#limitare:%20finestra%20di%20congestione)
+>- [gestione della congestione](#gestione%20della%20congestione)
+>	- [slow start](#slow%20start)
+>	- [congestion avoidance](#congestion%20avoidance)
+>- [versioni TCP](#versioni%20TCP)
+>- [TCP Taho](#TCP%20Taho)
+>- [TCP Reno](#TCP%20Reno)
+>- [RTT e timeout](#RTT%20e%20timeout)
 
 approfondiamo il protocollo TCP, che è stato introdotto [[07 - livello trasporto#TCP|precedentemente]]. le caratteristche del protocollo TCP sono:
 - **protocollo con pipeline**: come [[08 - meccanismi di trasferimento affidabile#protocolli con pipeline|abbiamo visto]], ammette più pacchetti in transito contemporaneamente
@@ -155,55 +165,108 @@ l’apertura, chiusura e riduzione della **finestra d’invio** sono quindi cont
 >informazione non confermata yet
 
 ## controllo della congestione
+mentre il controllo di flusso si occupa della comunicazione tra un mittente ed il destinatario, la congestione gestisce il caso in cui tante sorgenti trasmettono troppi dati, ad una velocità talmente elevata che la rete non è in grado di gestirli
+i sintomi della congestione sono:
+- **pacchetti smarriti** (overflow nei buffer dei router)
+- **lunghi ritardi** (accodamento nei buffer dei router)
+la congestione è uno dei dieci problemi più importanti nel networking !
+- la perdita di segmenti comporta la loro rispedizione, aumentando la congestione
+- la congestione è un problema che riguarda IP, ma viene gestito da TCP
+>[!warning] controllo di flusso in relazione alla congestione
+>con il controllo di flusso, la dimensione della finestra di invio è controllata dal destinatario tramite il valore `RWND`, che viene indicato in ogni segmento trasmesso nella direzione opposta
+>
+>la finestra del ricevente non viene mai sovraccaricata con i dati ricevuti, ma i **buffer intermedi, nei router**, possono comunque congestionarsi, in quanto un router riceve dati da più mittenti !
+>quindi anche se non vi è congestione agli estremi, vi può essere congestione nei nodi intermedi
+
 esistono due approcci principali al controllo della congestione: 
-**controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti)
-**controllo di congestione assistito dalla rete**:
+- **controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti). è il metodo adottato da TCP
+- **controllo di congestione assistito dalla rete**: i router forniscono un feedback ai sistemi terminali: un singolo bit per indicare la congestione, l’**ECN** (**explicit congestione notification**), una feature opzionale in TCP/IP che permette di comunicare in modo esplicito al mittente la frequenza trasmissiva
 
-#### finestra di congestione
-per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione) 
-la dimensione della finestra del mittente sarà quindi 
-$$
-\text{}
-$$
-
-#### rilevare la congestione
+per mitigare la congestione, i mittenti devono rilevarla, e limitare la frequenza di invio sulla propria connessione in base ad un algoritmo
+### rilevare la congestione
+la congestione può essere rilevata in base **eventi di perdita**, cioè`ACK` duplicati e timeout, che possono essere intesi come eventi di perdita (danno indicazione dello stato di rete)
+avviene poi una **reazione in base allo stato della rete**:
+- se gli `ACK` arrivano in sequenza e con buona frequenza, si può inviare e incrementare la quantità di segmenti inviati
+- se gli `ACK` sono duplicati, o ci sono timeout, è necessario ridurre la finestra dei pacchetti che si spediscono senza aver ricevuto riscontri
 TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
+### limitare: finestra di congestione
+per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione), in cui
+$$
+\text{dimensione della finestra = min(rwnd, cwnd)}
+$$
+## gestione della congestione
+l’idea di base è quindi: incrementare il rate di trasmissione se non c’è congestione, e diminurilo se c’è congestione
+l’algoritmo di controllo della congestione si basa su 3 componenti (possiamo pensarle come tre modalità, che si alternano a seconda dei feedback ricevuti. vedremo più avanti !)
+1. **slow start**
+2. **congestion avoidance**
+3. **fast recovery**
+### slow start
+`CWND` è inzializzata a 1MSS, e poichè la banda disponibile può essere molto maggiore, la `CWND` viene incrementata di 1MSS per ogni segmento riscontrato, fino al raggiungimento di una soglia: `ssthresh`, decisa all’inizio. dopo il raggiungimento di tale soglia, si entra in **congestion avoidance**
+>[!info] incremento esponenziale
+![[Pasted image 20250406131252.png]]
+>la dimensione della finestra viene aumentata esponenzialmente fino al raggiungimento della soglia, `ssthresh`
 
+>[!example] rappresentazione di slow start
+![[Pasted image 20250406131139.png]]
+### congestion avoidance
+in questa modalità, la `CWND` cresce finchè non viene perso un pacchetto (in tale caso si pone `ssthresh=CWND/2`) o finchè non raggiunge la `ssthresh` 
+- l’incremento è lineare (ogni volta che viene riscontrata l’intera finestra di segmenti, si incrementa di 1 la `CWND`) finchè non si rileva congestione
+- al timeout, `ssthresh = CWND/2` e `CWND = 1`
+>[!info] incremento lineare
+![[Pasted image 20250406171050.png]]
 
-### controllo della congestione
-l’algoritmo di controllo della congestione si basa su 3 componenti:
-
-
-#### slow start
-ho un **max**
-ha una crescita esponenziale
-la dimensione della finestra di congestione nell’algoritmo **slow start** viene aumentata esponenzialmente, fino al raggiungimento di una soglia (decisa all’inizio), da cui uso un altro algoritmo: 
-
-#### congestion avoidance
-cresco fino a timeout o fino ad ack duplicati (in generale, finchè non succede qualcosa)
-
-#### fast recovery
+>[!example] rappresentazione di congestion avoidance
+![[Pasted image 20250406171002.png]]
 # versioni TCP
 
-## TCP Tahoe
-quando ho timeout, sshtresh diventa congestion window/2
+## TCP Taho
+il **TCP Taho** considera timeout o 3 `ACK` duplicati come congestione, e riparte da 1 con `ssthresh=CWND/2`
+>[!info] FSM
+![[Pasted image 20250406171146.png]]
 
-il timeout cambia !! dipende fortemente dal rtt (e l’rtt varia con la congestione della rete)
+>[!example] esempio di TCP Taho
+![[Pasted image 20250406171440.png]]
 
-affinamento:
-timeout è più allarmante ! 3 ack vuol dire principalmente che i pacchetti stanno arrivando, ma non in oridne
-- applico quindi tecniche di rallentamento divers
+>[!warning] il tempo di timeout cambia !! dipende fortemente dall’RTT (e l’RTT varia con la congestione della rete)
+>kinda confused about this ngl applico quindi tecniche di rallentamento divers
 ## TCP Reno
+si può affinare la logica del TCP Taho, usando la seguente filosofia:
+- 3 `ACK` duplicati indicano (in positivo) la capacità della rete di consegnare qualche segmento (3 pacchetti oltre quello perso sono arrivati)
+- un timeout prima di 3 `ACK` duplicati invece è più allarmante, in quanto non sono arrivati nemmento i pacchetti seguenti !
+si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando la **fast recovery**:
+- **timeout**: indica congestione importante, e si riparte da 1
+- **3 `ACK` duplicati**: indica congestione lieve, si applica **fast recovery** a partire da `ssthresh + 3`
+>[!info] FSM TCP Reno
+![[Pasted image 20250406172555.png]]
 
+>[!example] esempio di TCP Reno
+![[Pasted image 20250406172723.png]]
+## RTT e timeout
+**come impostare il valore del timeout di TCP ?**
+il timeout deve essere più grande dell’RTT  (altrimenti finirà sempre prima di dare il tempo ai pacchetti di arrivare. timeout prematuro e ritrasmissioni non necessarie !), ma non troppo grande da causare una reazione lenta alla perdita di segmenti.
+- inoltre, l’RTT viene misurato e su un singolo pacchetto, quindi può oscillare molto !
+**come stimare l’RTT** ? 
+viene usato il **SampleRTT**, il tempo misurato dalla trasmissione del segmento fino alla ricezione dell’`ACK`
+- ignora le trasmissioni ed è un valore solo per più segmenti trasmessi insieme
+ciononostante, SampleRTT varia a causa di congestione nei router e carico nei sistemi terminali, quindi occorre una stima più “livellata” di RTT: viene calcolata la media delle misure più recenti !!
+$$
+\text{EstimatedRTT$_{t+1}$ = (1-$\alpha$)$\cdot$EstmatedRTT$_t + \alpha \cdot$SampleRTT$_{t+1}$}
+$$
+**EstimatedRTT** rappresenta la media mobile esponenziale ponderata (mouthful), cioè una media in cui l’influenza delle misure passate descresce esponenzialmente ([[politiche di scheduling#stima del tempo di esecuzione|exponential averaging !!]])
+- tipicamente, $\alpha=0,125$
+>[!example] esempio di stima di RTT
+![[Pasted image 20250406173939.png]]
 
-### tempo di andata e ritorno e timeout
+il timeout è quindi la somma di **EstimatedRTT** ed un “margine di sicurezza”, in particolare:
+- si imposta un valore iniziale pari a 1 secondo
+- se avviene un timeout si raddoppia
+- avviene viene ricevuto un segmento e aggiornato **EstimatedRTT**, si usa la formula
+$$
+\text{TimeoutInterval = EstimatedRTT + 4 $\cdot$DevRTT}
+$$
+in cui **DevRTT** rappresenta di quanto **SampleRTT** si discosta da **EstimatedRTT**
 
-
-il misurato e su un singolo pacchetto ! quindi può oscillare molto ! è indicativo della congestione ma non glli diamo un peso enorme. cerchiamo di mitigare (pur tenendo conto dei grandi picci/fal)
-
-
-
-
-socket per TCP : ip e porta mittente + ip e porta destinatario 
-socket per UDP :  numero di porta  + ip del destinatario (ip e porta del mittente sono comunque nel pacchetto affinchè il server possa rispondere ! quindi è solo una distinzione logica, le informazioni ci sono comunque )
-interfaccia socket: un interfaccia di operazionie
+$$
+\text{DevRTT = (1 - $\beta) \cdot$ DevRTT + $\beta \cdot$ |SampleRTT - EstimatedRTT|}
+$$
+- tipicamente, $\beta = 0,25$

@@ -1,7 +1,11 @@
 ---
 related to: 
 created: 2025-03-02T17:41
+<<<<<<< HEAD
 updated: 2025-04-02T14:04
+=======
+updated: 2025-04-02T10:22
+>>>>>>> origin/main
 completed: false
 ---
 ## diagramma delle classi

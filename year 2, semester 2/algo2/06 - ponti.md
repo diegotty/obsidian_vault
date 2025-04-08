@@ -1,7 +1,7 @@
 ---
 related to: "[[02 - visita DFS]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-08T11:45
 completed: true
 ---
 >[!index]
@@ -47,7 +47,7 @@ arriviamo allora alla seguente proprietà:
 
 basta quindi fare in modo che il nodo $u$, dopo aver visitato $v$ e i suoi discendenti, sappia se esitono nodi che partono da $v$ o discendenti verso antenati di $u$. con questa informazione, si può capire se l’aco $u-v$ è ponte
 >[!info] logica dell’algoritmo
-per ogni arco **padre-figlio** ${u,v}$ presente nell’albero DFS di $G$, il nodo $u$ è in grado di scoprire se l’arco ${u,v}$ è o meno un ponte usando la seguente strategia:
+per ogni arco **padre-figlio** $\{u,v\}$ presente nell’albero DFS di $G$, il nodo $u$ è in grado di scoprire se l’arco $\{u,v\}$ è o meno un ponte usando la seguente strategia:
 per ogni nodo $v$(figlio di $u$):
 >1. $v$ calcola la sua altezza nell’albero
 >2. $v$ calcola e restituisce al padre ($u$) l’altezza **minima** che si può raggiungere con archi che partono dai nodi del suo sottoalbero diversi da ${v,u}$(che è l’arco da testare)
@@ -76,9 +76,9 @@ il nodo $u$, una volta ricevuta l’informazione dal figlio $v$, confronta la su
 >			if b > altezza[x]:
 >				ponti.append((x,y))
 >			min_raggiungibile = min(min_raggiungibile, b) 
->			elif y != padre: #nodo già visitato, (x,y) è arco 
-># all'indietro,il suo min_raggiungibile è sicuramente <= altezza[y]
->				min_raggiunbile = min(min_raggiungibile, altezza[y])
+>		elif y != padre: #nodo già visitato, (x,y) è arco 
+># all'indietro,il suo min_raggiungibile è sicuramente <= altezza[y]>
+>			min_raggiunbile = min(min_raggiungibile, altezza[y])
 >	return min_raggiungibile
 >```
 la complessità dell’algoritmo è $O(n+m)$, in quanto sto solamente modificando una visita DFS

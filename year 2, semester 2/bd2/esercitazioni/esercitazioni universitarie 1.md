@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-03-30T09:32
+updated: 2025-04-08T11:45
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -45,4 +45,6 @@ Di ogni esercizio, il sistema deve rappresentare il testo e la o le relative sol
 	3. matricola
 
 ## diagramma UML
+![[Pasted image 20250401124344.png]]
 ## specifica dei tipi
+Matricola: Stringa regex che rispetta lo standard dell’università

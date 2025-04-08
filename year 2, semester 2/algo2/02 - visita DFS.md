@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-08T11:45
 completed: true
 ---
 >[!index]
@@ -104,7 +104,7 @@ dato un albero DFS con $n$ nodi, esso si può memorizzare con un vettore $P$ di 
 >			P[y] = x
 >			DFSr(y, G, P)
 >```
-essendo una visita DFS per lista di adiacenza, la sua complessità è $O(n)$
+essendo una visita DFS per lista di adiacenza, la sua complessità è $O(n+m)$
 
 inoltre, in molte applicazioni, non ci basta sapere se un nodo $y$ è raggiungibile dal nodo $x$, ma, se la risposta è positiva, vogliamo anche saper determinare un cammino che ci consenta di andare da $x$ a $y$. il vettore dei padri, radicato in $x$, ci permette facilmente di farlo! basta partire da $P[y]$ e “risalire” l’albero dei padri
 >[!info] algoritmo iterativo per la ricerca del cammino

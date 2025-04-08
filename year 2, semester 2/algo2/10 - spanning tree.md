@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-01T12:19
+updated: 2025-04-08T11:45
 completed: true
 ---
 >[!index]
@@ -65,7 +65,7 @@ consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a 
 >	E.sort()
 >	T = [[] for _ in G]
 >	for c, u, v in E:
->		if not connessi(u, v T):
+>		if not connessi(u, v, T):
 >			T[u].append(v)
 >			T[u].append(u)
 >	return T
@@ -78,7 +78,7 @@ consideriamo ora l’albero $T'$ ottenuto aggiungendo $e$ e rimuovendo $e’$ a 
 >	visitati[a] = 1
 >	for z in T[a]:
 >		if z == b: return True
->		if not visitati[z and connessiR(z, b, T): return True
+>		if not visitati[z] and connessi(z, b, T): return True
 >	return False	
 >```
 > complessità temporale:
