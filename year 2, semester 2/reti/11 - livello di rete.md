@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T14:28
+updated: 2025-04-08T14:46
 completed: false
 ---
 ## funzioni chiave del livello di rete
@@ -22,3 +22,14 @@ se l’introl avviane a info di livello 2 (indirizzo MAC) abbiamo un link layer 
 
 
 approccio a circuito virtuale
+
+
+il VC identifica il circuito tra mittente e destinazione
+
+
+inoltrare ad una interfaccia significa inoltrare ad un router (ogni interfaccia porta ad un router)
+
+
+tabella di routing PUÒ essere implementata su tutte le porte
+
+### commutazione tramite bus
