@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T20:25
+updated: 2025-04-08T20:38
 completed: false
 ---
 # intro a C
@@ -157,3 +157,11 @@ usando const, dato che i parametri con `cost` non devono essere modificati, evit
 ## puntatori
 mossa abbastanza etrusca spiegarmi le stringe dopo i puntatori. che cazzo sono tutti quegli asterischi //TODO rimouvi commento
 i **puntatori** sono variabili che contengono l’indirizzo di una locazione di memoria
+`<tipo> *var_name;`
+- es: `char *dest;`, `int *intPointer;`
+dovrebbero essere inizializzati a `NULL` o a un indirizzo valido ! 
+- `double *aPtr = NULL;`
+un puntatore ha 2 valori associati:
+- **valore diretto**: l’indirizzo di un’altra cella di memoria. accessibile usando il nome della variabile !
+- **valore indiretto**: il valore della cella di memoria il cui indirizzo è il valore diretto del puntatore. accessibile usando l’operatore indiretto `*`(asterisco)
+### operatori `&` e `*`
