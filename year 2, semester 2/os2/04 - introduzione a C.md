@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T19:41
+updated: 2025-04-08T19:55
 completed: false
 ---
 # intro a C
@@ -138,4 +138,15 @@ array di carattere con `NULL` (`\0`)come ultimo elemento
 ![[Pasted image 20250408172419.png]]
 il carattere `\0` viene aggiunto automaticamente se inizializzato come nel primo modo, ma non nel secondo !
 >
->inoltre se scriviamo `char r[10] = "L9 4apr"`, r[7
+>inoltre se scriviamo `char r[10] = "L9 4apr"`, `r[7] = \0`, mentre `r[8]` è indeterminato
+>- in questo caso conviene scrivere `char r[] = "L9 4apr"`, in quanto verrà allocata una stringa di dimensione 8
+
+`<string.h>` contiene funzioni e macro per la gestione delle stringhe
+### funzioni 
+- `char *strcpy(char *dest, const char *src)`: copia stringa `src` nella stringa `dest`
+	- `char *strncpy(char *dest, const char *src, size_t n)`: uguale, ma al più `n` byte sono copiati
+- `int strcmp(const char *s1, const char *s2)`: confronta il contenuto di `s1` con quello di `s2`. restituisce 
+	- `0 if s1 == s2`
+	- `<0 if s1 < s2`
+	- `>0 se s1 > s2`
+- `char *strcat(char *dest, const char *src)`: concatena il contenuto della stringa `src` con quello di `dest` e mette la nuova stringa in `dest`
