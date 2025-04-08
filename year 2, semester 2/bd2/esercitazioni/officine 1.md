@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-07T09:49
+updated: 2025-04-08T17:20
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -35,12 +35,18 @@ Infine, dei proprietari dei veicoli interessano nome, codice fiscale, indirizzo 
 		1. numero anni di servizio (operazione)
 	5. direttore
 2. dipendenti
-	6. nome
-	7. CF
-	8. indirizzo
-	9. numero di telefono
+	1. nome
+	2.  cognome
+	3. CF
+	4. indirizzo
+	5. numero di telefono
 3. direttori
-	1. data di nascita
+	1. nome
+	2. cognome
+	3. CF
+	4. indirizzo
+	5. numero di telefono
+	6. data di nascita
 4. riparazioni
 	2. codice
 	3. il veicolo (vedi req. 5)

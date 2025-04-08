@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T14:31
+updated: 2025-04-08T17:24
 completed: false
 ---
 # intro a C
@@ -132,3 +132,7 @@ scanf(format-string, address-list);
  >[!example] esempio
  `scanf("%d", &peso);` 
  > - `peso` è una variabile intera, `&` estrae il suo indirizzo di memoria e lo passa a `scanf`
+## stringhe
+array di carattere con `NULL` (`\0`)come ultimo elemento
+>[!example]
+![[Pasted image 20250408172419.png]]
