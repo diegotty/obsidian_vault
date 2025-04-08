@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T20:03
+updated: 2025-04-08T20:25
 completed: false
 ---
 # intro a C
@@ -154,3 +154,6 @@ esistono versioni che prendono un numero di byte anche per `strcmp` e `strcat`: 
 
 >[!info] const
 usando const, dato che i parametri con `cost` non devono essere modificati, evitiamo modifiche accidentali, abbiamo una maggiore chiarezza semantica, e possiamo passare stringhe letterali (es: `strcat(buffer, "ciao);`)
+## puntatori
+mossa abbastanza etrusca spiegarmi le stringe dopo i puntatori. che cazzo sono tutti quegli asterischi //TODO rimouvi commento
+i **puntatori** sono variabili che contengono l’indirizzo di una locazione di memoria
