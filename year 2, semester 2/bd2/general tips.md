@@ -1,7 +1,11 @@
 ---
 related to: 
 created: 2025-03-02T17:41
+<<<<<<< HEAD
+updated: 2025-04-02T14:04
+=======
 updated: 2025-04-02T10:22
+>>>>>>> origin/main
 completed: false
 ---
 ## diagramma delle classi
@@ -26,3 +30,5 @@ completed: false
 
 
 molteplicità 0..1 → 1 oppure 1 → 1 descrive il fatto che una classe è parte di un altra classe praticamente (o, nel caso della prima molteplicità, che è praticamente un attributo opzionale)
+
+requisiti riguardo all’overlapping di ore va sempre modellato come requisito esterno
