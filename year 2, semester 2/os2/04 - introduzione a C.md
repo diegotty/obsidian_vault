@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T19:55
+updated: 2025-04-08T20:03
 completed: false
 ---
 # intro a C
@@ -150,3 +150,7 @@ il carattere `\0` viene aggiunto automaticamente se inizializzato come nel primo
 	- `<0 if s1 < s2`
 	- `>0 se s1 > s2`
 - `char *strcat(char *dest, const char *src)`: concatena il contenuto della stringa `src` con quello di `dest` e mette la nuova stringa in `dest`
+esistono versioni che prendono un numero di byte anche per `strcmp` e `strcat`: `strncmp` e `strncat`
+
+>[!info] const
+usando const, dato che i parametri con `cost` non devono essere modificati, evitiamo modifiche accidentali, abbiamo una maggiore chiarezza semantica, e possiamo passare stringhe letterali (es: `strcat(buffer, "ciao);`)
