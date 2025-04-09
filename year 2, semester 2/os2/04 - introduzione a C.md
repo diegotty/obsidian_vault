@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:43
+updated: 2025-04-09T09:46
 completed: false
 ---
 # intro a C
@@ -392,5 +392,5 @@ si può passare uno struct come parametro di una funzione in 2 modi:
 per il passaggio per valore è scontato, mentre per il passaggio per riferimento, viene **comunque** passato il valore, ma in questo caso il valore che viene passato è un pointer (l’indirizzo di `a`). **infatti**, `x` è **una copia** dell’indirizzo di `a` (proprio come nell’altro modo, `x` è una copia del valore di `a`).
 e dato che sia `p` che `&a` puntano alla stessa memoria, modificare `*p` modifica anche `a`
 
->[!tip] bonus 
+>[!tip] btw
 >gli array in C vengono sempre passati per reference (in particolare come pointer al primo elemento), quindi è possibile modificarli
