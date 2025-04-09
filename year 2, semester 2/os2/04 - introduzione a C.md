@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:29
+updated: 2025-04-09T09:43
 completed: false
 ---
 # intro a C
@@ -357,3 +357,40 @@ struct point3D pointA = {1.1, 1.2, 3.5}, pointB = {0.3, 4.5};
 si può passare uno struct come parametro di una funzione in 2 modi:
 - **per valore**: la funzione accetta una variabile di tipo struct nel prototipo, e gli viene passato `var` (la variabile). questo modo è più semplice, ma la lo svantaggio che **i dati vengono copiati nello stack**
 - **per riferimento**(attraverso un puntatore): la funzione accetta un puntatore nel prototipo, e  gli viene passato `&var` (ciò viene passato l’indirizzo di memoria in cui inizia lo struct). ha il vantaggio che **i parametri non vengono memorizzati nello stack**, andando così ad ottimizzarne l’uso, essendo una risorsa limitata
+>[!info] deep dive visto che nelle slide o negli esempi questa roba non viene detta …. spero venga detto alle lezioni che non presenzio ….
+>in C, i parametri vengono sempre passati per valore. è però possibile simulare il **pass-by-reference**, passando un pointer alla variabile
+**passaggio per valore**:
+>
+>```C
+>void modify(int x){
+>	x = 42;
+>}
+>
+>int main(){
+>	int a = 10;
+>	modify(a);
+>	printf("%d \n", a); //a non viene modificato !! still prints 10
+>}
+>```
+>- `x` è una copia di `a`, quindi qualunque cambiamento a `x` non modifica `a`
+>
+> **passaggio per riferimento**:
+>```C
+>void modify(int *x){
+>	*x = 42;
+>}
+>
+>int main(){
+>	int a = 10;
+>	modify(&a);
+>	printf("%d \n", a); //a viene modificato !!! prints 42
+>}
+>```
+>- dato che viene passato l’indirizzo di memoria di `a`, `modify()` può cambiare il valore di `a`, con `*x = 42;` (makes complete sense)
+>
+> e allora dato che passare parametri in 2 modi diversi ha effetti diversi, cosa intendiamo quando diciamo che in C, i parametri vengono sempre passati per valore ?
+per il passaggio per valore è scontato, mentre per il passaggio per riferimento, viene **comunque** passato il valore, ma in questo caso il valore che viene passato è un pointer (l’indirizzo di `a`). **infatti**, `x` è **una copia** dell’indirizzo di `a` (proprio come nell’altro modo, `x` è una copia del valore di `a`).
+e dato che sia `p` che `&a` puntano alla stessa memoria, modificare `*p` modifica anche `a`
+
+>[!tip] bonus 
+>gli array in C vengono sempre passati per reference (in particolare come pointer al primo elemento), quindi è possibile modificarli
