@@ -1,27 +1,33 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T18:56
+updated: 2025-04-09T19:11
 completed: false
 ---
+abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
 >[!example] esempio di funzionamento del livello rete
 ![[Pasted image 20250409185452.png]]
 >- il livello di rete di H1 prende i segmenti dal livello di trasporto, li incapsula in un datagramma, e li trasmette al router più vicino
 >- il livello di rete di H2 riceve i datagrammi da R7, estrae i segmenti e li consegna al livello di trasporto
 >- il livello di rete dei nodi intermedi inoltra verso il prossimo router
 ## funzioni chiave del livello di rete
-**instradamento** (routing): determina il percorso seguito dai pachetti dall’origine (costruisce le rotte)
-**inoltro** (forwarding): decide su quale porta di uscita deve essere immesso il pacchetto in base a quanto stabilito dal routing (utilizza il percorso definito dal routing)
+il livello di rete si occupa di capire, quando un router riceve un pacchetto, a chi inviarlo per farlo arrivare al destinatario. le sue funzioni chiave sono 2:
+- **instradamento** (routing): determina il percorso seguito dai pachetti dall’origine alla destinazione (costruisce le rotte)
+- **inoltro** (forwarding): decide su quale porta di uscita deve essere immesso il pacchetto in base a quanto stabilito dal routing (utilizza il percorso definito dal routing)
 
-
-la porta di uscita viene scelta in base all’IP di destinazione
-ogni router esegue il protocollo di routing ! e ha la sua tabella di router
+>[!info] routing e forwarding
+![[Pasted image 20250409190036.png]]
+>le **forwarding table** vengono quindi generate dal **routing algorithm**, e vengono consultate per capire a chi inoltrare il pacchetto
+>- la porta di uscita viene scelta in base all’IP di destinazione
 ## switch e router
-**packet switch**: dispositivo che si occupa del trasferimento dall’interfaccia di ingresso a quella di uscita
-1. 
+**packet switch** (commutatore di pacchetto): dispositivo che si occupa del trasferimento dall’interfaccia di ingresso a quella di uscita, in base al valore del campo dell’intestazione del pacchetto.
+noi studieremo (per ora ? ) 2 tipi di packet switch:
+- **router**: stabiliscono l’inoltro in base al valore del campo (indirizzo IP) nel livello di rete (livello 3)
+- **link-layer switch** (commutatore a livello di collegamento): stabiliscono l’inoltro in relazione al valore del campo (indirizzo MAC) nel livello di collegamento (link / livello2)
+>[!example] esempio !
+![[Pasted image 20250409191012.png]]
+>immagino che un link-layer switch sia più veloce (in quanto deve risalire meno pila TCP/IP)
 
-se l’inoltro avviene in base all’indirizzo ip (livello 3), abbiamo un router
-se l’introl avviane a info di livello 2 (indirizzo MAC) abbiamo un link layer switch
 ### link-layer switch
 ### router
 
