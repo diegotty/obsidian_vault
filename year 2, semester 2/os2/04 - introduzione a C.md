@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:46
+updated: 2025-04-09T18:11
 completed: false
 ---
 # intro a C
@@ -394,3 +394,39 @@ e dato che sia `p` che `&a` puntano alla stessa memoria, modificare `*p` modific
 
 >[!tip] btw
 >gli array in C vengono sempre passati per reference (in particolare come pointer al primo elemento), quindi è possibile modificarli
+## file I/O
+tutte le funzioni per la gestione di file di testo sono nella libreria `stdio.h`
+- ogni riga in un file di testo finisce con `\n`
+- il file finisce con EOF
+
+>[!info] per aprire un file
+>- dichiarare un file pointer
+>- aprire il file
+>	- viene creata una struttura dati con le info necessarie per gestire il file
+>	- viene allocata l’area di buffer
+>	- collega il file pointer con la strutura
+>- usare le funzioni I/O
+>- chiudere il file
+>	- scrive il contenuto buffer nel file, se necessario
+>	- libera la memoria associata al file pointer
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	FILE *fp;
+	fp = fopen("file.txt", "r");
+	if (fp ==NULL){
+		printf("errore in apertura \n");
+		exit(1);
+	}
+if (fclose(fp) ==0) printf("chiusura corretta");
+else printf("errore in chiusura);
+}
+```
+### $\verb |int fscanf(FILE *stream, const char *format, \dots)|$
+### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
+### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
+### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
+### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
