@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T20:38
+updated: 2025-04-09T07:59
 completed: false
 ---
 # intro a C
@@ -165,3 +165,35 @@ un puntatore ha 2 valori associati:
 - **valore diretto**: l’indirizzo di un’altra cella di memoria. accessibile usando il nome della variabile !
 - **valore indiretto**: il valore della cella di memoria il cui indirizzo è il valore diretto del puntatore. accessibile usando l’operatore indiretto `*`(asterisco)
 ### operatori `&` e `*`
+gli operatori `*` e `&` vengono usati prima di una variabile e servono a:
+- `*` operator: dereferencing operator, ritorna un sinonimo, un alias o un nickname a cui punta il suo operando (la variabile su cui viene usato)
+- `&` operator: ritorna l’indirizzo del suo operando
+>[!example] esempio: `&` operator
+>```c
+>int count = 5;
+>int *countPtr = &count;
+>```
+>in questo modo, l’indirizzo di memoria in cui è memorizzata la variabile `count` è memorizzato in `countPtr`: potremmo dire che `countPtr` **punta** a `count`
+![[Pasted image 20250409075316.png]]
+
+>[!example] esempio: `*` operator
+se ora scrivessimo:
+>```c
+>*countPtr = 10;
+>```
+>usando l’operatore `*`, verrà memorizzato il valore 10 all’indirizzo di memoria a cui punta `countPtr`
+>![[Pasted image 20250409075528.png]]
+
+>[!info] operatori nei parametri delle funzioni
+nei parametri delle funzioni troviamo `*`
+>![[Pasted image 20250409075647.png]]
+>
+>quando invochiamo delle funzioni, usiamo variabili con l’operatore `&` nei parametri !
+![[Pasted image 20250409075750.png]]
+
+definire il tipo del puntatore permette al compilatore di sapere quanti byte usare all’indirizzo “puntato” dal puntatore
+```c
+int x;
+int *xPtr = &x;
+*xPtr = 7;
+```
