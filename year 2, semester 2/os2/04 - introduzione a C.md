@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T08:15
+updated: 2025-04-09T08:23
 completed: false
 ---
 # intro a C
@@ -219,5 +219,12 @@ scorePtr = scorePtr + 5; //accederà all'elemento distante 5 da quello corrente 
 fino ad ora, abbiamo allocato solo memoria per variabili che sono allocate nello **stack** a tempo di compilazione (e di conseguenza, la dimensione di tali variabili deve essere nota a tempo di compilazione)
 certe volte però, può essere utile/necessario allocare memoria a run time:
 - la memoria allocata a run time viene presa dalla **heap**, una seconda area di memoria mantenuta dal sistema
-le funzioni per allocare memoria in modo dinamico sono `calloc()` e `malloc()`
-`void *calloc(size_t n`
+le funzioni per allocare memoria in modo dinamico sono `calloc()` e `malloc()` 
+- `void *calloc(size_t nmemb, size_t size);`
+- `void *malloc (size_t size);`
+entrambe le funzioni restituiscono pointer ad una area di memoria **untyped**: sarà quindi necessario effettuare il casting sul pointer restituito al tipo di necessario
+lo spazio allocato va rilasciato quando non è più utilizzato, con la funzione `free()`
+- `void free(void *ptr);`
+### $\verb |calloc()|$
+usato per allocare dinamicamente un vettore nella heap (cioè la memoria allocata è contigua)
+### $\verb |malloc()|$
