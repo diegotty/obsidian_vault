@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:46
+updated: 2025-04-09T11:59
 completed: false
 ---
 # intro a C
