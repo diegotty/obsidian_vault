@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:00
+updated: 2025-04-09T09:14
 completed: false
 ---
 # intro a C
@@ -318,5 +318,33 @@ esistono 3 modi per definire uno **struct**:
 >```
 >questa soluzione è più portabile, in quanto potrei mettere la definizione di `struct point3D` in un header file e riutilizzarla
 
->[!info]
-- type-defined struct
+>[!info] type-defined structs
+>```c
+>typedef struct {
+>	char ID[17];
+>	long int income;
+>	float taxRate;
+>} taxpayer_t; //nome del nuovo tipo di dato
+>
+>taxpayer_t person1, person2;
+>taxpayer_5 persons[100];
+>```
+
+
+>[!info] operatore `->`
+l’operatore `->` viene usato per accedere a membri di uno struct quando la variabile di tipo struct è stata allocata come puntatore
+>```c
+>taxpayer_t * newTP(char *id, long int inc, float rate)
+>taxpayer_t *pTP = malloc(sizeof(taxpayer_t));
+>pTP->income = inc; // pTP è un pointer ed usiamo -> per accedere al membro income
+>taxpayer_t persona;
+>persona.inc = inc; // persona è una struct variable, quindi usiamo . per accedere ai membri
+>```
+>in particolare, `pTp->income = inc;` è uno shorthand per `(*pTP).inc = inc;`
+>
+>in oltre l’operatore `->` viene usato anche in altre situazion in C (tipo linked data structures) sempre relative all’uso di **structs**
+
+gli struct si possono inizializzare, anche con meno campi !
+```c
+struct point3D pointA = {1.1, 1.2, 3.5}, pointB = {0.3, 4.5};
+```
