@@ -1,9 +1,14 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-08T15:00
+updated: 2025-04-09T18:56
 completed: false
 ---
+>[!example] esempio di funzionamento del livello rete
+![[Pasted image 20250409185452.png]]
+>- il livello di rete di H1 prende i segmenti dal livello di trasporto, li incapsula in un datagramma, e li trasmette al router più vicino
+>- il livello di rete di H2 riceve i datagrammi da R7, estrae i segmenti e li consegna al livello di trasporto
+>- il livello di rete dei nodi intermedi inoltra verso il prossimo router
 ## funzioni chiave del livello di rete
 **instradamento** (routing): determina il percorso seguito dai pachetti dall’origine (costruisce le rotte)
 **inoltro** (forwarding): decide su quale porta di uscita deve essere immesso il pacchetto in base a quanto stabilito dal routing (utilizza il percorso definito dal routing)

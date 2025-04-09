@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T18:39
+updated: 2025-04-09T18:46
 completed: false
 ---
 # intro a C
@@ -433,5 +433,9 @@ legge, da `stream`, i dati il cui tipo è specificato in `format`
 writes formatted data ad uno stream
 `fprintf(file_ptr, "Hello, world!\n");`
 ### $\verb |char *fgets\left( char *s, \int size, FILE *stream)|$
+legge **massimo** `n-1`  caratteri dallo stream e avanza la posizione dell indicatore per lo stream
 ### $\verb |int fputs(const char *s, FILE *stream)|$
+writes a string to the stream, up butnot including the null character
 ### $\verb |int feof(FILE *stream)|$
+FUCK YOUUUUUUUUUUUUUUUUU
+restituisce 0 se non trova EOF, altrimenti 
