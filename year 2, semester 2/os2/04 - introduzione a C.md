@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T07:59
+updated: 2025-04-09T08:15
 completed: false
 ---
 # intro a C
@@ -197,3 +197,27 @@ int x;
 int *xPtr = &x;
 *xPtr = 7;
 ```
+
+>[!info] pointer e compilatore
+immaginiamo di avere un array di 10 interi, che inizia all’indirizzo 100, e di avere `int *aPtr = 100;` (quindi che punta al primo intero dell’array)
+cosa succede se scriviamo `aPtr = aPtr + 1`;
+>- dato che non viene usato l’operatore `*`, non verrà modificato il valore del primo intero dell’array. verrà modificato il valore dell’indirizzo di memoria a cui punta `aPtr`. ma:
+>	- dato che il compilatore “sa” che `aPtr` è un pointer e che punta ad un intero di lunghezza 4 a partire dall’indirizzo 100, al posto di aumentare di 1, `aPtr = aPtr + 1;` aumenta di 4 **byte** `aPtr`. in questo modo, `aPtr` punterà al prossimo (in questo caso il secondo) intero del vettore, all’indirizzo `104`
+
+>[!info] relazione tra array e vettori
+>al posto di accedere ad un vettore con l’indexing della variabile, dato che gli elementi di un vettore sono allocati in aree di memoria contigue, possiamo accedere ai vettori usando dei puntatori !
+```c
+int scores[10] = {87, 98, 93, 87, 83, 76, 86, 83, 86, 77};
+
+int *scorePtr = NULL;
+scorePtr = scores; // scores == &scores[0]
+int n = 5;
+scorePtr = scorePtr + 5; //accederà all'elemento distante 5 da quello corrente (in questo caso, scores[5])
+// quindi scores[n] == *(scorePtr + n)
+```
+## allocazione dinamica
+fino ad ora, abbiamo allocato solo memoria per variabili che sono allocate nello **stack** a tempo di compilazione (e di conseguenza, la dimensione di tali variabili deve essere nota a tempo di compilazione)
+certe volte però, può essere utile/necessario allocare memoria a run time:
+- la memoria allocata a run time viene presa dalla **heap**, una seconda area di memoria mantenuta dal sistema
+le funzioni per allocare memoria in modo dinamico sono `calloc()` e `malloc()`
+`void *calloc(size_t n`
