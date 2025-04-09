@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T09:14
+updated: 2025-04-09T09:29
 completed: false
 ---
 # intro a C
@@ -282,6 +282,11 @@ esempio 1 : stringa
 >}
 >```
 
+>[!tip] indexing di memoria allocata dinamicamente
+una volta ottenuto il pointer al primo elemento, è possibile usarlo come un array normale, con `[i]` come indexing ! cool !
+>```c
+>arrayPtr[3] = 3;
+>```
 ### $\verb |void free(void *ptr)|$
 usato per deallocare(rilasciare) dinamicamente **e contiguamente** memoria dalla heap
 - `ptr` è il pointer all’inzio della memoria da deallocare
@@ -342,9 +347,13 @@ l’operatore `->` viene usato per accedere a membri di uno struct quando la var
 >```
 >in particolare, `pTp->income = inc;` è uno shorthand per `(*pTP).inc = inc;`
 >
->in oltre l’operatore `->` viene usato anche in altre situazion in C (tipo linked data structures) sempre relative all’uso di **structs**
-
+>in oltre l’operatore `->` viene usato anche in altre situazion in C (tipo linked data structures) sempre relative all’uso di **structs***
+### inzializzazione
 gli struct si possono inizializzare, anche con meno campi !
 ```c
 struct point3D pointA = {1.1, 1.2, 3.5}, pointB = {0.3, 4.5};
 ```
+### passaggio di struct come parametri
+si può passare uno struct come parametro di una funzione in 2 modi:
+- **per valore**: la funzione accetta una variabile di tipo struct nel prototipo, e gli viene passato `var` (la variabile). questo modo è più semplice, ma la lo svantaggio che **i dati vengono copiati nello stack**
+- **per riferimento**(attraverso un puntatore): la funzione accetta un puntatore nel prototipo, e  gli viene passato `&var` (ciò viene passato l’indirizzo di memoria in cui inizia lo struct). ha il vantaggio che **i parametri non vengono memorizzati nello stack**, andando così ad ottimizzarne l’uso, essendo una risorsa limitata
