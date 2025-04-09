@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T19:11
+updated: 2025-04-09T19:26
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -26,13 +26,32 @@ noi studieremo (per ora ? ) 2 tipi di packet switch:
 - **link-layer switch** (commutatore a livello di collegamento): stabiliscono l’inoltro in relazione al valore del campo (indirizzo MAC) nel livello di collegamento (link / livello2)
 >[!example] esempio !
 ![[Pasted image 20250409191012.png]]
->immagino che un link-layer switch sia più veloce (in quanto deve risalire meno pila TCP/IP)
+>immagino che un link-layer switch sia più veloce (in quanto deve risalire meno pila TCP/IP) 
 
 ### link-layer switch
+viene utilizzato per collegare singoli computer all’interno di una rete LAN, ed instrada pacchetti al livello 2
+>[!info] idk what this image is trying to depict but definitely aesthetic
+![[Pasted image 20250409191220.png]]
+>in pratica è un switch collegato ad un ethernet e tanti host (?)
 ### router
+instrada i pacchetti al livello 3, da uno dei suoi link entranti ad uno dei suoi link uscenti: al **next hop** nel percorso origine-destinazione
+>[!info] autoesplicativo
+![[Pasted image 20250409191709.png]]
 
+# switching
+esistono 2 approcci per lo **switching** (word that sounds like a sexual practice)
+## reti a circuito virtuale
+nell’approccio a **circuito virtuale**, prima che i datagrammi fluiscano, i due sistemi terminali e i router intermedi stabiliscono una connessione virtuale
+un circuito virtuale consiste in:
+1. un percorso tra gli host di origine e destinazione
+2. numeri VC, uno per ciascun collegamento
+3. righe nella tabella d’inoltro in ciascun router
+ogni pacchetto di un circuito virtuale ha un **numero VC** (chiamata anche etichetta di circuito) nella propria intestazione, ed ogni router sostituisce il numero VC con un nuovo numero.
 
-approccio a circuito virtuale
+>[!info] tabella d’inoltro
+
+>[!example] rete a circuito virtuale
+![[Pasted image 20250409192031.png]]
 
 
 il VC identifica il circuito tra mittente e destinazione
