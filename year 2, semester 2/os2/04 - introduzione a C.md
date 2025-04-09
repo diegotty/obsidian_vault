@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T18:11
+updated: 2025-04-09T18:16
 completed: false
 ---
 # intro a C
@@ -427,6 +427,6 @@ else printf("errore in chiusura);
 ```
 ### $\verb |int fscanf(FILE *stream, const char *format, \dots)|$
 ### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
-### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
-### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
-### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
+### $\verb |char *fgets\left( char *s, \int size, FILE *stream)|$
+### $\verb |int fputs(const char *s, FILE *stream)|$
+### $\verb |int feof(FILE *stream)|$
