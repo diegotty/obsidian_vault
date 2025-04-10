@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T10:11
+updated: 2025-04-10T11:19
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -161,4 +161,3 @@ in questo caso, i datagrammi IP grandi vengono **frammentati**, cioè suddivisi 
 ![[Pasted image 20250410101123.png]]
 
 protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
-
