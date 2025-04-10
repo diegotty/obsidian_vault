@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T13:15
+updated: 2025-04-10T15:28
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -118,6 +118,9 @@ le porte d’uscita gestiscono:
 l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte d’uscita:
 - **accodamento nelle porte d’ingresso**: quando la velocità dei commutazione è inferiore a quella delle porte d’ingresso (per non avere accodamento, la velocità di commutazione dovrebbe essere $n \cdot(\text{velocità della linea d'ingresso})$)
 - **accodamento nelle porte d’uscita**: quanod la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
+>[!info] accodamento sulle porte di ingresso
+**head-of-the-line blocking**: un pacchetto nella coda d’ingresso deve attendere il trasferimento (anche se la propria destinazione è libera) in quanto risulta essere bloccato da un altro pacchetto in testa alla fila
+**se le code diventano troppo lunghe, i buffer si possono saturare e quindi causare una perdita di pacchetti !
 
 # protocolli del livello di rete
 >[!info] immagine canonica
