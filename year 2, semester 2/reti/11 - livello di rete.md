@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T07:53
+updated: 2025-04-10T08:07
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -38,6 +38,10 @@ instrada i pacchetti al livello 3, da uno dei suoi link entranti ad uno dei suoi
 >[!info] autoesplicativo
 ![[Pasted image 20250409191709.png]]
 
+studiamo ora cosa si trova all’interno del router: 
+>[!info] architettura del router
+![[Pasted image 20250410080457.png]]
+
 # switching
 esistono 2 approcci per lo **switching** (word that sounds like a sexual practice)
 ## reti a circuito virtuale
@@ -64,16 +68,19 @@ le reti a datagramma **non** sono orientate alla connessione, ed ogni datagramma
 - **Internet** è una rete a datagramma !
 non esiste un concetto di “connessione” a livello di rete, ed i router non conservano informazioni sullo stato dei circuiti virtuali
 - i pacchetti vengono inoltrati utilizzando l’indirizzo dell’host destinatario, e passano attraverso una serie di router, che utilizzano gli indirizzi di destinazione per inviarli e possono intraprendere percorsi diversi !
->[!info] tabella di inoltro
+>[!info]- tabella di inoltro
 ![[Pasted image 20250410075354.png]]
+la tabella di inoltro è gestita creando dei bucket per gli indirizzi (che sappiamo avere dimensione di 4 byte), con questa logica:
+![[Pasted image 20250410075515.png]]
+ma in modo più efficiente: confrontando il prefisso dell’indirizzo:
+![[Pasted image 20250410080138.png]]
+>- se si verificano corrispondenze multiple, si prende la corrispondenza a prefisso più lungo
 
 >[!example] rete a datagramma
 ![[Pasted image 20250410075303.png]]
 >i pacchetti possono arrivare fuori ordine !
 
-il VC identifica il circuito tra mittente e destinazione
-
-
+## router
 inoltrare ad una interfaccia significa inoltrare ad un router (ogni interfaccia porta ad un router)
 
 
