@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T08:24
+updated: 2025-04-10T08:39
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -19,9 +19,9 @@ il livello di rete si occupa di capire, quando un router riceve un pacchetto, a 
 ![[Pasted image 20250409190036.png]]
 >le **forwarding table** vengono quindi generate dal **routing algorithm**, e vengono consultate per capire a chi inoltrare il pacchetto
 >- la porta di uscita viene scelta in base all’IP di destinazione
-# switching
+## switching
 esistono 2 approcci per lo **switching** (word that sounds like a sexual practice)
-## reti a circuito virtuale
+### reti a circuito virtuale
 nell’approccio a **circuito virtuale**, prima che i datagrammi fluiscano, i due sistemi terminali e i router intermedi stabiliscono una connessione virtuale
 un circuito virtuale consiste in:
 1. un percorso tra gli host di origine e destinazione
@@ -35,12 +35,12 @@ oltre a questi campi, i router mantengono le informazioni sullo stato delle conn
 
 >[!example] rete a circuito virtuale
 ![[Pasted image 20250409192031.png]]
-### ATM (lore)
+#### ATM (lore)
 la **ATM** (asynchronous transfer mode) è una rete orientata alla connessione progettata nei primi anni 90, con lo scopo di unificare voce, dati, televisione via cavo, etc.
 - viene attualmente usata nella rete telefonica per trasportare (internamente) i pacchetti IP
 - le connessioni vengono chiamate **circuiti virtuali** (in analogia con quelli telefonoci, che sono circuiti fisici)
 
-## reti a datagramma
+### reti a datagramma
 le reti a datagramma **non** sono orientate alla connessione, ed ogni datagramma viaggia indipendente dagli altri
 - **Internet** è una rete a datagramma !
 non esiste un concetto di “connessione” a livello di rete, ed i router non conservano informazioni sullo stato dei circuiti virtuali
@@ -56,7 +56,7 @@ ma in modo più efficiente: confrontando il prefisso dell’indirizzo:
 >[!example] rete a datagramma
 ![[Pasted image 20250410075303.png]]
 >i pacchetti possono arrivare fuori ordine !
-## switch e router
+# switch e router
 **packet switch** (commutatore di pacchetto): dispositivo che si occupa del trasferimento dall’interfaccia di ingresso a quella di uscita, in base al valore del campo dell’intestazione del pacchetto.
 noi studieremo (per ora ? ) 2 tipi di packet switch:
 - **router**: stabiliscono l’inoltro in base al valore del campo (indirizzo IP) nel livello di rete (livello 3)
@@ -65,20 +65,20 @@ noi studieremo (per ora ? ) 2 tipi di packet switch:
 ![[Pasted image 20250409191012.png]]
 >immagino che un link-layer switch sia più veloce (in quanto deve risalire meno pila TCP/IP) 
 
-### link-layer switch
+## link-layer switch
 viene utilizzato per collegare singoli computer all’interno di una rete LAN, ed instrada pacchetti al livello 2
 >[!info] idk what this image is trying to depict but definitely aesthetic
 ![[Pasted image 20250409191220.png]]
 >in pratica è un switch collegato ad un ethernet e tanti host (?)
-### router
+## router
 instrada i pacchetti al livello 3, da uno dei suoi link entranti ad uno dei suoi link uscenti: al **next hop** nel percorso origine-destinazione
 >[!info] autoesplicativo
 ![[Pasted image 20250409191709.png]]
 
-studiamo ora cosa si trova all’interno del router: 
 >[!info] architettura del router
 ![[Pasted image 20250410080457.png]]
 
+### porte d’ingresso
 >[!info] porte d’ingresso
 ![[Pasted image 20250410081344.png]]
 la **commutazione decentralizzata** determina la porta d’uscita dei pacchetti utilizzando le informazioni della tabella d’inoltro (**ogni porta d’ingresso ha una copia della tabella !**)
@@ -91,11 +91,35 @@ la ricerca nella tabella di inoltro deve essere quindi veloce (sempre per evitar
 ### tecniche di commutazione
 studiamo ora i modi per far attraversare un pacchetto dalla porta di ingresso alla porta di uscita:
 >[!info] commutazione in memoria
-utilizzata dall prima generazione di router: il pacchetto veniva copiato nella memoria del processore, e veniva trasferito dalla porta d’ingresso alla porta d’uscita
+utilizzata dall prima generazione di router: il pacchetto veniva copiato nella memoria del processore (il router ha un processore) e veniva trasferito dalla porta d’ingresso alla porta d’uscita
 ![[Pasted image 20250410082409.png]]
 
+>[!info] commutazione tramite bus
+>le porte d’ingresso trasferiscono un pacchetto direttamente alle porte d’uscita su un bus condiviso, senza intervento del processore di instradamento
+>- si può trasferire solo un pacchetto alla volta, e i pacchetti che arrivano e trovano il bus occupato vengono accodati alla porta d’ingresso
+>
+in questo modo, **la larghezza della banda di commutazione è limitata da quella del bus**
+> - per esempio, cisco 5600 opera con bus da 32gbps, ed è sufficiente per router che operano in reti d’accesso o aziendali
+>
+![[Pasted image 20250410082452.png]]
 
-nelle porte di uscita si possono accodare i pacchetti perhce può capitare che più porte di input mandino pacchetti alla stessa porta di output
+>[!info] commutazione attraverso rete d’interconnessione
+>questo modo di commutare i pacchetti supera il limite di banda di un singolo bus condiviso: usa un **crossbar switch**, una rete d’interconnessione che consiste in $2n$ bus che collegano $n$ porte d’ingresso a $n$ porte d’uscita
+>- inoltre, si tende a frammentare i pacchetti IP a lunghezza variabile in celle di lunghezza fissa (vengono poi riassemblati nella porta di uscita) (nn capisco bene cosa c’entri ngl)
+![[Pasted image 20250410083053.png]]
+
+### porte d’uscita
+>[!info] porte d’uscita
+![[Pasted image 20250410083444.png]]
+le porte d’uscita gestiscono:
+>- **funzionalità d’accodamento**: necessarie quando la struttura di commutazione consegna pacchetti alla porta d’uscita a una frequenza che supera quella del collegamento uscente
+>- **schedulatore di pacchetti**: stabilisce in quale ordine trasmettere i pacchetti accodati
+
+l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte d’uscita:
+- **accodamento nelle porte d’ingresso**: quando la velocità dei commutazione è inferiore a quella delle porte d’ingresso (per non avere accodamento, la velocità di commutazione dovrebbe essere $n \cdot(\text{velocità della linea d'ingresso})$)
+- **accodamento nelle porte d’uscita**: quanod la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
+
+# protocolli del livello di rete
 
 DHCP implementa funzioni di livello di rete, ma viene implementato a livello applicazione
 
