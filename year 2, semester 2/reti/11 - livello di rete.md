@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T18:11
+updated: 2025-04-10T18:22
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -199,5 +199,10 @@ dato che vengono trasferiti 2 pacchetti in più, vengono trasferiti 40 byte in p
 
 >[!example] esempio di frammentazione e riassemblaggio
 ![[Pasted image 20250410181116.png]]
+>- il primo frammento ha un valore del campo offset pari a 0
+>- l’offset del secondo segmento si ottiene dividendo per 8 la lunghezza del primo frammento (esclusa l’intestazione)
+>- il valore del terzo frammento si ottiene dividendo per 8 la somma della lunghezza del primo e del secondo frammento (escluse se intestazioni)
+>- …..
+>- l’ultimo frammento ha il bit M impostato a 0
 
 protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
