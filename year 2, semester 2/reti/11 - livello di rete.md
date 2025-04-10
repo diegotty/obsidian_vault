@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T09:37
+updated: 2025-04-10T09:54
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -128,7 +128,10 @@ l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte 
 >  - **ICMP**: Internet Control Message Protocol (gestione errori)
 >- **ARP**: Adress Resolution Protocol (associazione indirizzo IP - indirizzo collegamento (?)
 
-
+## IPv4
+il protocollo **IP** è responsabile della suddivisione in pacchetti, del forwarding, e della consegna dei datagrammi al livello di rete (host to host)
+- è inaffidabile, senza connessione, e basato su datagrammi
+- offre un servizio di consegna best effort
 
 identificatore, flag e offset usati per la frammentazione (che è una cosa che si può fare ceh è ok)
 
