@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T14:32
+updated: 2025-04-10T14:49
 completed: false
 ---
 ## indirizzamento IPv4
@@ -13,3 +13,8 @@ completed: false
 
 
 loopback: 
+
+
+
+dhcp usa udp (trasp non affidabile)
+i messaggi dhcp vengono mandati in broadcast !
