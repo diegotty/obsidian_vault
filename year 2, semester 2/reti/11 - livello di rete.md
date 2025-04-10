@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T10:09
+updated: 2025-04-10T10:11
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -154,7 +154,11 @@ la **MTU** (maximum transfer unit) è la massima quantità di **dati** (payload)
 ![[Pasted image 20250410100736.png]]
 
 quindi diversi tipi di link possono comportare differenti MTU
-in questo caso, i datagrammi IP grandi vengono **frammentati**, cioè suddivisi in datagrammi IP più piccoli
+in questo caso, i datagrammi IP grandi vengono **frammentati**, cioè suddivisi in datagrammi IP più piccoli.
+- i frammenti del datagramma verranno riassemblati solo una volta raggiunta la destinazione (devono infatti essere riassemblati prima di raggiungere il livello trasporto)
+- i bit dell’intestazione IP sono usti per identificare e ordinare i frammenti 
+>[!example]- esempio
+![[Pasted image 20250410101123.png]]
 
 protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
 
