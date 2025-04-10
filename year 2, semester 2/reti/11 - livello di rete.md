@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-09T19:26
+updated: 2025-04-10T07:53
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -49,10 +49,27 @@ un circuito virtuale consiste in:
 ogni pacchetto di un circuito virtuale ha un **numero VC** (chiamata anche etichetta di circuito) nella propria intestazione, ed ogni router sostituisce il numero VC con un nuovo numero.
 
 >[!info] tabella d’inoltro
+![[Pasted image 20250410074142.png]]
+oltre a questi campi, i router mantengono le informazioni sullo stato delle connessioni ! aggiungono alla tabella una nuova riga ogni volta che stabiliscono una nuova connessione, e la cancellano quando viene rilasciata //connessione tra terminali o tra 2 router ?
 
 >[!example] rete a circuito virtuale
 ![[Pasted image 20250409192031.png]]
+### ATM (lore)
+la **ATM** (asynchronous transfer mode) è una rete orientata alla connessione progettata nei primi anni 90, con lo scopo di unificare voce, dati, televisione via cavo, etc.
+- viene attualmente usata nella rete telefonica per trasportare (internamente) i pacchetti IP
+- le connessioni vengono chiamate **circuiti virtuali** (in analogia con quelli telefonoci, che sono circuiti fisici)
 
+## reti a datagramma
+le reti a datagramma **non** sono orientate alla connessione, ed ogni datagramma viaggia indipendente dagli altri
+- **Internet** è una rete a datagramma !
+non esiste un concetto di “connessione” a livello di rete, ed i router non conservano informazioni sullo stato dei circuiti virtuali
+- i pacchetti vengono inoltrati utilizzando l’indirizzo dell’host destinatario, e passano attraverso una serie di router, che utilizzano gli indirizzi di destinazione per inviarli e possono intraprendere percorsi diversi !
+>[!info] tabella di inoltro
+![[Pasted image 20250410075354.png]]
+
+>[!example] rete a datagramma
+![[Pasted image 20250410075303.png]]
+>i pacchetti possono arrivare fuori ordine !
 
 il VC identifica il circuito tra mittente e destinazione
 
