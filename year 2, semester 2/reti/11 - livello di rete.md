@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T18:01
+updated: 2025-04-10T18:11
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -190,6 +190,14 @@ per fare ciò usa:
 **3 bit di flag**:
 - riservato
 - do not fragment: 1 non frammentare, 0 si può frammentare
-- more fragments (M): 1 frammenti intermedi, 0 ultimo frammento
-**offset** (scostamento laterale): specifica l’ordine d
+- more fragments (M): settato ad 1 nei frammenti intermedi, settato a 0 per l’ultimo frammento
+**offset** (scostamento laterale): specifica l’ordine del frammento all’interno del datagramma originario
+>[!info] offset
+![[Pasted image 20250410180527.png]]
+![[Pasted image 20250410180858.png]]
+dato che vengono trasferiti 2 pacchetti in più, vengono trasferiti 40 byte in più (i due header aggiuntivi)
+
+>[!example] esempio di frammentazione e riassemblaggio
+![[Pasted image 20250410181116.png]]
+
 protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
