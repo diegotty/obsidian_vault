@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T08:39
+updated: 2025-04-10T09:37
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -120,8 +120,14 @@ l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte 
 - **accodamento nelle porte d’uscita**: quanod la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
 
 # protocolli del livello di rete
+>[!info] immagine canonica
+![[Pasted image 20250410093426.png]]
+>- **DHCP**: Dynamic Host Configuration Protocol (implementa funzioni del livello di rete, ma viene implementato a livello applicazione)
+>- **IP**: Internet Protocol (v4 o v6)
+> - **IGMP**: Internet Group Management Protocol (multicasting)
+>  - **ICMP**: Internet Control Message Protocol (gestione errori)
+>- **ARP**: Adress Resolution Protocol (associazione indirizzo IP - indirizzo collegamento (?)
 
-DHCP implementa funzioni di livello di rete, ma viene implementato a livello applicazione
 
 
 identificatore, flag e offset usati per la frammentazione (che è una cosa che si può fare ceh è ok)
