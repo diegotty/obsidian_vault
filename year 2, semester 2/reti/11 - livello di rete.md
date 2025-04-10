@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T16:46
+updated: 2025-04-10T16:48
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -120,14 +120,16 @@ l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte 
 - **accodamento nelle porte d’uscita**: quanod la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
 >[!info] accodamento sulle porte di ingresso
 **head-of-the-line blocking**: un pacchetto nella coda d’ingresso deve attendere il trasferimento (anche se la propria destinazione è libera) in quanto risulta essere bloccato da un altro pacchetto in testa alla fila
-**se le code diventano troppo lunghe, i buffer si possono saturare e quindi causare una perdita di pacchetti !**
 ![[Pasted image 20250410152830.png]]
 >- in questo caso, i due pacchettti rossi all’inizio delle due code si contendono la porta d’uscita: il pacchetto verde subisce **HOL blocking** !
 
 >[!info] accomodamento sulle porte di uscita
-se la struttura di commutazione ha un rate superiore a quell de
+se la struttura di commutazione (switch fabric) ha un rate superiore a quello della porta di uscita, si può verificare un accodamento !
+può succedere ance se troppi pacchetti vanno sulla stessa uscita
 ![[Pasted image 20250410164600.png]]
 
+>[!warning] **se le code diventano troppo lunghe, i buffer si possono saturare e quindi causare una perdita di pacchetti !**
+vale sia per l’accodamento in entrata che in uscita
 # protocolli del livello di rete
 >[!info] immagine canonica
 ![[Pasted image 20250410093426.png]]
