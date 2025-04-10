@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-10T16:48
+updated: 2025-04-10T18:01
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -128,6 +128,14 @@ se la struttura di commutazione (switch fabric) ha un rate superiore a quello de
 può succedere ance se troppi pacchetti vanno sulla stessa uscita
 ![[Pasted image 20250410164600.png]]
 
+### capacità dei buffer
+per diversi anni si è seguita la regola definita in RFC 3439: la quantità di buffering dovrebbe essere uguale a una media del tempo di andata e ritorno (RTT) per la capacità del collegamento c
+
+attuali raccomandazioni dicono che la quantità di buffering recesssaria per $N$ flussi TCP è:
+$$
+\frac{RTT \cdot c}{\sqrt{ N }}
+$$
+
 >[!warning] **se le code diventano troppo lunghe, i buffer si possono saturare e quindi causare una perdita di pacchetti !**
 vale sia per l’accodamento in entrata che in uscita
 # protocolli del livello di rete
@@ -167,8 +175,21 @@ la **MTU** (maximum transfer unit) è la massima quantità di **dati** (payload)
 quindi diversi tipi di link possono comportare differenti MTU
 in questo caso, i datagrammi IP grandi vengono **frammentati**, cioè suddivisi in datagrammi IP più piccoli.
 - i frammenti del datagramma verranno riassemblati solo una volta raggiunta la destinazione (devono infatti essere riassemblati prima di raggiungere il livello trasporto)
-- i bit dell’intestazione IP sono usti per identificare e ordinare i frammenti 
+- i bit dell’intestazione IP sono usati per identificare e ordinare i frammenti 
 >[!example]- esempio
 ![[Pasted image 20250410101123.png]]
 
+### bit di intestazione
+quando un host di destinazione riceve una serie di datagrami dalla stessa origine, deve:
+- individuare i frammenti
+- determinare quando ha ricevuto l’ultimo
+- stabilire come debbano essere riassemblati
+per fare ciò usa:
+**identificatore a 16bit**: identificativo associato a ciascun datagramma al momento della creazione (unico per tutti i frammenti)
+- IP + identificatore a 16bit identificano in modo univoco un datagramma
+**3 bit di flag**:
+- riservato
+- do not fragment: 1 non frammentare, 0 si può frammentare
+- more fragments (M): 1 frammenti intermedi, 0 ultimo frammento
+**offset** (scostamento laterale): specifica l’ordine d
 protocollo: ICMP< IGMP, OSPF usano tutti il protocollo IP anche se sono a livello di rete
