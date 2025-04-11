@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-28T19:16
+updated: 2025-04-11T15:11
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)
@@ -27,7 +27,7 @@ come abbiamo visto nel [[03 - introduzione allo stack protocollare TCP-IP#livell
 >[!info] evoluzione app Internet
 ![[Pasted image 20250316230932.png]]
 ## WWW
-**WWW**(World Wide Web): applicazione Internet nata dall necessità di scambio e condivisione di informazioni tra ricercatori universitari di varie nazioni
+**WWW**(World Wide Web): applicazione Internet nata dalla necessità di scambio e condivisione di informazioni tra ricercatori universitari di varie nazioni
 >[!info] storia
 >- 1990: inizialmente una rete di documenti collegati utilizzata sopratutto per scopi universitari
 >- prototipo basato su testo (collegamenti ipertestuali)
@@ -63,8 +63,8 @@ protocol://host:porta/path #utilizzato quando è necessario specificare il numer
 - documento dinamico: alcune delle informazioni vengono generate dal web server alla ricezione della richiesta (es: date)
 - documento attivo: contiene script(es: applet java) o programmi che verranno eseguiti nel browser (ovvero lato client)
 # HTTP
-come abbiamo visto, il protocollo **HTTP**(hypertext transfer protocol) è uno dei protocolli di comunicazione usati per accedere ai documenti richiesti dall’utente (lato client)
-- definisce quindi in che modo i client web richiedono le pagine ai server web, e come queseti le trasferiscono ai client
+come abbiamo visto, il protocollo **HTTP** (hypertext transfer protocol) è uno dei protocolli di comunicazione usati per accedere ai documenti richiesti dall’utente (lato client)
+- definisce quindi in che modo i client web richiedono le pagine ai server web, e come questi le trasferiscono ai client
 caratteristiche:
 - si basa sul modello client/server
 	- client: il browser, che richiede, riceve e visualizza gli oggetti del Web

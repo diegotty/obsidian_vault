@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-04-11T13:22
+updated: 2025-04-11T14:57
 ---
 >[!index]
 >- [introduzione allo stack protocollare TCP/IP](#introduzione%20allo%20stack%20protocollare%20TCP/IP)
@@ -136,7 +136,7 @@ in questo paradigma, il ruolo delle due entità è totalmente differente: non è
 durante la comunicazione, l’host mittente effettua **l’incapsulamento**: prende il pacchetto dal livello superiore, lo considera come payload e aggiunge un header.
 l’host destinatario invece effettua il decapsulamento
 >[!tip] il router effettua sia incapsulamento che decapsulamento
->perchè è collegato a due link (??) quindi decapsula quando riceve il pacchetto, per poi incapsularlo (presumibilmente con informazioni diverse) e mandarlo al prossimo link
+>perchè è collegato a due link (??) quindi decapsula quando riceve il pacchetto, per poi incapsularlo (con informazioni diverse) e mandarlo al prossimo link
 
 in particolare, i pacchetti cambiano nome ad ogni livello in cui si trovano (in quanto vengono aggiunge informazioni ad ogni livello). abbiamo:
 - livello 5: messaggio (nessun header)
