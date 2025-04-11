@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-04-11T15:26
+updated: 2025-04-11T15:28
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)
@@ -226,7 +226,7 @@ il caching può essere eseguito sia dal browser, che da un **server proxy**
 
 vantaggi:
 - riduce i tempi di risposta alle richieste dei client
-- riduce il traffio sul collegamento di accesso a Internet
+- riduce il traffico sul collegamento di accesso a Internet
 - Internet arricchita di cache consente ai provider meno efficienti di fornire dati con efficacia
 >[!example] esempio in assenza di cache
 ![[Pasted image 20250317195329.png]]

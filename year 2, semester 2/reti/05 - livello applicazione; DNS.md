@@ -1,6 +1,6 @@
 ---
 created: 2025-03-27T08:01
-updated: 2025-03-28T19:16
+updated: 2025-04-11T15:36
 ---
 >[!index]
 >- [indirizzo IP](#indirizzo%20IP)
@@ -20,8 +20,8 @@ updated: 2025-03-28T19:16
 >	- [messaggi DNS](#messaggi%20DNS)
 >	- [inserire record nel database DNS](#inserire%20record%20nel%20database%20DNS)
 # indirizzo IP
-gli host Internt hanno i propri **hostname** (`www.google.com`, `w3.uniroma1.it`, ….), ma i nomi, anche se facili da ricoradare, forniscono poca informazione sulla collocazione degli host all’interno dell’Internet(`.it` ci dice che l’host si trova probabilmente in Italia, ma non dove)
-un **indirizzo IP** ci permette di identificare un host in una rete, e anche si sapere dove si trova tale host !
+gli host Internt hanno i propri **hostname** (`www.google.com`, `w3.uniroma1.it`, ….), ma i nomi, anche se facili da ricordare, forniscono poca informazione sulla collocazione degli host all’interno dell’Internet(`.it` ci dice che l’host si trova probabilmente in Italia, ma non dove)
+un **indirizzo IP** ci permette di identificare un host in una rete, e anche di sapere dove si trova tale host !
 - consiste di 4 byte, ed è costituito da una stringa in cui ogni punto separa dei byte espressi con un numero decimale da 0 a 255
 - presenta una struttura gerarchica
 # DNS
@@ -43,7 +43,7 @@ il **DNS**(domain name system) è un protocollo del livello applicazione che ren
 un browser(ossia client HTTP) di un host utente richiede l’URL `www.someschool.edu`
 >1. l’host esegue il lato client dell’applicazione DNS
 >2. il browser estrae il nome dell’host, `www.someschool.edu` dall’URL e lo passa al lato client dell’applicazione DNS
->3. il cient DNS invia un query contenente l’hostname a un server DNS
+>3. il cient DNS invia una query contenente l’hostname a un server DNS
 >4. il client DNS riceve una risposta che include l’indirizzo IP corrispondente all’hostname
 >5. ottenuto l’indirizzo IP dal DNS, il browser può dare inizio alla connessione TCP verso il server HTTP localizzato a quell’indirizzo IP
 
