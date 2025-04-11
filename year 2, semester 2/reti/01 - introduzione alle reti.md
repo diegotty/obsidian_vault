@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-05T22:06
+updated: 2025-04-11T12:38
 completed: true
 ---
 >[!index]
@@ -65,8 +65,6 @@ sempi di mezzi fisici: doppino intrecciato, cavo ethernet,
 
 >[!warning] i nodi sono trasmittente E ricevente alllo stesso tempo 
 >si parla di nodo trasmittente/ricevente solo per indicare la direzione della commutazione
-
-
 ### mezzi trasmissivi wireless
 i segnali si propagano nell’atmosfera e nello spazio esterno
 - soffrono dell’ambiente circostante
@@ -92,7 +90,7 @@ obsoleto !!!
 >- solo il destinatario elabora il pacchetto, tutti gli altri lo ignorano
 >- può trasmettere un nodo alla volta
 
->[!info] esempio d LAN con switch di interconnessione (topologia a stella)
+>[!info] esempio di LAN con switch di interconnessione (topologia a stella)
 ![[Pasted image 20250304220948.png]]
 lo switch gestisce a chi inviare i pacchetti che gli arrivano, ed è in grado di trasmettere su più porte, quindi gli host possono comunicare parallelamente ! (se non vi sono sorgente e destinazione comune)
 
@@ -122,13 +120,11 @@ interconnette, ad altissima capacità, luoghi in cui si fa istruzione, scienza, 
 
 # switching
 i sistemi terminali comunicano tra di loro per mezzo di dispositivi come **switch** e **router**, che si trovano nella rotta tra i sistemi sorgente e destinazione
-ci sono 2 tipi di reti basate su switch:
-router: switch di livello 3
-switch: switch di livello 2
+(router: switch di livello 3, switch: switch di livello 2)
 ci sono 2 tipi di reti basate su switch:
 ## reti a commutazione di circuito
 viene deciso un percorso: il circuito ( aka vengono riservate le risorse necessarie per la comunicazione : la banda full-link, le risorse fisiche presenti sugli switch)
-- le informazioni riguardanti il circuito vengon mantenute dalla rete
+- le informazioni riguardanti il circuito vengono mantenute dalla rete
 - ci garantisce, che una volta stabilito un circuito, c’è una certa capacità garantita
 le risorse vengono quindi suddivise in “pezzi”, e ciascun pezzo viene allocato ai vari collegamenti.
 - le risorse rimangono **inattive** se non utilizzate
@@ -139,7 +135,7 @@ le risorse vengono quindi suddivise in “pezzi”, e ciascun pezzo viene alloca
 >[!example] efficienza
 >![[Pasted image 20250305113116.png]]
 in questo esempio, la linea tra i due switch può gestire contemporaneamente 4 canali voce. ad ogni persona viene allocata 1/4 della capacità
->- se tutte e 4 le persone comunicano con le 4 persone dall’altro lato, allora la capacità della linea verràc completamente utilizzata, altrimenti verrà sottoutilizzata
+>- se tutte e 4 le persone comunicano con le 4 persone dall’altro lato, allora la capacità della linea verrà completamente utilizzata, altrimenti verrà sottoutilizzata
 ### suddivisione della banda
 >[!info] FDM: frequency divison multiplexing
 ![[Pasted image 20250305113633.png]]
