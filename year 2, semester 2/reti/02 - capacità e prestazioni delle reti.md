@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-04-11T13:11
+updated: 2025-04-11T13:15
 ---
 >[!index]
 >- [Internet](#Internet)
@@ -131,11 +131,9 @@ $d_{trans}$ → ritardo di trasmissione (significativo sui collegamenti a bassa 
 $d_{prop}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
 ![[Pasted image 20250411130815.png]]
 ## packet loss
-se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso
-il pacchetto può poi essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
-
+se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso. in questo caso il pacchetto può essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
 # concetto $rate \cdot ritardo$
-il prodotto $rate \cdot ritardo$ rappresenta il massimo numero di bit che possono riempire un collegamento
+il prodotto $rate \cdot ritardo$ rappresenta il massimo numero di bit che possono riempire (allo stesso tempo) un collegamento
 >[!info] spiegazione
 pensiamo al link come un tubo: la sezione trasversale del tubo rappresenta il rate, e la lunghezza rappresenta il ritardo. possiamo allora dire che il volume del tubo definisce il prodotto $rate \cdot ritardo$
 ![[Pasted image 20250306104755.png]]

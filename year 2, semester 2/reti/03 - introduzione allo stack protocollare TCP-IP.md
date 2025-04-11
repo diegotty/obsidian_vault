@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-28T19:16
+updated: 2025-04-11T13:22
 ---
 >[!index]
 >- [introduzione allo stack protocollare TCP/IP](#introduzione%20allo%20stack%20protocollare%20TCP/IP)
@@ -44,7 +44,7 @@ oltre a consentire la suddivisione di un compito complesso in più compiti sempl
 	- in questo modo, è inoltre possibile modificare un modulo in modo trasparente, se le interfacce con gli altri livelli rimangono le stesse
 - possiamo gestire tecnologie diverse (wireless, con fili) senza dover reimplementare tutto
 - inoltre, se due macchine forniscono lo stesso output dato il medesimo input, possono essere considerate equivalenti e possono quindi essere acquistate da fornitori diversi (se equivalenti)
-	- e ciascun costruttre può adottare la proprima implementazione di un livello, purchè soddisfi i requisiti sulle interfacce
+	- e ciascun costruttore può adottare la proprima implementazione di un livello, purchè soddisfi i requisiti sulle interfacce
 **svantaggi**:
 - a volte può essere necessario lo scambio di informazioni tra livelli non adiacenti, non rispettando quindi il principio della stratificazione
 # stack protocollare TCP/IP
@@ -55,7 +55,7 @@ oltre a consentire la suddivisione di un compito complesso in più compiti sempl
 tatoo it on your forhead
 
 ## livello 5: applicazione
-è il livello in cui si interagisce con le applicazioni di rete, attraverso vari protocolli che regolano la comunicazione (tra utente e applicazione ?): 
+è il livello in cui si interagisce con le applicazioni di rete, attraverso vari protocolli che regolano la comunicazione (tra 2 host che comunicano attraverso l’applicazione di rete): 
 - HTTP, SMTP, FTP, DNS, ….
 >[!info] la comunicazione è fornita mediante una **connessione logica**
 ![[Pasted image 20250312233350.png]]
