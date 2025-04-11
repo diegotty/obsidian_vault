@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-04-11T15:11
+updated: 2025-04-11T15:26
 ---
 >[!index]
 >- [livello applicazione](#livello%20applicazione)
@@ -81,7 +81,7 @@ esistono due modalità per ricevere più oggetti dallo stesso server:
 	- le richieste persistenti sono sequenziali 
 	- un solo RTT di connessione per tutti gli oggetto referenziati + un RTT per ogni oggetto ricevuto dal server
 ### RTT
-**RTT**(round trip time): tempo impiegato da un **piccolo** pacchetto per andare da client a server e ritornare al client. include i ritardi di propagazione, di accodamento e di elaborazione del pacchetto
+**RTT**(round trip time): tempo impiegato da un **piccolo** pacchetto per andare da client a server e ritornare al client. include i ritardi di elaborazione, accodmento, propagazione e trasmissione 
 >[!example]- tempo di risposta
 ![[Pasted image 20250316233652.png]]
 il tempo di risposta per una connessione è:
@@ -111,14 +111,14 @@ esempio di richiesta HTTP:
 | PUT                 | utilizzato per memorizzare un documento nel server. il documento viene fornito nel corpo del messaggo, e la posizione di memorizzazione nell’URL                                                      |
 >[!info] è posibile inviare info al server anche attraverso una richiesta GET
 utilizzando gli `&` nell’url:
-```js
-GET www.somesite.com/animalsearch?monkeys&banana
-```
+>```js
+>GET www.somesite.com/animalsearch?monkeys&banana
+>```
 #### header nella richiesta
 
 | intestazione      | descrizione                                                           |
 | ----------------- | --------------------------------------------------------------------- |
-| User-Agent        | indicat il programma client utilizzato                                |
+| User-Agent        | indica il programma client utilizzato                                 |
 | Accept            | indica il formato dei contenuti che il client è in grado di accettare |
 | Accept-charset    | famiglia di caratteri che il client è in grado di gestire             |
 | Accept-encoding   | schema di codifica supportato dal client                              |
@@ -189,7 +189,7 @@ ci possono essere diversi tipi di sessione, in base al tipo di informazioni scam
 - ha un tempo di vita relativamente corto
 - sia il client che il server possono chiudere la sessione
 - la sessione è **implicita** nello scambio di informazioni di stato
->[!warning] per “sessione” non si intende connessione persistente, ma una sessione **logica** creata da richieste e risposte HTTP. una sessione può essere creat su connessioni persistenti e non persistenti
+>[!warning] per “sessione” non si intende connessione persistente, ma una sessione **logica** creata da richieste e risposte HTTP. una sessione può essere creata su connessioni persistenti e non persistenti
 
 >[!info] interazione utente-server: i cookie
 >- l’utente A accede sempre a Internet dallo stesso PC(non necessariamente con lo stesso IP)
@@ -198,7 +198,7 @@ ci possono essere diversi tipi di sessione, in base al tipo di informazioni scam
 >- l’utente A invierà ogni futura richiesta inserendo l’ID nella richiesta
 >![[Pasted image 20250317192106.png]]
 
-esiste quindi un file cookie mantenuto sul sistema terminale dell’utente, che viene consultato ogni vlta che il client manda una richiesta al server: il browser consulta il file cookie, estrae il numero di cookie per il sito che si vuole visitare e lo inserisce nella richiesta http
+esiste quindi un file cookie (che contiene entry tipo sito : cookie ?) mantenuto sul sistema terminale dell’utente, che viene consultato ogni vlta che il client manda una richiesta al server: il browser consulta il file cookie, estrae il numero di cookie per il sito che si vuole visitare e lo inserisce nella richiesta http
 il server invece mantiene tutte le informazioni riguardanti il client su un file e gli assegna l’identificatore fornito dal client
 - per evitare che il cookie sia utilizzato da utenti "maligni", l’ID è composto da una stringa di numeri (e quindi ?)
 >[!example]- another cookie example
@@ -213,7 +213,7 @@ i file cookie possono contenere:
 - preferenze sull’utente
 - stato della sessione dell’utente (email)
 >[!warning] i cookie permettono quindi ai siti di imparare molte cose sugli utenti (bad)
-quando l’utilizzzo di avvicina alla capacità della ret (intensità vicina al 100%), il ritardo si fa consistente (minuti)
+
 # web caching
 l’obiettivo del **web caching** è quello di migliorare le prestazioni dell’applicazione web
 - un modo semplice per fare ciò consiste nel salvare le pagine richieste per riutilizzarle in seguito, senza doverle richiedere al server. questa tecnica è efficiente con pagine che vengono visitate molto spesso !
