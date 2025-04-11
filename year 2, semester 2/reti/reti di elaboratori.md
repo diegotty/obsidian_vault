@@ -1,6 +1,6 @@
 ---
 created: 2025-04-10T13:15
-updated: 2025-04-10T13:15
+updated: 2025-04-11T09:32
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -13,3 +13,4 @@ updated: 2025-04-10T13:15
 [[09 - protocollo TCP]]
 [[10 - sockets]]
 [[11 - livello di rete]]
+[[12 - livello di rete, 2]]
