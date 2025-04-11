@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-03-28T19:16
+updated: 2025-04-11T12:56
 ---
 >[!index]
 >- [Internet](#Internet)
@@ -22,7 +22,7 @@ updated: 2025-03-28T19:16
 Internet è una rete di reti, composta da reti di accesso e dal **backbone Internet**
 ## rete di accesso
 (o **access network**)
-collegamenti fisici, che connetto un sistema al primo **edge router**
+collegamenti fisici, che connettono un sistema al primo **edge router**
 - quindi collegano il sistema di origine al primo router sul percorso per il sistema di destinazione
 le modalità sono state viste in [[01 - introduzione alle reti#accesso ad internet| accesso ad internet]]
 ## backbone Internet
@@ -31,7 +31,7 @@ le modalità sono state viste in [[01 - introduzione alle reti#accesso ad intern
 Internet ha una struttura fondamentalmente gerarchica:
 - **ISP di livello 1**: al centro, offrono copertura nazionale/internazionale, e comunicano tra di loro come pari
 >[!info]- dorsali sottomarine
->sono stati posati cavati sottomarini (?), per connettere diversi continenti a velocità elevate ! 
+>sono stati posati cavi sottomarini (?), per connettere diversi continenti a velocità elevate ! 
 >esempi: TAT-14, MAREA, SEA-ME-WE 6 (foto sottostante)
 ![[Pasted image 20250305223100.png]]
 
@@ -48,18 +48,17 @@ possibile routing di un pacchetto !
 # capacità e prestazioni delle reti
 nel caso di una rete a commutazione di pacchetto, le metriche che ne determinano le prestazioni si misurano in termini di:
 - **ampiezza di banda**
-- **bit rate**
 - **throughput**
 - **latenza (ritardo)**
 - **perdita di pacchetti**
 ## ampiezza di banda
 si indicano 2 concetti leggermente diversi, ma strettamente legati:
-- **bandwidth**: rappresenta la larghezza dell’intervallo di frequenze utilizzato dal sistema trasmissivo (ovvero l’intervallo di frequenze che un mezzo fisico consente di trasmettere senza danneggiare il segnale in maniera irrecuperabile). 
+- **bandwidth** (caratterizzazione di un canale): rappresenta la larghezza dell’intervallo di frequenze utilizzato dal sistema trasmissivo (ovvero l’intervallo di frequenze che un mezzo fisico consente di trasmettere senza danneggiare il segnale in maniera irrecuperabile). 
 	- maggiore è l’ampiezza di banda, maggiore è la quantità di informazione che può essere veicolata attraverso un mezzo trasmissivo
 	- si misura in Hz
-- **bit rate**: quantità di bit al secondo (bps) che un link garantisce di trasmettere
+- **bit rate** (caratterizzazione di un collegamento): quantità di bit al secondo (bps) che un link garantisce di trasmettere
+>[!warning] il bit rate è proporzionale alla banda, ma dipende anche dalla specifica tecnica di trasmissione, o formato di modulazione digitale
 
-il bit rate è proporzionale alla banda, ma dipende anche dalla specifica tecnica di trasmissione, o formato di modulazione digitale
 >[!info] per banda di un tipo di rete si intende il bit rate garantito dai suoi link
 >il rate di un link Fast Ethernet è 100 mpbs, può inviare al massimo 100 mbps
 

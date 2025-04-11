@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-11T12:38
+updated: 2025-04-11T12:45
 completed: true
 ---
 >[!index]
@@ -156,9 +156,8 @@ blocchi di dati, anche se dello stesso file o comunicazione, possono prendere pe
 
 questa commutazione è molto più flessibile in termini di prestazioni: se solo 2 dispositivi, uno per lato, comunicano tra di loro, viene utilizzata l’intera banda della rete per tale comunicazione. se 2 dispositivi per lato comunicano, la banda verrà dimezzata, etc
 - un percorso si può sovraccaricare, e i router si posssono congestionare. a quel punto può essere utile cambiare percorso per inviare il pacchetto ( le code del router congestionato saranno piene, e i pacchetti che arrivano vengono scartati)
-
 # Internet
-una internete è costituita da due o più reti interconnesse: l’internet più famosa è chiamata **Internet**, ed è composta da migliaia di reti interconnesse (è una rete a commutazione di pacchetto)
+una internet è costituita da due o più reti interconnesse: l’internet più famosa è chiamata **Internet**, ed è composta da migliaia di reti interconnesse (è una rete a commutazione di pacchetto)
 > [!info] rappresentazione concettuale di Internet
 ![[Pasted image 20250305215209.png]]
 ### ARPANET
@@ -167,7 +166,7 @@ una internete è costituita da due o più reti interconnesse: l’internet più 
 - progettata per scopi accademici di ricerca, inizialmente collegava 4 università. in 2 anni si è estesa a 15 !
 >[!figure]- arpanet
 ![[Pasted image 20250305215412.png]]
-## accesso ad internet
+## accesso ad Internet
 per accedere all’Internet, l’utente deve essere fisicamente collegato a un ISP, solitamente mediante una WAN punto-punto. il collegamento che connette l’utente al primo router di Internet è detto **rete di accesso**
 ### via rete telefonica
 è possibile collegarsi ad Internet modificando la linea telefonica
@@ -178,6 +177,6 @@ il servizio **DSL** (digital subscriber line) è una tecnologia che supporta la 
 
 ### accesso tramite ethernet
 - ethernet
-### accesso wire less
+### accesso wireless
 - wifi: access point connesso alla ethernet cablata. raggio di azione di qualche decina di metri
 - cellulare: si usa la rete cellulare. access point della compagnia telefonica cellulare, con raggio di azione di decine di kilometri
