@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T13:44
-updated: 2025-04-11T12:56
+updated: 2025-04-11T13:11
 ---
 >[!index]
 >- [Internet](#Internet)
@@ -63,7 +63,7 @@ si indicano 2 concetti leggermente diversi, ma strettamente legati:
 >il rate di un link Fast Ethernet è 100 mpbs, può inviare al massimo 100 mbps
 
 ## throughput
-indica quanto velocemente riusciamo **effettivamente** a inviare dati tramite una rete: è quindi il numero di bit al secondo che passano attraverso un punto della rete
+indica quanto velocemente riusciamo **effettivamente** a inviare dati tramite una rete: è quindi il numero di bit al secondo che passano attraverso **un punto** della rete
 >[!warning] bit rate e throughput
 >il rate è una misura della potenziale velocità di un link, mentre il throughput è una misura dell’effettiva velocità di un link (irl)
 
@@ -96,21 +96,24 @@ comprende:
 comprende:
 - attesa di trasmissione (possibile sia nella coda di input che nella coda di output)
 - livello di congestione del router
-
-il ritardo di accodamento può variare da pacchetto a pacchetto, e dipende da:
+dati
 $R=\text{rate di trasmissione (bps)}$
 $L= \text{lunghezza del pacchetto (bit)}$
 $a = \text{tasso medio di arrivo dei pacchetti (pkt/s)}$
-$$
-
-\text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
-$$
 $$
 \text{intensità di traffico}= \frac{L \cdot a}{R}
 $$
 - $\frac{L\cdot a}{r} \simeq 0$: poco ritardo
 - $\frac{L\cdot a}{r} \to 1$: il ritardo si fa consistente
 - $\frac{L\cdot a}{r} > 1$: più “lavoro” in arrivo di quanto possa essere effettivamente svolto ! (ritardo medio infinito)
+### ritardo di trasmissione
+comprende:
+- il tempo richiesto per trasmettere (immettere) tutti i bit del pacchetto sul collegamento (se il primo bit del pacchetto viene trasmesso al tempo $t_{1}$, e l’ultimo bit del pacchetto viene trasmesso al tempo $t_{2}$, il ritardo di trasmissione del pacchetto è $t_{2}-t_{1}$)
+
+$$
+
+\text{ritardo di trasmissione = } \frac{L}{R} = \frac{\text{lunghezza del pacchetto}}{\text{rate del collegamento}}
+$$
 ### ritardo di propagazione
 tempo che **un bit** impiega per propagarsi **sul collegamento**
 $$
@@ -122,10 +125,11 @@ quindi, il ritardo dotale di un nodo è:
 >$$
 d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}
 >$$
-$d_{proc}$ → ritardo di trasmissione (significativo sui collegamenti a bassa velocità)
-$d_{queue}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
-$d_{trans}$ → ritardo di elaborazione (in genere pochi microsecondi o anche meno)
-$d_{prop}$ → ritardo di accodamento (dipende dalla congestione)
+$d_{proc}$ → ritardo di elaborazione (in genere pochi microsecondi o anche meno)
+$d_{queue}$ → ritardo di accodamento (dipende dalla congestione)
+$d_{trans}$ → ritardo di trasmissione (significativo sui collegamenti a bassa velocità)
+$d_{prop}$ → ritardo di propagazione (da pochi microsecondi a centinaia di millisecondi)
+![[Pasted image 20250411130815.png]]
 ## packet loss
 se un buffer (coda) ha capacità finita, quando un pacchetto trova la coda piena viene scartato, e quindi viene perso
 il pacchetto può poi essere ritrasmesso dal nodo precedente, dal sistema terminale che lo ha generato, o non essere ritrasmesso affatto
