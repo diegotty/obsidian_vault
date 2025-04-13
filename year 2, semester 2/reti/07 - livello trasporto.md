@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-04-11T09:32
+updated: 2025-04-13T16:25
 completed: true
 ---
 >[!index]-
@@ -34,8 +34,8 @@ i protocolli di trasporto vengono quindi eseguiti nei **sistemi terminali**:
 - **lato invio**: **incapsula** i messaggi in **segmenti** e li passa al ivello di rete
 - **lato ricezione**: **decapsula** i segmenti in messaggi e li passa al livello applicazione
 >[!info] livello di trasporto e livello di rete
-il livello di trasporto quindi comunica con il livello di rete, ma offronto servizi diversi:
->- **livello di trasporto**: si occupa della comunicazione tra processi (si basa sui servizi del livello reti e li potenzia)
+il livello di trasporto quindi comunica con il livello di rete, ma offrono servizi diversi:
+>- **livello di trasporto**: si occupa della comunicazione tra processi (si basa sui servizi del livello rete e li potenzia)
 >- **livello di rete**: si occupa della comunicazione tra host (si basa sui servizi del livello collegamento)
 ![[Pasted image 20250321110954.png]]
 >>[!example] esempio
@@ -81,7 +81,7 @@ il **socket** è un’astrazione (?): una struttura dati creata e utilizzata dal
 ![[Pasted image 20250321114427.png]]
 ### numeri di porta
 i numeri di porta sono indirizzi di 16bit, che vanno quindi da 0 a 65535, divisi in:
-- **well known ports**: porte riservate per server comuni e noti
+- **well known ports**: porte riservate per servizi comuni e noti
 	- FTP 20
 	- TELNET 23
 	- SMTP 25
