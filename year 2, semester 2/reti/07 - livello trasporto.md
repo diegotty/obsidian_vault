@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-04-13T16:26
+updated: 2025-04-13T16:46
 completed: true
 ---
 >[!index]-
@@ -212,17 +212,17 @@ ogni pacchetto viene etichettato con un **numero di sequenza**, utile al destina
 - la sequenza di pacchetti in arrivo
 - i pacchetti persi
 - i pacchetti duplicati
-in questo modo il destinatario può scartare i pacchetti corrotti e duplicati. se un pacchetto viene perso invece, il mittente se ne accorge per la mancanza di **numero di riscontro**(acknowledgement/ack/conferma), che permette al destinatario di notificare al mittente la corretta ricezione di un pacchetto
+in questo modo il destinatario può scartare i pacchetti corrotti e duplicati. se un pacchetto viene perso invece, il mittente se ne accorge per la mancanza di **numero di riscontro**(acknowledgement/`ACK`/conferma), che permette al destinatario di notificare al mittente la corretta ricezione di un pacchetto
 ### integrazione di controllo di errori e controllo di flusso
 a combinazione dei due meccanismi avviene mediante un **buffer numerato** presso mittente e destinatario:
 >[!info] integrazione per mittente
 >- quando prepara un nuovo pacchetto, usa come numero di sequenza il numero ($x$) della prima locazione libera nel buffer
 >- quando invia il pacchetto ne memorizza una copia nella locazione $x$
->- quando riceve un `ack` di un pacchetto, libera la posizione di memoria che era occupata da quel pacchetto
+>- quando riceve un `ACK` di un pacchetto, libera la posizione di memoria che era occupata da quel pacchetto
 
 >[!info] integrazione per destinatario
 >- quando riceve un pacchetto con numero di sequenza $y$, lo memorizza nella locazione $y$ fin quando il livello applicazione è pronto a riceverlo
->- quando passa il pacchetto $y$ al livello applicazione, invia `ack` al mittente
+>- quando passa il pacchetto $y$ al livello applicazione, invia `ACK` al mittente
 
 poichè i numeri di sequenza sono calcolati in modulo $2^m$(il numero di posti nel buffer è un potenza di 2), possono essere rappresentati in un cerchio
 - il buffer viene rappresentato con un insieme di settori, chiamati **sliding windows**, che in ogni istante occupano una parte del cerchio
