@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-04-13T13:49
+updated: 2025-04-13T16:07
 ---
 >[!index]
 >- [FTP](#FTP)
@@ -148,14 +148,15 @@ una delle differenze sostanziali tra HTTP ed STMP, che sono entrambi protocolli 
 ![[Pasted image 20250320092444.png]]
 ### esempi di header
 
-| header  | descrizione                                                                      |
-| ------- | -------------------------------------------------------------------------------- |
-| to      | indirizzo di uno o più destinatari                                               |
-| from    | indirizzo del mittente                                                           |
-| cc      | indirizzo di uno o più destinatari a cui si invia per conoscenza (crack cocaina) |
-| bcc     | blind cc: gli altri destinatari non sanno che anche lui riceve il messaggio      |
-| subject | argomento del messaggio                                                          |
-| sender  | chi materialmente effettua l’invio (es: nome della segretaria)                   |
+| header  | descrizione                                                                                                                                         |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| to      | indirizzo di uno o più destinatari                                                                                                                  |
+| from    | indirizzo del mittente                                                                                                                              |
+| cc      | indirizzo di uno o più destinatari a cui si invia per conoscenza, (gli altri destinatari sanno a chi altro è stata inviata la mail) (crack cocaina) |
+| bcc     | blind cc: gli altri destinatari non sanno che anche lui riceve il messaggio                                                                         |
+| subject | argomento del messaggio                                                                                                                             |
+| sender  | chi materialmente effettua l’invio (es: nome della segretaria)                                                                                      |
+`cc` and `bcc` are mostly about email visibility and etiquette, not routing
 
 >[!example] ulteriore esempio
 ![[Pasted image 20250320092814.png]]
