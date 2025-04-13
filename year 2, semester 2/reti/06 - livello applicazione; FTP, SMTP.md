@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-03-28T19:16
+updated: 2025-04-13T13:49
 ---
 >[!index]
 >- [FTP](#FTP)
@@ -103,7 +103,6 @@ esistono 3 componenti principali nel funzionamento della posta elettronica:
 - **message transfer agent**(MTA): usato per trasferire il messaggio attraverso Internet
 >[!info] come comunicano gli MTA ?
 ![[Pasted image 20250319191644.png]]
-
 >gli MTA comunicano attraverso il protocollo **SMTP**(simple mail transfer protocol), e sono costituiti da:
 >- casella di posta: contiene i messaggi in arrivo per l’utente
 >- coda di messaggi: i messaggi da trasmettere (tentativi ogni $x$ minuti per alcuni giorni)
@@ -136,7 +135,7 @@ una delle differenze sostanziali tra HTTP ed STMP, che sono entrambi protocolli 
 
 >[!esempio] a livello di protocollo:
 ![[Pasted image 20250319192356.png]]
->1. il client SMTP, che cira sull’host server di posta in invio, fa stabilire una connessione sulla porta 25 verso il server SMTP: se il server è inattivo, il client riprova più tardi, altrimenti viene stabilita la connessione
+>1. il client SMTP, che gira sull’host server di posta in invio, fa stabilire una connessione sulla porta 25 verso il server SMTP: se il server è inattivo, il client riprova più tardi, altrimenti viene stabilita la connessione
 >2. il server e il client effettuano una forma di handshaking (il client indica indirizzo email del mittente e del destinatario)
 >3. il client invia il messaggio
 >4. il messaggio arriva al server destinatario grazie all’affidabilità di TCP
