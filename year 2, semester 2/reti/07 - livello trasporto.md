@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-04-13T16:25
+updated: 2025-04-13T16:26
 completed: true
 ---
 >[!index]-
@@ -105,7 +105,7 @@ come vengono individuati questi indirizzi ?
 >[!info] individuare i socket lato server
 >- **socket address locale**: fornito dal SO, in quanto conosce l’indirizzo IP del computer su cui il server è in esecuzione. il numero di porta è noto al server perchè assegnato dal progettista ! (numero well known o scelto)
 >- **socket address remoto**: è il socket address locale del client che si connette ! lo trova quindi all’interno del pacchetto di richiesta
->[!warning] il socket address locale di un server non cambia(rimane fisso e invariato), mentre il socket address remoto varia ad ogni interazione con client diversi ( o stesso client su connessioni diverse)
+>>[!warning] il socket address locale di un server non cambia(rimane fisso e invariato), mentre il socket address remoto varia ad ogni interazione con client diversi ( o stesso client su connessioni diverse)
 # servizi di trasporto
 ## overview
 **TCP**:
