@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-04-13T16:46
+updated: 2025-04-14T11:00
 completed: true
 ---
 >[!index]-
@@ -154,7 +154,7 @@ il procedimento è il seguente:
 3. tutte le parole del messaggio, incluso il checksum, vengono sommate usando l’addizione complemento ad 1 (ca1)
 4. viene fatto il complemento ad uno della somma e il risultato è il checksum
 5. il checksum viene inviato assieme ai dati
-il ricevente esegue gli stessi passi, e se il valore del checksum calcolato dal mittente è 0, allora il messaggio viene accettato, altrimenti viene scartato
+il ricevente esegue gli stessi passi, e se il valore del checksum calcolato dal ricevente è 0, allora il messaggio viene accettato, altrimenti viene scartato
 
 >[!info] DNS usa UDP !
 >quando vuole effettuare una query, DNS costruisce un messaggio di query, lo passa a UDP e aspetta una risposta. se non ne riceve, tenta di inviarla a un altro server dei nomi (server dei nomi ? server DNS ?)

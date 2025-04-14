@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T10:52
+updated: 2025-04-14T11:06
 completed: true
 ---
 >[!index]
@@ -190,7 +190,7 @@ avviene poi una **reazione in base allo stato della rete**:
 - se gli `ACK` sono duplicati, o ci sono timeout, è necessario ridurre la finestra dei pacchetti che si spediscono senza aver ricevuto riscontri
 TCP è **auto-temporizzante**: reagisce in base ai riscontri che ottiene 
 ### limitare: finestra di congestione
-per limitare la frequenza di invio del traffico sulla propria connessione, il mittente usa una **congestion window**(**CWND**, finestra di congestione), in cui
+per limitare la frequenza di invio del traffico sulla propria connessione, il  mittente usa una **congestion window**(**CWND**, finestra di congestione), in cui
 $$
 \text{dimensione della finestra = min(rwnd, cwnd)}
 $$
@@ -235,7 +235,7 @@ si può affinare la logica del TCP Taho, usando la seguente filosofia:
 - un timeout prima di 3 `ACK` duplicati invece è più allarmante, in quanto non sono arrivati nemmento i pacchetti seguenti !
 si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando la **fast recovery**:
 - **timeout**: indica congestione importante, e si riparte da 1
-- **3 `ACK` duplicati**: indica congestione lieve, si applica **fast recovery** a partire da `ssthresh + 3`
+- **3 `ACK` duplicati**: indica congestione lieve, si applica **fast recovery** a partire da `ssthresh + 3`(dopo aver impostato `ssthresh = CWND/2`)
 >[!info] FSM TCP Reno
 ![[Pasted image 20250406172555.png]]
 
