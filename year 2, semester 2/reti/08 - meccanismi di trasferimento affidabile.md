@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T08:47
+updated: 2025-04-14T09:22
 completed: true
 ---
 >[!index]
@@ -49,7 +49,7 @@ in un sistema che utilizza stop and wait, abbiamo:
 >
 >quanto vale $\text{rate} \cdot \text{ritardo}$ ?
 //cba sono preso a male
-molto efficiente (non ci permette di utilizzare la rete al meglio)
+molto inefficiente (non ci permette di utilizzare la rete al meglio)
 # protocolli con pipeline
 nel **pipelining**, il mittente amette più pacchetti in transito, ancora da notificare
 - in questi meccanismi, l’intervallo dei numeri di sequenza deve essere incrementato
