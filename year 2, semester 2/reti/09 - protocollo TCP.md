@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-11T09:32
+updated: 2025-04-14T10:02
 completed: true
 ---
 >[!index]
@@ -48,7 +48,7 @@ possiamo immaginare la trasmissione con protocollo TCP come uno stream di byte c
 ### struttura dei segmenti
 >[!info] struttura dei segmenti !
 ![[Pasted image 20250328195117.png]]
->le informazioni mandatore di un header occupano quindi 20 byte.
+>le informazioni mandatorie di un header occupano quindi 20 byte.
 in particolare:
 >- il **numero di sequenza** indica il numero del primo byte di dati contenuto nel segmento
 >- l’`ACK` (**numero di riscontro**) indica il numero di sequenza del prossimo byte che il destinatario si aspetta di ricevere
