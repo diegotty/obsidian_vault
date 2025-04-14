@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-11T09:32
+updated: 2025-04-14T08:47
 completed: true
 ---
 >[!index]
@@ -40,7 +40,8 @@ per gestire pacchetti duplicati, lo stop&wait(crazy) utilizza i **numeri di sequ
 in questo meccanismo, sono sufficienti i numeri di sequenza `0` e `1`, che vengono usati in questo modo:
 - l’`ack` indica il numero di sequenza del prossimo pacchetto atteso dal destinatario (se ha ricevuto il pacchetto 0, invierà ack 1)
 ### efficienza
-con questo meccanismo , il prodotto $\text{rate} \cdot \text{ritardo}$ (cioè la misure del numero di bit che il mittente può inviare prima di ricevere un ack (cioè il volume della pipe in bit)). se il rate è elevato ed il ritardo è consistente, lo stop and wait è inefficiente !
+per quantificare l’efficienza di questo meccanismo, usiamo il prodotto $\text{rate} \cdot \text{ritardo}$ (cioè la misure del numero di bit che il mittente può inviare prima di ricevere un ack (cioè il volume della pipe in bit))
+- se il rate è elevato ed il ritardo è consistente, lo stop and wait è inefficiente !
 >[!example]- esempio
 in un sistema che utilizza stop and wait, abbiamo:
 >- rate = 1mbps
