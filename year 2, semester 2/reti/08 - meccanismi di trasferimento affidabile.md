@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T09:22
+updated: 2025-04-14T09:30
 completed: true
 ---
 >[!index]
@@ -63,7 +63,7 @@ nel **pipelining**, il mittente amette più pacchetti in transito, ancora da not
 nel meccanismo **go back N**:
 - i **numeri di sequenza** sono calcolati modulo $2^m$, dove $m$ è la dimensione del campo “numero di sequenza” in bit (huh ?)
 - l’ack è **cumulativo**: tutti i pacchetti fino al numero di sequenza (escluso) dell’ack sono stati ricevuti correttamente (ack=7: i pacchetti fino al 6 sono stati ricevuti correttamente, il destinatario attende il 7)
-- il mittente mantiene un timer per il più vecchio pacchetto non riscontrato, e allo scadere del timer,**go back N**, cioè vengono rispediti tutti i pacchetti in attesa di riscontro (il destinatario ha finestra di ricezione di dimensione 1, quindi non può bufferizzare i pacchetti fuori sequenza. li devo rinviare tutti)
+- il mittente mantiene un timer per il più vecchio pacchetto non riscontrato, e allo scadere del timer,**go back N**, cioè vengono rispediti tutti i pacchetti in attesa di riscontro, partendo dal più vecchio, in ordine (il destinatario ha finestra di ricezione di dimensione 1, quindi non può bufferizzare i pacchetti fuori sequenza. li devo rinviare tutti)
 ### finestre di invio e ricezione
 >[!info] finestra di invio
 ![[Pasted image 20250328072405.png]]
@@ -110,7 +110,7 @@ usando $2^{m}-1$:
 >usando $2^{m-1}$:
 >![[Pasted image 20250328113931.png]]
 
->[!tip] questo meccanismo è più costoso a livello di risorse(ci sono 2 buffer e diversi “stati” da gestire (es: quando avanzare il buffer o mandare pacchetti a livello applicazoine)), ma si inviano meno pachetti
+>[!tip] questo meccanismo è più costoso a livello di risorse(ci sono 2 buffer e diversi “stati” da gestire (es: quando avanzare il buffer o mandare pacchetti a livello applicazione)), ma si inviano meno pachetti
 ## protocolli bidirezionali
 i meccanismi appena studiati sono unidirezionali: i pacchetti dati vanno in una direzione e gli `ack` nella direzione opposta. in realtà, entrambi viaggiano nelle due direzioni (**protocolli bidirezionali**), e viene usata la tecnica del **piggybacking** per migliorare la loro efficienza
 - **piggybacking**: quando un pacchetto trasporta dati da A a B, può trasportare anche i riscontri relativi ai pacchetti ricevuti da B, e viceversa
