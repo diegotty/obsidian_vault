@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T10:36
+updated: 2025-04-14T10:52
 completed: true
 ---
 >[!index]
@@ -180,7 +180,7 @@ la congestione è uno dei dieci problemi più importanti nel networking !
 
 esistono due approcci principali al controllo della congestione: 
 - **controllo di congestione end-to-end**: la congestione è dedotta osservando le perdite e i ritardi nei sistemi terminali (o anche `ACK` duplicati, che implicano perdita di pacchetti). è il metodo adottato da TCP
-- **controllo di congestione assistito dalla rete**: i router forniscono un feedback ai sistemi terminali: un singolo bit per indicare la congestione, l’**ECN** (**explicit congestione notification**), una feature opzionale in TCP/IP che permette di comunicare in modo esplicito al mittente la frequenza trasmissiva
+- **controllo di congestione assistito dalla rete**: i router forniscono un feedback ai sistemi terminali: un singolo bit per indicare la congestione, l’**ECN** (**explicit congestion notification**), una feature opzionale in TCP/IP che permette di comunicare in modo esplicito al mittente la frequenza trasmissiva
 
 per mitigare la congestione, i mittenti devono rilevarla, e limitare la frequenza di invio sulla propria connessione in base ad un algoritmo
 ### rilevare la congestione
