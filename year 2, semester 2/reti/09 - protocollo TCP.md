@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T11:06
+updated: 2025-04-14T11:10
 completed: true
 ---
 >[!index]
@@ -236,6 +236,7 @@ si può affinare la logica del TCP Taho, usando la seguente filosofia:
 si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando la **fast recovery**:
 - **timeout**: indica congestione importante, e si riparte da 1
 - **3 `ACK` duplicati**: indica congestione lieve, si applica **fast recovery** a partire da `ssthresh + 3`(dopo aver impostato `ssthresh = CWND/2`)
+- quando viene ricevuto un nuovo `ACK` (cioè `ACK` su un segmento successivo), si esce da **fast recovery**, si imposta `CWND = sshthresh` e si continua in **congestion avoidance**
 >[!info] FSM TCP Reno
 ![[Pasted image 20250406172555.png]]
 
@@ -244,7 +245,7 @@ si gestisce quindi in maniera meno drastica il caso di 3 `ACK` duplicati, usando
 ## RTT e timeout
 **come impostare il valore del timeout di TCP ?**
 il timeout deve essere più grande dell’RTT  (altrimenti finirà sempre prima di dare il tempo ai pacchetti di arrivare. timeout prematuro e ritrasmissioni non necessarie !), ma non troppo grande da causare una reazione lenta alla perdita di segmenti.
-- inoltre, l’RTT viene misurato e su un singolo pacchetto, quindi può oscillare molto !
+- inoltre, l’RTT viene misurato su un singolo pacchetto, quindi può oscillare molto !
 **come stimare l’RTT** ? 
 viene usato il **SampleRTT**, il tempo misurato dalla trasmissione del segmento fino alla ricezione dell’`ACK`
 - ignora le trasmissioni ed è un valore solo per più segmenti trasmessi insieme
