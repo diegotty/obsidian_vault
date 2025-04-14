@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T11:10
+updated: 2025-04-14T19:24
 completed: true
 ---
 >[!index]
@@ -263,11 +263,11 @@ il timeout è quindi la somma di **EstimatedRTT** ed un “margine di sicurezza�
 - se avviene un timeout si raddoppia
 - avviene viene ricevuto un segmento e aggiornato **EstimatedRTT**, si usa la formula
 $$
-\text{TimeoutInterval = EstimatedRTT + 4 $\cdot$DevRTT}
+\text{TimeoutInterval = EstimatedRTT$_{t+1}$ + 4 $\cdot$ DevRTT$_{t+1}$}
 $$
 in cui **DevRTT** rappresenta di quanto **SampleRTT** si discosta da **EstimatedRTT**
 
 $$
-\text{DevRTT = (1 - $\beta) \cdot$ DevRTT + $\beta \cdot$ |SampleRTT - EstimatedRTT|}
+\text{DevRTT$_{t+1}$ = (1 - $\beta) \cdot$ DevRTT$_{t}$ + $\beta \cdot$ |SampleRTT - EstimatedRTT$_t$|}
 $$
 - tipicamente, $\beta = 0,25$
