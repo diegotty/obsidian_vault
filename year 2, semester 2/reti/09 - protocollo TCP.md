@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T10:02
+updated: 2025-04-14T10:36
 completed: true
 ---
 >[!index]
@@ -108,7 +108,7 @@ ciascuna delle due parti coinvolta nello scambio di dati può richiedere la chiu
 
 ### controllo degli errori
 - **checksum**: se un segmento arriva corrotto, viene scartato dal destinatario
-- **riscontri + timer di ritrasmissione**(RTO): vengono usati `ACK` cumulatici e timer associato al più vecchio pacchetto non riscontrato (vedremo perchè più avanti ! )
+- **riscontri + timer di ritrasmissione**(RTO): vengono usati `ACK` cumulativi e timer associato al più vecchio pacchetto non riscontrato (vedremo perchè più avanti ! )
 - **ritrasmissione**: del segmento all’inizio della coda di spedizione
 ### generazione di ack 
 esistono delle **regole** che caratterizzano i possibili eventi nello scambio di pacchetti:
@@ -123,7 +123,7 @@ esistono delle **regole** che caratterizzano i possibili eventi nello scambio di
 nella regola 2, si aspettano 500ms perchè dato che il primo segmento è nell’ordine giusto, se la rete non è congestionata, mi arriverà il segmento successivo e potrò inviare un `ACK` cumulativo (proprio ciò che accade nella regola 3 !)
 ### ritrasmissione dei segmenti
 quando un segmento viene inviato, una copia viene memorizzata in una coda **in attesa di essere riscontrato** (la finestra di invio). se il segmento non viene riscontrato, può accadere che:
-- scade il timer: ciò implica che il segmento non riscontrato è all’inizio dela coda. il segmento viene ritrasmesso e viene riavviato il timer
+- scade il timer: ciò implica che il segmento non riscontrato è all’inizio della coda. il segmento viene ritrasmesso e viene riavviato il timer
 - **vengono ricevuti 3 `ACK` duplicati**: avviene la **ritrasmissione veloce** del segmento (veloce perchè non viene atteso il timeout)
 >[!info] timer
 esiste quindi un **unico** timer di ritrasmissione, associato al più vecchio segmento non riscontrato. quando arriva un `ACK`, si riavvia il timer sul più vecchio segmento non riscontrato
