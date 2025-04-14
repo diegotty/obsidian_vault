@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - livello trasporto]]"
 created: 2025-03-02T17:41
-updated: 2025-04-14T19:24
+updated: 2025-04-14T20:44
 completed: true
 ---
 >[!index]
@@ -268,6 +268,6 @@ $$
 in cui **DevRTT** rappresenta di quanto **SampleRTT** si discosta da **EstimatedRTT**
 
 $$
-\text{DevRTT$_{t+1}$ = (1 - $\beta) \cdot$ DevRTT$_{t}$ + $\beta \cdot$ |SampleRTT - EstimatedRTT$_t$|}
+\text{DevRTT$_{t+1}$ = (1 - $\beta) \cdot$ DevRTT$_{t}$ + $\beta \cdot$ |SampleRTT$_{t+1}$ - EstimatedRTT$_t$|}
 $$
 - tipicamente, $\beta = 0,25$
