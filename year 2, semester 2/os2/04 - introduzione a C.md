@@ -1,6 +1,6 @@
 ---
 created: 2025-04-10T13:15
-updated: 2025-04-15T09:06
+updated: 2025-04-17T14:23
 ---
 # intro a C
 ## ambiente di sviluppo ed esecuzione
@@ -430,7 +430,7 @@ legge, da `stream`, i dati il cui tipo è specificato in `format`
 ### $\verb |int fprintf(FILE *stream, const char *format, \dots)|$
 writes formatted data ad uno stream
 `fprintf(file_ptr, "Hello, world!\n");`
-### $\verb |char *fgets\left( char *s, \int size, FILE *stream)|$
+### $\verb |char *fgets( char *s, int size, FILE *stream)|$
 legge **massimo** `n-1`  caratteri dallo stream e avanza la posizione dell indicatore per lo stream
 ### $\verb |int fputs(const char *s, FILE *stream)|$
 writes a string to the stream, up butnot including the null character
