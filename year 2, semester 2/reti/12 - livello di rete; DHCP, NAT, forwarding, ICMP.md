@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T20:10
+updated: 2025-04-23T20:31
 completed: false
 ---
 # indirizzamento IPv4
@@ -139,10 +139,22 @@ il **NAT** (**network address translation**) permette di usare indirizzi riserva
 >[!info] NAT
 ![[Pasted image 20250423200853.png]]
 >- il **NAT** (**network address translation**) permette di usare indirizzi riservati (spesso identici) nelle singole reti private, per scambiare pacchetti tra i loro dispositivi
->- i router abilitati al NAT non appaiono al mondo esterno come router, ma come **unico** dispositivo con un **unico** indirizzo IP
+>- i router abilitati al NAT non appaiono al mondo esterno come router, ma come **unico** dispositivo con un **unico** indirizzo IP, e tutto il traffico verso Internet da quel router deve riportare lo stesso indirizzo
 
-gli indirizzi privati sono univoci per ogni LAN, ma tra LAN diverse ci possono essere dispositivi con ip uguali (non possono quindi “usicre” dalla rete con questi ip,v anno convertiti in indirizzo pubblico)
+>[!info] implementazione
+![[Pasted image 20250423202248.png]]
+quando un router NAT riceve il datagramma, genera per esso un nuovo numero di porta d’origine (es: `5001`), sostituisce l’indirizzo IP origine con il proprio indirizzo IP sul lato WAN (`138.76.29.7`), e sostituisce il numero di porta origine iniziale con il nuovo numero (`5001`)
 
+>[!example] esempio di NAT
+![[Pasted image 20250423202649.png]]
+
+il campo `numero di porta` è lungo 16bit: il protocollo NAT può supportare più di 60.000 connessioni simultanee con un solo indirizzo IP sul lato WAN. what a trooper !
+>[!info] NAT è contestato perchè:
+>- i router dovrebbero elaborare i pacchetti solo fino al livello 3
+>- il numero di porta viene usato per identificare host e non processi
+>- viola il cosiddetto **argomento punto-punto**: gli host dovrebbero comunicare tra di loro direttamente, senza intromissione di nodi nè modifica di indirizzi IP e numeri di porta. per risolvere la scarsità di indirizzi IP, si dovrebbe usare IPv6
+>- fa interferenza con le applicazioni P2P in cui ogni peer dovrebbe essere in grado di avviare una connessione TCP con qualsiasi altro peer, a meno che il NAT non sia specificamente configurato per quella specifica applicazione P2P
+# forwarding dei datagrammi IP
 ## ICMP
 ICMP permette di notificare errori, e autia il protocollo IP
 
