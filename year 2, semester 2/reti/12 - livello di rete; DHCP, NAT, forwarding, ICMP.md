@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T20:01
+updated: 2025-04-23T20:10
 completed: false
 ---
 # indirizzamento IPv4
@@ -129,8 +129,18 @@ ci addentriamo ora nelle **sottoreti**, reti isolate in cui i punti terminali so
 >se il prefisso di rete è multiplo di 8bit (`a.b.c.d/24`):
 >- allora gli indirizzi degli host vanno da `a.b.c.0` a `a.b.c.255`
 se il prefisso di rete non è multiplo di 8bit (`a.b.c.d/26`):
->- bisogna vedere la rappresentazione binaria di `d`
+>- bisogna vedere la rappresentazione binaria di `d`: per esempioi, se `d=10xxxxxx`, allora gli indirizzi degli host nella sottrete vanno da `10000000`(128) a `10111111`(191)
+
+detto ciò, può capitare che un’entità che ha ricevuto un blocco abbia bisogno di un numero maggiore di indirizzi, ma che il blocco successivo sia assegnato ad un’altra entità
+entrano in gioco gli **indirizzi privati** e il **NAT** !
 # NAT
+con la proliferazione di sottoreti **SOHO** (small office, home office), ogni volta che si vuole installare una rete locale per connettere più macchine, l’ISP deve allocare un intervallo di indirizzi per coprire la sottorete, e spesso ciò risulta impossibile per la mancanza di indirizzi aggiuntivi nella sottorete
+il **NAT** (**network address translation**) permette di usare indirizzi riservati (spesso identici) nelle singole reti private, per scambiare pacchetti tra i loro dispositivi
+>[!info] NAT
+![[Pasted image 20250423200853.png]]
+>- il **NAT** (**network address translation**) permette di usare indirizzi riservati (spesso identici) nelle singole reti private, per scambiare pacchetti tra i loro dispositivi
+>- i router abilitati al NAT non appaiono al mondo esterno come router, ma come **unico** dispositivo con un **unico** indirizzo IP
+
 gli indirizzi privati sono univoci per ogni LAN, ma tra LAN diverse ci possono essere dispositivi con ip uguali (non possono quindi “usicre” dalla rete con questi ip,v anno convertiti in indirizzo pubblico)
 
 ## ICMP
