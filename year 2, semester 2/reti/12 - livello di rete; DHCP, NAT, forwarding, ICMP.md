@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T09:02
+updated: 2025-04-23T09:13
 completed: false
 ---
 # indirizzamento IPv4
@@ -24,6 +24,12 @@ data la necessità di supportare sia reti piccole che grandi, il prefisso viene 
 >[!info] classi di indirizzamento
 ![[Pasted image 20250423085724.png]]
 ci sono **3 lunghezze** di prefisso: 8, 16 e 24bit
+inoltre:
+>- negli indirizzi di classe A, il primo bit del primo ottetto è sempre 0
+>- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10
+>- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110
+>
+in questo modo gli intervalli a destra hanno senso !
 
 **vantaggi**:
 - in questo modo, una volta individuato l’indirizzo, si può facilmente risalire alla classe e la lunghezza del prefisso
@@ -34,6 +40,8 @@ ci sono **3 lunghezze** di prefisso: 8, 16 e 24bit
 	- lo stesso problema occorre per la classe B
 	- per la classe C, sono disponibili solo 256 host per ogni rete (pochi)
 ### indirizzamento senza classi
+è necessaria quindi un maggiore flessibilità nell’assegnamento degli indirizzi: **vengono utilizzati blocchi di lunghezza variabile**, che non appartengono a nessuna classe
+- un indirizzo non è in grado di definire da solo la rete (o blocco) a cui appartiene, è necessaria la lunghezza del prefisso (che è variabile, e va da 0 a 32 bit), che viene aggiunta all’indirizzo, separata da uno slash (/)
 
 
 
