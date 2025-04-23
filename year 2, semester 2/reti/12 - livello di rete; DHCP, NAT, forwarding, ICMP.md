@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T17:01
+updated: 2025-04-23T17:11
 completed: false
 ---
 # indirizzamento IPv4
@@ -77,7 +77,17 @@ l- ’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla
 ## ottenere un blocco di indirizzi
 >[!info] how ? 
 >per ottenere un blocco di indirizzi IP da usare in una sottorete, l’amministratore di rete deve contattare il proprio ISP e ottenere un blocco di indirizzi contigui con un prefisso comune !
+>otterrà indirizzi nella forma `a.b.c.d/x`, dove `x` bit indicano la sottorete, e `(32-x)` indicano i singoli dispositivi dell’organizzazione
+>
+>a sua volta, un ISP, per ottenere un blocco di indirizzi, si rivolge all’ICANN, che ha la responsabilità di allocare i blocchi di indirizzi, gestire i server radice DNS, e assegnare/risolvere dispute su nomi di dominio
 
+per assegnare un indirizzo IP ad un host, si può decidere se farlo in modo temporaneo o in modo permanente, e se farlo attraverso configurazione manuale o usando il DHCP
+# DHCP
+il protocollo DHCP (**dynamic host configuration protocol**) permette a un host di ottenere un indirizzo IP in modo **dinamico** e automatico
+- viene largamente usato dove gli host si aggiungono e si rimuovono dalla rete con estrema frequenza
+- può essere configurato in modo che un host riceva un indirizzo IP persistente (ogni volta che entra in rete gli viene assegnato lo stesso indirizzo)
+attraverso il DHCP è possibile:
+- rinnovare la proprietà dell’indirizzo in uso
 dhcp usa udp (trasp non affidabile)
 i messaggi dhcp vengono mandati in broadcast !
 
