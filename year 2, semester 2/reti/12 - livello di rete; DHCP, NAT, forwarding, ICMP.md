@@ -207,8 +207,8 @@ i messaggi ICMP hanno un campo **TIPO** e un campo **CODICE**, e contengono l’
 | 3    | 6      | rete destinatario sconosciuta           |
 | 3    | 7      | host destinatario sconosciuto           |
 | 4    | 0      | riduzione (controllo di congestione)    |
-| 8    | 0      | richiesta ec                            |
-| 9    | 0      |                                         |
-| 10   | 0      |                                         |
-| 11   | 0      |                                         |
-| 12   | 0      |                                         |
+| 8    | 0      | richiesta eco                           |
+| 9    | 0      | annuncio del router                     |
+| 10   | 0      | scoperta del router                     |
+| 11   | 0      | TTL scaduto                             |
+| 12   | 0      | errata intestazione IP                  |
