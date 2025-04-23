@@ -1,11 +1,11 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-07T17:00
+updated: 2025-04-23T21:59
 completed: false
 ---
 # algoritmi greedy
-per illustrre la progettazione e l’analisi di un algoritmo **greedy**, consideriamo un problema piuttosto semplice chiamato **selezione di attività**:
+per illustrare la progettazione e l’analisi di un algoritmo **greedy**, consideriamo un problema piuttosto semplice chiamato **selezione di attività**:
 >[!info] selezione di attività
 >abbiamo una lista di $n$ attività da eseguire:
 >- ciascuna attività è caratterizzata da una copia: (tempo_inizio, tempo_fine)
@@ -64,3 +64,6 @@ pseudocodice:
 >	return sol
 >```
 >il costo totale dell’algoritmo è $\Theta(n\log n)$
+
+affrontiamo ora un nuovo prolema !
+>[!info] assegnazione di attività
