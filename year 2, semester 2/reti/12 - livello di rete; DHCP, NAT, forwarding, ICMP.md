@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T20:31
+updated: 2025-04-23T20:46
 completed: false
 ---
 # indirizzamento IPv4
@@ -155,6 +155,8 @@ il campo `numero di porta` è lungo 16bit: il protocollo NAT può supportare pi�
 >- viola il cosiddetto **argomento punto-punto**: gli host dovrebbero comunicare tra di loro direttamente, senza intromissione di nodi nè modifica di indirizzi IP e numeri di porta. per risolvere la scarsità di indirizzi IP, si dovrebbe usare IPv6
 >- fa interferenza con le applicazioni P2P in cui ogni peer dovrebbe essere in grado di avviare una connessione TCP con qualsiasi altro peer, a meno che il NAT non sia specificamente configurato per quella specifica applicazione P2P
 # forwarding dei datagrammi IP
+inoltrare un datagramma significa collocarlo sul giusto percorso (porta di uscita del router), che lo farà avanzare verso la destinazione: inviare il datagramma al **prossimo hop**
+in particolare, quando un host ha un datagramma da inviare, lo invia al router della rete locale, che accede alla t
 ## ICMP
 ICMP permette di notificare errori, e autia il protocollo IP
 
