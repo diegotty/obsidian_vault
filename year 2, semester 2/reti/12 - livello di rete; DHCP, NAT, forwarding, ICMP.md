@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T20:46
+updated: 2025-04-23T21:00
 completed: false
 ---
 # indirizzamento IPv4
@@ -156,7 +156,27 @@ il campo `numero di porta` è lungo 16bit: il protocollo NAT può supportare pi�
 >- fa interferenza con le applicazioni P2P in cui ogni peer dovrebbe essere in grado di avviare una connessione TCP con qualsiasi altro peer, a meno che il NAT non sia specificamente configurato per quella specifica applicazione P2P
 # forwarding dei datagrammi IP
 inoltrare un datagramma significa collocarlo sul giusto percorso (porta di uscita del router), che lo farà avanzare verso la destinazione: inviare il datagramma al **prossimo hop**
-in particolare, quando un host ha un datagramma da inviare, lo invia al router della rete locale, che accede alla t
+in particolare, quando un host ha un datagramma da inviare, lo invia al router della rete locale, che accede alla tabella di routing per trovare l’hop successivo a cui inviarlo: l’inoltro richiede una riga nella tabella **per ogni blocco di rete**
+>[!example] esempio
+![[Pasted image 20250423204754.png]]
+
+>[!info] instradamento
+un’altra rappresentazione della tabella d’inoltro è:
+![[Pasted image 20250423204927.png]]
+>- la prima colonna contiene i bit che identificano il blocco di indirizzi (lunghezza inferiore a 32 bit)
+>
+>un datagramma contiene però l’indirizzo IP dell’host di destinazione (32 bit), e non indica la subnet mask. l’instradamento si esegue in questo modo:
+>- quando arriva un datagramma in cui i 26bit a sinistra nell’indirizzo di destinazione combaciano con i bit della prima riga, il pacchetto viene inviato attraverso l’interfaccia `m2`, e viene gestito analogamente per gli altri casi (le subnet mask vengono applicate in ordine, in quanto sono ordinate in ordine decrescente)
+
+>[!example] esempio di instradamento
+![[Pasted image 20250423205415.png]]
+
+### aggregazione degli indirizzi
+in questo modo, inserire nella tabella una riga per ogni blocco può portare a tabelle molto lunghe, con aumento del tempo necessario per fare la ricerca
+si usa quindi **l’aggregazione degli indirizzi**
+>[!info] aggregazione degli indirizzi
+![[Pasted image 20250423205907.png]]
+si nota come l’indirizzo di rete per l’interfaccia `m0` nella tabella di `R2` è //question nn ho capito ngl
 ## ICMP
 ICMP permette di notificare errori, e autia il protocollo IP
 
