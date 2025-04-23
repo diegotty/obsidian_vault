@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T21:00
+updated: 2025-04-23T21:16
 completed: false
 ---
 # indirizzamento IPv4
@@ -177,10 +177,38 @@ si usa quindi **l’aggregazione degli indirizzi**
 >[!info] aggregazione degli indirizzi
 ![[Pasted image 20250423205907.png]]
 si nota come l’indirizzo di rete per l’interfaccia `m0` nella tabella di `R2` è //question nn ho capito ngl
-## ICMP
-ICMP permette di notificare errori, e autia il protocollo IP
+
+>[!info] livello di rete Internet
+![[Pasted image 20250423210502.png]]
+# ICMP
+**ICMP** (**internet control message protocol**) permette di notificare errori, e aiuta il protocollo IP, che non gestisce nessun tipo di errore, per esempio:
+- caso in cui un router deve scartare un datagramma perchè non riesce a trovare un percorso per la destinazione finale
+- caso in cui un datagramma ha il campo `TTL == 0`
+- caso in cui l’host di destinazione non ha ricevuto tutti i frammenti di un datagramma entro un determinato limite di tempo
+il protocollo ICMP viene quindi usato da host e router per scambiarsi informazioni a livello di rete
+>[!warning] il campo dati dei datagrammi IP può contenere un messaggio ICMP !!
+e ICMP è considerato parte di IP, anche se usa IP per inviare i suoi mesaggi
 
 >[!example] ICMP 
 ![[Pasted image 20250410153256.png]]
+un tipico uso di ICMP è per mandare un feedback quando un messaggio IP viene mandato. per esempio, in questa immagine, l’host A prova a mandare un datagramm IP all’host B. ma quando il datagramma arriva al router R3, c’è un problema di qualche tipo che causa al datagramma di essere droppato. R3 manda un messaggio ICMP all’host A per notificare che è successo qualcosa, **possibilmente** con abbastanza informazioni per rendere A capace di correggere il problema, se possibile
+>- in questa situazione, R3 può mandare il messaggio ICMP solo all’host A, non a R2 o R1
 
-ICMP viene usato da host e router per scambiarsi informazioni a livello di rete, tra cui report degli error: host, rete, porta, protocollo irraggiungibili
+## messaggi ICMP
+i messaggi ICMP hanno un campo **TIPO** e un campo **CODICE**, e contengono l’intestazione e i primi 8 byte del datagramma IP che ha provocato la generazione del messaggio (huh, ok though)
+
+| tipo | codice | descrizione                             |
+| ---- | ------ | --------------------------------------- |
+| 0    | 0      | risposta eco (a ping)                   |
+| 3    | 0      | rete destinatario irraggiungibile       |
+| 3    | 1      | host destinatario irraggiungibile       |
+| 3    | 2      | protocollo destinatario irraggiungibile |
+| 3    | 3      | porta destinatario irraggiungibile      |
+| 3    | 6      | rete destinatario sconosciuta           |
+| 3    | 7      | host destinatario sconosciuto           |
+| 4    | 0      | riduzione (controllo di congestione)    |
+| 8    | 0      | richiesta ec                            |
+| 9    | 0      |                                         |
+| 10   | 0      |                                         |
+| 11   | 0      |                                         |
+| 12   | 0      |                                         |
