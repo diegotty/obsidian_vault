@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T19:46
+updated: 2025-04-23T20:01
 completed: false
 ---
 # indirizzamento IPv4
@@ -105,16 +105,31 @@ in particolare:
 ## messaggi DHCP
 >[!info] formato messaggi DHCP
 ![[Pasted image 20250423194206.png]]
+nel pacchetto non è previsto un campo per il tipo di messaggio, ma nelle opzioni viene indicato un **magic cookie** pari a `99.130.83.99`, che segna l’inizio della parte del pacchetto che contiene le opzioni specifiche del protocollo DHCP, di questo tipo:
+![[Pasted image 20250423195259.png]]
 
 >[!example] esempio di completamento richiesta DHCP
 ![[Pasted image 20250423194240.png]]
 >si nota:
+>- vengono usate porte well-known (client: 68, server: 67)
 >- durante `DHCPDISCOVER`, il client usa come IP mittente `0.0.0.0`, e come IP destinatario `255.255.255.255` (broadcast on local network)
 >- in `DHCPOFFER`, il messaggio viene mandato in broadcast (`255.255.255.255)`, ma l’host richiedente saprà che è riferito a lui in base al **transaction ID**
 >- anche `DHCPREQUEST` e `DHCPACK` vengono mandati in broadcast, pur sapendo IP mittente e destinatario !! 
+>- nel `DHCPACK`, il server inserisce il pathname di un file contenente le info mancanti, e il client usa FTP per ottenere il file
 
->[dhcp usa udp (trasp non affidabile)
+>[!warning] dhcp usa udp (trasp non affidabile)
 
+## sottoreti
+ci addentriamo ora nelle **sottoreti**, reti isolate in cui i punti terminali sono collegati all’interfaccia di un host o di un router
+>[!example] esempio di sottorete
+![[Pasted image 20250423195624.png]]
+>in questo caso la subnet mask è `/24`, quindi ogni host connesso alla sottorete `223.1.1.0/24` deve avere un indirizzo della forma `223.1.1.xxx`
+
+>[!info] dato un indirizzo IP e la sua maschera di rete, posso facilmente trovare a quale blocco appartiene:
+>se il prefisso di rete è multiplo di 8bit (`a.b.c.d/24`):
+>- allora gli indirizzi degli host vanno da `a.b.c.0` a `a.b.c.255`
+se il prefisso di rete non è multiplo di 8bit (`a.b.c.d/26`):
+>- bisogna vedere la rappresentazione binaria di `d`
 # NAT
 gli indirizzi privati sono univoci per ogni LAN, ma tra LAN diverse ci possono essere dispositivi con ip uguali (non possono quindi “usicre” dalla rete con questi ip,v anno convertiti in indirizzo pubblico)
 
