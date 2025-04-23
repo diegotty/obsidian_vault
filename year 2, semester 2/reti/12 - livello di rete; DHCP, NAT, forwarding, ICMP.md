@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T09:13
+updated: 2025-04-23T09:41
 completed: false
 ---
 # indirizzamento IPv4
@@ -29,7 +29,7 @@ inoltre:
 >- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10
 >- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110
 >
-in questo modo gli intervalli a destra hanno senso !
+in questo modo gli intervalli a destra hanno senso ! (e in questo modo si riconosce subito a che classe un indirizzo appartiene)
 
 **vantaggi**:
 - in questo modo, una volta individuato l’indirizzo, si può facilmente risalire alla classe e la lunghezza del prefisso
@@ -42,9 +42,23 @@ in questo modo gli intervalli a destra hanno senso !
 ### indirizzamento senza classi
 è necessaria quindi un maggiore flessibilità nell’assegnamento degli indirizzi: **vengono utilizzati blocchi di lunghezza variabile**, che non appartengono a nessuna classe
 - un indirizzo non è in grado di definire da solo la rete (o blocco) a cui appartiene, è necessaria la lunghezza del prefisso (che è variabile, e va da 0 a 32 bit), che viene aggiunta all’indirizzo, separata da uno slash (/)
+#### notazione CIDR
+la notazione **CIDR** (**c**lassless **i**nter**d**omain **r**outing) è la strategia di assegnazione degl indirizzi, secondo la quale la struttura di un indirizzo è: `a.b.c.d/n`, dove `n` indica il numero di bit nella prima parte dell’indirizzo
 
+>[!example] esempio
+![[Pasted image 20250423093620.png]]
 
+in questo modo, se `n` è la lunghezza del prefisso:
+- il numero di indirizzi nel blocco è dato da $N=2^{32-n}$
+- per trovare il primo indirizzo si impostano a 0 tutti i bit del suffisso di $32-n$ bit 
+- per trovare l’ultimo indirizzo si impostano a 1 tutti i bit del suffisso di $32-n$ bit
+>[!info] rappresentazione
+![[Pasted image 20250423093757.png]]
 
+la **maschera dell’indirizzo** è un numero composto da 32 bit, in cui i primi $n$ bit a sinistra sono impostati a 1 e il resto ($32-n$) a 0
+- mediante la maschera si ottiene l’indirizzo di rete che è usato nell’instradamento dei datagrami verso la destinazione
+>[!info] da indirizzo IP a entry nella tabella
+![[Pasted image 20250423094041.png]]
 
 loopback: 
 
