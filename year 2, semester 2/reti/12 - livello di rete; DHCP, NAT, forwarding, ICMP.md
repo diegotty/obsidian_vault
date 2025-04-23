@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T09:41
+updated: 2025-04-23T17:01
 completed: false
 ---
 # indirizzamento IPv4
@@ -57,17 +57,31 @@ in questo modo, se `n` è la lunghezza del prefisso:
 
 la **maschera dell’indirizzo** è un numero composto da 32 bit, in cui i primi $n$ bit a sinistra sono impostati a 1 e il resto ($32-n$) a 0
 - mediante la maschera si ottiene l’indirizzo di rete che è usato nell’instradamento dei datagrami verso la destinazione
->[!info] da indirizzo IP a entry nella tabella
+>[!info]- da indirizzo IP a entry nella tabella
 ![[Pasted image 20250423094041.png]]
 
-loopback: 
+inoltre, la **subnet mask** può essere usata da un programma per calcolare in modo efficiente le informazioni di un blocco, usando solo tre operatori sui bit:
+- il numero degli indirizzi del blocco è $N=NOT\text{(maschera})+1$
+- il primo indirizzo del blocco è $\text{(qualsiasi indirizzo del blocco)} \land \text{(maschera)}$
+- l’ultimo indirizzo del blocco è $(\text{qualsiasi indirizzo del blocco}) \lor NOT(\text{maschera})$
+sensato !!
+## indirizzi IP speciali
+>[!info] woop
+![[Pasted image 20250423165724.png]]
+>- l’indirizzo `0.0.0.0` è utilizzato dagli host al momento del boot
+>- gli indirizzi IP che hanno lo 0 come **numero di rete** si riferiscono alla rete corrente
+l- ’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla rete locale (in genere una LAN)
+>- gli indirizzi con numero di rete opportuno e tutti 1 nel campo **host** permettono l’invio di pacchetti broadcast a LAN distanti (alla LAN specificata dal numero di rete)
+>- gli indirizzi nella forma `127.xx.yy.zz` sono riservati al **loopback**: sono pacchetti non immessi nel cavo, ma elaborati localmente e trattati come pacchetti in arrivo
 
-
+## ottenere un blocco di indirizzi
+>[!info] how ? 
+>per ottenere un blocco di indirizzi IP da usare in una sottorete, l’amministratore di rete deve contattare il proprio ISP e ottenere un blocco di indirizzi contigui con un prefisso comune !
 
 dhcp usa udp (trasp non affidabile)
 i messaggi dhcp vengono mandati in broadcast !
 
-### NAT
+# NAT
 gli indirizzi privati sono univoci per ogni LAN, ma tra LAN diverse ci possono essere dispositivi con ip uguali (non possono quindi “usicre” dalla rete con questi ip,v anno convertiti in indirizzo pubblico)
 
 ## ICMP
