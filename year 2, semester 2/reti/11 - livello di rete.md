@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-11T09:32
+updated: 2025-04-23T08:45
 completed: false
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
@@ -157,7 +157,6 @@ il protocollo **IP** è responsabile della suddivisione in pacchetti, del forwar
 >- **lunghezza dell’intestazione**: poichè un datagramma IP può contenere un numero variabile di opzioni, questi bit indicano dove inzia il campo dati (un intestazione senza opzioni ha dimensione 20byte)
 >- **tipo di servizio**: serve per distinguere diversi datagrammi con requisiti di qualità del servizio diverse (?)
 >- **lunghezza del datagramma**: rappresenta la lunghezza totale in byte del datagramma IP, inclusa l’intestazione (in genere, non superiore a 1500byte). serve per capire se il pacchetto è arrivato completamente  !
->- identificatore a 16bit, flag e offset sono usati per la frammentazione
 >- **identificatore, flag e offset**: sono usati per gestire la frammentazione dei pacchetti
 >- **TTL/tempo di vita**: è incluso per assicurare che i datagrammi non restino in circolazione per sempre nella rete (per esempio, in caso di instradamento ciclico). il campo viene infatti decrementato ad ogni hop e se `TTL == 0` il datagramma viene eliminato
 >- **protocollo**: indica il protocollo a livello di trasporto al quale va passato il datagramma, e viene utilizzato solo quando il datagramma raggiunge la destinazione finale
@@ -167,8 +166,8 @@ il protocollo **IP** è responsabile della suddivisione in pacchetti, del forwar
 >- **opzioni**: campi che consentono di estendere l’intestazione IP (usate per test o debug della rete)
 >- **dati**: contiene il segmento di trasporto da consegnare alla destinazione
 ## frammentazione
-un datagramme IP può dover viaggiare attraverso varie reti, ognuna con caratteristiche diverse. sappiamo inoltre che ogni router estrae il datagramma dal frame, lo elabora e lo incapsual in un nuovo frame
-la **MTU** (maximum transfer unit) è la massima quantità di **dati** (payload) che un frame al **livello di collegamento** può trasportare, e varia in base alla tecnologia
+un datagramme IP può dover viaggiare attraverso varie reti, ognuna con caratteristiche diverse. sappiamo inoltre che ogni router estrae il datagramma dal frame, lo elabora e lo incapsula in un nuovo frame
+la **MTU** (maximum transfer unit) è la massima quantità di **dati** (payload) che un frame al **livello di collegamento** può trasportare, e varia in base alla tecnologia usata
 >[!info] MTU
 ![[Pasted image 20250410100736.png]]
 
