@@ -1,8 +1,6 @@
 ---
-related to: 
-created: 2025-03-02T17:41
-updated: 2025-04-23T08:45
-completed: false
+created: 2025-04-23T08:49
+updated: 2025-04-23T08:49
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
 >[!example] esempio di funzionamento del livello rete

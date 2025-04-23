@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-04-13T16:07
+updated: 2025-04-23T08:49
 ---
 >[!index]
 >- [FTP](#FTP)
@@ -30,7 +30,7 @@ updated: 2025-04-13T16:07
 >- quando un utente fornisce il nome dell’host remoto, con il comando `ftp nomeHost`, il processo client FTP stabilisce una connessione TCP sulla porta 21 con il processo server FTP
 >- stabilita la connessione, il client fornisce nome utente e password che vengono inviate sulla connessione TCP come parte dei comandi
 >- ottenuta l’autorizzazione del server, il client può inviare uno o più file memorizzati nel file system locale verso quello remoto, o viceversa
-
+						mommy maselli
 ## connessioni FTP
 durante la comunicazione con FTP, avvengono 2 connessioni:
 ### connessione di controllo
