@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T17:11
+updated: 2025-04-23T19:46
 completed: false
 ---
 # indirizzamento IPv4
@@ -88,8 +88,32 @@ il protocollo DHCP (**dynamic host configuration protocol**) permette a un host 
 - può essere configurato in modo che un host riceva un indirizzo IP persistente (ogni volta che entra in rete gli viene assegnato lo stesso indirizzo)
 attraverso il DHCP è possibile:
 - rinnovare la proprietà dell’indirizzo in uso
-dhcp usa udp (trasp non affidabile)
-i messaggi dhcp vengono mandati in broadcast !
+- riusare gli indirizzi (quantità di indirizzi inferiore al numero totale di utenti)
+- gestire **anche** gli utenti mobili che si vogliono unire alla rete
+>[!warning] anche se è un protocollo del livello di rete, viene implementato come programma client/server di livello applicazione !
+
+in particolare:
+- il **client** è un host appena connesso, che desidera ottenere informazioni sulla configurazione della rete, **non solo un indirizzo IP** (??????????)
+- il **server DHCP** solitamente è presente in ogni sottorete, altrimenti il router fa da agente di appoggio DHCP (conosce un server DHCP per quella rete e inoltra le richieste)
+
+>[!info] panoramica DHCP
+>- l’host invia un messaggio broadcast `DHCP discover`
+>- il server DHCP risponde con `DHCP offer`
+>- l’host richiede l’indirizzo IP `DHCP request`
+>- il server DHCP invia l’indirizzo `DHCP ack`
+
+## messaggi DHCP
+>[!info] formato messaggi DHCP
+![[Pasted image 20250423194206.png]]
+
+>[!example] esempio di completamento richiesta DHCP
+![[Pasted image 20250423194240.png]]
+>si nota:
+>- durante `DHCPDISCOVER`, il client usa come IP mittente `0.0.0.0`, e come IP destinatario `255.255.255.255` (broadcast on local network)
+>- in `DHCPOFFER`, il messaggio viene mandato in broadcast (`255.255.255.255)`, ma l’host richiedente saprà che è riferito a lui in base al **transaction ID**
+>- anche `DHCPREQUEST` e `DHCPACK` vengono mandati in broadcast, pur sapendo IP mittente e destinatario !! 
+
+>[dhcp usa udp (trasp non affidabile)
 
 # NAT
 gli indirizzi privati sono univoci per ogni LAN, ma tra LAN diverse ci possono essere dispositivi con ip uguali (non possono quindi “usicre” dalla rete con questi ip,v anno convertiti in indirizzo pubblico)
