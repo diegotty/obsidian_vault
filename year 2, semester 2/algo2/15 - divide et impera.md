@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T20:47
+updated: 2025-04-24T21:04
 completed: false
 ---
 ## problema della selezione
@@ -107,11 +107,23 @@ dimostriamo che $T(n) \leq c\cdot n$, per una qualche costane $c>0$ costante.
 >$$
 >T(n)\leq \frac{2c}{n} \sum^{n-1}_{k= \left\lfloor  \frac{n}{2}  \right\rfloor } k + a \cdot n
 >$$
->da cui ricaviamo (thanks flavio:)
+>da cui ricaviamo (grazie flavio sperandeo …….)
 > $$
 > \begin{align}
 > T(n)&\leq \frac{2c}{n}\left( \sum^{n-1}_{k=1}k-\sum^{\lfloor n/2 \rfloor -1}_{k=1}k \right)+a\cdot n\leq \frac{2c}{n}\left( \frac{n(n-1)}{2}-\frac{\left( \frac{n}{2}-1 \right)\left( \frac{n}{2}-2 \right)}{2} \right)+a\cdot n \leq\\
 > &\leq \frac{c}{n}\left( \frac{3n^2}{4}+\frac{n}{2}-2 \right)+a\cdot n\leq \frac{3cn}{4}+\frac{c}{2}+a\cdot n=cn-\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\leq cn
 > \end{align}
 > $$
+> dove l’ultima diseguaglianza segue prendendo $c$ in modo che $\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\geq 0$
+> basta ad esempio prendere $c\geq 8a$
+>
+onestamente non ci ho capito un cazzo e credo ciò resterà così per il momento
 
+l’analisi rigorosa appena fatta dimostra che, se la scelta del perno avviene in modo equiprobabile a caso tra i vari elementi della lista $A$, il tempo di calcolo dell’algoritmo risulta con alta probabilità lineare in $n$ !
+- la complessità dell’algoritmo `sezione2R` (riportato sopra) è quindi $O(n)$ con alta probabilità
+ovviamente, nel caso peggiore, quando nelle varie partizioni che si succedono nell’iterazione dell’algorimo si verifica che il perno sia sempre vicino al massimo o al minimo della lista, **la complessità dell’algoritmo rimane $O(n^2)$**. questo accade però con probabilità molto piccola
+
+veidamo ora un algoritmo **deterministico** che garantisce complessità $O(n)$ anche al caso pessimo !
+abbiamo visto che riuscire a selezionare un perno in grado di garantire che nessuna delle due sottoliste $A1$ e $A2$ abbia più di $c \cdot n$ elementi, per una qualche costante $0<c<1$ avrebbe come conseguenza una complessità di calcolo $O(n)$. descriviamo ora un metodo, noto come **il mediano dei mediani** per selezionare un perno che garantisce di produrre sempre due sottoliste $A1$ e $A2$, ciascuna delle quali ha non più di $\frac{3}{4}n$ elementi !
+>[!info] logica
+>dividi l’insieme $A$, contenente $n$ elementi, in gruppi da 5 elementi ciascuno. l’ultimo gruppo potrebbe avere meno di 5 elementi. considera soltanto i primi $\l\left\lfloor  \frac{n}{5}  \right\rfloor$ g
