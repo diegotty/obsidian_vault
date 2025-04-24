@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T11:09
+updated: 2025-04-24T11:20
 completed: false
 ---
 ## problema della selezione
@@ -86,3 +86,9 @@ che risolta da ancora $T(n) = \Theta(n)$
 **IDEA**:
 scegliamo il perno $p$ a caso in modo equiprobabile tra gli elementi della lista
 - anche se la scelta casuale non produce necessariamente una partizione bilancaita, quanto visto ci fa intuire che la complessità rimane lineare in $n$
+>[!info] analisi formale del caso medio
+con la randomizzazione introdotta per la scelta del perno, possiamo assumere che uno qualunque degli elementi del vettore, con uguale probabilità $\frac{1}{n}$ diventi perno, e poichè la scelta dell’elemento di rango $k$ produce $|A_{1}|=k-1$ e $|A_{2}|=n-k$, per il tempo atteso dell’algoritmo va studiata la ricorrenza: 
+>$$
+T(n) \leq \frac{1}{n} \sum^n_{k=1} T\Bigg(max\Big(T(k-1), T(n-k)\Big)\Bigg) + \Theta(n) \leq \frac{1}{n} \sum^{n-1}_{k=\left[ \frac{n}{2} \right]} 2T(k) + \Theta(n)
+>$$
+cioè la ricorrenza deve essere
