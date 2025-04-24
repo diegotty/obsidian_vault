@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T22:02
+updated: 2025-04-24T22:20
 completed: false
 ---
 ## problema della selezione
@@ -165,35 +165,52 @@ elementi di $A$ che finiranno in $A2$, di conseguenza
 >dove l’ultima diseguaglianza segue dal fatto che $n\geq120$
 
 >[!info] implementazione
-
-```python
-from math import ceil
-
-def selezione(A, K):
-	if len(A) <= 120:
-		A.sort()
-		return A[k-1]
-	
-	# inizializza B con i mediani di len(A)//5 gruppi di 5 elementi di A
-	# (sorta i gruppi di 5, e prende il terzo elemento (mediano))
-	B = [sorted(A[5*i : 5*i+5])[2] for i in range(len(A)//5)]
-	
-	# individua il perno p con la regola del mediano dei mediani (entra nel primo if, ritorna il mediano)
-	perno = selezione(B, ceil(len(A)/10))
-	A1, A2 = [], []
-	
-	# tripartizione	
-	for x in A:
-		if x < perno: A1.append()
-		elif x > perno: A2.append()
-	if len(A1) >= k:
-		return selezione(A1, k)
-	elif len(A1) == k-1:
-		return perno
-	return selezione(A2, k - len(A1) - 1)
-
-```
-calcoliamo la complessità dell’algoritmo, ricordando che:
+>```python
+>from math import ceil
+>
+>def selezione(A, K):
+>	if len(A) <= 120:
+>		A.sort()
+>		return A[k-1]
+>	
+>	# inizializza B con i mediani di len(A)//5 gruppi di 5 elementi di A
+>	# (sorta i gruppi di 5, e prende il terzo elemento (mediano))
+>	B = [sorted(A[5*i : 5*i+5])[2] for i in range(len(A)//5)]
+>	
+>	# individua il perno p con la regola del mediano dei mediani (entra nel primo if, ritorna il mediano)
+>	perno = selezione(B, ceil(len(A)/10))
+>	A1, A2 = [], []
+>	
+>	# tripartizione	
+>	for x in A:
+>		if x < perno: A1.append()
+>		elif x > perno: A2.append()
+>	if len(A1) >= k:
+>		return selezione(A1, k)
+>	elif len(A1) == k-1:
+>		return perno
+>	return selezione(A2, k - len(A1) - 1)
+>
+>```
+>calcoliamo la complessità dell’algoritmo, ricordando che:
 >- ordinare 120 elementi richiede tempo $O(1)$
->- ordinare una lista di $n$ elementi in gruppi di 5 richiede tempo $\Theta(n)$ ($n \cdot 5\log 5 = n \cdot c$)
->- selezionare i mediani dei mediani di gruppi di 5 da una lista in cui gli elementi sono stati ordinati in gruppi da 5 richiede tempo $\Theta(n)$
+>- ordinare una lista di $n$ elementi in gruppi di 5 richiede tempo $\Theta(n)$ ($n \cdot O(1)$)
+>- selezionare i mediani dei mediani di gruppi di 5 da una lista in cui gli elementi sono stati ordinati in gruppi da 5 richiede tempo $\Theta(n)$ (ummmmmmmmmmm)
+>
+>sappiamo che per $n≥120$, $A_{1} \leq \frac{3}{4}n$ e $A_{2} \leq \frac{3}{4}n$, dunque per la complessità $T(n)$ dell’algoritmo, si ha
+>$$
+>T(n)\leq
+>\begin{cases}
+>O(1)&\text{se }n\leq 120 \\
+>T\left( \frac{n}{5} \right)+T\left( \frac{3}{4}n \right)+\Theta(n)&\text{altrimenti}
+>\end{cases}
+>$$
+
+>[!warning] notiamo che la ricorrenza è del tipo
+>$$
+>T(n)=T(\alpha \cdot n)+T(\beta \cdot n)+\Theta(n)
+>$$
+>con 
+>$$
+
+$$
