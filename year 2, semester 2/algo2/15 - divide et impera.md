@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T09:08
+updated: 2025-04-24T11:09
 completed: false
 ---
 ## problema della selezione
@@ -69,7 +69,20 @@ $$
 T(n) = T(m) + \Theta(n) \text{   , con  } m = max\{|A_{1}|, |A_{2}|\}
 $$
 >[!tip] fuoco
-se avessimo una regola di scelta del perno in grado di garantire una partizione bilanciata, cioè
+se avessimo una regola di scelta del perno in grado di garantire una partizione bilanciata, cioè $m=max\{|A_{1}|, |A_{2}|\} \approx \frac{n}{2}$
+>allora per la complessità $T(n)$ dell’algoritmo, avremmo
 >$$
->m=max\{|A_{1}|, |A_{2}|\} \approx \frac{n}{2}
+>T(n) = T\left( \frac{n}{2} \right) + \Theta(n)
 >$$
+che risolta da $T(n) = \Theta(n)$
+
+chiedere che la partizione sia perfettamente bilanciata è *forse* chiedere troppo. possiamo accontentarci di chiedere che la scelta del perno garantisca partizioni non troppo sbilanciate, ad esempio quelle per cui $m=max\{|A_{1}|, |A_{2}\} \approx \frac{3n}{4}$
+in questo caso si ha
+$$
+T(n) \leq T\left( \frac{3}{4}n \right) + \Theta(n)
+$$
+che risolta da ancora $T(n) = \Theta(n)$
+- in generale, finche $m$ è una frazione di $n$, anche piuttosto vicina ad $n$, come $\frac{99}{100}n$i, la ricorrenza da sempre $T(n) = \Theta(n)$
+**IDEA**:
+scegliamo il perno $p$ a caso in modo equiprobabile tra gli elementi della lista
+- anche se la scelta casuale non produce necessariamente una partizione bilancaita, quanto visto ci fa intuire che la complessità rimane lineare in $n$
