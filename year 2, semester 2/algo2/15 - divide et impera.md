@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T20:34
+updated: 2025-04-24T20:47
 completed: false
 ---
 ## problema della selezione
@@ -96,7 +96,22 @@ e possiamo dimostrare, con il metodo di sostituzione, che questa ricorrenza vale
 
 >[!dimostrazione] dimostrazione per sostituzione
 >$$
->T(n) = \begin{cases}
-\frac{>1}{n} \sum^{n-1}_{k=\left[ \frac{n}{2} \right]} 2T(k) + a\cdot n & \text{se $n$ \geq_{3}}
+>T(n) = \begin{cases} \\
+\frac{1}{n} \sum^{n-1}_{k= \lfloor\frac{n}{2} \rfloor} 2T(k)+a \cdot n & \text{se }n\geq 3\\
+b & \text{altrimenti}
 \end{cases}
-$$
+>$$
+dimostriamo che $T(n) \leq c\cdot n$, per una qualche costane $c>0$ costante.
+>- per $n\leq 3$ abbiamo $T(n)\leq b\leq3c$, che è vera ad esempio per $c\geq b$
+>- sfruttando l’ipotesi induttiva $T(k)\leq c \cdot k$ per $k \leq n$ abbiamo:
+>$$
+>T(n)\leq \frac{2c}{n} \sum^{n-1}_{k= \left\lfloor  \frac{n}{2}  \right\rfloor } k + a \cdot n
+>$$
+>da cui ricaviamo (thanks flavio:)
+> $$
+> \begin{align}
+> T(n)&\leq \frac{2c}{n}\left( \sum^{n-1}_{k=1}k-\sum^{\lfloor n/2 \rfloor -1}_{k=1}k \right)+a\cdot n\leq \frac{2c}{n}\left( \frac{n(n-1)}{2}-\frac{\left( \frac{n}{2}-1 \right)\left( \frac{n}{2}-2 \right)}{2} \right)+a\cdot n \leq\\
+> &\leq \frac{c}{n}\left( \frac{3n^2}{4}+\frac{n}{2}-2 \right)+a\cdot n\leq \frac{3cn}{4}+\frac{c}{2}+a\cdot n=cn-\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\leq cn
+> \end{align}
+> $$
+

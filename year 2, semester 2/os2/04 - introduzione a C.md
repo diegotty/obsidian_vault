@@ -1,6 +1,6 @@
 ---
 created: 2025-04-10T13:15
-updated: 2025-04-24T14:18
+updated: 2025-04-24T20:35
 ---
 # intro a C
 ## ambiente di sviluppo ed esecuzione
