@@ -1,10 +1,6 @@
 ---
-created: 2025-04-10T13:15
-<<<<<<< HEAD
-updated: 2025-04-23T08:41
-=======
-updated: 2025-04-15T09:06
->>>>>>> origin/main
+created: 2025-04-24T14:18
+updated: 2025-04-24T14:18
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
