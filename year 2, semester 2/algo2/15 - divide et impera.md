@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T21:29
+updated: 2025-04-24T21:49
 completed: false
 ---
 ## problema della selezione
@@ -147,7 +147,31 @@ proviamo ora che:
 >$$
 >|A_{2}| \leq n - \Big(3 \frac{n}{10} -3 \Big) = \frac{7}{10}n + 3\leq \frac{3}{4}n
 >$$
+>dove l’ultima diseguaglianza segue dal fatto che $n\geq120$ (anche se per questa disequazione basta che $n\geq60$)
 >
-
 > $|A_{1}| < \frac{3}{4}n$:
+>-  ci sono 
+> $$
+> \left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil  \frac{n}{10}  \right\rceil \geq \Big(\frac{n}{5} - 1\Big) - \Big(\frac{n}{10}+1\Big) = \frac{n}{10}-2
+>$$ 
+>mediani di valore superiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $A$. ci sono dunque in $A$ altri 2 elementi superiori a $p$ per ogni mediano (quindi 3 elementi per ogni gruppo con mediano maggiore di $p$). in totale abbiamo almeno 
+>$$
+>3 \frac{n}{10} -6
+>$$
+elementi di $A$ che finiranno in $A2$, di conseguenza
+>$$
+>|A_{1}| \leq n - \Big(3 \frac{n}{10} -6\Big) =\frac{7}{10}n + 6\leq \frac{3}{4}n
+>$$
+>dove l’ultima diseguaglianza segue dal fatto che $n\geq120$
 
+>[!info] implementazione
+
+```python
+from math import ceil
+
+def selezione(A, K):
+	if len(A) <= 120:
+		A.sort()
+		return A[k-1]
+
+```
