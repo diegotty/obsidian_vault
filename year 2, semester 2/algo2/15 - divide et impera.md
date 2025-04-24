@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T08:59
+updated: 2025-04-24T09:08
 completed: false
 ---
 ## problema della selezione
@@ -53,4 +53,23 @@ si nota come con questa logica, dopo aver costruito le due liste $A_{1}$ e $A_{2
 >	return selezione2(A2, k - len(A1) - 1)
 >```
 
-la procedura tripartisce la lista in $A_{1}$, $A[0]$ ed $A_{2}$, e può restituire una partizione massimamente sbilanciata, in cui si ha, ad esempio, $|A_{1}| = 0$ e $|$
+la procedura tripartisce la lista in $A_{1}$, $A[0]$ ed $A_{2}$, e può restituire una partizione massimamente sbilanciata, in cui si ha, ad esempio, $|A_{1}| = 0$ e $|A_{2}| = n-1$. questo accade quando il perno risulta essere l’elemento minimo nella lista
+
+qualora questo evento **sfortunato** si ripetesse sistematicamente nel corso delle varie partizione eseguite dall’algoritmo, che può succedere quando cerco il massimo in una lista ordinata, allora la complessità dell’algoritmo al caso pessimo viene catturata dalla sequente equazione:
+$$
+T(n)= T(n-1) + \Theta(n)
+$$
+(in quanto ad ogni iterazione impiego $\Theta(n)$)
+che risolta dà
+$$
+T(n) = \Theta(n^2)
+$$
+in generale, la complessità superiore della procedura è catturata dalla ricorrenza 
+$$
+T(n) = T(m) + \Theta(n) \text{   , con  } m = max\{|A_{1}|, |A_{2}|\}
+$$
+>[!tip] fuoco
+se avessimo una regola di scelta del perno in grado di garantire una partizione bilanciata, cioè
+>$$
+>m=max\{|A_{1}|, |A_{2}|\} \approx \frac{n}{2}
+>$$
