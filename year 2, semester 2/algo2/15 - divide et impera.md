@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T21:04
+updated: 2025-04-24T21:16
 completed: false
 ---
 ## problema della selezione
@@ -93,31 +93,30 @@ con la randomizzazione introdotta per la scelta del perno, possiamo assumere che
 T(n) \leq \frac{1}{n} \sum^n_{k=1} T\Bigg(max\Big(T(k-1), T(n-k)\Big)\Bigg) + \Theta(n) \leq \frac{1}{n} \sum^{n-1}_{k=\left[ \frac{n}{2} \right]} 2T(k) + \Theta(n)
 >$$
 e possiamo dimostrare, con il metodo di sostituzione, che questa ricorrenza vale $T(n)=O(n)$
-
->[!dimostrazione] dimostrazione per sostituzione
->$$
->T(n) = \begin{cases} \\
-\frac{1}{n} \sum^{n-1}_{k= \lfloor\frac{n}{2} \rfloor} 2T(k)+a \cdot n & \text{se }n\geq 3\\
-b & \text{altrimenti}
-\end{cases}
->$$
-dimostriamo che $T(n) \leq c\cdot n$, per una qualche costane $c>0$ costante.
->- per $n\leq 3$ abbiamo $T(n)\leq b\leq3c$, che è vera ad esempio per $c\geq b$
->- sfruttando l’ipotesi induttiva $T(k)\leq c \cdot k$ per $k \leq n$ abbiamo:
->$$
->T(n)\leq \frac{2c}{n} \sum^{n-1}_{k= \left\lfloor  \frac{n}{2}  \right\rfloor } k + a \cdot n
->$$
->da cui ricaviamo (grazie flavio sperandeo …….)
-> $$
-> \begin{align}
-> T(n)&\leq \frac{2c}{n}\left( \sum^{n-1}_{k=1}k-\sum^{\lfloor n/2 \rfloor -1}_{k=1}k \right)+a\cdot n\leq \frac{2c}{n}\left( \frac{n(n-1)}{2}-\frac{\left( \frac{n}{2}-1 \right)\left( \frac{n}{2}-2 \right)}{2} \right)+a\cdot n \leq\\
-> &\leq \frac{c}{n}\left( \frac{3n^2}{4}+\frac{n}{2}-2 \right)+a\cdot n\leq \frac{3cn}{4}+\frac{c}{2}+a\cdot n=cn-\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\leq cn
-> \end{align}
-> $$
-> dove l’ultima diseguaglianza segue prendendo $c$ in modo che $\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\geq 0$
-> basta ad esempio prendere $c\geq 8a$
->
-onestamente non ci ho capito un cazzo e credo ciò resterà così per il momento
+>>[!dimostrazione] dimostrazione per sostituzione
+>>$$
+>>T(n) = \begin{cases} \\
+>\frac{1}{n} \sum^{n-1}_{k= \lfloor\frac{n}{2} \rfloor} 2T(k)+a \cdot n & \text{se }n\geq 3\\
+>b & \text{altrimenti}
+>\end{cases}
+>>$$
+>dimostriamo che $T(n) \leq c\cdot n$, per una qualche costane $c>0$ costante.
+>>- per $n\leq 3$ abbiamo $T(n)\leq b\leq3c$, che è vera ad esempio per $c\geq b$
+>>- sfruttando l’ipotesi induttiva $T(k)\leq c \cdot k$ per $k \leq n$ abbiamo:
+>>$$
+>>T(n)\leq \frac{2c}{n} \sum^{n-1}_{k= \left\lfloor  \frac{n}{2}  \right\rfloor } k + a \cdot n
+>>$$
+>>da cui ricaviamo (grazie flavio sperandeo …….)
+>> $$
+>> \begin{align}
+>> T(n)&\leq \frac{2c}{n}\left( \sum^{n-1}_{k=1}k-\sum^{\lfloor n/2 \rfloor -1}_{k=1}k \right)+a\cdot n\leq \frac{2c}{n}\left( \frac{n(n-1)}{2}-\frac{\left( \frac{n}{2}-1 \right)\left( \frac{n}{2}-2 \right)}{2} \right)+a\cdot n \leq\\
+>> &\leq \frac{c}{n}\left( \frac{3n^2}{4}+\frac{n}{2}-2 \right)+a\cdot n\leq \frac{3cn}{4}+\frac{c}{2}+a\cdot n=cn-\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\leq cn
+>> \end{align}
+>> $$
+>> dove l’ultima diseguaglianza segue prendendo $c$ in modo che $\left( \frac{cn}{4}-\frac{c}{2}-a\cdot n \right)\geq 0$
+>> basta ad esempio prendere $c\geq 8a$
+>>
+>onestamente non ci ho capito un cazzo e credo ciò resterà così per il momento
 
 l’analisi rigorosa appena fatta dimostra che, se la scelta del perno avviene in modo equiprobabile a caso tra i vari elementi della lista $A$, il tempo di calcolo dell’algoritmo risulta con alta probabilità lineare in $n$ !
 - la complessità dell’algoritmo `sezione2R` (riportato sopra) è quindi $O(n)$ con alta probabilità
@@ -126,4 +125,18 @@ ovviamente, nel caso peggiore, quando nelle varie partizioni che si succedono ne
 veidamo ora un algoritmo **deterministico** che garantisce complessità $O(n)$ anche al caso pessimo !
 abbiamo visto che riuscire a selezionare un perno in grado di garantire che nessuna delle due sottoliste $A1$ e $A2$ abbia più di $c \cdot n$ elementi, per una qualche costante $0<c<1$ avrebbe come conseguenza una complessità di calcolo $O(n)$. descriviamo ora un metodo, noto come **il mediano dei mediani** per selezionare un perno che garantisce di produrre sempre due sottoliste $A1$ e $A2$, ciascuna delle quali ha non più di $\frac{3}{4}n$ elementi !
 >[!info] logica
->dividi l’insieme $A$, contenente $n$ elementi, in gruppi da 5 elementi ciascuno. l’ultimo gruppo potrebbe avere meno di 5 elementi. considera soltanto i primi $\l\left\lfloor  \frac{n}{5}  \right\rfloor$ g
+>- dividi l’insieme $A$, contenente $n$ elementi, in gruppi da 5 elementi ciascuno. l’ultimo gruppo potrebbe avere meno di 5 elementi. considera soltanto i primi $\left\lfloor  \frac{n}{5}  \right\rfloor$ gruppi, ciascuno composto esattamente da 5 elementi (se $n \% 5 != 0$, consideriamo tutti tranne l’ultimo)
+>- trova il mediano all’interno di ciascuno di questi $l\left\lfloor  \frac{n}{5}  \right\rfloor$ gruppi
+>- calcola il mediano $p$ dei mediani ottenuti al passo precedente
+>- usa $p$ come elemento pivot per l’insieme $A$
+
+>[!info] proprietà
+se la lista $A$ contiene almeno 120 elementi e il perno $p$ con cui partizionarla viene scelto in base alla regola appena scritta sopra, si può esser sicuri che la dimensione di ciascuna delle due sottoliste $A1$ e $A2$ ottenute sarà limitata da $\frac{3}{4}n$
+
+>[!dimostrazione] prova
+il perno scelto $p$ ha proprietà di trovarsi in posizione $\lceil  \frac{n}{10}  \rceil$ (cioè $\left\lfloor  \frac{n}{5} \cdot \frac{1}{2}  \right\rfloor$) nella lista degli $\left\lfloor  \frac{n}{5}  \right\rfloor$ mediani selezionati in $A$.
+ci sono dunque $\left\lceil  \frac{n}{10}  \right\rceil-1$. mediani di valore inferiore a $p$ e $\left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil   \frac{n}{10} \right\rceil$ mediani di valore superiore a $p$
+>
+proviamo ora che: 
+>- $|A_{2}| < \frac{3}{4}n$
+
