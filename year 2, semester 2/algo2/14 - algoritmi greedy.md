@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T08:40
+updated: 2025-04-24T08:49
 completed: true
 ---
 >[!index]
@@ -18,10 +18,9 @@ per illustrare la progettazione e l’analisi di un algoritmo **greedy**, consid
 >- due attività sono **compatibili** se non si sovrappongono
 >
 >vogliamo trovare un sottoinsieme di **massima cardinalità** di attività compatibili 
-
->[!example] esempio
-![[Pasted image 20250407163452.png]]
-in generale possono esistere diverse soluzione ottime, ma in questo caso è facile convincersi che l’unico sottoinsieme massimale è $\{b,e,h\}$
+>>[!example] esempio
+>![[Pasted image 20250407163452.png]]
+>in generale possono esistere diverse soluzione ottime, ma in questo caso è facile convincersi che l’unico sottoinsieme massimale è $\{b,e,h\}$
 
 volendo utilizzare il paradigma **greedy**, dovremmo trovare una regola, semplice da calcolare, che ci permetta di effettuare ogni volta la scelta giusta
 
@@ -75,9 +74,8 @@ affrontiamo ora un nuovo prolema !
 ## assegnazione di attività
 >[!info] problema
 abbiamo una lista di attività, ciascuna caratterizzata da un tempo di inizio ed un tempo di fine. le attività **vanno tutte eseguite** e vogliamo assegnarle al minor numero di aule, tenendo conto che in una stessa aula non possono eseguirsi più attività in parallelo
-
->[!example] esempio
-![[Pasted image 20250424074713.png]]
+>>[!example] esempio
+>![[Pasted image 20250424074713.png]]
 
 >[!info]- possibile algoritmo greedy (non corretto)
 un possibile algoritmo **greedy** si basa sull’idea di occupare aule finchè ci sono attività da assegnare, e ad ogni aula, un volta inaugurata, assegnare il maggior numero di attività non ancora assegnate che è in grado di contere
@@ -148,10 +146,9 @@ inserimenti e cancellazioni dall’heap costeranno $O(\log n)$
 abbiamo $n$ file di dimensioni $d_{0}, d_{1}, \dots d_{n-1}$ che vorremmo memorizzare su un disco di capacità $k$. tuttavia la somma delle dimensioni di questi file eccede la capacità del disco. vogliamo dunque selezionare un sottoinsieme degli $n$ file che abbia **cardinalità massima** (non che occupa la dimensione massima !!!!!) e che possa essere memorizzato sul disco
 >
 >descrivere un algoritmo **greedy** che risolve il problema in tempo $O(n\log n)$ e provarne la correttezza
-
->[!example] esempio
-$D=[5,6,3,5,4,7,3], k=11$
-la risposta deve essere la tripla di file $[2,4,6]$ che occupa spazio 10
+>>[!example] esempio
+>$D=[5,6,3,5,4,7,3], k=11$
+>la risposta deve essere la tripla di file $[2,4,6]$ che occupa spazio 10
 
 un algoritmo greedy per questo problema è quello che si presenta naturalmente: consideriamo i file per **dimensione crescente**, e se c’è spazio per memorizzare il file su disco allora facciamolo
 

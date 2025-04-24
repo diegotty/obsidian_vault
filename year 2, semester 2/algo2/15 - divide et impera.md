@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T08:44
+updated: 2025-04-24T08:59
 completed: false
 ---
 ## problema della selezione
@@ -25,7 +25,32 @@ data una lista $A$ di $n$ interi distinti ed un intero $k$, con $1\leq k\leq n$,
 >[!tip] vedremo, con la tecnica del **divide_et_impera** (cool formatting) che il problema può risolversi in $\Theta(n)$ anche nel caso generale
 >dimostreremo quindi che il problema della selezione è computazionalmente più semplice di quello dell’ordinamento (che invece richiede tempo $\Omega(n\log n)$)
 ### approccio basato su divide et impera
-```
-scegli nella lista A l'elemento in posizione A[0] (che chiameremo perno)
-a partire da A, costruisci due liste A_1 ed A_2, la prima contenente gli elementi di A minori del perno, e la secon
-```
+>[!info] logica
+>- scegli nella lista $A$ l'elemento in posizione $A[0]$ (che chiameremo perno)
+>- a partire da $A$, costruisci due liste $A_1$ ed $A_2$, la prima contenente gli elementi di $A$ minori del perno, e la seconda gli elementi di $A$ maggiori del perno
+>dove si trova l'elemento di rango $k$ ?
+>	- se $|A_1| \geq k$, allora l'elemento di rango $k$ è nel vettore $A_1$
+>	- se $|A_1| = k-1$, allora l'elemento di rango $k$ è proprio il perno $x$
+>	- se $|A_1| < k-1$, allora l'elemento di rango $k$ è in $A_2$, ed è l'elemento di rango $k-|A_1|-1$ in $A_2$
+
+si nota come con questa logica, dopo aver costruito le due liste $A_{1}$ e $A_{2}$, grazie al test sulla cardinalità di $A_{1}$, il problema della selezione dell’elemento di rango $k$ o risulta risolto **oppure viene ricondotto alla selezione di un alemento in una lista con meno di $n$ elementi** (in quanto $A_{1}$ e $A_{2}$ non sono ordinate !!!)
+>[!info] implementazione
+>```python
+>def selezione2(A, k):
+>	if len(A) == 1:
+>		return A[0]
+>	perno = A[0]
+>	A1, A2 = [], []
+>	for i range(1, len(A)):
+>		if A[i] < perno:
+>			A1.append(A[i])
+>		else:
+>			A2.append(A[i])
+>	if len(A1) >= k:
+>		return selezione2(A1, k)
+>	elif len(A1) == k-1:
+>		return perno
+>	return selezione2(A2, k - len(A1) - 1)
+>```
+
+la procedura tripartisce la lista in $A_{1}$, $A[0]$ ed $A_{2}$, e può restituire una partizione massimamente sbilanciata, in cui si ha, ad esempio, $|A_{1}| = 0$ e $|$
