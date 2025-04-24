@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T11:20
+updated: 2025-04-24T20:34
 completed: false
 ---
 ## problema della selezione
@@ -64,10 +64,11 @@ che risolta dà
 $$
 T(n) = \Theta(n^2)
 $$
-in generale, la complessità superiore della procedura è catturata dalla ricorrenza 
+in generale, la complessità **superiore** della procedura è catturata dalla ricorrenza 
 $$
 T(n) = T(m) + \Theta(n) \text{   , con  } m = max\{|A_{1}|, |A_{2}|\}
 $$
+(in quanto consideriamo, per la complessità superiore, che sia necessario fare ricorsivamente una vista, ogni volta nella ripartizione di dimensione maggiore)
 >[!tip] fuoco
 se avessimo una regola di scelta del perno in grado di garantire una partizione bilanciata, cioè $m=max\{|A_{1}|, |A_{2}|\} \approx \frac{n}{2}$
 >allora per la complessità $T(n)$ dell’algoritmo, avremmo
@@ -91,4 +92,11 @@ con la randomizzazione introdotta per la scelta del perno, possiamo assumere che
 >$$
 T(n) \leq \frac{1}{n} \sum^n_{k=1} T\Bigg(max\Big(T(k-1), T(n-k)\Big)\Bigg) + \Theta(n) \leq \frac{1}{n} \sum^{n-1}_{k=\left[ \frac{n}{2} \right]} 2T(k) + \Theta(n)
 >$$
-cioè la ricorrenza deve essere
+e possiamo dimostrare, con il metodo di sostituzione, che questa ricorrenza vale $T(n)=O(n)$
+
+>[!dimostrazione] dimostrazione per sostituzione
+>$$
+>T(n) = \begin{cases}
+\frac{>1}{n} \sum^{n-1}_{k=\left[ \frac{n}{2} \right]} 2T(k) + a\cdot n & \text{se $n$ \geq_{3}}
+\end{cases}
+$$
