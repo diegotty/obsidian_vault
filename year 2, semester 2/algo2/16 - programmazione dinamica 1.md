@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-24T17:44
+updated: 2025-04-24T17:56
 completed: false
 ---
 programmazione dinamica → tabella
@@ -21,5 +21,16 @@ abbimo n persone da distribuire in un albergo con stanze singole e doppie. in qu
 t[i] = numero di modi in cui posso sistemare i persone
 quando aggiungo una persona, o la metto in una stanza singola, o in coppia con una persona
 
-se lo metto in coppia con una persona, può essere uno tra gli i-1 persone rimanenti. una volta scelta la persona col compagno, comb
+se lo metto in coppia con una persona, può essere uno tra gli i-1 persone rimanenti. una volta scelta la persona col compagno, combino le altre i-2 persone
 t[i] = t[i-1] + (i-1) cdot t[i-2]
+
+
+```python
+def es(n):
+	T=[0]*(n+1)
+	T[1], T[2] = 1, 2
+	for i in range(3, n+1):
+		T[i] = T[i-1] + (i-1)*T[i-2]
+```
+
+
