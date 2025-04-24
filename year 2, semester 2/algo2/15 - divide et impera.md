@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T21:16
+updated: 2025-04-24T21:29
 completed: false
 ---
 ## problema della selezione
@@ -138,5 +138,16 @@ il perno scelto $p$ ha proprietà di trovarsi in posizione $\lceil  \frac{n}{10}
 ci sono dunque $\left\lceil  \frac{n}{10}  \right\rceil-1$. mediani di valore inferiore a $p$ e $\left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil   \frac{n}{10} \right\rceil$ mediani di valore superiore a $p$
 >
 proviamo ora che: 
->- $|A_{2}| < \frac{3}{4}n$
+>$|A_{2}| < \frac{3}{4}n$:
+>- consideriamo i $\left\lceil  \frac{n}{10}  \right\rceil-1$ mediani di valore inferiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $n$. ci sono dunque in $A$ altri 2 elementi inferiori a $p$ per ogni mediano. in totale abbiamo 
+>$$
+>3\Big(\left \lceil \frac{n}{10} \right\rceil -1 \Big) \geq 3 \frac{n}{10} - 3
+>$$
+>elementi che finiranno in $A_{1}$, di conseguenza
+>$$
+>|A_{2}| \leq n - \Big(3 \frac{n}{10} -3 \Big) = \frac{7}{10}n + 3\leq \frac{3}{4}n
+>$$
+>
+
+> $|A_{1}| < \frac{3}{4}n$:
 
