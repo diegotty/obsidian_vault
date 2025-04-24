@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-24T08:14
+updated: 2025-04-24T08:29
 completed: false
 ---
 # algoritmi greedy
@@ -140,6 +140,35 @@ inserimenti e cancellazioni dall’heap costeranno $O(\log n)$
 
 ## selezione di file
 >[!info] problema
-abbiamo $n$ file di dimensioni $d_{0}, d_{1}, \dots d_{n-1}$ che vorremmo memorizzare su un disco di capacità $k$. tuttavia la somma delle dimensioni di questi file eccede la capacità del disco. vogliamo dunque selezionare un sottoinsieme degli $n$ file che abbia cardinalità massima e che possa essere memorizzato sul disco
+abbiamo $n$ file di dimensioni $d_{0}, d_{1}, \dots d_{n-1}$ che vorremmo memorizzare su un disco di capacità $k$. tuttavia la somma delle dimensioni di questi file eccede la capacità del disco. vogliamo dunque selezionare un sottoinsieme degli $n$ file che abbia **cardinalità massima** (non che occupa la dimensione massima !!!!!) e che possa essere memorizzato sul disco
 >
->descrivere un algoritmo **greedy** che risolve il problema in tempo $O()$
+>descrivere un algoritmo **greedy** che risolve il problema in tempo $O(n\log n)$ e provarne la correttezza
+
+>[!example] esempio
+$D=[5,6,3,5,4,7,3], k=11$
+la risposta deve essere la tripla di file $[2,4,6]$ che occupa spazio 10
+
+un algoritmo greedy per questo problema è quello che si presenta naturalmente: consideriamo i file per **dimensione crescente**, e se c’è spazio per memorizzare il file su disco allora facciamolo
+
+>[!info] implementazione
+>```python
+>def file(D, k):
+>	n = len(D)
+>	lista = [(D[i], i) for i in range(n)]
+>	lista.sort()
+>	spazio, sol = 0, []
+>	for d, i in lista:
+>		if spazio + d <= k:
+>			sol.append(i)
+>			spazio += d
+>		else:
+>			return sol
+>```
+la complessità di questo algoritmo è $O(n\log n)$ (sort di una lista)
+
+>[!dimostrazione] prova di correttezza dell’algoritmo
+assumiamo per assurdo che la soluzione $sol$ prodotta dal greedy non sia ottima: devono quindi esistere insiemi con più cardinalità maggiore di $sol$ che rispettano la capacità del disco. tra questi insiemi  prendiamo quello con più elementi in comune a $sol$, e lo denotiamo con $sol*$
+>
+>si nota che:
+>- esiste un file $a$ che appartiene a $sol*$ e non a $sol$, e che occupa più spazio di qualunque file in $sol$ (questo perche tutti gli elementi in $sol$ occupano meno spazio di quelli non presenti nello stesso $sol$)
+>- esiste un file $b$ che appartiene a $sol$ e non a $sol*$ (questo perchè $sol n ot \subset$)
