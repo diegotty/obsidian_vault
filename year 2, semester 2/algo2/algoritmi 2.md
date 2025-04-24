@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T08:49
+updated: 2025-04-24T08:33
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -19,9 +19,12 @@ completed: true
 [[12 - algoritmo di bellman-ford-esposito-bevilacqua-sanchez-goggia]]
 [[13 - problemi di ottimizzazione, algoritmi di approssimazione]]
 [[14 - algoritmi greedy]]
-
+[[15 - divide et impera]]
 
 ## greedy
 [[09 - algoritmo di dijkstra]]
 [[10 - spanning tree]]
 [[14 - algoritmi greedy]]
+
+## divide ed impera
+[[15 - divide et impera]]

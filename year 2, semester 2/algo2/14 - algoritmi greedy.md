@@ -1,9 +1,14 @@
 ---
-related to: 
+related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T08:29
-completed: false
+updated: 2025-04-24T08:40
+completed: true
 ---
+>[!index]
+>- [algoritmi greedy](#algoritmi%20greedy)
+>	- [selezione di attività](#selezione%20di%20attivit%C3%A0)
+>	- [assegnazione di attività](#assegnazione%20di%20attivit%C3%A0)
+>	- [selezione di file](#selezione%20di%20file)
 # algoritmi greedy
 per illustrare la progettazione e l’analisi di un algoritmo **greedy**, consideriamo un problema piuttosto semplice chiamato **selezione di attività**:
 ## selezione di attività
@@ -136,7 +141,7 @@ inserimenti e cancellazioni dall’heap costeranno $O(\log n)$
 >- ordinare la lista costa $O(n\log n)$
 >- il `for-loop` viene eseguito $n$ volte, e all’interno del `for`, nel caso pessimo, può essere eseguito un heappop **e** un heappush, entrambe operazioni di costo $O(\log n)$. 
 >
->il costo complessivo dell’algoritmo è quindi $O(n\log n)$
+>il costo complessivo dell’algoritmo è quindi $\Theta(n\log n)$
 
 ## selezione di file
 >[!info] problema
@@ -164,11 +169,13 @@ un algoritmo greedy per questo problema è quello che si presenta naturalmente: 
 >		else:
 >			return sol
 >```
-la complessità di questo algoritmo è $O(n\log n)$ (sort di una lista)
+la complessità di questo algoritmo è $\Theta(n\log n)$ (sort di una lista)
 
 >[!dimostrazione] prova di correttezza dell’algoritmo
 assumiamo per assurdo che la soluzione $sol$ prodotta dal greedy non sia ottima: devono quindi esistere insiemi con più cardinalità maggiore di $sol$ che rispettano la capacità del disco. tra questi insiemi  prendiamo quello con più elementi in comune a $sol$, e lo denotiamo con $sol*$
 >
 >si nota che:
 >- esiste un file $a$ che appartiene a $sol*$ e non a $sol$, e che occupa più spazio di qualunque file in $sol$ (questo perche tutti gli elementi in $sol$ occupano meno spazio di quelli non presenti nello stesso $sol$)
->- esiste un file $b$ che appartiene a $sol$ e non a $sol*$ (questo perchè $sol n ot \subset$)
+>- esiste un file $b$ che appartiene a $sol$ e non a $sol*$ (questo perchè $sol \not \subset sol*$, infatti l’aggiunga di un qualunque elemento a $sol$ porterebbe a superare la capacità del disco)
+>
+>possiamo dunque eliminare da $sol*$ il file $a$ ed inserire il file $b$ ottenendo un nuovo insieme che rispetta ancora le capacità del disco ed ha un elemento in più in comune con $sol$, contraddicendo le nostre ipotesi (il file $sol*$ è quello con più elementi in comune con $sol$)
