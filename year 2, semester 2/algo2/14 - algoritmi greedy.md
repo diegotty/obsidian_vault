@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T21:59
+updated: 2025-04-24T07:59
 completed: false
 ---
 # algoritmi greedy
@@ -67,3 +67,40 @@ pseudocodice:
 
 affrontiamo ora un nuovo prolema !
 >[!info] assegnazione di attività
+abbiamo una lista di attività, ciascuna caratterizzata da un tempo di inizio ed un tempo di fine. le attività **vanno tutte eseguite** e vogliamo assegnarle al minor numero di aule, tenendo conto che in una stessa aula non possono eseguirsi più attività in parallelo
+
+>[!example] esempio
+![[Pasted image 20250424074713.png]]
+
+>[!info]- possibile algoritmo greedy (non corretto)
+un possibile algoritmo **greedy** si basa sull’idea di occupare aule finchè ci sono attività da assegnare, e ad ogni aula, un volta inaugurata, assegnare il maggior numero di attività non ancora assegnate che è in grado di contere
+>```python
+>def assegnazione_a(lista):
+>	i, sol = 0, []
+>	while lista:
+>		i += 1
+>		lista1 = selezione_a(lista)
+>		sol.append(lista1)
+>		elimina da lista le attività in lista1
+>	return sol
+>```
+>ma si può notare che l’algoritmo non è corretto: 
+![[Pasted image 20250424075329.png]]
+
+arriviamo allora alla soluzione corretta:
+```
+def assegnazione_a(lista):
+	inizializza la soluzione con una aula senza attività
+	while lista != []:
+		estrai da lista l'attività (a,b) che inizia prima
+		if c'è nella soluzione un'aula in cui è possibile eseguirla:
+			assegna (a,b) a quell'aula
+		else:
+			inserisci nella soluzione una nuova aula ed assegnagli (a,b)
+	return la soluzione con le aule e le attività assegnate
+```
+
+>[!dimostrazione] correttezza dell’algoritmo
+sia $k$ il numero di aule utilizzate dalla soluzione: faremo vedere che ci sono nella lista $k$ attività incompatibili a copiia, e questo ovviamente implica che $k$ aule sono necessarie
+>
+>sia $(a,b)$ l’attività che ha portato all’introduzione nella soluzione della $k-esima$ aula. in quel momento nelle altre $k-1$ aule era impossibile eseguire l’attività $(a,b)$, ma per il criterio di scelta greedy posso anche dire che nell’istante di tempo $a$ tutte le aule erano occupate (le attività a loro assegnate iniziava)
