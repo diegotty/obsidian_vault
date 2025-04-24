@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T23:00
+updated: 2025-04-24T23:09
 completed: false
 ---
 ## problema della selezione
@@ -225,3 +225,8 @@ il tempo di esecuzione totale è la somma dei contributi dei vari livelli:
 >$$
 >T(n)<c\cdot n+c\cdot(\alpha+\beta)\cdot n+c\cdot(\alpha+\beta)^2\cdot n+\dots=cn\cdot \sum^\infty_{i=0}(\alpha+\beta)^i=cn \frac{1}{1-(\alpha+\beta)}=\Theta (n)
 >$$
+>
+nel calcolare la serie, abbiamo sfruttato il fatto che $\alpha+\beta<1$ e che la serie geometrica $\sum^{\infty}_{i=0}x^i$ con $x<1$ converge a $\frac{1}{1-x}$
+
+il problema della selezione può quindi essere risolto in tempo lineare, in quanto abbiamo un algoritmo che risolve il problema in $O(n)$ **al caso pessimo**
+- tuttavia, a causa delle grandi costanti moltiplicative nascoste dall’$O(n)$, nella pratica l’algoritmo randomizzato che ha tempo $O(n)$ con alta probabilità si comporta molto meglio
