@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T22:20
+updated: 2025-04-24T22:30
 completed: false
 ---
 ## problema della selezione
@@ -132,37 +132,36 @@ abbiamo visto che riuscire a selezionare un perno in grado di garantire che ness
 
 >[!info] proprietà
 se la lista $A$ contiene almeno 120 elementi e il perno $p$ con cui partizionarla viene scelto in base alla regola appena scritta sopra, si può esser sicuri che la dimensione di ciascuna delle due sottoliste $A1$ e $A2$ ottenute sarà limitata da $\frac{3}{4}n$
-
->[!dimostrazione] prova
-il perno scelto $p$ ha proprietà di trovarsi in posizione $\lceil  \frac{n}{10}  \rceil$ (cioè $\left\lfloor  \frac{n}{5} \cdot \frac{1}{2}  \right\rfloor$) nella lista degli $\left\lfloor  \frac{n}{5}  \right\rfloor$ mediani selezionati in $A$.
-ci sono dunque $\left\lceil  \frac{n}{10}  \right\rceil-1$. mediani di valore inferiore a $p$ e $\left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil   \frac{n}{10} \right\rceil$ mediani di valore superiore a $p$
->
-proviamo ora che: 
->$|A_{2}| < \frac{3}{4}n$:
->- consideriamo i $\left\lceil  \frac{n}{10}  \right\rceil-1$ mediani di valore inferiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $n$. ci sono dunque in $A$ altri 2 elementi inferiori a $p$ per ogni mediano. in totale abbiamo 
->$$
->3\Big(\left \lceil \frac{n}{10} \right\rceil -1 \Big) \geq 3 \frac{n}{10} - 3
->$$
->elementi che finiranno in $A_{1}$, di conseguenza
->$$
->|A_{2}| \leq n - \Big(3 \frac{n}{10} -3 \Big) = \frac{7}{10}n + 3\leq \frac{3}{4}n
->$$
->dove l’ultima diseguaglianza segue dal fatto che $n\geq120$ (anche se per questa disequazione basta che $n\geq60$)
->
-> $|A_{1}| < \frac{3}{4}n$:
->-  ci sono 
-> $$
-> \left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil  \frac{n}{10}  \right\rceil \geq \Big(\frac{n}{5} - 1\Big) - \Big(\frac{n}{10}+1\Big) = \frac{n}{10}-2
->$$ 
->mediani di valore superiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $A$. ci sono dunque in $A$ altri 2 elementi superiori a $p$ per ogni mediano (quindi 3 elementi per ogni gruppo con mediano maggiore di $p$). in totale abbiamo almeno 
->$$
->3 \frac{n}{10} -6
->$$
-elementi di $A$ che finiranno in $A2$, di conseguenza
->$$
->|A_{1}| \leq n - \Big(3 \frac{n}{10} -6\Big) =\frac{7}{10}n + 6\leq \frac{3}{4}n
->$$
->dove l’ultima diseguaglianza segue dal fatto che $n\geq120$
+>>[!dimostrazione] prova
+>il perno scelto $p$ ha proprietà di trovarsi in posizione $\lceil  \frac{n}{10}  \rceil$ (cioè $\left\lfloor  \frac{n}{5} \cdot \frac{1}{2}  \right\rfloor$) nella lista degli $\left\lfloor  \frac{n}{5}  \right\rfloor$ mediani selezionati in $A$.
+>ci sono dunque $\left\lceil  \frac{n}{10}  \right\rceil-1$. mediani di valore inferiore a $p$ e $\left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil   \frac{n}{10} \right\rceil$ mediani di valore superiore a $p$
+>>
+>proviamo ora che: 
+>>$|A_{2}| < \frac{3}{4}n$:
+>>- consideriamo i $\left\lceil  \frac{n}{10}  \right\rceil-1$ mediani di valore inferiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $n$. ci sono dunque in $A$ altri 2 elementi inferiori a $p$ per ogni mediano. in totale abbiamo 
+>>$$
+>>3\Big(\left \lceil \frac{n}{10} \right\rceil -1 \Big) \geq 3 \frac{n}{10} - 3
+>>$$
+>>elementi che finiranno in $A_{1}$, di conseguenza
+>>$$
+>>|A_{2}| \leq n - \Big(3 \frac{n}{10} -3 \Big) = \frac{7}{10}n + 3\leq \frac{3}{4}n
+>>$$
+>>dove l’ultima diseguaglianza segue dal fatto che $n\geq120$ (anche se per questa disequazione basta che $n\geq60$)
+>>
+>> $|A_{1}| < \frac{3}{4}n$:
+>>-  ci sono 
+>> $$
+>> \left\lfloor  \frac{n}{5}  \right\rfloor - \left\lceil  \frac{n}{10}  \right\rceil \geq \Big(\frac{n}{5} - 1\Big) - \Big(\frac{n}{10}+1\Big) = \frac{n}{10}-2
+>>$$ 
+>>mediani di valore superiore a $p$. ognuno di questi mediani appartiene ad un gruppo di 5 elementi in $A$. ci sono dunque in $A$ altri 2 elementi superiori a $p$ per ogni mediano (quindi 3 elementi per ogni gruppo con mediano maggiore di $p$). in totale abbiamo almeno 
+>>$$
+>>3 \frac{n}{10} -6
+>>$$
+>elementi di $A$ che finiranno in $A2$, di conseguenza
+>>$$
+>>|A_{1}| \leq n - \Big(3 \frac{n}{10} -6\Big) =\frac{7}{10}n + 6\leq \frac{3}{4}n
+>>$$
+>>dove l’ultima diseguaglianza segue dal fatto che $n\geq120$
 
 >[!info] implementazione
 >```python
@@ -206,11 +205,23 @@ elementi di $A$ che finiranno in $A2$, di conseguenza
 >\end{cases}
 >$$
 
->[!warning] notiamo che la ricorrenza è del tipo
+>[!warning] rule of thumb per equazioni di ricorrenza
+notiamo che la ricorrenza è del tipo
 >$$
 >T(n)=T(\alpha \cdot n)+T(\beta \cdot n)+\Theta(n)
 >$$
->con 
->$$
+>con $\alpha + \beta = \frac{1}{5} + \frac{3}{4} = \frac{19}{20} < 1$
+>mostreremo che le ricorrenze di questo tipo hanno tutte come soluzione $T(n)=\Theta(n)$
 
-$$
+>[!info] proprietà
+>se $T(n)=T(\alpha \cdot n) + T(\beta \cdot n) + cn$, con $\alpha+\beta <1$, allora $T(n) = \Theta(n)$
+
+>[!dimostrazione] prova (metodo dell’albero)
+il fatto che $\alpha + \beta <1$ gioca un ruolo fontamentale nella prova: consideriamo l’albero delle chiamate ricorsive generato dalla ricorrenza e analizziamone il costo per livelli:
+![[Pasted image 20250424222730.png]]
+>- al primo livello abbiamo un costo $(\alpha+\beta)\cdot n$, al secondo un costo $(\alpha+\beta)^2\cdot n$, al terzo un costo $(\alpha+\beta)^3\cdot n$ e così via
+>
+il tempo di esecuzione totale è la somma dei contributi dei vari livelli:
+>$$
+>T(n)<c\cdot n+c\cdot(\alpha+\beta)\cdot n+c\cdot(\alpha+\beta)^2\cdot n+\dots=cn\cdot \sum^\infty_{i=0}(\alpha+\beta)^i=cn \frac{1}{1-(\alpha+\beta)}=\Theta (n)
+>$$
