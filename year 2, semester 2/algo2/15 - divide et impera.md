@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T21:49
+updated: 2025-04-24T21:54
 completed: false
 ---
 ## problema della selezione
@@ -173,5 +173,11 @@ def selezione(A, K):
 	if len(A) <= 120:
 		A.sort()
 		return A[k-1]
+	
+	# inizializza B con i mediani di len(A)//5 gruppi di 5 elementi di A
+	# (sorta i gruppi di 5, e prende il terzo elemento (mediano))
+	B = [sorted(A[5*i : 5*i+5])[2] for i in range(len(A)//5)]
+	# individua il perno p con la regola del mediano dei mediani (entra nel primo if, ritorna il mediano)
+	perno = selezione(B, ceil(len(A)/10))
 
 ```
