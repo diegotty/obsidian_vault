@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-04-24T21:54
+updated: 2025-04-24T22:02
 completed: false
 ---
 ## problema della selezione
@@ -177,7 +177,23 @@ def selezione(A, K):
 	# inizializza B con i mediani di len(A)//5 gruppi di 5 elementi di A
 	# (sorta i gruppi di 5, e prende il terzo elemento (mediano))
 	B = [sorted(A[5*i : 5*i+5])[2] for i in range(len(A)//5)]
+	
 	# individua il perno p con la regola del mediano dei mediani (entra nel primo if, ritorna il mediano)
 	perno = selezione(B, ceil(len(A)/10))
+	A1, A2 = [], []
+	
+	# tripartizione	
+	for x in A:
+		if x < perno: A1.append()
+		elif x > perno: A2.append()
+	if len(A1) >= k:
+		return selezione(A1, k)
+	elif len(A1) == k-1:
+		return perno
+	return selezione(A2, k - len(A1) - 1)
 
 ```
+calcoliamo la complessità dell’algoritmo, ricordando che:
+>- ordinare 120 elementi richiede tempo $O(1)$
+>- ordinare una lista di $n$ elementi in gruppi di 5 richiede tempo $\Theta(n)$ ($n \cdot 5\log 5 = n \cdot c$)
+>- selezionare i mediani dei mediani di gruppi di 5 da una lista in cui gli elementi sono stati ordinati in gruppi da 5 richiede tempo $\Theta(n)$
