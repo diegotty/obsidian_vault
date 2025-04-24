@@ -1,10 +1,10 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-23T21:16
+updated: 2025-04-24T23:20
 completed: false
 ---
-# indirizzamento IPv4
+re# indirizzamento IPv4
 **ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
 - per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
 	- i router devono necessariamente essere connessi ad almeno due collegamenti, mentre un host, in genere, ha un’interfaccia
