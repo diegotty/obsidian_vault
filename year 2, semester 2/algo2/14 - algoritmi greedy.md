@@ -1,12 +1,13 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-24T07:59
+updated: 2025-04-24T08:14
 completed: false
 ---
 # algoritmi greedy
 per illustrare la progettazione e l’analisi di un algoritmo **greedy**, consideriamo un problema piuttosto semplice chiamato **selezione di attività**:
->[!info] selezione di attività
+## selezione di attività
+>[!info] problema
 >abbiamo una lista di $n$ attività da eseguire:
 >- ciascuna attività è caratterizzata da una copia: (tempo_inizio, tempo_fine)
 >- due attività sono **compatibili** se non si sovrappongono
@@ -66,7 +67,8 @@ pseudocodice:
 >il costo totale dell’algoritmo è $\Theta(n\log n)$
 
 affrontiamo ora un nuovo prolema !
->[!info] assegnazione di attività
+## assegnazione di attività
+>[!info] problema
 abbiamo una lista di attività, ciascuna caratterizzata da un tempo di inizio ed un tempo di fine. le attività **vanno tutte eseguite** e vogliamo assegnarle al minor numero di aule, tenendo conto che in una stessa aula non possono eseguirsi più attività in parallelo
 
 >[!example] esempio
@@ -103,4 +105,41 @@ def assegnazione_a(lista):
 >[!dimostrazione] correttezza dell’algoritmo
 sia $k$ il numero di aule utilizzate dalla soluzione: faremo vedere che ci sono nella lista $k$ attività incompatibili a copiia, e questo ovviamente implica che $k$ aule sono necessarie
 >
->sia $(a,b)$ l’attività che ha portato all’introduzione nella soluzione della $k-esima$ aula. in quel momento nelle altre $k-1$ aule era impossibile eseguire l’attività $(a,b)$, ma per il criterio di scelta greedy posso anche dire che nell’istante di tempo $a$ tutte le aule erano occupate (le attività a loro assegnate iniziava)
+>sia $(a,b)$ l’attività che ha portato all’introduzione nella soluzione della $k-esima$ aula. in quel momento nelle altre $k-1$ aule era impossibile eseguire l’attività $(a,b)$, ma per il criterio di scelta greedy posso anche dire che nell’istante di tempo $a$ tutte le aule erano occupate (le attività a loro assegnate iniziavano prima del tempo $a$ e non erano ancora finite), quindi nell’istante di tempo $a$ a due a due tutte queste $k$ attività sono incompatibili
+![[Pasted image 20250424075950.png]]
+
+>[!info] implementazione
+**IDEA**
+>- per individuare efficientemente l'attività che inizia prima, effettuiamo un pre-processing in cui ordiniamo le attività per tempo di inizio
+>- per individuare efficientemente se una delle aule è in `sol` è in grado di eseguire un certo lavoro $(a,b)$, uso una **heap** minima in cui metto le coppie `(libera,i)` dove `libera` indica il tempo in cui si libera l’aula $i$. in questo modo, in tempo $O(1)$ posso sapere qual’è l’aula che si libera prima semplicemente verificando `H[0][0]` (fuoco)
+>	- se nell’aula che si libera prima si può eseguire l’attività, allora dovrò assegnargliela e aggiornare il valore `libera` della coppia che la rappresenta nell’heap. se al contrario l’aula non può accogliere l’attività, allora non sarà possibile farlo in nessuna delle altre aule e bisognerà assegnare all’attvità un nuova aula, ed inserire nella heap la coppia che rappresenta questa nuova aula
+>
+inserimenti e cancellazioni dall’heap costeranno $O(\log n)$
+>```python
+>def assegnazioneAule(lista):
+>	from heapq import heappop, heappush
+>	sol = [[]]
+>	H=[(0,0)]
+>	lista.sort()
+>	for inizio, fine in lista:
+>		libera, aula = H[0]
+>		if libera <= inizio:
+>			sol[aula].append((inizio, fine))
+>			heappop(H) # pop dalla testa
+>			heappush(H, (fine, aula))
+>		else:
+>			sol.append([(inizio, fine)])
+>			heappush(H, (fine, len(sol)-1))
+>	return sol
+>```
+>complessità dell’algoritmo:
+>- ordinare la lista costa $O(n\log n)$
+>- il `for-loop` viene eseguito $n$ volte, e all’interno del `for`, nel caso pessimo, può essere eseguito un heappop **e** un heappush, entrambe operazioni di costo $O(\log n)$. 
+>
+>il costo complessivo dell’algoritmo è quindi $O(n\log n)$
+
+## selezione di file
+>[!info] problema
+abbiamo $n$ file di dimensioni $d_{0}, d_{1}, \dots d_{n-1}$ che vorremmo memorizzare su un disco di capacità $k$. tuttavia la somma delle dimensioni di questi file eccede la capacità del disco. vogliamo dunque selezionare un sottoinsieme degli $n$ file che abbia cardinalità massima e che possa essere memorizzato sul disco
+>
+>descrivere un algoritmo **greedy** che risolve il problema in tempo $O()$
