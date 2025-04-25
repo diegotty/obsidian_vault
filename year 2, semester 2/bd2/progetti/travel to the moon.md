@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T10:56
+updated: 2025-04-25T11:12
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -75,7 +75,16 @@ updated: 2025-04-25T10:56
 - GiornoSettimana : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
 - Istante : (data : Data, ora : Ora, secondi : Intero in 0..60)
 - DeltaDataOra : (giorno: Intero > 0, ora: Ora)
-- Apertura: (giorno: GiornoSettimana, fascia : FasciaOraria)
+
+>[!warning] disaccordo
+>il prof. , per modellare gli orari delle destinazioni, usa:
+>- apertura: Apertura[0..7] in PostoDaVedere
+>
+con
+>- Apertura: (giorno: GiornoSettimana, fascia : FasciaOraria)
+>- FasciaOraria(ora_inizio: Ora, ora_fine: Ora)
+>
+>ma in questo modo non è possibile assegnare più fasce orarie in un singolo giorno ad un posto da vedere (credo) ! lame
 
 
 età è un’operazione (dalla nascita)
@@ -93,6 +102,12 @@ ogni istanza di questa classe rappresenta una crociera
 
 **classe Itinerario**
 ogni istanza di questa classe rappresenta un itinerario
+- durata_g() : Intero ≥ 0
+	pre: nessuna (basta che ci siano partenza e arrivo, che sono di molteplicità 1 per il ruolo di itinerario)
+	post: 
+		l’operazione non modifica il livello estensionale
+		sia (this, d), il link di assoc. arrivo_finale che coinvolge ‘this’ (duh ?)
+		result = (this, d).istante.giorno
 
 **classe Cliente**
 ogni istanza di questa classe rappresenta un cliente
