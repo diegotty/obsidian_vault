@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T13:22
+updated: 2025-04-25T13:24
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -67,7 +67,7 @@ updated: 2025-04-25T13:22
 		1. Dato un periodo 'p', calcolare l'età media dei clienti che hanno prenotato, durante 'p', almeno una crociera che prevede una destinazione esotica (v. req. 3.5)
 		2. Dato un periodo 'p', calcolare la percentuale delle destinazioni 'gettonate' in 'p', ovvero raggiunte, durante 'p', da almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
 ## diagramma UML
-![[Pasted image 20250425120149.png]]
+![[Pasted image 20250425132355.png]]
 ## specifica dei tipi
 - Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
@@ -107,12 +107,6 @@ ogni istanza di questa classe rappresenta una crociera
 		result = n.capienza - posti_prenotati
 
 // operazioni fatte per facilitare gli use-case **statistiche**
-- destinazioni_toccate() : Destinazione [1..\*]
-	pre: nessuna
-	post:
-		sia i : Itinerario l’oggetto t.c. esiste (this, i) : crociera_itinerario
-		result = i.destinazioni()
-
 - tocca(d : Destinazione, inizio : Data, fine : Data) : Booleano
 	pre: 
 		inizio ≤ fine
@@ -125,6 +119,15 @@ ogni istanza di questa classe rappresenta una crociera
 			se esiste (i, d) :  arrivo_finale, result = TRUE se e solo se inizio ≤ this.fine() ≤ fine
 			se esiste t : Tappa l’oggetto t.c. esiste (i, t) : tappa_itinerario ed esiste (t, d) : tappa_destinazione, result = TRUE se e solo se  i periodi (this.inizio + t.arrivo.giorno, this.inizio + t.partenza.giorno) e (inizio, fine) si sovrappongono
 			altrimenti return = FALSE
+
+```
+// fu scritta dal bro sull’UML ma non fu mai usata, l’ho fatta e non voglio cancellarla
+- destinazioni_toccate() : Destinazione [1..\*]
+	pre: nessuna
+	post:
+		sia i : Itinerario l’oggetto t.c. esiste (this, i) : crociera_itinerario
+		result = i.destinazioni()
+```
 
 - vincoli esterni
 \[V.crociera.Prenotazione.no_overbooking]
