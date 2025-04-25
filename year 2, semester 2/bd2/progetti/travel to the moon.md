@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T10:45
+updated: 2025-04-25T10:56
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -72,9 +72,10 @@ updated: 2025-04-25T10:45
 - Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
 - Orario: (apertura : Ora, chiusura : Ora)
-- Giorno : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
+- GiornoSettimana : {lunedì, martedì, mercoledì, giovedì, venerdì, sabato, domenica}
 - Istante : (data : Data, ora : Ora, secondi : Intero in 0..60)
 - DeltaDataOra : (giorno: Intero > 0, ora: Ora)
+- Apertura: (giorno: GiornoSettimana, fascia : FasciaOraria)
 
 
 età è un’operazione (dalla nascita)
@@ -82,7 +83,34 @@ un clietnte deve ptoer prenotare più volte da una crociera. bisogno di classe p
 posti disponibili, specifica dell’operazione
 ## specifica di classe
 **classe Crociera**
+ogni istanza di questa classe rappresenta una crociera
+- fine() : Data
+	pre:  nessuna
+		// esiste il link crociera_itinerario che comprende this (scontato, è 1..1, quindi **errore**)
+	post:
+		sia i : Itinerario t.c. (this, i) : crociera_itinerario
+		result = inizio + i.durata_g()
+
 **classe Itinerario**
+ogni istanza di questa classe rappresenta un itinerario
+
 **classe Cliente**
+ogni istanza di questa classe rappresenta un cliente
+- eta() : Intero ≥ 0
+	pre-condizioni:
+		d ≥ this.data_nascita
+	post-condizioni:
+		l’operazione non modifica il livello estensionale
+		result = d- this.data_nascita (espressa in anni approssimata per difetto)
+
 **classe Destinazione**
+ogni istanza di questa classe rappresenta una destinazione raggiungibile
+- esotica() : Booleano
+	pre: nessuna
+	post: 
+		l’operazione non modifica il livello estensionale
+		sia c : Continente t.c. (this, c) : destinazione_continente
+		result = c.esotico
+
 **classe LunaDiMiele**
+ogni istanza di questa classe rappresenta una crociera di tipologia luna di miele
