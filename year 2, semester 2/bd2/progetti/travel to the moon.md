@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T12:15
+updated: 2025-04-25T12:30
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -99,6 +99,15 @@ ogni istanza di questa classe rappresenta una crociera
 	post:
 		sia i : Itinerario t.c. (this, i) : crociera_itinerario
 		result = inizio + i.durata_g()
+	
+// operazioni fatte per facilitare gli use-case **statistiche**
+- destinazioni_toccate() : Destinazione [1..\*]
+	pre: nessuna
+	post:
+		sia i : Itinerario l’oggetto t.c. esiste (this, i) : crociera_itinerario
+		resul 
+
+- tocca(d : Destinazione, inizio : Data, fine : Data) : Booleano
 
 **classe Itinerario**
 ogni istanza di questa classe rappresenta un itinerario
@@ -108,6 +117,24 @@ ogni istanza di questa classe rappresenta un itinerario
 		l’operazione non modifica il livello estensionale
 		sia (this, d), il link di assoc. arrivo_finale che coinvolge ‘this’ (duh ?)
 		result = (this, d).istante.giorno
+
+//operazioni fatte per facilitare gli use-case **statistiche**
+- destinazioni() : Destinazione[0..\*]
+	pre: nessuna
+	post:
+		sia tappe l’insieme di t : TappaIntermedia t.c. esiste (this, t) : itin_tappa
+		sia destinazioni l’insieme di d : Destinazione t.c esiste , con t in tappe, (t, d) : tappa_dest
+		sia tappa_partenza : Destinazione l’oggetto t.c. esiste (this, d) : partenza_iniziale
+		sia tappa_arrivo : Destinazione l’oggetto t.c. esiste (this, d) : arrivo_finale
+		result = destinazioni U {tappa_partenza} U {tappa_arrivo}
+
+- esotico() : Booleano
+	pre: nessuna
+	post:
+		sia dest = this.destinazioni()
+		result = TRUE se e solo se esiste almeno un d : Destinazione in dest t.c. d.esotica() = TRUE
+
+
 
 **classe Cliente**
 ogni istanza di questa classe rappresenta un cliente
@@ -151,7 +178,7 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 		inizio ≤ fine
 		esiste almeno un c : Crociera t.c. :
 		sia i : Itinerario t.c. (c, i) : crociera_itinerario
-		
+		i.esotico() è true
 	post:
 		sia `pre` l’insieme delle prenotazioni in cui data_inizio < prenotazione.istante < data_fine
 		sia 
