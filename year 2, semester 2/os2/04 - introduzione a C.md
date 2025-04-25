@@ -1,6 +1,6 @@
 ---
 created: 2025-04-10T13:15
-updated: 2025-04-24T20:35
+updated: 2025-04-25T22:36
 ---
 # intro a C
 ## ambiente di sviluppo ed esecuzione
@@ -285,6 +285,21 @@ una volta ottenuto il pointer al primo elemento, è possibile usarlo come un arr
 >```c
 >arrayPtr[3] = 3;
 >```
+### $\verb |void *realloc(void *ptr, size_t size)|$
+`realloc()` modifica la dimensione dell’area di memoria precedentemente allocata con `malloc()/calloc()` e puntata da `ptr`, rendendola della dimensione specificata da `size`
+- ritorna `NULL` in caso di errore
+- il contenuto dell’area di memoria puntata da `ptr` non viene modificato (giustamente …)
+- la nuova area di memoria allocata non viene inizializzata (se ad esempio quella originale lo era (huh))
+- in caso di errore l’area di memoria originale rimane intatta
+>[!example] esempio
+```c
+char *strptr = NULL;
+const int SIZE_OF_ARRAY = 30;
+strptr = (char *) calloc(SIZE_OF_ARRAY, sizeof(char) );
+strptr1 = (char *) realloc(strptr, 10*SIZE_OF_ARRAY);
+```
+>[!warning] `strptr1` potrebbe essere diverso da `strptr` (nel senso che l’area di memoria inizia ad un indirizzo diverso !!)
+>infatti, nel caso di aumento della dimensione, qualora non riuscisse ad allargare l’area correntemente allocata e puntata da `strptr`, alloca una nuova area, liberando quella correntemente puntata da `strptr`
 ### $\verb |void free(void *ptr)|$
 usato per deallocare(rilasciare) dinamicamente **e contiguamente** memoria dalla heap
 - `ptr` è il pointer all’inzio della memoria da deallocare

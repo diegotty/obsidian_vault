@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T22:28
+updated: 2025-04-25T22:43
 completed: false
 ---
 # programmazione di sistema
@@ -59,5 +59,16 @@ $\text{"main:messaggio\_errore\_mnemonico\_=\_errno"}$
 abbiamo visto le [[04 - introduzione a C#allocazione dinamica|funzioni per l’allocazione dinamica]] di memoria **nell’heap**
 - nella libreria `alloca.h` è definita la funzione `void *alloca(size_t size)`, che permette di allocare dinamicamente **memoria nello stack** (da evitare per grandi dimensioni !)
 le funzioni `malloc()`, `calloc()` e `realloc()` usano le vere syscall per la gestione della memoria, ad esempio `nmap` (alloca memoria) e `brk` (cambia dimensione del [[03 - processi#aree di memoria|data segment]] del processo)
+- le funzioni (che allocano memoria dinamicamente) ritornano un puntatore (lo indica `void *nome(parametri)`), e come visto in precedenza serve fare il casting al tipo di puntatore relativo di dato contenuto nella memoria per poter utilizzare correttamente l’aritmetica dei puntatori
+### memory leakage
+l’esecuzione di un programma che non gestisce correttamente la liberazione della memoria non più utilizzata può causare un aumento del consumo della memoria di sistema: questo può portare al fallimento del programma stesso, non riuscendo più ad allocare altra memoria da utilizzare, ed in generale può portare al deterioramento delle performance e del funzionamento del sistema
+- ricordiamoci di usare `free()` :)
+### $\verb |void *memset(void *s, int c, size_t n)|$
+- assegna il valore intero `c` a `n`byte contigui dell’area di memoria puntata da `s` (cool !)
+### $\verb |void *memcpy(void *dest, const void *src, size_t n)|$
+- copia `n` bytes contigui a partire da `src` in `dest`
+	- le due aree di memoria non possono sovrapporsi !!!
+	- es: utile per duplicare rapidamente un array
+
+
 - `void *nmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)`: crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
-- le funzioni (che allocano memoria dinamicamente) ritornano un puntatore 
