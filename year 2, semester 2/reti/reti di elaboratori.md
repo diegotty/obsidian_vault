@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-04-24T20:35
+updated: 2025-04-25T22:44
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -14,3 +14,4 @@ updated: 2025-04-24T20:35
 [[10 - sockets]]
 [[11 - livello di rete]]
 [[12 - livello di rete; DHCP, NAT, forwarding, ICMP]]
+[[13 - livello di rete; routing, RIP]]
