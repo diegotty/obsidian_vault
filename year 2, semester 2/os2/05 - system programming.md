@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T22:12
+updated: 2025-04-25T22:28
 completed: false
 ---
 # programmazione di sistema
@@ -51,4 +51,13 @@ $$
 `perror("main")` invia su `stderr`:
 $\text{"main:messaggio\_errore\_mnemonico\_=\_errno"}$
 ### $\verb |char *strerror(int errum)|$
-`strerror()` è una funzione di libreria che consente di convertire un codice di errore numerico `errno`, che acquisisce come parametro di input, nella sua equivalente rappresentazione in stringa
+`strerror()` è una funzione di libreria (`string.h`) che consente di convertire un codice di errore numerico `errno`, che acquisisce come parametro di input, nella sua equivalente rappresentazione in stringa
+
+>[!info] debug syscall
+è spesso utile monitorare il comportamento di un processo relativamente all’invocazione di syscall: è possibile scaricare il comando `strace` che permette di tracciare l’invocazione di syscall da parte di un processo e i relativi parenti
+## allocazione della memoria
+abbiamo visto le [[04 - introduzione a C#allocazione dinamica|funzioni per l’allocazione dinamica]] di memoria **nell’heap**
+- nella libreria `alloca.h` è definita la funzione `void *alloca(size_t size)`, che permette di allocare dinamicamente **memoria nello stack** (da evitare per grandi dimensioni !)
+le funzioni `malloc()`, `calloc()` e `realloc()` usano le vere syscall per la gestione della memoria, ad esempio `nmap` (alloca memoria) e `brk` (cambia dimensione del [[03 - processi#aree di memoria|data segment]] del processo)
+- `void *nmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)`: crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
+- le funzioni (che allocano memoria dinamicamente) ritornano un puntatore 
