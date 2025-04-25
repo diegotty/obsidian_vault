@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T12:45
+updated: 2025-04-25T12:59
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -85,11 +85,6 @@ con
 >- FasciaOraria(ora_inizio: Ora, ora_fine: Ora)
 >
 >ma in questo modo non è possibile assegnare più fasce orarie in un singolo giorno ad un posto da vedere (credo) ! lame
-
-
-età è un’operazione (dalla nascita)
-un clietnte deve ptoer prenotare più volte da una crociera. bisogno di classe prenotazione 
-posti disponibili, specifica dell’operazione
 ## specifica di classe
 **classe Crociera**
 ogni istanza di questa classe rappresenta una crociera
@@ -102,8 +97,14 @@ ogni istanza di questa classe rappresenta una crociera
 		
 - posti_disponibili (t: DataOra) : Intero ≥ 0
 	pre:
+		t ≤ adesso
+		t ≤ this.inizio
 		esiste il link (this, n) : crociera_nave
 	post:
+		sia pre l’insieme degli oggetti p : Prenotazione t.c. esiste il link (this, p) : crociera_prenotazione
+		sia n : Nave l’oggetto t.c. esiste (this, n) : crociera_nave
+		posti_prenotati = $\sum_{p \in \text{pre}}p.posti$
+		result = n.capienza - posti_prenotati
 	
 // operazioni fatte per facilitare gli use-case **statistiche**
 - destinazioni_toccate() : Destinazione [1..\*]
@@ -194,15 +195,18 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 **use-case statistiche**
 - media_esotiche(data_inizio : Data, data_fine : Data)
 	pre: 
-		inizio ≤ fine
+		data_inizio ≤ data_fine
 		esiste almeno un c : Crociera t.c. :
 		sia i : Itinerario t.c. (c, i) : crociera_itinerario
 		i.esotico() è true
 	post:
-		sia `pre` l’insieme delle prenotazioni in cui data_inizio < prenotazione.istante < data_fine
-		sia 
-		sia `cl_p` l’insieme di clienti associati alle singole prenotazioni in `pre_ok`
-		sia sum la somma
-- percentuale_mete_gettonate()
+		sia prenotazioni_inter l’insieme delle prenotazioni in cui data_inizio < prenotazione.istante < data_fine
+		sia prenotazioni_ok l’insieme degli oggetti p : Prenotazione appartenenti a prenotazioni_inter in cui, dato l’ogetto c : Crociera coinvolto nell’unico link (c, p) : crociera_prenotazione, e i : Itinerario l’oggetto coinvolto nell’unico link (c, i) : crociera_itinerario, ci sia i.esotico() = TRUE
+		sia clienti l’insieme di c : Clienti associati alle singole prenotazioni di prenotazioni_ok nell’assoc. cliente_prenotazione
+		sia n_clienti = |clienti|
+		sum = $\sum_{c \in \text{clienti}} \text{c.età(adesso)}$
+		result = sum / n_clienti
+		
+- percentuale_mete_gettonate(inizio : Data, fine : Data)
 	pre:
 	post:
