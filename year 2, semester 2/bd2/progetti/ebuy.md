@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-25T14:59
+updated: 2025-04-25T15:16
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -75,3 +75,6 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 - MetodiPagamento = {bonifico, carta di credito}
 - Condizioni = {ottimo, buono, discreto, da sistemare}
 ## specifica di classe
+
+popolarità()
+affidabilità()
