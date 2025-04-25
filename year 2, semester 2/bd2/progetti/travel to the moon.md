@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T12:30
+updated: 2025-04-25T12:45
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -99,15 +99,34 @@ ogni istanza di questa classe rappresenta una crociera
 	post:
 		sia i : Itinerario t.c. (this, i) : crociera_itinerario
 		result = inizio + i.durata_g()
+		
+- posti_disponibili (t: DataOra) : Intero ≥ 0
+	pre:
+		esiste il link (this, n) : crociera_nave
+	post:
 	
 // operazioni fatte per facilitare gli use-case **statistiche**
 - destinazioni_toccate() : Destinazione [1..\*]
 	pre: nessuna
 	post:
 		sia i : Itinerario l’oggetto t.c. esiste (this, i) : crociera_itinerario
-		resul 
+		result = i.destinazioni()
 
 - tocca(d : Destinazione, inizio : Data, fine : Data) : Booleano
+	pre: 
+		inizio ≤ fine
+		i periodi (this.inizio, this.fine()) e (inizio, fine) **non** sono disgiunti
+	post:
+		sia i : Itinerario l’oggetto t.c. esiste (this, i) : crociera_itinerario
+		se d non appartiene a i.destinazioni(), result = FALSE
+		altrimenti:
+			se esiste (i, d) :  partenza_iniziale, result = TRUE se e solo se inizio ≤ this.inizio ≤ fine
+			se esiste (i, d) :  arrivo_finale, result = TRUE se e solo se inizio ≤ this.fine() ≤ fine
+			se esiste t : Tappa l’oggetto t.c. esiste (i, t) : tappa_itinerario ed esiste (t, d) : tappa_destinazione, result = TRUE se e solo se  i periodi (this.inizio + t.arrivo.giorno, this.inizio + t.partenza.giorno) e (inizio, fine) si sovrappongono
+			altrimenti return = FALSE
+
+- vincoli esterni
+
 
 **classe Itinerario**
 ogni istanza di questa classe rappresenta un itinerario
