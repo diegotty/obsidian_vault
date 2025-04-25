@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T13:15
+updated: 2025-04-25T13:22
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -105,7 +105,7 @@ ogni istanza di questa classe rappresenta una crociera
 		sia n : Nave l’oggetto t.c. esiste (this, n) : crociera_nave
 		posti_prenotati = $\sum_{p \in \text{pre}}p.posti$
 		result = n.capienza - posti_prenotati
-	
+
 // operazioni fatte per facilitare gli use-case **statistiche**
 - destinazioni_toccate() : Destinazione [1..\*]
 	pre: nessuna
@@ -127,7 +127,9 @@ ogni istanza di questa classe rappresenta una crociera
 			altrimenti return = FALSE
 
 - vincoli esterni
-
+\[V.crociera.Prenotazione.no_overbooking]
+per ogni c : Crociera t.c. esiste un link crociera_nave che coinvolge c:
+	per ogni t : DataOra tale che t ≤ inizio, deve essere vereo che c.posti_liberi(t) ≥ 0
 
 **classe Itinerario**
 ogni istanza di questa classe rappresenta un itinerario
@@ -231,8 +233,13 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 		//devo evitare la divisione per 0 !
 		esiste d : Destinazione e c : Crociera t.c. c.tocca(d, inizio, fine) = TRUE
 	post:
-		sia destinazioni l’insieme di d : Destinazione t.c. esiste c : Crociera e c.tocca(d, inizio, fine) = TRUE
-		G = { (d, v_ln, v_f) | d: Destinazione and 
-			v_
+		destinazioni = {
+		 d : Destinazione | esiste c : Crociera e c.tocca(d, inizio, fine) = TRUE
+		}
+		destinazioni_gettonate = {
+			(d, v_ln, v_f) | d: Destinazione,
+			v_ln = |{(c) | c: LunaDiMiele AND c.tocca(d, inizio, fine) }|, 
+			v_f = |{c | c : CrocieraPerFamiglie AND c.tocca(d, inizio, fine)}|, 
+			e (v_ln ≥ 10 OR v_f ≥ 15)
 		}
 		result = |destinazioni_gettonate|/|destinazioni|
