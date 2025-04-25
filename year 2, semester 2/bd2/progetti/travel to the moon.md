@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T11:12
+updated: 2025-04-25T11:43
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -129,3 +129,5 @@ ogni istanza di questa classe rappresenta una destinazione raggiungibile
 
 **classe LunaDiMiele**
 ogni istanza di questa classe rappresenta una crociera di tipologia luna di miele
+## diagramma UML degli use-case
+## specifica di use-case
