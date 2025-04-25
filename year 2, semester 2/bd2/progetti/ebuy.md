@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-25T14:22
+updated: 2025-04-25T14:38
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -63,4 +63,5 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 ## diagramma UML
 ## specifica dei tipi di dato
 - MetodiPagamento = {bonifico, carta di credito}
+- Condizioni = {ottimo, buono, discreto, da sistemare}
 ## specifica di classe
