@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T09:30
+updated: 2025-04-25T09:45
 completed: false
 ---
 Modellare, mediante formule in logica del primo ordine, le seguenti affermazioni, dopo aver progettato opportuni insiemi di simboli di predicato e/o funzione:
@@ -54,6 +54,25 @@ FORALL i (
 	)
 )
 -  Ogni crociera tocca un certo insieme non vuoto di destinazioni
-$V=\{\}, F= \{nome/1\}, P=\{crociera/1, itinerario/1\}$
+$V=\{zero\}, F= \{nome/1, destinazioni/1\}, P=\{crociera/1, itinerario/1\}$
+FORALL c (
+	crociera(c) →
+		NOT ( |destinazioni(c)| = zero )
+)
+legal ? 
+ 
+ oppure (legal)
+$V=\{\}, F= \{nome/1, destinazioni/1\}, P=\{crociera/1, destinazione/1, raggiunge/2\}$
+ FORALL c (
+	 crociera(c) →
+	 EXISTS d ( destinazione(d) AND tocca(c, d))
+ )
+-  Le crociere si dividono in crociere di luna di miele e crociere per famiglia (partizione)
+$V=\{\}, F= \{nome/1, destinazioni/1\}, P=\{crociera/1, crociera\_famiglia/1, crociera\_lunamiele /2\}$
+FORALL c (
+	crociera(c) → (
+		( crociera_famiglia(c) OR crociera_lunamiele(c) ) AND 
+		() 
+	)
+)
 
--  Le crociere si dividono in crociere di luna di miele e crociere per famiglia.
