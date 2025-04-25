@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T12:59
+updated: 2025-04-25T13:15
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -193,6 +193,7 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 		result = pr
 
 **use-case statistiche**
+8.2.1
 - media_esotiche(data_inizio : Data, data_fine : Data)
 	pre: 
 		data_inizio ≤ data_fine
@@ -203,10 +204,35 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 		sia prenotazioni_inter l’insieme delle prenotazioni in cui data_inizio < prenotazione.istante < data_fine
 		sia prenotazioni_ok l’insieme degli oggetti p : Prenotazione appartenenti a prenotazioni_inter in cui, dato l’ogetto c : Crociera coinvolto nell’unico link (c, p) : crociera_prenotazione, e i : Itinerario l’oggetto coinvolto nell’unico link (c, i) : crociera_itinerario, ci sia i.esotico() = TRUE
 		sia clienti l’insieme di c : Clienti associati alle singole prenotazioni di prenotazioni_ok nell’assoc. cliente_prenotazione
-		sia n_clienti = |clienti|
-		sum = $\sum_{c \in \text{clienti}} \text{c.età(adesso)}$
-		result = sum / n_clienti
+		result= $\sum_{c \in \text{clienti}} \text{c.età(adesso)}$ / |clienti|
 		
+
+		
+//soluzione prof. (stessa logica, scritto in modo sensato)
+- media_esotiche(data_inizio : Data, data_fine : Data)
+	pre: 
+		data_inizio ≤ data_fine
+		esiste almeno un c : Crociera t.c. :
+		sia i : Itinerario t.c. (c, i) : crociera_itinerario
+		i.esotico() è true
+		sia clienti l’insieme di cl : Cliente t.c. esiste c : Crociera, p : Prenotazione e i: Itinerario t.c. :
+			(cl,p ) : cliente_prenotazione AND
+			(p, c) : crociera_prenotazione AND
+			(c, i) : crociera_itinerario AND
+			i.esotico() = TRUE AND
+			data_inizio ≤ p.istante < data_fine
+		result= $\sum_{c \in \text{clienti}} \text{c.età(adesso)}$ / |clienti|
+			
+
+8.2.2
 - percentuale_mete_gettonate(inizio : Data, fine : Data)
 	pre:
+		inizio ≤ fine
+		//devo evitare la divisione per 0 !
+		esiste d : Destinazione e c : Crociera t.c. c.tocca(d, inizio, fine) = TRUE
 	post:
+		sia destinazioni l’insieme di d : Destinazione t.c. esiste c : Crociera e c.tocca(d, inizio, fine) = TRUE
+		G = { (d, v_ln, v_f) | d: Destinazione and 
+			v_
+		}
+		result = |destinazioni_gettonate|/|destinazioni|
