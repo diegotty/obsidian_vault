@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-24T20:35
+updated: 2025-04-25T10:45
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -80,3 +80,9 @@ updated: 2025-04-24T20:35
 età è un’operazione (dalla nascita)
 un clietnte deve ptoer prenotare più volte da una crociera. bisogno di classe prenotazione 
 posti disponibili, specifica dell’operazione
+## specifica di classe
+**classe Crociera**
+**classe Itinerario**
+**classe Cliente**
+**classe Destinazione**
+**classe LunaDiMiele**
