@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-25T10:00
+updated: 2025-04-25T10:13
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -32,6 +32,34 @@ Per favorire l’esclusione dal sistema dei venditori scorretti, il sistema deve
 Per ogni utente, il sistema deve permettere di calcolarne l’affidabilità, che si calcola a partire dai feedback che ha ricevuto per gli oggetti che ha messo in vendita. In particolare, l’affidabilità di un venditore è data dalla media aritmetica m di tutti i feedback che ha ricevuto, diminuita di un fattore che è tanto più grande quanto maggiore è il numero di feedback negativi (ovvero ≤ 2). Tecnicamente, detta z la frazione dei feedback negativi rispetto ai feedback totali, l’affidabilità di un venditore è data da m(1 − z)/5.
 L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 ∈ [0, 1] se non ci sono feedback negativi (z = 0), mentre scende verso 0 all’aumentare della percentuale z di questi ultimi). 
 ## raffinamento dei requisiti
+1. utenti registrati
+	1. nickname
+	2. data registrazione
+	3. post pubblicati (vedi req. 2)
+2. post (annunci per la vendita di **singoli** oggetti)
+	1. descrizione
+	2. categoria a cui appartiene l’oggetto
+	3. prezzo di vendita (da inserire, a seconda della tipologia del post, in posti diversi)
+	4. metodi di pagamento accettati (bonifico o carta di credito)
+	5. stato dell’oggetto
+		1. nuovo
+			1. durata della garanzia (obbligatorio)
+		2. usato
+			1. durata della garanzia (non obbligatorio)
+			2. condizioni (ottimo, buono, discreto, da sistemare)
+	6. tipologia di post
+		1. con asta al rialzo
+			1. prezzo iniziale dell’asta
+			2. prezzo dei singoli rialzi (in euro)
+			3. istante di scadenza dell’asta
+			4. se è stata conclusa
+				1. il bid che si è aggiudicato l’oggetto in vendita (se esiste)
+		2. “compralo subito”
+			1. prezzo di vendita dell’oggetto
+3. bid (offerte a post con asta al rialzo)
+	1. istante in cui è stata proposta
+	2. utente offerente (bidder)
+	3. meccanismo su aumento sistematico del prezzo
 ## diagramma UML
 ## specifica dei tipi di dato
 ## specifica di classe
