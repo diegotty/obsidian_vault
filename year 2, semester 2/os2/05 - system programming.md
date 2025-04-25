@@ -69,6 +69,5 @@ l’esecuzione di un programma che non gestisce correttamente la liberazione del
 - copia `n` bytes contigui a partire da `src` in `dest`
 	- le due aree di memoria non possono sovrapporsi !!!
 	- es: utile per duplicare rapidamente un array
-
-
-- `void *nmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)`: crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
+### $\verb |void *nmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)|$
+: crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
