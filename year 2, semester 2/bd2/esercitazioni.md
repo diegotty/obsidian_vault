@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T09:48
+updated: 2025-04-25T13:25
 completed: false
 ---
  **settimana 2** (assegnati):
@@ -27,4 +27,3 @@ completed: false
 
 **settimana 7**:
 [[FOL_crociere]]
-[[ebuy]]
