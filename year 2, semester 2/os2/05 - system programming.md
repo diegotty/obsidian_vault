@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T21:56
+updated: 2025-04-25T22:12
 completed: false
 ---
 # programmazione di sistema
@@ -27,3 +27,28 @@ le informazioni sulle funzioni general purpose si trovano nella sezione 3 del ma
 >le syscall introducono una separazione di compiti: `sbrk` alloca chunk di memoria (in kernel mode), mentre `malloc()` gestisce l’area di memoria, in user mode
 ![[Pasted image 20250425215449.png]]
 >- le funzioni di libreria **semplificano** l’uso delle syscall, che espongono una interfaccia minimale. le funzioni forniscono funzionalità elaborate e semplificano la gestione delle strutture dati di input e output !
+
+
+# syscall
+## gestione errori
+l’esecuzione di una syscall può interrompersi e non andare a buon fine per vari motivi, tra cui, principalmente:
+- il processo che la invoca non ha sufficienti privilegi per l’esecuzione
+- non ci sono sufficienti risorse per l’esecuzione
+- gli argomenti in ingresso alla syscall non sono validi
+>[!tip] è fondamentale controllare i valori di ritorno per rilevare e segnalare all’utente il verificarsi di errori !
+e, per un corretto funzionamento del programma, **è fondamentale gestire in maniera opportuna** l’eventuale errore verificatosi
+### `errno`
+`errno` è una variabile globale, impostata dalle syscall che termine con un errore ad un codice specifico, relativo all’errore che si è generato durante l’esecuzione
+- le syscall che terminano con successo invece, lasciano invariato `errno`
+ha senso utilizzare `errno` **solo dopo essersi accertati** che la syscall abbia ritornato un valore di errore (di solito -1), altrimenti si rischia di considerare un valore di `errno` incosistente (potrebbe essere l’`errno` di una syscall precedente all’ultima)
+### $\verb |void perror(const char *prefix)|$
+`perror()` è una funzione della libreria standard (`stdio.h`), che stampa su `stderr` il messaggio di errore convertendo il codice di `errno` in una stringa, formata da:
+$$
+\text{<prefix>:<errno\_string>}
+$$
+- $\text{<errno\_string>}$ rappresenta il messaggio di errore in formato stringa associato al valore di `errno`
+>[!example] esempio
+`perror("main")` invia su `stderr`:
+$\text{"main:messaggio\_errore\_mnemonico\_=\_errno"}$
+### $\verb |char *strerror(int errum)|$
+`strerror()` è una funzione di libreria che consente di convertire un codice di errore numerico `errno`, che acquisisce come parametro di input, nella sua equivalente rappresentazione in stringa
