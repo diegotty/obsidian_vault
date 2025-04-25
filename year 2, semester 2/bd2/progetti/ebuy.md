@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-25T14:38
+updated: 2025-04-25T14:59
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -36,18 +36,18 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 	1. nickname
 	2. data registrazione
 	3. post pubblicati (vedi req. 2)
+	4. affidabilità (operazione)
 2. post (annunci per la vendita di **singoli** oggetti)
 	1. descrizione
-	2. categoria a cui appartiene l’oggetto
-	3. prezzo di vendita (da inserire, a seconda della tipologia del post, in posti diversi)
-	4. metodi di pagamento accettati (bonifico o carta di credito)
-	5. stato dell’oggetto
+	2. categoria a cui appartiene l’oggetto (vedi req. 4)
+	3. metodi di pagamento accettati (bonifico o carta di credito)
+	4. stato dell’oggetto
 		1. nuovo
 			1. durata della garanzia (obbligatorio)
 		2. usato
 			1. durata della garanzia (non obbligatorio)
 			2. condizioni (ottimo, buono, discreto, da sistemare)
-	6. tipologia di post
+	5. tipologia di post
 		1. con asta al rialzo
 			1. prezzo iniziale dell’asta
 			2. prezzo dei singoli rialzi (in euro)
@@ -60,6 +60,16 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 	1. istante in cui è stata proposta
 	2. utente offerente (bidder)
 	3. meccanismo su aumento sistematico del prezzo
+4. categorie
+	1. livello della gerarchia ad albero
+5. venditori professionali
+	1. URL della vetrina online
+	2. ulteriori informazioni legali
+	3. popolarità (operazione)
+			utenti professionali non posson fare bid
+6. feeback (solo su acquisti compra-subito)
+	1. voto numerico (0-5)
+	2. commento testuale (non obbligatorio)
 ## diagramma UML
 ## specifica dei tipi di dato
 - MetodiPagamento = {bonifico, carta di credito}
