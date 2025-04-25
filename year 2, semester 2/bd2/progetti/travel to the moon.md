@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-04-25T12:00
+updated: 2025-04-25T12:15
 ---
 ## raffinamento dei requisiti
 1. Requisiti sulle crociere:
@@ -67,7 +67,7 @@ updated: 2025-04-25T12:00
 		1. Dato un periodo 'p', calcolare l'età media dei clienti che hanno prenotato, durante 'p', almeno una crociera che prevede una destinazione esotica (v. req. 3.5)
 		2. Dato un periodo 'p', calcolare la percentuale delle destinazioni 'gettonate' in 'p', ovvero raggiunte, durante 'p', da almeno dieci crociere di luna di miele, oppure da almeno quindici crociere per famiglie.
 ## diagramma UML
-![[Pasted image 20250329170726.png]]
+![[Pasted image 20250425120149.png]]
 ## specifica dei tipi
 - Ora: (ore: Intero in 0..24, minuti: Intero in 0..60)
 - Indirizzo: (via : Stringa, civico : Intero > 0, cap : Intero > 0)
@@ -134,5 +134,29 @@ ogni istanza di questa classe rappresenta una crociera di tipologia luna di miel
 ## specifica di use-case
 **use-case gestione prenotazioni completa**
 - prenota(cl : Cliente, cr : Crociera, n_posti : Intero > 0) : Prenotazione
+	pre:
+	 - adesso < cr.inizio
+	 - esiste il link dell’associazione crociera_nave che coinvolge cr  (altrimenti non è possibile sapere la capienza)
+	 - cr.posti_disponibili(adesso) ≥ n_posti
+	post:
+		l’operazione modifica il livello estensionale come segue:
+		viene creato l’oggetto pr : Prenotazione con pr.istante = adesso, pr.posti = n_posti
+		viene creato il link (cl : pr ) : cliente_prenotazione
+		viene creato il link (cr : pr ) : crociera_prenotazione
+		result = pr
+
+**use-case statistiche**
+- media_esotiche(data_inizio : Data, data_fine : Data)
 	pre: 
+		inizio ≤ fine
+		esiste almeno un c : Crociera t.c. :
+		sia i : Itinerario t.c. (c, i) : crociera_itinerario
+		
+	post:
+		sia `pre` l’insieme delle prenotazioni in cui data_inizio < prenotazione.istante < data_fine
+		sia 
+		sia `cl_p` l’insieme di clienti associati alle singole prenotazioni in `pre_ok`
+		sia sum la somma
+- percentuale_mete_gettonate()
+	pre:
 	post:
