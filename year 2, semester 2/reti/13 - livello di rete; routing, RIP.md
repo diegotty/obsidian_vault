@@ -1,9 +1,21 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T16:02
+updated: 2025-04-27T16:06
 completed: false
 ---
+>[!index]
+>- [routing](#routing)
+>	- [algoritmi d’istradamento con distance vector](#algoritmi%20d%E2%80%99istradamento%20con%20distance%20vector)
+>		- [equazione di bellman-ford](#equazione%20di%20bellman-ford)
+>		- [vettore distanza](#vettore%20distanza)
+>		- [problema nella modifica dei costi](#problema%20nella%20modifica%20dei%20costi)
+>- [RIP](#RIP)
+>	- [route determination algorithm](#route%20determination%20algorithm)
+>	- [messaggi RIP](#messaggi%20RIP)
+>	- [timer RIP](#timer%20RIP)
+>	- [caratteristiche RIP](#caratteristiche%20RIP)
+>	- [implementazione RIP](#implementazione%20RIP)
 # routing
 il routing si occupa di trovare il miglior percorso da far percorrere ad un pacchetto e inserilo nella tabella di routing (= tabella di forwarding)
 - quindi il routing costruisce le tabelle, che vengono poi uste dal [[12 - livello di rete; DHCP, NAT, forwarding, ICMP#forwarding dei datagrammi IP|forwarding]]
