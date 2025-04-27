@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T14:35
+updated: 2025-04-27T14:50
 completed: false
 ---
 # routing
@@ -62,10 +62,24 @@ ogni nodo della rete, quando viene inizializzato, crea un vettore distanza **ini
 >- ora osserviamo cosa succede quando $B$ riceve una copia del vettore $E$
 ![[Pasted image 20250427143315.png]]
 
+>[!info] logica dell’algoritmo d’istradamento con vettore distanza
 l’algoritmo quindi usa la seguente idea di base:
-- ogni nodo invia una copia del proprio vettore distanza a ciascuno dei suoi vicini
-- quando un nodo $x$ riceve un nuovo vettore distanza $DV$, da qualcuno dei suoi vicini, lo salva e usa la formula di bellman-ford per aggiornare il proprio vettore distzna 
+>- ogni nodo invia una copia del proprio vettore distanza a ciascuno dei suoi vicini
+>- quando un nodo $x$ riceve un nuovo vettore distanza $DV$, da qualcuno dei suoi vicini, lo salva e usa la formula di bellman-ford per aggiornare il proprio vettore distanza
+>- se il vettore distanza del nodo $x$ è cambiato per via di tale passo di aggiornamento, il nodo $x$ manderà il proprio vettore distanza aggiornato a ciascuno dei suoi vicini
+>>[!figure]- illustrazione
+>![[Pasted image 20250427143748.png]]
 
+>[!info] implementazione dell’algoritmo distance vector
+```
+```
+### problema nella modifica dei costi
+con le modalità di aggiornamento definite nell’algoritmo, si può verificare il **problema del conteggio all’infinito**: le buone notizie viaggiano in fretta, e le notizie cattive si propagano lentamente
+>[!example] esempio di problema del conteggio all’infinito
+![[Pasted image 20250427144841.png]]
+>in questo esempio il costo di ogni collegamento è unitario
+>16 == $\infty$
+>dato che bellman-ford prende il minimo, per aggiornare correttame
 # RIP
 il **RIP** (**routing information protocol**)
 
