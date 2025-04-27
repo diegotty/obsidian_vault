@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-04-25T15:16
+updated: 2025-04-27T20:37
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -67,7 +67,7 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 	2. ulteriori informazioni legali
 	3. popolarità (operazione)
 			utenti professionali non posson fare bid
-6. feeback (solo su acquisti compra-subito)
+6. feeback
 	1. voto numerico (0-5)
 	2. commento testuale (non obbligatorio)
 ## diagramma UML
