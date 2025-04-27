@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T14:18
+updated: 2025-04-27T14:35
 completed: false
 ---
 # routing
@@ -20,9 +20,8 @@ $E=\text{insieme di archi (collegamenti)= \{(u,v), (u,x), (v,x), (v,w), (x,w), (
 >- la velocità del collegamento
 >- il costo monetario associato al collegamento
 
-## algoritmi d’istradamento
 un grafo di una rete di calcolatori, il **cammino a costo minimo tra 2 nodi** viene calcolato da un **algortimo d’istradamento**
-### distance vector 
+## algoritmi d’istradamento con distance vector
 l’algoritmo di istradamento con **vettore distanza** (distance vector - DV) è:
 - **distribuito**: ogni nodo riceve informazione dai vicini e opera su quelle
 - **asincrono**: non richiede che tutti i nodi operino al passo con gli altri
@@ -39,10 +38,34 @@ $$
 dove $min_{v}$ riguarda tutti i vicini di $x$
 >[!example] rappresentazione grafica
 ![[Pasted image 20250427141721.png]]
-i percorsi $(a\to y), (b\to y), (c\to y)$ sono percorsi a costo minimo
+i percorsi $(a\to y), (b\to y), (c\to y)$ sono percorsi a costo minimo precedentemente stabiliti
 >$$
 D_{xy} = min\{(c_{xa} + D_{ay}), (c_{xb} + D_{by}), (c_{xc} + D_{cy})\}
 >$$
+
+### vettore distanza
+il **vettore distanza** è un array monodimensionale che rappresenta un **albero a costo minimo**: una combinazione di percorsi a costo minimo dalla radice dell’albero verso tutte le destinazioni
+- essendo monodimensionale, non fornisce il percorso da seguire per giungere alla destinazione, ma **solo i costi minimi** per le destinazioni
+>[!example] esempio
+![[Pasted image 20250427142315.png]]
+>il vettore distanza del nodo $A$ !
+
+ogni nodo della rete, quando viene inizializzato, crea un vettore distanza **iniziale**, con le informazioni che il nodo riesce ad ottenere dai propri vicini (cioè i nodi a cui è direttamente collegato)
+- per creare il vettore dei vicini, invia messaggi di `hello` attraverso le sue interfacce (e lo stesso fanno i vicini) e scopre le identità dei vicini e la sua distanza da ognuno di essi
+- quindi il vettore distanza iniziale rappresenta il valore dei percorsi minimi verso i vicini
+- dopo che ogni nodo ha creato il suo vettore distanza iniziale, ne invia una copia ai suoi vicini, che aggiornano il proprio vettore applicando l’equazione di bellman-ford !
+>[!example]
+![[Pasted image 20250427142912.png]]
+**nota**: con $X[]$ si indica “l’intero vettore $X$”
+>- dati i vettori distanza inziali, osserivamo cosa succede quando $B$ riceve una copia del vettore distanza di $A$
+![[Pasted image 20250427143221.png]]
+>- ora osserviamo cosa succede quando $B$ riceve una copia del vettore $E$
+![[Pasted image 20250427143315.png]]
+
+l’algoritmo quindi usa la seguente idea di base:
+- ogni nodo invia una copia del proprio vettore distanza a ciascuno dei suoi vicini
+- quando un nodo $x$ riceve un nuovo vettore distanza $DV$, da qualcuno dei suoi vicini, lo salva e usa la formula di bellman-ford per aggiornare il proprio vettore distzna 
+
 # RIP
 il **RIP** (**routing information protocol**)
 
