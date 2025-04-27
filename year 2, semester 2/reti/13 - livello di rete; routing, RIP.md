@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T15:35
+updated: 2025-04-27T15:50
 completed: false
 ---
 # routing
@@ -98,4 +98,33 @@ il **RIP** (**routing information protocol**) è un protocollo a vettore distanz
 // how ????? per passare ad un altro router attraversa 2 collegamenti ?
 ## route determination algorithm
 periodicamente, ogni router su cui è arrivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
-- ogni router che riceve un messaggio da un altro router, nella stessa network, che dice di poter raggiungere
+- ogni router che riceve un messaggio da un altro router, nella stessa network, che dice di poter raggiungere la network $X$ a costo $N$, sa che può raggiungere la network $X$ a costo $N+1$
+>[!warning] invece di inviare solo i vettori distanza, i router inviano anche l’intero contenuto della tabella di routing
+## messaggi RIP
+RIP si basa su una coppia di processi client-server e sul loro scambio di messaggi:
+- **RIP request**: quando un nuovo router viene inserito nella rete, invia una RIP request per ricevere immediatamente informazioni di routing
+- **RIP response** (o **advertisements**): in risposta ad una request (**solicited response**), o periodicamente **ogni 30s** (**unsolicited response**)
+>[!info] struttura messaggi RIP
+la sezione voce può essere ripetuta, in quanto ogni messaggio contiene un elenco comprendente fino a 25 sottoreti di destinazione all’interno del sistema autonomo e la distanza del mittente rispetto a ciascuna di tali sottoreti
+![[Pasted image 20250427154153.png]]
+>- **com**: comando: 1 = richiesta, 2 = risposta
+>- **vers**: versione (la versione corrente è 2)
+>- **family**: famiglia del protocollo : per il TCP/IP il valore è 2
+>- **tag**: informazioni sul sistema autonomo
+>- **network address**: indirizzo di destinazione
+>- **subnet mask**: maschera di sottorete
+>- **next-hop address**: indirizzo del prossimo hop
+>- **distance**: numero di hop fino alla destinazione
+## timer RIP
+sono presenti 3 timer nel RIP: 
+- **timer periodico**: controlla l’invio di messaggi di aggiornamento (25-35 secondi)
+- **timer di scadenza**: regola la validità dei percorsi: dura 180 secondi, e se entro lo scadere del timer non si riceve aggiornamento, il percorso viene considerato scaduto e il suo costo impostato a 16
+- **timer per garbage collection**: permette l’eliminazione dei percorsi dalla tabella: dura 120 secondi, e allo scadere del timer, il router rimuove i percorsi con costo pari a 16
+
+>[!info] guasto sul collegamento e recupero
+come abbiamo detto, se un router non riceve notizie dal suo vicino per 180 secondi, il nodo adiecente/collegamento viene considerato spento o guasto
+in tale occorrenza:
+>- RIP modifica la tabella d’instradamento locale
+>- propaga l’informazione mandando annunci ai router vicini
+>- i vicini inviano nuovi messaggi se la loro tabella d’instradamento è cambiata
+>- l’informazione che il collegamento è fallito si propaga rapidamente su tutta la rete, e l’utilizzo della **poisoned reverse** evita i 
