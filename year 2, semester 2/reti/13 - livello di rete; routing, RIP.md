@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T15:50
+updated: 2025-04-27T16:02
 completed: false
 ---
 # routing
@@ -85,7 +85,7 @@ esistono 2 soluzioni al problema del conteggio all’infinito:
 - **split horizon**: invece di inviare la tabella attraverso ogni interfaccia, ciascun nodo invia solo una parte della sua tabella tramite le interfacce: se il nodo $B$ ritiene che il percorso ottimale per raggiungere il nodo $X$ passi attraverso $A$, allora **NON** deve fornire questa informazione ad $A$ (l’informazione è arrivata **da** $A$, e quindi la conosce già)
 	- nell’esempio di sopra, $B$ elimina la riga di $X$ dalla tabella prima di inviarla ad $A$
 - **poisoned reverse** (inversione avvelenata): si pone a $\infty$ il valore del costo del percorso che passa attraverso il vicino a cui si sta inviando il vettore
-	- nell’esempio di sopra, $B$ pone a $infty$ il costo verso $X$ quando invia il vettore ad $A$
+	- nell’esempio di sopra, $B$ pone a $\infty$ il costo verso $X$ quando invia il vettore ad $A$
 # RIP
 il **RIP** (**routing information protocol**) è un protocollo a vettore distanza, 
 - è tipicamente incluso in UNIX BSD dal 1982
@@ -127,4 +127,16 @@ in tale occorrenza:
 >- RIP modifica la tabella d’instradamento locale
 >- propaga l’informazione mandando annunci ai router vicini
 >- i vicini inviano nuovi messaggi se la loro tabella d’instradamento è cambiata
->- l’informazione che il collegamento è fallito si propaga rapidamente su tutta la rete, e l’utilizzo della **poisoned reverse** evita i 
+>- l’informazione che il collegamento è fallito si propaga rapidamente su tutta la rete, e l’utilizzo della **poisoned reverse** evita i loop
+
+## caratteristiche RIP
+- **split horizon** con **poisoned reverse**: serve per evitare che un router invii rotte non valide al router da cui ha imparato la rotta (quindi per evitare cicli)
+- **triggered updates**: riduce il problema della convergenza lenta (?)
+- **hold-down**: fornisce robustezza: quando si riceve un’informazione di una rotta non più valida, si avvia un timer e tutti gli advertisement riguardanti quella rotta che arrivano entro il timeout non vengono considerati (in quanto probabilmente l’informazione è vecchia)
+	- previene che informazioni errate si diffondano, e permette che il network “assorba” il fatto che una rotta non è più valida, senza creare routing loop
+## implementazione RIP
+il RIP viene implementato come un’applicazione sulla porta 520 che usa UDP
+- un processo chiamato `routed` (route daemon) esegue RIP, cioè mantiene le informazioni d’istradamento e scambia messaggi con processi `routed` nei router vicini
+- poichè RIP viene implementato come un processo a livello di applicazione, può inviare e ricevere messaggi su una socket standard, e utilizzare un protocollo di trasporto standard
+>[!figure] raffigurazione
+![[Pasted image 20250427160209.png]]
