@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T14:54
+updated: 2025-04-27T15:20
 completed: false
 ---
 # routing
@@ -82,8 +82,10 @@ con le modalità di aggiornamento definite nell’algoritmo, si può verificare 
 >dato che bellman-ford prende il minimo, per aggiornare correttamente i due router servono diversi aggiornamenti !
 
 esistono 2 soluzioni al problema del conteggio all’infinito:
-- **split horizon**: 
-- **poisoned reverse** (inversione avvelenata):
+- **split horizon**: invece di inviare la tabella attraverso ogni interfaccia, ciascun nodo invia solo una parte della sua tabella tramite le interfacce: se il nodo $B$ ritiene che il percorso ottimale per raggiungere il nodo $X$ passi attraverso $A$, allora **NON** deve fornire questa informazione ad $A$ (l’informazione è arrivata **da** $A$, e quindi la conosce già)
+	- nell’esempio di sopra, $B$ elimina la riga di $X$ dalla tabella prima di inviarla ad $A$
+- **poisoned reverse** (inversione avvelenata): si pone a $\infty$ il valore del costo del percorso che passa attraverso il vicino a cui si sta inviando il vettore
+	- nell’esempio di sopra, $B$ pone a $
 # RIP
 il **RIP** (**routing information protocol**)
 
