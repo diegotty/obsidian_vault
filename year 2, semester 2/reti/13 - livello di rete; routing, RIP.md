@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T15:20
+updated: 2025-04-27T15:35
 completed: false
 ---
 # routing
@@ -85,9 +85,17 @@ esistono 2 soluzioni al problema del conteggio all’infinito:
 - **split horizon**: invece di inviare la tabella attraverso ogni interfaccia, ciascun nodo invia solo una parte della sua tabella tramite le interfacce: se il nodo $B$ ritiene che il percorso ottimale per raggiungere il nodo $X$ passi attraverso $A$, allora **NON** deve fornire questa informazione ad $A$ (l’informazione è arrivata **da** $A$, e quindi la conosce già)
 	- nell’esempio di sopra, $B$ elimina la riga di $X$ dalla tabella prima di inviarla ad $A$
 - **poisoned reverse** (inversione avvelenata): si pone a $\infty$ il valore del costo del percorso che passa attraverso il vicino a cui si sta inviando il vettore
-	- nell’esempio di sopra, $B$ pone a $
+	- nell’esempio di sopra, $B$ pone a $infty$ il costo verso $X$ quando invia il vettore ad $A$
 # RIP
-il **RIP** (**routing information protocol**)
-
-
-16 == inf
+il **RIP** (**routing information protocol**) è un protocollo a vettore distanza, 
+- è tipicamente incluso in UNIX BSD dal 1982
+- la metrica di costo del RIP è la **distanza misurata in hop**, in cui 15 è il numero massimo di hop, e il valore 16 indica $\infty$
+	- ogni link ha costo unitario
+>[!example] esempio
+![[Pasted image 20250427153006.png]]
+>- è necessario un hop per passare da un router a un host
+>- è necessario un hop per passare da un router ad un altro router 
+// how ????? per passare ad un altro router attraversa 2 collegamenti ?
+## route determination algorithm
+periodicamente, ogni router su cui è arrivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
+- ogni router che riceve un messaggio da un altro router, nella stessa network, che dice di poter raggiungere
