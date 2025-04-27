@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-27T14:50
+updated: 2025-04-27T14:54
 completed: false
 ---
 # routing
@@ -79,7 +79,11 @@ con le modalità di aggiornamento definite nell’algoritmo, si può verificare 
 ![[Pasted image 20250427144841.png]]
 >in questo esempio il costo di ogni collegamento è unitario
 >16 == $\infty$
->dato che bellman-ford prende il minimo, per aggiornare correttame
+>dato che bellman-ford prende il minimo, per aggiornare correttamente i due router servono diversi aggiornamenti !
+
+esistono 2 soluzioni al problema del conteggio all’infinito:
+- **split horizon**: 
+- **poisoned reverse** (inversione avvelenata):
 # RIP
 il **RIP** (**routing information protocol**)
 
