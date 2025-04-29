@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T13:25
+updated: 2025-04-29T09:22
 completed: false
 ---
  **settimana 2** (assegnati):
@@ -26,4 +26,7 @@ completed: false
 [[officine 1]]
 
 **settimana 7**:
-[[FOL_crociere]]
+[[FOL, crociere]]
+
+**settimana 8**:
+[[FOL, dipendenti]]
