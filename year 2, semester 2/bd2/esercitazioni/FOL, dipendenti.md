@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-29T09:58
+updated: 2025-04-29T09:59
 completed: false
 ---
 Modellare, mediante formule in logica del primo ordine, le seguenti affermazioni, dopo aver progettato opportuni insiemi di simboli di predicato e/o funzione:
@@ -23,9 +23,10 @@ FORALL p (
 - $V=\{\}, F= \{\text{usa/1}\}, P=\{\text{persona/1, nome/1}\}$
 >[!info] interpretazione
 >- $D=\{\text{mario, 3283037544, luca}\}$
->- $\text{usa(mario) = mario, usa(luca) = luca, usa(3283037544) = }$
+>- $\text{usa(mario) = mario, usa(luca) = luca, usa(3283037544) = 3283037544 (huh ??????) }$
 >- $\text{persona(mario) = true, persona(3283037544 = false), persona(luca = true)}$
 >- $\text{nome(3283037544) = false, nome(mario) = true, nome(luca) = true}$
+
 FORALL p (
 	persona(p) →
 	EXITS n (nome(n) AND usa(p, n))
