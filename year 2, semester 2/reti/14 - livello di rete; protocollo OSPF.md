@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-29T14:31
+updated: 2025-04-29T14:35
 completed: false
 ---
 ## link state
@@ -13,3 +13,5 @@ il **link state database** è una matrice che contiene la mappa completa della r
 >innanizitutto ogni nodo della rete deve conoscere i propri vicini e i costi dei collegamenti verso di loro. se ciò si verifica:
 >- ogni nodo invia un messaggio di `hello` a tutti i suoi vicini
 >- ogni nodo riceve gli `hello` dei vicini e crea la lista dei vicini con i relativi costi dei collegamenti
+
+tutti i nodi applicano dijkstra quindi link state è distribi
