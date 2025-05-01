@@ -98,7 +98,7 @@ siano $e_{1}, e_{2}, \dots e_{k}$ gli archi di $G$ che vengono trovati non coper
 >	n = len(G)
 >	E = [(x, y) for x in range(n) for y in G[x] if x < y]
 >	presi = [0]*n
->	sol = []
+>	S = []
 >	for a,b in E:
 >		if presi[a] == presi[b] == 0:
 >			S.append(a)
