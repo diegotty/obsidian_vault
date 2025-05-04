@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T11:33
+updated: 2025-05-04T11:51
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -74,3 +74,13 @@ abbiamo un disco di capacità $C$, e $n$ file di varie dimensione, ciascuna infe
 progettare un algoritmo che, dati $C$ e la lista $A$, dove $A[i]$ è la dimensione del file $i$, risolva il problema
 >>[!warning] osservazione
 >>la traccia di questo problema è molto simile ad un altro problema affrontato durante lo studio della tecnica greedy, dove però l’obiettivo era quello di trovare l’insieme **di cardinalità maggiore**, non l’insieme che massimizzasse lo spazio occupato nel disco
+
+per questo tipo di problema, non si conoscono algoritmi efficienti ! i migliori algoritmi si basano su qualche tipo di ricerca esaustiva della soluzione. 
+- ciònonostante, è altrettanto facile trovare algoritmi di approssimazione efficienti, con rapporti d’approssimazione costante
+
+per semplicità di espozione di limitiamo a calcolare il valore della soluzione ottima, iniziando da un algoritmo basato sul *divide_et_impera*:
+sia $(A,C)$ l’istanza che vogliamo risolvere:
+- se la lista dei file risulta vuota o $C== 0$, la soluzione ottima vale $0$
+- in caso contrario, l’ultimo file della lista può appartenere o meno alla soluzione ottima:
+	- se l’ultimo file non appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A-1, C)$
+	- se l’ultimo file appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A-1, C-)$
