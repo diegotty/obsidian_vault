@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T12:23
+updated: 2025-05-04T12:25
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -68,7 +68,7 @@ inoltre:
 >
 >>[!tip] si nota come la versione ricorsiva dell’algoritmo usa un approccio **top-down**, mentre la versione iterativa usa un approccio **bottom-up** !
 
-## problema 2
+## problema 1
 studiamo ora un altro problema famoso, risolvibile con programmazione dinamica: 
 >[!info] problema 
 abbiamo un disco di capacità $C$, e $n$ file di varie dimensione, ciascuna inferiore a $C$. bisogna trovare il sottoinsieme di file che può essere memorizzato sul disco che **massimizza lo spazio occupato**.
@@ -114,22 +114,24 @@ per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utiliz
 >la tabella $T$ avrà dimensione $n\times (C+1)$, e nella cella $T[i][j]$ memorizzeremo il valore ottenuto dalla soluzione del sottoproblema in cui si hanno solo i primi $i$ file e un disco di capacità $j$
 
 >[!info] implementazione divide et impera memoizzato
+>```python
+>def es(A, C):
+>	T = [ [-1]*(C+1) for i in range(len(A) + 1)]
+>	return mem_es(A, len(A), C, T)
+>
+>def mem_es(A, i, c, T):
+>	if T[i][c] == -1:
+>		if i == 0 or c == 0:
+>			T[i][c] == 0
+>		else: 
+>			lascio = mem_es(A, i-1, c, T)
+>			T[i][c] = lascio
+>			if A[i-1] <= C: 
+>				prendo = mem_es(A, i-1, c - A[i-1], T)
+>			T[i][c] = max(lascio, prendo)
+>	return T[i][c]
+>```
+>il tempo di calcolo della versione memoizzata è limitato dalla dimensione della tabella, in quanto la funzione `mem_es()` esegue $O(1)$ operazioni in ogni chiamata, e il numero totale di chiamate non può superare la dimensione della tabella
+>- la complessità dell’algoritmo è dunque $O(nC)$ (in particolare è $\Theta(nC)$)
 
-```python
-def es(A, C):
-	T = [ [-1]*(C+1) for i in range(len(A) + 1)]
-	return mem_es(A, len(A), C, T)
-
-def mem_es(A, i, c, T):
-	if T[i][c] == -1:
-		if i == 0 or c == 0:
-			T[i][c] == 0
-		else: 
-			lascio = mem_es(A, i-1, c, T)
-			T[i][c] = lascio
-			if A[i-1] <= C: 
-				prendo = mem_es(A, i-1, c - A[i-1], T)
-			T[i][c] = max(lascio, prendo)
-	return T[i][c]
-```
-il tempo di calcolo della versione
+### soluzione con programmazione dinamica
