@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T11:51
+updated: 2025-05-04T12:08
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -82,5 +82,30 @@ per semplicità di espozione di limitiamo a calcolare il valore della soluzione 
 sia $(A,C)$ l’istanza che vogliamo risolvere:
 - se la lista dei file risulta vuota o $C== 0$, la soluzione ottima vale $0$
 - in caso contrario, l’ultimo file della lista può appartenere o meno alla soluzione ottima:
-	- se l’ultimo file non appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A-1, C)$
-	- se l’ultimo file appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A-1, C-)$
+	- se l’ultimo file non appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A[n-1], C)$
+	- se l’ultimo file appartiene alla soluzione, i rimanenti $n-1$ file devono essere una soluzione ottima per $(A[n-1], C- A[n-1])$
+possiamo quindi ricondurci al calcolo della soluzione ottima di due sottoproblemi di dimensione inferiore, in quanto manca all’appello l’ultimo vile, e una volta risolta questi due problemi, ottenuti i valori $v_{1}$ e $v_{2}$ delle loro soluzioni, la soluzione al problema di partenza sarà data da $max(v_{1}, v_{2} + A[-1])$
+
+>[!info] implementazione
+>**IDEA**:
+>usiamo un indice $i$ per evitare il costo del passaggio della copia di una lista tra le chiamate di funzione
+>```python
+># i è inizializzato a len(A)
+>def es(A, i, C):
+>	if i == 0 or C == 0:
+>		return 0
+>	lascio = es(A, i-1, C) # lista senza l'elemento finale
+>	if A[i-1] > C:
+>		return lascio
+>	prendo = A[i-1] + es(A[:i-1], C - A[i-1])
+>	return max(lascio, prendo)
+>```
+l’implementazione dell’algoritmo costa:
+>$$
+>T(n,C) = T\Big(n-1, C\Big) + T\Big(n-1, C-A[n-1]\Big) + \Theta(1)
+>$$
+>che risolta dà $T(n, n-1) = \Omega(2^{\frac{n}{2}})$
+
+>[!info] spiegazione complessità
+![[Pasted image 20250504120641.png]]
+per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utilizziamo una tabella in cui salviamo i risultati via via coal
