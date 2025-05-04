@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - routing; distance vector, RIP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-04T14:08
+updated: 2025-05-04T14:12
 completed: false
 ---
 dopo aver visto il routing usante [[13 - routing; distance vector, RIP#algoritmi d’istradamento con distance vector|distance vector]], studiamo gli algoritmi di routing usanti **link state**
@@ -17,5 +17,11 @@ il **link state database** è una matrice che contiene la mappa completa della r
 >innanizitutto ogni nodo della rete deve conoscere i propri vicini e i costi dei collegamenti verso di loro. se ciò si verifica:
 >- ogni nodo invia un messaggio di `hello` a tutti i suoi vicini
 >- ogni nodo riceve gli `hello` dei vicini e crea la lista dei vicini con i relativi costi dei collegamenti
+> 	- la lista (vicino, costo) viene chiamata **LS packet** (**LSP**)
+>- ogni nodo esegue un **flooding** dei LSP: 
+>	- invia a tutti i vicini il proprio LSP
+>	- quando riceve l’LSP di un vicino, se è un nuovo LSP allora lo inoltra a tutti i suoi vicini diretti eccetto quello da cui lo ha ricevuto
+>>[!example] esempio
+>![[Pasted image 20250504141221.png]]
 
 tutti i nodi applicano dijkstra quindi link state è distribi
