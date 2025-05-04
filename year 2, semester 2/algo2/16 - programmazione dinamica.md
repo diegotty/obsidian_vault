@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T12:25
+updated: 2025-05-04T14:06
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:

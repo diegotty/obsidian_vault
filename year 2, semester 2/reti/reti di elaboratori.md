@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-05-04T13:52
+updated: 2025-05-04T14:07
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -15,3 +15,4 @@ updated: 2025-05-04T13:52
 [[11 - livello di rete]]
 [[12 - livello di rete; DHCP, NAT, forwarding, ICMP]]
 [[13 - routing; distance vector, RIP]]
+[[14 - routing; link state, OSPF]]

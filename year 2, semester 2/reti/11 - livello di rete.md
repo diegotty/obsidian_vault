@@ -1,6 +1,6 @@
 ---
-created: 2025-04-23T08:49
-updated: 2025-05-04T13:53
+created: 2025-05-04T14:06
+updated: 2025-05-04T14:06
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 ---
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
