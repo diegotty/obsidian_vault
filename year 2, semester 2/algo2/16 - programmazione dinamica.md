@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T12:08
+updated: 2025-05-04T12:23
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -68,6 +68,7 @@ inoltre:
 >
 >>[!tip] si nota come la versione ricorsiva dell’algoritmo usa un approccio **top-down**, mentre la versione iterativa usa un approccio **bottom-up** !
 
+## problema 2
 studiamo ora un altro problema famoso, risolvibile con programmazione dinamica: 
 >[!info] problema 
 abbiamo un disco di capacità $C$, e $n$ file di varie dimensione, ciascuna inferiore a $C$. bisogna trovare il sottoinsieme di file che può essere memorizzato sul disco che **massimizza lo spazio occupato**.
@@ -78,6 +79,7 @@ progettare un algoritmo che, dati $C$ e la lista $A$, dove $A[i]$ è la dimensio
 per questo tipo di problema, non si conoscono algoritmi efficienti ! i migliori algoritmi si basano su qualche tipo di ricerca esaustiva della soluzione. 
 - ciònonostante, è altrettanto facile trovare algoritmi di approssimazione efficienti, con rapporti d’approssimazione costante
 
+### soluzione con divide et impera
 per semplicità di espozione di limitiamo a calcolare il valore della soluzione ottima, iniziando da un algoritmo basato sul *divide_et_impera*:
 sia $(A,C)$ l’istanza che vogliamo risolvere:
 - se la lista dei file risulta vuota o $C== 0$, la soluzione ottima vale $0$
@@ -108,4 +110,26 @@ l’implementazione dell’algoritmo costa:
 
 >[!info] spiegazione complessità
 ![[Pasted image 20250504120641.png]]
-per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utilizziamo una tabella in cui salviamo i risultati via via coal
+per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utilizziamo una tabella in cui salviamo i risultati via via calcolati per poterli riutilizzare se necessario
+>la tabella $T$ avrà dimensione $n\times (C+1)$, e nella cella $T[i][j]$ memorizzeremo il valore ottenuto dalla soluzione del sottoproblema in cui si hanno solo i primi $i$ file e un disco di capacità $j$
+
+>[!info] implementazione divide et impera memoizzato
+
+```python
+def es(A, C):
+	T = [ [-1]*(C+1) for i in range(len(A) + 1)]
+	return mem_es(A, len(A), C, T)
+
+def mem_es(A, i, c, T):
+	if T[i][c] == -1:
+		if i == 0 or c == 0:
+			T[i][c] == 0
+		else: 
+			lascio = mem_es(A, i-1, c, T)
+			T[i][c] = lascio
+			if A[i-1] <= C: 
+				prendo = mem_es(A, i-1, c - A[i-1], T)
+			T[i][c] = max(lascio, prendo)
+	return T[i][c]
+```
+il tempo di calcolo della versione
