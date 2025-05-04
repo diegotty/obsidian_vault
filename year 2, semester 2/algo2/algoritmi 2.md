@@ -1,7 +1,11 @@
 ---
 related to: 
 created: 2025-03-02T17:41
+<<<<<<< HEAD
 updated: 2025-05-04T10:56
+=======
+updated: 2025-04-29T14:25
+>>>>>>> origin/main
 completed: true
 ---
 [[00 - algoritmi efficienti]]
