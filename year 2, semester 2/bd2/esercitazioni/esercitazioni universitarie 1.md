@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-04T11:08
+updated: 2025-05-04T14:04
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
