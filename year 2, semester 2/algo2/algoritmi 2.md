@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-24T20:35
+updated: 2025-05-04T10:56
 completed: true
 ---
 [[00 - algoritmi efficienti]]
@@ -20,6 +20,7 @@ completed: true
 [[13 - problemi di ottimizzazione, algoritmi di approssimazione]]
 [[14 - algoritmi greedy]]
 [[15 - divide et impera]]
+[[16 - programmazione dinamica]]
 
 ## greedy
 [[09 - algoritmo di dijkstra]]
