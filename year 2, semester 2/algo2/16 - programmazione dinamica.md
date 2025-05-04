@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T11:20
+updated: 2025-05-04T11:33
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -54,6 +54,23 @@ i sottoproblemi in cui viene scomposto il problema **non sono disgiunti**: quest
 >```
 >in questo modo l’algoritmo effettuerà **esattamente $n$ chiamate ricorsive**, e tenendo conto cche ogni chiamata ricorsiva costa $O(1)$, il tempo di calcolo di `Fib(n)` è $\Theta(n)$: un miglioramento esponenziale rispetto alla versione da cui eravamo partiti !!
 >
-PS: 
->- è possibile eliminare la ricorsione per ottenere la versione iterativa, in cui la complessità asintotica rimane $O(n)$ ma c’è un risparmio di tempo e spazio che era necessario per gestire la ricorsione
+inoltre: 
+>- è possibile eliminare la ricorsione per ottenere la versione iterativa, in cui la complessità asintotica rimane $O(n)$ ma c’è un risparmio di tempo e spazio che era necessario per gestire la ricorsione:
+>```python
+>def Fib2(n):
+>	F = [-1]*(n+1)
+>	F[0] = F[1] = 1
+>	for i in range(2, n+1):
+>		F[i] = F[i-2] + F[i-1]
+>	return F[n]
+>```
 >- è possibile ridurre la complessità di spazio, inzialmente di $\Theta(n)$, tenendo conto che dell’intera tabella basta conservare in memoria, volta per volta, solo gli ultimi due valori calcolati
+>
+>>[!tip] si nota come la versione ricorsiva dell’algoritmo usa un approccio **top-down**, mentre la versione iterativa usa un approccio **bottom-up** !
+
+studiamo ora un altro problema famoso, risolvibile con programmazione dinamica: 
+>[!info] problema 
+abbiamo un disco di capacità $C$, e $n$ file di varie dimensione, ciascuna inferiore a $C$. bisogna trovare il sottoinsieme di file che può essere memorizzato sul disco che **massimizza lo spazio occupato**.
+progettare un algoritmo che, dati $C$ e la lista $A$, dove $A[i]$ è la dimensione del file $i$, risolva il problema
+>>[!warning] osservazione
+>>la traccia di questo problema è molto simile ad un altro problema affrontato durante lo studio della tecnica greedy, dove però l’obiettivo era quello di trovare l’insieme **di cardinalità maggiore**, non l’insieme che massimizzasse lo spazio occupato nel disco
