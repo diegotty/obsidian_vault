@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - routing; distance vector, RIP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-05T18:26
+updated: 2025-05-05T18:41
 completed: false
 ---
 dopo aver visto il routing usante [[13 - routing; distance vector, RIP#algoritmi d’istradamento con distance vector|distance vector]], studiamo gli algoritmi di routing usanti **link state**
@@ -37,3 +37,17 @@ definiamo la seguente notazione:
 - $D(v)$: costo del cammino minimo dal nodo origine alla destinazione $v$, per quanto riguarda l’iterazione corrente (il nodo radice che sta applicando dijkstra)
 - $p(v)$: immediato predecesore di $v$ lungo il cammino
 - $N’$: sottoinsieme di nodi per cui il cammino a costo minimo dall’origine è definitivamente noto
+>[!info] implementazione
+![[Pasted image 20250505182729.png]]
+
+## confronto tra algoritmi LS e DV
+- **complessità dei messaggi**:
+	- **LS**: con $n$ nodi, $E$ collegamenti, implica l’inviio di $O(nE)$ messaggi !
+	- **DV**: richiede scambi tra nodi adiacenti, e il tempo di convergenza può variare
+- **robustezza**:
+	- **LS**: se un router funziona male, può comunicare via broadcast un costo sbagliato per uno dei suoi collegamenti connessi (ma non per altri !). inoltre i nodi si occupano di calcolare soltanto le proprie tabelle
+	- **DV**: un nodo può comunicare **cammini** a costo minimo errati a tutte le destinazioni. inoltre la tabella di ciascun nodo può essere usata dagli altri, quindi un calcolo erraro si può facilmente diffondere per l’intera rete
+	quindi **OSPF** è più robusto di **RIP**
+- **velocità di convergenza**:
+	- **LS**: l’algoritmo ha complessità $O(n^2)$
+	- **DV**:
