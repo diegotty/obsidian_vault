@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - routing; distance vector, RIP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-05T18:41
+updated: 2025-05-05T18:49
 completed: false
 ---
 dopo aver visto il routing usante [[13 - routing; distance vector, RIP#algoritmi d’istradamento con distance vector|distance vector]], studiamo gli algoritmi di routing usanti **link state**
@@ -43,11 +43,24 @@ definiamo la seguente notazione:
 ## confronto tra algoritmi LS e DV
 - **complessità dei messaggi**:
 	- **LS**: con $n$ nodi, $E$ collegamenti, implica l’inviio di $O(nE)$ messaggi !
-	- **DV**: richiede scambi tra nodi adiacenti, e il tempo di convergenza può variare
+	- **DV**: richiede scambi tra nodi adiacenti. il **tempo di convergenza**, cioè il tempo necessario affichè tutti i router abbiamo una visione coerente e aggiornata della topologia di rete, può variare
 - **robustezza**:
 	- **LS**: se un router funziona male, può comunicare via broadcast un costo sbagliato per uno dei suoi collegamenti connessi (ma non per altri !). inoltre i nodi si occupano di calcolare soltanto le proprie tabelle
 	- **DV**: un nodo può comunicare **cammini** a costo minimo errati a tutte le destinazioni. inoltre la tabella di ciascun nodo può essere usata dagli altri, quindi un calcolo erraro si può facilmente diffondere per l’intera rete
 	quindi **OSPF** è più robusto di **RIP**
 - **velocità di convergenza**:
 	- **LS**: l’algoritmo ha complessità $O(n^2)$
-	- **DV**:
+	- **DV**: può convergere lentamente, può presentare cicli di instradamento e può presentare il problema del conteggio infinito
+## OSPF
+**OSPF** (**open shortest path first**) è un **protocollo di routing**: è più di un algoritmo ! essendo un protocollo, deve definire il suo ambito di funzionamento, i messaggi che vengono scambiati, la comunicazione tra router e l’interazione con altri procotolli
+- è **open** perchè le specifiche del protocollo sono pubblicamente disponibili
+OSPF è un protcollo a **link state**: utilizza il flooding di informazioni di link state, e l’algoritmo di dijkstra per determinare i percorsi minimi. in particolare:
+- con OSPF, ogni volta che si verifica un cambiamento nello **stato di un collegamento**, il router manda informazioni d’instradamento a **tutti** gli altri router
+- invia periodicamente (ogni 30 minuti) messaggi OSPF all’intero sistema autonomo, utilizzando il flooding
+### messaggi OSPF
+esistono 4 “tipi” di messaggi OSPF:
+- **hello**: usato dai router per annunciare la propria esistenza ai i vicini che conosce
+- **database description**
+- **link-state request**
+- **link-state update**:
+- **link-state ack**: 
