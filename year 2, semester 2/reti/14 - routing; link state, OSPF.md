@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - routing; distance vector, RIP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-05T18:49
+updated: 2025-05-05T19:10
 completed: false
 ---
 dopo aver visto il routing usante [[13 - routing; distance vector, RIP#algoritmi d’istradamento con distance vector|distance vector]], studiamo gli algoritmi di routing usanti **link state**
@@ -60,7 +60,7 @@ OSPF è un protcollo a **link state**: utilizza il flooding di informazioni di l
 ### messaggi OSPF
 esistono 4 “tipi” di messaggi OSPF:
 - **hello**: usato dai router per annunciare la propria esistenza ai i vicini che conosce
-- **database description**
-- **link-state request**
-- **link-state update**:
+- **database description**: risposta ad hello, consente di ottenere il LSDB a chi si è appena connesso
+- **link-state request**: usato per richiedere specifiche informazioni su un collegamento
+- **link-state update**: messsaggio principale, usato da OSPF per la costruzione del LSDB
 - **link-state ack**: 
