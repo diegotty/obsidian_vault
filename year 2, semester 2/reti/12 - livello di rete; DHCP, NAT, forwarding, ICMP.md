@@ -1,8 +1,24 @@
 ---
 created: 2025-05-04T14:06
-updated: 2025-05-04T14:06
+updated: 2025-05-05T19:20
 related to: "[[11 - livello di rete]]"
 ---
+>[!index]
+>- [indirizzamento IPv4](#indirizzamento%20IPv4)
+>	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
+>		- [indirizzamento con classi](#indirizzamento%20con%20classi)
+>		- [indirizzamento senza classi](#indirizzamento%20senza%20classi)
+>			- [notazione CIDR](#notazione%20CIDR)
+>	- [indirizzi IP speciali](#indirizzi%20IP%20speciali)
+>	- [ottenere un blocco di indirizzi](#ottenere%20un%20blocco%20di%20indirizzi)
+>- [DHCP](#DHCP)
+>	- [messaggi DHCP](#messaggi%20DHCP)
+>	- [sottoreti](#sottoreti)
+>- [NAT](#NAT)
+>- [forwarding dei datagrammi IP](#forwarding%20dei%20datagrammi%20IP)
+>		- [aggregazione degli indirizzi](#aggregazione%20degli%20indirizzi)
+>- [ICMP](#ICMP)
+>	- [messaggi ICMP](#messaggi%20ICMP)
 # indirizzamento IPv4
 **ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
 - per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
@@ -175,7 +191,7 @@ in questo modo, inserire nella tabella una riga per ogni blocco può portare a t
 si usa quindi **l’aggregazione degli indirizzi**
 >[!info] aggregazione degli indirizzi
 ![[Pasted image 20250423205907.png]]
-si nota come l’indirizzo di rete per l’interfaccia `m0` nella tabella di `R2` è //question nn ho capito ngl
+in questo caso, gli indirizzi delle società 1, 2, e 4 (indirizzi del tipo `140.24.7.xx/26`) vengono aggregati da $R2$ in una sola voce : `140.24.7.0/24` (si ha quindi una corrispondenza con la maschera più lunga !)
 
 >[!info] livello di rete Internet
 ![[Pasted image 20250423210502.png]]

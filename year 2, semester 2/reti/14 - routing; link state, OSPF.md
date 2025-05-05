@@ -1,9 +1,18 @@
 ---
 related to: "[[13 - routing; distance vector, RIP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-05T19:10
+updated: 2025-05-05T19:12
 completed: false
 ---
+>[!index]
+>- [link state](#link%20state)
+>	- [link state database](#link%20state%20database)
+>- [algoritmo d’instradamento a stato del collegamento](#algoritmo%20d%E2%80%99instradamento%20a%20stato%20del%20collegamento)
+>	- [algoritmo di dijkstra](#algoritmo%20di%20dijkstra)
+>- [confronto tra algoritmi LS e DV](#confronto%20tra%20algoritmi%20LS%20e%20DV)
+>- [OSPF](#OSPF)
+>	- [messaggi OSPF](#messaggi%20OSPF)
+
 dopo aver visto il routing usante [[13 - routing; distance vector, RIP#algoritmi d’istradamento con distance vector|distance vector]], studiamo gli algoritmi di routing usanti **link state**
 ## link state
 lo stato di un link indica il costo associato al link (collegamento). ogni nodo deve conoscere i costi di tutti i collegamenti della rete, e la mappa completa di tutti i link state deve essere mantenuta dal **link state database** (**LSDB**)
@@ -63,4 +72,4 @@ esistono 4 “tipi” di messaggi OSPF:
 - **database description**: risposta ad hello, consente di ottenere il LSDB a chi si è appena connesso
 - **link-state request**: usato per richiedere specifiche informazioni su un collegamento
 - **link-state update**: messsaggio principale, usato da OSPF per la costruzione del LSDB
-- **link-state ack**: 
+- **link-state ack**: riscontro ai link-state update (per fornire affidabilità)

@@ -1,8 +1,26 @@
 ---
 created: 2025-05-04T14:06
-updated: 2025-05-04T14:06
+updated: 2025-05-05T19:17
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 ---
+>[!index]
+>- [funzioni chiave del livello di rete](#funzioni%20chiave%20del%20livello%20di%20rete)
+>- [switching](#switching)
+>	- [reti a circuito virtuale](#reti%20a%20circuito%20virtuale)
+>		- [ATM (lore)](#ATM%20(lore))
+>	- [reti a datagramma](#reti%20a%20datagramma)
+>- [switch e router](#switch%20e%20router)
+>- [link-layer switch](#link-layer%20switch)
+>- [router](#router)
+>	- [porte d’ingresso](#porte%20d%E2%80%99ingresso)
+>	- [tecniche di commutazione](#tecniche%20di%20commutazione)
+>	- [porte d’uscita](#porte%20d%E2%80%99uscita)
+>	- [capacità dei buffer](#capacit%C3%A0%20dei%20buffer)
+>- [protocolli del livello di rete](#protocolli%20del%20livello%20di%20rete)
+>- [IPv4](#IPv4)
+>- [frammentazione](#frammentazione)
+>	- [bit di intestazione](#bit%20di%20intestazione)
+
 abbiamo visto, durante una prima visione della pila TCP/IP, che il livello di rete si occupa dell’instradamento dei datagrammi dall’origine al destinatario. approfondiamo !
 >[!example] esempio di funzionamento del livello rete
 ![[Pasted image 20250409185452.png]]
