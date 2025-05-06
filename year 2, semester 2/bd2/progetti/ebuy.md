@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T10:25
+updated: 2025-05-06T10:27
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -70,7 +70,7 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 	1. voto numerico (0-5)
 	2. commento testuale (non obbligatorio)
 ## diagramma UML
-![[Pasted image 20250506092713.png]]
+![[Pasted image 20250506102704.png]]
 ## specifica dei tipi di dato
 - MetodiPagamento = {bonifico, carta di credito}
 - Condizioni = {ottimo, buono, discreto, da sistemare}
@@ -143,6 +143,5 @@ ogni istanza di questa classe descrive una categoria di oggetto
 #### vincoli esterni
 \[V.categoria.link_validi]
 	per ogni c : Categoria, può esistere un link (c, c1) : gerarchia in cui c ha il ruolo di gerarchia_padre se e solo se c.livello() < c1.livello()
-## specifica dei vincoli esterni
 ## diagramma UML degli use-case
 ## specifica degli use-case
