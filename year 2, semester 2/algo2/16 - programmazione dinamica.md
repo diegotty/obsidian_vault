@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-04T14:06
+updated: 2025-05-06T12:26
 completed: false
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -134,4 +134,5 @@ per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utiliz
 >il tempo di calcolo della versione memoizzata è limitato dalla dimensione della tabella, in quanto la funzione `mem_es()` esegue $O(1)$ operazioni in ogni chiamata, e il numero totale di chiamate non può superare la dimensione della tabella
 >- la complessità dell’algoritmo è dunque $O(nC)$ (in particolare è $\Theta(nC)$)
 
-### soluzione con programmazione dinamica
+>[!warning] differenza tra divide et impera e programmazione dinamica
+**
