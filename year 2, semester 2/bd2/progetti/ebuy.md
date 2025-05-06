@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T09:31
+updated: 2025-05-06T09:55
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -78,19 +78,33 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 ### Utente
 ogni istanza di questa classe descrive un utente registrato al sito
 #### operazioni di classe
+- affidabilità(): Reale in 0..1
 
 ### VenditoreProfessionale
 ogni istanza di questa classe descrive un utente che è anche un venditore professionale
 #### operazioni di classe
+//(numero utenti che hanno effettuato un aquisto negli ultimi 12 mesi)
+- popolarità(t : Istante) : Stringa
+	precondizioni:
+		t ≥ this.data_registrazione
+	postcondizioni:
+		l’operazione non modifica il livello estensionale
+		post_venditore = {(p) | p : Post tale che esiste il link (this, p) : utente_post AND (t - p.istante_pubblicazione) ≤ 12 mesi }
+		post_venduti = { (p) | p appartiene a post_venditore AND  }	
+		result = |post_venduti|
 ### Bid
 ogni istanza di questa classe descrive un’offerta a rialzo per l’acquisto di un oggetto
 #### operazioni di classe
+- prezzo(): Reale ≥ 0
 ### AstaConclusa
 ogni istanza di questa classe descrive un’asta conclusa
 #### operazioni di classe
+bid_vincente : Bid
+prezzo_vendita() : Reale ≥ 0
 ### Categoria
 ogni istanza di questa classe descrive una categoria di oggetto
 #### operazioni di classe
+- sottocategorie() : Categoria\[0..\*]
 ## specifica dei vincoli esterni
 
 da aggiungere vincolo esterno per categoria
