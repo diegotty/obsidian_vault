@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T09:26
+updated: 2025-05-06T09:31
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -70,16 +70,29 @@ L’affidabilità è quindi sempre un reale tra 0 e 1 (dato che è pari ad m/5 �
 	1. voto numerico (0-5)
 	2. commento testuale (non obbligatorio)
 ## diagramma UML
+![[Pasted image 20250506092713.png]]
 ## specifica dei tipi di dato
 - MetodiPagamento = {bonifico, carta di credito}
 - Condizioni = {ottimo, buono, discreto, da sistemare}
 ## specifica di classe
 ### Utente
+ogni istanza di questa classe descrive un utente registrato al sito
+#### operazioni di classe
 
 ### VenditoreProfessionale
+ogni istanza di questa classe descrive un utente che è anche un venditore professionale
+#### operazioni di classe
 ### Bid
+ogni istanza di questa classe descrive un’offerta a rialzo per l’acquisto di un oggetto
+#### operazioni di classe
 ### AstaConclusa
+ogni istanza di questa classe descrive un’asta conclusa
+#### operazioni di classe
 ### Categoria
+ogni istanza di questa classe descrive una categoria di oggetto
+#### operazioni di classe
 ## specifica dei vincoli esterni
 
 da aggiungere vincolo esterno per categoria
+## diagramma UML degli use-case
+## specifica degli use-case
