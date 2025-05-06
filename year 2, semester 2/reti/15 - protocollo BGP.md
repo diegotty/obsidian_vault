@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-06T14:48
+updated: 2025-05-06T15:36
 completed: false
 ---
 abbiamo fin qui visto la rete come una collezione di router interconnessi: ciascun router era indistinguibile dagli altri 
@@ -17,3 +17,4 @@ i percorsi buoni sono “buoni” sotto diversi punti di vista: politico, econom
 
 
 prima eBGP e poi iBGP (non basta eBGP, che fa arrivare le informazioni solo ad alcuni router (i gateway))
+
