@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T10:11
+updated: 2025-05-06T10:25
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -91,7 +91,9 @@ ogni istanza di questa classe descrive un utente che è anche un venditore profe
 		post_venditore = {p : Post | esiste il link (this, p) : utente_post AND (t - p.istante_pubblicazione) ≤ 12 mesi AND
 		se p : Asta, allora p : AstaConclusa
 		altrimenti esiste il link (p, priv) : acquista }	
-		result = |post_venditore|
+		result = bassa se |post_venditore| < 50
+		result = media se  50 < |post_venditore| < 300
+		result = alta se  |post_venditore| > 300
 ### Bid
 ogni istanza di questa classe descrive un’offerta a rialzo per l’acquisto di un oggetto
 #### operazioni di classe
@@ -104,6 +106,9 @@ ogni istanza di questa classe descrive un’offerta a rialzo per l’acquisto di
 		bids = { b : Bid | esiste il link (b, a) : bid_asta}
 		sia mr_bid l’elemento apparentente a bids con b.data più recente
 		result = mr_bid + a.prezzo_rialzo
+#### vincoli esterni
+\[V.bid.data_legale]
+- per ogni b : Bid e l’unica asta per cui esiste il link (b, a) : bid_asta, b.data < a.data_scadenza AND b.asta < a.istante_pubblicazione
 ### AstaConclusa
 ogni istanza di questa classe descrive un’asta conclusa
 #### operazioni di classe
@@ -128,9 +133,16 @@ ogni istanza di questa classe descrive una categoria di oggetto
 		nessuna
 	postcondizioni:
 		result = { c : Categoria | esiste il link (c, this) : gerarchia in cui this ha il ruolo categoria_padre }
+- livello() : Intero ≥ 0
+	precondizioni:
+		nessuna
+	postcondizioni:
+		se non esiste un link (this, c) : gerarchia in cui this ha il ruolo categoria_figlio, allora result = 0
+		altrimenti result = c.livello() + 1
+	
+#### vincoli esterni
+\[V.categoria.link_validi]
+	per ogni c : Categoria, può esistere un link (c, c1) : gerarchia in cui c ha il ruolo di gerarchia_padre se e solo se c.livello() < c1.livello()
 ## specifica dei vincoli esterni
-\[V.categoria.solo_alberi]
-da aggiungere vincolo esterno per categoria
-da aggiungere vincolo esterno per cui data di bid non può essere maggiore di data_scadenza ?
 ## diagramma UML degli use-case
 ## specifica degli use-case
