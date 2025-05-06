@@ -1,8 +1,15 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-05-06T10:04
+updated: 2025-05-06T10:55
 ---
-# # raffinamento dei requisiti
+>[!index]
+>- [raffinamento dei requisiti](#raffinamento%20dei%20requisiti)
+>- [diagramma UML](#diagramma%20UML)
+>- [specifica dei tipi](#specifica%20dei%20tipi)
+>- [specifica di classe](#specifica%20di%20classe)
+>- [diagramma UML degli use-case](#diagramma%20UML%20degli%20use-case)
+>- [specifica di use-case](#specifica%20di%20use-case)
+## raffinamento dei requisiti
 1. Requisiti sulle crociere:
 	1. codice 
 	2. data di inizio

@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T10:27
+updated: 2025-05-06T10:55
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -9,6 +9,20 @@ updated: 2025-05-06T10:27
 >- [diagramma UML](#diagramma%20UML)
 >- [specifica dei tipi di dato](#specifica%20dei%20tipi%20di%20dato)
 >- [specifica di classe](#specifica%20di%20classe)
+>	- [Utente](#Utente)
+>		- [operazioni di classe](#operazioni%20di%20classe)
+>	- [VenditoreProfessionale](#VenditoreProfessionale)
+>		- [operazioni di classe](#operazioni%20di%20classe)
+>	- [Bid](#Bid)
+>		- [operazioni di classe](#operazioni%20di%20classe)
+>		- [vincoli esterni](#vincoli%20esterni)
+>	- [AstaConclusa](#AstaConclusa)
+>		- [operazioni di classe](#operazioni%20di%20classe)
+>	- [Categoria](#Categoria)
+>		- [operazioni di classe](#operazioni%20di%20classe)
+>		- [vincoli esterni](#vincoli%20esterni)
+>- [diagramma UML degli use-case](#diagramma%20UML%20degli%20use-case)
+>- [specifica degli use-case](#specifica%20degli%20use-case)
 ## obiettivi
 Si vuole progettare e realizzare eBuy, un sistema informatico per la gestione di aste
 on-line e di attività di commercio elettronico.
