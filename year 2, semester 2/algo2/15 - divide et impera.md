@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-05-04T14:06
+updated: 2025-05-06T12:32
 completed: true
 ---
 >[!index]
@@ -36,7 +36,7 @@ data una lista $A$ di $n$ interi distinti ed un intero $k$, con $1\leq k\leq n$,
 >	- se $|A_1| = k-1$, allora l'elemento di rango $k$ è proprio il perno $x$
 >	- se $|A_1| < k-1$, allora l'elemento di rango $k$ è in $A_2$, ed è l'elemento di rango $k-|A_1|-1$ in $A_2$
 
-si nota come con questa logica, dopo aver costruito le due liste $A_{1}$ e $A_{2}$, grazie al test sulla cardinalità di $A_{1}$, il problema della selezione dell’elemento di rango $k$ o risulta risolto **oppure viene ricondotto alla selezione di un alemento in una lista con meno di $n$ elementi** (in quanto $A_{1}$ e $A_{2}$ non sono ordinate !!!)
+si nota come con questa logica, dopo aver costruito le due liste $A_{1}$ e $A_{2}$, grazie al test sulla cardinalità di $A_{1}$, il problema della selezione dell’elemento di rango $k$ o risulta risolto **oppure viene ricondotto alla selezione di un elemento in una lista con meno di $n$ elementi** (in quanto $A_{1}$ e $A_{2}$ non sono ordinate !!!)
 >[!info] implementazione
 >```python
 >def selezione2(A, k):
