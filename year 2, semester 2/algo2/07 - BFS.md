@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - grafi]]"
 created: 2025-03-02T17:41
-updated: 2025-05-04T14:06
+updated: 2025-05-05T13:19
 completed: true
 ---
 >[!index]

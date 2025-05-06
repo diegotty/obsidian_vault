@@ -1,6 +1,6 @@
 ---
 created: 2025-05-04T14:06
-updated: 2025-05-04T14:06
+updated: 2025-05-05T13:19
 related to: "[[11 - livello di rete]]"
 ---
 # indirizzamento IPv4
