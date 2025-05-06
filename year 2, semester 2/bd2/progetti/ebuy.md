@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T09:55
+updated: 2025-05-06T10:11
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -83,30 +83,54 @@ ogni istanza di questa classe descrive un utente registrato al sito
 ### VenditoreProfessionale
 ogni istanza di questa classe descrive un utente che è anche un venditore professionale
 #### operazioni di classe
-//(numero utenti che hanno effettuato un aquisto negli ultimi 12 mesi)
 - popolarità(t : Istante) : Stringa
 	precondizioni:
 		t ≥ this.data_registrazione
 	postcondizioni:
 		l’operazione non modifica il livello estensionale
-		post_venditore = {(p) | p : Post tale che esiste il link (this, p) : utente_post AND (t - p.istante_pubblicazione) ≤ 12 mesi }
-		post_venduti = { (p) | p appartiene a post_venditore AND  }	
-		result = |post_venduti|
+		post_venditore = {p : Post | esiste il link (this, p) : utente_post AND (t - p.istante_pubblicazione) ≤ 12 mesi AND
+		se p : Asta, allora p : AstaConclusa
+		altrimenti esiste il link (p, priv) : acquista }	
+		result = |post_venditore|
 ### Bid
 ogni istanza di questa classe descrive un’offerta a rialzo per l’acquisto di un oggetto
 #### operazioni di classe
 - prezzo(): Reale ≥ 0
+	precondizioni:
+		nessuna
+	postcondizioni:
+		l’operazone non modifica il livello estensionale
+		sia a l’unica asta tale che esiste il link (this, a) : bid_asta
+		bids = { b : Bid | esiste il link (b, a) : bid_asta}
+		sia mr_bid l’elemento apparentente a bids con b.data più recente
+		result = mr_bid + a.prezzo_rialzo
 ### AstaConclusa
 ogni istanza di questa classe descrive un’asta conclusa
 #### operazioni di classe
-bid_vincente : Bid
-prezzo_vendita() : Reale ≥ 0
+- bid_vincente() : Bid
+	precondizioni:
+		nessuna
+	postcondizioni:
+		bids = { b : Bid | esiste il link (b, this) : bid_asta }
+		result = l’elemento di bids con la data più recente
+	
+- prezzo_vendita() : Reale ≥ 0
+	precondizioni:
+		nessuna
+	postcondizioni:
+		sia b : Bid l’elemento restituito dall’operazione this.bid_vincente()
+		result = b.prezzo()
 ### Categoria
 ogni istanza di questa classe descrive una categoria di oggetto
 #### operazioni di classe
 - sottocategorie() : Categoria\[0..\*]
+	precondizioni:
+		nessuna
+	postcondizioni:
+		result = { c : Categoria | esiste il link (c, this) : gerarchia in cui this ha il ruolo categoria_padre }
 ## specifica dei vincoli esterni
-
+\[V.categoria.solo_alberi]
 da aggiungere vincolo esterno per categoria
+da aggiungere vincolo esterno per cui data di bid non può essere maggiore di data_scadenza ?
 ## diagramma UML degli use-case
 ## specifica degli use-case

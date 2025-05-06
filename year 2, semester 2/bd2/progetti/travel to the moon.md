@@ -1,8 +1,8 @@
 ---
 created: 2025-04-08T11:45
-updated: 2025-05-04T14:06
+updated: 2025-05-06T10:04
 ---
-## raffinamento dei requisiti
+# # raffinamento dei requisiti
 1. Requisiti sulle crociere:
 	1. codice 
 	2. data di inizio
