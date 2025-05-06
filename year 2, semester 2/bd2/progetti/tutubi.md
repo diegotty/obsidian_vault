@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-06T11:09
+updated: 2025-05-06T11:56
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -12,6 +12,7 @@ updated: 2025-05-06T11:09
 >- [diagramma UML use-case](#diagramma%20UML%20use-case)
 >- [specifica degli use-case](#specifica%20degli%20use-case)
 ## obiettivi
+## specifica dei requisiti
 TuTubi deve consentire la registrazione degli utenti, di cui interessa il nome e la data
 di iscrizione. Gli utenti registrati possono pubblicare video, visualizzare quelli disponibili, oltre che esprimere su di essi valutazioni e commenti testuali.
 In particolare, di un video pubblicato da un utente interessa conoscere il titolo, la
@@ -36,8 +37,8 @@ modificare le sue playlist, ed esprimere valutazioni e commenti sui video che vi
 Inoltre, TuTubi deve consentire la ricerca di video: in particolare, data una categoria,
 un insieme di tag, ed un intero v tra 0 e 5, si vogliono restituire tutti i video disponibili di quella categoria che posseggono almeno uno tra i tag indicati, e che abbiano una valutazione media di almeno v (se un video non ha ancora alcuna valutazione, deve essere restituito comunque). TuTubi deve poi permettere di cercare, data una categoria, i video di quella categoria che hanno il numero maggiore di video in risposta, al fine di isolare le discussioni più animate tra gli utenti.
 La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio perché di contenuto coperto da copyright, osceno, ecc. Un video censurato non può essere né visionato, né votato, né commentato, né aggiunto ad alcuna playlist, né restituito come risultato di una ricerca. Un video, una volta censurato, non può tornare più visibile. Il motivo di una censura deve essere mantenuto nel sistema per usi interni.
-## specifica dei requisiti
 //use case : iscriversi. ricerca di video. censura di video
+## raffinamento dei requisiti
 1. utenti //possono pubblicare video,visualizzare quelli disponibili, esprimere su essi valutazioni e commenti testuali, modificare playlist. può ottere playlist di altri utenti (se pubbliche)
 	1. nome
 	2. data di iscrizione
@@ -67,7 +68,6 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 	1. nome
 	2. data di creazione
 	3. visibilità: pubbliche o private
-## raffinamento dei requisiti
 ## diagramma UML
 ## specifica dei tipi di dato
 ## specifica di classe
