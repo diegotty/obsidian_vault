@@ -1,8 +1,6 @@
 ---
-related to: 
-created: 2025-03-02T17:41
-updated: 2025-05-05T13:19
-completed: false
+created: 2025-05-06T13:13
+updated: 2025-05-06T13:14
 ---
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
 1. dividi il problema in sottoproblemi di taglia inferiore
@@ -10,6 +8,12 @@ sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi
 3. combina le soluzioni dei sottoproblemi in una soluzione del problema originale
 >[!tip]
 negli esempi visti finora, i sottoproblemi che si ottenevano dall’applicazione del passo 1 erano tutti **diversi**, pertanto ciascuno di essi veniva individualmente risolto dalla relativa chiamata ricorsiva del passo 2. in molte situazioni però, i sottoproblemi ottenuti al passo 1 possono risultare **uguali**. in tal caso, l’algoritmo basasto sulla tecnica *divide_et_impera* **risolve più volte lo stesso problema, svolgendo lavoro inutile**
+
+>[!warning] differenza tra divide et impera e programmazione dinamica
+anche se entrambe le tecniche si basano sul scomporre il problema in sottoproblemi più semplici, differiscono in **come** affrontano e risolvono i sottoproblemi
+**divide et impera**: nell’approccio divide et impera, il problema è diviso in sottoproblemi **indipendenti**, che vengono risolti ricorsivamente, per poi combinare le soluzioni. dato che i problemi son diversi tra loro, non ha senso memorizzarli
+**programmazione dinamica**: i sottoproblemi in cui viene diviso il problema principale **si ripetono** (il risultato dei sottoproblemi calcolati è necessario più volte): grazie alla **memoizzazione**, vengono risolti solo una volta.
+>- usa qundi memoria extra per evitare calcoli ripetuti
 
 >[!example] esempio : er fibonacci
 scriviamo un algoritmo che, dato un intero $n$, calcola $f_{n}$ (con $f_{i} = f_{i-1}+f_{i_{2}}$, e $f_{0}=f_{1} = 1$)
@@ -134,4 +138,3 @@ per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utiliz
 >il tempo di calcolo della versione memoizzata è limitato dalla dimensione della tabella, in quanto la funzione `mem_es()` esegue $O(1)$ operazioni in ogni chiamata, e il numero totale di chiamate non può superare la dimensione della tabella
 >- la complessità dell’algoritmo è dunque $O(nC)$ (in particolare è $\Theta(nC)$)
 
-### soluzione con programmazione dinamica

@@ -1,8 +1,6 @@
 ---
-related to: "[[11 - livello di rete]]"
-created: 2025-03-02T17:41
-updated: 2025-05-05T13:19
-completed: false
+created: 2025-05-06T13:13
+updated: 2025-05-06T13:13
 ---
 >[!index]
 >- [routing](#routing)
@@ -32,8 +30,8 @@ $E=\text{insieme di archi (collegamenti)= \{(u,v), (u,x), (v,x), (v,w), (x,w), (
 >- la velocità del collegamento
 >- il costo monetario associato al collegamento
 
-un grafo di una rete di calcolatori, il **cammino a costo minimo tra 2 nodi** viene calcolato da un **algortimo d’istradamento**
-## algoritmi d’istradamento con distance vector
+in un grafo di una rete di calcolatori, il **cammino a costo minimo tra 2 nodi** viene calcolato da un **algortimo d’instradamento**
+## algoritmi d’instradamento con distance vector
 l’algoritmo di istradamento con **vettore distanza** (distance vector - DV) è:
 - **distribuito**: ogni nodo riceve informazione dai vicini e opera su quelle
 - **asincrono**: non richiede che tutti i nodi operino al passo con gli altri
@@ -45,7 +43,7 @@ D_{x}(y) := \text{il costo del percorso a costo minimo dal nodo $x$ al nodo $y$)
 $$
 che si calcola: 
 $$
-D_{x}(y)=min_{v}\{c(x,y) + D_{v}(y)\}
+D_{x}(y)=min_{v}\{c(x,v) + D_{v}(y)\}
 $$
 dove $min_{v}$ riguarda tutti i vicini di $x$
 >[!example] rappresentazione grafica
