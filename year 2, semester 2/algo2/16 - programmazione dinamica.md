@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T00:46
+updated: 2025-05-08T00:55
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -330,19 +330,17 @@ l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
 un numero intero può sempre essere rappresentato come somma di quadrati di altri numeri interi (infatti, usando il quadrato $1^2$, possiamo scomporre quasiasi numero $x$ in somma di $1^2$)
 dato un intero $n$, vogliamo sapere qual’è il numero minimo di quadrati necessari a rappresentare $n$
 la complessità temporale dell’algoritmo che risolve il problema deve essere $\Theta(n^{\frac{3}{2}})$
-
->[!info] soluzione
-devo controllare fino a sqrt(n), e 
-
-```python
-def min_quadrati(n):
-	T = [0] * (n+1)
-	for i in range(1, n+1):
-		T[i] = n
-		j = 1
-		while j**2 <= i: # checks to sqrt(i)
-			if T[i - j**2] + 1 < T[i]:
-				T[i] = T[i-j**2] + 1
-			j += 1
-	return T[n]
-```
+>>[!info] soluzione
+>funziona :thumbs_up:
+>>```python
+>>def min_quadrati(n):
+>>	T = [0] * (n+1)
+>>	for i in range(1, n+1):
+>>		T[i] = n # bravo monti
+>>		j = 1
+>>		while j**2 <= i: # checks to sqrt(i)
+>>			if T[i - j**2] + 1 < T[i]:
+>>				T[i] = T[i-j**2] + 1
+>>			j += 1
+>>	return T[n]
+>>```
