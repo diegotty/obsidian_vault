@@ -1,7 +1,8 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-07T22:32
 ---
+
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
 1. dividi il problema in sottoproblemi di taglia inferiore
 2. risolvi (ricorsivamente) i sottoproblemi di taglia inferiore
@@ -138,3 +139,12 @@ per evitare di fare questo lavoro inutile, ricorriamo alla memoizzazione: utiliz
 >il tempo di calcolo della versione memoizzata è limitato dalla dimensione della tabella, in quanto la funzione `mem_es()` esegue $O(1)$ operazioni in ogni chiamata, e il numero totale di chiamate non può superare la dimensione della tabella
 >- la complessità dell’algoritmo è dunque $O(nC)$ (in particolare è $\Theta(nC)$)
 
+in termini dell’albero delle chiamate ricorsive, l’algoritmo iterativo calcola i risultati a partire dalle foglie, cioè gli elementi $T[0,c]$, poi i risultati del livello superiore e così via, risalendo l’albero di livello in livello fino alla radice $T[n,C]$
+- approccio bottom-up !
+
+>[!info]- algoritmi pseudopolinomiali (non finito)
+viene detto **pseudopolinomiale** un algoritmo che risolve un problema in tempo polinomiale quando i numeri presenti nell’input sono codificati in unario
+>- l’algoritmo che abbiamo ottenuto sopra, di complessità $O(nC)$ è un esempio di algoritmo pseudopolinomiale ! in quanto ricordiamo che la capacità $C$ del disco, data in input, è codificata con $\log C$ bit, quindi per ottenere un algoritmo polinomiale …. um ngl non ho capito queste cose mi turbano
+## ricavare la soluzione dal valore della soluzione
+fino ad ora abbiamo usato la tabella usata per risolvere i problemi con la programmazione dinamica solamente per **calcolare il valore** della soluzione ottima. può essere usata anche per **ricavare** (in questo caso, l’insieme di elementi) la soluzione ottima
+- quindi in un primo momento ci si può concentrare sul calcolo del valore della soluzione, e successivamente usare la tabella riempita per ritrovare la soluzione a cui quel valore corrisponde, ripercorrendo a ritroso le decisioni prese a partire dal valore ottimo !! (grazie memoizzazione)
