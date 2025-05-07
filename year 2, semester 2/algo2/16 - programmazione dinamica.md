@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T00:32
+updated: 2025-05-08T00:46
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -332,4 +332,17 @@ dato un intero $n$, vogliamo sapere qual’è il numero minimo di quadrati neces
 la complessità temporale dell’algoritmo che risolve il problema deve essere $\Theta(n^{\frac{3}{2}})$
 
 >[!info] soluzione
-devo controllare fino a sqrt(n)
+devo controllare fino a sqrt(n), e 
+
+```python
+def min_quadrati(n):
+	T = [0] * (n+1)
+	for i in range(1, n+1):
+		T[i] = n
+		j = 1
+		while j**2 <= i: # checks to sqrt(i)
+			if T[i - j**2] + 1 < T[i]:
+				T[i] = T[i-j**2] + 1
+			j += 1
+	return T[n]
+```
