@@ -1,6 +1,7 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-07T23:32
+updated: 2025-05-07T23:47
+related to: "[[15 - divide et impera]]"
 ---
 >[!index]
 >- [problema 1](#problema%201)
@@ -264,3 +265,16 @@ l’algoritmo che risolve il problema deve avere complessità $O(n)$
 >>		T[i] = T[i-1] + T[i-2]
 >>	return T[n]
 >>```
+
+>[!example] problema del massimo sottovettore
+data una lista $A$ di $n$ interi, vogliamo trovare una sottolista (una sequenza di elementi **consecutivi** della lista) la somma dei cui elementi è massima
+![[Pasted image 20250507233548.png]]
+>l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
+
+>[!info] soluzione
+progettiamo un algoritmo, usando un vettore monodimensionale, in cui 
+>$$
+T[i]= \text{sottosequenza con somma massima in cui viene incluso l'elemento $i$}
+>$$
+in cui $T[i] = max(T[i-1], i)$
+

@@ -1,6 +1,8 @@
 ---
+related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-07T23:34
+completed: true
 ---
 >[!index]
 >- [problema della selezione](#problema%20della%20selezione)
