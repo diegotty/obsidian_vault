@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-07T23:02
+updated: 2025-05-07T23:17
 ---
 
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -185,7 +185,7 @@ sinceramente il fatto che si possa fare in modo iterativo è pazzesco ngl
 vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 2 zeri consecutivi
 >>[!info] soluzione
 >per questo tipo di esercizi, tendenzialmente è necessario calcolarsi a mano i primi valori, per capire il pattern per la costruzione dei successivi:
->>- $n=0: \text{res}=0$
+>>- $n=0: \text{res}=1$
 >>- $n=1: \text{res}=2$
 >>- $n=2: \text{res}=3$
 >>usiamo un vettore $T$, con $$T[i] = \text{il numero di stringhe binarie lunghe i senza 2 zeri consecutivi}$$
@@ -193,12 +193,43 @@ vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 2 zeri con
 >>- se è 1, andranno bene tutti i casi precedenti ($T[n-1]$)
 >>- se è 0, andranno bene solo i casi in cui la la penultima cifra **non** è uno zero: sono $T[n-2]$, cioè i casi di con $n-1$ che finiscono con 1 (che sono tutti i casi considerati in $T[n-2]$.
 >>
+>>dunque
+>>$$
+>>T[n] = T[n-1] + T[n-2]
+>>$$
 >>è possibile applicare la formula a partire da $T[i]$
 
 >[!example] problema
 vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 3 zeri consecutivi
+>>[!info] soluzione
+>usiamo la stessa configurazione dell’esercizio precedente, e ragioniamo nella situazione in cui aggiungiamo una cifra:
+>>- se è 1, andranno bene tutti i casi precedenti $(T[n-1])$
+>>- se è 0, andranno bene i casi in cui le ultime 2 cifre non sono entrambe 0: le cifre che hanno come penultima cifra il valore 1 ($T[n-2]$), e le cifra che hanno come terz’ultima cifra il valore 1 ($T[n-3]$)
+>dunque
+>>$$
+>T[n] = T[n-1] + T[n-2] + T[n-3]
+>>$$
 
->[!info] soluzione
-usiamo la stessa configurazione dell’esercizio precedente, e ragioniamo nella situazione in cui aggiungiamo una cifra:
->- se è 1, andranno bene tutti i casi precedenti $(T[n-1])$
->- se è 0, andranno bene i casi in cui le ultime 2 cifre non sono entrambe 0: le cifre che hanno come penultima cifra il valore 1 ($T[n-2]$), e le cifra che hanno come terz’ultima cifra il valore 1 ($T[n-3]$)
+>[!example] problema
+abbiamo $n$ (con $n\geq1$) persone da distribuire in un albergo con stanze singole o doppie. in quanti modi si possono distribuire le persone ?
+>>[!info] soluzione
+>>- $n=1: \text{res}=1$
+>>- $n=2: \text{res}=2$
+>>- $n=3: \text{res}=4$
+>usiamo la stessa struttura dell’esercizio sopra
+>aggiungendo una persona:
+>>- la metto in una camera singola: le possibili distribuzioni sono le stesse di $T[i-1]$
+>>- la metto in una camera doppia: devo accoppiarlo con una persona singola: pensiamo che sia penultima persona: le distribuzioni in cui la penultima persona è in un letto singolo sono $T[i-2]$. ciò vale per ogni persona tra le $i-1$ !!
+>>$$
+>T[i] = T[i-1] + T[i-2]\cdot (i-1)
+>>$$
+>>
+>>**implementazione**: 
+>>```python
+>>def distribuzioni(n):
+>>	i = 1
+>>	T = [0]*(n+1)
+>>	T[1], T[2] = 1, 2
+>>	while(i < n+1):
+>>		T[i] = T[i-1] + T[i-2]*(i-1)
+>>```
