@@ -1,6 +1,6 @@
 ---
 created: 2025-04-08T12:18
-updated: 2025-05-05T13:19
+updated: 2025-05-06T13:14
 ---
 ## diagramma delle classi
 - se un dato può essere calcolato, non va interpretato come attributo. bensì, si deve creare un’operazione che permette di ottenere il risultato del calcolo

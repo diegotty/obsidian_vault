@@ -1,6 +1,6 @@
 ---
 created: 2025-03-19T18:58
-updated: 2025-05-05T13:19
+updated: 2025-05-06T13:14
 ---
 >[!index]
 >- [FTP](#FTP)
