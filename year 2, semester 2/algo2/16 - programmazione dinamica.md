@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T00:17
+updated: 2025-05-08T00:32
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -303,18 +303,33 @@ una sottosequenza è detta crescente se i suoi elementi risultano ordinati in mo
 >- quindi la dimensione, non il valore, ed è possibile che ci siano diverse sottosequenza con la stessa dimensione massima
 >
 l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
+>>[!info] soluzione
+>usiamo un vettore monodimensionale $T$, in cui:
+>>$$
+>T[i] = \text{lunghezza massima della sottosequenza crescente più lunga che comprende i}
+>>$$
+>e $T[i] = max(T[k])$ in cui $k<i \land S[i] > S[k]$ 
+>>per trovare $k$ per ogni $i$, iteriamo sulla lista fino a $i-1$, e teniamo traccia del valore massimo di $T[k]$ che rispetta le condizioni
+>>- complessità: $O(n^2)$, in quanto per ogni iterazione, scorro la lista (in modo incrementale eh)
+>>**implementazione**
+>>```python
+>>def sottosequenza_cresc(S):
+>>	n = len(S)
+>>	T = [0]*(n)
+>>	for i in range(n):
+>>		max_len = 0
+>>		for j in range(i):
+>>				if S[j] < S[i]:
+>>					max_len = max(max_len, T[j])
+>>			T[i] = max_len + 1
+>>	res = 1
+>>	return max(T)
+>>```
+
+>[!example]  problema
+un numero intero può sempre essere rappresentato come somma di quadrati di altri numeri interi (infatti, usando il quadrato $1^2$, possiamo scomporre quasiasi numero $x$ in somma di $1^2$)
+dato un intero $n$, vogliamo sapere qual’è il numero minimo di quadrati necessari a rappresentare $n$
+la complessità temporale dell’algoritmo che risolve il problema deve essere $\Theta(n^{\frac{3}{2}})$
 
 >[!info] soluzione
-usiamo un vettore monodimensionale $T$, in cui:
->$$
-T[i] = \text{lunghezza massima della sottosequenza crescente più lunga che comprende i}
->$$
-e $T[i] = max(T[k])$ in cui $k<i \land S[i] > S[k]$ 
->per trovare $k$ per ogni $i$, iteriamo sulla lista fino a $i-1$, e teniamo traccia del valore massimo di $T[k]$ che rispetta le condizioni
->- complessità: $O(n^2)$, in quanto per ogni iterazione, scorro la lista (in modo incrementale eh)
-**implementazione**
-
-```python
-def sottosequenza_cresc(S):
-	n = len(S)
-```
+devo controllare fino a sqrt(n)
