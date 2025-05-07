@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-07T23:47
+updated: 2025-05-08T00:02
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -274,7 +274,35 @@ data una lista $A$ di $n$ interi, vogliamo trovare una sottolista (una sequenza 
 >[!info] soluzione
 progettiamo un algoritmo, usando un vettore monodimensionale, in cui 
 >$$
-T[i]= \text{sottosequenza con somma massima in cui viene incluso l'elemento $i$}
+T[i]= \text{sottosequenza con somma massima che finisce con (compreso )l'elemento $i$}
 >$$
-in cui $T[i] = max(T[i-1], i)$
+in cui $T[i] = max(T[i-1] + i, i)$ (effettivamente, ha senso scegliere di ricominciare solo se sommando gli altri, ottengo un valore minore a $i$ !)
+per trovare la sottosequenza, basta partire dal valore massimo in $T$, $T[k]$ e sottrarre da esso i rispettivi $A[K], A[K-1],\dots$ finchè non si arriva a 0, che sarà dove inizia la sottosequenza
+**implementazione**:
+>```python
+>def sottosequenza(A):
+>	n = len(A)
+>	T = [float("-inf")]*(n)
+>	T[0] = A[0]
+>	max = 0
+>	for i in range(n):
+>		T[i] = max(i, T[i-1] + i)
+>		if (T[i] > T[max]) max = i
+>	res, i  = T[max], max
+>	while (res >  T[i]):
+>		res -= T[i]
+>		i -= 1
+>	return (i, max)
+>	
+>```
 
+
+
+>[!example] problema della sottosequenza crescente più lunga
+in questo caso si considera una sottosequenza, data una sequenza $S$, come una sequenza ottenuta eliminando zero o più elementi da $S$, eliminandoli **non per forza** in testa o in coda alla sequenza
+una sottosequenza è detta crescente se i suoi elementi risultano ordinati in modo crescente, e vogliamo trovare la lunghezza massima per le sottosequenze crescenti presenti in $S$
+>- quindi la dimensione, non il valore, ed è possibile che ci siano diverse sottosequenza con la stessa dimensione massima
+>
+l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
+
+>[!info] soluzione
