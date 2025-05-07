@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T00:02
+updated: 2025-05-08T00:17
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -270,31 +270,30 @@ l’algoritmo che risolve il problema deve avere complessità $O(n)$
 data una lista $A$ di $n$ interi, vogliamo trovare una sottolista (una sequenza di elementi **consecutivi** della lista) la somma dei cui elementi è massima
 ![[Pasted image 20250507233548.png]]
 >l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
-
->[!info] soluzione
-progettiamo un algoritmo, usando un vettore monodimensionale, in cui 
->$$
-T[i]= \text{sottosequenza con somma massima che finisce con (compreso )l'elemento $i$}
->$$
-in cui $T[i] = max(T[i-1] + i, i)$ (effettivamente, ha senso scegliere di ricominciare solo se sommando gli altri, ottengo un valore minore a $i$ !)
-per trovare la sottosequenza, basta partire dal valore massimo in $T$, $T[k]$ e sottrarre da esso i rispettivi $A[K], A[K-1],\dots$ finchè non si arriva a 0, che sarà dove inizia la sottosequenza
-**implementazione**:
->```python
->def sottosequenza(A):
->	n = len(A)
->	T = [float("-inf")]*(n)
->	T[0] = A[0]
->	max = 0
->	for i in range(n):
->		T[i] = max(i, T[i-1] + i)
->		if (T[i] > T[max]) max = i
->	res, i  = T[max], max
->	while (res >  T[i]):
->		res -= T[i]
->		i -= 1
->	return (i, max)
->	
->```
+>>[!info] soluzione
+>progettiamo un algoritmo, usando un vettore monodimensionale, in cui 
+>>$$
+>T[i]= \text{sottosequenza con somma massima che finisce con (compreso )l'elemento $i$}
+>>$$
+>>in cui $T[i] = max(T[i-1] + i, i)$ (effettivamente, ha senso scegliere di ricominciare solo se sommando gli altri, ottengo un valore minore a $i$ !)
+>>per trovare la sottosequenza, basta partire dal valore massimo in $T$, $T[k]$ e sottrarre da esso i rispettivi $A[K], A[K-1],\dots$ finchè non si arriva a 0, che sarà dove inizia la sottosequenza
+>>**implementazione**:
+>>```python
+>>def sottosequenza(A):
+>>	n = len(A)
+>>	T = [float("-inf")]*(n)
+>>	T[0] = A[0]
+>>	max = 0
+>>	for i in range(n):
+>>		T[i] = max(i, T[i-1] + i)
+>>		if (T[i] > T[max]) max = i
+>>	res, i  = T[max], max
+>>	while (res >  T[i]):
+>>		res -= T[i]
+>>		i -= 1
+>>	return (i, max)
+>>	
+>>```
 
 
 
@@ -306,3 +305,16 @@ una sottosequenza è detta crescente se i suoi elementi risultano ordinati in mo
 l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
 
 >[!info] soluzione
+usiamo un vettore monodimensionale $T$, in cui:
+>$$
+T[i] = \text{lunghezza massima della sottosequenza crescente più lunga che comprende i}
+>$$
+e $T[i] = max(T[k])$ in cui $k<i \land S[i] > S[k]$ 
+>per trovare $k$ per ogni $i$, iteriamo sulla lista fino a $i-1$, e teniamo traccia del valore massimo di $T[k]$ che rispetta le condizioni
+>- complessità: $O(n^2)$, in quanto per ogni iterazione, scorro la lista (in modo incrementale eh)
+**implementazione**
+
+```python
+def sottosequenza_cresc(S):
+	n = len(S)
+```
