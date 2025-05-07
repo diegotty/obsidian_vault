@@ -1,7 +1,12 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-07T23:17
+updated: 2025-05-07T23:32
 ---
+>[!index]
+>- [problema 1](#problema%201)
+>	- [soluzione con divide et impera](#soluzione%20con%20divide%20et%20impera)
+>- [ricavare la soluzione dal valore della soluzione](#ricavare%20la%20soluzione%20dal%20valore%20della%20soluzione)
+>- [esercizi proposti in classe](#esercizi%20proposti%20in%20classe)
 
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
 1. dividi il problema in sottoproblemi di taglia inferiore
@@ -230,6 +235,32 @@ abbiamo $n$ (con $n\geq1$) persone da distribuire in un albergo con stanze singo
 >>	i = 1
 >>	T = [0]*(n+1)
 >>	T[1], T[2] = 1, 2
->>	while(i < n+1):
+>>	for i in range(3, n+1):
 >>		T[i] = T[i-1] + T[i-2]*(i-1)
+>>	return T[n]
+>>```
+
+>[!example] problema
+dato l’intero $n$, vogliamo contare il numero di differenti tassellamenti di una superficie di dimensione $n\times 2$ tramite tessere di domino di dimensione $1\times2$
+l’algoritmo che risolve il problema deve avere complessità $O(n)$
+>>[!info] soluzione
+>>- $n=1: \text{res}=1$
+>>- $n=2: \text{res}=2$
+>>![[Pasted image 20250507232205.png]]
+>>aggiungendo una riga alla dimensione della superficie, abbiamo 2 possibilità:
+>>- aggiungiamo una tessera, posizionata in orizzontale: le possibili combinazioni in cui ciò accade è $T[i-1]$
+>>- aggiungiamo 2 tessere, posizionate entrambe in verticale. le tessere prendono lo spazio di 2 righe, quindi le possibili combinazioni in cui ciò accade è di $T[i-2]$
+>dunque:
+>>$$
+>T[i-1] = T[i-1] + T[i-2]
+>>$$
+>>**implementazione**:
+>>```python
+>>def tassellamenti(n):
+>>	T = [0]*(n+1)
+>>	i = 0
+>>	T[1], T[2] = 
+>>	for i in range (3, n+1):
+>>		T[i] = T[i-1] + T[i-2]
+>>	return T[n]
 >>```
