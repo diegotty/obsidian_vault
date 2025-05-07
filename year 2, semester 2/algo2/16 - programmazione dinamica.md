@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-07T22:32
+updated: 2025-05-07T22:47
 ---
 
 sappiamo che gli algoritmi basati sulla tecnica divide_et_impera seguono 3 passi:
@@ -148,3 +148,38 @@ viene detto **pseudopolinomiale** un algoritmo che risolve un problema in tempo 
 ## ricavare la soluzione dal valore della soluzione
 fino ad ora abbiamo usato la tabella usata per risolvere i problemi con la programmazione dinamica solamente per **calcolare il valore** della soluzione ottima. può essere usata anche per **ricavare** (in questo caso, l’insieme di elementi) la soluzione ottima
 - quindi in un primo momento ci si può concentrare sul calcolo del valore della soluzione, e successivamente usare la tabella riempita per ritrovare la soluzione a cui quel valore corrisponde, ripercorrendo a ritroso le decisioni prese a partire dal valore ottimo !! (grazie memoizzazione)
+>[!example] esempio
+![[Pasted image 20250507223317.png]]
+le frecce rosse evidenziano le decisioni a partire dall’elemento $T[n, C]$ (elemento che fornisce la soluzione ottima). in particolare:
+>- se $T[k,c] = T[k-1, c]$, il $k$-esimo file non è scelto, altrimenti $T[k,c] > T[k-1, c]$ e ciò implica che il $k$-esimo file è stato scelto
+![[Pasted image 20250507223340.png]]
+
+>[!info] implementazione
+>```python
+>def esIterativo(A, C):
+>	n = len(A)
+>	T = [ [0] * (C+1) for i in range(n+1)]
+>	for i in range(1, n+1):
+>		for c in range(C+1):
+>			if c < A[i-1]:
+>				T[i][c] = T[i-1][c]
+>			else:
+>				T[i][c] = max(T[i-1][c], A[i-1] + T[i-1][c - A[i-1]])
+>	# trovo soluzione (dopo aver trovato valore della soluzione)
+>	valore = T[n][c]
+>	sol = []
+>	i = n
+>	while i > 0:
+>		if T[i][valore] != T[i-1][valore]:
+>			sol.append(i-1)
+>			valore -= A[i-1]
+>		i -= 1
+>	return T[n][C], sol
+>```
+nella prima parte viene pagato $O(nC)$ per il calcolo della tabella, mentre nella seconda parte la tabella viene visitata una riga alla volta, ed il costo è $O(n)$
+quind il costo complessivo è $O(nC)$
+
+sinceramente il fatto che si possa fare in modo iterativo è pazzesco ngl
+## esercizi proposti in classe
+>[!info] problema
+vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 2 zeri consecutivi
