@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T09:49
+updated: 2025-05-08T09:54
 completed: false
 ---
 ## internet routing
@@ -12,7 +12,11 @@ ma nella pratica non è così semplice:
 	- in particolare, ogni ISP è un’autorità amministrativa autonoma: usa le sottoreti che vuole e impone politiche specifiche sul traffico
 ## instradamento gerarchico
 per accomodare questi problemi, si fa uso dell'**instradamento gerarchico**:
-- ogni ISP è un **autonomous system** (**AS**), che può eseguire un protocollo di routing che soddisfa le sue esigenze: i router all’interno dell’AS eseguono lo stesso protocollo di routing, chiamato (l))
+- ogni ISP è un **autonomous system** (**AS**), che può eseguire un protocollo di routing che soddisfa le sue esigenze
+	- i router all’interno dell’AS eseguono lo stesso protocollo di routing, chiamato **intra-AS** o **intradominio**, o **interior gateway protocol** (**IGP**)
+	- i router appartenenti a AS diversi possono eseguire IGP diversi !
+- dobbiamo però avere un solo protocollo **inter-AS** (o **interdominio** o **exterior gateway protocol** (**EGP**)), che gestisce il routing tra i vari AS
+	- il protocollo **inter-AS** viene eseguito sui **router gateway**, che sono router (dentro AS) che hanno il compito di connettere gli AS tra loro
 
 
 ricordiamo che oltre i 15 hop non posso andare, devo usare altri protocolli (?) (per DV)
