@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T11:03
+updated: 2025-05-08T11:19
 completed: false
 ---
 ## internet routing
@@ -107,8 +107,26 @@ le informazioni ottenute da eBGP e iBGP vengono combinate per creare le tabelle 
 ![[Pasted image 20250508110247.png]]
 
 le tabelle di percorso ottenute da BGP non vengono usate di per sè per l’instadamento dei pacchetti, bensì inserite nelle tabelle di routing intra-dominio, generate da RIP o OSPF
+- nel caso di AS stub, l’unico gateway router dell’AS aggiunge una regola di default alla fine della sua tabella di routing, e definisce come prossimo router quello che si trova dall’altro lato della connessione eBGP
+>[!example]- AS stub
+![[Pasted image 20250508110909.png]]
+- nel caso di AS di transito, il contenuto della tabella di percorso deve essere inserito nella tabella di routing, ma bisogna impostare il costo (per RIP e OSPF): si imposta il costo pari a quello per raggiungere il primo AS (diverso da quello di partenza) nel percorso (ummmmmmm)
+>[!example]- AS di transito
+![[Pasted image 20250508110954.png]]
+
+## attributi del percorso e rotte BGP
+quando un router annuncia una rotta per una sessione BGP, include anche un certo numero di attributi BGP:
+- `AS-PATH`: serve per selezionare i percorsi: elenca i sistemi autonomi att
+- `NEXT-HOP`:
+
+## selezione dei percorsi BGP
+un router può ricavare più di una rotta verso una destinazione, e deve quindi sceglierne una, attraverso le **regole di eliminazione**:
+1.  **preferenza locale**: un attributo che viene assegnato alle rotte (che riflette la politica imposta dall’amministratore). si selezionano le rotte con i valori più alti di preferenza locale
+2. si seleziona la rotta con valore `AS-PATH` più breve
+3. si seleziona quella il cui router di `NEXT-HOP` ha costo minore: **hot-potato** routing (very greedy of you, BGP)
+4. se rimane ancora più di una rotta, il router si basa sugli identificatori BGP ( ? che ci fa fra)
+>[!info] BGP: advertising ristretto
 
 
-o
 prima eBGP e poi iBGP (non basta eBGP, che fa arrivare le informazioni solo ad alcuni router (i gateway))
 
