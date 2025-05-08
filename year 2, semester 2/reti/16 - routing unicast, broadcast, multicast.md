@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-08T12:19
+updated: 2025-05-08T12:34
 completed: false
 ---
 ## definizioni
@@ -55,3 +55,24 @@ inoltre, molte applicazioni richiedono il trasferimento di pacchetti da uno o pi
 - streaming audio/video ad un gruppo di utenti o studenti
 - applicazioni con dati condivisi  (figjam (kelliot kelliot kelliot))
 - aggiornamento di dati
+### indirizzi multicast
+nella pratica, sorge un problema banale: l’indirizzo di destinazione nell’IP può essere uno solo. per risolvere ciò, è necessario un **unico** indirizzo per tutto il gruppo, ovvero l’**indirizzo multicast**
+>[!info] gruppo multicast
+![[Pasted image 20250508122124.png]]
+>- è importante ricordare che i router devono sapere quali host sono associati a un gruppo multicast !!
+>	- deve quindi scoprire quali gruppi sono presenti in ciascuna delle sue interfacce per poi propagare le informazioni agli altri router
+> - inoltre l’appartenenza ad un gruppo non è un attributo fisso dell’host (il periodo d’appartenenza può essere limitato)
+
+viene quindi riservato un blocco di indirizzi per il multicast: in IPv4, è il blocco `224.0.0.0/4` ( da `224.0.0.0` a `239.255.255.255`), quindi $2^{28}$ indirizzi disponibili per gruppi multicast
+>[!warning] un host che appartiene a un gruppo ha un indirizzo multicast separato e aggiuntivo rispetto al primario
+>e l’indirizzo multicast non ha alcuna relazione con il prefisso associato alla rete
+
+# IGMP
+il protocollo **IGMP** (**internet group management protocol**) lavora tra un host e il router che gli è direttamente conesso, e offre agli host il mezzo per informare i router ad essi connessi del fatto che un’applicazione in esecuzione vuole aderire ad uno specifico gruppo multicast
+- i messaggi vengono incapsulati in datagrammi IP, con IP protocol number 2 (huh ?), e `TTL` = 1
+>[!info] rappresentazione
+![[Pasted image 20250508122846.png]]
+## messaggi IGMP
+- **membership query**: mandati dal router all’host, per determinare a quali gruppi hanno aderito gli host su ogni interfaccia. vengono inviati periodicamente
+- **membership report**: mandati dall’host al router, per informare il router su un’adesione (sia per rispondere ad una membership query che non  (quindi al momento dell’adesione))
+- **leave group**: mandati dall’host al router, p
