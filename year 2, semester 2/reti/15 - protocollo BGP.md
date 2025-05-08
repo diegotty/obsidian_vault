@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T10:34
+updated: 2025-05-08T10:49
 completed: false
 ---
 ## internet routing
@@ -54,13 +54,39 @@ viene applicata `migliore()`, che rispetta la politica dell’AS
 
 
 >[!info] algoritmo path-vector
+>```pseudo-code
+>path_vector_routing():
+>	##inizializzazione
+>	path = [] * N
+>	nodi = [A, B, C, D, E, F, G]
+>	me_stesso = C
+>	for y in nodi: # N compreso
+>		if y == me_stesso
+>			path[y] = me_stesso
+>		else if (y è un mio vicino)
+>			path[y] = me_stesso + y
+>		else 
+>		path[y] = vuoto
+>	spedisci path a tutti i vicini
+>
+>	##aggiornamento
+>	while(true):
+>		wait for a path_w da un vicino w
+>		for y in nodi:
+>			if path_w comprende me_stesso:
+>				ignora il percorso
+>			else
+>				path[y] = migliore(path[y], me_stesso + path_w[y])
+>		if c'è un cambiamento nel vettore
+>			spedisci path a tutti i vicini
+>```
 
-```pseudo
-path_vector_routing():
-	for(y = 1 to N)
-```
-ricordiamo che oltre i 15 hop non posso andare, devo usare altri protocolli (?) (per DV)
+### eBGP e iBGP
+come abbiamo visto, per permetter ad ogni router di instradare correttamente i pacchetti, qualsiasi sia la destinazione, è necessario istallare su tutti i **gateway router** dell’AS, una variante del BGP chiamata **eBGP**
+- invece **tutti i router** (compresi quelli di confine) dovranno usare l’**iBGP** (che è diverso dal protocollo intra-dominio !!!!)
+>[!info] eBGP e iBGP
+![[Pasted image 20250508104842.png]]
 
-
+BGP permette a coppie di router di s
 prima eBGP e poi iBGP (non basta eBGP, che fa arrivare le informazioni solo ad alcuni router (i gateway))
 
