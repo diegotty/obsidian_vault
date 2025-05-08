@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T11:34
+updated: 2025-05-08T13:00
 completed: false
 ---
 ## internet routing
