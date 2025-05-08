@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T13:00
+updated: 2025-05-08T16:19
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -344,3 +344,7 @@ la complessità temporale dell’algoritmo che risolve il problema deve essere $
 >>			j += 1
 >>	return T[n]
 >>```
+
+>[!example] problema
+dato un intero $n$, vogliamo sapere quante sono le sequenze di cifre decimali non decrescenti lunghe $n$
+
