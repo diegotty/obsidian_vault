@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T12:49
+updated: 2025-05-08T13:04
 completed: false
 ---
 ## definizioni
@@ -104,3 +104,4 @@ viene creato un albero per ciascuna origine nel gruppo multicast (quindi ci sar√
 **multicast inter-dominio**:
 - MBGP: multicast border gateway protocol
 # IPv6
+gli indirizzi IPv6 sono nati con lo scopo di:
