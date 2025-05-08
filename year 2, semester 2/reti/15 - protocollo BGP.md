@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T10:49
+updated: 2025-05-08T11:03
 completed: false
 ---
 ## internet routing
@@ -87,6 +87,28 @@ come abbiamo visto, per permetter ad ogni router di instradare correttamente i p
 >[!info] eBGP e iBGP
 ![[Pasted image 20250508104842.png]]
 
-BGP permette a coppie di router di s
+BGP permette a coppie di router di scambiarsi informazioni di instradamento su connessioni TCP, usando la porta 179
+- i router ai capi di una connessione TCP sono chiamati **peer BGP**, e la connessione TCP con tutti i messaggi BCP inviati viene chiamata **sessione BGP**
+>[!info] eBGP
+![[Pasted image 20250508105128.png]]
+usando solo l’eBGP, le informazioni di raggiungibilità non sono complete:
+>- i router di confine sanno instradare pacchetti solo ad AS vicini (con cui hanno comunicato, ma non sanno come instradare i pacchetti di cui sanno i percorsi altri gateway router nello stesso AS)
+>- nessuno dei router **non** di confine sa come instradare un pacchetto destinato alle reti che si trovano in altri AS
+
+>[!info] iBGP
+![[Pasted image 20250508105439.png]]
+iBGP crea una sessione tra ogni possibile coppia di router all’interno di un AS: non tutti i nodi hanno messaggi da inviare (i router non gateway), ma tutti ricevono
+>- il processo di aggiornamento non termina dopo il primo scambio di messaggi ! ( i router aggiornano le proprie tabelle e le ri-mandano ai vicini), ma finisce quando non ci sono più aggiornamenti
+
+## tabelle di routing
+le informazioni ottenute da eBGP e iBGP vengono combinate per creare le tabelle dei percorsi
+>[!example]- tabelle di percorso
+![[Pasted image 20250508110127.png]]
+![[Pasted image 20250508110247.png]]
+
+le tabelle di percorso ottenute da BGP non vengono usate di per sè per l’instadamento dei pacchetti, bensì inserite nelle tabelle di routing intra-dominio, generate da RIP o OSPF
+
+
+o
 prima eBGP e poi iBGP (non basta eBGP, che fa arrivare le informazioni solo ad alcuni router (i gateway))
 
