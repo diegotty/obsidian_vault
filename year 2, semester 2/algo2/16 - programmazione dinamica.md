@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T16:19
+updated: 2025-05-08T16:34
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -347,4 +347,18 @@ la complessità temporale dell’algoritmo che risolve il problema deve essere $
 
 >[!example] problema
 dato un intero $n$, vogliamo sapere quante sono le sequenze di cifre decimali non decrescenti lunghe $n$
+>l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
+
+>[!info] soluzione
+>- $n=1: \text{res = 10}$
+> - $n=2: \text{res = 55}$
+possiamo usare un vettore bidimensionale (anche se la complessità richiesta è $O(n)$) in quanto la costruiremo in modo che le colonne rappresentano le varie cifre possibili, che sono 10 (da 0 a 9). di conseguenza, la dimensione della tabella è $10 \cdot n$, e scorrerla costa $O(n)$
+>$$
+T[i][j] = \text{numero di sequenze lunghe $i$ non decrescenti che terminano con la cifra $j$}
+>$$
+$T[i][j] = T[i-1][j] + T[i-1][j-2] +\dots. T[i-1][0]]$
+aggiungendo una cifra, per avere delle sequenze ancora valide, la dovrò aggiunger ad una sequenza con $i-1$ cifre e che finisce (dando per scontato che sia valida) con un numero ≤ $j$
+>
+>la prima riga non viene considerata (in quanto altrimenti l’intera tabella sarà piena di 0), e la seconda riga ($T[1]$) sarà piena di 1
+la soluzione sarà la somma di tutte le celle dell’ultima riga
 
