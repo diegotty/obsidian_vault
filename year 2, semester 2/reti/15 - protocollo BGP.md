@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T11:19
+updated: 2025-05-08T11:34
 completed: false
 ---
 ## internet routing
@@ -20,6 +20,14 @@ per accomodare questi problemi, si fa uso dell'**instradamento gerarchico**:
 - il protocollo **inter-AS** viene eseguito sui **router gateway**, che sono router (dentro AS) che hanno il compito di connettere gli AS tra loro, e quindi di **inoltrare pacchetti a destinazioni esterne**
 	- eseguono quindi sia IGP che EGP !
 gli AS possono essere di diverse dimensioni, e ad ogni AS viene assegnato dall’ICANN un numero identificativo **univoco** di 16 bit: l’**autonomous number** (**ASN**)
+
+>[!warning] perchè è necessario usare protocolli diversi per inter-AS e intra-AS ?
+**politiche**:
+>- intra-AS: unico controllo amminstrativo (un solo ISP) , quindi le questioni di politica hanno un ruolo molto meno importante nello scegliere rotte interne al sistema
+>- inter-AS: il controllo amministrativo desidera avere il controllo su come il traffico viene instradato, e su chi instrada attraverso le sue reti
+**prestazioni**:
+>- intra-AS: orientato alle prestazioni
+>- inter-AS: le politiche possono prevalere sulle prestazioni
 
 gli AS sono classificati in base al modo in cui sono connessi ad altri AS:
 - **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generano  o destinato allo stub, ma **non transita attraverso di esso**
@@ -115,9 +123,11 @@ le tabelle di percorso ottenute da BGP non vengono usate di per sè per l’inst
 ![[Pasted image 20250508110954.png]]
 
 ## attributi del percorso e rotte BGP
-quando un router annuncia una rotta per una sessione BGP, include anche un certo numero di attributi BGP:
-- `AS-PATH`: serve per selezionare i percorsi: elenca i sistemi autonomi att
-- `NEXT-HOP`:
+quando un router annuncia una rotta per una sessione BGP, include anche un certo numero di attributi BGP (prefisso + attributi = “rotta”). i due più importanti sono:
+- `AS-PATH`: serve per selezionare i percorsi: elenca i sistemi autonomi attraverso i quali è passato l’annuncio del prefisso (quindi gli hop intermedi della rotta)
+	- ogni AS **non** stub  ha un identificatore univoco !! (quelli stub non ammettono traffico di transito quindi non verranno mai coinvolti in questa situazione)
+- `NEXT-HOP`: indirizzo IP dell’interfaccia su cui viene inviato il pacchetto (un router ha più indirizzi IP, uno per ogni interfaccia (e uno per ogni protocollo ??? per i gateway router))
+quando un gateway router riceve un annuncio di rotta, utiliza le proprie **politiche d’importazione** per decidere se accettare o filtrare la rotta (proprio come abbiamo visto sopra, usando `migliore()`)
 
 ## selezione dei percorsi BGP
 un router può ricavare più di una rotta verso una destinazione, e deve quindi sceglierne una, attraverso le **regole di eliminazione**:
@@ -125,8 +135,18 @@ un router può ricavare più di una rotta verso una destinazione, e deve quindi 
 2. si seleziona la rotta con valore `AS-PATH` più breve
 3. si seleziona quella il cui router di `NEXT-HOP` ha costo minore: **hot-potato** routing (very greedy of you, BGP)
 4. se rimane ancora più di una rotta, il router si basa sugli identificatori BGP ( ? che ci fa fra)
->[!info] BGP: advertising ristretto
+>[!example] BGP: advertising ristretto
+>- $\text{A, B, C}$ sono **provider networks**
+>- $\text{x, y, w}$ sono **customers** (dei provider)
+>- $\text{x}$ è **dual-homed**: collegata a 2 reti
+>
+![[Pasted image 20250508111950.png]]
+altro caso: 
+![[Pasted image 20250508112210.png]]
 
-
-prima eBGP e poi iBGP (non basta eBGP, che fa arrivare le informazioni solo ad alcuni router (i gateway))
-
+## messaggi BGP
+i messaggi BGP vengono scambiati attraverso TCP, e sono di 4 ““tipi”””:
+- `OPEN`: apre la connessione TCP e autentica il mittente
+- `UPDATE`: annuncia il nuovo percorso o cancella quello vecchio
+- `KEEPALIVE`: mantiene la connessione attiva in mancanza di UPDATE
+- `NOTIFICATION`: riporta gli errori del precedente messaggio. usato anche per chiudere il collegamento
