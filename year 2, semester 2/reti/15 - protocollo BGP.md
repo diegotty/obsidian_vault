@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T09:54
+updated: 2025-05-08T10:19
 completed: false
 ---
 ## internet routing
@@ -12,15 +12,29 @@ ma nella pratica non è così semplice:
 	- in particolare, ogni ISP è un’autorità amministrativa autonoma: usa le sottoreti che vuole e impone politiche specifiche sul traffico
 ## instradamento gerarchico
 per accomodare questi problemi, si fa uso dell'**instradamento gerarchico**:
-- ogni ISP è un **autonomous system** (**AS**), che può eseguire un protocollo di routing che soddisfa le sue esigenze
-	- i router all’interno dell’AS eseguono lo stesso protocollo di routing, chiamato **intra-AS** o **intradominio**, o **interior gateway protocol** (**IGP**)
-	- i router appartenenti a AS diversi possono eseguire IGP diversi !
-- dobbiamo però avere un solo protocollo **inter-AS** (o **interdominio** o **exterior gateway protocol** (**EGP**)), che gestisce il routing tra i vari AS
-	- il protocollo **inter-AS** viene eseguito sui **router gateway**, che sono router (dentro AS) che hanno il compito di connettere gli AS tra loro
+### sistemi autonomi
+ ogni ISP è un **autonomous system** (**AS**), che può eseguire un protocollo di routing che soddisfa le sue esigenze
+- i router all’interno dell’AS eseguono lo stesso protocollo di routing, chiamato **intra-AS** o **intradominio**, o **interior gateway protocol** (**IGP**)
+- i router appartenenti a AS diversi possono eseguire IGP diversi !
+ dobbiamo però avere un solo protocollo **inter-AS** (o **interdominio** o **exterior gateway protocol** (**EGP**)), che gestisce il routing tra i vari AS
+- il protocollo **inter-AS** viene eseguito sui **router gateway**, che sono router (dentro AS) che hanno il compito di connettere gli AS tra loro, e quindi di **inoltrare pacchetti a destinazioni esterne**
+gli AS possono essere di diverse dimensioni, e ad ogni AS viene assegnato dall’ICANN un numero identificativo **univoco** di 16 bit: l’**autonomous number** (**ASN**)
 
+gli AS sono classificati in base al modo in cui sono connessi ad altri AS:
+- **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generano  o destinato allo stub, ma **non transita attraverso di esso**
+- **AS multihomed**: ha più di una connessione con altri AS, ma non consente transito di traffico (es: azienda che usa serivizi di più network provider, ma non fornisce connettività agli altri AS)
+- **AS di transito**: è collegato a più AS, e consente il traffico (es: network provider e dorsali)
+
+>[!info] sistemi autonomi interconnessi
+![[Pasted image 20250508101650.png]]
+per il **routing intra-AS**, vengono usati i protocolli che abbiamo studiato precedentemente; **RIP** o **OSPF**
+per il **routing inter-AS**, viene usato il protocollo **BGP** (**border gateway protocol**)
+
+>[!example] instradamento inter-AS
+## BGP
 
 ricordiamo che oltre i 15 hop non posso andare, devo usare altri protocolli (?) (per DV)
-## sistemi autonomi 
+
 
 router gateway eseguono un protocollo aggiuntivo rispetto agli altri
 ## border gateway protocol (BGP)
