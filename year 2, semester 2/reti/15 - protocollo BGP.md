@@ -128,7 +128,6 @@ quando un router annuncia una rotta per una sessione BGP, include anche un certo
 	- ogni AS **non** stub  ha un identificatore univoco !! (quelli stub non ammettono traffico di transito quindi non verranno mai coinvolti in questa situazione)
 - `NEXT-HOP`: indirizzo IP dell’interfaccia su cui viene inviato il pacchetto (un router ha più indirizzi IP, uno per ogni interfaccia (e uno per ogni protocollo ??? per i gateway router))
 quando un gateway router riceve un annuncio di rotta, utiliza le proprie **politiche d’importazione** per decidere se accettare o filtrare la rotta (proprio come abbiamo visto sopra, usando `migliore()`)
-
 ## selezione dei percorsi BGP
 un router può ricavare più di una rotta verso una destinazione, e deve quindi sceglierne una, attraverso le **regole di eliminazione**:
 1.  **preferenza locale**: un attributo che viene assegnato alle rotte (che riflette la politica imposta dall’amministratore). si selezionano le rotte con i valori più alti di preferenza locale
