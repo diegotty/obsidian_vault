@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T17:45
+updated: 2025-05-08T18:00
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -402,3 +402,16 @@ T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso 
 >$$
 se $M[i][j] = 0$, il valore di $T[i][j]$ sarà 0
 altrimenti $T[i][j] = max \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
+
+
+>[!example] problema dello zaino
+abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
+vogliamo sapere il valore massimo che si può inserire nello zaino
+l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale !)
+
+$$
+T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
+$$
+(il problema del disco è letteralmente il knapsack problem ……….)
+
+prima riga e prima colonna saranno tutti 0
