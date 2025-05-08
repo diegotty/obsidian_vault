@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-08T14:39
+updated: 2025-05-08T14:44
 completed: false
 ---
 i protocolli a livello collegamento si occupano del traporto di datagrammi lungo un canale di comunicazione (fisico o wireless)
@@ -15,4 +15,10 @@ i protocolli a livello collegamento si occupano del traporto di datagrammi lungo
 - **rilevazione degli errori**: gli errori sono causati dalle **interferenze**: rumore elettromagnetico e ““sovrapposizione” del segnale
 - **correzione degli errori**:
 
-il livello di collegamento è implementato all’interno dell’**adattatore di rete**
+>[!info] errori su singolo bit o a burst
+
+il livello di collegamento è implementato all’interno della **network interface card** (**adattatore di rete**: la scheda ethernet, PCMCI)
+
+il livello di collegamento può essere separato in due sottolivelli:
+## data-link control
+## media access control
