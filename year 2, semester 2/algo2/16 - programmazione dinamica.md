@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T16:49
+updated: 2025-05-08T16:58
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -382,4 +382,12 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice Ã
 
 >[!info] soluzione
 potremmo trasformare la matrice in grafo, risolvendo il problema con una visita dal nodo 0. 
-possiamo usare un vettore bidimensionale di dimensione $n\times n$,
+altrimenti, per risolverlo usando la programmazione dinamica, possiamo usare un vettore bidimensionale di dimensione $n\times n$, in cui
+>$$
+T[i][j] = \text{vero se esiste un cammino da (0,0), a T[i][j], falso altrimenti}
+>$$
+definiamo i casi:
+> - le celle della prima riga possono essere raggiunte solo da sinistra
+> - le celle della prima colonna possono essere raggiunte solo da sopra
+>- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
+quindi $T[i][j] = \text{T[i-1][j]} \lor \text{T[i][j-1]}$
