@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T16:58
+updated: 2025-05-08T17:45
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -391,3 +391,14 @@ definiamo i casi:
 > - le celle della prima colonna possono essere raggiunte solo da sopra
 >- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
 quindi $T[i][j] = \text{T[i-1][j]} \lor \text{T[i][j-1]}$
+
+>[!example] problema
+>abbiamo un matrice quadrata binaria $M$ di dimensione $n\times n$ e vogliamo sapere qual’è la dimensione massima per le sottomatrici quadrate di soli uni contenute in $M$
+>l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
+
+>[!info] soluzione
+>$$
+T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso a destra in T[i][j]}
+>$$
+se $M[i][j] = 0$, il valore di $T[i][j]$ sarà 0
+altrimenti $T[i][j] = max \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
