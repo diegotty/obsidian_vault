@@ -1,10 +1,19 @@
 ---
-related to: 
+related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-06T15:36
+updated: 2025-05-08T09:49
 completed: false
 ---
-abbiamo fin qui visto la rete come una collezione di router interconnessi: ciascun router era indistinguibile dagli altri 
+## internet routing
+abbiamo fin qui visto la rete come una collezione di router interconnessi: ciascun router era indistinguibile dagli altri (avevamo quindi una visione omogena della rete)
+ma nella pratica non è così semplice:
+- **scala**: parliamo di 200 milioni di destinazioni. archiviare le informazioni d’istradamento su ciascun host richiederebbe un’enorme quantità di memoria ! e inoltre il traffico generato dagli aggiornamenti LS non lascerebbe banda per i dati, e l’algoritmo con DV non convergerebbe mai 
+- **autonomia amminstrativa**: da un punto di vista ideale, nell’Internet ciascuno (ISP) dovrebbe essere in grado di amministrare la propria rete nel modo desiderato, pur mantenendo la possibilità di connetterla alle reti esterne
+	- in particolare, ogni ISP è un’autorità amministrativa autonoma: usa le sottoreti che vuole e impone politiche specifiche sul traffico
+## instradamento gerarchico
+per accomodare questi problemi, si fa uso dell'**instradamento gerarchico**:
+- ogni ISP è un **autonomous system** (**AS**), che può eseguire un protocollo di routing che soddisfa le sue esigenze: i router all’interno dell’AS eseguono lo stesso protocollo di routing, chiamato (l))
+
 
 ricordiamo che oltre i 15 hop non posso andare, devo usare altri protocolli (?) (per DV)
 ## sistemi autonomi 

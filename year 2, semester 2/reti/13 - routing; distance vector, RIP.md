@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-08T09:43
 ---
 >[!index]
 >- [routing](#routing)
@@ -141,7 +141,7 @@ in tale occorrenza:
 
 ## caratteristiche RIP
 - **split horizon** con **poisoned reverse**: serve per evitare che un router invii rotte non valide al router da cui ha imparato la rotta (quindi per evitare cicli)
-- **triggered updates**: riduce il problema della convergenza lenta (?)
+- **triggered updates**: riduce il problema della convergenza lenta (lungo tempo affinchè tutti i router abbiamo una visione omogenea e coerente della rete)
 - **hold-down**: fornisce robustezza: quando si riceve un’informazione di una rotta non più valida, si avvia un timer e tutti gli advertisement riguardanti quella rotta che arrivano entro il timeout non vengono considerati (in quanto probabilmente l’informazione è vecchia)
 	- previene che informazioni errate si diffondano, e permette che il network “assorba” il fatto che una rotta non è più valida, senza creare routing loop
 ## implementazione RIP
