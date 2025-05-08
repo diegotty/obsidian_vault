@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T18:00
+updated: 2025-05-08T18:13
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -412,6 +412,18 @@ l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi no
 $$
 T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
 $$
-(il problema del disco è letteralmente il knapsack problem ……….)
+>[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare lo zaino
+>nel problema del disco, peso di un file = valore di un file !
 
 prima riga e prima colonna saranno tutti 0
+$T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])$
+
+è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
+
+>[!example] problema della transazioni
+una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
+disponiamo di un vettore $A$ di interi dove $A[i]$ è la quotazione dell’oggetto nel giorno $i$
+dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire una singola transazione, vogliamo sapere qual’è il guadagno massimo a cui possiamo aspirare
+>la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n)$
+
+>[!info] soluzione
