@@ -1,7 +1,7 @@
 ---
-related to: 
+related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T12:34
+updated: 2025-05-08T12:49
 completed: false
 ---
 ## definizioni
@@ -75,4 +75,32 @@ il protocollo **IGMP** (**internet group management protocol**) lavora tra un ho
 ## messaggi IGMP
 - **membership query**: mandati dal router all’host, per determinare a quali gruppi hanno aderito gli host su ogni interfaccia. vengono inviati periodicamente
 - **membership report**: mandati dall’host al router, per informare il router su un’adesione (sia per rispondere ad una membership query che non  (quindi al momento dell’adesione))
-- **leave group**: mandati dall’host al router, p
+- **leave group**: mandati dall’host al router, per informare dalla dipartita da un gruppo.
+	- è opzionale, in quanto il router può capire che no ci sono più host associati ad un gruppo quando non riceve report riguardo a tale gruppo in risposta alla membership query 
+
+un **router multicast** (quindi tipo speciale di router) tiene una lista per ciascuna sottorete dei  gruppi multicast (?) (in cui almento un elemento fa parte del grupp), con un timer per ogni membership al gruppo: la membership deve essere aggiornata da report inviati prima della scadenza del timer o tramite messaggi leave group espliciti
+///QUESTION ummmm
+## problema del routing multicast
+fra la popolazione complessiva di router, solo alcuni dovranno ricevere traffico multicast: quelli collegati a host del gruppo multicast
+- è quindi necessario un protocollo che coordini i router multicast in Internet, per instradare i pacchetti multicast dalla sorgente alla destinazione
+>[!info] esempio
+![[Pasted image 20250508124138.png]]
+
+esistono diversi approci per determinare l’albero di instradamento multicast
+>[!info] albero condiviso dal gruppo
+viene costruito un singolo albero d’instradamento, condiviso da tutto il gruppo multicast
+>- un router agisce da radice, e se il mittente del traffico multicasto non è la radice, allora esso invierà il traffico in unicast alla radice, che provvederà a inviarlo al gruppo
+![[Pasted image 20250508124521.png]]
+
+>[!info] albero basato sull’origine
+viene creato un albero per ciascuna origine nel gruppo multicast (quindi ci sarà un albero per ogni router collegato ad un host appartentente al gruppo multicast)
+>- per la costruzione si usa un algoritmo basato sul RPF (reverse path forwarding, diego) con **pruning** (potatura)
+![[Pasted image 20250508124701.png]]
+## instradamento multicast in Internet
+**multicast intra-dominio**:
+- DVMRP: distance-vector multicast routing protocol
+- MOSPF: multicast open shortest path first
+- PIM: protocol independent multicast
+**multicast inter-dominio**:
+- MBGP: multicast border gateway protocol
+# IPv6

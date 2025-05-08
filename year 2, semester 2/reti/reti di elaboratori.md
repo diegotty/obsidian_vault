@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-05-08T11:55
+updated: 2025-05-08T12:44
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -17,4 +17,4 @@ updated: 2025-05-08T11:55
 [[13 - routing; distance vector, RIP]]
 [[14 - routing; link state, OSPF]]
 [[15 - protocollo BGP]]
-[[16 - routing unicast, broadcast, multicast]]
+[[16 - routing unicast, broadcast, multicast. IPv6]]
