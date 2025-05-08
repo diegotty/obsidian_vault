@@ -1,10 +1,10 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T12:49
+updated: 2025-05-08T13:04
 completed: false
 ---
-## definizioni
+ ## definizioni
 >[!info] unicast
 **unicast**: comunicazione tra UNA sorgente e UNA destinazione
 > - definita da: indirizzo IP sorgente - indirizzo IP destinazione
