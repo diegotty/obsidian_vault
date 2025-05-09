@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T13:04
+updated: 2025-05-09T10:54
 completed: false
 ---
 ## definizioni
@@ -105,3 +105,32 @@ viene creato un albero per ciascuna origine nel gruppo multicast (quindi ci sar�
 - MBGP: multicast border gateway protocol
 # IPv6
 gli indirizzi IPv6 sono nati con lo scopo di:
+- aumentare lo spazio di indirizzi rispetto a IPv4
+- ridisegnare il formato dei datagrammi
+- rivedere protocolli ausiliari come ICMP
+gli indirizzi IPv6 sono lunghi 128 bit, e portano le seguenti caratteristiche:
+- nuovo formato header IP
+- nuove opzioni
+- possibilità di estensione
+- opzioni di sicureza
+- maggiore efficienza (no frammentazione nei nodi intermedi (how ????), etichette di flusso per traffico audio/video)
+>[!info] formato datagramma IPv6
+![[Pasted image 20250509104452.png]]
+> ricordiamo che nel datagramma IPv4, l’intestazione di base aveva dimensione (minima) di 20 byte !
+
+## adozione di IPv6
+l’adozione di IPv6 è ancora in corso e molto lenta, a causa di soluzioni più immediate per tamponare la crescente richiesta di indirizzi IP (es: indirizzamento senza classi, DHCP, NAT)
+>[!info] chart adozione IPv6
+>![[Pasted image 20250509104949.png]]
+## gestione IPv6
+per determinare quale versione utilizzare per inviare un pacchetto a una destinazione, l’host sorgente interroga il DNS, e si usa il protcollo relativo all’indirizzo ritornato (IPv4 o IPv6)
+>[!info] dual stack
+deve inoltre essere presente una doppia pila di protcolli per la comunicazione in rete, in modo da gestirli entrambi
+![[Pasted image 20250509105139.png]]
+
+>[!info] tunneling
+inoltre può capitare che 2 host usanti IPv6 debbano scambiarsi un messaggio attraverso una regione IPv4. in questo caso, bisgona usare la tecnica del **tunneling**: si incapsula il datagramma IPv6 nel payload di un datagramma IPv4, e si inseriscono come IP sorgente e destinazione gli estremi del tunnel
+![[Pasted image 20250509105342.png]]
+
+>[!info] traduzione dell’intestazione
+può altrimenti capit
