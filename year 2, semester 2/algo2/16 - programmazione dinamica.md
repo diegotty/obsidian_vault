@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T11:54
+updated: 2025-05-09T12:09
 completed: 
 ---
 >[!index]
@@ -458,27 +458,36 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 >[!example] problema dello zaino (knapsack problemz)
 abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
 vogliamo sapere il valore massimo che si può inserire nello zaino
-l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale !)
+l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale in quanto $c$ non è una costante!)
+>>[!info] soluzione
+>possiamo usare un vettore bidimensionale, in cui:
+>>$$
+>T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
+>>$$
+>>>[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare il valore degli oggetti nello zaino, non il peso dello zaino !
+>>>nel problema del disco, peso di un file = valore di un file !
+>>la prima riga e la prima colonna saranno 0 (rispettivamente 0 oggetti e 0 spazio nello zaino)
+>>per ogni altra cell, se $p_{i} < j$, o lo prendo o non lo prendo (se $p_{i} > j$ non posso prendero a prescindere). quindi:
+>>$$
+>T[i][j] = \begin{cases} 0 & \text{se } i = 0 \text{ o } j = 0 \\
+>T[i-1][j] & \text{se } p_{i} > j \\
+>T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}]) & \text{altrimenti}
+>\end{cases}
+>>$$
+>>>[!tip] è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
 
->[!info] soluzione
-possiamo usare un vettore bidimensionale, in cui:
->$$
-T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
->$$
->>[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare il valore degli oggetti nello zaino, non il peso dello zaino !
->>nel problema del disco, peso di un file = valore di un file !
+```python
+def jknaps_problemz(P, V, c):
+	n = len(P)
+	T = [[0]*n for _ in range(n)]
+	for i in range(1, n):
+		for j in range(1, n):
+			if P[i] > c:
+				T[i][j] = T[i-1][j] 
+			else:
+				T[i][j] = max(T[i-1][j], V[i] + T[i-1][j-P[i]])
 
-prima riga e prima colonna saranno tutti 0
-$$
-\begin{cases}
-0 & \text{se} i = 0 o j = 0 \\
-
-\end{cases}
-0 & \text{se} i = 0 o j = 0 \\
-T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])
-$$
-$T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])$
->[!tip] è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
+```
 
 >[!example] problema della transazioni
 una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
