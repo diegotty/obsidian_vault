@@ -1,8 +1,6 @@
 ---
-related to: "[[11 - livello di rete]]"
-created: 2025-03-02T17:41
-updated: 2025-05-09T10:56
-completed: false
+created: 2025-05-09T10:56
+updated: 2025-05-09T10:58
 ---
 ## definizioni
 >[!info] unicast
@@ -133,4 +131,5 @@ inoltre può capitare che 2 host usanti IPv6 debbano scambiarsi un messaggio att
 ![[Pasted image 20250509105342.png]]
 
 >[!info] traduzione dell’intestazione
-può altrimenti capit
+può altrimenti capitare che un host IPv6 debba comunicare con un host IPv4. in questo caso viene effettuata la traduzione del datagramma prima che arrivi a destinazione
+![[Pasted image 20250509105811.png]]

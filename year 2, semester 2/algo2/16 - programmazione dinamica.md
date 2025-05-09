@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-08T00:55
+updated: 2025-05-09T10:56
 related to: "[[15 - divide et impera]]"
 ---
 >[!index]
@@ -344,3 +344,86 @@ la complessità temporale dell’algoritmo che risolve il problema deve essere $
 >>			j += 1
 >>	return T[n]
 >>```
+
+>[!example] problema
+dato un intero $n$, vogliamo sapere quante sono le sequenze di cifre decimali non decrescenti lunghe $n$
+>l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
+>>[!info] soluzione
+>>- $n=1: \text{res = 10}$
+>> - $n=2: \text{res = 55}$
+>possiamo usare un vettore bidimensionale (anche se la complessità richiesta è $O(n)$) in quanto la costruiremo in modo che le colonne rappresentano le varie cifre possibili, che sono 10 (da 0 a 9). di conseguenza, la dimensione della tabella è $10 \cdot n$, e scorrerla costa $O(n)$
+>>$$
+>T[i][j] = \text{numero di sequenze lunghe $i$ non decrescenti che terminano con la cifra $j$}
+>>$$
+>$T[i][j] = T[i-1][j] + T[i-1][j-2] +\dots. T[i-1][0]]$
+>aggiungendo una cifra, per avere delle sequenze ancora valide, la dovrò aggiunger ad una sequenza con $i-1$ cifre e che finisce (dando per scontato che sia valida) con un numero ≤ $j$
+>>
+>>la prima riga non viene considerata (in quanto altrimenti l’intera tabella sarà piena di 0), e la seconda riga ($T[1]$) sarà piena di 1
+>>la soluzione sarà la somma di tutte le celle dell’ultima riga
+>>**implementazione**:
+>>```python
+>>def es(n):
+>>	T = [ [0] * 10 for i in range(n+1)]
+>>	for j in range(10):
+>>		T[1][j] = 1
+>>	for i in range(2, n+1):
+>>		for j in range(10):
+>>			for k in range(j+1):
+>>				T[i][j] += T[i-1][k]
+>>	return sum(T[n])
+>>```
+
+>[!example] problema
+data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice è possibile raggiungere la cella in basso a destra partendo da quella in alto a sinistra senza mai toccare celle che contengono il numero 1.
+>- si può assumere che $M[0][0] = 0$
+> - ad ogni passo, ci si può spostare solo di un passo verso destra o un passo verso basso
+![[Pasted image 20250508164342.png]]
+>la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n^2)$
+
+>[!info] soluzione
+potremmo trasformare la matrice in grafo, risolvendo il problema con una visita dal nodo 0. 
+altrimenti, per risolverlo usando la programmazione dinamica, possiamo usare un vettore bidimensionale di dimensione $n\times n$, in cui
+>$$
+T[i][j] = \text{vero se esiste un cammino da (0,0), a T[i][j], falso altrimenti}
+>$$
+definiamo i casi:
+> - le celle della prima riga possono essere raggiunte solo da sinistra
+> - le celle della prima colonna possono essere raggiunte solo da sopra
+>- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
+quindi $T[i][j] = \text{T[i-1][j]} \lor \text{T[i][j-1]}$
+
+>[!example] problema
+>abbiamo un matrice quadrata binaria $M$ di dimensione $n\times n$ e vogliamo sapere qual’è la dimensione massima per le sottomatrici quadrate di soli uni contenute in $M$
+>l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
+
+>[!info] soluzione
+>$$
+T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso a destra in T[i][j]}
+>$$
+se $M[i][j] = 0$, il valore di $T[i][j]$ sarà 0
+altrimenti $T[i][j] = max \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
+
+
+>[!example] problema dello zaino
+abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
+vogliamo sapere il valore massimo che si può inserire nello zaino
+l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale !)
+
+$$
+T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
+$$
+>[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare lo zaino
+>nel problema del disco, peso di un file = valore di un file !
+
+prima riga e prima colonna saranno tutti 0
+$T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])$
+
+è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
+
+>[!example] problema della transazioni
+una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
+disponiamo di un vettore $A$ di interi dove $A[i]$ è la quotazione dell’oggetto nel giorno $i$
+dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire una singola transazione, vogliamo sapere qual’è il guadagno massimo a cui possiamo aspirare
+>la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n)$
+
+>[!info] soluzione
