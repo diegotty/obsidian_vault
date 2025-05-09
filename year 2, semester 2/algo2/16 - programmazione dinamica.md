@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T11:41
+updated: 2025-05-09T11:54
 completed: 
 ---
 >[!index]
@@ -455,28 +455,54 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 >>	return max(T)
 >>```
 
->[!example] problema dello zaino
+>[!example] problema dello zaino (knapsack problemz)
 abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
 vogliamo sapere il valore massimo che si può inserire nello zaino
 l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale !)
 
 >[!info] soluzione
-$$
+possiamo usare un vettore bidimensionale, in cui:
+>$$
 T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
-$$
->[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare lo zaino
->nel problema del disco, peso di un file = valore di un file !
+>$$
+>>[!warning] a differenza dal problema del disco, in questo caso cerchiamo di massimizzare il valore degli oggetti nello zaino, non il peso dello zaino !
+>>nel problema del disco, peso di un file = valore di un file !
 
 prima riga e prima colonna saranno tutti 0
-$T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])$
+$$
+\begin{cases}
+0 & \text{se} i = 0 o j = 0 \\
 
-è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
+\end{cases}
+0 & \text{se} i = 0 o j = 0 \\
+T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])
+$$
+$T[i][j] = max(T[i-1][j], v_{i} + T[i-1][j-peso_{i}])$
+>[!tip] è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
 
 >[!example] problema della transazioni
 una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
 disponiamo di un vettore $A$ di interi dove $A[i]$ è la quotazione dell’oggetto nel giorno $i$
 dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire una singola transazione, vogliamo sapere qual’è il guadagno massimo a cui possiamo aspirare
 >la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n)$
-
->[!info] soluzione
-possiamo usare un vettore 
+>>[!info] soluzione
+>possiamo usare un vettore monodimensionale, in cui:
+>>$$
+>T[i] = \text{guadagno massimo ottenuto vendendo al giorno $i$}
+>>$$
+>per ottenere il guadagno massimo al giorno $i$, devo comprare nel giorno con valore minore in $A[:i+1]$. quindi:
+>>$$
+>T[i] = A[i] - min(A[:i+1])
+>>$$
+>possiamo risolvere l’algoritmo in $\Theta(n)$ aggiornando a mano a mano che scorriamo il vettore, evitando di scorrerlo parzialmente ad ogni iterazione di $i$
+>>**implementazione**:
+>>```python
+>>def soldi_denaro_moneta_cash(A):
+>>	n, minimum = len(A), A[0]
+>>	T = [0]*n
+>>	for i in range(n):
+>>		if A[i] < minimum:
+>>			minimum = A[i]
+>>		T[i] = A[i] - minimum
+>>	return max(T)
+>>```
