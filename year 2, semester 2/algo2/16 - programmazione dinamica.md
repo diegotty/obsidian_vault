@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T11:09
+updated: 2025-05-09T11:21
 completed: 
 ---
 >[!index]
@@ -380,32 +380,48 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 > - ad ogni passo, ci si può spostare solo di un passo verso destra o un passo verso basso
 ![[Pasted image 20250508164342.png]]
 >la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n^2)$
-
->[!info] soluzione
-potremmo trasformare la matrice in grafo, risolvendo il problema con una visita dal nodo 0. 
-altrimenti, per risolverlo usando la programmazione dinamica, possiamo usare un vettore bidimensionale di dimensione $n\times n$, in cui
->$$
-T[i][j] = \text{vero se esiste un cammino da (0,0), a T[i][j], falso altrimenti}
->$$
-definiamo i casi:
-> - le celle della prima riga possono essere raggiunte solo da sinistra
-> - le celle della prima colonna possono essere raggiunte solo da sopra
->- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
-quindi: 
->$$
-T[i][j] = \begin{cases} False & M[i][j] = 1 \\
-True & i=j=0 \\
-T[i][j-1] & i =  0 \\
-T[i-1][j] & j=0 \\
-T[i][j-1] \;\;or\;\; T[i-1][j] & \text{altrimenti}
-\end{cases}
->$$
->**implementazione**:
-```python
-def percorso(M):
-	n = len(M[0])
-	T = [false]* n for i in range(n)]
-```
+>>[!info] soluzione
+>potremmo trasformare la matrice in grafo, risolvendo il problema con una visita dal nodo 0. 
+>altrimenti, per risolverlo usando la programmazione dinamica, possiamo usare un vettore bidimensionale di dimensione $n\times n$, in cui
+>>$$
+>T[i][j] = \text{vero se esiste un cammino da (0,0), a T[i][j], falso altrimenti}
+>>$$
+>definiamo i casi:
+>> - le celle della prima riga possono essere raggiunte solo da sinistra
+>> - le celle della prima colonna possono essere raggiunte solo da sopra
+>>- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
+>quindi: 
+>>$$
+>T[i][j] = \begin{cases} False & M[i][j] = 1 \\
+>True & i=j=0 \\
+>T[i][j-1] & i =  0 \\
+>T[i-1][j] & j=0 \\
+>T[i][j-1] \;\;or\;\; T[i-1][j] & \text{altrimenti}
+>\end{cases}
+>>$$
+>>**implementazione**:
+>>```python
+>>def percorso(M):
+>>	n = len(M[0])
+>>	T = [[False]* n for i in range(n)]
+>>	T[0][0] = True
+>>	for i in range(n):
+>>		if i == 0:
+>>		for j in range(n):
+>>			if i == 0 and j ==0:
+>>				T[i][j] = 0
+>>			else if M[i][j] == 1:
+>>				T[i][j] = False
+>>			else if i == 0:
+>>				T[i][j] = T[i][j-1]
+>>			else if j == 0:
+>>				T[i][j] = T[i-1][j]	
+>>			else if :
+>>				T[i][j] = T[i][j-1] or T[i-1][j]
+>>	return T[n-1][n-1]
+>>				
+>>```
+>>wrote it on my own ngl idk if it works
 
 >[!example] problema
 >abbiamo un matrice quadrata binaria $M$ di dimensione $n\times n$ e vogliamo sapere qual’è la dimensione massima per le sottomatrici quadrate di soli uni contenute in $M$
@@ -416,8 +432,13 @@ def percorso(M):
 T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso a destra in T[i][j]}
 >$$
 se $M[i][j] = 0$, il valore di $T[i][j]$ sarà 0
-altrimenti $T[i][j] = max \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
-
+altrimenti $T[i][j] = min \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
+quindi:
+>$$
+T[i][j] = \begin{cases} 0 & M[i][j]=0 \\
+min( T[i][j-1],\,T[i-1][j-1],\,T[i-1][j])+1 & \text{altrimenti}
+\end{cases}
+>$$
 
 >[!example] problema dello zaino
 abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
