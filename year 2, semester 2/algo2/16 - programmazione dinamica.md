@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T11:21
+updated: 2025-05-09T11:39
 completed: 
 ---
 >[!index]
@@ -432,19 +432,35 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso a destra in T[i][j]}
 >$$
 se $M[i][j] = 0$, il valore di $T[i][j]$ sarà 0
-altrimenti $T[i][j] = min \Big(T[i-1][j], T[[i][j-1], T[i-1][j-1]\Big) + 1$
+altrimenti, per avere un quadrato di dimensione $k$, dovrò avere il quadrato a sinistra, in alto e in diagonale di ALMENO dimensione $k-1$.se uno di essi ha dimensione minore, $T[i][j]$ non potrà avere dimensione $k$ (è facile visualizzarlo per il quadrato a sinistra e in alto, ma ciò vale anche per quello in diagonale, basta pensare al caso in cui esso ha dimensione 0)
 quindi:
 >$$
 T[i][j] = \begin{cases} 0 & M[i][j]=0 \\
+1 & \text{se} i =0 \text{ e\\o } j= 0 \\
 min( T[i][j-1],\,T[i-1][j-1],\,T[i-1][j])+1 & \text{altrimenti}
 \end{cases}
 >$$
+**implementazione**:
+```python
+def sottomatrice(M):
+	T = [0]*n for i in range(n)]
+	T[0][0] = M[0][0]
+	for i in range(1, n):
+	for i in range(1, n):
+		for j in range(1, n):
+			if M[i][j] == 0:
+				T[i][j] == 0
+			else:
+				if i == 0 or j == 0:
+					T[i][j] = 1
+```
 
 >[!example] problema dello zaino
 abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
 vogliamo sapere il valore massimo che si può inserire nello zaino
 l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale !)
 
+>[!info] soluzione
 $$
 T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
 $$
