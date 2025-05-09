@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T17:39
+updated: 2025-05-09T17:53
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -69,20 +69,48 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 	2. data di creazione
 	3. visibilità: pubbliche o private
 ## diagramma UML
+![[Pasted image 20250509174207.png]]
 ## specifica dei tipi di dato
 - Istante = (data : Data, ora : Intero in 0..24, sinuti : Intero in 0..59, secondi : Intero in 0..59)
 ## specifica di classe
 ### Utente
 ogni istanza della classe Utente descrive un utente della piattaforma
+#### specifica delle operazioni
+- cronologia() : VideoPubblicato \[0..\*]
+	precondizioni: 
+		nessuna
+	postcondizioni:
+		l’operazione non modifica il livello estensionale
+		result = {v : VideoPubblicato | esiste vis : Visualizzazione e i link (this, vis) : utente_visualizzazione, (vis, v) : visualizzazione_video }
+
+- playlist_pubbliche() : Playlist \[0..\*]
+	precondizioni:
+		nessuna
+	postcondizioni:
+		l’operazione non modifica il livello estensionale
+		result = {p : Playlist | esiste il link (u, p) : utente_playlist e p.visibilità = ‘pubblica’ }
 ### VideoPubblicato
 ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piattaforma
+#### specifica delle operazioni
+- visualizzazioni() : Intero ≥ 0
+	precondizioni:
+		nessuna
+	postcondizioni:
+		l’operazione non modifica il livello estensionale
+		visualizzazioni = {vis : Visualizzazione | esiste il link (vis, this) : visualizzazione : video}
+		result = |visualizzazioni|
+- media_valutazioni : Intero ≥ 0
+	precondizioni:
+		nessuna
+	postcondizioni:
+		valutazioni = {val : Valutazione | esiste il link }
 ### VideoRisposta
-ogni stanza dell
+ogni stanza della classe VideoRisposta descrive un video pubblicato come risposta ad un altro video caricato sulla piattaforma
 #### vincoli esterni
 \[V.VideoRisposta.no_video_personali]
 per ogni istanza v : VideoRisposta e l’unica istanza v_cit : VideoPubblicato per cui esiste il link (v, v_cit ) : video_risposta, non esiste u : Utente t.c. esistono i link (v, u) : pubblica e (v_cit, u) : pubblica
 ### Valutazione
-ogni istanza della classe Valutazione descr
+ogni istanza della classe Valutazione descrive una valutazione lasciata da un utente ad un video
 #### vincoli esterni
 \[V.Valutazione.no_video_personali]
 per ogni istanza del link (u, v) : valutazione, non esiste il link (u, v) : pubblica
