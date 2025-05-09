@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T22:53
+updated: 2025-05-09T23:09
 completed: false
 ---
 # livello di collegamento
@@ -81,7 +81,7 @@ il **MAC** si occupa solo degli aspetti specifici dei canali broadcast:
 - controllo dell’accesso al mezzo condiviso
 >[!warning] il livello di collegamento di un link punto-punto non ha il sotto-livello MAC !
 
-## protocolli di accesso multiplo
+# protocolli di accesso multiplo
 quando viene usato un canale broadcast condiviso, è possibile che centinaia/migliaia di nodi possano comunicare direttamente sul canale broadcast. non è quindi raro che si generi una **collisione**, che accade quando i nodi ricevono due o più frame contemporaneamente
 lo scopo dei protocolli di accesso multiplo è quello di evitare caos, e realizzare una condivisione. per fare ciò, fissano le modalità con cui i nodi regolano le loro trasmissioni sul canale condiviso
 - la comunicazione relativa al canale condiviso deve utilizzare il canale stesso ! (non c’è un canale “out-of-band” per la coordinazione)
@@ -92,6 +92,40 @@ idealmente, dato un canale broadcast con velocità $R$ bps:
 >- ha un protocollo decentralizzato: non ci sono nodi master, o sincronizzazione dei clock
 
 i protocolli di accesso multiplo si possono dividere in 3 categorie:
-- **channel partitioning** (protocolli a suddivisione del canale):
-- **random access** (protocolli ad accesso casuale):
-- **taking-turn**: (protocolli a rotazione):
+- **channel partitioning** (protocolli a suddivisione del canale): suddivide il canale in parti più piccole (slot di tempo, frequenza, codice), alloca le parti presso un nodo per utilizzo esclusivo
+	- evita le collisioni
+- **random access** (protocolli ad accesso casuale): i canali non vengono divisi, e si può verificare una collisione. in caso di collisione (o forse in generale) , i nodi coinvolti ritrasmettono ripetutamente i pacchetti
+- **taking-turn**: (protocolli a rotazione): ciascun nodo ha il suo turno di trasmissione, ma i nodi che hanno molto da trasmettere possono avere turni più lunghi !
+>[!figure] riassunto
+![[Pasted image 20250509225659.png]]
+## protocolli a suddivisione del canale
+### TDMA
+il protocollo TDMA prevede l’accesso multiplo a **divisione di tempo**:
+- vengono assegnati turni per accedere al canale, e ogni nodo ha un turno assegnato
+- il canale viene suddiviso in intervalli di tempo
+- gli slot usati rimangono inattivi
+il tasso trasmissivo è sempre $\frac{R}{N}$ bps (quindi male !!! se ho solo un nodo che vuole trasmettere, perdo tatissimo del canale), quindi non flessibile rispetto a variazioni nel numero di nodi
+>[!example]- esempio
+![[Pasted image 20250509230018.png]]
+### FDMA
+il protocollo FDMA prevede l’accesso a **divisione di frequenza**:
+- suddivide il canale in bande di frequenza
+- le bande di frequenza vengono assegnate ad ogni nodo
+carateristiche molto simili al TDMA in termini di prestazioni ! (sempre divisione statica)
+>[!example]- esempio
+![[Pasted image 20250509230150.png]]
+## protocolli ad accesso casuale
+### ALOHA puro
+>[!info] lore
+>il protocollo **ALOHA** è il primo del suo tipo ad essere stato proposto in letteratura (nei primi anni 70, nelle hawaii), e fu ideato per mettere in comunicazione gli atolli (sponde di un’isola) mediante una LAN radio (wireless !)
+
+>[!warning] essendo un protocollo ad accesso casuale, si possono verificare collisioni !
+
+nel protocollo **ALOHA puro**:
+- ogni stazione può inviare un frame tutte le volte che ha dati da inviare
+- il ricevente invia un `ACK` per notificare la corretta ricezione del frame
+- se il mittente non riceve l’`ACK` entro un **timeout**, deve ritrasmettere il frame
+- se due stazioni ritrasmettono contemporaneamente creando di nuovo una collisione (quindi, dopo 2 collisioni), si attende un tempo random (**back-off**) prima di effettuare la ritrasmissione del frame
+	 - la casualità del back-off aiuta ad evitare altre collisioni
+- dopo un numero massimo di tentativi $k_{max}$, una stazione interrompe i suoi tentativi e prova più tardi
+>[!ino]
