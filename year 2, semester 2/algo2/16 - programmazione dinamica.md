@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T12:09
+updated: 2025-05-09T12:10
 completed: 
 ---
 >[!index]
@@ -475,19 +475,21 @@ l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi no
 >\end{cases}
 >>$$
 >>>[!tip] è possiible elaborare algoritmi di approssimazione greedy che girano in tempo polinomiale 
-
-```python
-def jknaps_problemz(P, V, c):
-	n = len(P)
-	T = [[0]*n for _ in range(n)]
-	for i in range(1, n):
-		for j in range(1, n):
-			if P[i] > c:
-				T[i][j] = T[i-1][j] 
-			else:
-				T[i][j] = max(T[i-1][j], V[i] + T[i-1][j-P[i]])
-
-```
+>>
+>>**implementazione**:
+>>```python
+>>def jknaps_problemz(P, V, c):
+>>	n = len(P)
+>>	T = [[0]*(c+1) for _ in range(n+1)]
+>>	for i in range(1, n+1):
+>>		for j in range(1, c+1):
+>>			if P[i] > c:
+>>				T[i][j] = T[i-1][j] 
+>>			else:
+>>				T[i][j] = max(T[i-1][j], V[i] + T[i-1][j-P[i]])
+>>	return T[n][c]
+>>
+>>```
 
 >[!example] problema della transazioni
 una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
