@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T23:09
+updated: 2025-05-09T23:10
 completed: false
 ---
 # livello di collegamento
@@ -128,4 +128,8 @@ nel protocollo **ALOHA puro**:
 - se due stazioni ritrasmettono contemporaneamente creando di nuovo una collisione (quindi, dopo 2 collisioni), si attende un tempo random (**back-off**) prima di effettuare la ritrasmissione del frame
 	 - la casualità del back-off aiuta ad evitare altre collisioni
 - dopo un numero massimo di tentativi $k_{max}$, una stazione interrompe i suoi tentativi e prova più tardi
->[!ino]
+>[!info] info
+![[Pasted image 20250509230914.png]]
+affichè la collisione accada, basta la sovrapposizione di due messaggi per un solo bit !
+
+>[!]
