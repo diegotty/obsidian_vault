@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T17:55
+updated: 2025-05-09T18:22
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -34,8 +34,7 @@ Ogni utente può creare delle playlist personali, ovvero delle collezioni ordina
 video che gradisce vedere, oppure vuole condividere con altri utenti. Le playlist infatti (di cui interessa il nome e la data di creazione) possono essere pubbliche o private: solo le playlist pubbliche possono essere visualizzate dagli altri utenti. A tal fine, il sistema deve permettere ad ogni utente di ottenere le playlist pubbliche di un altro utente a sua scelta.
 TuTubi deve permettere ad un utente di iscriversi, pubblicare nuovi video, creare e
 modificare le sue playlist, ed esprimere valutazioni e commenti sui video che visiona.
-Inoltre, TuTubi deve consentire la ricerca di video: in particolare, data una categoria,
-un insieme di tag, ed un intero v tra 0 e 5, si vogliono restituire tutti i video disponibili di quella categoria che posseggono almeno uno tra i tag indicati, e che abbiano una valutazione media di almeno v (se un video non ha ancora alcuna valutazione, deve essere restituito comunque). TuTubi deve poi permettere di cercare, data una categoria, i video di quella categoria che hanno il numero maggiore di video in risposta, al fine di isolare le discussioni più animate tra gli utenti.
+Inoltre, TuTubi deve consentire la ricerca di video: in particolare, data una categoria, un insieme di tag, ed un intero v tra 0 e 5, si vogliono restituire tutti i video disponibili di quella categoria che posseggono almeno uno tra i tag indicati, e che abbiano una valutazione media di almeno v (se un video non ha ancora alcuna valutazione, deve essere restituito comunque). TuTubi deve poi permettere di cercare, data una categoria, i video di quella categoria che hanno il numero maggiore di video in risposta, al fine di isolare le discussioni più animate tra gli utenti.
 La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio perché di contenuto coperto da copyright, osceno, ecc. Un video censurato non può essere né visionato, né votato, né commentato, né aggiunto ad alcuna playlist, né restituito come risultato di una ricerca. Un video, una volta censurato, non può tornare più visibile. Il motivo di una censura deve essere mantenuto nel sistema per usi interni.
 //use case : iscriversi. ricerca di video. censura di video
 ## raffinamento dei requisiti
@@ -122,4 +121,24 @@ ogni istanza della classe Commento descrive un commento lasciato da un utente su
 \[V.Commento.no_video_personali]
 per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto e (u, v) : utente_commento, non esiste il link (u,v) : pubblica
 ## diagramma UML use-case
+![[Pasted image 20250509181133.png]]
 ## specifica degli use-case
+### Iscrizione
+- iscrizione(nome : Stringa) : Utente
+	precondizioni:
+	postcondizioni:
+### Gestione Video
+- pubblica_video(titolo : Stringa, descrizione : Stringa, percorso : Stringa) : VideoPubblicato
+- rendi_risposta(video_pubblicato : VideoPubbilcato, video_citato : VideoPubblicato)
+### Gestione Playlist
+- crea_playlist(nome : Stringa, visibilità : Visibilità) : Playlist
+- appendi(playlist : Playlist, video : VideoPubblicato)
+- modifica_visibilità(playlist : Playlist, visiblità : Visiblità)
+### Interazioni
+- commenta_video(video : Video, commento : Stringa)
+- valuta_video(video : VideoPubblicato)
+### Ricerca
+- ricerca (categoria : Categoria, tag : Tag \[1..\*], valutazione : Intero in 0..5)
+- ricerca_per_risposte(categoria : Categoria)
+### Censura Video
+- censura_video(video : VideoPubblicato)
