@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T16:57
+updated: 2025-05-09T17:24
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -70,6 +70,7 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 	3. visibilità: pubbliche o private
 ## diagramma UML
 ## specifica dei tipi di dato
+Istante = (data : Data, Ora : Intero in 0..24, Minuti : Intero in 0..59, )
 ## specifica di classe
 vincolo esterno per associazione videorisposta - videopubblicato (autore non può essere lo stesso)
 vincoli esterni per valutazione e commento
