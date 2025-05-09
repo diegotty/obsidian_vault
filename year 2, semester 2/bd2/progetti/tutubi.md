@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T17:24
+updated: 2025-05-09T17:39
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -70,9 +70,26 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 	3. visibilità: pubbliche o private
 ## diagramma UML
 ## specifica dei tipi di dato
-Istante = (data : Data, Ora : Intero in 0..24, Minuti : Intero in 0..59, )
+- Istante = (data : Data, ora : Intero in 0..24, sinuti : Intero in 0..59, secondi : Intero in 0..59)
 ## specifica di classe
-vincolo esterno per associazione videorisposta - videopubblicato (autore non può essere lo stesso)
-vincoli esterni per valutazione e commento
+### Utente
+ogni istanza della classe Utente descrive un utente della piattaforma
+### VideoPubblicato
+ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piattaforma
+### VideoRisposta
+ogni stanza dell
+#### vincoli esterni
+\[V.VideoRisposta.no_video_personali]
+per ogni istanza v : VideoRisposta e l’unica istanza v_cit : VideoPubblicato per cui esiste il link (v, v_cit ) : video_risposta, non esiste u : Utente t.c. esistono i link (v, u) : pubblica e (v_cit, u) : pubblica
+### Valutazione
+ogni istanza della classe Valutazione descr
+#### vincoli esterni
+\[V.Valutazione.no_video_personali]
+per ogni istanza del link (u, v) : valutazione, non esiste il link (u, v) : pubblica
+### Commento
+ogni istanza della classe Commento descrive un commento lasciato da un utente su un video
+#### vincoli esterni
+\[V.Commento.no_video_personali]
+per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto e (u, v) : utente_commento, non esiste il link (u,v) : pubblica
 ## diagramma UML use-case
 ## specifica degli use-case
