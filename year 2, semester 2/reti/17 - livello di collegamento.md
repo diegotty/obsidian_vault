@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T22:38
+updated: 2025-05-09T22:53
 completed: false
 ---
 # livello di collegamento
@@ -16,8 +16,11 @@ i protocolli a livello collegamento si occupano quindi del traporto di datagramm
 ### tipi di collegamento
 esistono 2 tipi di link, a seconda della funzione che svolgono:
 - **collegamento punto-punto**: dedicato a due soli dispositivi (viene utilizzata l’intera capacità del mezzo)
-	- viene impiegato per connessioni telefoniche
+	- viene impiegato per connessioni telefoniche o tra ethernet e host
+	- viene utilizzzto il **point-to-point protocol (PPP)**, del [[#data-link control|DLC]]
 - **collegamento broadcast**: il collegamento è condivisio tra varie coppie di dispositivi (viene utilizzata solo una parte del mezzo)
+	- include l’ethernet tradizionale (cavo/canale condiviso), o le LAN wireless 802.11
+	- necessita di un protocolllo (il protocollo MAC) per la gestione del canale condiviso
 
 inoltre un datagramma può essere gestito da diversi protocolli su collegamenti differenti ! e anche i servizi erogati dai protocolli del livello di link possono essere diversi (ad esempio, non tutti i protocolli forniscono un servizio di consegna affidabile)
 ## servizi offerti dal livello di collegamento
@@ -77,3 +80,18 @@ il **DLC** si occupa di tutte le questioni **comuni** sia ai collegamenti punto-
 il **MAC** si occupa solo degli aspetti specifici dei canali broadcast:
 - controllo dell’accesso al mezzo condiviso
 >[!warning] il livello di collegamento di un link punto-punto non ha il sotto-livello MAC !
+
+## protocolli di accesso multiplo
+quando viene usato un canale broadcast condiviso, è possibile che centinaia/migliaia di nodi possano comunicare direttamente sul canale broadcast. non è quindi raro che si generi una **collisione**, che accade quando i nodi ricevono due o più frame contemporaneamente
+lo scopo dei protocolli di accesso multiplo è quello di evitare caos, e realizzare una condivisione. per fare ciò, fissano le modalità con cui i nodi regolano le loro trasmissioni sul canale condiviso
+- la comunicazione relativa al canale condiviso deve utilizzare il canale stesso ! (non c’è un canale “out-of-band” per la coordinazione)
+>[!info] protocolli di accesso multiplo ideali
+idealmente, dato un canale broadcast con velocità $R$ bps:
+>- quando un solo nodo deve inviare dati , esso dispone di un tasso trasmissivo pari a $R$ bps
+>- quando $M$ nodi devono inviare dati, questi dispongono di un tasso trasmissivo pari a $\frac{R}{M}$ bps
+>- ha un protocollo decentralizzato: non ci sono nodi master, o sincronizzazione dei clock
+
+i protocolli di accesso multiplo si possono dividere in 3 categorie:
+- **channel partitioning** (protocolli a suddivisione del canale):
+- **random access** (protocolli ad accesso casuale):
+- **taking-turn**: (protocolli a rotazione):
