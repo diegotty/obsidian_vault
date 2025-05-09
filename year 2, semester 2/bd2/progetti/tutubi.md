@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T16:50
+updated: 2025-05-09T16:57
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -72,5 +72,6 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 ## specifica dei tipi di dato
 ## specifica di classe
 vincolo esterno per associazione videorisposta - videopubblicato (autore non può essere lo stesso)
+vincoli esterni per valutazione e commento
 ## diagramma UML use-case
 ## specifica degli use-case
