@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T17:53
+updated: 2025-05-09T17:55
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -103,7 +103,9 @@ ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piat
 	precondizioni:
 		nessuna
 	postcondizioni:
-		valutazioni = {val : Valutazione | esiste il link }
+		valutazioni = {val : Valutazione | esiste il link (this, u) : valutazione }
+		sum = $\sum_{v \in valutazioni}v\text{.valore}$
+		result = sum/ |valutazioni|
 ### VideoRisposta
 ogni stanza della classe VideoRisposta descrive un video pubblicato come risposta ad un altro video caricato sulla piattaforma
 #### vincoli esterni
