@@ -1,7 +1,8 @@
 ---
-created: 2025-05-06T13:13
-updated: 2025-05-09T10:56
 related to: "[[15 - divide et impera]]"
+created: 2025-05-06T13:13
+updated: 2025-05-09T11:09
+completed: 
 ---
 >[!index]
 >- [problema 1](#problema%201)
@@ -390,7 +391,21 @@ definiamo i casi:
 > - le celle della prima riga possono essere raggiunte solo da sinistra
 > - le celle della prima colonna possono essere raggiunte solo da sopra
 >- le altre celle possono essere raggiunte sia da destra che da sinistra: esiste un percorso a tale cella se esiste il percorso per la cella alla sua sinistra $\lor$ esiste il percorso per la cella sopra di essa
-quindi $T[i][j] = \text{T[i-1][j]} \lor \text{T[i][j-1]}$
+quindi: 
+>$$
+T[i][j] = \begin{cases} False & M[i][j] = 1 \\
+True & i=j=0 \\
+T[i][j-1] & i =  0 \\
+T[i-1][j] & j=0 \\
+T[i][j-1] \;\;or\;\; T[i-1][j] & \text{altrimenti}
+\end{cases}
+>$$
+>**implementazione**:
+```python
+def percorso(M):
+	n = len(M[0])
+	T = [false]* n for i in range(n)]
+```
 
 >[!example] problema
 >abbiamo un matrice quadrata binaria $M$ di dimensione $n\times n$ e vogliamo sapere qual’è la dimensione massima per le sottomatrici quadrate di soli uni contenute in $M$

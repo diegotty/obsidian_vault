@@ -1,7 +1,24 @@
 ---
+related to: "[[11 - livello di rete]]"
 created: 2025-05-09T10:56
-updated: 2025-05-09T10:58
+updated: 2025-05-09T10:59
+completed: true
 ---
+>[!index]
+>- [definizioni](#definizioni)
+>- [broadcast](#broadcast)
+>	- [uncontrolled flooding](#uncontrolled%20flooding)
+>	- [controlled flooding](#controlled%20flooding)
+>	- [spanning tree based](#spanning%20tree%20based)
+>- [multicast](#multicast)
+>	- [indirizzi multicast](#indirizzi%20multicast)
+>- [IGMP](#IGMP)
+>- [messaggi IGMP](#messaggi%20IGMP)
+>- [problema del routing multicast](#problema%20del%20routing%20multicast)
+>- [instradamento multicast in Internet](#instradamento%20multicast%20in%20Internet)
+>- [IPv6](#IPv6)
+>- [adozione di IPv6](#adozione%20di%20IPv6)
+>- [gestione IPv6](#gestione%20IPv6)
 ## definizioni
 >[!info] unicast
 **unicast**: comunicazione tra UNA sorgente e UNA destinazione
