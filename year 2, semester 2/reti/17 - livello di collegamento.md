@@ -1,9 +1,10 @@
 ---
-related to: 
+related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-08T14:44
+updated: 2025-05-09T22:08
 completed: false
 ---
+la comunicazione a livello di collegamento è **hop-to-hop**
 i protocolli a livello collegamento si occupano del traporto di datagrammi lungo un canale di comunicazione (fisico o wireless)
 ### tipi di collegamento
 - **collegamento punto-punto**: dedicato a due soli dispositivi
