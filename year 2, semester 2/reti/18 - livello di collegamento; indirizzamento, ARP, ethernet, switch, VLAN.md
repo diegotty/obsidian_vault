@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T18:57
+updated: 2025-05-10T19:12
 completed: false
 ---
 # indirizzi MAC
@@ -21,3 +21,26 @@ notiamo che:
 >- l’host inoltra il messaggio all’indirizzo MAC del prossimo hop, non all’indirizzo MAC del destinatario !
 >	- ciò accade per ogni hop
 
+la IEEE sovraintende la gestione degli indirizzi MAC:
+- quando una società vuole costruire adattatori, compra un blocco di spazio di indirizzi (che sono unici e univoci)
+con gli indirizzi MAC è possibile comunicare direttamente tra dispositivi (in una LAN, rete locale) a livello di collegamento, senza passare da un livello superiore
+- è una comunicazione peer-to-peer, dove le stazioni utilizzano gli indirizzi MAC per comunicare
+- è “orizzontale” perchè non prevede gerarchie: nessun router o server centrale è necessario !
+- gli indirizzi IP invece hanno una struttura gerarchica, e deveono essere aggiornati se spostati (?)
+# protocollo ARP
+il protocollo **ARP** (**address resolution protocol**) permette ad una sorgente di determinare gli indirizzi di collegamento della destinazione
+ogni **nodo IP**  (host, router) nella LAN ha una **tabella ARP**, che contiene la corrispondenza tra indirizzi IP e MAC. i suoi record sono del tipo
+$$
+<\text{indirizzo IP; indirizzo MAC; TTL}>
+$$
+in cui $\text{TTL}$ indica quando bisognerà eliminare una data voce nella tabella (il tempo di vita tipico è 20min.)
+>[!example] esempio di tabella ARP
+![[Pasted image 20250510190812.png]]
+
+## procollo ARP nella stessa sottorete
+>[!info] indirizzo mancante nella tabella ARP
+![[Pasted image 20250510191003.png]]
+>- $A$ vuole inviare un datagramma a $B$, e l’indirizzo MAC di $B$ non è nella tabella ARP di $A$
+>- $A$ trasmette in un **pacchetto broadcast** il messaggio di richiesta ARP, contentente l’indirizzo IP di $B$
+>	- l’indirizzo MAC del destinatario sarà `FF-FF-FF-FF-FF-FF` (indirizzo MAC di broadcast), e tutte le macchine della LAN riceveranno una richiesta ARP
+> - solo il nodo con l’indirizzo IP specificato risponderà, comunicando ad $A$ il proprio indirizzo MAC
