@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T19:25
+updated: 2025-05-10T19:42
 completed: false
 ---
 # indirizzi MAC
@@ -76,3 +76,17 @@ consideriamo la seguente richiesta HTTP da $A$ verso $B$, `http://dagabriele.biz
 ![[Pasted image 20250510192432.png]]
 
 ## LAN cablate : ethernet
+nel 1985, la **IEEE computer society** (*nerds*) iniziò un progetto chiamato **progetto 802**, con l’obiettivo di definire uno standard per l’interconnessione tra dispositivi di produttori differenti
+- lo scopo era di definire le funzioni del livello fisico e di collegamento dei protocolli LAN
+il risultato fu il critically acclaimed and grammy nominated **standard IEEE 802**
+## IEEE 802
+raggruppa gli standard prodotti da IEE per le LAN. include: 
+- specifiche generali del progetto (802.1)
+- logical link control (LLC, 802.2)
+- CSMA/CD (802.3)
+- token bust (802.4, destinato a LAN per automazione industriale)
+- token ring (802.5)
+- DQDB (802.6, destinato alle MAN)
+- WLAN (802.11)
+i vari standard differiscono a livello fisico e nel [[17 - livello di collegamento#media access control|sottolivello MAC]], ma sono compatibili a livello **data link**
+>[!info] rappresentazione
