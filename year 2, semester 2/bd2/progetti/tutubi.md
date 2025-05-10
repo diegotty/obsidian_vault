@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-09T18:22
+updated: 2025-05-10T22:57
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -126,9 +126,17 @@ per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto
 ### Iscrizione
 - iscrizione(nome : Stringa) : Utente
 	precondizioni:
+		nessuna
 	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		viene creato l’oggetto u : Utente, con u.nome = nome e u.data_iscrizione = adesso
 ### Gestione Video
 - pubblica_video(titolo : Stringa, descrizione : Stringa, percorso : Stringa) : VideoPubblicato
+	precondizioni:
+		nessuna
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		viene creato l’oggetto v : VideoPubblicato, con v.titolo = titolo, v.descrizione = descrizione, v.percorso_file e v.durata_secondi = durata_secondi
 - rendi_risposta(video_pubblicato : VideoPubbilcato, video_citato : VideoPubblicato)
 ### Gestione Playlist
 - crea_playlist(nome : Stringa, visibilità : Visibilità) : Playlist
@@ -141,4 +149,9 @@ per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto
 - ricerca (categoria : Categoria, tag : Tag \[1..\*], valutazione : Intero in 0..5)
 - ricerca_per_risposte(categoria : Categoria)
 ### Censura Video
-- censura_video(video : VideoPubblicato)
+- censura_video(video : VideoPubblicato, motivo : Stringa)
+	precondizioni:
+		v non è un’istanza della classe VideoCensurato
+	postcondizioni: 
+		l’operazione modifica il livello estensionale
+		la classe specifica di v è VIdeoCensurato, e v.motivo = motivo
