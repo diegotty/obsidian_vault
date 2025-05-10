@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T19:54
+updated: 2025-05-10T20:12
 completed: false
 ---
 # indirizzi MAC
@@ -98,12 +98,27 @@ l’ethernet (cosa ? dammi una desrizione) detiene una posizione dominante nel m
 >[!info] ethernet STANDARD
 ![[Pasted image 20250510194556.png]]
 ### ethernet standard
+l’ethernet standard è:
+- **senza connessione**: non è previsa alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
+- **non afidabile** (come IP e UDP): la scheda di rete ricevente non invia un riscontro
 >[!info] formato dei frame
 ![[Pasted image 20250510195137.png]]
-> - **preambolo** (7 byte): tutti e 7 i byte hanno i bit `10101010`. serve per attivare le **NIC** (scheda di rete) dei riceventi e sincronizzare i loro orologi con quello del trasmittente
-> - **preambolo** (7 byte):
-> - **preambolo** (7 byte):
-> - **preambolo** (7 byte):
-> - **preambolo** (7 byte):
-> - **preambolo** (7 byte):
-> - **preambolo** (7 byte):
+> - **preambolo** (7 byte): tutti e 7 i byte hanno i bit `10101010`. serve per attivare le **NIC** (scheda di rete) dei riceventi e sincronizzare i loro orologi con quello del trasmittente, infatti fa parte dell’header del livello **fisico** !
+> - **SFD** (**start frame delimiter**) (1 byte): di valore `10101011`, è il flag che definisce l’inizio del frame (è l’ultima possibilità di sincronizzazione, e gli ultimi due bit `11`indicano che inizia l’header MAC)
+> - **indirizzi sorgente e destinazione** (6 byte): quando la scheda di rete riceve un pacchetto contenente il proprio indirizzo di destinazione o l’indirizzo broadcast(es: un pacchetto ARP), trasferisce il contenuto del campo dati del pacchetto al livello di rete, altrimenti i pacchetti con altri indirizzi MAC vengono ignorati
+> - **tipo** (2 byte): per multiplexing/demultiplexing, indica il protocollo di livello rete del pacchetto incapsulato nel frame (IP, ARP, OSPF, etc.)
+> - **dati** (da 46 a 1500 byte): contiene il datagramma di rete. se il datagramma ha dimensione minore della dimensione minima (46 byte), viene `zfill`- ato
+> - **CRC** (4 byte): consente alla scheda di rete ricevente di rilevare la presenza di un errore nei bit sui campi di indirizzo, tipo e dati (idk how)
+>
+>contando i 18 byte di intestazione e trailer, la lunghezza minima del frame è di 64 byte  (necessaria per il corretto funzionamento del CSMA/CD), mentre la lunghezza massima del frame è di 1518 byte (necessaria per evitare che una stazione possa monopolizzare il mezzo, e per ragioni storiche (permetteva di ridurre la memoria necessaria nei buffer dei dispositivi, quando la memoria era molto costosa))
+
+>[!tip] ovviamente
+>tutte le stazioni che fanno parte di una ethernet sono dotate di NIC/scheda di rete, in quanto esse forniscono un indirizzo di livello di rete e livello di collegamento
+> - gli indirizzi vengono trasmessi da sinistra verso destra, byte per byte, ma per ciascun byte il LSB viene inviato per primo e il MSB per ultimo
+
+### fasi operative del protocollo CSMA/CD
+1. **framing**:
+2. **framing**:
+3. **framing**:
+4. **framing**:
+5. **framing**:
