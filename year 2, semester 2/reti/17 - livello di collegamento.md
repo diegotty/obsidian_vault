@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T11:55
+updated: 2025-05-10T12:10
 completed: false
 ---
 # livello di collegamento
@@ -99,6 +99,7 @@ i protocolli di accesso multiplo si possono dividere in 3 categorie:
 >[!figure] riassunto
 ![[Pasted image 20250509225659.png]]
 ## protocolli a suddivisione del canale
+i protocolli a suddivisione del canale condividono (e suddividono) il canale in modo equo, risultando in una gestione efficiente di carichi elevati,  ma inefficiente con carichi non elevati
 ### TDMA
 il protocollo TDMA prevede l’accesso multiplo a **divisione di tempo**:
 - vengono assegnati turni per accedere al canale, e ogni nodo ha un turno assegnato
@@ -115,6 +116,7 @@ carateristiche molto simili al TDMA in termini di prestazioni ! (sempre division
 >[!example]- esempio
 ![[Pasted image 20250509230150.png]]
 ## protocolli ad accesso casuale
+i protocolli ad accesso casuale, invece, risultato efficienti anche con carichi non elevati: un singolo nodo, se unico a trasmettere, può utilizzare interamente il canale. con carichi elevati, però, data la natura casuale, si verifica un’eccesso di collisioni
 ### ALOHA puro
 >[!info] lore
 >il protocollo **ALOHA** è il primo del suo tipo ad essere stato proposto in letteratura (nei primi anni 70, nelle hawaii), e fu ideato per mettere in comunicazione gli atolli (sponde di un’isola) mediante una LAN radio (wireless !)
@@ -239,4 +241,24 @@ e a seconda di cosa fa un nodo se trova il canale occupato, li possiamo dividere
 >- se c’è collisione, aspetta un tempo di back-off per riascoltare il canale
 ![[Pasted image 20250510115341.png]]
 
->[!eff]
+>[!info] efficienza del CSMA/CD
+il throughput del CSMA/CD è maggiore sia dell’ALOHA puro che dello slotted ALOHA
+>- quando un solo nodo trasmette, il nodo può trasmettere al massimo rate, e quando più nodi trasmettono, il rate effettivo/throughput è minore
+>- per il metodo 1-persistente (che è anche il caso dell’ethernet tradizionale, ovvero 10mbps (????)), il throughput massimo è del 50% !
+
+## protocolli a rotazione
+i protocolli a rotazione cercano di realizzare un compromesso tra i protocolli precedenti
+### polling
+un nodo principale (**master**) sonda a turno gli altri (**slave**), per:
+- eliminare le collisioni
+- eliminare gli slot vuoti
+- decidere chi può trasmettere e in quale momento
+	- in particolare, interroga ogni nodo,uno alla volta, per dati da inviare. se i nodi hanno dati da iniviare, li inviano subito, e il master passa al nodo successivo
+		- può interrogare i nodi in modo equo (round robin) o rispettando delle prorità
+se il nodo principale si guasta, l’intero canale resta inattivo !!
+- inoltre il protocollo risulta più lento, in quanto anche le stazioni che non hanno dati vengono interrogate (overhead !)
+>[!info] rappresentazione
+![[Pasted image 20250510120558.png]]
+### token-passing
+viene fatto viaggiare **un messaggio di controllo** (**token**), che circola fra i nodi seguendo un ordine prefissato
+- nessun token = nessuna trasmissione
