@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T20:12
+updated: 2025-05-10T20:27
 completed: false
 ---
 # indirizzi MAC
@@ -92,12 +92,12 @@ i vari standard differiscono a livello fisico e nel [[17 - livello di collegamen
 >[!info] rappresentazione
 ![[Pasted image 20250510194252.png]]
 
-## ethernet
+# ethernet
 l’ethernet (cosa ? dammi una desrizione) detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
 - è più semplice e meno costosa di token ring, FDDI e ATM, ma rimane al passo dei tempi con il tasso trasmissivo: si va dall’ethernet standard (10mpbs) al 10 gigabit ethernet (10gbps)
 >[!info] ethernet STANDARD
 ![[Pasted image 20250510194556.png]]
-### ethernet standard
+## ethernet standard
 l’ethernet standard è:
 - **senza connessione**: non è previsa alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
 - **non afidabile** (come IP e UDP): la scheda di rete ricevente non invia un riscontro
@@ -117,8 +117,20 @@ l’ethernet standard è:
 > - gli indirizzi vengono trasmessi da sinistra verso destra, byte per byte, ma per ciascun byte il LSB viene inviato per primo e il MSB per ultimo
 
 ### fasi operative del protocollo CSMA/CD
-1. **framing**:
-2. **framing**:
-3. **framing**:
-4. **framing**:
-5. **framing**:
+1. **framing**: la NIC riceve un datagramma di rete dal nodo collegato e prepara un frame ethernet
+2. **carrier sense e trasmissione**: se il canale è inattivo (viene misurato il livello di energia sul mezzo trasmissivo per un breve periodo di tempo, tipo 100 nanoscondi), inizia la trasmissione. se il canale risulta occupato, resta in attesa fino a quando non rileva più il segnale (e a quel punto trasmette)
+3. **collision detection**: verifica, durante la trasmissione, la presenza di eventuali segnali provenienti da altre NIC. se non ne rileva, considera il pacchetto spedito
+4. **jamming**: se rileva segnali da altre NIC, interrompe immediatamente la trasmissione del paccheto e invia un segnale di disturbo (fuck it, jam di 48bit per avvisare le altre NIC in fase di trasmissione della collisione)
+5. **backoff esponenziale**: la NIC rimane in attesa. quando riscontra l’$n$-esima collisione consecutiva, stabilisce un valore $k$ tra $\{0, 1, 2, \dots,2^m-1\}$, dove $m = min(n, 10)$. la NIC aspetta un tempo pari a $k$ volte 512 bit, e ritorna al passo 2.
+	- un tentativo per stimare quanti sono le NIC coinvolte (se sono numerosi, il tempo di attesa potrebbe essere lungo)
+
+## fast ethernet
+l’ethernet standard si è evoluta a **fast ethernet** (100mbps), mantenendo compatibilità con la versione precedente
+in questa versione, il sottolivello MAC rimase invariato, compreso il formato del frame e le sue dimensioni, ma ci furono problemi con il funzionamento di CSMA/CD, in quanto il funzionamento dipende dalla velocità di trasmissione, dalla dimensione minima del frame, e dalla lunghezza massima della rete
+- se la trasmissione è 10 volte più veloce, e il frame è ancora di 512 bit, allora le collisioni devono essere rilevate 10 volte più velocemente, quindi la rete deve essere 10 volte più corta !
+### soluzioni per CSMA/CD
+>[!info] prima soluzione
+![[Pasted image 20250510202623.png]]
+abbandonare la topologia a stella, e utilizzare un hub passivo con topologia a stella ma fissare la dimensione massima della rete a 250 metri, invece che 2500 metri della versione standard
+
+>[!info]
