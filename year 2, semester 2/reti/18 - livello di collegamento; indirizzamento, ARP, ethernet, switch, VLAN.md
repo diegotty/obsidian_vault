@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T19:12
+updated: 2025-05-10T19:25
 completed: false
 ---
 # indirizzi MAC
@@ -44,3 +44,35 @@ in cui $\text{TTL}$ indica quando bisognerà eliminare una data voce nella tabel
 >- $A$ trasmette in un **pacchetto broadcast** il messaggio di richiesta ARP, contentente l’indirizzo IP di $B$
 >	- l’indirizzo MAC del destinatario sarà `FF-FF-FF-FF-FF-FF` (indirizzo MAC di broadcast), e tutte le macchine della LAN riceveranno una richiesta ARP
 > - solo il nodo con l’indirizzo IP specificato risponderà, comunicando ad $A$ il proprio indirizzo MAC
+> 	- il frame viene inviato all’indirizzo MAC di $A$, in unicast
+![[Pasted image 20250510191415.png]]
+
+ARP è “plug-and-play”, in quanto la tabella ARP si costruisce automaticamente e non deve essere configurata dall’amministratore di sistema 
+## formato del pacchetto ARP
+>[!info]
+>![[Pasted image 20250510191520.png]]
+> - i protocol address sono indirizzi IP
+> - gli hardware address sono indirizzi MAC
+
+>[!example] esempio
+![[Pasted image 20250510191545.png]]
+## indirizzamento
+l’indirizzamento è usato per inviare verso un nodo esterno alla sottorete
+>[!info]- flusso di pacchetti dalla sorgente (riassunto corso ngl)
+![[Pasted image 20250510191819.png]]
+fuoco !!!!!!!!
+
+>[!example] esempio
+consideriamo la seguente richiesta HTTP da $A$ verso $B$, `http://dagabriele.biz/prodotti`
+![[Pasted image 20250510191828.png]]
+>
+>il seguente è il flusso di pacchetti nella stazione sorgente: 
+![[Pasted image 20250510192234.png]]
+>
+>il seguente è il flusso di pacchetti nel router $R1$:
+![[Pasted image 20250510192122.png]]
+>
+>il seguente è il flusso di pacchetti nella stazione di destinazione:
+![[Pasted image 20250510192432.png]]
+
+## LAN cablate : ethernet
