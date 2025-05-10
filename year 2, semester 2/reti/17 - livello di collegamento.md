@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T23:10
+updated: 2025-05-10T10:39
 completed: false
 ---
 # livello di collegamento
@@ -125,11 +125,22 @@ nel protocollo **ALOHA puro**:
 - ogni stazione può inviare un frame tutte le volte che ha dati da inviare
 - il ricevente invia un `ACK` per notificare la corretta ricezione del frame
 - se il mittente non riceve l’`ACK` entro un **timeout**, deve ritrasmettere il frame
+	- il periodo di timeout equivale al massimo RTT tra le due stazioni più lontane
 - se due stazioni ritrasmettono contemporaneamente creando di nuovo una collisione (quindi, dopo 2 collisioni), si attende un tempo random (**back-off**) prima di effettuare la ritrasmissione del frame
+	 - il tempo di back-off è un valore scelto casualmente che dipende dal numero $K$ di trasmissioni fallite: 
+	 $$\text{back-off time} = R*d_{prop}$$
+	- $\text{con } R \in [0,2^K-1], d_{prop} = \text{tempo x invio frame}$
 	 - la casualità del back-off aiuta ad evitare altre collisioni
-- dopo un numero massimo di tentativi $k_{max}$, una stazione interrompe i suoi tentativi e prova più tardi
+- dopo un numero massimo di tentativi $k_{max} = 15$, una stazione interrompe i suoi tentativi e prova più tardi
+>[!example] esempio calcolo backoff
+le stazioni in una rete wireless ALOHA sono a una distanza massima di 600km. supponendo che i segnali si propaghino a $3 \times 10^8$ m/s, troviamo:
+>$$ 
+d_{prop} = \frac{600 \times 10^3}{(3 \times 10^8)} = 2ms 
+>$$
+se $K = 2$, $R = \{0, 1, 2, 3\}$
+ciò significa che $T_{b}$ può essere 0, 2, 4, o 6 in base al valore casuale di $R$
+
+
 >[!info] info
 ![[Pasted image 20250509230914.png]]
 affichè la collisione accada, basta la sovrapposizione di due messaggi per un solo bit !
-
->[!]
