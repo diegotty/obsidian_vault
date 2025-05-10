@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T12:10
+updated: 2025-05-10T12:11
 completed: false
 ---
 # livello di collegamento
@@ -257,8 +257,12 @@ un nodo principale (**master**) sonda a turno gli altri (**slave**), per:
 		- può interrogare i nodi in modo equo (round robin) o rispettando delle prorità
 se il nodo principale si guasta, l’intero canale resta inattivo !!
 - inoltre il protocollo risulta più lento, in quanto anche le stazioni che non hanno dati vengono interrogate (overhead !)
->[!info] rappresentazione
+>[!info]- rappresentazione
 ![[Pasted image 20250510120558.png]]
 ### token-passing
 viene fatto viaggiare **un messaggio di controllo** (**token**), che circola fra i nodi seguendo un ordine prefissato
+- una stazione che riceve il token, ha “l’ok” per inviare dati (se li ha), per poi passare il token alla prossima stazione
 - nessun token = nessuna trasmissione
+in questo modo:
+- si evitano collisioni
+- 
