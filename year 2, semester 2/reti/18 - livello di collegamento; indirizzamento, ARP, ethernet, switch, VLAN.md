@@ -1,9 +1,28 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T22:27
-completed: false
+updated: 2025-05-10T22:42
+completed: true
 ---
+>[!index]
+>- [indirizzi MAC](#indirizzi%20MAC)
+>- [protocollo ARP](#protocollo%20ARP)
+>	- [procollo ARP nella stessa sottorete](#procollo%20ARP%20nella%20stessa%20sottorete)
+>	- [formato del pacchetto ARP](#formato%20del%20pacchetto%20ARP)
+>	- [indirizzamento](#indirizzamento)
+>	- [LAN cablate : ethernet](#LAN%20cablate%20:%20ethernet)
+>	- [IEEE 802](#IEEE%20802)
+>- [ethernet](#ethernet)
+>	- [ethernet standard](#ethernet%20standard)
+>		- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
+>	- [fast ethernet](#fast%20ethernet)
+>		- [soluzioni per CSMA/CD](#soluzioni%20per%20CSMA/CD)
+>	- [gigabit ethernet](#gigabit%20ethernet)
+>- [switch](#switch)
+>	- [autoapprendimento](#autoapprendimento)
+>- [VLAN](#VLAN)
+>	- [VLAN trunking](#VLAN%20trunking)
+>
 # indirizzi MAC
 anche chiamato indirizzo **fisico/ethernet/LAN**, è un indirizzo di 6 byte, che rappresenta **univocamente** ciascun **adattore** (scheda di rete) di una LAN
 - quando un datagramma passa dal livello di rete al livello di collegamento, viene incapsulato in un frame con una intestazione che contiene gli **indirizzi di collegamento** (MAC) della sorgente e della destinazione del frame (non del datagramma !!)
@@ -177,5 +196,26 @@ del tipo $<\text{indirizzo MAC, interfaccia, TTL}>$
 >- gli switch sono dispositivi plug-and-play: non richiedono intervento dell’amministratore di rete o dell’utente
 >- eliminano le collisioni, bufferizzando i frame e non trasmettendo più di un frame alla volta su ogni **segmento** di rete (ciò mi fa intuire che ci sia un buffer per ogni interfaccia ?)
 >- interconnettono link eterogenei: collegamenti che operano a diverse velocità possono esseere collegati a uno switch
-> - aumentano la sicurezza della rete, e migliorano il network management: limita i packet sniffer, che risiedono su computer di una rete, per “sniffare” il traffico delle altre stazioni (gli swtich, se conoscono il MAC di destinazione, mandano i pacchetti in unicast)
-> 	- negli hub ha senso che ci possano essere packet sniffer ngl
+> - aumentano la sicurezza della rete, e migliorano il network management
+> 	- limita i packet sniffer, che risiedono su computer di una rete, per “sniffare” il traffico delle altre stazioni (gli swtich, se conoscono il MAC di destinazione, mandano i pacchetti in unicast)
+> 		- negli hub ha senso che ci possano essere packet sniffer ngl
+>	- forniscono informazioni su uso di banda, collisioni, tipo di traffico, etc.
+# VLAN
+supponiamo di avere uno switch che collega 3 LAN, e 3 gruppi di lavoro
+- se una persona del primo gruppo viene spostata in un altro gruppo, non sarà possibile fargli arrivare i pacchetti destinati al suo nuovo gruppo, in quanto, fisicamente, appartiene al primo gruppo
+- se invece di 3 gruppi sono necessari 10 gruppi, bisognerebbe gestire in modo ostico la situazione: o usando 10 switch, o usandone solo uno, che non rispecchia la separazione tra gruppi, e soprattuto non isola il traffico
+
+le **VLAN** (**virtual** LAN) permettono di creare una rete locale configurata **per mezzo del software** anzichè del cablaggio fisico
+- la LAN viene suddivisa in segmenti logici anzichè fisici (e può quindi essere suddivisa in più VLAN), e il gruppo di appartenenza delle stazioni è definito dal software, non dall’hardware
+>[!info] rappresentazione
+![[Pasted image 20250510223353.png]]
+la gestione del software permette all’amministratore di rete di dichiarare quali porte appartengono ad una data LAN, e lo switch mantiene una tabella di associazioni porta-VLAN
+
+>[!example] esempio
+![[Pasted image 20250510223451.png]]
+
+## VLAN trunking
+supponiamo di avere partecipanti a due gruppi in edifici diversi: esiste una porta speciale, configurata su ogni switch (che supporta VLAN), la **porta trunk**, usata per interconnettere due switch.
+- la porta trunk appartiene ad entrambe le VLAN, e riceve i frame indirizzati a entrambe le VLAN
+>[!info] porta trunk
+![[Pasted image 20250510223814.png]]
