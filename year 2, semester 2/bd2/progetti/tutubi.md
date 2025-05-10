@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-10T22:57
+updated: 2025-05-10T23:12
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -71,6 +71,7 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 ![[Pasted image 20250509174207.png]]
 ## specifica dei tipi di dato
 - Istante = (data : Data, ora : Intero in 0..24, sinuti : Intero in 0..59, secondi : Intero in 0..59)
+- Visibilità = {“pubblica”, “privata”}
 ## specifica di classe
 ### Utente
 ogni istanza della classe Utente descrive un utente della piattaforma
@@ -130,21 +131,59 @@ per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto
 	postcondizioni:
 		l’operazione modifica il livello estensionale in questo modo:
 		viene creato l’oggetto u : Utente, con u.nome = nome e u.data_iscrizione = adesso
+		result = u
 ### Gestione Video
-- pubblica_video(titolo : Stringa, descrizione : Stringa, percorso : Stringa) : VideoPubblicato
+- pubblica_video(titolo : Stringa, descrizione : Stringa, durata_secondi : Intero, percorso : Stringa) : VideoPubblicato
 	precondizioni:
 		nessuna
+		durata_secondi ≥ 1
 	postcondizioni:
 		l’operazione modifica il livello estensionale in questo modo:
 		viene creato l’oggetto v : VideoPubblicato, con v.titolo = titolo, v.descrizione = descrizione, v.percorso_file e v.durata_secondi = durata_secondi
+		result = v
 - rendi_risposta(video_pubblicato : VideoPubbilcato, video_citato : VideoPubblicato)
+	precondizioni:
+		video_pubblicato non è istanza di VideoCensurato
+		dato l’unico link (video_pubblicato, u) : pubblica, non esiste il link (video_citato, u) : pubblica
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo: 
+		la classe specifica di video_pubblicato diventa VideoRisposta, e viene creato il link (video_pubblicato, video_citato) : video_risposta
 ### Gestione Playlist
 - crea_playlist(nome : Stringa, visibilità : Visibilità) : Playlist
-- appendi(playlist : Playlist, video : VideoPubblicato)
+	precondizioni:
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		viene creato l’oggetto p : Playlist, con p.nome = nome, p.data_creazione = adesso e p.visibilità = visibilità
+		result = p
+- appendi(p : Playlist, v : VideoPubblicato)
+	precondizioni:
+		non esiste il link (p, v) : playlist_video
+		v non è istanza di VideoCensurato
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		viene creato il link (p, v) : playlist_video
 - modifica_visibilità(playlist : Playlist, visiblità : Visiblità)
+	precondizioni: 
+		nessuna
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		playlist.visibilità = visibilità
 ### Interazioni
-- commenta_video(video : Video, commento : Stringa)
+- commenta_video(v : Video, commento : Stringa) : Commento
+	precondizioni:
+		v non è istanza di VideoCensurato
+		non esiste il link (this, v) : pubblica
+	postcondizioni:
+		l’operazione modifica il livello estensionale in questo modo:
+		viene creato l’oggetto c : Commento con c.contenuto = commento, c.data = adesso, e i link (this, c) : utente_commento e (c, v) : commento_video
+		result = c
 - valuta_video(video : VideoPubblicato)
+	precondizioni:
+		v non è istanza di VideoCensurato
+		non esiste il link (this, v) : pubblica
+	postcondizioni:
+		viene creato il link (this, v)
+
 ### Ricerca
 - ricerca (categoria : Categoria, tag : Tag \[1..\*], valutazione : Intero in 0..5)
 - ricerca_per_risposte(categoria : Categoria)
