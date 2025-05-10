@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T22:12
+updated: 2025-05-10T22:27
 completed: false
 ---
 # indirizzi MAC
@@ -146,12 +146,36 @@ lo switch riceve un frame da un’host, lo memorizza nel buffer, verifica l’in
 ## gigabit ethernet
 versione successiva al fast ethernet, permette velocità di 1000mpbs (e successivamente, con la fibra ottica, si arriva alla 10 gigabit ethernet !)
 - viene gestita con una topologia a stella con switch
+- garantisce no collisioni
 # switch
 gli switch sono dispositivi che operano a livello di collegamento, e si occupano di filtrare e inoltrare pacchetti ethernet. in particolare, esaminano l’indirizzo di destinazione dei pacchetti e li inviano all’interfaccia corrispondente alla sua destinazione
 - gli host non sono consapevoli della presenza dello switch, nonostante abbiano collegamenti dedicati e diretti con lo switch (huh ? )
 - hanno quindi un ruolo **attivo**, e sono più intelligenti di un hub (che amplifica e basta)
->[!info] rappresentazione
-![[Pasted image 20250510220716.png]]
-
 gli switch bufferizzano i pacchetti, e permettono una connessione full-duplex senza collisioni (non possibile con gli hub)
 - viene usato il protocollo su ciascun collegamento in entrata
+## autoapprendimento
+>[!info] rappresentazione
+![[Pasted image 20250510220716.png]]
+la **switch table** (**tabella di comunicazione**) viene creata automaticamente dagli switch (attraverso l’**autoapprendimento**), e contiene le associazioni tra gli indirizzi MAC e le interfacce dello switch
+>- inizialmente, gli switch venivano configurati staticamente
+
+lo switch **apprende** quali nodi possono essere raggiunti attraverso determinate interfacce
+- quando riceve un pacchetto, lo switch “impara” l’indirizzo MAC del mittente, e registra la coppia mittente/interfaccia nella sua **switch table**
+
+durante l’inoltro di pacchetti:
+- se la destinazione del frame è ignota, si usa il **flood** (il messaggio viene mandato attraverso tutte le interfacce dello switch)
+- se la destinazione è nota, si usa invece il **selective send**, grazie alla riga nella switching table
+>[!example] esempio
+![[Pasted image 20250510221928.png]]
+dato questo esempio, supponendo che la switching table sia inizialmente vuota, si avrà la riga
+>$$
+<A, 1, 60>
+>$$
+del tipo $<\text{indirizzo MAC, interfaccia, TTL}>$
+
+>[!info] proprietà
+>- gli switch sono dispositivi plug-and-play: non richiedono intervento dell’amministratore di rete o dell’utente
+>- eliminano le collisioni, bufferizzando i frame e non trasmettendo più di un frame alla volta su ogni **segmento** di rete (ciò mi fa intuire che ci sia un buffer per ogni interfaccia ?)
+>- interconnettono link eterogenei: collegamenti che operano a diverse velocità possono esseere collegati a uno switch
+> - aumentano la sicurezza della rete, e migliorano il network management: limita i packet sniffer, che risiedono su computer di una rete, per “sniffare” il traffico delle altre stazioni (gli swtich, se conoscono il MAC di destinazione, mandano i pacchetti in unicast)
+> 	- negli hub ha senso che ci possano essere packet sniffer ngl
