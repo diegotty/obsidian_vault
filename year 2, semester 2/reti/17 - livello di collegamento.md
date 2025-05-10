@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T11:10
+updated: 2025-05-10T11:23
 completed: false
 ---
 # livello di collegamento
@@ -168,4 +168,26 @@ assumiamo che tutti i frame hanno la stessa dimensione e ogni nodo ha sempre un 
 un modo per aumentare l’efficienza di ALOHA consiste nel **dividere il tempo in intervalli discreti**, ciascuno corrispondente a $T_{fr}$ (tempo per iniviare un frame)
 - per rendere ciò possibile, è necessario che i nodi debbano essere d’accordo nel confine fra gli intervalli, e ciò può essere fatto facendo emettere, da una attrezzatura speciale, un breve segnale all’inizio di ogni intervallo
 in questo protocollo, i nodi iniziano la trasmissione solo all’inizio degli slot (assumiamo che i pacchetti abbiamo tutti la stessa dimensione), e se in uno slot due o più pacchetti collidono, i nodi coinvolti rilevano l’evento prima del termine dello slot
-- quindi, quando a un nodo arriva un nuovo pacchetto da spedire, aspetta l’inizio del prossimo slot
+- quindi, quando a un nodo arriva un nuovo pacchetto da spedire, aspetta l’inizio del prossimo slot:
+	- **se non si verifica una collisione**, può trasmettere un nuovo pacchetto nello slot successivo
+	- **se si verifica una collisione**, il nodo ritrasmette con probabilità $p$ il suo pacchetto durante gli slot successivi
+>[!info] rappresentazione
+![[Pasted image 20250510111209.png]]
+
+**pro**:
+- nel caso ci sia solo un singolo nodo che vuole trasmettere, gli consente di trasmettere continuamente pacchetti alla massima velocità del canale !
+- riduce il **tempo di vulnerabilità** a un solo slot di dimensione $T_{fr}$
+**contro:**
+- una certa frazione degli slot presenterà collisioni e di conseguenza andrà “sprecata” (nel senso, l’intero slot) (eh come fai altrimenti fra)
+- un’altra frazione degli slot rimane vuota, quindi inattiva (amen fra)
+>[!info] efficienza di slotted ALOHA
+supponiamo $N$ nodi con pacchetti da spedire, in cui ognuno ha di nuovo probabilità $p$ di spedire in uno slot
+>- la probabilità di successo di un dato nodo è $p(1-p)^{N-1}$, e la probablità che ogni nodo abbia successo è $N \cdot p(1-p)^{N-1}$
+>
+>l’efficienza che si ottiene per un numero elevato di nodi $N$ che tende all’infinito è $\frac{1}{e} = 0,37$, quindi nel caso migliore solo il 37% degli slot compie il lavoro utile
+### CSMA
+nel protocollo **CSMA** (**carrier sense multiple access**), un nodo si pone in ascolto prima di trasmettere (listen before talk (as you should !!!!!!!!)):
+- se rileva che il canale è libero, trasmette l’intero pacchetto
+- se il canale sta già trasmettendo, il nodo aspetta un altro intervallo di tempo
+>[!warning] può comunque avvenire una collisione ?
+>si ! se due nodi trasmettono allo stesso momento
