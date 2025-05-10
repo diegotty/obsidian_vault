@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T20:27
+updated: 2025-05-10T21:57
 completed: false
 ---
 # indirizzi MAC
@@ -127,7 +127,7 @@ l’ethernet standard è:
 ## fast ethernet
 l’ethernet standard si è evoluta a **fast ethernet** (100mbps), mantenendo compatibilità con la versione precedente
 in questa versione, il sottolivello MAC rimase invariato, compreso il formato del frame e le sue dimensioni, ma ci furono problemi con il funzionamento di CSMA/CD, in quanto il funzionamento dipende dalla velocità di trasmissione, dalla dimensione minima del frame, e dalla lunghezza massima della rete
-- se la trasmissione è 10 volte più veloce, e il frame è ancora di 512 bit, allora le collisioni devono essere rilevate 10 volte più velocemente, quindi la rete deve essere 10 volte più corta !
+- se la trasmissione è 10 volte più veloce, e il frame è ancora di 512 bit, allora le collisioni devono essere rilevate 10 volte più velocemente, quindi la rete deve essere 10 volte più corta ! (in quanto per  rilevarle più velocemente, devo avere un tempo di trasmissione minore, e per avere un tempo di trasmissione minore, devo avere un tempo di propagazione minore (huhhh ?? non dovrebbe essere più lunga al))
 ### soluzioni per CSMA/CD
 >[!info] prima soluzione
 ![[Pasted image 20250510202623.png]]
