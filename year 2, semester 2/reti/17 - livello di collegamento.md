@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T11:23
+updated: 2025-05-10T11:37
 completed: false
 ---
 # livello di collegamento
@@ -190,4 +190,27 @@ nel protocollo **CSMA** (**carrier sense multiple access**), un nodo si pone in 
 - se rileva che il canale è libero, trasmette l’intero pacchetto
 - se il canale sta già trasmettendo, il nodo aspetta un altro intervallo di tempo
 >[!warning] può comunque avvenire una collisione ?
->si ! se due nodi trasmettono allo stesso momento
+>si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione(trasmissione ????) fa sì che i due nodi non rilevino la reciproca trasmissione
+il **tempo di vulnerabilità** è quindi il tempo di propagazione !!!
+
+>[!info] rappresentazione
+![[Pasted image 20250510112713.png]]
+è importante notare che la distanza è il ritardo di propagazione giocano un ruolo importante nel determinare la probabilità di collisione
+### CSMA/CD
+nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltano il canale anche durante la trasmissione
+- in questo modo la collisione viene rilevata in poco tempo
+- la trasmissione viene annullata non appena si accorge che c’è un’altra trasmissione in corso
+	- la rilevazione della collisione è facile nelle LAN cablate, ma difficile nelle LAN wireless (immagino per il maggior tempo di propagazione)
+>[!info] rilevazione degli errori
+![[Pasted image 20250510113221.png]]
+>- $A$ ascolta il canale e inizia la trasmissione al tempo $t_{1}$
+>- $C$, al tempo $t_{2}$, ascolta il canale, ma non rileva ancora il primo bit dei $A$, quindi inizia a trasmettere
+>- al tempo $t_{3}$, $C$ riceve il primo bit di $A$ e interrompe la trasmissione perchè c’è collisione
+>- al tempo $t_{4}$, $A$ riceve il primo bit di $C$ e interrompe la trasmissione perchè c’è collisione
+
+>[!warning] è ancora possibile avere una collisione ? 
+>si ! potrebbe succedere che un mittente finisca di trasmettere un frame prima di ricevere il primo bit di un’altra stazione che ha già iniziato a trasmettere
+>- inoltre, una volta inviato un frame, una stazione non tiene una copia del frame, nè controlla il mezzo trasmissivo per rilevare collisioni
+
+quindi, affinchè il CSMA/CD funzioni, il mittente deve poter rilevare la trasmissione mentre sta trasmettendo, ovvero prima di inviare l’ultimo bit del frame 
+- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$
