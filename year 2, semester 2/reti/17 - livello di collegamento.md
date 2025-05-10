@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T10:53
+updated: 2025-05-10T11:10
 completed: false
 ---
 # livello di collegamento
@@ -153,3 +153,19 @@ sempre con $T_{fr} = \text{tempo per inviare un frame}$
 in quanto il frame trasmesso a tempo $t$ si sovrappone con la trasmissione di qualsiasi frame inviato in $[t-1,t+1]$ (considerando $T_{fr}$ come valore unitario)
 >[!info] rappresentazione
 ![[Pasted image 20250510105320.png]]
+## studio dell’efficienza
+l’**efficienza** è definita come la frazione di slot vincenti in presenza di un elevato numero $N$ di nodi attivi, che hanno sempre un numero elevato di pacchetti da spedire
+
+>[!info] efficienza dell’algoritmo ALOHA puro
+assumiamo che tutti i frame hanno la stessa dimensione e ogni nodo ha sempre un frame da trasmettere:
+>- in ogni istante di tempo, $p$ è la probabilità che un nodo trasmetta un frame ( $(1-p)$ la probabilità che non trasmetta)
+>- supponendo che un nodo inizi a trasmettere al tempo $t_{0}$, perchè la trasmissione vada a buon fine, nessun altro nodo deve aver iniziato una trasmissione nel tempo $[t_{0}-1, t_{0}]$. tale probabilità è data da $(1-p)^{N-1}$, e **allo stesso modo**, nessun nodo deve iniziare a trasmetter nel tempo $[t_{0}, t_{0}+1]$ e la probabilità di questo evento è ancora $(1-p)^{N-1}$
+>- la probabilità che un nodo trasmetta con successo è dunque $p(1-p)^{2(N-1)}$
+>
+>studiando il valore di $p$ che massimizza la probabiltà di successo per $N$ che tende a $\infty$, si ottiene che l’efficienza massima è $\frac{1}{2e} = 0,18$ (molto bassa …)
+
+### slotted ALOHA
+un modo per aumentare l’efficienza di ALOHA consiste nel **dividere il tempo in intervalli discreti**, ciascuno corrispondente a $T_{fr}$ (tempo per iniviare un frame)
+- per rendere ciò possibile, è necessario che i nodi debbano essere d’accordo nel confine fra gli intervalli, e ciò può essere fatto facendo emettere, da una attrezzatura speciale, un breve segnale all’inizio di ogni intervallo
+in questo protocollo, i nodi iniziano la trasmissione solo all’inizio degli slot (assumiamo che i pacchetti abbiamo tutti la stessa dimensione), e se in uno slot due o più pacchetti collidono, i nodi coinvolti rilevano l’evento prima del termine dello slot
+- quindi, quando a un nodo arriva un nuovo pacchetto da spedire, aspetta l’inizio del prossimo slot
