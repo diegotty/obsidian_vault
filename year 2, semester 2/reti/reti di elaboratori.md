@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-05-09T22:06
+updated: 2025-05-10T18:38
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -19,3 +19,4 @@ updated: 2025-05-09T22:06
 [[15 - protocollo BGP]]
 [[16 - routing unicast, broadcast, multicast. IPv6]]
 [[17 - livello di collegamento]]
+[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]

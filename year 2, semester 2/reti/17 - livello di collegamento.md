@@ -1,9 +1,33 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T12:11
-completed: false
+updated: 2025-05-10T18:34
+completed: true
 ---
+>[!index]
+>- [livello di collegamento](#livello%20di%20collegamento)
+>		- [tipi di collegamento](#tipi%20di%20collegamento)
+>	- [servizi offerti dal livello di collegamento](#servizi%20offerti%20dal%20livello%20di%20collegamento)
+>	- [errori](#errori)
+>		- [tecniche di rilevazione degli errori](#tecniche%20di%20rilevazione%20degli%20errori)
+>			- [controllo di parità](#controllo%20di%20parit%C3%A0)
+>	- [implementazione del livello di collegamento](#implementazione%20del%20livello%20di%20collegamento)
+>		- [data-link control](#data-link%20control)
+>		- [media access control](#media%20access%20control)
+>- [protocolli di accesso multiplo](#protocolli%20di%20accesso%20multiplo)
+>	- [protocolli a suddivisione del canale](#protocolli%20a%20suddivisione%20del%20canale)
+>		- [TDMA](#TDMA)
+>		- [FDMA](#FDMA)
+>	- [protocolli ad accesso casuale](#protocolli%20ad%20accesso%20casuale)
+>		- [ALOHA puro](#ALOHA%20puro)
+>	- [studio dell’efficienza](#studio%20dell%E2%80%99efficienza)
+>		- [slotted ALOHA](#slotted%20ALOHA)
+>		- [CSMA](#CSMA)
+>		- [CSMA/CD](#CSMA/CD)
+>			- [metodi di persistenza](#metodi%20di%20persistenza)
+>	- [protocolli a rotazione](#protocolli%20a%20rotazione)
+>		- [polling](#polling)
+>		- [token-passing](#token-passing)
 # livello di collegamento
 la comunicazione a livello di collegamento è **hop-to-hop**
 - host e router vengono chiamati **nodi** o **stazioni**
@@ -265,4 +289,5 @@ viene fatto viaggiare **un messaggio di controllo** (**token**), che circola fra
 - nessun token = nessuna trasmissione
 in questo modo:
 - si evitano collisioni
-- 
+- il protocollo è decentralizzato, ma il guasto di un nodo può mettere fuoriuso l’intero canale !
+- alta efficienza
