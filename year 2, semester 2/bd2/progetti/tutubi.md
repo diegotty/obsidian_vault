@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-10T23:27
+updated: 2025-05-10T23:30
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -68,7 +68,7 @@ La redazione di TuTubi ha infine la facoltà di censurare dei video, ad esempio 
 	2. data di creazione
 	3. visibilità: pubbliche o private
 ## diagramma UML
-![[Pasted image 20250509174207.png]]
+![[Pasted image 20250510233045.png]]
 ## specifica dei tipi di dato
 - Istante = (data : Data, ora : Intero in 0..24, sinuti : Intero in 0..59, secondi : Intero in 0..59)
 - Visibilità = {“pubblica”, “privata”}
@@ -110,8 +110,11 @@ ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piat
 		sum = $\sum_{v \in valutazioni}v\text{.valore}$
 		result = sum/ |valutazioni|
 - numero_risposte() : Intero ≥ 0
-- precondizioni:
+	precondizioni:
 		this non è un’istanza di VideoCensurato
+	postcondizioni:
+		risposte = {v : VideoRisposta | esiste il link (v : video_risposta, this : video_citato) : video_risposta}
+		result = |risposte|
 ### VideoRisposta
 ogni stanza della classe VideoRisposta descrive un video pubblicato come risposta ad un altro video caricato sulla piattaforma
 #### vincoli esterni
