@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T11:37
+updated: 2025-05-10T11:55
 completed: false
 ---
 # livello di collegamento
@@ -213,4 +213,30 @@ nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltan
 >- inoltre, una volta inviato un frame, una stazione non tiene una copia del frame, nè controlla il mezzo trasmissivo per rilevare collisioni
 
 quindi, affinchè il CSMA/CD funzioni, il mittente deve poter rilevare la trasmissione mentre sta trasmettendo, ovvero prima di inviare l’ultimo bit del frame 
-- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$
+- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (pk 2 volte ?  \\QUESTION)
+#### metodi di persistenza
+a seconda di cosa fa un nodo se trova il canale libero, li possiamo dividere in :
+- **non persistente** o **1-persistente**: trasmette subito
+- **$p$-persistente**: trasmette con probabilità $p$
+e a seconda di cosa fa un nodo se trova il canale occupato, li possiamo dividere in :
+- **non persistente**: desiste e riascolta dopo un tempo random
+- **1-persistente** o **$p$-persistente**: persiste, cioè rimane in ascolto finchè il canale non si è liberato
+>[!info] non persistente
+>- se il canale è libero, trasmette immediatamente
+>- se il canale è occupato, attende un tempo random e poi riascolta il canale
+>- se c’è collisione, aspetta un tempo di back-off per riascoltare il canale
+![[Pasted image 20250510115133.png]]
+
+>[!info] 1-persistente
+>- se il canale è libero, trasmette immediatamente ($p$=1)
+>- se il canale è occupato, continua ad asoltare 
+>- se c’è collisione, aspetta un tempo di back-off per riascoltare il canale
+![[Pasted image 20250510115220.png]]
+
+>[!info] $p$-persistente
+>- se il canale è libero, trasmette con probabilità $p$
+>- se il canale è occupato, usa la procedura di back-off (attesa di un tempo random e nuovo ascolto del canale)
+>- se c’è collisione, aspetta un tempo di back-off per riascoltare il canale
+![[Pasted image 20250510115341.png]]
+
+>[!eff]
