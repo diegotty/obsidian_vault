@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T19:42
+updated: 2025-05-10T19:54
 completed: false
 ---
 # indirizzi MAC
@@ -90,3 +90,20 @@ raggruppa gli standard prodotti da IEE per le LAN. include:
 - WLAN (802.11)
 i vari standard differiscono a livello fisico e nel [[17 - livello di collegamento#media access control|sottolivello MAC]], ma sono compatibili a livello **data link**
 >[!info] rappresentazione
+![[Pasted image 20250510194252.png]]
+
+## ethernet
+l’ethernet (cosa ? dammi una desrizione) detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
+- è più semplice e meno costosa di token ring, FDDI e ATM, ma rimane al passo dei tempi con il tasso trasmissivo: si va dall’ethernet standard (10mpbs) al 10 gigabit ethernet (10gbps)
+>[!info] ethernet STANDARD
+![[Pasted image 20250510194556.png]]
+### ethernet standard
+>[!info] formato dei frame
+![[Pasted image 20250510195137.png]]
+> - **preambolo** (7 byte): tutti e 7 i byte hanno i bit `10101010`. serve per attivare le **NIC** (scheda di rete) dei riceventi e sincronizzare i loro orologi con quello del trasmittente
+> - **preambolo** (7 byte):
+> - **preambolo** (7 byte):
+> - **preambolo** (7 byte):
+> - **preambolo** (7 byte):
+> - **preambolo** (7 byte):
+> - **preambolo** (7 byte):
