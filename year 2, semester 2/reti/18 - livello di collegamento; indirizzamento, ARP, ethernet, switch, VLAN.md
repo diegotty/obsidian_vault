@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T21:57
+updated: 2025-05-10T22:12
 completed: false
 ---
 # indirizzi MAC
@@ -127,10 +127,31 @@ l’ethernet standard è:
 ## fast ethernet
 l’ethernet standard si è evoluta a **fast ethernet** (100mbps), mantenendo compatibilità con la versione precedente
 in questa versione, il sottolivello MAC rimase invariato, compreso il formato del frame e le sue dimensioni, ma ci furono problemi con il funzionamento di CSMA/CD, in quanto il funzionamento dipende dalla velocità di trasmissione, dalla dimensione minima del frame, e dalla lunghezza massima della rete
-- se la trasmissione è 10 volte più veloce, e il frame è ancora di 512 bit, allora le collisioni devono essere rilevate 10 volte più velocemente, quindi la rete deve essere 10 volte più corta ! (in quanto per  rilevarle più velocemente, devo avere un tempo di trasmissione minore, e per avere un tempo di trasmissione minore, devo avere un tempo di propagazione minore (huhhh ?? non dovrebbe essere più lunga al))
+- se la trasmissione è 10 volte più veloce, e il frame è ancora di 512 bit, allora le collisioni devono essere rilevate 10 volte più velocemente, quindi la rete deve essere 10 volte più corta ! (in quanto per  rilevarle più velocemente, devo avere un tempo di trasmissione minore, e per avere un tempo di trasmissione minore, devo avere un tempo di propagazione minore (che si ottiene rendendo il canale più corto (anche se in teoria dovrebbe già essere minore perchè nella formula aumenta la velocità ???? i am confused ngl) ) )
 ### soluzioni per CSMA/CD
 >[!info] prima soluzione
 ![[Pasted image 20250510202623.png]]
 abbandonare la topologia a stella, e utilizzare un hub passivo con topologia a stella ma fissare la dimensione massima della rete a 250 metri, invece che 2500 metri della versione standard
+>l’hub (ripetitore multi-porta) è un dispositivo che opera sui singoli bit:
+>-  opera a livello fisico e all’arrivo di un bit, lo riproduce incrementandone l’eneriga e lo trasmette attraverso tutte le sue interfacce
+>- ripete il bit entrante su tutte le interfacce uscenti, anche se su qualcuna di queste c’è un segnale (huh ? pericoloso)
+>- trasmette in broadcast, e quindi ciascuna NIC può sondare il canale per verificare se è libero e rilevare una connessione mentre trasmette
+>	- quindi quando una stazione trasmette, il suo messaggio viene trasmesso in broadcast a tutte le altre stazioni per far capire che la linea è occupata
 
->[!info]
+>[!info] seconda soluzione
+si usa uno **switch** di collegamento dotato di buffer per memorizzare i frame e connessione full-duplex per ciascun host (una coppia di host può comunicare simultaneamente in entrambe le direzioni)
+> - il singolo mezzo condiviso viene quindi modificato in molti mezzi punto-punto !
+> - in questo modo, il mezzo trasmissivo è privato per ciascun host, e non c’è bisogno di usare CSMA/CD dal momento che gli host non sono più in competizione
+lo switch riceve un frame da un’host, lo memorizza nel buffer, verifica l’indirizzo di destinazione e invia il frame attraverso l’interfaccia corrispondente
+## gigabit ethernet
+versione successiva al fast ethernet, permette velocità di 1000mpbs (e successivamente, con la fibra ottica, si arriva alla 10 gigabit ethernet !)
+- viene gestita con una topologia a stella con switch
+# switch
+gli switch sono dispositivi che operano a livello di collegamento, e si occupano di filtrare e inoltrare pacchetti ethernet. in particolare, esaminano l’indirizzo di destinazione dei pacchetti e li inviano all’interfaccia corrispondente alla sua destinazione
+- gli host non sono consapevoli della presenza dello switch, nonostante abbiano collegamenti dedicati e diretti con lo switch (huh ? )
+- hanno quindi un ruolo **attivo**, e sono più intelligenti di un hub (che amplifica e basta)
+>[!info] rappresentazione
+![[Pasted image 20250510220716.png]]
+
+gli switch bufferizzano i pacchetti, e permettono una connessione full-duplex senza collisioni (non possibile con gli hub)
+- viene usato il protocollo su ciascun collegamento in entrata

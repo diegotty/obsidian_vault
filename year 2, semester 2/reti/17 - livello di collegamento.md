@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-10T18:34
+updated: 2025-05-10T22:05
 completed: true
 ---
 >[!index]
@@ -240,6 +240,8 @@ nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltan
 
 quindi, affinchè il CSMA/CD funzioni, il mittente deve poter rilevare la trasmissione mentre sta trasmettendo, ovvero prima di inviare l’ultimo bit del frame 
 - quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (pk 2 volte ?  \\QUESTION)
+>[!warning] link ad altro file
+[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN#fasi operative del protocollo CSMA/CD|fasi operative del protocollo CSMA/CD]]
 #### metodi di persistenza
 a seconda di cosa fa un nodo se trova il canale libero, li possiamo dividere in :
 - **non persistente** o **1-persistente**: trasmette subito
