@@ -1,6 +1,6 @@
 ---
 created: 2025-03-24T10:05
-updated: 2025-05-10T23:12
+updated: 2025-05-10T23:27
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -94,6 +94,7 @@ ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piat
 #### specifica delle operazioni
 - visualizzazioni() : Intero ≥ 0
 	precondizioni:
+		this non è un’istanza di VideoCensurato
 		nessuna
 	postcondizioni:
 		l’operazione non modifica il livello estensionale
@@ -102,10 +103,15 @@ ogni stanza della classe VideoPubblicato descrive un video pubblicato sulla piat
 - media_valutazioni : Intero ≥ 0
 	precondizioni:
 		nessuna
+		this non è un’istanza di VideoCensurato
 	postcondizioni:
 		valutazioni = {val : Valutazione | esiste il link (this, u) : valutazione }
+		se |valutazioni| = 0, result = 0
 		sum = $\sum_{v \in valutazioni}v\text{.valore}$
 		result = sum/ |valutazioni|
+- numero_risposte() : Intero ≥ 0
+- precondizioni:
+		this non è un’istanza di VideoCensurato
 ### VideoRisposta
 ogni stanza della classe VideoRisposta descrive un video pubblicato come risposta ad un altro video caricato sulla piattaforma
 #### vincoli esterni
@@ -177,20 +183,29 @@ per ogni istanza c : Commento, ed i rispettivi unici link (c, v) : commento_voto
 		l’operazione modifica il livello estensionale in questo modo:
 		viene creato l’oggetto c : Commento con c.contenuto = commento, c.data = adesso, e i link (this, c) : utente_commento e (c, v) : commento_video
 		result = c
-- valuta_video(video : VideoPubblicato)
+- valuta_video(v : VideoPubblicato, valore : Intero)
 	precondizioni:
 		v non è istanza di VideoCensurato
 		non esiste il link (this, v) : pubblica
 	postcondizioni:
-		viene creato il link (this, v)
+		viene creato il link (this, v) : valutazione, con l’attributo della association class valore = valore
 
 ### Ricerca
-- ricerca (categoria : Categoria, tag : Tag \[1..\*], valutazione : Intero in 0..5)
-- ricerca_per_risposte(categoria : Categoria)
+- ricerca (categoria : Categoria, tag : Tag \[1..\*], valutazione : Intero in 0..5) : VideoPubblicato \[0..\*]
+	precondizioni:
+		nessuna
+	postcondizioni:
+		result = {v : VideoPubblicato | esiste il link (categoria, v) : video_categoria e v.media_valutazioni() = 0 o v.media_valutazioni ≥ valutazione e esiste un link (v, t) : video_tag con t in tag}
+- ricerca_per_risposte(categoria : Categoria) : VideoPubblicato \[..\*]
+	precondizioni:
+		nessuna
+	postcondizioni:
+		result = {v : VideoPubblicato  | esiste il link (categoria, v) : video_categoria} ordinati per v.numero_risposte()
+		
 ### Censura Video
 - censura_video(video : VideoPubblicato, motivo : Stringa)
 	precondizioni:
 		v non è un’istanza della classe VideoCensurato
 	postcondizioni: 
 		l’operazione modifica il livello estensionale
-		la classe specifica di v è VIdeoCensurato, e v.motivo = motivo
+		la classe specifica di v è VideoCensurato, e v.motivo = motivo
