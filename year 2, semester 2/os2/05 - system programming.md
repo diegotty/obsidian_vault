@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T18:20
+updated: 2025-05-11T18:27
 completed: false
 ---
 # programmazione di sistema
@@ -134,6 +134,8 @@ esistono dei flag associati ad ogni file descriptor:
 >[!info] rappresentazione dei flag
 i flag sono rappresentati mediante maschere di bit (es: `MACRO1 = 010000000`, `MACRO2=00010000`), e possono essere combinati mettendo in OR le maschere (es: `MACRO1 OR MACRO2 = 01010000` (`MACRO1` e `MACRO2` sono settati))
 j
+
+studiamo ora le syscall per la gestione dei file
 ### $\verb |int open(const char *pathname, int flags, mode_t)|$
 restituisce `-1` se c’è stato un errore, altrimenti restituisce il file descriptor
 - il parametro flags corrisponde ai file status flags (ed è equivalente al parametro `mode` di `fopen()
@@ -153,4 +155,15 @@ permette di leggere un file: restituisce `-1` se errore, altrimenti il numero di
 - `buf`: puntatore all’area di memoria in cui memorizzare i byte letti
 - `count`: numero di byte da leggere
 >[!info] differenza tra `read` e `fread`
->- `fread` legge da uno stream di tipo FI
+>- `fread` legge da uno stream di tipo FILE, è bufferizzata e richiede la dimensione del tipo di dato da leggere. ritorna un FILE object
+> - `read` non è bufferizzata e lavora sui byte indipendentemente dal tipo di dati in essi contenuto
+### $\verb |ssize_t write (int fd, const void *buf, size_t count)|$
+permette di scrivere un file: restituisce `-1` se errore, altrimenti il numero di byte scritti, che può essere < `count`se `write` viene interrotta (per esempio da un segnale (?))
+- `fd`: file descriptor
+- `buf`: puntatore all’area di memoria da cui leggere i byte (dichiarata `const` per non essere modificata dalla funzione)
+- `count`: numero di byte da leggere
+### $\verb |int close(int fd)|$
+chiude il file descriptor `fd`: restituisce `-1` in caso di errore, altrimenti `0`
+- nel caso venga chiuso l’ultimo file descriptor che fa riferimento ad un file rimosso, allora il file viene cancellato
+## misc. syscall
+### $\verb |int dup(int oldfd)|$
