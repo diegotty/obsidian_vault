@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T23:34
+updated: 2025-05-11T17:35
 completed: false
 ---
 # programmazione di sistema
@@ -69,5 +69,26 @@ l’esecuzione di un programma che non gestisce correttamente la liberazione del
 - copia `n` bytes contigui a partire da `src` in `dest`
 	- le due aree di memoria non possono sovrapporsi !!!
 	- es: utile per duplicare rapidamente un array
-### $\verb |void *nmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)|$
-: crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
+### $\verb |void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)|$
+ è inclusa in `<sys/mman.h>`, e crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
+ è usata per mappare file o altre risorse presenti sul disco in memoria
+ - in questo modo, lettura/scrittura dal/sul buffer risultano in lettura/scrittura sul disco, senza accedere al disco
+ restituisce l’indirizzo di partenza della regione mappata (buffer) se OK, `MAP_FAILED` se errore !
+ - `addrs` è l’indirizzo iniziale dell’area di memoria in cui vogliamo mappare il file. se `addr = 0`, sceglie il sistema
+ - `fd` è il file descriptor (in quanto il file va aperto prim)
+ - `len`è il numero di byte da trasferire
+ - `off` indica l’offset nel file da cui iniziare a trasferire
+ - `prot` indica il livello di protezione:
+ 
+
+| `prot`       | description               |
+| ------------ | ------------------------- |
+| `PROT_READ`  | region can be read        |
+| `PROT_WRITE` | region can be written     |
+| `PROT_EXEC`  | region can be executed    |
+| `PROT_NONE`  | region cannot be accessec |
+
+ >[!info] rappresentazione
+ ![[Pasted image 20250511172930.png]]
+ i file vengono mappati nella immagine del processo !
+
