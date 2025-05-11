@@ -1,9 +1,38 @@
 ---
-related to: 
+related to: "[[04 - introduzione a C]]"
 created: 2025-03-02T17:41
-updated: 2025-05-11T20:04
-completed: false
+updated: 2025-05-11T20:06
+completed: true
 ---
+>[!index]
+>- [programmazione di sistema](#programmazione%20di%20sistema)
+>	- [system call](#system%20call)
+>	- [funzioni general purpose](#funzioni%20general%20purpose)
+>- [syscall](#syscall)
+>	- [gestione errori](#gestione%20errori)
+>		- [`errno`](#%60errno%60)
+>		- [$\verb |void perror(const char *prefix)|$](#$%5Cverb%20%7Cvoid%20perror(const%20char%20*prefix)%7C$)
+>		- [$\verb |char *strerror(int errum)|$](#$%5Cverb%20%7Cchar%20*strerror(int%20errum)%7C$)
+>	- [allocazione della memoria](#allocazione%20della%20memoria)
+>		- [$\verb |void *memset(void *s, int c, size_t n)|$](#$%5Cverb%20%7Cvoid%20*memset(void%20*s,%20int%20c,%20size_t%20n)%7C$)
+>		- [$\verb |void *memcpy(void *dest, const void *src, size_t n)|$](#$%5Cverb%20%7Cvoid%20*memcpy(void%20*dest,%20const%20void%20*src,%20size_t%20n)%7C$)
+>	- [memory-mapped I/O](#memory-mapped%20I/O)
+>		- [$\verb |void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)|$](#$%5Cverb%20%7Cvoid%20*mmap(void%20*addr,%20size_t%20length,%20int%20prot,%20int%20flags,%20int%20fd,%20off_t%20offset)%7C$)
+>		- [$\verb|int msync (void *addr, size_t len, int flags)|$](#$%5Cverb%7Cint%20msync%20(void%20*addr,%20size_t%20len,%20int%20flags)%7C$)
+>		- [$\verb|int munmap(void *addr, size_t len)|$](#$%5Cverb%7Cint%20munmap(void%20*addr,%20size_t%20len)%7C$)
+>	- [gestione file I/O](#gestione%20file%20I/O)
+>		- [file descriptor](#file%20descriptor)
+>		- [$\verb |int open(const char *pathname, int flags, mode_t)|$](#$%5Cverb%20%7Cint%20open(const%20char%20*pathname,%20int%20flags,%20mode_t)%7C$)
+>		- [$\verb|ssize_t read(int fd, void *buf, size_t count)|$](#$%5Cverb%7Cssize_t%20read(int%20fd,%20void%20*buf,%20size_t%20count)%7C$)
+>		- [$\verb |ssize_t write (int fd, const void *buf, size_t count)|$](#$%5Cverb%20%7Cssize_t%20write%20(int%20fd,%20const%20void%20*buf,%20size_t%20count)%7C$)
+>		- [$\verb |int close(int fd)|$](#$%5Cverb%20%7Cint%20close(int%20fd)%7C$)
+>	- [misc. syscall](#misc.%20syscall)
+>		- [$\verb |int dup(int oldfd)|$](#$%5Cverb%20%7Cint%20dup(int%20oldfd)%7C$)
+>		- [$\verb |int fstat(int fd, struct stat *buf)|$](#$%5Cverb%20%7Cint%20fstat(int%20fd,%20struct%20stat%20*buf)%7C$)
+>		- [$\verb |int chmod(const char *pathname, mode_t mode)|$](#$%5Cverb%20%7Cint%20chmod(const%20char%20*pathname,%20mode_t%20mode)%7C$)
+>		- [gestione directory](#gestione%20directory)
+>		- [$\verb |int fcntl (int fd, int cmd, ...)|$](#$%5Cverb%20%7Cint%20fcntl%20(int%20fd,%20int%20cmd,%20...)%7C$)
+>		- [$\verb |int select(int nfds, fd_set *readfds, fd_set *writedfs, fd_set *exceptfds, struct timeval *timeout)|$](#$%5Cverb%20%7Cint%20select(int%20nfds,%20fd_set%20*readfds,%20fd_set%20*writedfs,%20fd_set%20*exceptfds,%20struct%20timeval%20*timeout)%7C$)
 # programmazione di sistema
 come abbiamo visto nel primo modulo, il **kernel** è il componente del sistema operativo che gestisce le risorse disponibili ed offre l’accesso e l’utilizzo della risorse da parte dei processi
 le principali risorse gestite dal kernel sono CPU, RAM e dispositivi di I/O
