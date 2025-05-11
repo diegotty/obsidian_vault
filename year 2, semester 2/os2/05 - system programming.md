@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T18:27
+updated: 2025-05-11T18:50
 completed: false
 ---
 # programmazione di sistema
@@ -167,3 +167,4 @@ chiude il file descriptor `fd`: restituisce `-1` in caso di errore, altrimenti `
 - nel caso venga chiuso l’ultimo file descriptor che fa riferimento ad un file rimosso, allora il file viene cancellato
 ## misc. syscall
 ### $\verb |int dup(int oldfd)|$
+duplica il file descriptor (`oldfd`) e restituisc
