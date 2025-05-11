@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T22:20
+updated: 2025-05-11T22:35
 completed: false
 ---
 # gestione dei processi
@@ -117,4 +117,41 @@ in particolare, `status` può essere verificato con le seguenti macro:
 guardiamo ora delle syscall e funzioni libreria che permettono la sostituzione dell’immagine del processo che la invoca con una nuova immagine
 - la famiglia di funzione `exec` contiene diverese syscall (7 credo), ognuna con funzione minimalmente differente/argomenti diversi, noi vedremo la principlae
 ### $\verb |int execve(const char *filename, char * const argv[], char *const envp[])|$
-la syscall `execve` sostituisce l’immagine del processo con quella contenuta in `filename` (che è un file binario, oppure )
+la syscall `execve` sostituisce l’immagine del processo con quella contenuta in `filename` (che è un file binario, oppure uno script che inizia con `#! interpreter [optiona-arg]`)
+- `argv[]`: contiene gli argomenti in input per il comendo eseguito, e `argv[0]` deve essere il comando stesso. l’array deve essere terminato con `NULL`
+- `envp[]`: contiene l’ambiente della nuova immagine (LO VEDIAMO DOPO ….)
+ `execve`sostituisce quindi le zone di memoria `text`, `bss` e `stack` del processo che invoca la funzione, con quelle del nuovo programma mandato in esecuzione. in particolare:
+ - **vengono preservati**:
+	 - `pid` e `ppid`
+	 - `uid` e `gid`
+	 - groups id
+	 - session ID
+	 - terminale di controllo
+	 - working directory e root directory
+	 - `umask`
+	 - file locks 
+	 - file descriptors (ad eccezione di quelli con flag `FD_CLOEXEX` settato)
+	 - maschera dei segnali
+	 - segnali in attesa
+ - **non vengono preservati**:
+	 - `euid` e `egid`
+	 - memory mapping
+	 - timers
+	 - memoria condivisa
+	 - memory lock
+>[!example] esempio
+![[Pasted image 20250511222409.png]]
+da bash passa a vi !!! con lo stesso `pid` !! crazy !!!
+
+>[!info] funzioni della libreria `exec*`
+![[Pasted image 20250511223018.png]]
+riguardo gli argomenti:
+>- `execl, execlp, execle`: prendono in ingresso un numero variabile di puntatori, per specificare gli argomenti in ingresso alla nuova immagine del processo: un puntatore per ogni argomento
+>- `execv, execvp, execve`: prendono in ingresso un puntatore ad un vettore per specificare gli argomenti in ingresso alla nuova immagine del processo: ogni elemento del vettore è un argomento in ingresso
+>
+>- `execlp, execvp, execvpe`: nel caso il nome di un file non contenga uno `/`, usano la variabile d’ambiente `PATH` per cercare il file da utilizzare per la nuova immagine
+>	- le altre funzioni della famiglia `exec` usano il path relativo o assoluto specificato in `filename`
+>- `execle, execvpe`: il parametro `envp` consente di specificare l’ambiente della nuova immagine
+>
+>idk honestly but ok
+## ambie
