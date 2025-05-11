@@ -1,9 +1,24 @@
 ---
-related to: 
+related to: "[[05 - syscall; allocazione memoria, gestione IO, misc]]"
 created: 2025-03-02T17:41
-updated: 2025-05-11T22:35
-completed: false
+updated: 2025-05-11T22:49
+completed: true
 ---
+>[!index]
+>- [gestione dei processi](#gestione%20dei%20processi)
+>	- [creazione](#creazione)
+>		- [$\verb |pid_t fork(void)|$](#$%5Cverb%20%7Cpid_t%20fork(void)%7C$)
+>	- [terminazione](#terminazione)
+>		- [zombie](#zombie)
+>	- [syscall per controllo processi](#syscall%20per%20controllo%20processi)
+>		- [$\verb |void _exit (int status)|$](#$%5Cverb%20%7Cvoid%20_exit%20(int%20status)%7C$)
+>		- [$\verb |void exit (int status)|$](#$%5Cverb%20%7Cvoid%20exit%20(int%20status)%7C$)
+>		- [$\verb |void abort(void)|$](#$%5Cverb%20%7Cvoid%20abort(void)%7C$)
+>		- [$\verb |pid_t wait(int *status)|$](#$%5Cverb%20%7Cpid_t%20wait(int%20*status)%7C$)
+>		- [$\verb |pid_t waitpid(pid_t pid, int *status, int options)|$](#$%5Cverb%20%7Cpid_t%20waitpid(pid_t%20pid,%20int%20*status,%20int%20options)%7C$)
+>		- [$\verb |int execve(const char *filename, char * const argv[], char *const envp[])|$](#$%5Cverb%20%7Cint%20execve(const%20char%20*filename,%20char%20*%20const%20argv%5B%5D,%20char%20*const%20envp%5B%5D)%7C$)
+>	- [gestione dell’ambiente](#gestione%20dell%E2%80%99ambiente)
+
 # gestione dei processi
 ## creazione
 `init` è il processo 0 (con `pid=1`), padre di tutti i processi in esecuzione del sistema.
@@ -133,6 +148,7 @@ la syscall `execve` sostituisce l’immagine del processo con quella contenuta i
 	 - file descriptors (ad eccezione di quelli con flag `FD_CLOEXEX` settato)
 	 - maschera dei segnali
 	 - segnali in attesa
+	 - ambiente (non scritto su slide ma vero credo)
  - **non vengono preservati**:
 	 - `euid` e `egid`
 	 - memory mapping
@@ -154,4 +170,28 @@ riguardo gli argomenti:
 >- `execle, execvpe`: il parametro `envp` consente di specificare l’ambiente della nuova immagine
 >
 >idk honestly but ok
-## ambie
+
+per cambiare working dir o root dir del nuovo processo, posso usarele funzioni `chdir()` e `chroot()`, incluse in `<unistd.h>` che prendono come argomento un path che verrà usato per rimpazzare, rispettivamente, working dir e root dir al processo chiamante
+## gestione dell’ambiente 
+per **ambiente** di un processo si intende un insieme di variabili (le **variabili d’ambiente**) che contengono informazioni utili per il funzionamento del processo stesso
+- è un blocco di memoria
+>[!info] ambienti e processi
+ogni processo ha il suo ambiente. quindi, quando viene eseguito il comando `printenv`, a che processo appartiene l’ambiente che viene stampato sul terminale ?
+al processo `printenv` stesso, che viene creato dalla shell (`zsh` hehe) attraverso `fork`, ed eredita una copia dell’ambiente della shell
+
+per poter accedere all’ambiente(della shell) da un programma C, si può:
+- aggiungere l’argomento `envp` (array di variabili d’ambiente) ai parametri del main
+	- molti ambienti linux passando **automaticamente** l’argomento `envp`, come estensione del sistema
+- utilizzare la variabile globale `**environ`: `extern char **environ`
+>[!info] altre funzioni utili per la gestione dell’ambiente
+>```c
+>// ritorna il valore nella variabile name
+>char *getenv(const char *name);
+>// setta (o aggiunge la variabile) name = value
+>int setenv(const char *name, const char *value, int overwrite);
+>// come sopra string=“name=value”
+>int putenv(char *string);
+>// rimuove name dalle variabili di ambiente
+>int unsetenv(const char *name);
+>// resetta l’ambiente *environ=NULL
+>int clearenv(void);
