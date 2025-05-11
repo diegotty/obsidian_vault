@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T22:05
+updated: 2025-05-11T22:20
 completed: false
 ---
 # gestione dei processi
@@ -99,6 +99,22 @@ il valore di `pid` può essere:
 - `> 0`: aspettare il figlio il cui `pid` sia uguale al valore di `pid` (argomento)
 il comportamento di default di `waitpid` è di aspettare finchè i figli non terminano, ma tale comportamento è modificabile attraverso l’argomento `options`:
 - `WNOHANG`: torna immediatamente se nessun figlio è uscito
-- `WUNTRACED`: torna anche se un figlio si è arrestato (ma non è tracciato attraverso la syscall `ptrace`)
-- `WCONTINUED`
+- `WUNTRACED`: torna anche se un figlio si è arrestato (ma non è tracciato attraverso la syscall `ptrace`). in questo caso viene fornito anche lo stato del figlio arrestato, anche se l’opzione non è specificata
+- `WCONTINUED`: torna anche se un figlio arrestato è stato riesumato inviando `SIGCONT`
 (i valori di sopra possono essere messi in OR)
+>[!info] l’argomento `status`
+l’argomento `status` viene usato da `wait/waitpid` per memorizzare il valore dello stato del processo figlio (o `NULL`)
+in particolare, `status` può essere verificato con le seguenti macro: 
+>- `WIFEXITED`: ritorna true se è terminato normalmente
+>- `WEXTISTATUS`: ritorna l’exit status del figlio
+>- `WIFSIGNALED`: ritorna true se è terminato per la ricezione di un segnale
+>- `WTERMSIG`: ritorna il numero del segnale che ha causato la terminazione
+>- `WCOREDUMP`: ritorna true se ha generato un core dump
+>- `WIFSTOPPED`: ritorna true se il processo è in stato stopeed per la ricezione di un segnale
+>- `WSTOPSIG`: ritorna il numero del segnale che ha causato lo switch in stato di stopped
+>- `WIFCONTINUED`: ritorna true se il processo ha continuato per la ricezione di un segnale `SIGCONT`
+
+guardiamo ora delle syscall e funzioni libreria che permettono la sostituzione dell’immagine del processo che la invoca con una nuova immagine
+- la famiglia di funzione `exec` contiene diverese syscall (7 credo), ognuna con funzione minimalmente differente/argomenti diversi, noi vedremo la principlae
+### $\verb |int execve(const char *filename, char * const argv[], char *const envp[])|$
+la syscall `execve` sostituisce l’immagine del processo con quella contenuta in `filename` (che è un file binario, oppure )
