@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T17:35
+updated: 2025-05-11T17:49
 completed: false
 ---
 # programmazione di sistema
@@ -58,28 +58,31 @@ $\text{"main:messaggio\_errore\_mnemonico\_=\_errno"}$
 ## allocazione della memoria
 abbiamo visto le [[04 - introduzione a C#allocazione dinamica|funzioni per l’allocazione dinamica]] di memoria **nell’heap**
 - nella libreria `alloca.h` è definita la funzione `void *alloca(size_t size)`, che permette di allocare dinamicamente **memoria nello stack** (da evitare per grandi dimensioni !)
-le funzioni `malloc()`, `calloc()` e `realloc()` usano le vere syscall per la gestione della memoria, ad esempio `nmap` (alloca memoria) e `brk` (cambia dimensione del [[03 - processi#aree di memoria|data segment]] del processo)
+le funzioni `malloc()`, `calloc()` e `realloc()` usano le vere syscall per la gestione della memoria, ad esempio `nmap()` (alloca memoria) e `brk()` (cambia dimensione del [[03 - processi#aree di memoria|data segment]] del processo)
 - le funzioni (che allocano memoria dinamicamente) ritornano un puntatore (lo indica `void *nome(parametri)`), e come visto in precedenza serve fare il casting al tipo di puntatore relativo di dato contenuto nella memoria per poter utilizzare correttamente l’aritmetica dei puntatori
-### memory leakage
+>[!warning] memory leakage
 l’esecuzione di un programma che non gestisce correttamente la liberazione della memoria non più utilizzata può causare un aumento del consumo della memoria di sistema: questo può portare al fallimento del programma stesso, non riuscendo più ad allocare altra memoria da utilizzare, ed in generale può portare al deterioramento delle performance e del funzionamento del sistema
-- ricordiamoci di usare `free()` :)
+>- ricordiamoci di usare `free()` :)
 ### $\verb |void *memset(void *s, int c, size_t n)|$
 - assegna il valore intero `c` a `n`byte contigui dell’area di memoria puntata da `s` (cool !)
 ### $\verb |void *memcpy(void *dest, const void *src, size_t n)|$
 - copia `n` bytes contigui a partire da `src` in `dest`
 	- le due aree di memoria non possono sovrapporsi !!!
 	- es: utile per duplicare rapidamente un array
+
+## memory-mapped I/O
 ### $\verb |void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)|$
- è inclusa in `<sys/mman.h>`, e crea un’area di memoria per mappare un file a partire da un indirizzo specificato, con livello di protezione indicato (`prot`)
+ è inclusa in `<sys/mman.h>`, e crea un’area di memoria per mappare un file a partire da un indirizzo specificato (o non)
  è usata per mappare file o altre risorse presenti sul disco in memoria
  - in questo modo, lettura/scrittura dal/sul buffer risultano in lettura/scrittura sul disco, senza accedere al disco
- restituisce l’indirizzo di partenza della regione mappata (buffer) se OK, `MAP_FAILED` se errore !
+ - restituisce l’indirizzo di partenza della regione mappata (buffer) se OK, `MAP_FAILED` se errore !
+ 
+ argomenti:
  - `addrs` è l’indirizzo iniziale dell’area di memoria in cui vogliamo mappare il file. se `addr = 0`, sceglie il sistema
  - `fd` è il file descriptor (in quanto il file va aperto prim)
  - `len`è il numero di byte da trasferire
  - `off` indica l’offset nel file da cui iniziare a trasferire
  - `prot` indica il livello di protezione:
- 
 
 | `prot`       | description               |
 | ------------ | ------------------------- |
@@ -87,8 +90,24 @@ l’esecuzione di un programma che non gestisce correttamente la liberazione del
 | `PROT_WRITE` | region can be written     |
 | `PROT_EXEC`  | region can be executed    |
 | `PROT_NONE`  | region cannot be accessec |
+-  i valori di `flag` possono essere:
+	- `MAP_SHARED`: le operazioni sulla memoria modificano il file (R/W)
+	- `MAP_PRIVATE`: viene creata una copia privata del mapped file e solo questa viene modificata
+>[!tip] malloc()
+`mmap()` è una syscall, e viene usata spesso da `malloc()` per grandi allocazioni
 
  >[!info] rappresentazione
  ![[Pasted image 20250511172930.png]]
  i file vengono mappati nella immagine del processo !
 
+
+### $\verb|int msync (void *addr, size_t len, int flags)|$
+permette di scrivere sul file le modifiche in memoria, e funziona solo se il flag passato a `mmap()` è `MAP_SHARED`
+### $\verb|int munmap(void *addr, size_t len)|$
+permette di *unmap*-are una regione di memoria precedentemente mappata con `mmap()`
+- è l’equivalente di `free()` per la memoria mappata
+## gestione file I/O
+ricordiamo che:
+- quando viene aperto un file mediante `open()`, viene creato un **file descriptor**
+- le operazioni `write()` e `read()` su file operano mediante syscall
+- i file 
