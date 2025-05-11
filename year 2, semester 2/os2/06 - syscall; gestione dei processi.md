@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T21:20
+updated: 2025-05-11T21:35
 completed: false
 ---
 # gestione dei processi
@@ -33,8 +33,18 @@ in particolare, un processo figlio creato con `fork`,
 	 - groups id
 	 - working directory
 	 - ambiente del processo
-	 - descrittori
-## zombie
+	 - descrittori dei file
+	 - terminale di controllo
+	 - memoria condivisa
+- **non eredita dal padre**:
+	- `pid`: ogni figlio ha il suo proprio `pid`
+	- `ppid`: nel figlio, il `ppid` è uguale al `pid` del padre (non al `ppid` del padre)
+	- i timer: ogni processo ha i propri timer
+	- record lock / memory lock: due processi non possono avere gli stessi lock
+	- contatori risorse: i contatori dell’utilizzo delle riorse sono impostati a zero per il figlio
+	- coda dei segnali: la coda dei segnali in attesa viene svuotata nel figlio
+## terminazione
+### zombie
 un processo **zombie** è un processo terminato, ma il cui PCB è mantenuto dalla **process table** del kernel per permettere al processo padre di leggere l’exit status di esso
 >[!warning] se il padre di un processo muore/termina mentre il figlio è in stato zombie, esso rimane in stato zombie !!
 ## syscall per controllo processi
@@ -48,3 +58,22 @@ richiedono `<sys/types.h>` e `<unistd.h`
 | `uid_t geteuid(void)`   | ritorna l’`euid` (effective uid) del processo chiamante                       | “”                                                      |
 | `int setuid(uid_t uid)` | imposta l’`euid` del processo chiamanete a `uid` (parametro)                  | ritorna `-1` in caso di errore, `0` in caso di successo |
 | `int setgid(uid_t uid`  | imposta l'`egid` (effective `gid`) del processo chiamante a `gid` (parametro) | “”                                                      |
+vediamo le syscall utili per terminare un proceso:
+### $\verb |void _exit (int status)|$
+`_exit` è una syscall che termina il processo che la invoca, senza invocare handler. in particolare:
+- chiude tutti i file descriptor
+- i child vengono ereditati dal processo con `pid=1` (`init`)
+- invia il segnale `SIGCHILD` al processo padre
+- ritorna `status` e l’exit status al processo padre
+### $\verb |void exit (int status)|$
+`exit` è una funzione definita in `<stdlib.h>` che:
+- invoca sono stati registrati nel processo con `atexit` e `on_exit`
+- chiude tutti i file descriptor, svuota gli stream `stdio` e li chiude
+- termina il processo
+- ritorna `status & 0377` al padre \\add info
+possono essere passate, come parametro per `status`, `EXIT_SUCCESS` e `EXIT_FAILURE` (autoesplicative)
+>[!info] come viene lanciato e terminato un programma di C
+![[Pasted image 20250511212852.png]]
+
+### $\verb |void abort(void)|$
+`abort`è una funzione definita in `<stdlib.h>`, che invia il segnale `SIGABRT` per il processo chiamante. quando viene lanciato `SIGABRT`, il processo termina in modo anormale (non vengono chiusi file o sv)
