@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T19:50
+updated: 2025-05-11T20:04
 completed: false
 ---
 # programmazione di sistema
@@ -236,4 +236,25 @@ il locking è **adivisory**, cioè tutti i processi devono cooperare per rispett
 syscall che permette di monitorare uno o più file descriptor, rimanendo in attesa che almeno uno di essi sia disponibile per effettuare l’operazione richiesta
 - l’utilizzo di `select` consente di sincronizzare dei processi, tramite il monitoraggio della disponibilità di accesso ad un file
 argomenti: 
-- `ndfs` numero **aumentato di uno** del file descriptor con il valore più alto tra quelli da monitorare, 
+- `nfds`: numero **aumentato di uno** del file descriptor con il valore più alto tra quelli da monitorare
+- `readfds`: insieme contenente i file descriptor per cui si richiede la lettura
+- `writefds`: insieme contenente i file descriptor per cui si richiede la scrittura
+- `exceptfds`: insieme contenente i file descriptor da controllare per eccezioni
+- `timeout`: timeout di attesa. i valori possono essere:
+	- $\infty$: la chiamata è bloccante (non termina finchè non è disponibile almeno un descrittore o si genera un’errore)
+	- **intervallo definito**: la chiamata ritorna se è disponibile almeno un descrittore, oppure se è scaduto il timeout, oppure se si genera un errore
+	- **zero**: la chiamata non è bloccante, ritorna subito dopo aver controllato i descrittori.
+la funzione ritorna :
+- il numero di file descriptor disponibili (non i loro identificatori !!!  un po inutile ngl idk )per l’operazione richiesta
+- oppure ritorna `-1` in caso di errore
+- oppure ritorna `0` se la chiamata termina per timeout prima che uno dei descrittori diventi disponibile
+>[!warning] al termine dell’esecuzione, la funzione aggiorna le strutture dati contenenti i file descriptor da monitorare, per indicare quali di questi è disponibile per l’operazione richiesta
+
+sono inoltre messe a disposizione 4 macro (funzioni) per la gestione degli insiemi di file descriptor (di tipo `fd_set`)
+
+| macro        | descrizione                                                                             |
+| ------------ | --------------------------------------------------------------------------------------- |
+| `FD_ZERO()`  | svuota un insieme                                                                       |
+| `FD_SET()`   | aggiunge un fle descriptor ad un insieme                                                |
+| `FD_CLR()`   | rimuove un file descriptor da un insieme                                                |
+| `FD_ISSET()` | testa se un file descriptor appartiene ad un insieme. utile quando `select` ritorna !!! |
