@@ -1,8 +1,8 @@
 ---
 created: 2025-04-10T13:15
-updated: 2025-05-09T10:56
+updated: 2025-05-10T23:34
 ---
-# intro a C
+	# intro a C
 ## ambiente di sviluppo ed esecuzione
 noi useremo **gcc**(GNU compiler collection), che include il **compilatore** di C, che svolge le attività di:
 - pre-processing

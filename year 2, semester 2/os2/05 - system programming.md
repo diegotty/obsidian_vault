@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-04-25T22:43
+updated: 2025-05-10T23:34
 completed: false
 ---
 # programmazione di sistema
