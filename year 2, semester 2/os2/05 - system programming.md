@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T18:50
+updated: 2025-05-11T19:05
 completed: false
 ---
 # programmazione di sistema
@@ -167,4 +167,32 @@ chiude il file descriptor `fd`: restituisce `-1` in caso di errore, altrimenti `
 - nel caso venga chiuso l’ultimo file descriptor che fa riferimento ad un file rimosso, allora il file viene cancellato
 ## misc. syscall
 ### $\verb |int dup(int oldfd)|$
-duplica il file descriptor (`oldfd`) e restituisc
+duplica il file descriptor (`oldfd`) e restituisce il valore del uovo `fd`
+- restituisce `-1` in caso di errore
+### $\verb |int fstat(int fd, struct stat *buf)|$
+restituisce in `buf` le informazioni di stato del file specificato come `fd`
+- ritorna `0` se termina correttamente, `-1` altrimenti
+- esiste una versione che permette di specificare il file come path (`stat()`)
+>[!info] definizione di `stat`
+![[Pasted image 20250511185220.png]]
+>etc..
+>
+>sono definite anche una serie di macro da utilizzare sulla struttura `stat`, per verificare il tipo del file (sono delle funzioni che ritornano `true/false`)
+> - `S_ISREG(m), S_ISDIR(m), S_ISCHR(m), S_ISBLK(m), S_ISFIFO(m), S_ISLINK(m), S_ISSOCK(m)`
+>
+>sono 
+
+### $\verb |int chmod(const char *pathname, mode_t mode)|$
+cambia il **file mode** (quindi l’attributo `st_mode`)
+`mode_t` è un numero ottale, ed esistono delle maschere predefinite, come:
+
+| macro     | value   | meaning        |
+| --------- | ------- | -------------- |
+| `S_ISUID` | `04000` | set-user-id    |
+| `S_ISGID` | `02000` | set-group-id   |
+| `S_ISVTX` | `01000` | sticky bit     |
+| `S_IRUSR` | `00400` | read by owner  |
+| `S_IRGP`  | `00040` | read by group  |
+| `S_IROTH` | `00004` | read by others |
+
+esiste una segnatura che permette di indicare il file come file descriptor (`fchmod()`)
