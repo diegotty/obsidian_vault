@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T17:49
+updated: 2025-05-11T18:05
 completed: false
 ---
 # programmazione di sistema
@@ -110,4 +110,24 @@ permette di *unmap*-are una regione di memoria precedentemente mappata con `mmap
 ricordiamo che:
 - quando viene aperto un file mediante `open()`, viene creato un **file descriptor**
 - le operazioni `write()` e `read()` su file operano mediante syscall
-- i file 
+- è buona regola chiudere esplicitamente i file invocando `close()`
+### file descriptor
+un **file descriptor** è il riferimento ad un file aperto: è rappresentato da un intero piccolo, generato sequenzialmente dal valore 0. per default, ogni processo ha i associato i seguenti file descriptor:
+- `0: stdin`
+- `1: stdout`
+- `2: stderr`
+>[!info]- file descriptor
+![[Pasted image 20250511175258.png]]
+
+quando un file viene chiuso, il suo file descriptor viene liberato e può essere riutilizzato. (è quindi possibile aprire uno stesso file ed ottenere file descriptor diversi)
+
+esistono dei flag associati ad ogni file descriptor:
+- **file status flags**: associati allo stato di un file, e sono condivisi tra tutti i file descriptor che sono stati ottenuti per duplicazione da un unico file descriptor. si dividono in 3 categorie:
+	- **modalità di accesso**: `read,write, read`
+	- **di apertura**
+	- **modalità operative**
+- **file descriptor flags**: associati ai singoli file descriptor, descrivono proprietà e comportamento delle operazioni effettuate sul file
+	- alcuni flag sono definiti solo per alcuni tipi di file speciali
+>[!info] rappresentazione dei flag
+i flag sono rappresentati mediante maschere di bit (es: `MACRO1 = 010000000`, `MACRO2=00010000`), e possono essere combinati mettendo in OR le maschere (es: `MACRO1 OR MACRO2 = 01010000` (`MACRO1` e `MACRO2` sono settati))
+j
