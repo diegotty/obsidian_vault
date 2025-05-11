@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T21:50
+updated: 2025-05-11T22:05
 completed: false
 ---
 # gestione dei processi
@@ -84,7 +84,21 @@ guardiamo ora delle funzioni usate per:
 - attendere cambiamenti di stato di un figlio del processo chiamante, e ottenere informazioni a riguardo
 avviene un cambimento di stato quando:
 - un processo figlio è terminato
+	- in particolare, se un figlio viene terminato, `wait/waitpid` permettono al sistema di rilasciare correttamente le risorse associate al figlio (altrimenti, senza attesa, il figlio terminato rimane in uno stato zombie)
 - un processo figlio viene arrestato da un segnale (`abort` !)
 - un processo figlio viene ripristinato da un segnale
-
+se un figlio ha già cambiato stato, le chiamate ritornano immediatamente (cambiato rispetto a cosa ? ) altrimenti si bloccano fino a quanto un figlio non cambia stato o un gestore di segnale non interrompe la chiamata
 ### $\verb |pid_t wait(int *status)|$
+la syscall `wait` sospende l’esecuzione del processo chiamante fino a quando uno dei suoi figli non termina (ritorna `-1`) in caso di errore
+### $\verb |pid_t waitpid(pid_t pid, int *status, int options)|$
+la syscall `waitpid` sospende l’esecuzione del processo chiamante fino a quando un figlio, specificato dall’argomento `pid`, ha cambiato stato
+il valore di `pid` può essere:
+- `< -1`: attesa di qualunque figlio il cui `gid` del processo sia uguale al valore assoluto di `pid` (?)
+- `-1`: aspettare qualunque processo figlio
+- `0`: aspettare qualunque processo figlio il cui `gid` sia uguale a quello del processo chiamante
+- `> 0`: aspettare il figlio il cui `pid` sia uguale al valore di `pid` (argomento)
+il comportamento di default di `waitpid` è di aspettare finchè i figli non terminano, ma tale comportamento è modificabile attraverso l’argomento `options`:
+- `WNOHANG`: torna immediatamente se nessun figlio è uscito
+- `WUNTRACED`: torna anche se un figlio si è arrestato (ma non è tracciato attraverso la syscall `ptrace`)
+- `WCONTINUED`
+(i valori di sopra possono essere messi in OR)
