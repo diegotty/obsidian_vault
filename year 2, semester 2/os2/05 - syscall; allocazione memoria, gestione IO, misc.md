@@ -1,7 +1,7 @@
 ---
 related to: "[[04 - introduzione a C]]"
 created: 2025-03-02T17:41
-updated: 2025-05-11T20:06
+updated: 2025-05-11T21:48
 completed: true
 ---
 >[!index]
@@ -33,6 +33,7 @@ completed: true
 >		- [gestione directory](#gestione%20directory)
 >		- [$\verb |int fcntl (int fd, int cmd, ...)|$](#$%5Cverb%20%7Cint%20fcntl%20(int%20fd,%20int%20cmd,%20...)%7C$)
 >		- [$\verb |int select(int nfds, fd_set *readfds, fd_set *writedfs, fd_set *exceptfds, struct timeval *timeout)|$](#$%5Cverb%20%7Cint%20select(int%20nfds,%20fd_set%20*readfds,%20fd_set%20*writedfs,%20fd_set%20*exceptfds,%20struct%20timeval%20*timeout)%7C$)
+
 # programmazione di sistema
 come abbiamo visto nel primo modulo, il **kernel** è il componente del sistema operativo che gestisce le risorse disponibili ed offre l’accesso e l’utilizzo della risorse da parte dei processi
 le principali risorse gestite dal kernel sono CPU, RAM e dispositivi di I/O
@@ -59,6 +60,15 @@ le informazioni sulle funzioni general purpose si trovano nella sezione 3 del ma
 
 
 # syscall
+>[!warning] come riconoscere una syscall
+guarderemo ora un numero di funzioni libreria e syscall. come facciamo a riconoscere se una data funzione è una syscall o non lo è ? 
+>si può controllare attraverso il **man**, scrivendo `man 2 nome_funzione`: se esiste una entry, allora è una syscall
+>- 4 any arch buddies, la syscalls man page va scaricata (pacchetto `man-packages`)
+>>[!tip] fun tip
+>>esiste il comando `strace` con sui si può runnare un programma (`strace ./a.out`) che fa vedere tutte le syscalls reali vengono eseguite (cool !!!)
+
+>[!info] come funzionano le syscall (reminder idk im dumb)
+le funzioni che usiamo, implementate in C, sono wrapper per le syscall: gestiscono gli argomenti che gli vengono passati e, attraverso un’istruzione speciale (`syscall`), invocano il kernel. la CPU entra in kernel mode, salta al codice che implementa la syscall (scritto in C + assembly), e una volta eseguito torna in user-mode
 ## gestione errori
 l’esecuzione di una syscall può interrompersi e non andare a buon fine per vari motivi, tra cui, principalmente:
 - il processo che la invoca non ha sufficienti privilegi per l’esecuzione

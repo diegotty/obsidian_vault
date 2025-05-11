@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T21:35
+updated: 2025-05-11T21:50
 completed: false
 ---
 # gestione dei processi
@@ -76,4 +76,15 @@ possono essere passate, come parametro per `status`, `EXIT_SUCCESS` e `EXIT_FAIL
 ![[Pasted image 20250511212852.png]]
 
 ### $\verb |void abort(void)|$
-`abort`è una funzione definita in `<stdlib.h>`, che invia il segnale `SIGABRT` per il processo chiamante. quando viene lanciato `SIGABRT`, il processo termina in modo anormale (non vengono chiusi file o sv)
+`abort`è una funzione definita in `<stdlib.h>`, che invia il segnale `SIGABRT` per il processo chiamante. quando viene lanciato `SIGABRT`, il processo termina in modo anormale (non vengono chiusi file o svuotati buffer)
+- `SIGABRT`può essere intercettata e gestita
+- per mandare `SIGABRT`, `abort` usa una syscall
+
+guardiamo ora delle funzioni usate per:
+- attendere cambiamenti di stato di un figlio del processo chiamante, e ottenere informazioni a riguardo
+avviene un cambimento di stato quando:
+- un processo figlio è terminato
+- un processo figlio viene arrestato da un segnale (`abort` !)
+- un processo figlio viene ripristinato da un segnale
+
+### $\verb |pid_t wait(int *status)|$
