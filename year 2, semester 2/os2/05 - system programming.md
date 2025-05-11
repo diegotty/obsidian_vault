@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T19:20
+updated: 2025-05-11T19:35
 completed: false
 ---
 # programmazione di sistema
@@ -205,4 +205,20 @@ queste funzioni di libereria permettono di aprire una directory il cui stream è
 >- in particolare `readdir` legge il contenuto della directory (**legge il prossimo elemento disponbile**)e ritorna la struttura `dirent` (o `NULL` se non ci sono più elementi)
 ![[Pasted image 20250511191014.png]]
 
-### $\verb |int fcntl (int)|$
+### $\verb |int fcntl (int fd, int cmd, ...)|$
+syscall molto versatile, che permette di effettuare operazioni sul file descriptor `fd`, ad esempio:
+- duplicazione di `fd`
+- manipolazione flag file descriptor di `fd`
+- manipolazione di status flags di `fd`
+il secondo argomento, `cmd`, specifica (attraverso costanti simboliche)un comando da fare sull’`fd`, mentre il terzo argomento è un argomento opzionale per `cmd` (notare che come terzo argomento si può passare anche il puntatore ad una struttura, come vedremo)
+il valore di ritorno di `fcntl` dipende dall’operazione effettuata !
+>[!into] flag di `fcntl`
+sintassi: `COSTANTE_SIMBOLICA(terzo parametro expected)`
+**manipolazione status flags**:
+>- `F_GETFL(void)`: restituisce come risultato di `fcntl` file access mode e file status flag
+>- `F_SETFL(int)`: imposta status flag, come `O_APPEND, O_ASYNC, O_DIRECT, O_NOATIME`, etc.
+>
+>**lock su file**:
+> - `F_SETLK`: acquisisce/rilascia lock (se lock non ottenibile, fallisce)
+> - `F_SETLKW`: acquisisce/rilascia lock, bloccante (se lock non ottenibile, aspetta finchè non diventa disponibile, e lo ottiene)
+>- `F_GETLK`: testa esistenza lock
