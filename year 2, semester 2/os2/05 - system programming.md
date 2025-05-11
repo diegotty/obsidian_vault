@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T19:35
+updated: 2025-05-11T19:50
 completed: false
 ---
 # programmazione di sistema
@@ -219,6 +219,21 @@ sintassi: `COSTANTE_SIMBOLICA(terzo parametro expected)`
 >- `F_SETFL(int)`: imposta status flag, come `O_APPEND, O_ASYNC, O_DIRECT, O_NOATIME`, etc.
 >
 >**lock su file**:
+>quando parliamo di lock, ci riferiamo al meccaniscmo che permette di controllare l’accesso a un file (o una sua regione), per prevenire race condition (e altre brutte cose) (proprio come in bd1)
 > - `F_SETLK`: acquisisce/rilascia lock (se lock non ottenibile, fallisce)
 > - `F_SETLKW`: acquisisce/rilascia lock, bloccante (se lock non ottenibile, aspetta finchè non diventa disponibile, e lo ottiene)
 >- `F_GETLK`: testa esistenza lock
+l’argomento di tutte queste costanti è lo struct `flock`
+![[Pasted image 20250511193610.png]]
+>
+>-  `F_SETLK`: acquisice lock se `l_type = F_RDLCK or F_WRLCK`, lo rilasce se `l_type = F_UNLCK`, e restituisce `-1` se un altro processo ha il lock
+>- `F_SETLKW`: come `F_SETLK` ma è bloccante se c’è già un lock sul file
+>- `F_GETLK`: testa l’esistenza di un lock, e se il lock può essere messo, `fcntl` aggiorna `l_type` a `F_UNLCK` (viene quindi eseguita da `F_SETLK/LKW)
+>
+il locking è **adivisory**, cioè tutti i processi devono cooperare per rispettare i lock, in quanto il sistema non li impone automaticamente
+>- tutti i processi fanno una `F_GETLK` o `F_SETLK/LKW` e osservano il risultato, in quanto cercare di scrivere un file sul quale un altro processo detiene un lock **NON** ha l’effetto di bloccare una scrittura !
+### $\verb |int select(int nfds, fd_set *readfds, fd_set *writedfs, fd_set *exceptfds, struct timeval *timeout)|$
+syscall che permette di monitorare uno o più file descriptor, rimanendo in attesa che almeno uno di essi sia disponibile per effettuare l’operazione richiesta
+- l’utilizzo di `select` consente di sincronizzare dei processi, tramite il monitoraggio della disponibilità di accesso ad un file
+argomenti: 
+- `ndfs` numero **aumentato di uno** del file descriptor con il valore più alto tra quelli da monitorare, 
