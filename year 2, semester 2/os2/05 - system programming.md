@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T19:05
+updated: 2025-05-11T19:20
 completed: false
 ---
 # programmazione di sistema
@@ -184,6 +184,7 @@ restituisce in `buf` le informazioni di stato del file specificato come `fd`
 
 ### $\verb |int chmod(const char *pathname, mode_t mode)|$
 cambia il **file mode** (quindi l’attributo `st_mode`)
+- esiste una segnatura che permette di indicare il file come file descriptor (`fchmod()`)
 `mode_t` è un numero ottale, ed esistono delle maschere predefinite, come:
 
 | macro     | value   | meaning        |
@@ -195,4 +196,13 @@ cambia il **file mode** (quindi l’attributo `st_mode`)
 | `S_IRGP`  | `00040` | read by group  |
 | `S_IROTH` | `00004` | read by others |
 
-esiste una segnatura che permette di indicare il file come file descriptor (`fchmod()`)
+### gestione directory
+>[!info] gestione delle directory
+$\verb |DIR *opendir(const char *name)|$
+$\verb |struct dirent *readdir(DIR *dirp)|$
+$\verb |int closedir(DIR *dirp)|$
+queste funzioni di libereria permettono di aprire una directory il cui stream è ritornato da `opendir()`
+>- in particolare `readdir` legge il contenuto della directory (**legge il prossimo elemento disponbile**)e ritorna la struttura `dirent` (o `NULL` se non ci sono più elementi)
+![[Pasted image 20250511191014.png]]
+
+### $\verb |int fcntl (int)|$
