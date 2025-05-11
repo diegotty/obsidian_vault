@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T18:05
+updated: 2025-05-11T18:20
 completed: false
 ---
 # programmazione di sistema
@@ -123,11 +123,34 @@ quando un file viene chiuso, il suo file descriptor viene liberato e può essere
 
 esistono dei flag associati ad ogni file descriptor:
 - **file status flags**: associati allo stato di un file, e sono condivisi tra tutti i file descriptor che sono stati ottenuti per duplicazione da un unico file descriptor. si dividono in 3 categorie:
-	- **modalità di accesso**: `read,write, read`
-	- **di apertura**
-	- **modalità operative**
+	- **modalità di accesso**: `read,write, read&write`, vengono specificati in `open()`, e non possono essere modificati una volta aperto il file
+		- `O_RDONLY, O_WRONLY, O_RDWR`
+	- **di apertura**: definiscono il comportamento di `open()` e non vengono mantenuti (quindi altri parametri di `open()`)
+		- `O_CREAT`, `O_EXCL`(quando specificato insieme a `O_CREAT`, genera errore se il file esiste già)
+	- **modalità operative**: definiscono il comportamento delle operazioni `read()` e `write()`. vengono sempre specificati in `open()`, e possono essere modificati anche dopo l’apertura del file
+		- `O_APPEND`, `O_SYNC`(scrittura sincrona: la call ritorna solamente quando la scrittura dei dati nel file è terminata),  `O_TRUNC`(se il file esiste, e consente la scrittura, viene troncato dalla posizione 0)
 - **file descriptor flags**: associati ai singoli file descriptor, descrivono proprietà e comportamento delle operazioni effettuate sul file
 	- alcuni flag sono definiti solo per alcuni tipi di file speciali
 >[!info] rappresentazione dei flag
 i flag sono rappresentati mediante maschere di bit (es: `MACRO1 = 010000000`, `MACRO2=00010000`), e possono essere combinati mettendo in OR le maschere (es: `MACRO1 OR MACRO2 = 01010000` (`MACRO1` e `MACRO2` sono settati))
 j
+### $\verb |int open(const char *pathname, int flags, mode_t)|$
+restituisce `-1` se c’è stato un errore, altrimenti restituisce il file descriptor
+- il parametro flags corrisponde ai file status flags (ed è equivalente al parametro `mode` di `fopen()
+- `mode`indica le modalità di creazione del file (esiste una segnatura di `open()` senza questo parametro)
+
+>[!info] differenza tra `open` e `fopen`
+>- `fopen` restituisce un puntatore ad un FILE object, una struttura che contiene le informazioni richiesta dalle librerie I/O standard:
+>	- il file descriptor
+>	- un puntatore a un buffer (?) per lo stream
+>	- la dimensione del buffer
+>	- un conto del numero di caratteri attualmente presenti nel buffer
+>	- una error flag
+>	- etc
+### $\verb|ssize_t read(int fd, void *buf, size_t count)|$
+permette di leggere un file: restituisce `-1` se errore, altrimenti il numero di byte letti, che può essere < `count`se si raggiunge `EOF`
+- `fd`: file descriptor
+- `buf`: puntatore all’area di memoria in cui memorizzare i byte letti
+- `count`: numero di byte da leggere
+>[!info] differenza tra `read` e `fread`
+>- `fread` legge da uno stream di tipo FI
