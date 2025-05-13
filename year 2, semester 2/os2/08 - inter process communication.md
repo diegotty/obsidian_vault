@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T11:14
+updated: 2025-05-13T11:29
 completed: false
 ---
 # IPC
@@ -27,6 +27,15 @@ la creazione della pipe può essere effettuata con la syscall `pipe`, che crea d
 >[!info] esempio di utilizzo con `fork`
 >quando un processo padre crea le 2 pipe per creare un canale di comunicazione bidirezionale con il figlio creato con `fork`, il figlio eredita tutti e 4 i file descriptor
 >![[Pasted image 20250513111435.png]]
+in questo modo però, se un processo legge e scrive dalla stessa pipe, rischia di leggere i propri dati.  per questo motivo, è necessario limitare la scrittura e la lettura del processo padre e del processo figlio:
+>- il padre scrive in `pipe1`  e legge da `pipe2`
+>- il figlio scrive in `pipe2` e legge da `pipe1`
+>
+in questo modo vengono chiusi dei canali di read e write:
+![[Pasted image 20250513111716.png]]
+>
+arrivando quindi a questo tipo di stato:
+![[Pasted image 20250513111737.png]]
 
 i dati della pipe sono bufferizzati dal kernel finchè non sono letti (su FIFO sono memorizzati su file), e hanno quindi una dimensione massima.
 - se un processo legge una pipe vuota, rimane bloccato
@@ -38,3 +47,28 @@ i dati della pipe sono bufferizzati dal kernel finchè non sono letti (su FIFO s
 - `pipefd[0]`: file descriptor di input
 - `pipefd[1]`: file descriptor di output
 ## socket 
+i socket consentono la comunicazione tra processi, anche residenti su macchine diverse, nel paradigma client-server. in particolare
+- **client**: definisce il suo socket, e crea una connessione sul socket: una volta connesso al server, ricava un file descriptor (full-duplex) sulla connessione
+- **server**: definisce il suo socket, e accetta connessioni su esso da parte di uno o più client. per ogni connessione, ricava un file descriptor (full-duplex) sulla connessione
+le syscall usate nella comunicazione con socket sono:
+
+| syscall  | descrizione                                   |
+| -------- | --------------------------------------------- |
+| `socket` | crea la struttura dati della socket           |
+| `bind`   | associa un nome alla socket                   |
+| `listen` | mette un processo in ascolto su di una socket |
+| `accept` | accetta una connessione su di una socket      |
+esistono diverse tipologie di socket, definite da 3 attributi:
+- **domain** (o family): specifica la modalità di collegamento
+	- `AF_LOCAL/AF_UNIX`: client e server devono risiedere sulla stessa macchina
+	- `AF_INET`: client e server comunicano in rete con il protocollo IPv4
+	- `AF_INET6`: client e server comunicano in rete con il protocollo IPv6
+- **type**: specifica la semantica del collegamento
+	- `SOCK_STREAM`: il flusso (di byte) è bidirezionale ed affidabile, in quanto basato su conessione (socket TCP !)
+	- `SOCK_DGRAM`: supporta comunicazione datagram, senza connessione e con sequenze inaffidabili di messaggi (messaggi non ordinati) (socket UDP)
+	- `SOCK_RAW`: usati per l’accesso diretto (**raw** socket) alle comunicazioni di rete (protocolli ed interfacce)
+- **protocol**: specifica il protocollo usato
+	 - noi consideriamo solo TCP per `SOCK_STREAM` e UDP per `SOCK_DGRAM`(ma studieremo solo TCP) . possiamo impostarlo a `0`
+### anatomia server TCP
+>[!info]
+![[Pasted image 20250513112944.png]]
