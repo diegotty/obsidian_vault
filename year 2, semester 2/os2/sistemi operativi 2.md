@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-11T20:07
+updated: 2025-05-13T10:28
 completed: true
 ---
 [[01 - introduzione alla shell]]
@@ -10,3 +10,5 @@ completed: true
 [[04 - introduzione a C]]
 [[05 - syscall; allocazione memoria, gestione IO, misc]]
 [[06 - syscall; gestione dei processi]]
+[[07 - syscall; segnali]]
+[[08 - inter process communication]]

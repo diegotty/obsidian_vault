@@ -1,9 +1,23 @@
 ---
-related to: 
+related to: "[[06 - syscall; gestione dei processi]]"
 created: 2025-03-02T17:41
-updated: 2025-05-13T09:55
+updated: 2025-05-13T10:27
 completed: false
 ---
+>[!index]
+>- [segnali](#segnali)
+>	- [gestione dei segnali](#gestione%20dei%20segnali)
+>		- [$\verb |int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)|$](#$%5Cverb%20%7Cint%20sigprocmask(int%20how,%20const%20sigset_t%20*set,%20sigset_t%20*oldset)%7C$)
+>	- [esecuzione di handler di segnali](#esecuzione%20di%20handler%20di%20segnali)
+>		- [$\verb |sighandler_t signal(int signum, sighandler_t handler)|$](#$%5Cverb%20%7Csighandler_t%20signal(int%20signum,%20sighandler_t%20handler)%7C$)
+>		- [$\verb |int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact)|$](#$%5Cverb%20%7Cint%20sigaction(int%20signum,%20const%20struct%20sigaction%20*act,%20struct%20sigaction%20*oldact)%7C$)
+>	- [altre syscall utili](#altre%20syscall%20utili)
+>		- [$\verb |int kill(pid_t pid, int sig)|$](#$%5Cverb%20%7Cint%20kill(pid_t%20pid,%20int%20sig)%7C$)
+>		- [$\verb |unsigned int alarm(unsigned int seconds)|$](#$%5Cverb%20%7Cunsigned%20int%20alarm(unsigned%20int%20seconds)%7C$)
+>		- [$\verb |int pause(void)|$](#$%5Cverb%20%7Cint%20pause(void)%7C$)
+>		- [$\verb |int sigpending(sigset_t *set)|$](#$%5Cverb%20%7Cint%20sigpending(sigset_t%20*set)%7C$)
+>		- [$\verb |int sigsuspend(sigset_t *mask)|$](#$%5Cverb%20%7Cint%20sigsuspend(sigset_t%20*mask)%7C$)
+
 # segnali
 i segnali sono **interrupt software**, e possono essere inviati:
 - dal kernel ad un processo
@@ -68,7 +82,7 @@ la **signal mask** è un insieme di segnali, usato in modo tale che quando viene
 >- se il segnale è nella signal mask, è **bloccato**, quindi rimane pending fino a che non viene sbloccato
 >- se il segnale non è nella signal mask, viene spedito al processo/thread immediatamente
 >la signal mask è quindi un “filtro” per i segnali che possono arrivare ad determinato processo
- - ogni proceeso e thread ha una signal mask
+ >- ogni proceeso e thread ha una signal mask
 - `how` permette di definire come gestire il segnale,e può assumere i seguenti valori:
 	- `SIG_BLOCK`: blocca i segnali definiti in `set` (argomento)
 	- `SIG_UNBLOCK`: sblocca i segnali definiti in `set`
@@ -119,7 +133,15 @@ se viene passato `null` all’argomento `act`, viene usato `oldact` al posto di 
 ### $\verb |int kill(pid_t pid, int sig)|$
 la syscall `kill` invia il segnale `sig` ad un processo `pid`.
 in particolare:
-- `pid > 0`
-- `pid = 0`
-- `pid = -1`
-- `pid < -1`
+- `pid > 0`: il segnale è inviato al processo con pid `pid`
+- `pid = 0`: il segnale è inviato a tutti i processo del process group del chiamante
+- `pid = -1`: il segnale è inviato a tutti i processi (tranne `init`) per cui il chiamante ha i privilegi per inviare un segnale
+- `pid < -1`: il segnale è inviato a tutti i processi del processo group del chiamante con pid= `-pid`
+### $\verb |unsigned int alarm(unsigned int seconds)|$
+la syscall `alarm` invia `SIGALARM` dopo `seconds` secondi
+### $\verb |int pause(void)|$
+la syscall `pause` blocca il processo chiamante finchè un segnale non viene ricevuto
+### $\verb |int sigpending(sigset_t *set)|$
+la syscall `sigpending` restituisce l’insieme dei segnali che sono pending per il processo/thread chiamante 
+### $\verb |int sigsuspend(sigset_t *mask)|$
+la syscall `sigsuspend` sospende il processo che la invoca, e rimpiazza la con la signal mask `mask`. inoltre, il processo rimane sospeso finchè non arriva un segnale per cui è definito un handler (o finchè non arriva un segnale di terminazione)
