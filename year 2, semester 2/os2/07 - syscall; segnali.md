@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T09:28
+updated: 2025-05-13T09:44
 completed: false
 ---
 # segnali
@@ -62,7 +62,9 @@ quando un processo riceve un segnale che deve gestire con un handler:
 3. riprende l’esecuzione dal punto in cui era stato interrotto
 tali passi posson essere realizzati con le seguenti funzioni
 ### $\verb |int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)|$
-`sigprocmask` è un wrapper per la syscall `rt_sigprocmask` (che chiama la syscall), e consente di ottenere/settare la **maschera segnali** del thread su cui viene chiamata(ci dice quindi i segnali bloccati)
+`sigprocmask` è un wrapper per la syscall `rt_sigprocmask` (che chiama la syscall), e consente di ottenere/settare la **maschera segnali** (**signal mask**)del thread su cui viene chiamata(ci dice quindi i segnali bloccati)
+>[!info] signal mask
+la **signal mask** è un insieme di segnali che, se vengono generati, vengono bloccati dall’essere spetid
 - `how` permette di definire come gestire il segnale,e può assumere i seguenti valori:
 	- `SIG_BLOCK`: blocca i segnali definiti in `set` (argomento)
 	- `SIG_UNBLOCK`: sblocca i segnali definiti in `set`
@@ -73,3 +75,9 @@ tali passi posson essere realizzati con le seguenti funzioni
 >- è applicabile solo a processi e non a threads, in quanto ogni thread ha una sua maschera
 >- `SIGKILL` e `SIGSTOP` non possono essere bloccati
 >- la maschera dei segnali viene mantenuta dopo exec
+## esecuzione di handler di segnali
+>[!warning] l’uso della syscall `signal()` è deprecato in quanto l’implementazione varia across UNIX versions
+> **usare `sigaction`!!!!**
+
+### $\verb |sighandler_t signal(int signum, sighandler_t handler)|$
+la funzione `signal` imposta l’handler del segnale `signum` alla funzione `handler` (entrambi argomenti), e restituise `SIG_ERR` o il valore precedente dell’handler
