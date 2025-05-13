@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T10:44
+updated: 2025-05-13T10:50
 completed: false
 ---
 # IPC
@@ -19,4 +19,17 @@ la funzione `mkfifo` crea una FIFO con nome `pathname` e modalità di accesso `m
 - `mkfifo` ritorna `0` in caso di successo e `-1` in caso di errore, impostando `errno` di conseguenza
 - una volta creata, FIFO può essere gestita come un qualsiasi altro file (con syscall `open, read, write, close`)
 ## pipe
-la **pipe** è una struttura dati **in memoria** (quindi non un file come la **FIFO**)
+la **pipe** è una struttura dati **in memoria** (quindi non un file come la **FIFO**), ed è half duplex.
+la creazione della pipe può essere effettuata con la syscall `pipe`, che crea due file descriptor: uno in lettura ed uno in scrittura
+>[!example] esempio di utilizzo
+>un processo crea una pipe, crea un figlio e usa la pipe per comunicare con il figlio, che eredita i fil descriptor del padre
+
+i dati della pipe sono bufferizzati dal kernel finchè non sono letti (su FIFO sono memorizzati su file), e hanno quindi una dimensione massima.
+- se un processo legge una pipe vuota, rimane bloccato
+- se un processo scrive su una pipe piena, rimane bloccato
+- una pipe viene chiusa quando tutti e due i processi hanno invocato `close`
+- le operazioni di lettura (`read`) su una pipe il cui `fd` di scrittura è stato chiuso con `close` ritornano `0`
+- le operazioni di scrittura (`write`) su una pipe il cui `fd` di scrittura è stato chiuso con `close` ritornano `-1` e ricevono il segnale `SIGPIPE`
+### $\verb |int pipe(int pipefd[2])|$
+- `pipefd[0]`: file descriptor di input
+- `pipefd[1]`: file descriptor di output
