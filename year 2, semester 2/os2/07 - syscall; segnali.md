@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T09:13
+updated: 2025-05-13T09:28
 completed: false
 ---
 # segnali
@@ -54,4 +54,22 @@ si possono fare 3 cose quando viene generato un segnale:
 >- ignora e rimuovi il segnale
 >- sospende il processo
 >- riesuma il processo 
+descrizioni più dettagliate sono fornite su **APUE** (un libro di unix)
 
+quando un processo riceve un segnale che deve gestire con un handler:
+1. interrompe il proprio flusso di esecuzione
+2. esegue l’handler associato al segnale
+3. riprende l’esecuzione dal punto in cui era stato interrotto
+tali passi posson essere realizzati con le seguenti funzioni
+### $\verb |int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)|$
+`sigprocmask` è un wrapper per la syscall `rt_sigprocmask` (che chiama la syscall), e consente di ottenere/settare la **maschera segnali** del thread su cui viene chiamata(ci dice quindi i segnali bloccati)
+- `how` permette di definire come gestire il segnale,e può assumere i seguenti valori:
+	- `SIG_BLOCK`: blocca i segnali definiti in `set` (argomento)
+	- `SIG_UNBLOCK`: sblocca i segnali definiti in `set`
+	- `SIG_SETMASK`: setta la maschera a `set`
+- `set` è la maschera da usare
+- `oldset` è dove viene memorizzata la maschera presente prima dell’invocazione della funzione (può essere utile per ripristinare la mask dopo la chiamata)
+>[!info] considerazioni su `sigprocmask`
+>- è applicabile solo a processi e non a threads, in quanto ogni thread ha una sua maschera
+>- `SIGKILL` e `SIGSTOP` non possono essere bloccati
+>- la maschera dei segnali viene mantenuta dopo exec
