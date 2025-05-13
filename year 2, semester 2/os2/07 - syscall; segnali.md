@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T09:44
+updated: 2025-05-13T09:55
 completed: false
 ---
 # segnali
@@ -64,7 +64,11 @@ tali passi posson essere realizzati con le seguenti funzioni
 ### $\verb |int sigprocmask(int how, const sigset_t *set, sigset_t *oldset)|$
 `sigprocmask` è un wrapper per la syscall `rt_sigprocmask` (che chiama la syscall), e consente di ottenere/settare la **maschera segnali** (**signal mask**)del thread su cui viene chiamata(ci dice quindi i segnali bloccati)
 >[!info] signal mask
-la **signal mask** è un insieme di segnali che, se vengono generati, vengono bloccati dall’essere spetid
+la **signal mask** è un insieme di segnali, usato in modo tale che quando viene generato un segnale, ci sono due possibilità:
+>- se il segnale è nella signal mask, è **bloccato**, quindi rimane pending fino a che non viene sbloccato
+>- se il segnale non è nella signal mask, viene spedito al processo/thread immediatamente
+>la signal mask è quindi un “filtro” per i segnali che possono arrivare ad determinato processo
+ - ogni proceeso e thread ha una signal mask
 - `how` permette di definire come gestire il segnale,e può assumere i seguenti valori:
 	- `SIG_BLOCK`: blocca i segnali definiti in `set` (argomento)
 	- `SIG_UNBLOCK`: sblocca i segnali definiti in `set`
@@ -81,3 +85,41 @@ la **signal mask** è un insieme di segnali che, se vengono generati, vengono bl
 
 ### $\verb |sighandler_t signal(int signum, sighandler_t handler)|$
 la funzione `signal` imposta l’handler del segnale `signum` alla funzione `handler` (entrambi argomenti), e restituise `SIG_ERR` o il valore precedente dell’handler
+- esistono 2 macro che si possono passare a `handler`:
+	- `SIG_IGN`: ignora il segnale
+	- `SIG_DFL`: assegna l'handler di default (utile per ripristinare l’handler del segnale)
+### $\verb |int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact)|$
+la versione **non deprecata** di `signal`, permette di fare le stesse cose di essa
+- `signum`: segnale di cui modificare l’handler
+- `act`: handler del segnale 
+- `oldact`: handler precedente (viene “ritornato” immagino)
+se viene passato `null` all’argomento `act`, viene usato `oldact` al posto di `act` (quindi non viene modificato nulla)
+>[!info] struttura di `act` e `oldact`
+>```c
+>struct sigaction {
+>	// puntatore alla funzione signal handler
+>	// può essere SIG_IGN, SIG_DFL o puntatore a funzione
+>	void (*sa_handler)(int);
+>	
+>	// Alternativo a sa_handler
+>	void (*sa_sigaction)(int, siginfo_t *, void *);
+>	
+>	// spefica la maschera dei segnali che dovrebbero essere bloccati 
+>	// durante l’esecuzione dell’handler
+>	sigset_t sa_mask;
+>	
+>	// flags per modificare il comportamento del segnale
+>	int sa_flags;
+>	
+>	// obsoleto
+>	void (*sa_restorer)(void);
+>};
+
+## altre syscall utili
+### $\verb |int kill(pid_t pid, int sig)|$
+la syscall `kill` invia il segnale `sig` ad un processo `pid`.
+in particolare:
+- `pid > 0`
+- `pid = 0`
+- `pid = -1`
+- `pid < -1`
