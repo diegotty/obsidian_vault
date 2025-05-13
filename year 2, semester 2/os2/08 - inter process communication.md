@@ -1,7 +1,7 @@
 ---
-related to: 
+related to: "[[07 - syscall; segnali]]"
 created: 2025-03-02T17:41
-updated: 2025-05-13T11:47
+updated: 2025-05-13T11:48
 completed: false
 ---
 # IPC
