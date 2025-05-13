@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T08:59
+updated: 2025-05-13T09:13
 completed: false
 ---
 # segnali
@@ -14,4 +14,44 @@ vengono spesso generati dopo condizioni anomale che si verificano, come:
 - un’eccezione hardware (divisione per 0, riferimento di memoria non valido, etc… )
 ma può essere anche generato da condizioni **non** anomale:
 - la terminazione di un processo figlio
-- un timer settato con a
+- un timer settato con `alarm()` scade
+- un segnale inviato da un processo ad un altro mediante la syscall `kill`
+- un dato arriva su una connessione di rete (`SIGURG`)
+- un processo scrive su una PIPE che non ha un “lettore” (`SIGPIPE`)
+
+la lista completa dei segnali (che sono costanti intere) è in `<signal.h>` (o `man 7 signal`), e ad ogni segnale è associato un evento
+>[!info] lista dei segnali
+`SIGINT 2`: terminazione <`CTRL+C`> da tastiera
+`SIGQUIT 3`: core dump, uscita
+`SIGILL 4`: core dump,istruzione illegale
+`SIGABR 6`: core dump, abort
+`SIGFPE 8`: core dump, eccezione di tipo aritmetico
+`SIGKILL 9`: terminazione, `kill` (non gestibile)
+`SIGUSR1 10`: terminazione, definito dall’utente
+`SIGSEGV 11`: core dump, segmentation fault
+`SIGUSR2 12`: terminazione, definito dall’utente
+`SIGPIPE 13`: terminazione, scrittura senza lettori su pipe o socket
+`SIGALRM 14`: terminazione, allarme temporizzato
+`SIGTERM 15`: terminazione, terminazione software
+`SIGCHLD 17`: ignorato status del figlio cambiato
+`SIGSTOP 19`: stop, sospende del processo (non gestibile)
+`SIGTSTP 20`: stop, stop da tastiera
+`SIGTTIN 21`: stop, lettura su tty in background
+`SIGTTOU 22`: stop, scrittura su tty in background
+
+## gestione dei segnali
+i segnali sono un esempio di eventi **asincroni**:
+- occorrono ad un tempo casuale
+- il processo deve dire al kernel cosa fare se e quando l’evento occorre: deve definire l’**azione associata al processo**
+si possono fare 3 cose quando viene generato un segnale:
+1. **ignorare il segnale** (**ignore**): autoesplicativo, si può fare con tutti i segnali tranne `SIGKILL` e `SIGSTOP` (altrimenti perdo l’abilità di chiudere il processo quando voglio)
+2. **catturare il segnale** (**catch**): il processo chiede al kernel di eseguire una funzione definita dal programmater (il **signal handler**)
+	- i segnali `SIGKILL` e `SIGSTOP` non possono essere catturati (stesso motivo di sopra)
+3. **eseguire l’azione di default**: possibile perchè ad ogni segnale è associata una azione di default: il **default handler**
+>[!info] handler di default
+>- termina il processo e genera il core dump
+>- termina il processo senza generare il core dump
+>- ignora e rimuovi il segnale
+>- sospende il processo
+>- riesuma il processo 
+
