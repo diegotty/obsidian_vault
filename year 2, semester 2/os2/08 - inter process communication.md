@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T11:44
+updated: 2025-05-13T11:47
 completed: false
 ---
 # IPC
@@ -106,6 +106,9 @@ definiamo i passaggi per creare un client socket TCP:
 1. viene definito il socket con `socket()`
 2. si imposta una struttura dati `sin` di tipo `struct sockaddr_in`, in modo da scriverci le informazioni del server al quale ci si vuole connettere
 3. ci si connette al server con la syscall `connect()`, al quale viene passato il socket e l’indirizzo del server al quale connettersi
+	1. `connect()` restituisce un `fd` del server (che chiamiamo `ssd`) (o `-1` se avviene un errore)
+4. viene utilizzato `ssd` per leggere e scrivere (`read()/write()`) da/su server
+5. finita la necessità di comunicare con il server, viene chiusa la connessione con `close(ssd)`
 >[!info] codice per creare un client socket TCP
 >```c
 >int main (){
@@ -119,3 +122,4 @@ definiamo i passaggi per creare un client socket TCP:
 >	close(cfd);	
 >}
 >```
+### $\verb|int socket (int domain, int type, int protcol)|$
