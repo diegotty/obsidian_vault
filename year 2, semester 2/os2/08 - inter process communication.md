@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T11:29
+updated: 2025-05-13T11:44
 completed: false
 ---
 # IPC
@@ -70,5 +70,52 @@ esistono diverse tipologie di socket, definite da 3 attributi:
 - **protocol**: specifica il protocollo usato
 	 - noi consideriamo solo TCP per `SOCK_STREAM` e UDP per `SOCK_DGRAM`(ma studieremo solo TCP) . possiamo impostarlo a `0`
 ### anatomia server TCP
->[!info]
+>[!info] interazione client-server
 ![[Pasted image 20250513112944.png]]
+#### server TCP
+definiamo i passaggi per creare un server socket TCP:
+1. viene definito il socket, invocando `socket()`(viene creato un **unnamed socket**, cioè una struttura dati che rappresenta il socket ma al quale non è associato un indirizzo (nome))
+2. si associa un nome al socket, invocando `bind()` (il socket diventa quindi un **named socket**)
+3. viene definita la lunghezza della coda d'ingresso (max numero di connessioni pending) con `listen()`
+4. il processo viene messo in ascolto sul socket, in attesa di una richiesta di connessione del client a cui rispondere `accept()`, che ritorna un `fd` usato per comunicare con il client
+5. (arriva una richiesta da parte di un client:) viene creato un figlio, che userà `fd` per comunicare con il socket
+6. il processo torna in ascolto sulla socket per una nuova connessione (punto 4)
+>[!info] codice per creare un server socket TCP
+>```c
+>int main() {
+>	int sd = socket(AF_INET, SOCKET_STREAM, 0);
+>	bind(sd, ...);
+>	listen(sd, MAX_QUEUED);
+>	// disabilito il segnale SIGCHLD per evitare di creare zombie process
+>	while (1) {
+>		int client_sd=accept(sd, ...);
+>		if (client_sd==-1) {
+>			perror("Errore accettando connessione dal client");
+>			continue;
+>		}
+>		if (fork()==0) { // eseguito dal client
+>			// read/write (o send) su client_sd
+>			close(client_sd);
+>			exit(0);
+>		}
+>	}
+>}
+>```
+#### client TCP
+definiamo i passaggi per creare un client socket TCP:
+1. viene definito il socket con `socket()`
+2. si imposta una struttura dati `sin` di tipo `struct sockaddr_in`, in modo da scriverci le informazioni del server al quale ci si vuole connettere
+3. ci si connette al server con la syscall `connect()`, al quale viene passato il socket e l’indirizzo del server al quale connettersi
+>[!info] codice per creare un client socket TCP
+>```c
+>int main (){
+>	int cfd;
+>	int cfd = socket(AF_INET, SOCK_STREAM,0);
+>	// set sockaddr_in structure
+>	if (connect(cfd,….)!=0) {
+>		perror(“connessione non riuscita”);
+>	}
+>	// read(cfd,…) e write(cfd,…) da/verso server
+>	close(cfd);	
+>}
+>```
