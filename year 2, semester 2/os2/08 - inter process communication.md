@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - syscall; segnali]]"
 created: 2025-03-02T17:41
-updated: 2025-05-13T11:48
+updated: 2025-05-14T07:21
 completed: false
 ---
 # IPC
@@ -123,3 +123,4 @@ definiamo i passaggi per creare un client socket TCP:
 >}
 >```
 ### $\verb|int socket (int domain, int type, int protcol)|$
+inclusa in `<sys/socket.h>`, crea un socket (endpoint 4 communication) e restituisce un file descriptor che si riferisce al loscket
