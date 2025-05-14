@@ -1,7 +1,7 @@
 ---
-related to: 
+related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-14T09:07
+updated: 2025-05-14T09:08
 completed: false
 ---
 # multithreading
