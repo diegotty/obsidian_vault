@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-14T08:37
+updated: 2025-05-14T08:45
 completed: false
 ---
 # multithreading
@@ -78,3 +78,22 @@ nel modello “**da molti a 1**”, detta anche implementazione **a livello uten
 - l’applicazione, eventualmente usando una libreria di sistema, gestisce autonomamente i thread utente: schedula i vari flussi di esecuzione e si occupa della gestione di stack UM(user mode) e i contesti dei vai thread
 - se un thread invoca una chiamata di sistema bloccante, il processo (e quindi tutti i thread utente) vengono bloccati
 - è impossibile sfruttare in modo implicito il parallelismo interno del calcolatore
+### modello “da 1 a 1”
+nel modello “**da 1 a 1**”, detta anche implementazione **a livello kernel** o **native threads** (corrisponde alla implementazione con [[threads#KLT (Kernel Level Thread)|kernel level thread]]):
+- ciascun thread utente dell’applicazione corrisponde ad un singolo thread kernel (quindi “da 1 a 1”)
+- il nucleo del SO si occupa della gestione e schedulazione dei thread kernel (perciò gestisce anche i thread utente, dato che sono 1 a 1 ?)
+- l’applicazione utilizza le API definita in una libreria di sistema: si occupa di creare/distruggere i thread utente e di gestire la comunicazione e sincronizzazione tra essi
+	- la libreria implementa i servizi richiesti dall’applicazione invocando opportune chiamate di sistema
+- ciascun thread utente può invocare chiamate di sistema bloccanti senza bloccare gli altri thread
+- l’applicazione sfruttra in modo implicito il parallelismo interno del calcolatore
+>[!info] differenza nell’implementazione
+![[Pasted image 20250514084521.png]]
+
+| user level                                                         | kernel level                                                                        |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| SO inconsapevole dei threads                                       | SO consapevole dei threads                                                          |
+| facile implementazione dei thread                                  | difficile implementazione dei threads                                               |
+| context switch veloce, senza supporto hardware                     | context switch e costoso a livello di tempo e risorse, e richiede supporto hardware |
+| una chiamata bloccante fatta da un thread blocca l’intero processo | una chiamata bloccante fatta da un thread non blocca l’intero processo              |
+| ss. POSIX, Java threads                                            | es. Windows, Solaris                                                                |
+### motello “da molti a molti”
