@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-13T10:28
+updated: 2025-05-14T07:45
 completed: true
 ---
 [[01 - introduzione alla shell]]
@@ -12,3 +12,4 @@ completed: true
 [[06 - syscall; gestione dei processi]]
 [[07 - syscall; segnali]]
 [[08 - inter process communication]]
+[[09 - threads]]

@@ -1,9 +1,25 @@
 ---
 related to: "[[07 - syscall; segnali]]"
 created: 2025-03-02T17:41
-updated: 2025-05-14T07:37
-completed: false
+updated: 2025-05-14T07:44
+completed: true
 ---
+>[!index]
+>- [IPC](#IPC)
+>	- [FIFO](#FIFO)
+>		- [$\verb |int mkfifo(const char *pathname, mode_t mode)|$](#$%5Cverb%20%7Cint%20mkfifo(const%20char%20*pathname,%20mode_t%20mode)%7C$)
+>	- [pipe](#pipe)
+>		- [$\verb |int pipe(int pipefd[2])|$](#$%5Cverb%20%7Cint%20pipe(int%20pipefd%5B2%5D)%7C$)
+>	- [socket](#socket)
+>		- [anatomia server TCP](#anatomia%20server%20TCP)
+>			- [server TCP](#server%20TCP)
+>			- [client TCP](#client%20TCP)
+>		- [$\verb|int socket (int domain, int type, int protcol)|$](#$%5Cverb%7Cint%20socket%20(int%20domain,%20int%20type,%20int%20protcol)%7C$)
+>		- [$\verb |int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)|$](#$%5Cverb%20%7Cint%20bind(int%20sockfd,%20const%20struct%20sockaddr%20*addr,%20socklen_t%20addrlen)%7C$)
+>		- [$\verb |int listen(int sockfd, int backlog)|$](#$%5Cverb%20%7Cint%20listen(int%20sockfd,%20int%20backlog)%7C$)
+>		- [$\verb |int accept(int sockfd,struct sockaddr *addr, socklen_t *addrlen)|$](#$%5Cverb%20%7Cint%20accept(int%20sockfd,struct%20sockaddr%20*addr,%20socklen_t%20*addrlen)%7C$)
+>		- [$\verb |int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)|$](#$%5Cverb%20%7Cint%20connect(int%20sockfd,%20const%20struct%20sockaddr%20*addr,%20socklen_t%20addrlen)%7C$)
+
 # IPC
 UNIX mette a disposizione due tipi di **IPC** (**inter process communication**): 
 - **FIFO** (named pipe)
@@ -158,4 +174,15 @@ sono quindi necessarie delle funzioni per convertire gli indirizzi in NBO (per `
 >- $\verb |uint_t htonl(uint32_t hostlong)|$: converte un unsigned int in formato NBO
 > - $\verb |int inet_{aton(const char *cp, struct in_addr *inp)}|$: converte un indirizzo `cp="X.Y.Z.W"` in NBO 
 >- $\verb |struct hostent *gethostbyname (const char *name)|$: dato un nome logico, `mio.dominio.toplevel` o indirizzo `X.Y.Z.W` ritorna una struttura `hostent` che contiene l’indirizzo in formato NBO
-### $\verb |int accept(int sockf)|$
+### $\verb |int listen(int sockfd, int backlog)|$
+la syscall `listen` marca il socket `sockfd` come **passive**, ovvero pronto a ricevere una richiesta (mediante `accept()`)
+	- `backlog`: indica la max lunghezza della coda di attesa
+restituisce `0` in caso di successo e `-1` in caso di errore
+### $\verb |int accept(int sockfd,struct sockaddr *addr, socklen_t *addrlen)|$
+la syscall `accept` viene usata **esclusivamente** dai socket **con connessione** (quindi non `SOCK_DGRAM`), ed estrae la prima richiesta di connessione nella coda delle richieste in attesa sulla coda di listening di `sockfd`. crea poi un nuovo socket con con connessione, e ritorna il nuovo file descriptor
+- il nuovo sockete non è in ascolto
+- il socket `sockfd` torna ad ascoltare per richieste
+### $\verb |int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen)|$
+la syscall `connect` viene invocata da un client per associare un indirizzo `addr` ad un unnamed socket `sockfd`
+ - `addrlen` è la dimensione di `addr` (della struttura `sockaddr`)
+ se va a buon fine, ritorna `0`, e in questo caso `sockfd` può essere utilizzato come file descriptor per leggere e scrivere su server
