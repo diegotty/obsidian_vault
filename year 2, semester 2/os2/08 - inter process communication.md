@@ -1,7 +1,7 @@
 ---
 related to: "[[07 - syscall; segnali]]"
 created: 2025-03-02T17:41
-updated: 2025-05-14T07:21
+updated: 2025-05-14T07:37
 completed: false
 ---
 # IPC
@@ -123,4 +123,39 @@ definiamo i passaggi per creare un client socket TCP:
 >}
 >```
 ### $\verb|int socket (int domain, int type, int protcol)|$
-inclusa in `<sys/socket.h>`, crea un socket (endpoint 4 communication) e restituisce un file descriptor che si riferisce al loscket
+la syscall `socket`, inclusa in `<sys/socket.h>`, crea un socket (endpoint 4 communication) e restituisce un file descriptor che si riferisce al socket (in caso di errore, restituisce `-1`)
+- `domain`: `AF_LOCAL/AF_UNIX, AF_INET, AF_INET6`
+- `type:` `SOCK_STREAM, SOCK_DGRAM, SOCK_RAW`
+- `protocol`: `0` per UDP E TCP
+lettura e chiusura su un socket chiuso genera un errore `SIGPIPE`
+### $\verb |int bind(int sockfd, const struct sockaddr *addr, socklen_t addrlen)|$
+la syscall `bind`, inclusa in `<sys/socket.h>` assegna l’indirizzo IP/nome del socket specificato da `addr`all’unnamed socket `sockfd`
+- `addr` sarà di tipo `struct sockaddr_in` se il dominio del socket è `AF_INET/AF_INET6`, altrimenti sarà di tipo `struct sockaddr_un` per `AF_LOCAL`
+	- solo i socket `AF_INET` possono fare binding su `ip_address:porta`
+- `addrlen`: specifica la dimensione della struttura `sockaddr`
+
+>[!info] struct sockaddr_in
+>```c
+>struct sockaddr_in {
+>	sa_family_t sin_family; /* address family: AF_INET */
+>	in_port_t sin_port; /* port in network byte order */
+>	struct in_addr sin_addr; /* internet address */
+>};
+>/* Internet address. */
+>struct in_addr {
+>	uint32_t s_addr; /* address in network byte order */
+>};
+>```
+> - **network byte order**: MSB first
+> - **host byte order (i386)**: LSB first
+>
+è possibile assegnare un valore a`sin_addr` assegnandogli una delle seguenti macro:
+>- `INADDR_LOOPBACK` (`127.0.0.1`)
+>- `INADDR_ANY` (`0.0.0.0`)
+
+sono quindi necessarie delle funzioni per convertire gli indirizzi in NBO (per `sockaddr_in`):
+>[!info] funzioni per convertire indirizzi
+>- $\verb |uint_t htonl(uint32_t hostlong)|$: converte un unsigned int in formato NBO
+> - $\verb |int inet_{aton(const char *cp, struct in_addr *inp)}|$: converte un indirizzo `cp="X.Y.Z.W"` in NBO 
+>- $\verb |struct hostent *gethostbyname (const char *name)|$: dato un nome logico, `mio.dominio.toplevel` o indirizzo `X.Y.Z.W` ritorna una struttura `hostent` che contiene l’indirizzo in formato NBO
+### $\verb |int accept(int sockf)|$
