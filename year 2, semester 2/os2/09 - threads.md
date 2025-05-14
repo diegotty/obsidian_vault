@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-14T08:45
+updated: 2025-05-14T09:07
 completed: false
 ---
 # multithreading
@@ -96,4 +96,37 @@ nel modello “**da 1 a 1**”, detta anche implementazione **a livello kernel**
 | context switch veloce, senza supporto hardware                     | context switch e costoso a livello di tempo e risorse, e richiede supporto hardware |
 | una chiamata bloccante fatta da un thread blocca l’intero processo | una chiamata bloccante fatta da un thread non blocca l’intero processo              |
 | ss. POSIX, Java threads                                            | es. Windows, Solaris                                                                |
-### motello “da molti a molti”
+### modello “da molti a molti”
+nell’implementazione “**da molti a molti**”:
+- gli $n_{u}$ thread utente della applicazione corrispondono a $n_{k}$ thread kernel (con $n_{k} \leq n_{u}$)
+- il nucleo del SO di occupa della gestione e schedulazione dei thread kernel (quindi non gestisce direttamente i thread utente)
+- l’applicazione utilizza le API definite in una librerira di sistema per:
+	- definire il numero $n_{k}$ di thread kernel
+	- creare e distruggere i thread utente
+	- mappare i thread utente sui thread kernel
+- la libreria di sistema, a sua volta:
+	- usa chiamate di sistema per gestire i thead kernel
+	- gestisce la schedulazione e lo stack UM dei thread utente mappati sullo stesso thread kernel
+	- gestisce comunicazione e sincronizzazione tra thread (utente immagino)
+
+>[!info] tutti i maggiori SO oggi supportano i thread nativi (quindi le implementazioni “da 1 a 1” e “da 1 a molti”)
+la scelta del modello tra i due appena menzionati dipende dalla libreria thread utilizzata, non dal SO !
+>- linux, MS windows, macOS tendono ad adottare il modello “da uno a uno”
+>
+>invece le librerie che implementano i thread a livello utente possono essere utilizzato con qualunque SO
+
+## librerie dei thread
+come abbiamo visto, generalemente il programmatore utilizza una libreria di sistema per realizzare una applicazione multithread
+- le API offerte dalla libreria non sono direttamente correlate con la tipologia di thread utilizzata ! (?)
+- alcune librerie sono specifiche per un determinato SO e tipologia di thread (es: libreria per i thread delle API win32 (?))
+- alcune librerie di thread invece sono specifiche di un linguaggio ad alto livello (es: la libreria di thread di Java), e la libreria utilizza una libreria di thread di più basso livello
+### pthreads
+la libreria `pthreads` (POSIX threds) è definita dallo standard POSIX, che definisce le API, ma non quale debba essere la loro implementazione in uno specifico SO
+>[!info] lore
+in linux sono coesistite tre diverse implementazioni:
+> - `LinuxThreads`: prima implementazione, basata sul modello “da uno a uno”. non più supportata
+>- `NGPT`(nex generation POSIX threads):  svluppata da IBM sul modello “da molti a molti”. non più supportata
+>- `NPTL`(nex generation POSIX threads): ultima implementazione, più efficiente, più aderente allo standard, basata sul modello “da uno a uno”
+>
+>**oggi in linux si utilizza esclusivamente `NPTL` !**
+
