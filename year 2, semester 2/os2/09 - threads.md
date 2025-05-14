@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-14T08:15
+updated: 2025-05-14T08:37
 completed: false
 ---
 # multithreading
@@ -68,3 +68,13 @@ il multithreading ha numerosi vantaggi:
 esistono principalmente 2 componenti in un implementazione delle applicazioni multithread: 
 - implementazione a livello utente
 - implementazione a livello kernel
+e ciò che caratterizza le applicazioni multithread è la relazione tra thread utente e thread kernel
+ - la differenza tra thread utente e thread kernel è la diversa modalità di esecuzione: user mode o kernel mode
+### modello “da molti a 1”
+nel modello “**da molti a 1**”, detta anche implementazione **a livello utente** o **green threads** (corrisponde alla implementazione con [[threads#ULT (User Level Thread)|user level threads]]):
+- una applicazione multithread è costituita da un **singolo processo** nel SO
+- a diversi thread utente corrisponde un singolo thread kernel (quindi “da molti a 1”)
+- il nucleo del SO non è coinvolto nella gestione dei flussi dell’applicazione
+- l’applicazione, eventualmente usando una libreria di sistema, gestisce autonomamente i thread utente: schedula i vari flussi di esecuzione e si occupa della gestione di stack UM(user mode) e i contesti dei vai thread
+- se un thread invoca una chiamata di sistema bloccante, il processo (e quindi tutti i thread utente) vengono bloccati
+- è impossibile sfruttare in modo implicito il parallelismo interno del calcolatore
