@@ -1,9 +1,20 @@
 ---
 related to: "[[09 - threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T09:46
+updated: 2025-05-15T09:55
 completed: false
 ---
+>[!index]
+>- [flussi di esecuzione concorrente](#flussi%20di%20esecuzione%20concorrente)
+>	- [race condition](#race%20condition)
+>	- [sezione critica](#sezione%20critica)
+>		- [semafori](#semafori)
+>- [POSIX mutex](#POSIX%20mutex)
+>	- [$\verb |int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t *mutexattr)|$](#$%5Cverb%20%7Cint%20pthread_mutex_init(pthread_mutex_t%20*mutex,%20const%20pthread_mutexattr_t%20*mutexattr)%7C$)
+>- [barriera](#barriera)
+>	- [$\verb |int pthread_barrier_init(pthread_barrier_t *restrict barrier, const pthread_barrierattr_t *restrict attr, unsigned int count)|$](#$%5Cverb%20%7Cint%20pthread_barrier_init(pthread_barrier_t%20*restrict%20barrier,%20const%20pthread_barrierattr_t%20*restrict%20attr,%20unsigned%20int%20count)%7C$)
+>- [condition](#condition)
+
 ## flussi di esecuzione concorrente
 come abbiamo studiato, la fonte di complicazione maggiore nei SO è costituita dall’esistenza di flussi di esecuzione concorrenti, in quanto:
 - la coerenza delle strutture dati private di ciascun flusso di esecuzione **è garantita** dal meccanismo di cambio del flusso
@@ -57,10 +68,19 @@ la **condition** è un metodo di sincronizzazione che permette ad un thread di s
 >[!warning] imp
 una variabile condition deve essere sempre associata ad un mutex per evitare una race condition dove un thread fa una `wait` su una condizione, ed un altro thread invia un `signal` alla condizione (e sblocca la condizione) prima che il primo thread si metta in attesa
 
-$\verb |int pthread_cond_init(pthread_cond_t *cond, pthread_condattr_t *cond_attr)|$
-$\verb |int pthread_cond_signal(pthread_cond_t *cond)|$
-$\verb |int pthread_cond_broadcast(pthread_cond_t *cond)|$
-$\verb |int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex)|$
-$\verb |int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)|$
-$\verb |int pthread_cond_destroy(pthread_cond_t *cond)|$
->[!warning] sulle slide non c’è scritto neanche cosa sono queste strutture viene solo vagamente spiegato come si usano il che è fo
+>[!info] sfilza di funzioni per le condition
+>- $\verb |int pthread_cond_init(pthread_cond_t *cond, pthread_condattr_t *cond_attr)|$
+>	- inzializza una condition variable su `cond` con `attr` attributi. se `attr=NULL`, vegono utilizzati gli attributi di default. ritorna `0` in caso di successo, altrimenti codice di errore
+>- $\verb |int pthread_cond_signal(pthread_cond_t *cond)|$
+>	- risveglia **uno solo** dei thread in attesa sulla condition variable `cond`
+>- $\verb |int pthread_cond_broadcast(pthread_cond_t *cond)|$
+>	- risveglia tutti i thread in attesa su `cond`
+>- $\verb |int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex)|$
+>	- fa unlock del mutex `mutex` associato alla condizione `cond`, e attende che un altro thread esegua `pthread_cond_signal` sulla condizione.
+>- $\verb |int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)|$
+>	- come `pthread_cond_wait`, ma attende al massimo fino a `abstime`. ritorna `ETIMEOUT` se scade il tempo
+>- $\verb |int pthread_cond_destroy(pthread_cond_t *cond)|$:
+>	- distrugge una condition variable, liberando le risorse. ritorna `0` se successful, altrimenti un errore se ci sono ancora thread in attesa
+
+>[!warning] sulle slide non c’è scritto neanche cosa sono queste strutture viene solo vagamente spiegato come si usano il che è fuori di testa
+>quando sarà necessarie usarle aggiungerò più roba i need to move on from os2 rn im sorry
