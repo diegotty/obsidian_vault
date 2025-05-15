@@ -1,7 +1,7 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-14T09:08
+updated: 2025-05-15T07:16
 completed: false
 ---
 # multithreading
@@ -130,3 +130,12 @@ in linux sono coesistite tre diverse implementazioni:
 >
 >**oggi in linux si utilizza esclusivamente `NPTL` !**
 
+## implementazione
+vediamo ora l’implementazione di threads in `pthreads`
+### $\verb |int pthread_create(ptid, pattr, start, arg)|$
+la funzione `pthread_create()` crea un nuovo thread
+- `ptid`: puntatore alla variabile di tipo `pthread_t` che conterrà l’identificatore del nuovo thread (`tid)
+- `pattr`: puntatore ad una variabile contenente attributi (flag) per la creazione del thread
+- `start`: funzione inizialmente eseguita dal thread, con prototipo `void *start(void *)`
+- `arg`: puntatore passato come argomento a `start()`
+### 
