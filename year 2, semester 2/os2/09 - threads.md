@@ -1,7 +1,7 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T07:21
+updated: 2025-05-15T08:16
 completed: false
 ---
 # multithreading
@@ -140,8 +140,17 @@ la funzione `pthread_create()` crea un nuovo thread:
 - `arg`: puntatore passato come argomento a `start()`
 ### $\verb |void pthread_exit(void *value_ptr)|$
 la funzione `pthread_exit()` termina l’esecuzione del thread che la invoca
+- una volta terminato il thread, viene ritornato il valore in `value_ptr`
 - la funzione viene implicitamente invocata quando la funzione iniziale `start` del thread termina
 - se viene eseguita dall’ultimo thread di un processo, il processo stesso termina con una `exit(0)`(syscall exit ?)
 ### $\verb |int pthread_join (pthread_t tid, void *pret)|$
 la funzione `pthread_join()` attende la conclusione di un thread:
 - `tid` è l’identificatore del thread di cui si vuole attendere la terminazione
+- `pret` è l’eventuale indirizzo di una variabile che riceverà il valore passato dal thread terminato in `pthread_exit()` (quindi è possibile ottenere il valore `value_ptr` di un thread terminato con `pthread_exit()`)
+**non esiste un modo di indicare che si vuole attendere la terminazione di un thread qualunque :(**
+### terminazione di un processo multithread
+in unix, un processo viene terminato con la syscall `exit()`. in **linux** invece, le cose sono più complicate:
+- la syscall `_exit` termina un singolo thread, mentre la syscall `exit_group` termina tutti i thread di un processo
+- la funzione wrapper di C `_exit()` (**in linux**) esegue la syscall `exit_group`, non `_exit` !! (quindi termina tutti i thread del processo)
+- la funzione di libreria (man 3) `exit()` invece, invoca, alla fine, la funzione wrapper `_exit()`, e come ab
+
