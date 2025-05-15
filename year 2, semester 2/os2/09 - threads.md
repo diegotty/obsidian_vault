@@ -1,7 +1,7 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T07:16
+updated: 2025-05-15T07:21
 completed: false
 ---
 # multithreading
@@ -133,9 +133,15 @@ in linux sono coesistite tre diverse implementazioni:
 ## implementazione
 vediamo ora l’implementazione di threads in `pthreads`
 ### $\verb |int pthread_create(ptid, pattr, start, arg)|$
-la funzione `pthread_create()` crea un nuovo thread
+la funzione `pthread_create()` crea un nuovo thread:
 - `ptid`: puntatore alla variabile di tipo `pthread_t` che conterrà l’identificatore del nuovo thread (`tid)
 - `pattr`: puntatore ad una variabile contenente attributi (flag) per la creazione del thread
 - `start`: funzione inizialmente eseguita dal thread, con prototipo `void *start(void *)`
 - `arg`: puntatore passato come argomento a `start()`
-### 
+### $\verb |void pthread_exit(void *value_ptr)|$
+la funzione `pthread_exit()` termina l’esecuzione del thread che la invoca
+- la funzione viene implicitamente invocata quando la funzione iniziale `start` del thread termina
+- se viene eseguita dall’ultimo thread di un processo, il processo stesso termina con una `exit(0)`(syscall exit ?)
+### $\verb |int pthread_join (pthread_t tid, void *pret)|$
+la funzione `pthread_join()` attende la conclusione di un thread:
+- `tid` è l’identificatore del thread di cui si vuole attendere la terminazione
