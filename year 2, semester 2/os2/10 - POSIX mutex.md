@@ -1,7 +1,7 @@
 ---
 related to: "[[09 - threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T09:31
+updated: 2025-05-15T09:46
 completed: false
 ---
 ## flussi di esecuzione concorrente
@@ -33,17 +33,34 @@ la funzione `pthread_mutex_init()` inizializza un mutex e imposta gli attributi 
 	- `PTHREAD_MUTEX_ERRORCHECK`: genera un errore in caso il thread cerchi di mettere un lock su un mutex sul quale già detiene un lock, mentre un unlock ritorna errore se il thread non aveva fatto un lock precedentemente (sulla sezione critica su sui si sta provando a fare l’unlock)
 
 >[!info] altre funzioni per mutex
-$\verb |int pthread_mutex_lock(pthread_mutex_t *mutex)|$: acquisisce il mutex, se non è già bloccato da un altro thread, altrimenti rimante in attesa. ritorna `0` in caso di successo
-$\verb |int pthread_mutex_trylock(pthread_mutex_t *mutex)|$: `pthread_mutex_lock` non bloccante: in caso il mutex sia bloccato, non aspetta, ma ritorna il valore `BUSY`
-$\verb |int pthread_mutex_unlock(pthread_mutex_t *mutex)|$:  rilascia il mutex precedentemente acquisito. ritorna `0` in caso di succeso
-$\verb |int pthread_mutex_destroy(pthread_mutex_t *mutex)|$
+>- $\verb |int pthread_mutex_lock(pthread_mutex_t *mutex)|$:
+>	- acquisisce il mutex, se non è già bloccato da un altro thread, altrimenti rimante in attesa. ritorna `0` in caso di successo
+> - $\verb |int pthread_mutex_trylock(pthread_mutex_t *mutex)|$:
+> 	- `pthread_mutex_lock` non bloccante: in caso il mutex sia bloccato, non aspetta, ma ritorna il valore `BUSY`
+> - $\verb |int pthread_mutex_unlock(pthread_mutex_t *mutex)|$:
+> 	- rilascia il mutex precedentemente acquisito. ritorna `0` in caso di successo, altrimenti il valore di ritorno rappresenta il corrispettivo errore
+> - $\verb |int pthread_mutex_destroy(pthread_mutex_t *mutex)|$:
+> 	- distrugge un mutex, liberando le risorse. ritorna `0` in caso di successo, altrimenti ritorna `-1` e viene impostato `errno`
 ## barriera
 la **barriera** è un metodo di sincronizzazione per processi o thread. fa sì che un set di processi o thread possa continuare il proprio flusso di esecuzione solo se tutti hanno raggiunto la barriera
 ### $\verb |int pthread_barrier_init(pthread_barrier_t *restrict barrier, const pthread_barrierattr_t *restrict attr, unsigned int count)|$
 la funzione `pthread_barrier_int` crea una nuova barriera con attributi `attr`, a cui parteciperanno `count` thread
+- se `attr=NULL`, viene impostato l’attributo di default
 
 >[!info] altre funzioni per barriere
-$\verb |int pthread_mutex_lock(pthread_mutex_t *mutex)|$
-$\verb |int pthread_mutex_trylock(pthread_mutex_t *mutex)|$
-$\verb |int pthread_mutex_unlock(pthread_mutex_t *mutex)|$
-$\verb |int pthread_mutex_destroy(pthread_mutex_t *mutex)|$
+>- $\verb |int pthread_barrier_destroy(pthread_barrier_t *barrier)|$:
+>	- ogni thread che invoca questo comando si blocca fino a che `count` thread non sono arrivati alla barriera. l’ultimo thread ad arrivare alla barriera riceverà il valore `PTHREAD_BARRIER_SERIAL_THREAD` (gli altri riceveranno `0`)
+>- $\verb |int pthread_barrier_wait(pthread_barrier_t *barrier)|$:
+>	- distrugge una barriera, liberando le risorse. ritorna `0` in caso di esito positivo, altrimenti viene restituito un numero per indicare l’errore
+## condition
+la **condition** è un metodo di sincronizzazione che permette ad un thread di sospendere la sua esecuzione finchè un predicato su di un dato condiviso non è verificato
+>[!warning] imp
+una variabile condition deve essere sempre associata ad un mutex per evitare una race condition dove un thread fa una `wait` su una condizione, ed un altro thread invia un `signal` alla condizione (e sblocca la condizione) prima che il primo thread si metta in attesa
+
+$\verb |int pthread_cond_init(pthread_cond_t *cond, pthread_condattr_t *cond_attr)|$
+$\verb |int pthread_cond_signal(pthread_cond_t *cond)|$
+$\verb |int pthread_cond_broadcast(pthread_cond_t *cond)|$
+$\verb |int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex)|$
+$\verb |int pthread_cond_timedwait(pthread_cond_t *cond, pthread_mutex_t *mutex, const struct timespec *abstime)|$
+$\verb |int pthread_cond_destroy(pthread_cond_t *cond)|$
+>[!warning] sulle slide non c’è scritto neanche cosa sono queste strutture viene solo vagamente spiegato come si usano il che è fo
