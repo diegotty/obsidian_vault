@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T17:01
+updated: 2025-05-15T17:52
 completed: false
 ---
 >[!example] problema
@@ -145,8 +145,16 @@ l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta 
 $$
 O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
 $$
+in cui $$
 
+$$
 
 >[!info] soluzione
 >- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
 >- **inserisco uno `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1] == 0 && sol[i-1][j] == 0` (con `i > 0, j > 0`)
+
+>[!example] problema: permutazioni
+progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` da `n-1`
+
+
+>[!info] soluzione
