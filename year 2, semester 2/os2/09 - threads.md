@@ -1,7 +1,7 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T08:25
+updated: 2025-05-15T08:46
 completed: false
 ---
 # multithreading
@@ -159,4 +159,28 @@ il tipo `pthread_attr_t` viene usato per definire gli attributi di un thread all
 > - `scope`: determina l’ambito di competizione del thread riguardo le risorse di sistema. i suoi valori possono essere:
 > 	- `PTHREAD_SCOPE_PROCESS`: compete solo con i thread dello stesso processo (default value)
 >	- `PTHREAD_SCOPE_SYSTEM`: il thread compete con tutti i thread del sistema
->- `detachstate`: determina se il thread è **joinabile** (se è possibile invocare la funzione `pthread_join()` su questo thread) oppure **detached**
+>- `detachstate`: determina se il thread è **joinabile** (se è possibile invocare la funzione `pthread_join()` su questo thread) oppure **detached** (le sue risorse vengono liberate automaticamente alla terminazione e non è joinable)
+> 	- default valu è `PTHREAD_CREATE_JOINABLE`
+>- `stackaddr`: permette di specificare un indirizzo di memoria per lo stack del thread. se impostato a `NULL` (default value), il sistema alloca automaticamente
+>- `stacksize`: specifica la dimensione dello stack del thread. default è 1 megabyte
+> - `priority`: spcifica la priorità del thread. di default eredita la priorità del padre
+>- `intheritsched`: indica se il thread eredita la politica di scheduling del padre. default è `PTHREAD_INHERIT_SCHED`, altrimenti con `PTHREAD_EXPLICIT_SCHED` viene usata la politica definita in:
+>- `schedpolicy`: specifica la politica di scheduling per il thread
+> 	- default value è `SCHED_OTHER`. esistono anche `SCHED_FIFO, SCHED_RR`
+>
+>esiste una famiglia di funzioni di nome `pthread_attr_nomefunzione`, che permettono di modificare gli attributi dell’oggetto di tipo `pthread_attr_t`
+> - es: `pthread_attr_setdetachstate(), pthread_attr_setintheritsched(), pthread_att, setscope()`, etc…
+## implementazione di thread in Linux
+([[threads#thread in Linux|già studiata circa !]])
+l’implementazione dei thread in Linux è basata sul concetto di **LWP** (**light weight process**), cioè processo leggero: un processo che condivide alcune risorse selezionate con il proprio genitore
+- per creare LWP, si usa la funzione di libreria `clone()`, con diversi possibili flag `CLONE_FLAG`:
+	- `CLONE_FILES`: vengono condivisi i file descriptor
+	- `CLONE_FS`: viene condiviso il file system (es: working dir)
+	- `CLONE_SIGHAND`: viene condiviso il gestore dei segnali
+	- `CLONE_THREAD`: il thread fa parte dello stesso processo 
+	- `CLONE_VM`: viene condiviso lo spazio di memoria
+>[!tip] yippie
+>- la funzione `fork()` è uguale alla funzione `clone()` a cui non viene passato alcuno dei flag appena elencati
+>- la funzione `pthread_create()` è uguale alla syscall `clone()`se gli vengono passati tutti i flag elencati
+### $\verb |int clone(start, stack, flags, arg, ...)|$
+come abbiamo detto, 
