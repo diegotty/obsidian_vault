@@ -1,9 +1,27 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T08:46
+updated: 2025-05-15T08:52
 completed: false
 ---
+>[!index]
+>- [multithreading](#multithreading)
+>	- [vantaggi del multithreading](#vantaggi%20del%20multithreading)
+>	- [implementazione di applicazioni multithread](#implementazione%20di%20applicazioni%20multithread)
+>		- [modello “da molti a 1”](#modello%20%E2%80%9Cda%20molti%20a%201%E2%80%9D)
+>		- [modello “da 1 a 1”](#modello%20%E2%80%9Cda%201%20a%201%E2%80%9D)
+>		- [modello “da molti a molti”](#modello%20%E2%80%9Cda%20molti%20a%20molti%E2%80%9D)
+>	- [librerie dei thread](#librerie%20dei%20thread)
+>		- [pthreads](#pthreads)
+>	- [implementazione](#implementazione)
+>		- [$\verb |int pthread_create(ptid, pattr, start, arg)|$](#$%5Cverb%20%7Cint%20pthread_create(ptid,%20pattr,%20start,%20arg)%7C$)
+>		- [$\verb |void pthread_exit(void *value_ptr)|$](#$%5Cverb%20%7Cvoid%20pthread_exit(void%20*value_ptr)%7C$)
+>		- [$\verb |int pthread_join (pthread_t tid, void *pret)|$](#$%5Cverb%20%7Cint%20pthread_join%20(pthread_t%20tid,%20void%20*pret)%7C$)
+>		- [terminazione di un processo multithread](#terminazione%20di%20un%20processo%20multithread)
+>	- [implementazione di thread in Linux](#implementazione%20di%20thread%20in%20Linux)
+>		- [$\verb |int clone(start, stack, flags, arg, ...)|$](#$%5Cverb%20%7Cint%20clone(start,%20stack,%20flags,%20arg,%20...)%7C$)
+>		- [$\verb |int clone(flags, stack)|$](#$%5Cverb%20%7Cint%20clone(flags,%20stack)%7C$)
+
 # multithreading
 in un’**applicazione tradizionale**, il programmatore definisce un unico flusso di esecuzione delle istruzioni, che segue la logica del programma. quando il flusso di esecuzione arriva ad eseguire la funzione `exit()`, l’applicazione termina
 le **applicazioni multithread** consentono al programmatore di definire diversi flussi di esecuzione: 
@@ -183,4 +201,13 @@ l’implementazione dei thread in Linux è basata sul concetto di **LWP** (**lig
 >- la funzione `fork()` è uguale alla funzione `clone()` a cui non viene passato alcuno dei flag appena elencati
 >- la funzione `pthread_create()` è uguale alla syscall `clone()`se gli vengono passati tutti i flag elencati
 ### $\verb |int clone(start, stack, flags, arg, ...)|$
-come abbiamo detto, 
+come abbiamo detto, la funzione `clone()` è simile alla funzione `pthread_create()`
+- `start`: funzione inizialmente eseguita dal LWP
+- `stack`: indirizzo della cima dello stack UM del nuovo LWP
+- `flags`: flags `CLONE_FLAG`
+- `arg`: l’argomento passato a `start()`
+la funzione di libreria `clone()` (questa) si basa sulla syscall `clone`, che ha una sintassi diversa:
+### $\verb |int clone(flags, stack)|$
+la syscall `clone` è simile alla syscall `fork()`:
+- `flags`: i flag `CLONE_FLAG`
+- `stack`: l’indirizzo della cima dello stack UM del nuovo LWP. se è nullo, il figlio utilizza una copia dello stack del padre
