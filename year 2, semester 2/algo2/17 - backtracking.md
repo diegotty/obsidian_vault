@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T12:16
+updated: 2025-05-15T12:31
 completed: false
 ---
 abbiamo fatto:
@@ -43,33 +43,33 @@ progettare un algoritmo che prende come parametro un intero $n$ e **stampa** tut
 
 >[!example] problema (vincolo sugli zeri)
 progettare un algoritmo che prende come parametro due interi $n$ e $k$, con $0\leq k\leq n$, e stampa tutte le stringhe binarie lunghe $n$ che contengono al più $k$ `1`
-
->[!info] soluzione
->è facile modificare la soluzione di sopra per ottenere una soluzione in $Theta(2^n \cdot n)$ (basta aggiungere una condizione che controlla il numero di `1`)
-un buon algoritmo, però, dovrebbe avere una complessità proporzionale alle stringhe da stampare, vale a dire $O(\text{(stringhe da stampare)}\cdot n)$
-si calcola che le stringhe da stampare sono 
->$$
-\sum_{i=0}^k \binom{n}{i} \approx n^{k+1}
->$$
-introduciamo allora una **funzione di taglio**, che ci permette di **non** esplorare i rami degli alberi le cui fogli non ci interessano ! in modo da ottenere (per esempio) questo tipo di alberi
-![[Pasted image 20250515120442.png]]
-in questo caso, ci basta controllare il numero di `1` presenti nella stringa a mano a mano che aggiungiamo le cifre, in modo tale di evitare di non sprecare tempo in chiamate inutili
-
-```python
-def bin_string1(k,n, sol = []):
-	if len(sol) == n:
-		print(sol)
-	if(k > 0):
-		sol.append(1)
-		bin_string(k-1, n, sol)
-		sol.pop()
-	sol.append(0)
-	bin_string(k, n, sol)
-	sol.pop()
-```
-testando i tempi di calcolo delle due funzioni, essi sono molto diversi: la soluzione naive impiega 18,1s, mentre `bin_string1()` impiega 0,002s. truly impressive !
-la complessità dell’algoritmo è:
-$n^k$
+>>[!info] soluzione
+>>è facile modificare la soluzione di sopra per ottenere una soluzione in $Theta(2^n \cdot n)$ (basta aggiungere una condizione che controlla il numero di `1`)
+>un buon algoritmo, però, dovrebbe avere una complessità proporzionale alle stringhe da stampare, vale a dire $O(\text{(stringhe da stampare)}\cdot n)$
+>si calcola che le stringhe da stampare sono 
+>>$$
+>\sum_{i=0}^k \binom{n}{i} \approx n^{k}
+>>$$
+>>introduciamo allora una **funzione di taglio**, che ci permette di **non** esplorare i rami degli alberi le cui fogli non ci interessano ! in modo da ottenere (per esempio) questo tipo di alberi
+>>![[Pasted image 20250515120442.png]]
+>>in questo caso, ci basta controllare il numero di `1` presenti nella stringa a mano a mano che aggiungiamo le cifre, in modo tale di evitare di non sprecare tempo in chiamate inutili
+>>```python
+>>def bin_string1(k,n, sol = []):
+>>	if len(sol) == n:
+>>		print(sol)
+>>	if(k > 0):
+>>		sol.append(1)
+>>		bin_string(k-1, n, sol)
+>>		sol.pop()
+>>	sol.append(0)
+>>	bin_string(k, n, sol)
+>>	sol.pop()
+>>```
+>>testando i tempi di calcolo delle due funzioni, essi sono molto diversi: la soluzione naive impiega 18,1s, mentre `bin_string1()` impiega 0,002s. truly impressive !
+>>la complessità dell’algoritmo è:
+>>$$
+>>n^{k} \cdot O(n) + n^{k+1}\cdot O(1) = O(n^{k+1}) + O(n^{k+1}) = O(n^{k+1})
+>>$$
 
 >[!warning] un modo semplice per calcolare il tempo dei propri **progammini** :)
 usare la libreria `time` di pythons
@@ -83,3 +83,14 @@ $$
 O(S(n)\cdot g(n) + S(n)\cdot h\cdot f(n))
 $$
 in quanto i nodi dell’albero che verranno effetivamente generati saranno $O(S(n)\cdot h)$, in quanto ogni nodo generato apparterrà ad un cammino che parte dalla radice e arriva ad una delle $S(n)$ foglie da enumerare (e worst case ogni foglia ha un cammino con tutti nodi diversi)
+>[!example] problema (esame settembre 2020)
+progettare un algoritmo che, dato un intero $n$, stampi tutte le stringhe di lunghezza $n$ sull’alfabeto dei simboli $\{a,b,c\}$ in cui il numero delle $b$ supera quello di ciascuno degli altri due simboli
+
+>[!info] soluzione
+l’algoritmo deve avere complessità proporzionale alle stringhe da stampare
+risolviamo l’esercizio allo stesso modo dell’ultimo esercizio precedente, ma teniamo traccia di 2 cose: il numero di $a$ e il numero di $c$ (in questo modo ci possiamo ricavare il numero di $b$)
+>
+>utilizziamo quindi una semplice funzione di taglio in cui:
+>- **inseriamo il simbolo $b$**: sempre, in quanto può sempre essere inserito
+>- **inseriamo il simbolo $a$**: solo se $n$ 
+>- **inseriamo il simbolo $c$**:
