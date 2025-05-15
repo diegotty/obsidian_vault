@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T16:22
+updated: 2025-05-15T16:38
 completed: false
 ---
 >[!example] problema
@@ -123,5 +123,20 @@ progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte l
 sappiamo che per un $2^{n \cdot n}$
 ```python
 def all_matrixes():
-	sol = [[]*n for _ in range(n)]
+	sol = [[0]*n for _ in range(n)]
+	es1(n, sol)
+
+def es1(n, sol, i = 0, j = 0):
+	if i == n: # non n-1 !!!!!!
+		for k in range(n):
+			print(sol[k])
+		print()
+		return
+	sol[i][j] = 0
+	i1, j1 = i, j+1
+	if j1 == n:
+		i1, j1 = i+1, 0
+	es1(n, sol, i1, j1)
+	sol[i][j] = 1
+	es1(n, sol, i1, j1)
 ```
