@@ -1,15 +1,9 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T12:42
+updated: 2025-05-15T16:22
 completed: false
 ---
-abbiamo fatto:
-es1
-es2
-es3 ?
-esame ottobre 2020
-esame settembre 2020
 >[!example] problema
 progettare un algoritmo che prende come parametro un intero $n$ e **stampa** tutte le stringhe binarie lunghe $n$
 >>[!info] soluzione
@@ -120,3 +114,14 @@ O(D(n)\cdot h\cdot f(n) + D(n) \cdot g(n))
 >>- $f(n) = O(1)$
 >>- $g(n) = O(n)$
 >>quindi il costo di `abc()`  è $\Theta (n\cdot D(n))$
+
+
+>[!example] problema
+progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$
+
+>[!info] soluzione
+sappiamo che per un $2^{n \cdot n}$
+```python
+def all_matrixes():
+	sol = [[]*n for _ in range(n)]
+```
