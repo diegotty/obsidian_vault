@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T16:58
+updated: 2025-05-15T17:01
 completed: false
 ---
 >[!example] problema
@@ -148,5 +148,5 @@ $$
 
 
 >[!info] soluzione
-- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
-- **inserisco uno `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1]` 
+>- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
+>- **inserisco uno `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1] == 0 && sol[i-1][j] == 0` (con `i > 0, j > 0`)
