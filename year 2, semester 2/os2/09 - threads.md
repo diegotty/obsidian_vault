@@ -1,7 +1,7 @@
 ---
 related to: "[[threads]]"
 created: 2025-03-02T17:41
-updated: 2025-05-15T08:16
+updated: 2025-05-15T08:25
 completed: false
 ---
 # multithreading
@@ -152,5 +152,11 @@ la funzione `pthread_join()` attende la conclusione di un thread:
 in unix, un processo viene terminato con la syscall `exit()`. in **linux** invece, le cose sono più complicate:
 - la syscall `_exit` termina un singolo thread, mentre la syscall `exit_group` termina tutti i thread di un processo
 - la funzione wrapper di C `_exit()` (**in linux**) esegue la syscall `exit_group`, non `_exit` !! (quindi termina tutti i thread del processo)
-- la funzione di libreria (man 3) `exit()` invece, invoca, alla fine, la funzione wrapper `_exit()`, e come ab
-
+- la funzione di libreria (man 3) `exit()` invece, invoca, alla fine, la funzione wrapper `_exit()`, e come abbiamo visto, eseguire un `return` in `main()` è equivalente ad invocare la funzione di libreria `exit()` (quindi termina tutti i thread)
+invece, la funzione di libreria `pthread_exit()` invoca direttamente la syscall `_exit` (quindi termina un solo thread)
+>[!info] struttura di `pthread_attr_t`
+il tipo `pthread_attr_t` viene usato per definire gli attributi di un thread alla sua creazione. questa struttura consente di personalizzare il comportamento dei thread:
+> - `scope`: determina l’ambito di competizione del thread riguardo le risorse di sistema. i suoi valori possono essere:
+> 	- `PTHREAD_SCOPE_PROCESS`: compete solo con i thread dello stesso processo (default value)
+>	- `PTHREAD_SCOPE_SYSTEM`: il thread compete con tutti i thread del sistema
+>- `detachstate`: determina se il thread è **joinabile** (se è possibile invocare la funzione `pthread_join()` su questo thread) oppure **detached**
