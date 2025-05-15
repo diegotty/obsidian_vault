@@ -1,6 +1,6 @@
 ---
 created: 2025-05-04T11:08
-updated: 2025-05-13T22:26
+updated: 2025-05-15T12:43
 ---
 [[00 - algoritmi efficienti]]
 [[01 - grafi]]
@@ -19,6 +19,7 @@ updated: 2025-05-13T22:26
 [[14 - algoritmi greedy]]
 [[15 - divide et impera]]
 [[16 - programmazione dinamica]]
+[[17 - backtracking]]
 ## greedy
 [[09 - algoritmo di dijkstra]]
 [[10 - spanning tree]]

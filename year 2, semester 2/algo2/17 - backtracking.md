@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T12:31
+updated: 2025-05-15T12:42
 completed: false
 ---
 abbiamo fatto:
@@ -85,12 +85,38 @@ $$
 in quanto i nodi dell’albero che verranno effetivamente generati saranno $O(S(n)\cdot h)$, in quanto ogni nodo generato apparterrà ad un cammino che parte dalla radice e arriva ad una delle $S(n)$ foglie da enumerare (e worst case ogni foglia ha un cammino con tutti nodi diversi)
 >[!example] problema (esame settembre 2020)
 progettare un algoritmo che, dato un intero $n$, stampi tutte le stringhe di lunghezza $n$ sull’alfabeto dei simboli $\{a,b,c\}$ in cui il numero delle $b$ supera quello di ciascuno degli altri due simboli
-
->[!info] soluzione
-l’algoritmo deve avere complessità proporzionale alle stringhe da stampare
-risolviamo l’esercizio allo stesso modo dell’ultimo esercizio precedente, ma teniamo traccia di 2 cose: il numero di $a$ e il numero di $c$ (in questo modo ci possiamo ricavare il numero di $b$)
->
->utilizziamo quindi una semplice funzione di taglio in cui:
->- **inseriamo il simbolo $b$**: sempre, in quanto può sempre essere inserito
->- **inseriamo il simbolo $a$**: solo se $n$ 
->- **inseriamo il simbolo $c$**:
+>>[!info] soluzione
+>l’algoritmo deve avere complessità proporzionale alle stringhe da stampare
+>risolviamo l’esercizio allo stesso modo dell’ultimo esercizio precedente, ma teniamo traccia di 2 cose: il numero di $a$ e il numero di $c$ (in questo modo ci possiamo ricavare il numero di $b$). quindi rispettivamente `n_a` e `n_c`
+>>
+>>utilizziamo quindi una semplice funzione di taglio in cui:
+>>- **inseriamo il simbolo $b$**: sempre, in quanto può sempre essere inserito
+>>- **inseriamo il simbolo $a$**: solo se `n_a + 1 < n - (n_c + n_a + 1) && n_c < n - (n_c + n_a + 1)` 
+>>- **inseriamo il simbolo $c$**:  solo se `n_c + 1 < n - (n_a + n_c + 1) && n_a < n - (n_c + n_a + 1)`
+>>```python
+>>def abc(n, n_a = 0, n_c = 0, sol = []):
+>>	if len(sol) == n:
+>>		print(sol)
+>>		return
+>>	sol.append(b)
+>>	abc(n, n_a, n_c, sol)
+>>	sol.pop()
+>>	if n_a + 1 < n - (n_c + n_a + 1) and n_c < n - (n_c + n_a + 1):
+>>		sol.append(a)
+>>		abc(n, n_a + 1, n_c, sol)
+>>		sol.pop()
+>>	if n_c + 1 < n - (n_a + n_c + 1) and n_a < n - (n_a + n_c + 1):
+>>		sol.append(c)
+>>		abc(n, n_a, n_c + 1, sol)
+>>		sol.pop()
+>>```
+>>l’albero prototto da questo algoritmo gode della proprietà che **un nodo viene generato solo se porta ad una foglia da stampare**, quindi la sua complessità è 
+>>$$
+O(D(n)\cdot h\cdot f(n) + D(n) \cdot g(n))
+>>$$
+>con
+>>- $D(n)$ è il numero di stringhe da stampare
+>>- $h = n$
+>>- $f(n) = O(1)$
+>>- $g(n) = O(n)$
+>>quindi il costo di `abc()`  è $\Theta (n\cdot D(n))$
