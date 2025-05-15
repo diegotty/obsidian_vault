@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T16:38
+updated: 2025-05-15T16:58
 completed: false
 ---
 >[!example] problema
@@ -140,3 +140,13 @@ def es1(n, sol, i = 0, j = 0):
 	sol[i][j] = 1
 	es1(n, sol, i1, j1)
 ```
+
+l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
+$$
+O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
+$$
+
+
+>[!info] soluzione
+- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
+- **inserisco uno `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1]` 
