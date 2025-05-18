@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T23:55
+updated: 2025-05-19T00:40
 completed: false
 ---
 # reti wireless
@@ -136,14 +136,13 @@ dopo aver atteso un tempo IFS, se il canale è ancora libero, l’host attende u
 ![[Pasted image 20250518150051.png]]
 
 ### RTS/CTS
-il problema dell’hidden terminal non viene risolto con IFS e finestra di contesa: è necessario un meccanismo di prenotazione del canale:
-- **request-to-send** (**RTS**) e clear-to-send** (**CTS**)
+il problema dell’hidden terminal non viene risolto con IFS e finestra di contesa: è necessario un meccanismo di prenotazione del canale: **request-to-send** (**RTS**) e **clear-to-send** (**CTS**)
 >[!info] RTS e CTS
 ![[Pasted image 20250518155121.png]]
 >- quando una stazione invia un frame RTS, include la durata di tempo in cui occuperà il canale per trasmettere il frame e ricevere l’`ACK`
 >- questo tempo viene incluso anche nel CTS. in questo modo, le stazioni che sono influenzate da tale trasmissione avviano un timer chiamato **NAV** che indica quanto tempo devono attendere prima di eseguire il sensing del canale
 
-se il mittente non riceve CTS, allora assume che c’è stata una collisione e riprova dopo un tempo di backoff
+se il mittente non riceve CTS, allora assume che c’è stata una collisione durante l’handshaking e riprova dopo un tempo di backoff
 #### problema della stazione esposta
 può capitare che una stazione si astenga dall’usare il canale anche se potrebbe trasmettere
 >[!example] problema della stazione esposta
@@ -164,4 +163,7 @@ il mittente non può aspettare l’`ACK`all’inifinito: imposta quindi un timer
 
 >[!info] frame control
 ![[Pasted image 20250518161201.png]]
-j
+una LAN wireless ha 3 categorie di frame:
+>- **frame di gestione** (`00`): usati per le comunicazioni iniziali tra stazioni e punti di accesso
+>- **frame di controllo** (`01`): si usano per accedere al canale e dare riscontro (impostando il **subtype** a : `1011` (RTS), `1100` (CTS), `1101` (`ACK`))
+>- **frame di dati** (`10`): vengono usati per trasporta
