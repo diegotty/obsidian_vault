@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-05-18T12:54
+updated: 2025-05-18T19:51
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -20,3 +20,4 @@ updated: 2025-05-18T12:54
 [[16 - routing unicast, broadcast, multicast. IPv6]]
 [[17 - livello di collegamento]]
 [[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]
+[[19 - LAN wireless]]

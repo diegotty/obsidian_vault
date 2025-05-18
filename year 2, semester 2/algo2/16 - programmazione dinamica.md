@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-18T19:38
+updated: 2025-05-18T19:50
 completed: 
 ---
 >[!index]
@@ -541,19 +541,19 @@ dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire
 
 >[!example]+ problema (lezione 16/05/2025)
 progettare un algoritmo di programmazione dinamica che, data una sequenza $A$ di $n$ interi positivi ed un intero $k$, in tempo $O(n\cdot k)$, calcoli il numero di sottosequenze di $A$ la somma dei cui elementi sia $k$
-
->[!info]- soluzione
-
-```python
-def sottosequenze_somma(A, k)
-	 n = len(A)
-	 T = [0]*(k+1)
-	 for i in range(1, k+1):
-		 sum = 0
-		 for j in range(n):
-			 if j < i:
-				 sum += T[i-j]
-			else if j == i:
-				sum += 1
-	return T[n]
-```
+>>[!info]- soluzione
+>non testata nn ci sono test case spero funzioni e non so scrivere la ricorrenza fuck fuck fuck fuck
+>>```python
+>>def sottosequenze_somma(A, k):
+>>	 n = len(A)
+>>	 T = [0]*(k+1)
+>>	 for i in range(1, k+1):
+>>		 sum = 0
+>>		 for j in range(n):
+>>			 if A[j] < i:
+>>				 sum += T[i-A[j]]
+>>			else if A[j] == i:
+>>				sum += 1
+>>		T[i] = sum
+>>	return T[k]
+>>```
