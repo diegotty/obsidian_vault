@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T15:35
+updated: 2025-05-18T15:44
 completed: false
 ---
 # reti wireless
@@ -125,8 +125,17 @@ dopo aver atteso un tempo IFS, se il canale è ancora libero, l’host attende u
 - l’host sceglie $R$ random in `[0, CW]`
 - `while R > 0:`
 	ascolta il canale per uno slot (il tempo è suddiviso in slot e ad ogni slot si esegue il sensing del canale)
-	se il canale è libero per la durata dello slot: `R = R -1`
-	
+	se il canale è libero per la durata dello slot: `R = R -1`(conto all’indietro: backoff), altrimenti, se il canale è occupato durante il sensing, interrompe il timer e aspetta che il canale si liberi (e riavvia il timer)
+>[!info]
+![[Pasted image 20250518153630.png]]
 
->[!info] rappresentazione
+>[!info]- riassunto
+![[Pasted image 20250518153758.png]]
+
+>[!info]- rappresentazione
 ![[Pasted image 20250518150051.png]]
+
+### RTS/CTS
+il problema dell’hidden terminal non viene risolto con IFS e finestra di contesa: è necessario un meccanismo di prenotazione del canale:
+- **request-to-send** (**RTS**):
+- **clear-to-send** (**CTS**):
