@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T09:33
+updated: 2025-05-18T09:48
 completed: false
 ---
 >[!example]+ problema
@@ -79,7 +79,7 @@ $$
 in quanto i nodi dell’albero che verranno effetivamente generati saranno $O(S(n)\cdot h)$, in quanto ogni nodo generato apparterrà ad un cammino che parte dalla radice e arriva ad una delle $S(n)$ foglie da enumerare (e worst case ogni foglia ha un cammino con tutti nodi diversi)
 >[!example]+ problema (esame settembre 2020)
 progettare un algoritmo che, dato un intero $n$, stampi tutte le stringhe di lunghezza $n$ sull’alfabeto dei simboli $\{a,b,c\}$ in cui il numero delle $b$ supera quello di ciascuno degli altri due simboli
->>[!info] soluzione
+>>[!info]- soluzione
 >l’algoritmo deve avere complessità proporzionale alle stringhe da stampare
 >risolviamo l’esercizio allo stesso modo dell’ultimo esercizio precedente, ma teniamo traccia di 2 cose: il numero di $a$ e il numero di $c$ (in questo modo ci possiamo ricavare il numero di $b$). quindi rispettivamente `n_a` e `n_c`
 >>
@@ -118,7 +118,7 @@ O(D(n)\cdot h\cdot f(n) + D(n) \cdot g(n))
 
 >[!example]+ problema
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$
->>[!info] soluzione
+>>[!info]- soluzione
 >sappiamo che le matrici da stampare sono $2^{n \cdot n}$ (basti pensare alla matrici come stringhe di dimensione $n \cdot n$)
 >>l’albero di ricorsione è binario e di altezza $n^2$ (un livello per ogni elemento della matrice), e ha $2^{n^2}-1$ nodi interni e $2^{n^2}$ foglie foglie (per un totale di $2^{n^2+1}-1$ nodi)
 >> - ciascun nodo interno richiede tempo $O(1)$
@@ -164,12 +164,21 @@ ricordiamo, che, in un albero binario completo di altezza $n$:
 (e un albero con solo la radice ha altezza 0)
 >
 
+
+>[!example] problema
+progettare un algoritmo che prende un intero $n$ e stampa tutte le matrici binarie di dimensioni $n\times n$, in cui le righe e le colonne risultano ordinate in modo non-decrescente
+la complessità dell’algoritmo deve essere $O(n^2S(n))$ dove $S(n)$ è il numero di matrici da stampare
+
 >[!info] soluzione
->- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
->- **inserisco uno `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1] == 0 && sol[i-1][j] == 0` (con `i > 0, j > 0`)
+>- **inserisco uno `0`**: sempre, in quanto posso sempre inserire un `0`
+>- **inserisco un `1`**: posso inserire un `1` nella cella `sol[i][j]` solo se sol`[i][j-1] == sol[i-1][j] == sol[i-1][j-1] 0` (con `i > 0, j > 0`)
 
 >[!example] problema: permutazioni
 progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` da `n-1`
 
 
 >[!info] soluzione
+
+>[!example] problema
+progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$ in cui non compaiono `1` adiacenti (in orizzontale, verticale o diagonale)
+la complessità dell’algoritmo deve essere $O(n^2S(n))$, dove $S(n)$ è il numero di matrici da stampare
