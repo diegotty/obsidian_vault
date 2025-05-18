@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T13:35
+updated: 2025-05-18T13:47
 completed: false
 ---
 # reti wireless
@@ -63,6 +63,33 @@ inoltre, dato che i link wireless sono un mezzo condiviso, è necessario control
 abbiamo visto che con la trasmissione ethernet si usa il protocollo di accesso multiplo CSMA/CD. è possibile usarlo con sulle reti wireless ?
 **no!** in quanto per rilevare una connessione, un host deve poter trasmettere il proprio frame e ascoltare, contemporaneamente, il canale. ma, poichè la potenza del segnale ricevuto è molto inferiore a quella del segnale trasmesso, sarebbe troppo costoso (soprattutto a livello di energia, in quanto i dispositivi wireless usano spesso una batteria) usare un adattatore di rete in grado di rilevare le collisioni 
 >inoltre, un host potrebbe non accorgersi che un altro host sta trasmettendo, e quindi non sarebbe in grado di rilevare la connessione pur ascoltando il canale
+> - chiamato anche hidden terminal problem !
+>
 ![[Pasted image 20250518133359.png]]
+>
+>quindi non si può contare sulla collision detection nelle reti wireless !
 ## IEEE 802.11
 IEEE ha definito le specifiche per le LAN wireless, chiamate 802.11, che coprono i livelli fisico e collegamento
+### architettura
+>[!info] architettura generale
+![[Pasted image 20250518134144.png]]
+#### BSS
+**basic service set** (**BSS**) è costituita da uno o più host wireless e da un access point (che è collegato ad un router)
+- corrispondono alle **celle** delle reti cellulari
+>[!info] BSS
+![[Pasted image 20250518133830.png]]
+>- il BSS con infrastruttura è l’architettura più diffusa !
+>- il BSS ad hoc è invece una rete *standalone*
+#### ESS
+**extended service set** (**ESS**) è costituito da due o più **BSS** con infrastruttura, collegati tramite un sistema di distribuzione che è una rete cablata (ethernet) o wireless
+- quando i BSS sono colleagti, le stazioni in visibilità comunicano direttamente mentre le altre comunicano tramite l’AP
+- molto comuni nelle reti wi-fi moderne, sopratutto in ambienti dove è necessario coprire aree estese con accesso continuo alla rete wireless
+>[!info] ESS
+![[Pasted image 20250518134043.png]]
+## canali e associazione
+lo spettro 2.4GHz-2.48GHz è diviso in 11 canali parzialmente sovrapposti:
+- l’amministratore dell’AP sceglie una frequenza su cui far comunicare l’AP
+- sono possibili interferenze (es: se viene usato lo stesso canale per AP vicini)
+- il numero massimo di frequenze utilizzabili da diversi AP per evitare interferenze è 3
+- i canali non interferiscono se separati da 4 o più canali
+dato che architettura IEE 802.11 prevede che una stazione wireless si associ a un AP per accedere a internet, è necessario:
