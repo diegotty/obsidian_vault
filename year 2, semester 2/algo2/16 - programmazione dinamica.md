@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-18T19:06
+updated: 2025-05-18T19:24
 completed: 
 ---
 >[!index]
@@ -518,10 +518,28 @@ dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire
 >>	return max(T)
 >>```
 
->[!example] problema (lezione 16/05/2025)
-progettare un algoritmo di programmazione dinamica che, dato un intero $n$, in tempo $O(n)$, calcoli il numero di stringhe di lunghezza $n$ sull’alfabeto $\{ 0,1,2,3 \}$ in cui non compaiono mai due cifre pari adiacenti
+>[!example]+ problema (lezione 16/05/2025)
+>>[!info]- soluzione
+>uso una matrice di dimensione $2 \times n$, in cui:
+>$T[i][0]= \text{numero di stringhe congrue di lunghezza i}$
+>$T[i][1] = \text{ numero di stringhe congrue di lunghezza i che finiscono con cifra dispari}$
+>questo perchè sappiamo che:
+>>- possiamo aggiungere un numero dispari: sempre, ad ogni stringha congrua di lunghezza i-1
+>>- possiamo aggiungere un numero pari: solo alle stringhe congrue di lunghezza i-1 che finiscono con una cifra dispari
+>la ricorrenza è quindi:
+>$T[i][1] = T[i-1][0]\cdot2$
+>$T[i][0] = T[i][1] + T[i-1][1] \cdot 2$
+>>```python
+>>def pari_non_adiacenti(n):
+>>	T = [[0]*(n+1) for _ in range(2)]
+>>	T[0], T[1] = 4, 2
+>>	for i in range(2,n):
+>>		T[i][1] = T[i-1][0]*2
+>>		T[i][0] = T[i][1] + T[i-1][1]*2
+>>	return T[n][0]
+>>```
 
->[!info] soluzione
-
->[!example] problema (lezione 16/05/2025)
+>[!example]+ problema (lezione 16/05/2025)
 progettare un algoritmo di programmazione dinamica che, data una sequenza $A$ di $n$ interi positivi ed un intero $k$, in tempo $O(n\cdot k)$, calcoli il numero di sottosequenze di $A$ la somma dei cui elementi sia $k$
+
+>[!info]- soluzione
