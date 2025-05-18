@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-16T08:37
+updated: 2025-05-18T09:20
 completed: false
 ---
 >[!example] problema
@@ -120,7 +120,10 @@ O(D(n)\cdot h\cdot f(n) + D(n) \cdot g(n))
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$
 
 >[!info] soluzione
-sappiamo che per un $2^{n \cdot n}$
+sappiamo che le matrici da stampare sono $2^{n \cdot n}$ (basti pensare alla matrici come stringhe di dimensione $n \cdot n$)
+>l’albero di ricorsione è binario e di altezza $n^2$ (un livello per ogni elemento della matrice), e ha $2^{n^2}-1$ nodi interni e $2^{n^2}$ foglie foglie
+> - ciascun nodo interno richiede tempo $O(1)$
+> - ciascuna foglia richiede tempo $O(n^2)$
 ```python
 def all_matrixes():
 	sol = [[0]*n for _ in range(n)]
@@ -145,9 +148,11 @@ l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta 
 $$
 O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
 $$
-in cui $$
-
-$$
+in cui 
+> - $D(n) = 2^{n^2}$
+> - $g(n)= O(n^2)$
+> - $h = n^2$
+> - $f(n) = O(1)$
 
 >[!info] soluzione
 >- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
