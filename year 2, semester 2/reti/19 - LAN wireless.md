@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T15:04
+updated: 2025-05-18T15:14
 completed: false
 ---
 # reti wireless
@@ -116,7 +116,7 @@ il protocollo **CSMA/CA** usa:
 esistono due tipi di IFS:
 - **SIFS**: short IFS, garantisce **alta priorità** alle trasmissioni (usato anche per `ACK`)
 - **DIFS**: distributed IFS, garantisce **bassa priorità** (usato per le trasmissioni normali)
-### CSMA/CA con IFS
+### fasi operative del protocollo CSMA/CA
 - mittente: ascolta il canale: se lo trova libero, aspetta un DIFS e poi trasmette
 	- se durante l’intervallo DIFS, il canale diventa occupato, il nodo interrompe il conteggio del DIFS, aspetta che il canale torni completamente libero, e riavvia da zero il conteggio del DIFS 
 - ricevente: se riceve correttamente un frame, invia `ACK` dopo aver aver aspettato un SIFS
