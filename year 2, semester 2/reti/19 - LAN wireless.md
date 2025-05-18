@@ -1,9 +1,14 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-15T14:37
+updated: 2025-05-18T12:50
 completed: false
 ---
+le reti wireless si dividono in:
+- **LAN wireless** (wifi)
+- **reti cellulari**
+- **bluetooth**
+- **reti di sensori, RFID, smart objects**
 ## reti wireless
 reti ad hoc: non hanno hotspot o punti fissi
 - usata per mettere in comunicazione più dispositivi
