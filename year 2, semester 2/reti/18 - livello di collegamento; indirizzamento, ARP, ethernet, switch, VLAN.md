@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-10T22:42
+updated: 2025-05-18T13:30
 completed: true
 ---
 >[!index]
@@ -112,7 +112,7 @@ i vari standard differiscono a livello fisico e nel [[17 - livello di collegamen
 ![[Pasted image 20250510194252.png]]
 
 # ethernet
-l’ethernet (cosa ? dammi una desrizione) detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
+l’ethernet è la tecnologia di rete che consente la comunicazoine tra dispositivi in una LAN, e detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
 - è più semplice e meno costosa di token ring, FDDI e ATM, ma rimane al passo dei tempi con il tasso trasmissivo: si va dall’ethernet standard (10mpbs) al 10 gigabit ethernet (10gbps)
 >[!info] ethernet STANDARD
 ![[Pasted image 20250510194556.png]]

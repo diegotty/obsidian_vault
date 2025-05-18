@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T13:15
+updated: 2025-05-18T13:35
 completed: false
 ---
 # reti wireless
@@ -42,20 +42,27 @@ il funzionamento di una rete cablato o wireless dipende dai due sottolivelli inf
 infatti, per migrare dalla rete cablata a quella wireless, è sufficiente cambiare le schede di rete e sostituire lo switch di collegamento con un **AP**
 >- così facendo, cambiano gli indirizzi MAC mentre gli IP rimangono invariati
 
-#### link wireless
-vediamo alcune delle caratteristiche più importanti dei link wireless:
-- **attenuazione del segnale**: la forza dei segnali elettromagnetici diminuisce rapidamente all’aumentare della distanza dal trasmettitore, in quanto il segnale si disperde in tutte le direzioni 
-- **propagazione multi-path**: quando un’onda trova un ostacolo, tutta o parte dell’onda **viene riflessa** sull’ostacolo, rimbalzando con una perdita di potenza
-	- un segnale sorgente, infatti , può arrivare tramite riflessi successivi (su muri, terreni, oggetti) a raggiungere una stazione/punto di accesso attraverso percorsi multipli ! (quindi ““ridondanza””, che in verità causa interferenze)
-- **interferenze**: 
 ### reti ad hoc
 le **reti ad hoc** non hanno hotspot o punti fissi, sono bensì un insieme di host che si auto-organizzano per formare una rete, e comunicano liberamente tra di loro
 - ogni host deve eseguire funzionalità di rete, quali network setup, routing, forwarding, etc..
 - viene usata per mettere in comunicazione più dispositivi noti 
 ## link wireless
-vanno pensati per gestire le colliisioni
-
-il raggio di trasmissione è quella distanza in cui segnale decodificabile
-
-in caso di riflessi, il ricevitore riceve una omma di segnali che fanno interferenza tra di loro !
-le interferenze
+vediamo alcune delle caratteristiche più importanti dei link wireless:
+- **attenuazione del segnale**: la forza dei segnali elettromagnetici diminuisce rapidamente all’aumentare della distanza dal trasmettitore, in quanto il segnale si disperde in tutte le direzioni 
+	- il **raggio di trasmissione** è infatti la distanza in cui un segnale è ancora decodificabile da un host
+- **propagazione multi-path**: quando un’onda trova un ostacolo, tutta o parte dell’onda **viene riflessa** sull’ostacolo, rimbalzando con una perdita di potenza
+	- un segnale sorgente, infatti , può arrivare tramite riflessi successivi (su muri, terreni, oggetti) a raggiungere una stazione/punto di accesso attraverso percorsi multipli ! (quindi ““ridondanza””, che in verità causa interferenze, in quanto l’host riceve una somma di segnali che creano interferenze)
+- **interferenze**: possono essere causate dalla stessa sogente (propagazione multi-path), o da altre sorgenti (altri trasmettitori usano la stessa banda di frequenza per comunicare con altri destinatari)
+### errori
+le caratteristiche dei link wireless causano errori
+il **signal to noise ratio** (**SNR**) misura il rapporto tra il segnale buono e quello “cattivo”
+- alto: il segnale è più forte del rumore, quindi può essere convertito in dati reali
+- basso: il segnale è stato danneggiato dal rumore, e i dati non possono essere recuperati
+inoltre, dato che i link wireless sono un mezzo condiviso, è necessario controllare l’accesso ad essi per evitare collisioni 
+>[!info] CSMA/CD
+abbiamo visto che con la trasmissione ethernet si usa il protocollo di accesso multiplo CSMA/CD. è possibile usarlo con sulle reti wireless ?
+**no!** in quanto per rilevare una connessione, un host deve poter trasmettere il proprio frame e ascoltare, contemporaneamente, il canale. ma, poichè la potenza del segnale ricevuto è molto inferiore a quella del segnale trasmesso, sarebbe troppo costoso (soprattutto a livello di energia, in quanto i dispositivi wireless usano spesso una batteria) usare un adattatore di rete in grado di rilevare le collisioni 
+>inoltre, un host potrebbe non accorgersi che un altro host sta trasmettendo, e quindi non sarebbe in grado di rilevare la connessione pur ascoltando il canale
+![[Pasted image 20250518133359.png]]
+## IEEE 802.11
+IEEE ha definito le specifiche per le LAN wireless, chiamate 802.11, che coprono i livelli fisico e collegamento
