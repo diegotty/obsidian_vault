@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-18T09:35
+updated: 2025-05-18T18:48
 completed: 
 ---
 >[!index]
@@ -517,3 +517,9 @@ dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire
 >>		T[i] = A[i] - minimum
 >>	return max(T)
 >>```
+
+>[!example] problema (lezione 16/05/2025)
+progettare un algoritmo di programmazione dinamica che, dato un intero $n$, in tempo $O(n)$, calcoli il numero di stringhe di lunghezza $n$ sull’alfabeto $\{ 0,1,2,3 \}$ in cui non compaiono mai due cifre pari adiacenti
+
+>[!example] problema (lezione 16/05/2025)
+progettare un algoritmo di programmazione dinamica che, data una sequenza $A$ di $n$ interi positivi ed un intero $k$, in tempo $O(n\cdot k)$, calcoli il numero di sottosequenze di $A$ la somma dei cui elementi sia $k$
