@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T14:50
+updated: 2025-05-18T15:04
 completed: false
 ---
 # reti wireless
@@ -107,4 +107,19 @@ più stazioni possono voler comunicare nello stesso momento, e per gestire ciò 
 vediamo il DCF:
 ### CSMA/CA
 dato che non è possibile contare sulla **collision detection**, obblighiamo la **collision avoidance** (da cui CSMA/**CA**): evitiamo che due o più nodi trasmettano simultaneamente
-il protocollo **CSMA/CA** usa gli `ACK` come riscontro necessario per capire se una trasmissione è andata a buon fine (no collisione)
+il protocollo **CSMA/CA** usa:
+- `ACK` come riscontro necessario per capire se una trasmissione è andata a buon fine (no collisione)
+	- c’è quindi possibilità di collisione anche sugli `ACK`
+- doppio carrier sense (ascoltare il canale prima di trasmettere): uno per i dati, e l’altro per l’`ACK`
+- **IFS** (spazio interframe):  intervallo di tempo che una stazione deve attendere dopo aver rilevato che il canale è libero, prima di iniziare la trasmissione. in questo modo, si prova ad evitare collisioni con altre stazioni che potrebbero aver già iniziato a trasmettere
+#### IFS
+esistono due tipi di IFS:
+- **SIFS**: short IFS, garantisce **alta priorità** alle trasmissioni (usato anche per `ACK`)
+- **DIFS**: distributed IFS, garantisce **bassa priorità** (usato per le trasmissioni normali)
+### CSMA/CA con IFS
+- mittente: ascolta il canale: se lo trova libero, aspetta un DIFS e poi trasmette
+	- se durante l’intervallo DIFS, il canale diventa occupato, il nodo interrompe il conteggio del DIFS, aspetta che il canale torni completamente libero, e riavvia da zero il conteggio del DIFS 
+- ricevente: se riceve correttamente un frame, invia `ACK` dopo aver aver aspettato un SIFS
+
+>[!info] rappresentazione
+![[Pasted image 20250518150051.png]]
