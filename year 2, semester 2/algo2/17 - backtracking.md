@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T10:04
+updated: 2025-05-18T10:19
 completed: false
 ---
 >[!example]+ problema
@@ -165,52 +165,63 @@ ricordiamo, che, in un albero binario completo di altezza $n$:
 >
 
 
->[!example] problema
+>[!example]+ problema
 progettare un algoritmo che prende un intero $n$ e stampa tutte le matrici binarie di dimensioni $n\times n$, in cui le righe e le colonne risultano ordinate in modo non-decrescente
 la complessità dell’algoritmo deve essere $O(n^2S(n))$ dove $S(n)$ è il numero di matrici da stampare
-
->[!info] soluzione
->- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
->- **inserisco un `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1] == sol[i-1][j] == 0` (con `i > 0, j > 0`)
-```python
-def es(n):
-	sol = [[0]*n for _ in range(n)]
-	matrici_ordinate(n, 0, 0, sol)
-
-def matrici_ordinate(n, i, j, sol):
-	if i == n:
-		for i in range(n):
-			print(sol[i])
-		print()
-		return
-	sol[i][j] = 1
-	i1, j1 = i, j+1
-	if j1 == n:
-		i1, j1 = i+1, 0
-	matrici_ordinate(n, i1, j1, sol)
-	
-	if (j == 0 or sol[i][j-1] == 0) and (i == 0 or sol[i-1][j] == 0):
-		sol[i][j] = 0
-		matrici_ordinate(n, i1, j1, sol)
-```
-
+>>[!info]- soluzione
+>>- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
+>>- **inserisco un `0`**: posso inserire uno `0` nella cella `sol[i][j]` solo se sol`[i][j-1] == sol[i-1][j] == 0` (con `i > 0, j > 0`)
+>>```python
+>>def es(n):
+>>	sol = [[0]*n for _ in range(n)]
+>>	matrici_ordinate(n, 0, 0, sol)
+>>
+>>def matrici_ordinate(n, i, j, sol):
+>>	if i == n:
+>>		for i in range(n):
+>>			print(sol[i])
+>>		print()
+>>		return
+>>	sol[i][j] = 1
+>>	i1, j1 = i, j+1
+>>	if j1 == n:
+>>		i1, j1 = i+1, 0
+>>	matrici_ordinate(n, i1, j1, sol)
+>>	
+>>	if (j == 0 or sol[i][j-1] == 0) and (i == 0 or sol[i-1][j] == 0):
+>>		sol[i][j] = 0
+>>		matrici_ordinate(n, i1, j1, sol)
+>>```
 >>l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
 >>$$
 >>O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
 >>$$
 >in cui 
->> - $D(n) = 2^{n^2}$
+>> - $D(n) = O(2^{n^2})$
 >> - $g(n)= O(n^2)$
 >> - $h = n^2$
 >> - $f(n) = O(1)$
 >>
 >quindi $O(2{n^2}\cdot n^2) + O(2^{n^2})$
 >dato che qualunque algoritmo ha $\Omega(2^{n^2}\cdot n^2)$, l’algoritmo è ottimo
+
 >[!example] problema: permutazioni
 progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` da `n-1`
 
-
 >[!info] soluzione
+le permutazioni di $n$ interi diversi è $n!$
+>- le foglie sono $\Theta(n!)$
+>- i nodi interni sono 
+$$
+1 + n + n(n-1) + n(n-1)(n-2)+ \dots + n! = \frac{n!}{n!} + \frac{n!}{n-1!} + \frac{n!}{n-2!} + \dots $\frac{n!}{0!}$
+$$
+quindi 
+$$
+\sum_{i=0}^n \frac{n!}{i!} < n! \cdot\sum_{i=0}^\infty \frac{1}{i!}< n! \cdot \sum_{i=0}^\infty \frac{2}{2^i} = n! \frac{2}{1-\frac{1}{2}} = 4 \cdot n!
+$$
+quindi i nodi interni sono $\Theta(n!)$
+(ngl tosto arrivare a $4\cdot n!$….)
+
 
 >[!example] problema
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$ in cui non compaiono `1` adiacenti (in orizzontale, verticale o diagonale)
