@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T10:35
+updated: 2025-05-18T10:43
 completed: false
 ---
 >[!example]+ problema
@@ -255,17 +255,37 @@ e dato che l’algorimo ha $\Omega(n\cdot n!)$, l’algoritmo è ottimo
 
 >[!example] problema
 progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` a `n-1` dove nelle posizioni pari compaiono numeri pari e nelle posizioni dispari compaiono numeri dispari
+la complessità dell’algoritmo deve essere $O(S(n) \cdot n^2)$, dove $S(n)$ è il numero di permutazioni da stampare
 
 >[!info] soluzione
-
 ```python
 def es(n):
 	preso = [0]*n
 	permutazioni(n, preso)
 
-def permutazioni(n, preso, sol):
-	
+def permutazioni(n, preso, sol = []):
+	if len(sol) == n:
+		print(sol)
+		return 
+	for i in range(n):
+		if i % 2 == len(sol) % 2 and preso[i] == 0: 
+			sol.append(i)
+			preso[i] = 1
+			permutazioni(n, preso, sol)
+			sol.pop()
+			preso[i] = 0
 ```
+>>l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
+>>$$
+>>O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
+>>$$
+>in cui 
+>> - $D(n) = \Theta(n!)$
+>> - $g(n)= O(n)$
+>> - $h = n$
+>> - $f(n) = O(n)$
+>>
+quindi l’algoritmo ha complessità $O(S(n) \cdot n) + O(S(n) \cdot n \cdot n) = O(S(n)\cdot n^2)$
 
 >[!example] problema
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$ in cui non compaiono `1` adiacenti (in orizzontale, verticale o diagonale)
