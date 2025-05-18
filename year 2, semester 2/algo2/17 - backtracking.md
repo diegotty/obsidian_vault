@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T10:19
+updated: 2025-05-18T10:35
 completed: false
 ---
 >[!example]+ problema
@@ -205,23 +205,67 @@ la complessità dell’algoritmo deve essere $O(n^2S(n))$ dove $S(n)$ è il nume
 >quindi $O(2{n^2}\cdot n^2) + O(2^{n^2})$
 >dato che qualunque algoritmo ha $\Omega(2^{n^2}\cdot n^2)$, l’algoritmo è ottimo
 
->[!example] problema: permutazioni
+>[!example]+ problema: permutazioni
 progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` da `n-1`
+>>[!info]- soluzione
+>le permutazioni di $n$ interi diversi è $n!$
+>>- le foglie sono $\Theta(n!)$
+>>- i nodi interni sono 
+>>$$
+>1 + n + n(n-1) + n(n-1)(n-2)+ \dots + n! = \frac{n!}{n!} + \frac{n!}{n-1!} + \frac{n!}{n-2!} + \dots $\frac{n!}{0!}$
+>>$$
+>quindi 
+>>$$
+>\sum_{i=0}^n \frac{n!}{i!} < n! \cdot\sum_{i=0}^\infty \frac{1}{i!}< n! \cdot \sum_{i=0}^\infty \frac{2}{2^i} = n! \frac{2}{1-\frac{1}{2}} = 4 \cdot n!
+>>$$
+>quindi i nodi interni sono $\Theta(n!)$
+>>
+>ngl tosto arrivare a $4\cdot n!$…. . abbiamo usato che :
+>>- $i! \geq \frac{2^i}{2} \to \frac{1}{i!} \leq \frac{2}{2^i}$
+>>- $\sum^\infty_{i=0}x^i=1-x \text{ \,\,\,\,\,\,\,\,per }x <-1$
+>>```python
+>>def es(n):
+>>	preso = [0]*n
+>>	permutazioni(n, preso)
+>>	
+>>def permutazioni(n, preso, sol = []):
+>>	if len(sol) == n:
+>>		print(sol)
+>>		return
+>>	for i in range(n):
+>>		if preso[i] == 0:
+>>			sol.append(i)
+>>			preso[i] = 1
+>>			permutazioni(n, sol, preso)
+>>			sol.pop(i)
+>>			preso[i] = 0
+>>```
+>>l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
+>>$$
+>>O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
+>>$$
+>in cui 
+>> - $D(n) = \Theta(n!)$
+>> - $g(n)= O(n)$
+>> - $h = n$
+>> - $f(n) = O(n)$
+>>
+quindi l’algoritmo ha complessità $O(n\cdot n!) + O(n!\cdot n) = \Theta(n!\cdot n)$
+e dato che l’algorimo ha $\Omega(n\cdot n!)$, l’algoritmo è ottimo
+
+>[!example] problema
+progettare un algoritmo che prende come parametro l’intero $n$ e stampa tutte le permutazioni dei numeri da `0` a `n-1` dove nelle posizioni pari compaiono numeri pari e nelle posizioni dispari compaiono numeri dispari
 
 >[!info] soluzione
-le permutazioni di $n$ interi diversi è $n!$
->- le foglie sono $\Theta(n!)$
->- i nodi interni sono 
-$$
-1 + n + n(n-1) + n(n-1)(n-2)+ \dots + n! = \frac{n!}{n!} + \frac{n!}{n-1!} + \frac{n!}{n-2!} + \dots $\frac{n!}{0!}$
-$$
-quindi 
-$$
-\sum_{i=0}^n \frac{n!}{i!} < n! \cdot\sum_{i=0}^\infty \frac{1}{i!}< n! \cdot \sum_{i=0}^\infty \frac{2}{2^i} = n! \frac{2}{1-\frac{1}{2}} = 4 \cdot n!
-$$
-quindi i nodi interni sono $\Theta(n!)$
-(ngl tosto arrivare a $4\cdot n!$….)
 
+```python
+def es(n):
+	preso = [0]*n
+	permutazioni(n, preso)
+
+def permutazioni(n, preso, sol):
+	
+```
 
 >[!example] problema
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$ in cui non compaiono `1` adiacenti (in orizzontale, verticale o diagonale)
