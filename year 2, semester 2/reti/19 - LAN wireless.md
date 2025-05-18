@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T16:03
+updated: 2025-05-18T16:16
 completed: false
 ---
 # reti wireless
@@ -153,5 +153,15 @@ in questo esempio C è la stazione esposta
 il mittente non può aspettare l’`ACK`all’inifinito: imposta quindi un timer: l’`ACK` timeout
 - se il timer scade senza aver ricevuto l’`ACK`, il nodo suppone che la trasmissione sia fallita (es: per collisione o errore) e tenta una ritrasmissione
 ## formato del frame
->[!info]
+>[!info] frame
 ![[Pasted image 20250518160346.png]]
+>- **frame control** (**FC**): tipo di frame e alcune informazioni di controllo
+>- **D**: durata della trasmissione, usata per impostare il NAV
+>- **indirizzi**: indirizzi MAC (descritti in seguito)
+>- **SC**: informazioni sui frammenti: # di frammento e # di sequenza. il numero di sequenza serve per distinguere frame ritrasmessi come nel livello di trasporto (`ACK` possono andare perduti)
+>- **frame body**: payload
+>- **FCS**: codice CRC a 32 bit
+
+>[!info] frame control
+![[Pasted image 20250518161201.png]]
+j
