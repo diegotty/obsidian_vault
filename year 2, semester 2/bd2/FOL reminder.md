@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T11:30
+updated: 2025-05-18T11:41
 completed: false
 ---
 >[!info] momento ricapitolazione
@@ -25,3 +25,4 @@ la formula che definisce la semantica del diagramma dovrà contenere, in `and`, 
 >- tipizzazione di associazioni tra due classi (coppie in assoc sono di tipo corretto)
 >- tipizzazione di attributi (attributi di classe sono di tipo corretto, attributi di association class sono di tipo corretto)
 >- cardinalità di associazioni e attributi (oggetti hanno valori di attributi secondo cardinalità, associazioni rispettano le cardinalità)
+>- tipizzazione di operazioni (invocata sul tipo corretto, con argomenti di tipo corretto, e restituisce elemento di dominio corretto)
