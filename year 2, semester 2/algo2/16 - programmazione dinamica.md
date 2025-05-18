@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-09T12:10
+updated: 2025-05-18T09:35
 completed: 
 ---
 >[!index]
@@ -188,9 +188,9 @@ quind il costo complessivo è $O(nC)$
 
 sinceramente il fatto che si possa fare in modo iterativo è pazzesco ngl
 ## esercizi proposti in classe
->[!example] problema
+>[!example]+ problema
 vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 2 zeri consecutivi
->>[!info] soluzione
+>>[!info]- soluzione
 >per questo tipo di esercizi, tendenzialmente è necessario calcolarsi a mano i primi valori, per capire il pattern per la costruzione dei successivi:
 >>- $n=0: \text{res}=1$
 >>- $n=1: \text{res}=2$
@@ -206,9 +206,9 @@ vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 2 zeri con
 >>$$
 >>è possibile applicare la formula a partire da $T[i]$
 
->[!example] problema
+>[!example]+ problema
 vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 3 zeri consecutivi
->>[!info] soluzione
+>>[!info]- soluzione
 >usiamo la stessa configurazione dell’esercizio precedente, e ragioniamo nella situazione in cui aggiungiamo una cifra:
 >>- se è 1, andranno bene tutti i casi precedenti $(T[n-1])$
 >>- se è 0, andranno bene i casi in cui le ultime 2 cifre non sono entrambe 0: le cifre che hanno come penultima cifra il valore 1 ($T[n-2]$), e le cifra che hanno come terz’ultima cifra il valore 1 ($T[n-3]$)
@@ -217,9 +217,9 @@ vogliamo contare il numero di stringhe binarie di lunghezza $n$ senza 3 zeri con
 >T[n] = T[n-1] + T[n-2] + T[n-3]
 >>$$
 
->[!example] problema
+>[!example]+ problema
 abbiamo $n$ (con $n\geq1$) persone da distribuire in un albergo con stanze singole o doppie. in quanti modi si possono distribuire le persone ?
->>[!info] soluzione
+>>[!info]- soluzione
 >>- $n=1: \text{res}=1$
 >>- $n=2: \text{res}=2$
 >>- $n=3: \text{res}=4$
@@ -242,10 +242,10 @@ abbiamo $n$ (con $n\geq1$) persone da distribuire in un albergo con stanze singo
 >>	return T[n]
 >>```
 
->[!example] problema
+>[!example]+ problema
 dato l’intero $n$, vogliamo contare il numero di differenti tassellamenti di una superficie di dimensione $n\times 2$ tramite tessere di domino di dimensione $1\times2$
 l’algoritmo che risolve il problema deve avere complessità $O(n)$
->>[!info] soluzione
+>>[!info]- soluzione
 >>- $n=1: \text{res}=1$
 >>- $n=2: \text{res}=2$
 >>![[Pasted image 20250507232205.png]]
@@ -267,11 +267,11 @@ l’algoritmo che risolve il problema deve avere complessità $O(n)$
 >>	return T[n]
 >>```
 
->[!example] problema del massimo sottovettore
+>[!example]+ problema del massimo sottovettore
 data una lista $A$ di $n$ interi, vogliamo trovare una sottolista (una sequenza di elementi **consecutivi** della lista) la somma dei cui elementi è massima
 ![[Pasted image 20250507233548.png]]
 >l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
->>[!info] soluzione
+>>[!info]- soluzione
 >progettiamo un algoritmo, usando un vettore monodimensionale, in cui 
 >>$$
 >T[i]= \text{sottosequenza con somma massima che finisce con (compreso )l'elemento $i$}
@@ -298,13 +298,13 @@ data una lista $A$ di $n$ interi, vogliamo trovare una sottolista (una sequenza 
 
 
 
->[!example] problema della sottosequenza crescente più lunga
+>[!example]+ problema della sottosequenza crescente più lunga
 in questo caso si considera una sottosequenza, data una sequenza $S$, come una sequenza ottenuta eliminando zero o più elementi da $S$, eliminandoli **non per forza** in testa o in coda alla sequenza
 una sottosequenza è detta crescente se i suoi elementi risultano ordinati in modo crescente, e vogliamo trovare la lunghezza massima per le sottosequenze crescenti presenti in $S$
 >- quindi la dimensione, non il valore, ed è possibile che ci siano diverse sottosequenza con la stessa dimensione massima
 >
 l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
->>[!info] soluzione
+>>[!info]- soluzione
 >usiamo un vettore monodimensionale $T$, in cui:
 >>$$
 >T[i] = \text{lunghezza massima della sottosequenza crescente più lunga che comprende i}
@@ -327,11 +327,11 @@ l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
 >>	return max(T)
 >>```
 
->[!example]  problema
+>[!example]+  problema
 un numero intero può sempre essere rappresentato come somma di quadrati di altri numeri interi (infatti, usando il quadrato $1^2$, possiamo scomporre quasiasi numero $x$ in somma di $1^2$)
 dato un intero $n$, vogliamo sapere qual’è il numero minimo di quadrati necessari a rappresentare $n$
 la complessità temporale dell’algoritmo che risolve il problema deve essere $\Theta(n^{\frac{3}{2}})$
->>[!info] soluzione
+>>[!info]- soluzione
 >funziona :thumbs_up:
 >>```python
 >>def min_quadrati(n):
@@ -346,10 +346,10 @@ la complessità temporale dell’algoritmo che risolve il problema deve essere $
 >>	return T[n]
 >>```
 
->[!example] problema
+>[!example]+ problema
 dato un intero $n$, vogliamo sapere quante sono le sequenze di cifre decimali non decrescenti lunghe $n$
 >l’algoritmo che risolve il problema deve avere complessità temporale $O(n)$
->>[!info] soluzione
+>>[!info]- soluzione
 >>- $n=1: \text{res = 10}$
 >> - $n=2: \text{res = 55}$
 >possiamo usare un vettore bidimensionale (anche se la complessità richiesta è $O(n)$) in quanto la costruiremo in modo che le colonne rappresentano le varie cifre possibili, che sono 10 (da 0 a 9). di conseguenza, la dimensione della tabella è $10 \cdot n$, e scorrerla costa $O(n)$
@@ -374,13 +374,13 @@ dato un intero $n$, vogliamo sapere quante sono le sequenze di cifre decimali no
 >>	return sum(T[n])
 >>```
 
->[!example] problema
+>[!example]+ problema
 data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice è possibile raggiungere la cella in basso a destra partendo da quella in alto a sinistra senza mai toccare celle che contengono il numero 1.
 >- si può assumere che $M[0][0] = 0$
 > - ad ogni passo, ci si può spostare solo di un passo verso destra o un passo verso basso
 ![[Pasted image 20250508164342.png]]
 >la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n^2)$
->>[!info] soluzione
+>>[!info]- soluzione
 >potremmo trasformare la matrice in grafo, risolvendo il problema con una visita dal nodo 0. 
 >altrimenti, per risolverlo usando la programmazione dinamica, possiamo usare un vettore bidimensionale di dimensione $n\times n$, in cui
 >>$$
@@ -423,10 +423,10 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 >>```
 >>wrote it on my own ngl idk if it works
 
->[!example] problema
+>[!example]+ problema
 >abbiamo un matrice quadrata binaria $M$ di dimensione $n\times n$ e vogliamo sapere qual’è la dimensione massima per le sottomatrici quadrate di soli uni contenute in $M$
 >l’algoritmo che risolve il problema deve avere complessità temporale $O(n^2)$
->>[!info] soluzione
+>>[!info]- soluzione
 >>$$
 >T[i][j] = \text{la dimensione massima della matrice quadrata con cella in basso a destra in T[i][j]}
 >>$$
@@ -455,11 +455,11 @@ data una matrice $M$ binaria $n\times n$, vogliamo verificare se nella matrice �
 >>	return max(T)
 >>```
 
->[!example] problema dello zaino (knapsack problemz)
+>[!example]+ problema dello zaino (knapsack problemz)
 abbiamo uno zaino di capacità $c$ ed $n$ oggetti, ognuno con un peso $p_i$ ed un valore $v_i$
 vogliamo sapere il valore massimo che si può inserire nello zaino
 l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi non tempo polinomiale in quanto $c$ non è una costante!)
->>[!info] soluzione
+>>[!info]- soluzione
 >possiamo usare un vettore bidimensionale, in cui:
 >>$$
 >T[i][j] = \text{valore max che posso ottenere con i primi j oggetti e zaino di capacità j}
@@ -491,12 +491,12 @@ l’algoritmo che risolve il problmea deve avere complessità $O(nc)$ (quindi no
 >>
 >>```
 
->[!example] problema della transazioni
+>[!example]+ problema della transazioni
 una transazione è l’acquisto di un oggetto seguito dalla sua vendita (che non può avvenire prima del giorno dell’acquisto)
 disponiamo di un vettore $A$ di interi dove $A[i]$ è la quotazione dell’oggetto nel giorno $i$
 dato il vettore $A$ con le quotazioni dei prossimi $n$ giorni e dovendo eseguire una singola transazione, vogliamo sapere qual’è il guadagno massimo a cui possiamo aspirare
 >la complessità dell’algoritmo che risolve il problema deve essere $\Theta(n)$
->>[!info] soluzione
+>>[!info]- soluzione
 >possiamo usare un vettore monodimensionale, in cui:
 >>$$
 >T[i] = \text{guadagno massimo ottenuto vendendo al giorno $i$}

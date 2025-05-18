@@ -1,10 +1,10 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T09:20
+updated: 2025-05-18T09:33
 completed: false
 ---
->[!example] problema
+>[!example]+ problema
 progettare un algoritmo che prende come parametro un intero $n$ e **stampa** tutte le stringhe binarie lunghe $n$
 >>[!info] soluzione
 >notiamo che le stringhe da stampare sono $2^n$, e che stampare una stringha lunga $n$ costa $\Theta(n)$ (se immaginiamo la stringa come una lista a cui aggiungere)
@@ -35,7 +35,7 @@ progettare un algoritmo che prende come parametro un intero $n$ e **stampa** tut
 >>O(2^n) \cdot n + n \cdot O(1))= O(2^n\cdot n)+O(n)=O(2^n\cdot n)
 >>$$
 
->[!example] problema (vincolo sugli zeri)
+>[!example]+ problema (vincolo sugli zeri)
 progettare un algoritmo che prende come parametro due interi $n$ e $k$, con $0\leq k\leq n$, e stampa tutte le stringhe binarie lunghe $n$ che contengono al più $k$ `1`
 >>[!info] soluzione
 >>è facile modificare la soluzione di sopra per ottenere una soluzione in $Theta(2^n \cdot n)$ (basta aggiungere una condizione che controlla il numero di `1`)
@@ -77,7 +77,7 @@ $$
 O(S(n)\cdot g(n) + S(n)\cdot h\cdot f(n))
 $$
 in quanto i nodi dell’albero che verranno effetivamente generati saranno $O(S(n)\cdot h)$, in quanto ogni nodo generato apparterrà ad un cammino che parte dalla radice e arriva ad una delle $S(n)$ foglie da enumerare (e worst case ogni foglia ha un cammino con tutti nodi diversi)
->[!example] problema (esame settembre 2020)
+>[!example]+ problema (esame settembre 2020)
 progettare un algoritmo che, dato un intero $n$, stampi tutte le stringhe di lunghezza $n$ sull’alfabeto dei simboli $\{a,b,c\}$ in cui il numero delle $b$ supera quello di ciascuno degli altri due simboli
 >>[!info] soluzione
 >l’algoritmo deve avere complessità proporzionale alle stringhe da stampare
@@ -116,43 +116,53 @@ O(D(n)\cdot h\cdot f(n) + D(n) \cdot g(n))
 >>quindi il costo di `abc()`  è $\Theta (n\cdot D(n))$
 
 
->[!example] problema
+>[!example]+ problema
 progettare un algoritmo che prende come parametro un intero $n$ e stampa tutte le matrici binarie $n \times n$
+>>[!info] soluzione
+>sappiamo che le matrici da stampare sono $2^{n \cdot n}$ (basti pensare alla matrici come stringhe di dimensione $n \cdot n$)
+>>l’albero di ricorsione è binario e di altezza $n^2$ (un livello per ogni elemento della matrice), e ha $2^{n^2}-1$ nodi interni e $2^{n^2}$ foglie foglie (per un totale di $2^{n^2+1}-1$ nodi)
+>> - ciascun nodo interno richiede tempo $O(1)$
+>> - ciascuna foglia richiede tempo $O(n^2)$
+>>```python
+>>def all_matrixes():
+>>	sol = [[0]*n for _ in range(n)]
+>>	es1(n, sol)
+>>
+>>def es1(n, sol, i = 0, j = 0):
+>>	if i == n: # non n-1 !!!!!!
+>>		for k in range(n):
+>>			print(sol[k])
+>>		print()
+>>		return
+>>	sol[i][j] = 0
+>>	i1, j1 = i, j+1
+>>	if j1 == n:
+>>		i1, j1 = i+1, 0
+>>	es1(n, sol, i1, j1)
+>>	sol[i][j] = 1
+>>	es1(n, sol, i1, j1)
+>>```
+>>l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
+>>$$
+>>O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
+>>$$
+>in cui 
+>> - $D(n) = 2^{n^2}$
+>> - $g(n)= O(n^2)$
+>> - $h = n^2$
+>> - $f(n) = O(1)$
+>>
+>quindi $O(2{n^2}\cdot n^2) + O(2^{n^2})$
+>dato che qualunque algoritmo ha $\Omega(2^{n^2}\cdot n^2)$, l’algoritmo è ottimo
 
->[!info] soluzione
-sappiamo che le matrici da stampare sono $2^{n \cdot n}$ (basti pensare alla matrici come stringhe di dimensione $n \cdot n$)
->l’albero di ricorsione è binario e di altezza $n^2$ (un livello per ogni elemento della matrice), e ha $2^{n^2}-1$ nodi interni e $2^{n^2}$ foglie foglie
-> - ciascun nodo interno richiede tempo $O(1)$
-> - ciascuna foglia richiede tempo $O(n^2)$
-```python
-def all_matrixes():
-	sol = [[0]*n for _ in range(n)]
-	es1(n, sol)
-
-def es1(n, sol, i = 0, j = 0):
-	if i == n: # non n-1 !!!!!!
-		for k in range(n):
-			print(sol[k])
-		print()
-		return
-	sol[i][j] = 0
-	i1, j1 = i, j+1
-	if j1 == n:
-		i1, j1 = i+1, 0
-	es1(n, sol, i1, j1)
-	sol[i][j] = 1
-	es1(n, sol, i1, j1)
-```
-
-l’algoritmo gode della proprietà per cui **ogni nodo viene generato se porta ad una matrice da stampare**,quindi la complessità dell’algoritmo è
-$$
-O(D(n)\cdot g(n)+ D(n)\cdot h\cdot f(n))
-$$
-in cui 
-> - $D(n) = 2^{n^2}$
-> - $g(n)= O(n^2)$
-> - $h = n^2$
-> - $f(n) = O(1)$
+>[!warning] numero di nodi
+ricordiamo, che, in un albero binario completo di altezza $n$:
+>- il numero totale di nodi è $2^{n+1}-1$
+>- il numero di nodi interni è $2^{n}-1$
+>- il numero di foglie è $2^{n}$
+>
+(e un albero con solo la radice ha altezza 0)
+>
 
 >[!info] soluzione
 >- **inserisco un `1`**: sempre, in quanto posso sempre inserire un `1`
