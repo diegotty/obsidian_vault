@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T13:47
+updated: 2025-05-18T14:50
 completed: false
 ---
 # reti wireless
@@ -93,3 +93,18 @@ lo spettro 2.4GHz-2.48GHz è diviso in 11 canali parzialmente sovrapposti:
 - il numero massimo di frequenze utilizzabili da diversi AP per evitare interferenze è 3
 - i canali non interferiscono se separati da 4 o più canali
 dato che architettura IEE 802.11 prevede che una stazione wireless si associ a un AP per accedere a internet, è necessario:
+- conoscere gli AP disponibili in un BSS
+- un protocollo di associazione:
+	- AP invia segnali periodici, chiamati **beacon**, che includono l’identificatore dell’AP: il **SSID** (**service set identifier**), e il suo indirizzo MAC
+	- l’host wireless che vuole entrare in un BSS scandisce gli 11 canali trasmissivi alla riceva di frame beacon (passive scanning)
+	- alla fine della scansione, l’host sceglie l’AP da cui ha ricevuto il beacon con maggiore potenza di segnale, e gli invia un frame con la richiesta di associazione
+	- l’AP accetta la richiesta con un frame di risposta associazione, che permetterà all’host entrante di inviare una richiesta DHCP per ottenere l’indirizzo IP
+		- può essere prevista un’autenticazione per eseguire l’associazione
+## accesso multiplo
+più stazioni possono voler comunicare nello stesso momento, e per gestire ciò esisono 2 tecniche di accesso al mezzo:
+- **distributed cordination function** (**DCF**): i nodi si contendono l’accesso al canale
+- **point coordination function** (**PCF**): non c’è contesa, e l’AP coordina l’accesso dei nodi al canale (boooooringgggg)
+vediamo il DCF:
+### CSMA/CA
+dato che non è possibile contare sulla **collision detection**, obblighiamo la **collision avoidance** (da cui CSMA/**CA**): evitiamo che due o più nodi trasmettano simultaneamente
+il protocollo **CSMA/CA** usa gli `ACK` come riscontro necessario per capire se una trasmissione è andata a buon fine (no collisione)
