@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T15:44
+updated: 2025-05-18T16:03
 completed: false
 ---
 # reti wireless
@@ -137,5 +137,21 @@ dopo aver atteso un tempo IFS, se il canale è ancora libero, l’host attende u
 
 ### RTS/CTS
 il problema dell’hidden terminal non viene risolto con IFS e finestra di contesa: è necessario un meccanismo di prenotazione del canale:
-- **request-to-send** (**RTS**):
-- **clear-to-send** (**CTS**):
+- **request-to-send** (**RTS**) e clear-to-send** (**CTS**)
+>[!info] RTS e CTS
+![[Pasted image 20250518155121.png]]
+>- quando una stazione invia un frame RTS, include la durata di tempo in cui occuperà il canale per trasmettere il frame e ricevere l’`ACK`
+>- questo tempo viene incluso anche nel CTS. in questo modo, le stazioni che sono influenzate da tale trasmissione avviano un timer chiamato **NAV** che indica quanto tempo devono attendere prima di eseguire il sensing del canale
+
+se il mittente non riceve CTS, allora assume che c’è stata una collisione e riprova dopo un tempo di backoff
+#### problema della stazione esposta
+può capitare che una stazione si astenga dall’usare il canale anche se potrebbe trasmettere
+>[!example] problema della stazione esposta
+![[Pasted image 20250518160012.png]]
+in questo esempio C è la stazione esposta
+### `ACK`timer
+il mittente non può aspettare l’`ACK`all’inifinito: imposta quindi un timer: l’`ACK` timeout
+- se il timer scade senza aver ricevuto l’`ACK`, il nodo suppone che la trasmissione sia fallita (es: per collisione o errore) e tenta una ritrasmissione
+## formato del frame
+>[!info]
+![[Pasted image 20250518160346.png]]
