@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T11:16
+updated: 2025-05-18T11:30
 completed: false
 ---
 >[!info] momento ricapitolazione
@@ -19,7 +19,9 @@ completed: false
 >	- **interpretazione**: costituita da una pre-interpretazione + una funzione che associa ad ogni simbolo di predicato $p/n$ (di arità $n$) un relazione $I(p) \subseteq D \times\dots \times D(n \text{ volte})$
 >	- **valutazione delle formule (complesse)**: costituita da una interpretazione + un assegnamento delle variabili + una funzione $eval^{\text{interpretazione, assegnamento}}: \phi \to \{true, false\}$ definita in modo simile alla logica proposizionale (le formule complesse sono quelle con operatori logici o quantificatori)
 
+>[!info] diagramma UML come formula matematica
 la formula che definisce la semantica del diagramma dovrà contenere, in `and`, le seguenti formule:
-- sottoformule per classi, associazioni e domini (disgiunzione, generalizzaione)
-- tipizzazione di associazioni tra due classi
-- tipizzazione di attributi
+>- sottoformule per classi, associazioni e domini (disgiunzione, generalizzaione)
+>- tipizzazione di associazioni tra due classi (coppie in assoc sono di tipo corretto)
+>- tipizzazione di attributi (attributi di classe sono di tipo corretto, attributi di association class sono di tipo corretto)
+>- cardinalità di associazioni e attributi (oggetti hanno valori di attributi secondo cardinalità, associazioni rispettano le cardinalità)
