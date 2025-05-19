@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-19T00:40
+updated: 2025-05-19T08:43
 completed: false
 ---
 # reti wireless
