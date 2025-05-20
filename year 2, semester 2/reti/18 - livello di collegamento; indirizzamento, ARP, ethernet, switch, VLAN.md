@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-20T14:34
+updated: 2025-05-20T16:31
 completed: true
 ---
 >[!index]
@@ -14,7 +14,7 @@ completed: true
 >	- [IEEE 802](#IEEE%20802)
 >- [ethernet](#ethernet)
 >	- [ethernet standard](#ethernet%20standard)
->		- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
+> inoltrare pacchet		- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
 >	- [fast ethernet](#fast%20ethernet)
 >		- [soluzioni per CSMA/CD](#soluzioni%20per%20CSMA/CD)
 >	- [gigabit ethernet](#gigabit%20ethernet)
