@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-18T10:43
+updated: 2025-05-20T08:58
 completed: false
 ---
 >[!example]+ problema

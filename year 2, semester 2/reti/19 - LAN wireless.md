@@ -1,7 +1,7 @@
 ---
 related to: "[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]"
 created: 2025-03-02T17:41
-updated: 2025-05-19T00:50
+updated: 2025-05-20T09:14
 completed: false
 ---
 >[!index]

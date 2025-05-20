@@ -1,7 +1,7 @@
 ---
 related to: "[[13 - problemi di ottimizzazione, algoritmi di approssimazione]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T10:56
+updated: 2025-05-20T08:58
 completed: true
 ---
 >[!index]
@@ -173,6 +173,19 @@ assumiamo per assurdo che la soluzione $sol$ prodotta dal greedy non sia ottima:
 >
 >si nota che:
 >- esiste un file $a$ che appartiene a $sol*$ e non a $sol$, e che occupa più spazio di qualunque file in $sol$ (questo perche tutti gli elementi in $sol$ occupano meno spazio di quelli non presenti nello stesso $sol$)
->- esiste un file $b$ che appartiene a $sol$ e non a $sol*$ (questo perchè $sol \not \subset sol*$, infatti l’aggiunga di un qualunque elemento a $sol$ porterebbe a superare la capacità del disco)
+>- esiste un file $b$ che appartiene a $sol$ e non a $sol*$ (questo perchè $sol \not \subset sol*$, infatti l’aggiunta di un qualunque elemento a $sol$ porterebbe a superare la capacità del disco)
 >
 >possiamo dunque eliminare da $sol*$ il file $a$ ed inserire il file $b$ ottenendo un nuovo insieme che rispetta ancora le capacità del disco ed ha un elemento in più in comune con $sol$, contraddicendo le nostre ipotesi (il file $sol*$ è quello con più elementi in comune con $sol$)
+
+## esercizio
+
+>[!example]+ esercizi04.pdf
+![[Pasted image 20250519162809.png]]
+
+>[!info]- soluzione
+assumiamo per assurdo che la soluzione ottenuta con l’algoritmo fornito , $S$, non sia corretta.  esiste allora una soluzione $S*$ diversa da $S$ più corretta di essa (usa meno flaconi). prendiamo allora il primo flacone nella soluzione $S$ che non viene usato in $S*$. vuol dire che in $S*$, per contenere tutte le pillole senza il flacone, viene usato un flacone più grande di quelli usati in $S$, ma dato il criterio con cui vengono scelti i flaconi nell’algoritmo, ciò è impossibile. contraddizione
+
+>[!example] problema
+![[Pasted image 20250519170421.png]]
+
+>[!soluzione]
