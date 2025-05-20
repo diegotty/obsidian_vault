@@ -1,9 +1,31 @@
 ---
-related to: 
+related to: "[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]"
 created: 2025-03-02T17:41
-updated: 2025-05-19T08:43
+updated: 2025-05-20T14:34
 completed: false
 ---
+>[!index]
+>- [reti wireless](#reti%20wireless)
+>	- [LAN wireless](#LAN%20wireless)
+>		- [elementi](#elementi)
+>		- [reti ad hoc](#reti%20ad%20hoc)
+>	- [link wireless](#link%20wireless)
+>		- [errori](#errori)
+>	- [IEEE 802.11](#IEEE%20802.11)
+>		- [architettura](#architettura)
+>			- [BSS](#BSS)
+>			- [ESS](#ESS)
+>	- [canali e associazione](#canali%20e%20associazione)
+>	- [accesso multiplo](#accesso%20multiplo)
+>		- [CSMA/CA](#CSMA/CA)
+>			- [IFS](#IFS)
+>		- [fasi operative del protocollo CSMA/CA](#fasi%20operative%20del%20protocollo%20CSMA/CA)
+>		- [RTS/CTS](#RTS/CTS)
+>			- [problema della stazione esposta](#problema%20della%20stazione%20esposta)
+>		- [`ACK`timer](#%60ACK%60timer)
+>	- [formato del frame](#formato%20del%20frame)
+>		- [indirizzamento](#indirizzamento)
+>	- [mobilità](#mobilit%C3%A0)
 # reti wireless
 le reti wireless si dividono in:
 - **LAN wireless** (wifi)
@@ -166,4 +188,23 @@ il mittente non può aspettare l’`ACK`all’inifinito: imposta quindi un timer
 una LAN wireless ha 3 categorie di frame:
 >- **frame di gestione** (`00`): usati per le comunicazioni iniziali tra stazioni e punti di accesso
 >- **frame di controllo** (`01`): si usano per accedere al canale e dare riscontro (impostando il **subtype** a : `1011` (RTS), `1100` (CTS), `1101` (`ACK`))
->- **frame di dati** (`10`): vengono usati per trasporta
+>- **frame di dati** (`10`): vengono usati per trasportare dati
+### indirizzamento
+(DS: distribution system)
+
+| Significato                    | To DS | From DS | Address 1    | Address 2   | Address 3    | Address 4 |
+| ------------------------------ | ----- | ------- | ------------ | ----------- | ------------ | --------- |
+| comunicazione diretta (ad-hoc) | 0     | 0       | destinazione | sorgente    | BSS ID       | N/A       |
+| da AP a host                   | 0     | 1       | destinazione | AP mittente | sorgente     | N/A       |
+| da host ad AP                  | 1     | 0       | AP ricevente | sorgente    | destinazione | N/A       |
+| da AP ad AP                    | 1     | 1       | AP ricevente | AP mittente | destinazione | sorgente  |
+in `address 1` viene quindi memorizzato l’indirizzo del dispositivo successivo a cui viene trasmesso in frame, mentre in `address 2` è presente l’indirizzo del dispositivo che il frame ha lasciato
+>[!example] esempio
+![[Pasted image 20250519004504.png]]
+## mobilità
+la mobilità all’interno della stessa sottorete IP è semplice. l’indirizzo IP rimane lo stesso
+- $H_{1}$ sente che il segnale da $AP_{1}$ si affievolisce, e avvia una scansione per un segnale più forte
+- $H_{1}$ rileva $AP_{2}$, si disassocia da $AP_{1}$ e si associa a $AP_{2}$, mantenendo lo stesso IP e sessioni TCP
+$AP_{2}$ si occupa di inviare un frame di broadcast allo switch con indirizzo mittente $H_{1}$, e lo switch capisce che $H_{1}$ ora è nel $BSS_{2}$
+>[!example] esempio in questione
+![[Pasted image 20250519004902.png]]
