@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-23T17:46
+updated: 2025-05-23T18:01
 ---
 >- [indirizzamento IPv4](#indirizzamento%20IPv4)
 >	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
@@ -39,15 +39,14 @@ data la necessità di supportare sia reti piccole che grandi, il prefisso viene 
 ![[Pasted image 20250423085724.png]]
 ci sono **3 lunghezze** di prefisso: 8, 16 e 24bit
 inoltre:
->- negli indirizzi di classe A, il primo bit del primo ottetto è sempre 0
->- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10
->- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110
+>- negli indirizzi di classe A, i primo bit del primo ottetto è sempre 0, e il resto del primo ottetto viene usato per specificare la sottorete
+>- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10, e i primi 2 ottetti vengono usati come prefisso
+>- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110, e i primi 3 ottetti vengono usati come prefisso
 >
 in questo modo gli intervalli a destra hanno senso ! (e in questo modo si riconosce subito a che classe un indirizzo appartiene)
 
 **vantaggi**:
 - in questo modo, una volta individuato l’indirizzo, si può facilmente risalire alla classe e la lunghezza del prefisso
-
 **svantaggi**:
 - è facile che gli indirizzi vengano esauriti/sprecati:
 	- la classe A può essere assegnata solo a 128 orgnizzazioni nel mondo, e ognuna ha 16.777.216 nodi: la maggior parte degli indirizzi verrebbe sprecata, e poche organizzazioni potrebbero usufruire di indirizzi di classe A
@@ -84,7 +83,7 @@ sensato !!
 ![[Pasted image 20250423165724.png]]
 >- l’indirizzo `0.0.0.0` è utilizzato dagli host al momento del boot
 >- gli indirizzi IP che hanno lo 0 come **numero di rete** si riferiscono alla rete corrente
-l- ’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla rete locale (in genere una LAN)
+>- l’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla rete locale (in genere una LAN)
 >- gli indirizzi con numero di rete opportuno e tutti 1 nel campo **host** permettono l’invio di pacchetti broadcast a LAN distanti (alla LAN specificata dal numero di rete)
 >- gli indirizzi nella forma `127.xx.yy.zz` sono riservati al **loopback**: sono pacchetti non immessi nel cavo, ma elaborati localmente e trattati come pacchetti in arrivo
 
