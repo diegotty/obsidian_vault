@@ -1,12 +1,12 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-23T11:07
+updated: 2025-05-23T11:22
 completed: false
 ---
 abbiamo visto, nelle lezioni precedenti, i vari modi di accesso al mezzo mediante suddivisione del canale: [[17 - livello di collegamento#TDMA|TDMA]] e [[17 - livello di collegamento#FDMA|FDMA]]
 studiamo ora un atro protocollo per accesso multiplo
-## CDMA
+# CDMA
 nel **CDMA** (**code division multiple access**):
 - l’intera ampiezza di banda viene occupata da un solo canale (non c’è quindi divisone di frequenze)
 - tutte le stazioni possono invare contemporaneamente 
@@ -70,7 +70,22 @@ per generare sequenze di chip usiamo una **tabella di Walsh**: una matrice quadr
 >>[!example] esempio
 >![[Pasted image 20250523110641.png]]
 
-
+abbiamo visto tanti protocolli MAC:
+- in particolare, sappiamo che viene usato CSMA/CD per le LAN wired e CSMA/CA per le LAN wireless
+ma abbiamo anche studiato i protocolli [[17 - livello di collegamento#ALOHA puro|ALOHA]], TDMA, etc.
+- questo perchè ci sono reti wireless con caratteristiche fisiche che non consentono di usare i protocolli MAC più complessi ed efficienti come CSMA
+## bluetooth
+il bluetooth è una tecnologia LAN wireless, progettata per connettere dispositivi con diverse funzioni e diverse capacità
+- una LAN bluetooth è una rete ad hoc, che si forma spontaneamente senza aiuto di alcun AP
+- è una rete piccola, e pochi dispositivi sono ammessi a far parte della rete
+- la banda è di 2,5 GHz, divisa in 79 canali da 1MHz ciascuno
+### piconet
+la **piconet** è una rete composta al massimo da 8 dispositivi: 1 stazione primaria e 7 stazioni che si sintonizzano con la primaria
+- possono esserci anche più stazioni secondarie, ma devono essere in stato **parked** (sincronizzate con la primaria, ma non possono prendere parte alla comunicazione) finchè una stazione attiva non lascia il sistema o viene spostata nello stato **parked**
+>[!info] rappresentazione piconet
+![[Pasted image 20250523112215.png]]
+### scatternet
+la **scatternet** è una combinazione di piconet
 ogni slot lavora da una sequenza differente (slide 26 )
 
 su una sottorete, le piconet lavorano a frequenze diverse
