@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-23T11:22
+updated: 2025-05-23T11:31
 completed: false
 ---
 abbiamo visto, nelle lezioni precedenti, i vari modi di accesso al mezzo mediante suddivisione del canale: [[17 - livello di collegamento#TDMA|TDMA]] e [[17 - livello di collegamento#FDMA|FDMA]]
@@ -85,10 +85,28 @@ la **piconet** è una rete composta al massimo da 8 dispositivi: 1 stazione prim
 >[!info] rappresentazione piconet
 ![[Pasted image 20250523112215.png]]
 ### scatternet
-la **scatternet** è una combinazione di piconet
-ogni slot lavora da una sequenza differente (slide 26 )
+la **scatternet** è una combinazione di piconet: in questa rete uno dei dispositivi secondari della piconet può essere primaria in un’altra piconet, passando messaggi da una rete all’altra
+>[!info] rappresentazione scatternet
+![[Pasted image 20250523112350.png]]
 
-su una sottorete, le piconet lavorano a frequenze diverse
+### protocollo MAC
+>[!info] bluetooth layers
+bluetooth definisce uno stack protocollare diverso da TCP/IP:
+![[Pasted image 20250523112443.png]]
+
+bluetooth usa TDMA, con slot temporali di 625us
+- ogni slot lavora da una sequenza differente
+- dispositivi primari e secondari inviano e ricevono dati, ma non contemporaneamente: **primario usa slot pari, secondari usano slot dispari**
+- la trasmissione di un pacchetto richiede circa 366us (quindi quasi la metà dello slot temporale)
+- il resto dello slot temporale (circa 259us), serve per il turnaround (?), il salto di frequenza, la sincronizzazione
+>[!info] comunicazione con secondaria singola
+![[Pasted image 20250523112928.png]]
+
+>[!info] comunicazione con più secondarie
+nella comunicazione con più secondarie, la primaria usa slot pari, e ad ogni slot specifica chi deve trasmettere nello slot successivo
+![[Pasted image 20250523113027.png]]
+
+## RFID
 
 se due tag rispondono nello stesso momento, avviene una collisione (praticametne bit a bit) e il reader rimane incluato
 
