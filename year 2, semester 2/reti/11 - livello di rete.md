@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-23T16:55
 ---
 >[!index]
 >- [funzioni chiave del livello di rete](#funzioni%20chiave%20del%20livello%20di%20rete)
@@ -41,13 +41,13 @@ esistono 2 approcci per lo **switching** (word that sounds like a sexual practic
 nell’approccio a **circuito virtuale**, prima che i datagrammi fluiscano, i due sistemi terminali e i router intermedi stabiliscono una connessione virtuale
 un circuito virtuale consiste in:
 1. un percorso tra gli host di origine e destinazione
-2. numeri VC, uno per ciascun collegamento
+2. numeri VC, uno per ciascun collegamento (link)
 3. righe nella tabella d’inoltro in ciascun router
 ogni pacchetto di un circuito virtuale ha un **numero VC** (chiamata anche etichetta di circuito) nella propria intestazione, ed ogni router sostituisce il numero VC con un nuovo numero.
 
 >[!info] tabella d’inoltro
 ![[Pasted image 20250410074142.png]]
-oltre a questi campi, i router mantengono le informazioni sullo stato delle connessioni ! aggiungono alla tabella una nuova riga ogni volta che stabiliscono una nuova connessione, e la cancellano quando viene rilasciata //connessione tra terminali o tra 2 router ?
+oltre a questi campi, i router mantengono le informazioni sullo stato delle connessioni ! aggiungono alla tabella una nuova riga ogni volta che stabiliscono una nuova connessione, e la cancellano quando viene rilasciata (connessione tra un router e un terminale/altro router)
 
 >[!example] rete a circuito virtuale
 ![[Pasted image 20250409192031.png]]
