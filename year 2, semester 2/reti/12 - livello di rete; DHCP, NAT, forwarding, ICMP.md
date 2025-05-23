@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-23T18:11
+updated: 2025-05-23T18:28
 ---
 >- [indirizzamento IPv4](#indirizzamento%20IPv4)
 >	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
@@ -171,6 +171,7 @@ inoltrare un datagramma significa collocarlo sul giusto percorso (porta di uscit
 in particolare, quando un host ha un datagramma da inviare, lo invia al router della rete locale, che accede alla tabella di routing per trovare l’hop successivo a cui inviarlo: l’inoltro richiede una riga nella tabella **per ogni blocco di rete**
 >[!example] esempio
 ![[Pasted image 20250423204754.png]]
+le entry che non hanno un next hop sono collegate direttamente al router
 
 >[!info] instradamento
 un’altra rappresentazione della tabella d’inoltro è:

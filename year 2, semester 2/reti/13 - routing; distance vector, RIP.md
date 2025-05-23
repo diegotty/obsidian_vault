@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-09T10:56
+updated: 2025-05-23T18:33
 ---
 >[!index]
 >- [routing](#routing)
@@ -16,13 +16,13 @@ updated: 2025-05-09T10:56
 >	- [implementazione RIP](#implementazione%20RIP)
 # routing
 il routing si occupa di trovare il miglior percorso da far percorrere ad un pacchetto e inserilo nella tabella di routing (= tabella di forwarding)
-- quindi il routing costruisce le tabelle, che vengono poi uste dal [[12 - livello di rete; DHCP, NAT, forwarding, ICMP#forwarding dei datagrammi IP|forwarding]]
+- quindi il routing costruisce le tabelle, che vengono poi usate dal [[12 - livello di rete; DHCP, NAT, forwarding, ICMP#forwarding dei datagrammi IP|forwarding]]
 >[!info] grafo di una rete di calcolatori
 ![[Pasted image 20250427140019.png]]
 $\text{grafo:} G=(N,E)$
 $N=\text{insieme di nodi (router) = \{u,v,w,x,y,z\}}$
 $E=\text{insieme di archi (collegamenti)= \{(u,v), (u,x), (v,x), (v,w), (x,w), (x,y),(w,y),(w,z), (y,z)\}}$
->- un path nel grafo $G$ è una sequenza di nodi $(x_{1},x_{2},\dots,x_n)$ tale che ognuna delle coppie $(x_{1},x_{2}), (x_{2},x_{3}),\dots, (x_{n-1},x_{n})$
+>- un path nel grafo $G$ è una sequenza di nodi $(x_{1},x_{2},\dots,x_n)$ tale che ognuna delle coppie $(x_{1},x_{2}), (x_{2},x_{3}),\dots, (x_{n-1},x_{n})$ è collegata
 >- $c(x,x')$ è il costo del collegamento $(x,x')$, ed il costo di un cammino è la somma di tutti i costi degli archi lungo il cammino
 >
 >il costo di un cammino può rappresentare:
