@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-23T10:37
+updated: 2025-05-23T10:52
 completed: false
 ---
 abbiamo visto, nelle lezioni precedenti, i vari modi di accesso al mezzo mediante suddivisione del canale: [[17 - livello di collegamento#TDMA|TDMA]] e [[17 - livello di collegamento#FDMA|FDMA]]
@@ -24,9 +24,28 @@ nel CDMA, ogni stazione **moltiplica** i propri dati per il proprio codice, e tr
 >- **qualsiasi stazione voglia ricevere dati da una delle altre tre stazioni (nell’esempio), moltiplica i dati ricevuti per il codice del mittente e divide per il numero delle stazioni**
 
 >[!example] esempio di calcoli
-consid
+consideriamo l’esempio di sopra:
+>$$
+\text{messaggio sul canale = }d_{1}\cdot c_{1}+d_{2}\cdot c_{2}+d_{4}\cdot d_{4}
+>$$
+>$$
+\text{messaggio di stazione1} = \frac{(d_{1}\cdot c_{1}+d_{2}\cdot c_{2}+d_{4}\cdot d_{4})\cdot c_{1}}{4} =
+>$$
+>$$
+\frac{\Big((d_{1}\cdot c_{1})\cdot c_{1}+(d_{2}\cdot c_{2})\cdot c_{1}+(d_{4}\cdot d_{4})\cdot c_{1}\Big)}{4} = \frac{d_{1}\cdot4 + d_{2}\cdot0+ d_{4}\cdot0}{4} = d_{1}
+>$$
 
-un codice moltiplicato per se stesso da il numero di stazioni
+## sequenze di chip
+il CDMA si basa sulla teoria della codifica: ad ogni stazione viene assegnato un codice (sequenza di numeri), chiamati chip
+- le sequenze assegnate sono speciali e vengono chiamate **sequenze ortogonali**
+>[!info] proprietà delle sequenze ortogonali
+> - ogni sequenza è composta da $N$ elementi, con $N= \text{numero di stazioni}$ 
+> 	- $N$ deve essere una potenza di 2 (per come calcoliamo le sequenze !)
+>- se moltiplichiamo una sequenza per un numero, ogni elemento della sequenza viene moltiplicato per tale numero
+>	- $2\cdot[+1+1-1-1]= [+2+2-2-2]$
+> se moltiplichamo due sequenze uguali e sommiamo i risultati otteniamo $N$
+> 	- $[+1+1-1-1]\cdot[+1+1]$
+
 
 sommo tutto  e lo mando sul canale
 spreading: far diventare un bit una sequenza
