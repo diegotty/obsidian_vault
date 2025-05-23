@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-23T18:33
+updated: 2025-05-23T18:36
 ---
 >[!index]
 >- [routing](#routing)
@@ -82,6 +82,7 @@ l’algoritmo quindi usa la seguente idea di base:
 
 >[!info] implementazione dell’algoritmo distance vector
 ```
+pipo
 ```
 ### problema nella modifica dei costi
 con le modalità di aggiornamento definite nell’algoritmo, si può verificare il **problema del conteggio all’infinito**: le buone notizie viaggiano in fretta, e le notizie cattive si propagano lentamente
