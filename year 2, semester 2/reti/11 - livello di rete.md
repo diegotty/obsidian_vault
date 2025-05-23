@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-23T16:55
+updated: 2025-05-23T17:15
 ---
 >[!index]
 >- [funzioni chiave del livello di rete](#funzioni%20chiave%20del%20livello%20di%20rete)
@@ -133,7 +133,7 @@ le porte d’uscita gestiscono:
 
 l’accodamento si può verificare sia nelle porte d’ingresso che nelle porte d’uscita:
 - **accodamento nelle porte d’ingresso**: quando la velocità dei commutazione è inferiore a quella delle porte d’ingresso (per non avere accodamento, la velocità di commutazione dovrebbe essere $n \cdot(\text{velocità della linea d'ingresso})$)
-- **accodamento nelle porte d’uscita**: quanod la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
+- **accodamento nelle porte d’uscita**: quando la struttura di commutazione ha un rate superiore alla porta d’uscita (o quando troppi pacchetti vanno sulla stessa porta d’uscita !)
 >[!info] accodamento sulle porte di ingresso
 **head-of-the-line blocking**: un pacchetto nella coda d’ingresso deve attendere il trasferimento (anche se la propria destinazione è libera) in quanto risulta essere bloccato da un altro pacchetto in testa alla fila
 ![[Pasted image 20250410152830.png]]
@@ -161,7 +161,7 @@ vale sia per l’accodamento in entrata che in uscita
 >- **IP**: Internet Protocol (v4 o v6)
 > - **IGMP**: Internet Group Management Protocol (multicasting)
 >  - **ICMP**: Internet Control Message Protocol (gestione errori)
->- **ARP**: Adress Resolution Protocol (associazione indirizzo IP - indirizzo collegamento (?)
+>- **ARP**: Adress Resolution Protocol (associazione indirizzo IP - indirizzo collegamento (?))
 
 ## IPv4
 il protocollo **IP** è responsabile della suddivisione in pacchetti, del forwarding, e della consegna dei datagrammi al livello di rete (host to host)
