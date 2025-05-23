@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-23T11:03
+updated: 2025-05-23T11:07
 completed: false
 ---
 abbiamo visto, nelle lezioni precedenti, i vari modi di accesso al mezzo mediante suddivisione del canale: [[17 - livello di collegamento#TDMA|TDMA]] e [[17 - livello di collegamento#FDMA|FDMA]]
@@ -16,7 +16,7 @@ nel **CDMA** (**code division multiple access**):
 >- i dati spediti sono $d_{1},d_{2},d_{3},d_{4}$, e i codici assegnati alle stazioni sono $c_{1},c_{2},c_{3},c_4$
 >
 ![[Pasted image 20250523103239.png]]
-la sequenza sul canale è la somma delle quattro sequenza inviate dalle stazioni
+la sequenza sul canale è la somma delle quattro sequenza inviate dalle stazioni (effettuiamo quindi lo **spreading**: il far diventare un bit una sequenza)
 
 nel CDMA, ogni stazione **moltiplica** i propri dati per il proprio codice, e trasmette il risultato
 >[!info] proprietà dei codici
@@ -62,11 +62,13 @@ nella trasmissione:
 - un bit dati 1 viene interpretato come $+1$
 - il silenzio viene interpretato come $0$
 >[!info] generazione di sequenze di chip
-
-
-sommo tutto  e lo mando sul canale
-spreading: far diventare un bit una sequenza
-
+per generare sequenze di chip usiamo una **tabella di Walsh**: una matrice quadrata in cui ogni riga è una sequenza di chip
+> - $W_{1}$ indica una sequenza con un chip solo (quindi una riga e una colonna), e può assumere, a scelta, valore $+1 / -1$
+>- conoscendo $W_{n}$, possiamo calcolare $W_{2n}$ nel sequente modo:
+![[Pasted image 20250523110615.png]]
+>
+>>[!example] esempio
+>![[Pasted image 20250523110641.png]]
 
 
 ogni slot lavora da una sequenza differente (slide 26 )
