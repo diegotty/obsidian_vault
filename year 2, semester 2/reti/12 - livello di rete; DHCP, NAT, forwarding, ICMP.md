@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-23T17:46
 ---
 >- [indirizzamento IPv4](#indirizzamento%20IPv4)
 >	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
@@ -18,11 +18,12 @@ updated: 2025-05-06T13:14
 >- [ICMP](#ICMP)
 >	- [messaggi ICMP](#messaggi%20ICMP)
 # indirizzamento IPv4
-**ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
-- per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
-	- i router devono necessariamente essere connessi ad almeno due collegamenti, mentre un host, in genere, ha un’interfaccia
->[!example]- esempio
-![[Pasted image 20250423084857.png]]
+>[!warning] **ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
+>- per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
+>	- i router devono necessariamente essere connessi ad almeno due collegamenti, mentre un host, in genere, ha un’interfaccia
+>
+>>[!example]- esempio
+>![[Pasted image 20250423084857.png]]
 
 gli indirizzi IPv4 sono in totale $2^{32}$ (ovvero più di 4 miliardi), e possono essere scritti in notazione binaria, decimale puntata, o esadecimale
 ## gerarchia nell’indirizzamento
