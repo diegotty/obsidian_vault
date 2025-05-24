@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-24T12:36
+updated: 2025-05-24T12:50
 completed: true
 ---
 >[!index]
@@ -216,14 +216,14 @@ nel protocollo **CSMA** (**carrier sense multiple access**), un nodo si pone in 
 - se rileva che il canale è libero, trasmette l’intero pacchetto
 - se il canale sta già trasmettendo, il nodo aspetta un altro intervallo di tempo
 >[!warning] può comunque avvenire una collisione ?
->si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione fa sì che i due nodi non rilevino la reciproca trasmissione
-il **tempo di vulnerabilità** è quindi il tempo di propagazione !!!
+>si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione (+ il tempo di trasmissione) fa sì che i due nodi non rilevino la reciproca trasmissione
+il **tempo di vulnerabilità** è quindi il tempo di propagazione !!! (secondo me, tempo di trasmissione + tempo di propagazione)
 
 >[!info] rappresentazione
 ![[Pasted image 20250510112713.png]]
 è importante notare che la distanza e il ritardo di propagazione giocano un ruolo importante nel determinare la probabilità di collisione
 ### CSMA/CD
-nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltano il canale anche durante la trasmissione (quindi durante il tempo di propagazione)
+nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltano il canale anche durante la trasmissione (quindi durante il tempo di trasmissione)
 - in questo modo la collisione viene rilevata in poco tempo
 - la trasmissione viene annullata non appena si accorge che c’è un’altra trasmissione in corso
 	- la rilevazione della collisione è facile nelle LAN cablate, ma difficile nelle LAN wireless (immagino per il maggior tempo di propagazione)
@@ -240,7 +240,9 @@ per
 >- inoltre, una volta inviato un frame, una stazione non tiene una copia del frame, nè controlla il mezzo trasmissivo per rilevare collisioni
 
 quindi, affinchè il CSMA/CD funzioni, il mittente deve poter rilevare la trasmissione mentre sta trasmettendo, ovvero prima di inviare l’ultimo bit del frame 
-- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (pk 2 volte ?  \\QUESTION)
+- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (è necessario che sia in trasmissione dopo $2T_{p}$, per sicurezza, in quanto basterebbe $T_p$ (o poco più) per rilevare una connessione)
+**per questo motivo, dato il tempo di propagazione del canale, è necessario impostare una dimensione minima per il frame tale che il tempo di trasmissione sia $2T_{p}$**
+
 >[!warning] link ad altro file
 [[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN#fasi operative del protocollo CSMA/CD|fasi operative del protocollo CSMA/CD]]
 #### metodi di persistenza
