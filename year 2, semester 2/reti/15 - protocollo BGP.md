@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-24T10:48
+updated: 2025-05-24T11:02
 completed: false
 ---
 >[!index]
@@ -36,12 +36,13 @@ gli AS possono essere di diverse dimensioni, e ad ogni AS viene assegnato dall�
 **politiche**:
 >- intra-AS: unico controllo amminstrativo (un solo ISP) , quindi le questioni di politica hanno un ruolo molto meno importante nello scegliere rotte interne al sistema
 >- inter-AS: il controllo amministrativo desidera avere il controllo su come il traffico viene instradato, e su chi instrada attraverso le sue reti
+>
 **prestazioni**:
 >- intra-AS: orientato alle prestazioni
 >- inter-AS: le politiche possono prevalere sulle prestazioni
 
 gli AS sono classificati in base al modo in cui sono connessi ad altri AS:
-- **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generano  o destinato allo stub, ma **non transita attraverso di esso**
+- **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generato  o destinato allo stub, ma **non transita attraverso di esso**
 - **AS multihomed**: ha più di una connessione con altri AS, ma non consente transito di traffico (es: azienda che usa serivizi di più network provider, ma non fornisce connettività agli altri AS)
 - **AS di transito**: è collegato a più AS, e consente il traffico (es: network provider e dorsali)
 
@@ -101,7 +102,7 @@ viene applicata `migliore()`, che rispetta la politica dell’AS
 >```
 
 ### eBGP e iBGP
-come abbiamo visto, per permetter ad ogni router di instradare correttamente i pacchetti, qualsiasi sia la destinazione, è necessario istallare su tutti i **gateway router** dell’AS, una variante del BGP chiamata **eBGP**
+come abbiamo visto, per permettere ad ogni router di instradare correttamente i pacchetti, qualsiasi sia la destinazione, è necessario istallare su tutti i **gateway router** dell’AS, una variante del BGP chiamata **eBGP**
 - invece **tutti i router** (compresi quelli di confine) dovranno usare l’**iBGP** (che è diverso dal protocollo intra-dominio !!!!)
 >[!info] eBGP e iBGP
 ![[Pasted image 20250508104842.png]]
