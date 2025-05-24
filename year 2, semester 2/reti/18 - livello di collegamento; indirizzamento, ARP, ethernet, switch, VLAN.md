@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-24T15:01
+updated: 2025-05-24T15:31
 completed: true
 ---
 >[!index]
@@ -14,7 +14,7 @@ completed: true
 >	- [IEEE 802](#IEEE%20802)
 >- [ethernet](#ethernet)
 >	- [ethernet standard](#ethernet%20standard)
-> inoltrare pacchet		- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
+>	- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
 >	- [fast ethernet](#fast%20ethernet)
 >		- [soluzioni per CSMA/CD](#soluzioni%20per%20CSMA/CD)
 >	- [gigabit ethernet](#gigabit%20ethernet)
@@ -203,6 +203,10 @@ del tipo $<\text{indirizzo MAC, interfaccia, TTL}>$
 > 	- limita i packet sniffer, che risiedono su computer di una rete, per “sniffare” il traffico delle altre stazioni (gli swtich, se conoscono il MAC di destinazione, mandano i pacchetti in unicast)
 > 		- negli hub ha senso che ci possano essere packet sniffer ngl
 >	- forniscono informazioni su uso di banda, collisioni, tipo di traffico, etc.
+
+>[!warning] differenza tra hub e switch
+>lo switch garantisce lo stesso rate di input come output per ogni device collegato allo switch
+>l’hub usa FDMA per evitare le collisioni, frazionando quindi la capacità della rete ( e la velocità)
 # VLAN
 supponiamo di avere uno switch che collega 3 LAN, e 3 gruppi di lavoro
 - se una persona del primo gruppo viene spostata in un altro gruppo, non sarà possibile fargli arrivare i pacchetti destinati al suo nuovo gruppo, in quanto, fisicamente, appartiene al primo gruppo

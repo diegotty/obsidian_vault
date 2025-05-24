@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-24T12:50
+updated: 2025-05-24T15:39
 completed: true
 ---
 >[!index]
@@ -129,7 +129,7 @@ il protocollo TDMA prevede l’accesso multiplo a **divisione di tempo**:
 - vengono assegnati turni per accedere al canale, e ogni nodo ha un turno assegnato
 - il canale viene suddiviso in intervalli di tempo
 - gli slot non usati rimangono inattivi
-il tasso trasmissivo è sempre $\frac{R}{N}$ bps (quindi male !!! se ho solo un nodo che vuole trasmettere, perdo tantissimo del canale), quindi non flessibile rispetto a variazioni nel numero di nodi
+il tasso trasmissivo è sempre $\frac{R}{N}$ bps (relativamente all’unità di tempo) (quindi male !!! se ho solo un nodo che vuole trasmettere, perdo tantissimo del canale), quindi non flessibile rispetto a variazioni nel numero di nodi
 >[!example]- esempio
 ![[Pasted image 20250509230018.png]]
 ### FDMA
