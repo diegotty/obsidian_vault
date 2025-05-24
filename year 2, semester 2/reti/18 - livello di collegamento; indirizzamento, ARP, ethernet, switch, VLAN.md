@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-24T14:55
+updated: 2025-05-24T15:01
 completed: true
 ---
 >[!index]
@@ -96,7 +96,7 @@ consideriamo la seguente richiesta HTTP da $A$ verso $B$, `http://dagabriele.biz
 
 >[!warning] comunicazione tra dispositivi in reti diverse
 >tldr: l’host fa una ARP request per ottenere il MAC dell’access point (router collegato all’ISP), mette quella nel frame e lo manda al router
->ogni router fino all’access point del destinatario, modificherà l’indirizzo MAC di destinazione (m) , facendo una richiesta ARP sull’interfaccia che porta al next hop (informazione che risiede nelle routing table), ottenendo il MAC del next hop e inserendolo come destinatario
+>ogni router fino all’access point del destinatario, modificherà l’indirizzo MAC di destinazione e di sorgente (il sorgente diventa il MAC del router), facendo una richiesta ARP sull’interfaccia che porta al next hop (informazione che risiede nelle routing table), ottenendo il MAC del next hop e inserendolo come destinatario
 ## LAN cablate : ethernet
 nel 1985, la **IEEE computer society** (*nerds*) iniziò un progetto chiamato **progetto 802**, con l’obiettivo di definire uno standard per l’interconnessione tra dispositivi di produttori differenti
 - lo scopo era di definire le funzioni del livello fisico e di collegamento dei protocolli LAN
@@ -155,7 +155,7 @@ in questa versione, il sottolivello MAC rimase invariato, compreso il formato de
 ![[Pasted image 20250510202623.png]]
 abbandonare la topologia a stella, e utilizzare un hub passivo con topologia a stella ma fissare la dimensione massima della rete a 250 metri, invece che 2500 metri della versione standard
 >l’hub (ripetitore multi-porta) è un dispositivo che opera sui singoli bit:
->-  opera a livello fisico e all’arrivo di un bit, lo riproduce incrementandone l’eneriga e lo trasmette attraverso tutte le sue interfacce
+>-  opera a livello fisico e all’arrivo di un bit, lo riproduce incrementandone l’energia e lo trasmette attraverso tutte le sue interfacce
 >- ripete il bit entrante su tutte le interfacce uscenti, anche se su qualcuna di queste c’è un segnale (huh ? pericoloso)
 >- trasmette in broadcast, e quindi ciascuna NIC può sondare il canale per verificare se è libero e rilevare una connessione mentre trasmette
 >	- quindi quando una stazione trasmette, il suo messaggio viene trasmesso in broadcast a tutte le altre stazioni per far capire che la linea è occupata
