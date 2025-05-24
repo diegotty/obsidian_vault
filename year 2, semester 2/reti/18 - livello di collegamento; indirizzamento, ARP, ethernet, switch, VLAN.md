@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-24T14:36
+updated: 2025-05-24T14:55
 completed: true
 ---
 >[!index]
@@ -94,6 +94,9 @@ consideriamo la seguente richiesta HTTP da $A$ verso $B$, `http://dagabriele.biz
 >il seguente è il flusso di pacchetti nella stazione di destinazione:
 ![[Pasted image 20250510192432.png]]
 
+>[!warning] comunicazione tra dispositivi in reti diverse
+>tldr: l’host fa una ARP request per ottenere il MAC dell’access point (router collegato all’ISP), mette quella nel frame e lo manda al router
+>ogni router fino all’access point del destinatario, modificherà l’indirizzo MAC di destinazione (m) , facendo una richiesta ARP sull’interfaccia che porta al next hop (informazione che risiede nelle routing table), ottenendo il MAC del next hop e inserendolo come destinatario
 ## LAN cablate : ethernet
 nel 1985, la **IEEE computer society** (*nerds*) iniziò un progetto chiamato **progetto 802**, con l’obiettivo di definire uno standard per l’interconnessione tra dispositivi di produttori differenti
 - lo scopo era di definire le funzioni del livello fisico e di collegamento dei protocolli LAN
