@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-24T10:30
+updated: 2025-05-24T10:39
 ---
 >[!index]
 >- [routing](#routing)
@@ -98,7 +98,7 @@ esistono 2 soluzioni al problema del conteggio all’infinito:
 - **poisoned reverse** (inversione avvelenata): si pone a $\infty$ il valore del costo del percorso che passa attraverso il vicino a cui si sta inviando il vettore
 	- nell’esempio di sopra, $B$ pone a $\infty$ il costo verso $X$ quando invia il vettore ad $A$
 # RIP
-il **RIP** (**routing information protocol**) è un protocollo a vettore distanza, 
+il **RIP** (**routing information protocol**) è un protocollo di routing che usa vettori distanza, 
 - è tipicamente incluso in UNIX BSD dal 1982
 - la metrica di costo del RIP è la **distanza misurata in hop**, in cui 15 è il numero massimo di hop, e il valore 16 indica $\infty$
 	- ogni link ha costo unitario

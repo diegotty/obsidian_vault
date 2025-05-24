@@ -1,9 +1,20 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T10:56
+updated: 2025-05-24T10:48
 completed: false
 ---
+>[!index]
+>- [internet routing](#internet%20routing)
+>- [instradamento gerarchico](#instradamento%20gerarchico)
+>	- [sistemi autonomi](#sistemi%20autonomi)
+>- [BGP](#BGP)
+>	- [path-vector routing](#path-vector%20routing)
+>	- [eBGP e iBGP](#eBGP%20e%20iBGP)
+>- [tabelle di routing](#tabelle%20di%20routing)
+>- [attributi del percorso e rotte BGP](#attributi%20del%20percorso%20e%20rotte%20BGP)
+>- [selezione dei percorsi BGP](#selezione%20dei%20percorsi%20BGP)
+>- [messaggi BGP](#messaggi%20BGP)
 ## internet routing
 abbiamo fin qui visto la rete come una collezione di router interconnessi: ciascun router era indistinguibile dagli altri (avevamo quindi una visione omogena della rete)
 ma nella pratica non è così semplice:
