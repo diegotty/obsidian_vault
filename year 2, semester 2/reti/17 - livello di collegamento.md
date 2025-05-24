@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-20T14:34
+updated: 2025-05-24T12:19
 completed: true
 ---
 >[!index]
@@ -48,7 +48,7 @@ esistono 2 tipi di link, a seconda della funzione che svolgono:
 
 inoltre un datagramma può essere gestito da diversi protocolli su collegamenti differenti ! e anche i servizi erogati dai protocolli del livello di link possono essere diversi (ad esempio, non tutti i protocolli forniscono un servizio di consegna affidabile)
 ## servizi offerti dal livello di collegamento
-- **framing**: i protocolli incapsuano i datagrammi del livello di rete all’interno di un frame a livello di link, al fine di separare i vari messaggi durante la trasmissione da una sorgente ad una destinazione. in particolare, vengono utilizzati gli **indirizzi MAC** per identificare origine e destinatario
+- **framing**: i protocolli incapsulano i datagrammi del livello di rete all’interno di un frame a livello di link, al fine di separare i vari messaggi durante la trasmissione da una sorgente ad una destinazione. in particolare, vengono utilizzati gli **indirizzi MAC** per identificare origine e destinatario
 - **consegna affidabile**: la trasmissione è basata su `ACK` come nel livello di trasporto. è considerata non necessaria nei collegamenti che presentano un basso numero di errori sui bit (es: fibra ottica, cavo coassiale e doppino intrecciato) , ma è spesso utilizzata nei collegamenti soggetti ad elevati tassi di errori (es: collegamenti wireless)
 - **controllo di flusso**: evita che il nodo trasmittente saturi quello ricevente (come in livello di rete)
 - **rilevazione degli errori**: il nodo ricevente individua la presenza di errori, grazie all’inserimento da parte del nodo trasmittente di bit di controllo di errore all’interno del frame
@@ -79,7 +79,7 @@ ciò può essere fatto in 2 modi:
 ![[Pasted image 20250509223812.png]]
 ## implementazione del livello di collegamento
 il livello di collegamento è implementato all’interno della **network interface card** (**adattatore di rete**: la scheda ethernet, PCMCI), che implementa sia il livello di collegamento che il livello fisico
-- la scheda di rete è una combinazione di hardware, software e firmare
+- la scheda di rete è una combinazione di hardware, software e firmware
 >[!info] scheda di rete
 ![[Pasted image 20250509222356.png]]
 
