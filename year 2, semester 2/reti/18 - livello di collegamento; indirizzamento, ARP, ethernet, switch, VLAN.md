@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-20T16:31
+updated: 2025-05-24T14:36
 completed: true
 ---
 >[!index]
@@ -48,7 +48,7 @@ con gli indirizzi MAC è possibile comunicare direttamente tra dispositivi (in u
 - gli indirizzi IP invece hanno una struttura gerarchica, e deveono essere aggiornati se spostati (?)
 # protocollo ARP
 il protocollo **ARP** (**address resolution protocol**) permette ad una sorgente di determinare gli indirizzi di collegamento della destinazione
-ogni **nodo IP**  (host, router) nella LAN ha una **tabella ARP**, che contiene la corrispondenza tra indirizzi IP e MAC. i suoi record sono del tipo
+	ogni **nodo IP**  (host, router) nella LAN ha una **tabella ARP**, che contiene la corrispondenza tra indirizzi IP e MAC. i suoi record sono del tipo
 $$
 <\text{indirizzo IP; indirizzo MAC; TTL}>
 $$
@@ -118,7 +118,7 @@ l’ethernet è la tecnologia di rete che consente la comunicazoine tra disposit
 ![[Pasted image 20250510194556.png]]
 ## ethernet standard
 l’ethernet standard è:
-- **senza connessione**: non è previsa alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
+- **senza connessione**: non è prevista alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
 - **non afidabile** (come IP e UDP): la scheda di rete ricevente non invia un riscontro
 >[!info] formato dei frame
 ![[Pasted image 20250510195137.png]]
