@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-24T11:02
+updated: 2025-05-24T11:18
 completed: false
 ---
 >[!index]
@@ -135,10 +135,11 @@ le tabelle di percorso ottenute da BGP non vengono usate di per sè per l’inst
 ![[Pasted image 20250508110954.png]]
 
 ## attributi del percorso e rotte BGP
-quando un router annuncia una rotta per una sessione BGP, include anche un certo numero di attributi BGP (prefisso + attributi = “rotta”). i due più importanti sono:
+quando un router annuncia una rotta in una sessione BGP, include anche un certo numero di attributi BGP (prefisso + attributi = “rotta”). i due più importanti sono:
 - `AS-PATH`: serve per selezionare i percorsi: elenca i sistemi autonomi attraverso i quali è passato l’annuncio del prefisso (quindi gli hop intermedi della rotta)
 	- ogni AS **non** stub  ha un identificatore univoco !! (quelli stub non ammettono traffico di transito quindi non verranno mai coinvolti in questa situazione)
 - `NEXT-HOP`: indirizzo IP dell’interfaccia su cui viene inviato il pacchetto (un router ha più indirizzi IP, uno per ogni interfaccia (e uno per ogni protocollo ??? per i gateway router))
+
 quando un gateway router riceve un annuncio di rotta, utiliza le proprie **politiche d’importazione** per decidere se accettare o filtrare la rotta (proprio come abbiamo visto sopra, usando `migliore()`)
 ## selezione dei percorsi BGP
 un router può ricavare più di una rotta verso una destinazione, e deve quindi sceglierne una, attraverso le **regole di eliminazione**:
@@ -146,6 +147,7 @@ un router può ricavare più di una rotta verso una destinazione, e deve quindi 
 2. si seleziona la rotta con valore `AS-PATH` più breve
 3. si seleziona quella il cui router di `NEXT-HOP` ha costo minore: **hot-potato** routing (very greedy of you, BGP)
 4. se rimane ancora più di una rotta, il router si basa sugli identificatori BGP ( ? che ci fa fra)
+
 >[!example] BGP: advertising ristretto
 >- $\text{A, B, C}$ sono **provider networks**
 >- $\text{x, y, w}$ sono **customers** (dei provider)
