@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-24T10:47
+updated: 2025-05-24T11:50
 ---
 >[!index]
 >- [link state](#link%20state)
@@ -62,7 +62,7 @@ definiamo la seguente notazione:
 **OSPF** (**open shortest path first**) è un **protocollo di routing**: è più di un algoritmo ! essendo un protocollo, deve definire il suo ambito di funzionamento, i messaggi che vengono scambiati, la comunicazione tra router e l’interazione con altri procotolli
 - è **open** perchè le specifiche del protocollo sono pubblicamente disponibili
 OSPF è un protcollo a **link state**: utilizza il flooding di informazioni di link state, e l’algoritmo di dijkstra per determinare i percorsi minimi. in particolare:
-- con OSPF, ogni volta che si verifica un cambiamento nello **stato di un collegamento**, il router manda informazioni d’instradamento a **tutti** gli altri router
+- con OSPF, ogni volta che si verifica un cambiamento nello **stato di un collegamento**, il router manda informazioni d’instradamento a **tutti** gli altri router (trigged updates)
 - invia periodicamente (ogni 30 minuti) messaggi OSPF all’intero sistema autonomo, utilizzando il flooding
 ## messaggi OSPF
 esistono 4 “tipi” di messaggi OSPF:
