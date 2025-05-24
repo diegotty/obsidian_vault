@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-09T10:56
+updated: 2025-05-24T10:34
 ---
 >[!index]
 >- [link state](#link%20state)
@@ -21,7 +21,7 @@ il **link state database** è una matrice che contiene la mappa completa della r
 ![[Pasted image 20250504140304.png]]
 
 >[!info] come si costruisce il LSDB
->innanizitutto ogni nodo della rete deve conoscere i propri vicini e i costi dei collegamenti verso di loro. se ciò si verifica:
+>innanizitutto ogni nodo della rete deve conoscere i propri vicini e i costi dei collegamenti verso di loro. se ciò non si verifica:
 >- ogni nodo invia un messaggio di `hello` a tutti i suoi vicini
 >- ogni nodo riceve gli `hello` dei vicini e crea la lista dei vicini con i relativi costi dei collegamenti
 > 	- la lista (vicino, costo) viene chiamata **LS packet** (**LSP**)

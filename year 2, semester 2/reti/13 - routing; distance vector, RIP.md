@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-24T10:19
+updated: 2025-05-24T10:30
 ---
 >[!index]
 >- [routing](#routing)
@@ -106,11 +106,10 @@ il **RIP** (**routing information protocol**) è un protocollo a vettore distanz
 ![[Pasted image 20250427153006.png]]
 >- è necessario un hop per passare da un router a un host
 >- è necessario un hop per passare da un router ad un altro router 
-// how ????? per passare ad un altro router attraversa 2 collegamenti ?
 ## route determination algorithm
-periodicamente, ogni router su cui è arrivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
+periodicamente, ogni router su cui è attivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
 - ogni router che riceve un messaggio da un altro router, nella stessa network, che dice di poter raggiungere la network $X$ a costo $N$, sa che può raggiungere la network $X$ a costo $N+1$
->[!warning] invece di inviare solo i vettori distanza, i router inviano anche l’intero contenuto della tabella di routing
+>[!warning] invece di inviare solo i vettori distanza, i router inviano anche l’intero contenuto della tabella di routing (quindi anche i next hop)
 ## messaggi RIP
 RIP si basa su una coppia di processi client-server e sul loro scambio di messaggi:
 - **RIP request**: quando un nuovo router viene inserito nella rete, invia una RIP request per ricevere immediatamente informazioni di routing
@@ -148,6 +147,8 @@ in tale occorrenza:
 ## implementazione RIP
 il RIP viene implementato come un’applicazione sulla porta 520 che usa UDP
 - un processo chiamato `routed` (route daemon) esegue RIP, cioè mantiene le informazioni d’istradamento e scambia messaggi con processi `routed` nei router vicini
-- poichè RIP viene implementato come un processo a livello di applicazione, può inviare e ricevere messaggi su una socket standard, e utilizzare un protocollo di trasporto standard
+
+>[!warning] poichè RIP viene implementato come un processo a livello di applicazione, può inviare e ricevere messaggi su una socket standard, e utilizzare un protocollo di trasporto standard
+
 >[!figure] raffigurazione
 ![[Pasted image 20250427160209.png]]
