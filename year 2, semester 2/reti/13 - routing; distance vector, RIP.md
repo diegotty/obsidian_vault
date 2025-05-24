@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-23T18:36
+updated: 2025-05-24T10:19
 ---
 >[!index]
 >- [routing](#routing)
@@ -86,7 +86,7 @@ pipo
 ```
 ### problema nella modifica dei costi
 con le modalità di aggiornamento definite nell’algoritmo, si può verificare il **problema del conteggio all’infinito**: le buone notizie viaggiano in fretta, e le notizie cattive si propagano lentamente
->[!example] esempio di problema del conteggio all’infinito
+>[!example] esempio di problema del conteggio all’infinito (**count to infinity**)
 ![[Pasted image 20250427144841.png]]
 >in questo esempio il costo di ogni collegamento è unitario
 >16 == $\infty$
