@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-28T23:57
+updated: 2025-05-29T01:55
 completed: true
 ---
 >[!index]
@@ -36,7 +36,7 @@ gli indirizzi IP sono usati a livello di rete, e individuano con esattezza i pun
 ![[Pasted image 20250510185415.png]]
 notiamo che:
 >- ogni stazione (adattatore/scheda di rete) ha un’indirizzo MAC
->- ogni router(/switch ?) ha un indirizzo MAC per ogni interfaccia (porta)
+>- ogni router(/switch ) ha un indirizzo MAC per ogni interfaccia (porta)
 >- l’host inoltra il messaggio all’indirizzo MAC del prossimo hop, non all’indirizzo MAC del destinatario !
 >	- ciò accade per ogni hop
 
