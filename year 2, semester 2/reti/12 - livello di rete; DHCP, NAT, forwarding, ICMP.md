@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-06T13:14
+updated: 2025-05-23T18:28
 ---
 >- [indirizzamento IPv4](#indirizzamento%20IPv4)
 >	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
@@ -18,11 +18,12 @@ updated: 2025-05-06T13:14
 >- [ICMP](#ICMP)
 >	- [messaggi ICMP](#messaggi%20ICMP)
 # indirizzamento IPv4
-**ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
-- per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
-	- i router devono necessariamente essere connessi ad almeno due collegamenti, mentre un host, in genere, ha un’interfaccia
->[!example]- esempio
-![[Pasted image 20250423084857.png]]
+>[!warning] **ogni interfaccia** di host e router di Internet ha un indirizzo IP globalmente univoco a 32 bit !
+>- per **interfaccia** si intende il confine tra host e collegamento fisico (quindi tipo una porta **fisica** ?)
+>	- i router devono necessariamente essere connessi ad almeno due collegamenti, mentre un host, in genere, ha un’interfaccia
+>
+>>[!example]- esempio
+>![[Pasted image 20250423084857.png]]
 
 gli indirizzi IPv4 sono in totale $2^{32}$ (ovvero più di 4 miliardi), e possono essere scritti in notazione binaria, decimale puntata, o esadecimale
 ## gerarchia nell’indirizzamento
@@ -38,15 +39,14 @@ data la necessità di supportare sia reti piccole che grandi, il prefisso viene 
 ![[Pasted image 20250423085724.png]]
 ci sono **3 lunghezze** di prefisso: 8, 16 e 24bit
 inoltre:
->- negli indirizzi di classe A, il primo bit del primo ottetto è sempre 0
->- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10
->- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110
+>- negli indirizzi di classe A, i primo bit del primo ottetto è sempre 0, e il resto del primo ottetto viene usato per specificare la sottorete
+>- negli indirizzi di classe b, i primi 2 bit del primo ottetto sono sempre 10, e i primi 2 ottetti vengono usati come prefisso
+>- negli indirizzi di classe C, i primi 3 bit del primo ottetto sono sempre 110, e i primi 3 ottetti vengono usati come prefisso
 >
 in questo modo gli intervalli a destra hanno senso ! (e in questo modo si riconosce subito a che classe un indirizzo appartiene)
 
 **vantaggi**:
 - in questo modo, una volta individuato l’indirizzo, si può facilmente risalire alla classe e la lunghezza del prefisso
-
 **svantaggi**:
 - è facile che gli indirizzi vengano esauriti/sprecati:
 	- la classe A può essere assegnata solo a 128 orgnizzazioni nel mondo, e ognuna ha 16.777.216 nodi: la maggior parte degli indirizzi verrebbe sprecata, e poche organizzazioni potrebbero usufruire di indirizzi di classe A
@@ -83,7 +83,7 @@ sensato !!
 ![[Pasted image 20250423165724.png]]
 >- l’indirizzo `0.0.0.0` è utilizzato dagli host al momento del boot
 >- gli indirizzi IP che hanno lo 0 come **numero di rete** si riferiscono alla rete corrente
-l- ’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla rete locale (in genere una LAN)
+>- l’indirizzo composto da tutti 1 permette la trasmissione **broadcast** sulla rete locale (in genere una LAN)
 >- gli indirizzi con numero di rete opportuno e tutti 1 nel campo **host** permettono l’invio di pacchetti broadcast a LAN distanti (alla LAN specificata dal numero di rete)
 >- gli indirizzi nella forma `127.xx.yy.zz` sono riservati al **loopback**: sono pacchetti non immessi nel cavo, ma elaborati localmente e trattati come pacchetti in arrivo
 
@@ -142,10 +142,9 @@ ci addentriamo ora nelle **sottoreti**, reti isolate in cui i punti terminali so
 >se il prefisso di rete è multiplo di 8bit (`a.b.c.d/24`):
 >- allora gli indirizzi degli host vanno da `a.b.c.0` a `a.b.c.255`
 se il prefisso di rete non è multiplo di 8bit (`a.b.c.d/26`):
->- bisogna vedere la rappresentazione binaria di `d`: per esempioi, se `d=10xxxxxx`, allora gli indirizzi degli host nella sottrete vanno da `10000000`(128) a `10111111`(191)
+>- bisogna vedere la rappresentazione binaria di `d`: per esempio, se `d=10xxxxxx`, allora gli indirizzi degli host nella sottrete vanno da `10000000`(128) a `10111111`(191)
 
-detto ciò, può capitare che un’entità che ha ricevuto un blocco abbia bisogno di un numero maggiore di indirizzi, ma che il blocco successivo sia assegnato ad un’altra entità
-entrano in gioco gli **indirizzi privati** e il **NAT** !
+detto ciò, può capitare che un’entità che ha ricevuto un blocco abbia bisogno di un numero maggiore di indirizzi, ma che il blocco successivo sia assegnato ad un’altra entità. entrano allora in gioco gli **indirizzi privati** e il **NAT** !
 # NAT
 con la proliferazione di sottoreti **SOHO** (small office, home office), ogni volta che si vuole installare una rete locale per connettere più macchine, l’ISP deve allocare un intervallo di indirizzi per coprire la sottorete, e spesso ciò risulta impossibile per la mancanza di indirizzi aggiuntivi nella sottorete
 il **NAT** (**network address translation**) permette di usare indirizzi riservati (spesso identici) nelle singole reti private, per scambiare pacchetti tra i loro dispositivi
@@ -172,6 +171,7 @@ inoltrare un datagramma significa collocarlo sul giusto percorso (porta di uscit
 in particolare, quando un host ha un datagramma da inviare, lo invia al router della rete locale, che accede alla tabella di routing per trovare l’hop successivo a cui inviarlo: l’inoltro richiede una riga nella tabella **per ogni blocco di rete**
 >[!example] esempio
 ![[Pasted image 20250423204754.png]]
+le entry che non hanno un next hop sono collegate direttamente al router
 
 >[!info] instradamento
 un’altra rappresentazione della tabella d’inoltro è:

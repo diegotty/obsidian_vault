@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-05-09T10:56
+updated: 2025-05-24T10:39
 ---
 >[!index]
 >- [routing](#routing)
@@ -16,13 +16,13 @@ updated: 2025-05-09T10:56
 >	- [implementazione RIP](#implementazione%20RIP)
 # routing
 il routing si occupa di trovare il miglior percorso da far percorrere ad un pacchetto e inserilo nella tabella di routing (= tabella di forwarding)
-- quindi il routing costruisce le tabelle, che vengono poi uste dal [[12 - livello di rete; DHCP, NAT, forwarding, ICMP#forwarding dei datagrammi IP|forwarding]]
+- quindi il routing costruisce le tabelle, che vengono poi usate dal [[12 - livello di rete; DHCP, NAT, forwarding, ICMP#forwarding dei datagrammi IP|forwarding]]
 >[!info] grafo di una rete di calcolatori
 ![[Pasted image 20250427140019.png]]
 $\text{grafo:} G=(N,E)$
 $N=\text{insieme di nodi (router) = \{u,v,w,x,y,z\}}$
 $E=\text{insieme di archi (collegamenti)= \{(u,v), (u,x), (v,x), (v,w), (x,w), (x,y),(w,y),(w,z), (y,z)\}}$
->- un path nel grafo $G$ è una sequenza di nodi $(x_{1},x_{2},\dots,x_n)$ tale che ognuna delle coppie $(x_{1},x_{2}), (x_{2},x_{3}),\dots, (x_{n-1},x_{n})$
+>- un path nel grafo $G$ è una sequenza di nodi $(x_{1},x_{2},\dots,x_n)$ tale che ognuna delle coppie $(x_{1},x_{2}), (x_{2},x_{3}),\dots, (x_{n-1},x_{n})$ è collegata
 >- $c(x,x')$ è il costo del collegamento $(x,x')$, ed il costo di un cammino è la somma di tutti i costi degli archi lungo il cammino
 >
 >il costo di un cammino può rappresentare:
@@ -82,10 +82,11 @@ l’algoritmo quindi usa la seguente idea di base:
 
 >[!info] implementazione dell’algoritmo distance vector
 ```
+pipo
 ```
 ### problema nella modifica dei costi
 con le modalità di aggiornamento definite nell’algoritmo, si può verificare il **problema del conteggio all’infinito**: le buone notizie viaggiano in fretta, e le notizie cattive si propagano lentamente
->[!example] esempio di problema del conteggio all’infinito
+>[!example] esempio di problema del conteggio all’infinito (**count to infinity**)
 ![[Pasted image 20250427144841.png]]
 >in questo esempio il costo di ogni collegamento è unitario
 >16 == $\infty$
@@ -97,7 +98,7 @@ esistono 2 soluzioni al problema del conteggio all’infinito:
 - **poisoned reverse** (inversione avvelenata): si pone a $\infty$ il valore del costo del percorso che passa attraverso il vicino a cui si sta inviando il vettore
 	- nell’esempio di sopra, $B$ pone a $\infty$ il costo verso $X$ quando invia il vettore ad $A$
 # RIP
-il **RIP** (**routing information protocol**) è un protocollo a vettore distanza, 
+il **RIP** (**routing information protocol**) è un protocollo di routing che usa vettori distanza, 
 - è tipicamente incluso in UNIX BSD dal 1982
 - la metrica di costo del RIP è la **distanza misurata in hop**, in cui 15 è il numero massimo di hop, e il valore 16 indica $\infty$
 	- ogni link ha costo unitario
@@ -105,11 +106,10 @@ il **RIP** (**routing information protocol**) è un protocollo a vettore distanz
 ![[Pasted image 20250427153006.png]]
 >- è necessario un hop per passare da un router a un host
 >- è necessario un hop per passare da un router ad un altro router 
-// how ????? per passare ad un altro router attraversa 2 collegamenti ?
 ## route determination algorithm
-periodicamente, ogni router su cui è arrivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
+periodicamente, ogni router su cui è attivo RIP, manda la propria tabella di routing (vettore distanza) per fornire informazioni agli altri router riguardo i network e gli host a cui il router sa arrivare. qualunque router nella stessa network del router che sta mandando informazioni potrà aggiornare la propria tabella in base alle informazioni che ricevono. 
 - ogni router che riceve un messaggio da un altro router, nella stessa network, che dice di poter raggiungere la network $X$ a costo $N$, sa che può raggiungere la network $X$ a costo $N+1$
->[!warning] invece di inviare solo i vettori distanza, i router inviano anche l’intero contenuto della tabella di routing
+>[!warning] invece di inviare solo i vettori distanza, i router inviano anche l’intero contenuto della tabella di routing (quindi anche i next hop)
 ## messaggi RIP
 RIP si basa su una coppia di processi client-server e sul loro scambio di messaggi:
 - **RIP request**: quando un nuovo router viene inserito nella rete, invia una RIP request per ricevere immediatamente informazioni di routing
@@ -147,6 +147,8 @@ in tale occorrenza:
 ## implementazione RIP
 il RIP viene implementato come un’applicazione sulla porta 520 che usa UDP
 - un processo chiamato `routed` (route daemon) esegue RIP, cioè mantiene le informazioni d’istradamento e scambia messaggi con processi `routed` nei router vicini
-- poichè RIP viene implementato come un processo a livello di applicazione, può inviare e ricevere messaggi su una socket standard, e utilizzare un protocollo di trasporto standard
+
+>[!warning] poichè RIP viene implementato come un processo a livello di applicazione, può inviare e ricevere messaggi su una socket standard, e utilizzare un protocollo di trasporto standard
+
 >[!figure] raffigurazione
 ![[Pasted image 20250427160209.png]]

@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-20T08:58
+updated: 2025-05-24T15:39
 completed: true
 ---
 >[!index]
@@ -48,7 +48,7 @@ esistono 2 tipi di link, a seconda della funzione che svolgono:
 
 inoltre un datagramma può essere gestito da diversi protocolli su collegamenti differenti ! e anche i servizi erogati dai protocolli del livello di link possono essere diversi (ad esempio, non tutti i protocolli forniscono un servizio di consegna affidabile)
 ## servizi offerti dal livello di collegamento
-- **framing**: i protocolli incapsuano i datagrammi del livello di rete all’interno di un frame a livello di link, al fine di separare i vari messaggi durante la trasmissione da una sorgente ad una destinazione. in particolare, vengono utilizzati gli **indirizzi MAC** per identificare origine e destinatario
+- **framing**: i protocolli incapsulano i datagrammi del livello di rete all’interno di un frame a livello di link, al fine di separare i vari messaggi durante la trasmissione da una sorgente ad una destinazione. in particolare, vengono utilizzati gli **indirizzi MAC** per identificare origine e destinatario
 - **consegna affidabile**: la trasmissione è basata su `ACK` come nel livello di trasporto. è considerata non necessaria nei collegamenti che presentano un basso numero di errori sui bit (es: fibra ottica, cavo coassiale e doppino intrecciato) , ma è spesso utilizzata nei collegamenti soggetti ad elevati tassi di errori (es: collegamenti wireless)
 - **controllo di flusso**: evita che il nodo trasmittente saturi quello ricevente (come in livello di rete)
 - **rilevazione degli errori**: il nodo ricevente individua la presenza di errori, grazie all’inserimento da parte del nodo trasmittente di bit di controllo di errore all’interno del frame
@@ -79,7 +79,7 @@ ciò può essere fatto in 2 modi:
 ![[Pasted image 20250509223812.png]]
 ## implementazione del livello di collegamento
 il livello di collegamento è implementato all’interno della **network interface card** (**adattatore di rete**: la scheda ethernet, PCMCI), che implementa sia il livello di collegamento che il livello fisico
-- la scheda di rete è una combinazione di hardware, software e firmare
+- la scheda di rete è una combinazione di hardware, software e firmware
 >[!info] scheda di rete
 ![[Pasted image 20250509222356.png]]
 
@@ -128,8 +128,8 @@ i protocolli a suddivisione del canale condividono (e suddividono) il canale in 
 il protocollo TDMA prevede l’accesso multiplo a **divisione di tempo**:
 - vengono assegnati turni per accedere al canale, e ogni nodo ha un turno assegnato
 - il canale viene suddiviso in intervalli di tempo
-- gli slot usati rimangono inattivi
-il tasso trasmissivo è sempre $\frac{R}{N}$ bps (quindi male !!! se ho solo un nodo che vuole trasmettere, perdo tatissimo del canale), quindi non flessibile rispetto a variazioni nel numero di nodi
+- gli slot non usati rimangono inattivi
+il tasso trasmissivo è sempre $\frac{R}{N}$ bps (relativamente all’unità di tempo) (quindi male !!! se ho solo un nodo che vuole trasmettere, perdo tantissimo del canale), quindi non flessibile rispetto a variazioni nel numero di nodi
 >[!example]- esempio
 ![[Pasted image 20250509230018.png]]
 ### FDMA
@@ -151,7 +151,7 @@ nel protocollo **ALOHA puro**:
 - ogni stazione può inviare un frame tutte le volte che ha dati da inviare
 - il ricevente invia un `ACK` per notificare la corretta ricezione del frame
 - se il mittente non riceve l’`ACK` entro un **timeout**, deve ritrasmettere il frame
-	- il periodo di timeout equivale al massimo RTT tra le due stazioni più lontane
+	- il periodo di timeout equivale al **massimo RTT tra le due stazioni più lontane**
 - se due stazioni ritrasmettono contemporaneamente creando di nuovo una collisione (quindi, dopo 2 collisioni), si attende un tempo random (**back-off**) prima di effettuare la ritrasmissione del frame
 	 - il tempo di back-off è un valore scelto casualmente che dipende dal numero $K$ di trasmissioni fallite: 
 	 $$\text{back-off time} = R*T_{fr}$$
@@ -216,14 +216,14 @@ nel protocollo **CSMA** (**carrier sense multiple access**), un nodo si pone in 
 - se rileva che il canale è libero, trasmette l’intero pacchetto
 - se il canale sta già trasmettendo, il nodo aspetta un altro intervallo di tempo
 >[!warning] può comunque avvenire una collisione ?
->si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione(trasmissione ????) fa sì che i due nodi non rilevino la reciproca trasmissione
-il **tempo di vulnerabilità** è quindi il tempo di propagazione !!!
+>si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione (+ il tempo di trasmissione) fa sì che i due nodi non rilevino la reciproca trasmissione
+il **tempo di vulnerabilità** è quindi il tempo di propagazione !!! (secondo me, tempo di trasmissione + tempo di propagazione)
 
 >[!info] rappresentazione
 ![[Pasted image 20250510112713.png]]
-è importante notare che la distanza è il ritardo di propagazione giocano un ruolo importante nel determinare la probabilità di collisione
+è importante notare che la distanza e il ritardo di propagazione giocano un ruolo importante nel determinare la probabilità di collisione
 ### CSMA/CD
-nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltano il canale anche durante la trasmissione
+nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltano il canale anche durante la trasmissione (quindi durante il tempo di trasmissione)
 - in questo modo la collisione viene rilevata in poco tempo
 - la trasmissione viene annullata non appena si accorge che c’è un’altra trasmissione in corso
 	- la rilevazione della collisione è facile nelle LAN cablate, ma difficile nelle LAN wireless (immagino per il maggior tempo di propagazione)
@@ -233,13 +233,16 @@ nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltan
 >- $C$, al tempo $t_{2}$, ascolta il canale, ma non rileva ancora il primo bit dei $A$, quindi inizia a trasmettere
 >- al tempo $t_{3}$, $C$ riceve il primo bit di $A$ e interrompe la trasmissione perchè c’è collisione
 >- al tempo $t_{4}$, $A$ riceve il primo bit di $C$ e interrompe la trasmissione perchè c’è collisione
+per 
 
 >[!warning] è ancora possibile avere una collisione ? 
 >si ! potrebbe succedere che un mittente finisca di trasmettere un frame prima di ricevere il primo bit di un’altra stazione che ha già iniziato a trasmettere
 >- inoltre, una volta inviato un frame, una stazione non tiene una copia del frame, nè controlla il mezzo trasmissivo per rilevare collisioni
 
 quindi, affinchè il CSMA/CD funzioni, il mittente deve poter rilevare la trasmissione mentre sta trasmettendo, ovvero prima di inviare l’ultimo bit del frame 
-- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (pk 2 volte ?  \\QUESTION)
+- quindi il **tempo di trasmissione** di un frame deve essere almeno due volte il tempo di propagazione $T_{p}$, e la prima stazione deve essere ancora in trasmissione dopo $2T_{p}$ (è necessario che sia in trasmissione dopo $2T_{p}$, per sicurezza, in quanto basterebbe $T_p$ (o poco più) per rilevare una connessione)
+**per questo motivo, dato il tempo di propagazione del canale, è necessario impostare una dimensione minima per il frame tale che il tempo di trasmissione sia $2T_{p}$**
+
 >[!warning] link ad altro file
 [[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN#fasi operative del protocollo CSMA/CD|fasi operative del protocollo CSMA/CD]]
 #### metodi di persistenza

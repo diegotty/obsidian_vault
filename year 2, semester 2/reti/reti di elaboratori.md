@@ -1,6 +1,6 @@
 ---
 created: 2025-04-24T14:18
-updated: 2025-05-20T08:58
+updated: 2025-05-23T10:26
 ---
 [[01 - introduzione alle reti|01 - introduzione alle reti]]
 [[02 - capacità e prestazioni delle reti]]
@@ -21,3 +21,4 @@ updated: 2025-05-20T08:58
 [[17 - livello di collegamento]]
 [[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]
 [[19 - LAN wireless]]
+[[20 - CDMA, altre tecnologie wireless]]

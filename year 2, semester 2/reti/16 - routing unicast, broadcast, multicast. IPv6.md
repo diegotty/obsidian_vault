@@ -1,7 +1,7 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-05-09T10:56
-updated: 2025-05-09T10:59
+updated: 2025-05-24T11:48
 completed: true
 ---
 >[!index]
@@ -59,7 +59,7 @@ viene creato uno spanning tree (un grafo che include tutti i vertici originali (
 per l’invio di messaggi in broadcast, i pacchetti vengono inoltrati solo sui link dello spanning tree, in modo tale che ogni nodo riceva solo una copia del pacchetto
 ## multicast
 >[!info] multicast
-comunicazoine tra una sorgente e **un gruppo** di destinazioni
+comunicazione tra una sorgente e **un gruppo** di destinazioni
 ![[Pasted image 20250508121354.png]]
 >>[!tip] multicast come unicast multiplo
 >>non è ottimale gestire il multicast come unicast multiplo, in quanto sarebbe inefficiente e aggiungerebbe ritardi (per il numero di pacchetti da inviare )
@@ -84,7 +84,7 @@ viene quindi riservato un blocco di indirizzi per il multicast: in IPv4, è il b
 
 # IGMP
 il protocollo **IGMP** (**internet group management protocol**) lavora tra un host e il router che gli è direttamente conesso, e offre agli host il mezzo per informare i router ad essi connessi del fatto che un’applicazione in esecuzione vuole aderire ad uno specifico gruppo multicast
-- i messaggi vengono incapsulati in datagrammi IP, con IP protocol number 2 (huh ?), e `TTL` = 1
+- i messaggi vengono incapsulati in datagrammi IP, con IP protocol number 2 (`IGMP`), e `TTL` = 1
 >[!info] rappresentazione
 ![[Pasted image 20250508122846.png]]
 ## messaggi IGMP
@@ -93,8 +93,7 @@ il protocollo **IGMP** (**internet group management protocol**) lavora tra un ho
 - **leave group**: mandati dall’host al router, per informare dalla dipartita da un gruppo.
 	- è opzionale, in quanto il router può capire che no ci sono più host associati ad un gruppo quando non riceve report riguardo a tale gruppo in risposta alla membership query 
 
-un **router multicast** (quindi tipo speciale di router) tiene una lista per ciascuna sottorete dei  gruppi multicast (?) (in cui almento un elemento fa parte del grupp), con un timer per ogni membership al gruppo: la membership deve essere aggiornata da report inviati prima della scadenza del timer o tramite messaggi leave group espliciti
-///QUESTION ummmm
+un **router multicast** (quindi tipo speciale di router) tiene una lista per ciascun gruppo multicast (in cui almeno un elemento fa parte del gruppo), con un timer per ogni membership al gruppo: la membership deve essere aggiornata da report inviati prima della scadenza del timer o tramite messaggi leave group espliciti
 ## problema del routing multicast
 fra la popolazione complessiva di router, solo alcuni dovranno ricevere traffico multicast: quelli collegati a host del gruppo multicast
 - è quindi necessario un protocollo che coordini i router multicast in Internet, per instradare i pacchetti multicast dalla sorgente alla destinazione

@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-20T09:13
+updated: 2025-05-24T15:31
 completed: true
 ---
 >[!index]
@@ -14,7 +14,7 @@ completed: true
 >	- [IEEE 802](#IEEE%20802)
 >- [ethernet](#ethernet)
 >	- [ethernet standard](#ethernet%20standard)
->		- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
+>	- [fasi operative del protocollo CSMA/CD](#fasi%20operative%20del%20protocollo%20CSMA/CD)
 >	- [fast ethernet](#fast%20ethernet)
 >		- [soluzioni per CSMA/CD](#soluzioni%20per%20CSMA/CD)
 >	- [gigabit ethernet](#gigabit%20ethernet)
@@ -48,7 +48,7 @@ con gli indirizzi MAC è possibile comunicare direttamente tra dispositivi (in u
 - gli indirizzi IP invece hanno una struttura gerarchica, e deveono essere aggiornati se spostati (?)
 # protocollo ARP
 il protocollo **ARP** (**address resolution protocol**) permette ad una sorgente di determinare gli indirizzi di collegamento della destinazione
-ogni **nodo IP**  (host, router) nella LAN ha una **tabella ARP**, che contiene la corrispondenza tra indirizzi IP e MAC. i suoi record sono del tipo
+	ogni **nodo IP**  (host, router) nella LAN ha una **tabella ARP**, che contiene la corrispondenza tra indirizzi IP e MAC. i suoi record sono del tipo
 $$
 <\text{indirizzo IP; indirizzo MAC; TTL}>
 $$
@@ -94,6 +94,9 @@ consideriamo la seguente richiesta HTTP da $A$ verso $B$, `http://dagabriele.biz
 >il seguente è il flusso di pacchetti nella stazione di destinazione:
 ![[Pasted image 20250510192432.png]]
 
+>[!warning] comunicazione tra dispositivi in reti diverse
+>tldr: l’host fa una ARP request per ottenere il MAC dell’access point (router collegato all’ISP), mette quella nel frame e lo manda al router
+>ogni router fino all’access point del destinatario, modificherà l’indirizzo MAC di destinazione e di sorgente (il sorgente diventa il MAC del router), facendo una richiesta ARP sull’interfaccia che porta al next hop (informazione che risiede nelle routing table), ottenendo il MAC del next hop e inserendolo come destinatario
 ## LAN cablate : ethernet
 nel 1985, la **IEEE computer society** (*nerds*) iniziò un progetto chiamato **progetto 802**, con l’obiettivo di definire uno standard per l’interconnessione tra dispositivi di produttori differenti
 - lo scopo era di definire le funzioni del livello fisico e di collegamento dei protocolli LAN
@@ -118,7 +121,7 @@ l’ethernet è la tecnologia di rete che consente la comunicazoine tra disposit
 ![[Pasted image 20250510194556.png]]
 ## ethernet standard
 l’ethernet standard è:
-- **senza connessione**: non è previsa alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
+- **senza connessione**: non è prevista alcuna forma di handshake preventiva con il destinatario prima di inviare un pacchetto
 - **non afidabile** (come IP e UDP): la scheda di rete ricevente non invia un riscontro
 >[!info] formato dei frame
 ![[Pasted image 20250510195137.png]]
@@ -152,7 +155,7 @@ in questa versione, il sottolivello MAC rimase invariato, compreso il formato de
 ![[Pasted image 20250510202623.png]]
 abbandonare la topologia a stella, e utilizzare un hub passivo con topologia a stella ma fissare la dimensione massima della rete a 250 metri, invece che 2500 metri della versione standard
 >l’hub (ripetitore multi-porta) è un dispositivo che opera sui singoli bit:
->-  opera a livello fisico e all’arrivo di un bit, lo riproduce incrementandone l’eneriga e lo trasmette attraverso tutte le sue interfacce
+>-  opera a livello fisico e all’arrivo di un bit, lo riproduce incrementandone l’energia e lo trasmette attraverso tutte le sue interfacce
 >- ripete il bit entrante su tutte le interfacce uscenti, anche se su qualcuna di queste c’è un segnale (huh ? pericoloso)
 >- trasmette in broadcast, e quindi ciascuna NIC può sondare il canale per verificare se è libero e rilevare una connessione mentre trasmette
 >	- quindi quando una stazione trasmette, il suo messaggio viene trasmesso in broadcast a tutte le altre stazioni per far capire che la linea è occupata
@@ -200,6 +203,10 @@ del tipo $<\text{indirizzo MAC, interfaccia, TTL}>$
 > 	- limita i packet sniffer, che risiedono su computer di una rete, per “sniffare” il traffico delle altre stazioni (gli swtich, se conoscono il MAC di destinazione, mandano i pacchetti in unicast)
 > 		- negli hub ha senso che ci possano essere packet sniffer ngl
 >	- forniscono informazioni su uso di banda, collisioni, tipo di traffico, etc.
+
+>[!warning] differenza tra hub e switch
+>lo switch garantisce lo stesso rate di input come output per ogni device collegato allo switch
+>l’hub usa FDMA per evitare le collisioni, frazionando quindi la capacità della rete ( e la velocità)
 # VLAN
 supponiamo di avere uno switch che collega 3 LAN, e 3 gruppi di lavoro
 - se una persona del primo gruppo viene spostata in un altro gruppo, non sarà possibile fargli arrivare i pacchetti destinati al suo nuovo gruppo, in quanto, fisicamente, appartiene al primo gruppo

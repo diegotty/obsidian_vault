@@ -1,9 +1,20 @@
 ---
 related to: "[[11 - livello di rete]]"
 created: 2025-03-02T17:41
-updated: 2025-05-09T10:56
+updated: 2025-05-24T11:18
 completed: false
 ---
+>[!index]
+>- [internet routing](#internet%20routing)
+>- [instradamento gerarchico](#instradamento%20gerarchico)
+>	- [sistemi autonomi](#sistemi%20autonomi)
+>- [BGP](#BGP)
+>	- [path-vector routing](#path-vector%20routing)
+>	- [eBGP e iBGP](#eBGP%20e%20iBGP)
+>- [tabelle di routing](#tabelle%20di%20routing)
+>- [attributi del percorso e rotte BGP](#attributi%20del%20percorso%20e%20rotte%20BGP)
+>- [selezione dei percorsi BGP](#selezione%20dei%20percorsi%20BGP)
+>- [messaggi BGP](#messaggi%20BGP)
 ## internet routing
 abbiamo fin qui visto la rete come una collezione di router interconnessi: ciascun router era indistinguibile dagli altri (avevamo quindi una visione omogena della rete)
 ma nella pratica non è così semplice:
@@ -25,12 +36,13 @@ gli AS possono essere di diverse dimensioni, e ad ogni AS viene assegnato dall�
 **politiche**:
 >- intra-AS: unico controllo amminstrativo (un solo ISP) , quindi le questioni di politica hanno un ruolo molto meno importante nello scegliere rotte interne al sistema
 >- inter-AS: il controllo amministrativo desidera avere il controllo su come il traffico viene instradato, e su chi instrada attraverso le sue reti
+>
 **prestazioni**:
 >- intra-AS: orientato alle prestazioni
 >- inter-AS: le politiche possono prevalere sulle prestazioni
 
 gli AS sono classificati in base al modo in cui sono connessi ad altri AS:
-- **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generano  o destinato allo stub, ma **non transita attraverso di esso**
+- **AS stub**: ha un solo collegamento verso un altro AS, e il traffico è generato  o destinato allo stub, ma **non transita attraverso di esso**
 - **AS multihomed**: ha più di una connessione con altri AS, ma non consente transito di traffico (es: azienda che usa serivizi di più network provider, ma non fornisce connettività agli altri AS)
 - **AS di transito**: è collegato a più AS, e consente il traffico (es: network provider e dorsali)
 
@@ -90,7 +102,7 @@ viene applicata `migliore()`, che rispetta la politica dell’AS
 >```
 
 ### eBGP e iBGP
-come abbiamo visto, per permetter ad ogni router di instradare correttamente i pacchetti, qualsiasi sia la destinazione, è necessario istallare su tutti i **gateway router** dell’AS, una variante del BGP chiamata **eBGP**
+come abbiamo visto, per permettere ad ogni router di instradare correttamente i pacchetti, qualsiasi sia la destinazione, è necessario istallare su tutti i **gateway router** dell’AS, una variante del BGP chiamata **eBGP**
 - invece **tutti i router** (compresi quelli di confine) dovranno usare l’**iBGP** (che è diverso dal protocollo intra-dominio !!!!)
 >[!info] eBGP e iBGP
 ![[Pasted image 20250508104842.png]]
@@ -123,10 +135,11 @@ le tabelle di percorso ottenute da BGP non vengono usate di per sè per l’inst
 ![[Pasted image 20250508110954.png]]
 
 ## attributi del percorso e rotte BGP
-quando un router annuncia una rotta per una sessione BGP, include anche un certo numero di attributi BGP (prefisso + attributi = “rotta”). i due più importanti sono:
+quando un router annuncia una rotta in una sessione BGP, include anche un certo numero di attributi BGP (prefisso + attributi = “rotta”). i due più importanti sono:
 - `AS-PATH`: serve per selezionare i percorsi: elenca i sistemi autonomi attraverso i quali è passato l’annuncio del prefisso (quindi gli hop intermedi della rotta)
 	- ogni AS **non** stub  ha un identificatore univoco !! (quelli stub non ammettono traffico di transito quindi non verranno mai coinvolti in questa situazione)
 - `NEXT-HOP`: indirizzo IP dell’interfaccia su cui viene inviato il pacchetto (un router ha più indirizzi IP, uno per ogni interfaccia (e uno per ogni protocollo ??? per i gateway router))
+
 quando un gateway router riceve un annuncio di rotta, utiliza le proprie **politiche d’importazione** per decidere se accettare o filtrare la rotta (proprio come abbiamo visto sopra, usando `migliore()`)
 ## selezione dei percorsi BGP
 un router può ricavare più di una rotta verso una destinazione, e deve quindi sceglierne una, attraverso le **regole di eliminazione**:
@@ -134,6 +147,7 @@ un router può ricavare più di una rotta verso una destinazione, e deve quindi 
 2. si seleziona la rotta con valore `AS-PATH` più breve
 3. si seleziona quella il cui router di `NEXT-HOP` ha costo minore: **hot-potato** routing (very greedy of you, BGP)
 4. se rimane ancora più di una rotta, il router si basa sugli identificatori BGP ( ? che ci fa fra)
+
 >[!example] BGP: advertising ristretto
 >- $\text{A, B, C}$ sono **provider networks**
 >- $\text{x, y, w}$ sono **customers** (dei provider)
