@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-20T14:34
+updated: 2025-05-28T23:57
 completed: false
 ---
 >[!info] momento ricapitolazione

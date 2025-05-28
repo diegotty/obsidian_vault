@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-24T15:31
+updated: 2025-05-28T23:57
 completed: true
 ---
 >[!index]
