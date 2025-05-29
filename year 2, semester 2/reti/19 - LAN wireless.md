@@ -1,7 +1,7 @@
 ---
 related to: "[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]"
 created: 2025-03-02T17:41
-updated: 2025-05-29T02:40
+updated: 2025-05-29T02:48
 completed: false
 ---
 >[!index]
@@ -144,7 +144,7 @@ esistono due tipi di IFS:
 	- se durante l’intervallo DIFS, il canale diventa occupato, il nodo interrompe il conteggio del DIFS, aspetta che il canale torni completamente libero, e riavvia da zero il conteggio del DIFS 
 - ricevente: se riceve correttamente un frame, invia `ACK` dopo aver aver aspettato un SIFS
 dopo aver atteso un tempo IFS, se il canale è ancora libero, l’host attende un ulteriore tempo di tempo di contesa: la **contention window**, il lasso di tempo per cui deve sentire il canale libero prima di trasmettere
-- l’host sceglie $R$ random in `[0, CW]`
+- l’host sceglie $R$ random in `[0, CW-1]`
 - `while R > 0:`
 	ascolta il canale per uno slot (il tempo è suddiviso in slot e ad ogni slot si esegue il sensing del canale)
 	se il canale è libero per la durata dello slot: `R = R -1`(conto all’indietro: backoff), altrimenti, se il canale è occupato durante il sensing, interrompe il timer e aspetta che il canale si liberi (e riavvia il timer)
