@@ -1,7 +1,7 @@
 ---
 related to: "[[18 - livello di collegamento; indirizzamento, ARP, ethernet, switch, VLAN]]"
 created: 2025-03-02T17:41
-updated: 2025-05-28T23:57
+updated: 2025-05-29T02:40
 completed: false
 ---
 >[!index]
@@ -59,7 +59,7 @@ il mezzo trasmissione delle LAN wireless è l’aria, e la connessione ad altre 
 ![[Pasted image 20250518130821.png]]
 
 >[!tip] migrazione dall’ambiente cablato al wireless
-il funzionamento di una rete cablato o wireless dipende dai due sottolivelli inferiori dello stack protocollare: collegamento e fisico
+il funzionamento di una rete cablata o wireless dipende dai due sottolivelli inferiori dello stack protocollare: collegamento e fisico
 >
 infatti, per migrare dalla rete cablata a quella wireless, è sufficiente cambiare le schede di rete e sostituire lo switch di collegamento con un **AP**
 >- così facendo, cambiano gli indirizzi MAC mentre gli IP rimangono invariati
@@ -104,7 +104,7 @@ IEEE ha definito le specifiche per le LAN wireless, chiamate 802.11, che coprono
 >- il BSS ad hoc è invece una rete *standalone*
 #### ESS
 **extended service set** (**ESS**) è costituito da due o più **BSS** con infrastruttura, collegati tramite un sistema di distribuzione che è una rete cablata (ethernet) o wireless
-- quando i BSS sono colleagti, le stazioni in visibilità comunicano direttamente mentre le altre comunicano tramite l’AP
+- quando i BSS sono collegati, le stazioni in visibilità comunicano direttamente mentre le altre comunicano tramite l’AP
 - molto comuni nelle reti wi-fi moderne, sopratutto in ambienti dove è necessario coprire aree estese con accesso continuo alla rete wireless
 >[!info] ESS
 ![[Pasted image 20250518134043.png]]
@@ -113,7 +113,7 @@ lo spettro 2.4GHz-2.48GHz è diviso in 11 canali parzialmente sovrapposti:
 - l’amministratore dell’AP sceglie una frequenza su cui far comunicare l’AP
 - sono possibili interferenze (es: se viene usato lo stesso canale per AP vicini)
 - il numero massimo di frequenze utilizzabili da diversi AP per evitare interferenze è 3
-- i canali non interferiscono se separati da 4 o più canali
+- i canali non interferiscono se separati da 4 o più canali (quindi, uniche frequenze che non si overlappano: 1, 6 ,11)
 dato che architettura IEE 802.11 prevede che una stazione wireless si associ a un AP per accedere a internet, è necessario:
 - conoscere gli AP disponibili in un BSS
 - un protocollo di associazione:
