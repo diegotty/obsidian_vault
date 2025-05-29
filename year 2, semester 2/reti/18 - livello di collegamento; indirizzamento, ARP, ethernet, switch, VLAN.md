@@ -1,7 +1,7 @@
 ---
 related to: "[[17 - livello di collegamento]]"
 created: 2025-05-20T08:58
-updated: 2025-05-29T01:55
+updated: 2025-05-29T02:03
 completed: true
 ---
 >[!index]
@@ -75,7 +75,7 @@ ARP è “plug-and-play”, in quanto la tabella ARP si costruisce automaticamen
 
 >[!example] esempio
 ![[Pasted image 20250510191545.png]]
-## indirizzamento
+## protocollo ARP per host in sottoreti diverse
 l’indirizzamento è usato per inviare verso un nodo esterno alla sottorete
 >[!info]- flusso di pacchetti dalla sorgente (riassunto corso ngl)
 ![[Pasted image 20250510191819.png]]
@@ -115,7 +115,7 @@ i vari standard differiscono a livello fisico e nel [[17 - livello di collegamen
 ![[Pasted image 20250510194252.png]]
 
 # ethernet
-l’ethernet è la tecnologia di rete che consente la comunicazoine tra dispositivi in una LAN, e detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
+l’ethernet è la tecnologia di rete (un protocollo di livello collegamento) che consente la comunicazione tra dispositivi in una LAN, e detiene una posizione dominante nel mercato delle LAN cablate, ed è stata la prima LAN ad alta velocità, con vasta diffusione
 - è più semplice e meno costosa di token ring, FDDI e ATM, ma rimane al passo dei tempi con il tasso trasmissivo: si va dall’ethernet standard (10mpbs) al 10 gigabit ethernet (10gbps)
 >[!info] ethernet STANDARD
 ![[Pasted image 20250510194556.png]]
