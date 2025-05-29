@@ -1,7 +1,7 @@
 ---
 related to: "[[15 - divide et impera]]"
 created: 2025-05-06T13:13
-updated: 2025-05-20T14:34
+updated: 2025-05-28T23:57
 completed: 
 ---
 >[!index]

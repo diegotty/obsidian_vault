@@ -1,7 +1,7 @@
 ---
 related to: "[[03 - introduzione allo stack protocollare TCP-IP]]"
 created: 2025-03-02T17:41
-updated: 2025-05-24T15:39
+updated: 2025-05-29T01:48
 completed: true
 ---
 >[!index]
@@ -218,6 +218,9 @@ nel protocollo **CSMA** (**carrier sense multiple access**), un nodo si pone in 
 >[!warning] può comunque avvenire una collisione ?
 >si ! se due nodi trasmettono allo stesso momento ! il ritardo di propagazione (+ il tempo di trasmissione) fa sì che i due nodi non rilevino la reciproca trasmissione
 il **tempo di vulnerabilità** è quindi il tempo di propagazione !!! (secondo me, tempo di trasmissione + tempo di propagazione)
+>
+>
+>forse non tempo di propagazione xke è costante x entrambi quindi non conta ? 
 
 >[!info] rappresentazione
 ![[Pasted image 20250510112713.png]]
@@ -235,7 +238,7 @@ nel protocollo CSMA/CD (**CD** sta per **collision detection**), i nodi ascoltan
 >- al tempo $t_{4}$, $A$ riceve il primo bit di $C$ e interrompe la trasmissione perchè c’è collisione
 per 
 
->[!warning] è ancora possibile avere una collisione ? 
+>[!warning] è ancora possibile non detectare una collisione ? 
 >si ! potrebbe succedere che un mittente finisca di trasmettere un frame prima di ricevere il primo bit di un’altra stazione che ha già iniziato a trasmettere
 >- inoltre, una volta inviato un frame, una stazione non tiene una copia del frame, nè controlla il mezzo trasmissivo per rilevare collisioni
 
