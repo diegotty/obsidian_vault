@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-02T17:55
+updated: 2025-06-02T18:09
 completed: false
 ---
 - vincoli esterni: è necessario specificare TUTTI i vincoli esterni necessari (in particolare, i vincoli banali: date, )
@@ -25,6 +25,17 @@ completed: false
 		- *fusione* **di sotto-associazioni nelle loro super-associazioni**
 - identificatori: se ci sono già $\{id\}$, controlliamo se uno di loro basta. altrimenti usiamo un **identificatore artificiale**
 - vincoli esterni e use-case (in FOL)
-### traduzione diretta
 
 >[!warning] operazioni non sono da ristrutturare
+### traduzione diretta
+- associazioni:
+	- molteplicità:
+	- 0..* - 0..* : chiave è composta dalle foreign key
+	- 0..* - 0..1 : chiave è composta da foreign key del ruolo 0..1
+	- 0..1 - 0..1 : chiave è composta da una delle due foreign key (è uguale)
+	- 1..\* - 0..\*: **vincolo di inclusione**: ogni chiave di ruolo 1../* deve apparire in tabella associazione 
+	- 1..\* - 1..\*: 2 **vincoli di inclusione**
+	- 1..1 - 0..* : **vincolo di inclusione** che può esser implementato con vincolo di foreign key da parte del ruolo 1..1 (quindi doppia foreign key)
+	 - $\{ id1 \}$ su 1..1 e attributo : **accorpamento** nel verso della tabella che viene riconosciuta con l’associazione. campo `chiave_tabella_opposta`, foreign key
+	 - $\{ id \}$ unicamente su associazione (ristrutturazione per sostituzione): attributo `chiave_tabella_opposta` che è anche chiave primaria (e foreign key)
+>[!warning] possiamo accorpare ogni volta che abbiamo molteplicità `0..1` o `1..1`
