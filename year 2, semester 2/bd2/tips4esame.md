@@ -1,14 +1,15 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-02T16:42
+updated: 2025-06-02T17:55
 completed: false
 ---
 - vincoli esterni: è necessario specificare TUTTI i vincoli esterni necessari (in particolare, i vincoli banali: date, )
 - le operazioni sono necessarie quando vanno a sostituire un attributo che va calcolato
 	- se invece servono a calcolare qualcosa che non sarebbe un dato, sono use-case
 
-ristrutturazione:
+## progettazione
+### ristrutturazione
 - eliminazione di attributi multivalore (classe per attributo (con $\{ id \}$ e associazione con molteplicità)
 - scelta dei tipi di dato (scrivere tipi non base in SQL ?)
 	- tipi concettuali base
@@ -24,5 +25,6 @@ ristrutturazione:
 		- *fusione* **di sotto-associazioni nelle loro super-associazioni**
 - identificatori: se ci sono già $\{id\}$, controlliamo se uno di loro basta. altrimenti usiamo un **identificatore artificiale**
 - vincoli esterni e use-case (in FOL)
+### traduzione diretta
 
 >[!warning] operazioni non sono da ristrutturare
