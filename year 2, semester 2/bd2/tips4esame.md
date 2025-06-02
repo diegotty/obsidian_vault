@@ -1,11 +1,11 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-02T22:26
+updated: 2025-06-02T22:40
 completed: false
 ---
 >[!info] ngl
->- durata > inizio e fine
+>- durata > inizio e fine (evita vincoli su date !!!!!)
 
 - vincoli esterni: è necessario specificare TUTTI i vincoli esterni necessari (in particolare, i vincoli banali: date, )
 - le operazioni sono necessarie quando vanno a sostituire un attributo che va calcolato
