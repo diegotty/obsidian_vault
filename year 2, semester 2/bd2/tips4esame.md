@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-02T18:09
+updated: 2025-06-02T19:18
 completed: false
 ---
 - vincoli esterni: è necessario specificare TUTTI i vincoli esterni necessari (in particolare, i vincoli banali: date, )
@@ -39,3 +39,13 @@ completed: false
 	 - $\{ id1 \}$ su 1..1 e attributo : **accorpamento** nel verso della tabella che viene riconosciuta con l’associazione. campo `chiave_tabella_opposta`, foreign key
 	 - $\{ id \}$ unicamente su associazione (ristrutturazione per sostituzione): attributo `chiave_tabella_opposta` che è anche chiave primaria (e foreign key)
 >[!warning] possiamo accorpare ogni volta che abbiamo molteplicità `0..1` o `1..1`
+
+>[!warning] UNIQUE !!!
+
+### vincoli
+i vincoli esterni devono diventare:
+- vincoli di ennupla (vincoli esterni che sono nella scope di un’unica tabella)
+- trigger (vincoli esterni che necessitano il check su altre tabelle oltre alla propria)
+
+>[!info] domande
+>mettere vincoli dominio e usare domini è la stessa cosa giusto ….
