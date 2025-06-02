@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-05-23T11:31
+updated: 2025-05-29T09:08
 completed: false
 ---
 abbiamo visto, nelle lezioni precedenti, i vari modi di accesso al mezzo mediante suddivisione del canale: [[17 - livello di collegamento#TDMA|TDMA]] e [[17 - livello di collegamento#FDMA|FDMA]]
@@ -94,11 +94,11 @@ la **scatternet** è una combinazione di piconet: in questa rete uno dei disposi
 bluetooth definisce uno stack protocollare diverso da TCP/IP:
 ![[Pasted image 20250523112443.png]]
 
-bluetooth usa TDMA, con slot temporali di 625us
-- ogni slot lavora da una sequenza differente
+bluetooth usa TDMA, con slot temporali di 625ms
+- ogni slot lavora da una frequenza differente
 - dispositivi primari e secondari inviano e ricevono dati, ma non contemporaneamente: **primario usa slot pari, secondari usano slot dispari**
-- la trasmissione di un pacchetto richiede circa 366us (quindi quasi la metà dello slot temporale)
-- il resto dello slot temporale (circa 259us), serve per il turnaround (?), il salto di frequenza, la sincronizzazione
+- la trasmissione di un pacchetto richiede circa 366ms (quindi quasi la metà dello slot temporale)
+- il resto dello slot temporale (circa 259ms), serve per il turnaround (?), il salto di frequenza, la sincronizzazione
 >[!info] comunicazione con secondaria singola
 ![[Pasted image 20250523112928.png]]
 
