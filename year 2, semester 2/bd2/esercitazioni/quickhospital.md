@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T15:26
+updated: 2025-06-03T16:22
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -33,6 +33,9 @@ possiamo aggiungere campi che sono utili (tipo cf per persona in quickhospital) 
 
 paradigma dell’ago nel pagliaio:
 un medico ha tante specializzaizoni, ma una di esse è primaria (è speciale)
+
+operazioni sono accessibili anche dai vincoli
+use-case non hanno classe d’appartenza
 ## diagramma UML use-case
 
 
