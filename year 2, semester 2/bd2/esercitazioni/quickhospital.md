@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T16:22
+updated: 2025-06-03T16:38
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -36,6 +36,11 @@ un medico ha tante specializzaizoni, ma una di esse è primaria (è speciale)
 
 operazioni sono accessibili anche dai vincoli
 use-case non hanno classe d’appartenza
+
+
+vincoli vanno inseriti nelle precondizioni in modo tale da garantire la constistenza delle operazioni !
+- inoltre evitiamo che il progettista faccia cose strane ma che comunque validano i vincoli
+- prevedo i possibili motivi di fallimento delle postcondizioni (pedante ma molto importante)
 ## diagramma UML use-case
 
 
