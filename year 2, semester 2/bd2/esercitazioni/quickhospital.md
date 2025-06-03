@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T15:07
+updated: 2025-06-03T15:22
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -27,6 +27,8 @@ due pazienti non può essere parte di 2 ricoveri simultanei (ma 2 prestazioni si
 
 comprende viene implementata in Ricovero e deve essere reimplementata in RicoveroTerminato in quanto il suo significato è diverso (esempio di specializzazione delle operazioni)
 usando la classe Letti non dobbiamo gestire vincoli strani
+
+possiamo aggiungere campi che sono utili (tipo cf per persona in quickhospital) / per modellare meglio la realtà
 ## diagramma UML use-case
 
 
