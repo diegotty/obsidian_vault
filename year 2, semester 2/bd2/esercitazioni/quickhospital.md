@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T17:39
+updated: 2025-06-03T17:55
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -49,6 +49,12 @@ per tipi composti (tipo indirizzo), ci si deve assicurare che tutti gli elementi
 
 fare i trigger più difficili (e uno per ogni tipo, se ce ne sono diversi uguali)
 trigger disjoint + complete sempre presente 
+>[!warning] ocho alle performance
+
+>[!warning] NON SI CANCELLANO MAI DATI (ceh si possono cancella in assoluto, ma si sposta tra tabelle)
+
+
+l’id è del tutto irrilevante !! (utile solo per accorpare nel modo gisuto (???/))
 ## diagramma UML use-case
 
 
