@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T15:22
+updated: 2025-06-03T15:26
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -29,6 +29,10 @@ comprende viene implementata in Ricovero e deve essere reimplementata in Ricover
 usando la classe Letti non dobbiamo gestire vincoli strani
 
 possiamo aggiungere campi che sono utili (tipo cf per persona in quickhospital) / per modellare meglio la realtà
+
+
+paradigma dell’ago nel pagliaio:
+un medico ha tante specializzaizoni, ma una di esse è primaria (è speciale)
 ## diagramma UML use-case
 
 
