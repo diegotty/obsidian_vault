@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T14:35
+updated: 2025-06-03T15:07
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -22,7 +22,12 @@ updated: 2025-06-03T14:35
 due periodi si sovrappongono se
 EXISTS t DataOra(t) and comprende(t, periodo1) and comprende(t, periodo2)
 
+due pazienti non può essere parte di 2 ricoveri simultanei (ma 2 prestazioni si )
+
 
 comprende viene implementata in Ricovero e deve essere reimplementata in RicoveroTerminato in quanto il suo significato è diverso (esempio di specializzazione delle operazioni)
+usando la classe Letti non dobbiamo gestire vincoli strani
 ## diagramma UML use-case
+
+
 ## specifica degli use-case
