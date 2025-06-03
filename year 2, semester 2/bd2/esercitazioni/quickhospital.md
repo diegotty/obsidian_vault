@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T14:21
+updated: 2025-06-03T14:35
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -20,6 +20,9 @@ updated: 2025-06-03T14:21
 ### classe Letto
 [V.letto.no_due_ricoveri_simult]
 due periodi si sovrappongono se
-EXISTS t DataOra(t) and comprende(t, data)
+EXISTS t DataOra(t) and comprende(t, periodo1) and comprende(t, periodo2)
+
+
+comprende viene implementata in Ricovero e deve essere reimplementata in RicoveroTerminato in quanto il suo significato è diverso (esempio di specializzazione delle operazioni)
 ## diagramma UML use-case
 ## specifica degli use-case
