@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T17:25
+updated: 2025-06-03T17:39
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -43,6 +43,12 @@ vincoli vanno inseriti nelle precondizioni in modo tale da garantire la constist
 - prevedo i possibili motivi di fallimento delle postcondizioni (pedante ma molto importante)
 
 un attore non può accedere a operazioni di classe
+
+per tipi composti (tipo indirizzo), ci si deve assicurare che tutti gli elementi non siano null, usando come elementi domini creati a mano con check(not null)
+
+
+fare i trigger più difficili (e uno per ogni tipo, se ce ne sono diversi uguali)
+trigger disjoint + complete sempre presente 
 ## diagramma UML use-case
 
 
