@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T17:04
+updated: 2025-06-03T17:25
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -41,7 +41,6 @@ use-case non hanno classe d’appartenza
 vincoli vanno inseriti nelle precondizioni in modo tale da garantire la constistenza delle operazioni !
 - inoltre evitiamo che il progettista faccia cose strane ma che comunque validano i vincoli
 - prevedo i possibili motivi di fallimento delle postcondizioni (pedante ma molto importante)
-
 
 un attore non può accedere a operazioni di classe
 ## diagramma UML use-case
