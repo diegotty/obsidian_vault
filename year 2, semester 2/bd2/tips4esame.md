@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-04T11:57
+updated: 2025-06-04T14:28
 completed: false
 ---
 >[!info] ngl
@@ -54,3 +54,10 @@ i vincoli esterni devono diventare:
 
 >[!info] domande
 >mettere vincoli dominio e usare domini è la stessa cosa giusto ….
+
+
+aggregazione
+se voglio aggregare una tabella che ha comp
+>[!info] caso cool
+![[Pasted image 20250604142708.png]]
+in questo caso è conveniente mettere un id a PostiASedere e mettere unique alla tripla che identifica veramente la tabella (sala, fila, colonna)
