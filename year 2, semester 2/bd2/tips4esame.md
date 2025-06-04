@@ -40,7 +40,7 @@ completed: false
 	- 1..\* - 1..\*: 2 **vincoli di inclusione**
 	- 1..1 - 0..* : **vincolo di inclusione** che può esser implementato con vincolo di foreign key da parte del ruolo 1..1 (quindi doppia foreign key)
 		 - in pratica, visto che ogni classe ha una e una sola associazione, nella tabella in mezzo ci mettiamo la chiave (?) e creiamo un vincolo di foregin key nella tabella che ha il ruolo 1..1
-		 - inoltre, posso accorpare! metto la chiave della tabella che non ha ruolo 1..1 
+		 - inoltre, posso accorpare! metto la chiave della tabella che non ha ruolo 1..1 nella tabella che ha ruolo 1..1 ! fuoco
 	 - $\{ id1 \}$ su 1..1 e attributo : **accorpamento** nel verso della tabella che viene riconosciuta con l’associazione. campo `chiave_tabella_opposta`, foreign key
 	 - $\{ id \}$ unicamente su associazione (ristrutturazione per sostituzione): attributo `chiave_tabella_opposta` che è anche chiave primaria (e foreign key)
 >[!warning] possiamo accorpare ogni volta che abbiamo molteplicità `0..1` o `1..1`
