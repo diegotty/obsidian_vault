@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-03T17:55
+updated: 2025-06-03T18:14
 ---
 >[!index]
 >- [obiettivi](#obiettivi)
@@ -55,6 +55,9 @@ trigger disjoint + complete sempre presente
 
 
 l’id è del tutto irrilevante !! (utile solo per accorpare nel modo gisuto (???/))
+
+
+crazy mossa telefono (vincolo 1..* - 1..* e telefono ha solo un campo)
 ## diagramma UML use-case
 
 
