@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-13T10:21
+updated: 2025-06-13T10:36
 completed: false
 ---
 >[!info] ngl
@@ -69,10 +69,11 @@ per vincoli esterni. la classe a cui assegnali e quella che, se modificata, potr
 - posso mettere distinct in count
 - group by + funzione aggregata: prima vengono grouppate le tuple, poi viene usata la funzione aggregata
 - posso fare group by per più di un valore (grouppera per ogni combinazione diversa dei due valori)
-
-- having
+- having (senza usare alias della target list)
 - limit
 - like (\_, \%) per stringhe
 - sum, avg, min, max
-
-omogeneità delle funzioni aggregate ! se estono nella target list, non ci possono essere attributi nella target list, except per group by attributes
+- omogeneità delle funzioni aggregate ! se estono nella target list, non ci possono essere attributi nella target list, except per group by attributes
+- query correlate: utilizziamo un valore di ogni ennupla della query di fuori. la query correlata viene runnata una volta per ogni row della query esterna.
+- le ficchiamo nella where clause
+- OVERLA
