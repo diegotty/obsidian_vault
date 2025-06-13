@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-04T16:12
+updated: 2025-06-13T10:21
 completed: false
 ---
 >[!info] ngl
@@ -64,3 +64,15 @@ in questo caso è conveniente mettere un id a PostiASedere e mettere unique alla
 
 
 per vincoli esterni. la classe a cui assegnali e quella che, se modificata, potrebbe portare a vincoli non rispetatati
+
+
+- posso mettere distinct in count
+- group by + funzione aggregata: prima vengono grouppate le tuple, poi viene usata la funzione aggregata
+- posso fare group by per più di un valore (grouppera per ogni combinazione diversa dei due valori)
+
+- having
+- limit
+- like (\_, \%) per stringhe
+- sum, avg, min, max
+
+omogeneità delle funzioni aggregate ! se estono nella target list, non ci possono essere attributi nella target list, except per group by attributes
