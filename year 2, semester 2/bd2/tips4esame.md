@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-13T10:41
+updated: 2025-06-13T10:57
 completed: false
 ---
 >[!info] ngl
@@ -80,3 +80,4 @@ per vincoli esterni. la classe a cui assegnali e quella che, se modificata, potr
 - EXTRACT (MONTH from CURRENT_DATE)
 - BETWEEN for date in period
 - COALESCE(att1, att2) restituisce il primo dei due che non è 
+- tsrange: intervallo di timestamp senza hour zone
