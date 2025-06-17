@@ -16,13 +16,11 @@ le opzioni possono essere specificate in 2 modi:
 - `-carattere` (vecchia versione) (es: `-r`)
 - `--parola` (nuova versione) (es: `--recursive`)
 le opzioni possono avere un argomento, specificato in modi diversi:
-- `--key=1`
-- `-k 1`
-- `-k1`
-le opzioni senza argomento sono ragguppabili
-- `-b -r -c` è equivalente a `-brc`
-esistono anche le opzioni BSD-style, che sono senza dash
-- `tar xfz nomefile.tgz`
+  - `--key=1`
+  - `-k 1`
+  - `-k1`
+  - le opzioni senza argomento sono raggruppabili come `-b -r -c` che è equivalente a `-brc`
+  - esistono anche le opzioni BSD-style, che sono senza dash come `tar xfz nomefile.tgz`
 >[!example] comando `man`
 `man` sta per manuale, e ci permette di avere più informazioni sul comando specificato come argomento
 sinossi del comando `man`: `man [sezione] comando`
