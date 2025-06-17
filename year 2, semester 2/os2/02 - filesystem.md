@@ -84,6 +84,14 @@ simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del
 il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
 ## comandi
 >[!info] comandi
+>### $\verb |chmod [mode]|$
+>può settare i diritti di accesso in formato ottale in cui il primo numero rappresenta setuid(4)+setguid(2)+sticky(1)
+>### $\verb |chmod [mode simbolica]|$
+>può settare i diritti di acesso usando simboli con aggiunta di `[lettere tra {ugo}] [+-=] [0 o più lettere tra {rxwXst}]`
+>### $\verb |chown [-R] propietario {file}|$
+>cambia proprietario del file, se il file è una directory con `-R` si applica questo a tutte le sottodirectory
+>### $\verb |chgrp [-R] gruppo {file}|$
+>cambia il gruppo a cui il file appartiene,se il file è una directory con `-R` si applica questo a tutte le sottodirectory
 >### $\verb |umask [mode]|$
 >setta la maschera dei file(cioè i diritti di accesso al fileo alle directory nel momento della loro creazione) a `mode`
 >- per i file però, il diritto di esecuzione non viene settato (quindi le opzioni speciali non hanno effetto, in quanto prendono il posto del bit di esecuzione in terne diverse)
