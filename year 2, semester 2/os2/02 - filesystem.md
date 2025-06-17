@@ -117,4 +117,4 @@ il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `gro
 >- `of` file di output (se non dato, scrive su schermo)
 >oltre che per le conversioni, si usa per copiare file speciali che non possono essere copiati con `cp`
 >### $\verb |mkfs [-t type fsoptions] device|$
-- crea un filesystem su device (preparea i file a memorizzare file secondo un dato formato, es [[filesystem in UNIX, Windows, Linux#gestione file system in Linux|ext4]])
+- crea un filesystem su device (prepara i file a memorizzare file secondo un dato formato, es [[filesystem in UNIX, Windows, Linux#gestione file system in Linux|ext4]])
