@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-02T19:46
+updated: 2025-06-19T19:04
 ---
 >[!index]
 >- [funzioni chiave del livello di rete](#funzioni%20chiave%20del%20livello%20di%20rete)

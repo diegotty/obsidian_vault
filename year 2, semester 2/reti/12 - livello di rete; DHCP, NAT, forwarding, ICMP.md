@@ -1,6 +1,6 @@
 ---
 created: 2025-05-06T13:13
-updated: 2025-06-02T19:46
+updated: 2025-06-19T19:04
 ---
 >- [indirizzamento IPv4](#indirizzamento%20IPv4)
 >	- [gerarchia nell’indirizzamento](#gerarchia%20nell%E2%80%99indirizzamento)
