@@ -85,7 +85,7 @@ in questo modo, non vengono chiamate interruzioni.
 #### i/o da interruzioni
 una volta mandata la richiesta di lettura/scrittura, il processore torna a fare altre cose, e viene interrotto quando il modulo i/o e’ pronto a scambiare dati. il processore salva quindi il contesto del programma che stava eseguendo e comincia ad eseguire il gestore dell’interruzione.
 in questo modo, non c’e’ inutile attesa, ma viene consumato molto tempo di processore, che per ogni dato letto o scritto interrompe l’esecuzione del programma che stava eseguendo
-#### accessso diretto in memoria
+#### accesso diretto in memoria
  è il metodo di I/O usato nei computer attuali: dato che le istruzioni di I/O tipicamente richiedono di trasferire informazioni tra dispositivo di I/O e memoria, si usa un dispositivo (DMA) un controller che gestisce il trasferimento diretto dei dati dalla memoria alla RAM
  è il metodo più efficiente
 >[!figure] ![[Pasted image 20241006110627.png]]
@@ -101,7 +101,7 @@ a differenza degli interrupt, i segnali:
 >[!example] i segnali possono essere inviati da un processo in modalità sistema
 ![[Pasted image 20241015093214.png]]
 ## gestione dei segnali
-quando un segnale viene lanciato, esso viene aggiunto all’opportuno campo del PCB del processo ricevente. quando il processo viene nuovamente schedulato per l’esecuzione, il kernel controlla prima se ci sono segnali pendenti, e se sì, esegue una opportuan funzione chiamata **signal handler**
+quando un segnale viene lanciato, esso viene aggiunto all’opportuno campo del PCB del processo ricevente. quando il processo viene nuovamente schedulato per l’esecuzione, il kernel controlla prima se ci sono segnali pendenti, e se sì, esegue l'opportuna funzione chiamata **signal handler**
 ## signal handler
 i signal handler vengono eseguiti in user mode, e possono essere sovrascritti dal programmatore per gestire cosa deve accadere quando viene ricevuto un segnale
 - esistono solo 2 signal handler non sovrascrivibili (SIGKILL, SIGSTOP)
