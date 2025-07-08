@@ -1,7 +1,7 @@
 ---
 related to: "[[06 - syscall; gestione dei processi]]"
 created: 2025-03-02T17:41
-updated: 2025-05-13T10:27
+updated: 2025-06-30T12:01
 completed: false
 ---
 >[!index]
@@ -59,9 +59,9 @@ i segnali sono un esempio di eventi **asincroni**:
 - il processo deve dire al kernel cosa fare se e quando l’evento occorre: deve definire l’**azione associata al processo**
 si possono fare 3 cose quando viene generato un segnale:
 1. **ignorare il segnale** (**ignore**): autoesplicativo, si può fare con tutti i segnali tranne `SIGKILL` e `SIGSTOP` (altrimenti perdo l’abilità di chiudere il processo quando voglio)
-2. **catturare il segnale** (**catch**): il processo chiede al kernel di eseguire una funzione definita dal programmater (il **signal handler**)
+2. **catturare il segnale** (**catch**): il processo chiede al kernel di eseguire una funzione definita dal programmatore (il **signal handler**)
 	- i segnali `SIGKILL` e `SIGSTOP` non possono essere catturati (stesso motivo di sopra)
-3. **eseguire l’azione di default**: possibile perchè ad ogni segnale è associata una azione di default: il **default handler**
+3. **eseguire l’azione di default**: possibile perchè ad ogni segnale è associata una azione di default: il **default hadler**
 >[!info] handler di default
 >- termina il processo e genera il core dump
 >- termina il processo senza generare il core dump

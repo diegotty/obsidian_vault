@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-29T14:40
+updated: 2025-07-04T12:26
 completed: false
 ---
 ALLOORAAAAAA
@@ -21,3 +21,8 @@ dato $f$ omom, esiste $\phi$ isomorfismo tc. $\phi: G/Ker(f) \rightarrow Im(f)$
     - quindi uso effettivamente la relazione $\sim_{1}$ come definita per G/H, e dato che la relazione $\sim_{1}$ dipende da un insieme H, uso come insieme $Ker(f)$, in quanto ciò mi garantisce di ottenere classi di equivalenza con la stessa immagine per f
 - di conseguenza, (del teorema di struttura) $G/\sim \, = G/H$ (del teo. d'isomorfismo)
 - basta poi dimostrare che $\phi$ è un omomorfismo
+
+>[!warning] relazione per quozientare G
+>di base, per quozientare un gruppo non è necessario un isomorfismo su cui definire una relazione. basta infatti usare la relazione d’equivalenza naturale $x \sim x' \iff x(x')^{-1} \in H$
+>nel primo teorema d’isomorfismo, dimostriamo che la relazione usata nel teorema di struttura per le applicazioni è lo stesso della relazione naturale tra $G$ e $H$, se e solo se $H=Ker(f)$
+quindi usiamo sempre la relazione naturale per ottenere $G/Ker(f)$, ma essendo uguale alla relazione del teo. struttura ci permette di fattorizzare l’omomorfismo
