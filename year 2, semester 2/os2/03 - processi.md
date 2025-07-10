@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-03-22T15:36
+updated: 2025-07-10T10:49
 completed: true
 ---
 >[!index]
@@ -61,10 +61,21 @@ Il PCB è unico per ogni processo e contiene:
 - **background**: il comando non può leggere l’input da tastiera ma può scrivere su schermo. il prompt viene immediatamente restituito dopo aver eseguito il comando (non aspetta che il processo finisca) e si possono quindi dare altri comandi alla shell da subito
 l’esecuzione in background è possibile con il carattere `&`
 - non disponibile in tutte le shell, ma in bash si
->[!] `bg`e`fg`
+>[!info] `bg`e`fg`
 >- `bg` porta un processo in background
 >- `fg%n` dove `%n` è il numero del job, lo riporta in foreground
 >- `bg%n` dove `%n` è il numero del job, lo porta in background
+
+>[!info] jobs vs processi
+>**processi**: una istanza di un programma in esecuzione, gestiti dal kernel e identificati da un PID
+>**job**: un gruppo di **uno o più processi** iniziati dalla **shell corrente**. i job sono gestiti dalla shell, e sono identificati da un job ID (JID ??? the rapper ???) (es: `%1, %2`)
+>
+per vedere la lista di job in esecuzione, si usa il comando `jobs [-l] [-p]`
+>- `-l`: elenca PIDs dei job, oltre ai jobID
+>- `-p`: elenca solo i PID dei job
+>- `-n`: mostra solo i job il cui stato è cambiato dall’ultima chiamata di `jobs`
+>- `-r`: mostra solo jobs che sono RUNNING
+>- `-s`: mostra solo jobs che sono STOPPED
 
 ## pipelining dei comandi
 è possibile eseguire un job composto da più comandi:
@@ -81,9 +92,10 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `[-e]`: tutti i figli del processo 0, cioè tutti i processi di tutti gli utenti lanciati da tutte le shell o al boot
 >- `[-u] {utente}`: tutti i processi degli utenti nella lista
 >- `[-p] {pid, ..}`: tutti i processi con i PID nella lista
->- `[-f]`: full-format listing
->- `[-l]`: display BSD long format
->- `[-o] {field, ...}`: user defind format, per scegliere i campi da visualizzare 
+>- `[-f]`: full-format listing (restituisce colonne aggiuntive: UID, PPID, C (fattore di utilizzo della CPU), STIME (tempo di avvio))
+>- `[-l]`: display BSD long format (restituisce altre colonne addizionali: F (flag), PRI (priorità), NI (nice value), ADDR (indirizzo di memoria del processo), SZ, (dimensione immagine del processo, in pagine) WCHAN ())
+>- `[-o] {field, ...}`: user defined format, per scegliere i campi da visualizzare 
+>- `[-c] {cmd, ...}`: solo i processi il cui nome eseguibile è in `{cmds}`
 >#### significato dei campi mostrati da $\verb |ps|$
 >- `PPID`: parent pid
 >- `C`: parte intera della percentuale di uso della CPU
@@ -91,6 +103,7 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `TIME`: tempo di CPU usato fino ad ora
 >- `CMD`: comando con argomenti
 >- `F`: flags associati al processo (1: forkato ma non eseguito. 4: ha privilegi da superutenti. 5: entrambi i precedenti. 0: nessuno dei precedenti)
+>	- il flag `[-y]`, usabile solo con il flag `[-l]`,  permette di non visualizzare i flag !
 >- `s`: stato del processo in una sola lettera
 >- `UID`: utente che ha lanciatio il processo 
 >- `PRI`: attuale priorità del processo
@@ -102,6 +115,7 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >`ps` interattivo, dinamico e real-time
 >- `[-b]`: non accetta più comandi interattivi, ma continua a fare refresh ogni pochi secondi
 >- `[-n num]`: fa solo `num` refresh
+>- `[-p {pid, ...}]`: mostra solo i processi con PID nella lista
 >### $\verb |kill [-l [signal]] [-signal] [pid]|$
 >invia segnali ad un processo (non solo la teriminazione !)
 >- `[-l]` non mostra la lista dei segnali (i segnali sono identificati dal numero oppure dal come con `SIG` o senza `SIG`)
@@ -109,11 +123,13 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `CTRL+z` invia un `SIGSTOP` !
 >- `CTRL+c` invia un `SIGINT` !
 >- se non viene specificato nessun segnale, viene inviato il segnale `TERM`
+>>[!warning] `SIGSTOP` e `SIGKILL` non possono essere gestiti da programmi !
 >#### SIGUSR1 e SIGUSR2
 >sono segnali impostati per essere usati dall’utente per le proprie necessità
 >- consentono una semplice forma di comunicazione tra processi (in quanto un processo può mandare un segnale ad un altro processo, ed un programma può definire un gestore del segnale per `SIGUSR1` o `SIGUSR2`)
 >### $\verb |nice [-n num] [comando]|$
->senza opzioni, dice quant’è il **niceness** di partenza (valore da aggiungere al nice ogni ms(credo ?), va da -19 a +20, con default 0)
+>senza opzioni, dice quant’è il **niceness** di partenza (valore da aggiungere alla prorità ogni ms(credo ?), va da -19 a +20, con default 0)
+>- priorità alta → valore di priorità basso
 >- `nice [-n num] comando` lancia un comando con niceness `num`
 >### $\verb |renice priority {pid}|$
 >internviene su processi già in esecuzione (infatti chiede un PID), e altera la loro priorità
