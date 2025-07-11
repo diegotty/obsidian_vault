@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-07-10T18:12
+updated: 2025-07-11T02:39
 completed: true
 ---
 >[!index]
@@ -130,7 +130,7 @@ it pains me to write it a 3rd time, here is a table
 ![[Pasted image 20250315191911.png]]
 ![[Pasted image 20250315191857.png]]
 
->[!info] permessi in file
+>[!info] permessi in dir
 >- `r`: permette di elencare i file all’interno della cartella, ma non di accedere ai loro contenuti ne metadati (quindi no `ls -la`)
 >- `w`: permette di creare, rinominare o eliminare file, **se è presente anche `x`**
 >- `x`: permette di entrare nella dir (`cd`), usare i file al suo interno (anche se non si possono elencare i file (assenza di `r`))
@@ -139,7 +139,7 @@ it pains me to write it a 3rd time, here is a table
 ### permessi speciali
 esistono permessi speciali, applicabili a file e directory
 #### sticky bit
-viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file se si hanno i permessi di scrittura su essi
+viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file anche se non si hanno i permessi di scrittura su essi
 - grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
 lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other`
 #### setuid bit

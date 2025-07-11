@@ -1,7 +1,7 @@
 ---
 related to: "[[06 - syscall; gestione dei processi]]"
 created: 2025-03-02T17:41
-updated: 2025-06-30T12:01
+updated: 2025-07-11T02:33
 completed: false
 ---
 >[!index]
