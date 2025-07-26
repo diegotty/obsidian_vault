@@ -1,7 +1,7 @@
 ---
 related to: "[[05 - syscall; allocazione memoria, gestione IO, misc]]"
 created: 2025-03-02T17:41
-updated: 2025-05-11T22:49
+updated: 2025-07-11T02:33
 completed: true
 ---
 >[!index]
@@ -37,7 +37,7 @@ e se il processo padre termine/muore prima del processo figlio, il processo figl
 `PPID` contiene proprio il `pid` del processo padre
 ### $\verb |pid_t fork(void)|$
 la syscall `fork()` crea un nuovo processo che è la copia del processo chiamante, a parte alcune strutture dati (es: il `pid`)
-- una chiamate `fork()` ritorna 2 volte per ogni volta che viene chiamata:
+- una chiamata `fork()` ritorna 2 volte per ogni volta che viene chiamata:
 	- una volta ritorna al proceso che l’ha invocata
 	- l’altra volta ritorna al nuovo processo che è stato generato dall’eseguzione di `fork()`
 in caso di errore ritorna `-1` al chiamante, e non viene creato nessun processo figlio

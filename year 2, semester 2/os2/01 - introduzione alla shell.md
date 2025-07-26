@@ -1,7 +1,7 @@
 ---
 related to: 
 created: 2025-03-02T17:41
-updated: 2025-06-19T19:04
+updated: 2025-07-11T02:33
 completed: true
 ---
 # shell
@@ -26,16 +26,26 @@ le opzioni possono avere un argomento, specificato in modi diversi:
 sinossi del comando `man`: `man [sezione] comando`
 `man man`: 
 ![[Pasted image 20250304212204.png]]
-
+>>[!info] man **sections**
+>>- `1`: user commands
+>>- `2`: system calls
+>>- `3`: library calls
+>>- `4`: devices and special files
+>>- `5`: file formats
+>>- `6`: games
+>>- `7`: misc
+>>- `8`; system admin commands
+>>- `9`: kernel routines
 # utenti
 
 > [!warning] non tutti gli utenti possono fare login !
 >  l’utente `root` non può fare login ma un utente può acquisire i diritti di `root` mediante i comandi `su` e `sudo`
 
 - ogni utente appartiene almeno ad un gruppo
-esistono molti gruppi definiti per scopi “amministrativi”
+- esistono molti gruppi definiti per scopi “amministrativi”
 ## su e sudo
-utente **sudoer**: utente che appartiene al gruppo predefinito **sudo**
-- gli utenti che appartengono al gruppo sudo possono eseguire comandi da `root` usando il comando `sudo`
-il comando `su`(switch user ?) invece permette di cambiare utente
-- `su -`, `su - root`, `su -l root` permettono di diventare root per il resto della sessione sulla shell ! 
+utente **sudoer**: utente che appartiene al gruppo predefinito`sudo`
+- `sudo`: usato dagli utenti che appartengono al gruppo `sudo`, permette di eseguire **un comando** da `root`
+	- con flag `[-u] username` permette di specificare l’utente da impersonare
+- `su [- / -l / --login] nomeutente`: usato per **cambiare utente**
+	- `su -`, `su - root`, `su -l root` permettono di diventare root per il resto della sessione sulla shell ! 
