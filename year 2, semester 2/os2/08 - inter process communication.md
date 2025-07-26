@@ -172,11 +172,11 @@ la syscall `bind`, inclusa in `<sys/socket.h>` assegna l’indirizzo IP/nome del
 sono quindi necessarie delle funzioni per convertire gli indirizzi in NBO (per `sockaddr_in`):
 >[!info] funzioni per convertire indirizzi
 >- $\verb |uint_t htonl(uint32_t hostlong)|$: converte un unsigned int in formato NBO
-> - $\verb |int inet_{aton(const char *cp, struct in_addr *inp)}|$: converte un indirizzo `cp="X.Y.Z.W"` in NBO 
+> - $\verb |int inet_aton(const char *cp, struct in_addr *inp)}|$: converte un indirizzo `cp="X.Y.Z.W"` in NBO 
 >- $\verb |struct hostent *gethostbyname (const char *name)|$: dato un nome logico, `mio.dominio.toplevel` o indirizzo `X.Y.Z.W` ritorna una struttura `hostent` che contiene l’indirizzo in formato NBO
 ### $\verb |int listen(int sockfd, int backlog)|$
 la syscall `listen` marca il socket `sockfd` come **passive**, ovvero pronto a ricevere una richiesta (mediante `accept()`)
-	- `backlog`: indica la max lunghezza della coda di attesa
+	- `backlog`: india la max lunghezza della coda di attesa
 restituisce `0` in caso di successo e `-1` in caso di errore
 ### $\verb |int accept(int sockfd,struct sockaddr *addr, socklen_t *addrlen)|$
 la syscall `accept` viene usata **esclusivamente** dai socket **con connessione** (quindi non `SOCK_DGRAM`), ed estrae la prima richiesta di connessione nella coda delle richieste in attesa sulla coda di listening di `sockfd`. crea poi un nuovo socket con con connessione, e ritorna il nuovo file descriptor
