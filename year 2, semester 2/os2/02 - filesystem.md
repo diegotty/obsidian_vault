@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-07T19:10
+updated: 2025-09-07T19:25
 completed: true
 ---
 >[!index]
@@ -170,14 +170,18 @@ lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `oth
 >### $\verb |umask [mode]|$
 >setta la maschera dei file(cioè i diritti di accesso al file o alle directory nel momento della loro creazione) a `mode`
 >- per i file però, il diritto di esecuzione non viene settato (quindi le opzioni speciali non hanno effetto, in quanto prendono il posto del bit di esecuzione in terne diverse)
+>
+> la maschera può essere:
+>- un numero ottale da uno a 4 cifre, secondo la rappresentazione dei permessi, che indica i permessi che si desidera **negare** (quindi, per esempio, `1` negherà il permesso di esecuzione)
+>- una stringa secondo la rappresentazione simbolica dei permessi che indica l’insieme dei permessi che possono essere **concessi**
 >### $\verb |cp [-r] [-i] [-a] [-u] {filesorgenti} filedestinazione|$
 >- `-r`: recursive, per directory
 >- `-i` interactive, per essere avvisati in caso di sovrascrittura
 >- `-u` la sovrascrittura avviene solo sel l’`mtime` del sorgente è più recente di quello della destinazione (cool !)
 >- `-a`: archive: i file copiati vengono mantengono i loro permessi, proprietari, timestamp e altri attributi
 >- `-b`: fa un backup dei file già esistenti nella destinazione (in modo tale che non vengano sovrascritti)
->- `-l`: crea hard link
->- `-s`: crea symlink
+>- `-l`: invece di copiare, crea hard link
+>- `-s`: invece di copiare, crea symlink
 >- `--preserve=ATTR_LIST`: permette di preservare gli attributi specificati (es: `mode, ownership, timestamps, all, ...`)
 >### $\verb |mv [-i] [-u] [-f] {filesorgenti} filedestinazione|$
 >sposta un file o lo rinomina !
@@ -186,7 +190,9 @@ lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `oth
 >### $\verb |rm [-f] [-i] [-r] {file}|$
 >- `-f` forza la cancellazione (senza chiedere)
 >### $\verb | ln [-s] sorgente [destinazione]|$
->-`-s` per symbolic link, altrimenti hard link(copia effettiva) !
+>-`-s` per symbolic link, altrimenti hard link
+>>[!info] reminder
+>>l’hard link crea un file che punta all’inode del file referenziato, mentre il symlink crea un file che contiene il path the file referenziato
 >### $\verb |touch [-a] [-m] [-t timestamp] {file}|$
 >serve per creare un file, o modificare il suo timestamp
 >- può essere applicato anche su dir
@@ -195,7 +201,7 @@ lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `oth
 >- `-a`: cambia solo l’access time
 >### $\verb |du [-c] [-s] [-a] [-h] [--exclude=PATTERN] [files]|$
 >calcola la dimensione dei file e/o dir dati come argomento 
->- `-c/--total`: restituisce la somma totale delle dimensioni
+>- `-c/--total`: restituisce **anche** la somma totale delle dimensioni
 >- `-s/--summarize`: invece di dimostrare la dimensione di ogni file di ogni directory in input, mostra la dimensione totale per ogni argomento (cambia solo x dir quindi)
 >- `-a/--all`: mostra anche sottodirectory (quindi tutti i file in esse)
 >- `-h/--human-readable`: mostra le dimensioni in formati leggibili: mb, gb, etc
