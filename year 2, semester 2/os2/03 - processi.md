@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-01T21:59
+updated: 2025-09-07T17:54
 completed: true
 ---
 >[!index]
@@ -16,7 +16,8 @@ completed: true
 # processi
 in linux, le due entità fondamentali sono:
 - **file**: descrivono/rappresentano le risorse
-- **processi**: permettono di elaborare dati e usare le risorse. un file eseguibile, in esecuzione, è un **processo**
+- **processi**: permettono di elaborare dati e usare le risorse. 
+	- un file eseguibile, in esecuzione, è un **processo**
 >[!example] esempi di processi
 >esempi di processo sono quelli creati eseguendo i comandi delle lezioni precedenti: `dd, ls, cat, cp, ln, ....`
 >ma non tutti i comandi creano dei processi: ad esempio `echo` o `cd` vengono eseguiti all’interno del processo di shell
@@ -38,7 +39,7 @@ Il PCB è unico per ogni processo e contiene:
 - saved GID: Saved Group Identifier (come sopra per GID)
 - current Working Directory: directory di lavoro corrente
 - umask: file mode creation mask
-- nice: priorita statica del processo
+- nice: priorità statica del processo
 ### aree di memoria
 - **text segment**: le istruzioni da eseguire (in linguaggio macchina)
 - **data segment**: dati statici inizializzati (variabili globali e locali static)e alcune env vars
@@ -87,7 +88,7 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 ## comandi
 >[!info] comandi
 >### $\verb |ps [opzioni] [pid ...]|$
->mostra le informazioni dei process in esecuzione, e legge le informazioni dai file virtuali in `/proc`
+>mostra le informazioni dei processi in esecuzione, e legge le informazioni dai file virtuali in `/proc`
 >- `ps` senza argomenti mostra i processi dell’utente attuale lanciati dalla shell corrente ! (x ogni processo mostra PID, TTY, TIME e CMD)
 >- `[-e]`: tutti i figli del processo 0, cioè tutti i processi di tutti gli utenti lanciati da tutte le shell o al boot
 >- `[-u] {utente}`: tutti i processi degli utenti nella lista
