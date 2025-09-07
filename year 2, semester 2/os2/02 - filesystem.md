@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-07T19:25
+updated: 2025-09-07T19:37
 completed: true
 ---
 >[!index]
@@ -202,12 +202,12 @@ lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `oth
 >### $\verb |du [-c] [-s] [-a] [-h] [--exclude=PATTERN] [files]|$
 >calcola la dimensione dei file e/o dir dati come argomento 
 >- `-c/--total`: restituisce **anche** la somma totale delle dimensioni
->- `-s/--summarize`: invece di dimostrare la dimensione di ogni file di ogni directory in input, mostra la dimensione totale per ogni argomento (cambia solo x dir quindi)
->- `-a/--all`: mostra anche sottodirectory (quindi tutti i file in esse)
+>- `-s/--summarize`: invece di dimostrare la dimensione di ogni file (e diirectory) all’interno di ogni directory in input, mostra la dimensione totale per ogni directory in input (non cambia nulla se in input vengono passati dei file)
+>- `-a/--all`: mostra anche sottodirectory (quindi tutti **i file** in esse, in quanto `du` è già ricorsivo per le directory)
 >- `-h/--human-readable`: mostra le dimensioni in formati leggibili: mb, gb, etc
 >### $\verb |df [-h] [-l] [-i] [file]|$
 >mostra la dimensione e l’atttuale uso del filesystem
->- `-h` come in `df`
+>- `-h` come in `du`
 >- `-i/--inodes`: mostra le informazioni sugli inode invece che sui blocchi
 >- `-l/--local`: mostra solo i filesystem locali
 >- se viene passato un file in input, mostra le informazioni relative al filesystem che contiene il file fornito in input
@@ -226,7 +226,7 @@ lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `oth
 >crea un filesystem su device (prepara i file a memorizzare file secondo un dato formato, es [[filesystem in UNIX, Windows, Linux#gestione file system in Linux|ext4]])
 >- `-t`: type, specifica il tipo di filesystem da creare
 >- `fsoptions`: `ro` oppure `rw`
->- `device`: nome del dispositivo 5
+>- `device`: nome del dispositivo
 
 >[!info] file e gruppi
 >oltre all’`owner`, esiste anche un `group owner` per ogni file e directory. il group owner identifica il gruppo proprietario del file
