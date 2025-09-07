@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-07T18:08
+updated: 2025-09-07T18:16
 completed: true
 ---
 >[!index]
@@ -125,11 +125,12 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `CTRL+c` invia un `SIGINT` !
 >- se non viene specificato nessun segnale, viene inviato il segnale `TERM`
 >>[!warning] `SIGSTOP` e `SIGKILL` non possono essere gestiti da programmi !
+>
 >>[!example] esempio di segnali
 >>- `SIGSTOP`: sospensione
 >>- `SIGCONT`: continuazione di processi sospesi (il segnale inviato da `bg`)
->>- `SIGSTOP`: sospensione
->>- `SIGSTOP`: sospensione
+>>- `SIGKILL`: terminazione in modo immediato e non gestibile dal proceso. non vengono eseguiti clean up codes o handlers
+>>- `SIGINT`: chiede al processo di terminare. molti processi lo gestiscono per fare clean up (salvare lo stato, chiudere file)
 >#### SIGUSR1 e SIGUSR2
 >sono segnali impostati per essere usati dall’utente per le proprie necessità
 >- consentono una semplice forma di comunicazione tra processi (in quanto un processo può mandare un segnale ad un altro processo, ed un programma può definire un gestore del segnale per `SIGUSR1` o `SIGUSR2`)

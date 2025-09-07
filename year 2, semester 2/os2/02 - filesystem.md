@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-01T21:59
+updated: 2025-09-07T18:26
 completed: true
 ---
 >[!index]
@@ -24,10 +24,14 @@ esiston anche **file non regolari, o speciali**, che modellano unità di I/O
 - possono essere a blocchi/caratteri
 >[!tip] ~ equivale a /home/userX
 >ed è la home directory del current user
+i comandi che iniziano con `~` sono comunque considerati path assoluti (oltre ai comandi che iniziano con `/home/userX/`)
 
->[!info] fun facts .. 
->- quando si usa `cd`, `/./` fa rimanere allo stesso posto. (huh.)
->- path assoluto è valido qualunque sia la `cwd`, mentre il path relativo può non essere valido quando si cambia `cwd`
+>[!info] fun facts
+ >- path assoluto è valido qualunque sia la `cwd`, mentre il path relativo può non essere valido quando si cambia `cwd`
+ >- per visualizzare l’albero delle directory, si usa il comando `tree [-a] [-L maxdepth] [-d] [-x] [nomedir]`
+ >	- `-d` mostra solo le directory
+ >	- `-x` si usa per rimanere nel filesystem  corrente (se incontra un mount point di un altro filesystem, non lo esplora)
+
 ## mounting
 li filesystem root (`/`) contiene elementi eterogenei: 
 - disco interno
