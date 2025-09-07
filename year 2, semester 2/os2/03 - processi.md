@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-07T17:54
+updated: 2025-09-07T18:08
 completed: true
 ---
 >[!index]
@@ -106,7 +106,7 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `F`: flags associati al processo (1: forkato ma non eseguito. 4: ha privilegi da superutenti. 5: entrambi i precedenti. 0: nessuno dei precedenti)
 >	- il flag `[-y]`, usabile solo con il flag `[-l]`,  permette di non visualizzare i flag !
 >- `s`: stato del processo in una sola lettera
->- `UID`: utente che ha lanciatio il processo 
+>- `UID`: utente che ha lanciato il processo 
 >- `PRI`: attuale priorità del processo
 >- `NI`: valore di nice
 >- `ADDR`: indirizzo di memoria del processo (mostrato per retrocompatibilità)
@@ -125,6 +125,11 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `CTRL+c` invia un `SIGINT` !
 >- se non viene specificato nessun segnale, viene inviato il segnale `TERM`
 >>[!warning] `SIGSTOP` e `SIGKILL` non possono essere gestiti da programmi !
+>>[!example] esempio di segnali
+>>- `SIGSTOP`: sospensione
+>>- `SIGCONT`: continuazione di processi sospesi (il segnale inviato da `bg`)
+>>- `SIGSTOP`: sospensione
+>>- `SIGSTOP`: sospensione
 >#### SIGUSR1 e SIGUSR2
 >sono segnali impostati per essere usati dall’utente per le proprie necessità
 >- consentono una semplice forma di comunicazione tra processi (in quanto un processo può mandare un segnale ad un altro processo, ed un programma può definire un gestore del segnale per `SIGUSR1` o `SIGUSR2`)
