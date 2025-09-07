@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-07T18:36
+updated: 2025-09-07T19:10
 completed: true
 ---
 >[!index]
@@ -141,22 +141,22 @@ it pains me to write it a 3rd time, here is a table
 >
 >se `r-x`, è possibile usare i file, entrare nella dir, ma non creare/rinominare o eliminare file
 ### permessi speciali
-esistono permessi speciali, applicabili a file e directory
-#### sticky bit
-viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file anche se non si hanno i permessi di scrittura su essi
-- grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
-lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other`
-#### setuid bit
+esistono permessi speciali, applicabili a file e directory, ed esiste un quarto bit the prende come valore la somma tra i valori dei permessi speciali attivi 
+#### setuid bit (4)
 si usa solo per file eseguibili: quando vengono eseguiti, i privilegi con cui opera il corrispondente processo non sono quelli dell’utente che esegue il file, bensì quelli dell’utente proprietario del file ! (se il proprietario è `root`, il processo viene eseguito con i privilegi di `root` indipendentemente da chi lo ha eseguito)
 - es: il comando `passwd` ha il setuid, che permette ad un utente di modificare la propria password (il proprietario del comando è root)
-il setuid bit viene visualizzato al posto del bit di esecuzione nella terna `user`
-#### setgid bit
+il setuid bit viene visualizzato al posto del bit di esecuzione nella terna `user`, con la lettera `s` se `x` è attivo, o la lettera `S` se `x` non è attivo
+#### setgid bit (2)
 simile al setuid bit, ma in questo caso i privilegi del processo sono quelli del gruppo che è proprietario del file
 - può essere applicato anche ad una directory, e allora ogni file creato al suo interno ha il gruppo della directory, anzichè quello primario di chi crea i files !
-il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`
+il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `group`, con la lettera `s` se `x` è attivo, o la lettera `S` se `x` non è attivo
+#### sticky bit (1)
+viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file all’interno della directory anche se non si hanno i permessi di scrittura sui file stessi
+- grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
+lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other` con la lettera `t` se `x` è attivo, o la lettera `T` se `x` non è attivo
 ## comandi
 >[!info] comandi
->### $\verb |chmod [mode]|$
+>### $\verb |chmod [mode] filename|$
 >può settare i diritti di accesso in formato ottale:
 >- primo numero rappresenta `setuid`(4)+`setguid`(2)+`sticky`(1)
 >-  gli altri 3 bit rappresentano user, group, other
