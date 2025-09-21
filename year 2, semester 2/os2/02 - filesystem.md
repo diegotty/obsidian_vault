@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-09T06:45
+updated: 2025-09-09T07:01
 completed: true
 ---
 >[!index]
@@ -153,7 +153,7 @@ il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `gro
 #### sticky bit (1)
 viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file all’interno della directory anche se non si hanno i permessi di scrittura sui file stessi
 - grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
-lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other` con la lettera `t` se `x` è attivo, o la lettera `T` se `x` non è attivo
+lo sticky bit viene visualizzato al posto del pbit di esecuzione nella terna `other` con la lettera `t` se `x` è attivo, o la lettera `T` se `x` non è attivo
 ## comandi
 >[!info] comandi
 >### $\verb |chmod [mode] filename|$
