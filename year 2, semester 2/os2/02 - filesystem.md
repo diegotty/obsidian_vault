@@ -1,8 +1,8 @@
 ---
-related to: 
+related to:
 created: 2025-03-02T17:41
-updated: 2025-09-08T15:32
 completed: true
+updated: 2025-09-23T17:52
 ---
 >[!index]
 >- [filesytem](#filesytem)
@@ -39,7 +39,7 @@ li filesystem root (`/`) contiene elementi eterogenei:
 - filesystem di rete
 - filesytem virtuali (usati dal kernel per gestire risorse)
 - filesystem in memoria principale..
-una qualsiasi directory $D$ dell’albero gerarchico può diventare il punto di mount per un altro (nuovo) filesystem $F$ se e solo se la directory root di $F$ può essere accessibilie di $D$
+una qualsiasi directory $D$ dell’albero gerarchico può diventare il punto di mount per un altro (nuovo) filesystem $F$ se e solo se la directory root di $F$ può essere accessibilie d $D$
 - se $D$ è vuota, dopo il mount conterrà $F$
 - se $D$ non è vuota, dopo il mout conterrà $F$, ma ciò non significa che i dati che vi erano dentro sono persi: saranno di nuovo accessibili dopo l’unmount di $F$
 
@@ -153,7 +153,7 @@ il setgid bit viene visualizzato al posto del bit di esecuzione nella terna `gro
 #### sticky bit (1)
 viene applicato su directory (inutile su file) per correggere il comportamento di `w+x` che permette la cancellazione di file all’interno della directory anche se non si hanno i permessi di scrittura sui file stessi
 - grazie allo sticky bit, per cancellare un file $f$, un utente non proprietario **deve** avere i permessi di scrittura su $f$, e non solo sulla directory a cui $f$ appartiene
-lo sticky bit viene visualizzato al posto del bit di esecuzione nella terna `other` con la lettera `t` se `x` è attivo, o la lettera `T` se `x` non è attivo
+lo sticky bit viene visualizzato al posto del pbit di esecuzione nella terna `other` con la lettera `t` se `x` è attivo, o la lettera `T` se `x` non è attivo
 ## comandi
 >[!info] comandi
 >### $\verb |chmod [mode] filename|$
