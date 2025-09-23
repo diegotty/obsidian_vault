@@ -1,7 +1,7 @@
 ---
-related to:
+related to: 
 created: 2025-03-02T17:41
-updated: 2025-09-01T21:59
+updated: 2025-09-08T15:18
 completed: true
 ---
 # shell
@@ -39,7 +39,7 @@ sinossi del comando `man`: `man [sezione] comando`
 # utenti
 
 > [!warning] non tutti gli utenti possono fare login !
->  l’utente `root` non può fare login ma un utente può acquisire i diritti di `root` mediante i comandi `su` e `sudo`
+>  **l’utente `root` non può fare login** ma un utente può acquisire i diritti di `root` mediante i comandi `su` e `sudo`
 
 - ogni utente appartiene almeno ad un gruppo
 - esistono molti gruppi definiti per scopi “amministrativi”

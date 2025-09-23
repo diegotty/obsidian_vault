@@ -1,7 +1,7 @@
 ---
 created: 2024-11-29
-related to:
-updated: 2025-09-01T21:59
+related to: 
+updated: 2025-09-08T14:21
 ---
 # misc
 - irriducibili, primi ?

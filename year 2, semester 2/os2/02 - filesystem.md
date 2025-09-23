@@ -1,7 +1,7 @@
 ---
-related to:
+related to: 
 created: 2025-03-02T17:41
-updated: 2025-09-07T19:37
+updated: 2025-09-08T15:32
 completed: true
 ---
 >[!index]
@@ -18,7 +18,7 @@ completed: true
 >			- [setgid bit](#setgid%20bit)
 >	- [comandi](#comandi)
 # filesystem
-i file regolari contengono sequenze di bit dell’area di memoria sulla quale c’è il filesystem 
+i file regolari contengono sequenze di bit dell’area di memoria sulla quale c’è il filesystem **
 - possono essere ASCII o binari
 esiston anche **file non regolari, o speciali**, che modellano unità di I/O
 - possono essere a blocchi/caratteri
@@ -66,7 +66,7 @@ una qualsiasi directory $D$ dell’albero gerarchico può diventare il punto di 
 > | `ro`       | read-only                                                              |
 > | `rw`       | read-write                                                             |
 > | `noexec`   | non permette l'esecuzione di file binari                               |
-> | `nosuid`   | disabilita i bit SUID e SGID (vedi [[1 - shell, utenti, filesystem#permessi di accesso\|sotto]])                               |
+> | `nosuid`   | disabilita i bit SUID e SGID (vedi [[#permessi speciali|sotto]] )                               |
 > | `nodev`    | non permette dispositivi a livello di file                             |
 > | `relatime` | aggiorna il tempo di accesso solo se più vecchio del tempo di modifica |
 > | `noatime`  | non aggiorna il tempo di accesso                                       |

@@ -1,7 +1,7 @@
 ---
-related to:
+related to: 
 created: 2025-03-02T17:41
-updated: 2025-09-07T18:16
+updated: 2025-09-08T16:26
 completed: true
 ---
 >[!index]
@@ -119,7 +119,7 @@ dove lo standard output di un comando $i$ diventa l’input del comando $i+1$
 >- `[-p {pid, ...}]`: mostra solo i processi con PID nella lista
 >### $\verb |kill [-l [signal]] [-signal] [pid]|$
 >invia segnali ad un processo (non solo la teriminazione !)
->- `[-l]` non mostra la lista dei segnali (i segnali sono identificati dal numero oppure dal come con `SIG` o senza `SIG`)
+>- `[-l]` mostra la lista dei segnali se non viene passato un segnale come argomento. altrimenti, viene passata la formattazione alternativa a quella dell’argomento (testo  o numero) (i segnali sono identificati dal numero oppure dal nome con `SIG` o senza `SIG`)
 >- i segnali verranno presi in considerazione solo se il **real user** del processo è lo stesso che inivia il segnale (o se lo invia un superuser)
 >- `CTRL+z` invia un `SIGSTOP` !
 >- `CTRL+c` invia un `SIGINT` !
