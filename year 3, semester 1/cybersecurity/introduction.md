@@ -1,15 +1,36 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-29T22:36
+updated: 2025-09-29T22:46
 completed: false
 ---
 >[!def] cybersecurity
 >prevention of damage to, protection of, and restoration of computers, electronic communicaiton systems, electronic communications services, wire communication, and electronic communication, including information contained therein, to ensure its **availability**, **integrity**, **authentication**, **confidentiality**, and **nonrepudiation**
 
+>[!def] computer security
+measures and controls that ensure the C.I.A. properties on information system **assets**, including hardware, software, firm-ware and information being processed, stored and communicated
+
+computer security fun facts are:
+1. developing a particular security mechanism or algorithm, one must always consider potential attacks on those security features
+2. procedures used to provide particular services are ofter counterintuitive
+3. Physical and logical placement needs to be detected
+4. security mechanisms typically involve more than a particular algorithm or protocol, and also require participants to be in possession of some secret information, which raises questions about the creation, distribution and protection of that secret information
+5. attackers only need to find a single weakness, while the designer must find and eliminate all weaknesses to achieve protect security
+6. security is still too ofter an afterthought to be incorporated into a system after the design is complete, rather than being an integral part of the design process
+7. security requires regular and constant monitoring
+8. there is a natural tendency on the part of the users and system managers to perceive little benefit from security until a security failure occurs
+9. many users and even security administrators view string security as in impediment to efficient and user-friendly operation of an information system or use of information
+
 >[!info] the key concepts of security and their relationships
 ![[Pasted image 20250929223323.png]]
 >- **threat agent**: who conducts or has the intention to conduct detrimental activities
+### attacks
+attacks can be:
+- **active attacks**: attempt to alter system resources or affect their operation (involves some modification of the data stream or the creations of a false stream)
+- **passive attacks**: attempt to learn or make use of information from the system, but does not affect system resources (eavesdropping, monitoring transmissions)
+and depending on the attacker:
+- **inside attacks**: initiated by an entity inside the security perimeter, an “insider” who is authorized to access system resources
+- **outside attacks**: initiated from outsied the permitere, by an unauthorized user of the system
 
 ## C.I.A.
 the acronym **C.I.A.** stands for: 
@@ -61,4 +82,6 @@ the tools used to guarantee anonimity are:
 
 >[!info] levels of impact
 depending on how much the systems is compromised, there are three levels of impact:
->- **low**: minimal ad
+>- **low**: minimal adverse effects
+>- **moderate**: serious adverse effects
+>- **high**: severe or catastrophic adverse effects
