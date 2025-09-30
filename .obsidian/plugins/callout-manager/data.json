@@ -5,7 +5,8 @@
       "figure",
       "dimostrazione",
       "exercise",
-      "index"
+      "index",
+      "def"
     ],
     "settings": {
       "tuff": [
@@ -79,6 +80,14 @@
           },
           "changes": {
             "color": "108, 191, 254"
+          }
+        }
+      ],
+      "def": [
+        {
+          "changes": {
+            "icon": "lucide-book-key",
+            "color": "177, 37, 37"
           }
         }
       ]

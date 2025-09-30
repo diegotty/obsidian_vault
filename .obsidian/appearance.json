@@ -1,7 +1,8 @@
 {
-  "cssTheme": "Monokai",
+  "cssTheme": "Wombat",
   "theme": "obsidian",
   "enabledCssSnippets": [
     "callouts"
-  ]
+  ],
+  "baseFontSize": 17
 }
