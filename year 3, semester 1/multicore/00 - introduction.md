@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-30T12:34
+updated: 2025-09-30T12:46
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -22,7 +22,31 @@ let’s write an algorithm that computes $n$ values and adds them together
 >```
 
 ```c
+// parallel_1
 // private variables for each core
 int my_sum = 0;
-int my_first_i = ..
+int my_first_i = ...;
+int my_last_i = ...;
+for(my_i = my_first_i; my_i < my_last_i; my_i++){
+	my_x = compute_next_value(...);
+	my_sum += my_x;
+}
 ```
+each core will have a partial sum in `my_sum`, and each core will send its `my_sum` value to a **master** core which adds the final result
+however, in this way, the master is doing all the work that comes with summing, while the other cores just send their data
+
+let’s try pairing the cores so that core 0 adds its result with core 1’s, core 2 with core 3’s, etc..
+after this first round, then core 0 adds its result with core 2, core 4 with core 6, etc..
+// todo ADD IMG
+## writing parallel programs
+**task parallelism**: partition various tasks among the cores (each core works on every piece of data)
+**data parallelism**: partition the data used in solving the problem among the cores (each core fully computes the data it works on)
+>[!example] example
+i need to grade 300 exams, each with 15 questions, and i have 3 teaching assistants
+data parallelism: each assistant grades 100 exams
+task parallelism: assistant 1 grades all the exams, but only questions 1-5. assistant 2 does the same but only questions 6-10. etc….
+
+to write parallel programs, we need to coordinate the cores, for different reasons:
+- **communication**: one core sends its partial sum to another core
+- **load balancing**: share the work even
+- **synchronization**:
