@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-30T12:46
+updated: 2025-09-30T16:57
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -48,5 +48,13 @@ task parallelism: assistant 1 grades all the exams, but only questions 1-5. assi
 
 to write parallel programs, we need to coordinate the cores, for different reasons:
 - **communication**: one core sends its partial sum to another core
-- **load balancing**: share the work even
-- **synchronization**:
+- **load balancing**: share the work even3
+- **synchronization**: each core works at its own pace, but must make sure some core does not get too far ahead
+
+to write parallel programs, we will use four different extensions of the C API:
+- **message-passing interface**
+- **posix threads (pthreads)** 
+- **openMP**
+- **CUDA**
+higher level libraries exist, but the tradeoff is performance
+### types of parallelism
