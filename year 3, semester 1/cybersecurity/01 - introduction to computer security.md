@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-29T22:46
+updated: 2025-10-06T12:38
 completed: false
 ---
 >[!def] cybersecurity
@@ -75,7 +75,7 @@ to guarantee accountability, systems must keep records of their activities to pe
 the property that certain records or transactions not to be attributable to any individual
 
 the tools used to guarantee anonimity are:
-- **aggregation**: combining dat from many individuals, so that disclosed sums or averages cannot be tied to any individual
+- **aggregation**: combining data from many individuals, so that disclosed sums or averages cannot be tied to any individual
 - **mixing**: intertwining of transactions, information or communications in a way that cannot be traced to any individual
 - **proxies**: trusted agents that are willing to engage in actions for an individual in a way that cannot be traced back to that person
 - **pseudonyms**: fictional identities, that can fill in for real identities in communication, but known only to a trusted entity
