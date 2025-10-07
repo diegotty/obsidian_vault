@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T18:01
+updated: 2025-10-07T18:35
 completed: false
 ---
 used by distributed-memory systems
@@ -24,4 +24,16 @@ int main(void){
 identifiers start with `MPI_`, and the first letter following underscore is uppercase
 
 
-the return value of MPI functions is `int`, and it returns a code that indicates an error
+the return value of MPI functions is `int`, and it always returns a code that indicates an error
+
+
+debug fico; -g + valgrind / gdb
+
+## communicators
+a communicator is a collection of processes that can send messages to each other
+
+somma in distribuito: reduce
+
+id process is relative to what communicator it is in !
+
+`int MPI_Comm_size` return the size of the comm
