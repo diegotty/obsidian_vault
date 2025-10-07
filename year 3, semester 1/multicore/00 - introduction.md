@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T17:23
+updated: 2025-10-07T17:38
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -58,5 +58,22 @@ to write parallel programs, we will use four different extensions of the C API:
 - **CUDA**
 higher level libraries exist, but the tradeoff is performance
 ### types of parallel systems
-- **shared-memory**
-- **distributed-memory**
+#### memory
+- **shared-memory**: all the cores can share access to the computer’s memory and the cores can be coordinated by having them examine and update shared memory locations
+- **distributed-memory**: each core has its own, private memory. they communicate explicitly by sending messages across a network !
+#### instructions
+- **multiple-instruction multiple-data (MIMD)**: each core has its own control units (can execute different instructions, and have different fetch cycles) and can work independently from the others
+- **single-instruction multiple-data (SIMD)**: the same instruction is executed across all cores, but each code does so on different data (if a core wants to execute another instruction, it has to stay idle while the other core does its instruction)
+	- aka vector processor, this is the GPU’s architecture
+
+|      | shared-memory          | distributed-memory |
+| ---- | ---------------------- | ------------------ |
+| SIMD | CUDA                   |                    |
+| MIMD | pthreads, openMD, CUDA | MPI                |
+|      |                        |                    |
+la GPU è divisa in gruppi di 32 core, e i gruppi al loro interno sono SIMD, ma tra i diversi gruppi si può usare MIMD (ogni gruppo ha una control unit)
+
+### types of systems
+- **concurrent**: multiple tasks can be in progress at any time (at the same time) and each task can be independent from any other (in necessarily in parallel, can be done by interleaving)
+- **parallel**: multiple tasks can in in progress at any time but need to *cooperate cloosely*
+- **distributed**: a program *might* need to cooperate with other programs
