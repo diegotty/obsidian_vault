@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T17:38
+updated: 2025-10-07T17:45
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -77,3 +77,11 @@ la GPU è divisa in gruppi di 32 core, e i gruppi al loro interno sono SIMD, ma 
 - **concurrent**: multiple tasks can be in progress at any time (at the same time) and each task can be independent from any other (in necessarily in parallel, can be done by interleaving)
 - **parallel**: multiple tasks can in in progress at any time but need to *cooperate cloosely*
 - **distributed**: a program *might* need to cooperate with other programs
+
+>[!info] hardware
+to write efficient code, its better to know on which hardware we are running the program on, to optimize for that !
+
+## von neumann architecture
+tranferring data from memory to the registers is a bottleneck, known as **von neumann bottleneck**
+
+cache is a SRAM
