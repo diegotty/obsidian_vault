@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-09-30T16:57
+updated: 2025-10-07T17:23
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -57,4 +57,6 @@ to write parallel programs, we will use four different extensions of the C API:
 - **openMP**
 - **CUDA**
 higher level libraries exist, but the tradeoff is performance
-### types of parallelism
+### types of parallel systems
+- **shared-memory**
+- **distributed-memory**
