@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T18:35
+updated: 2025-10-07T18:48
 completed: false
 ---
 used by distributed-memory systems
@@ -34,6 +34,17 @@ a communicator is a collection of processes that can send messages to each other
 
 somma in distribuito: reduce
 
-id process is relative to what communicator it is in !
+id process is relative to what communicator it is in ! (the rank in `MPI_Comm_rank`)
 
-`int MPI_Comm_size` return the size of the comm
+`int MPI_Comm_size` return the size of the communicator `comm` in `comm_sz_p`
+
+slide 35: dipende dallo scheduling !
+### $\verb|MPI_Send|$
+- indirizzo di inizio del blocco di memoria da inviare
+- number of elements of the message
+- type of data being sent (int, char, float, ….)
+- rank of the receiver
+- arbitrary value (4 now)
+- communicator 
+
+mpi preserves endianess !
