@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-08T14:40
+updated: 2025-10-08T14:55
 completed: false
 ---
 used by distributed-memory systems
@@ -53,7 +53,7 @@ mpi preserves endianess !
 - inizio del buffer su cui scrivere messaggio
 - `source`: rank of the sender (MPI_any_RANK exists !)
 - `tag`: has to match with sender’s `tag`
-- `status_p`: info on what happened on the receive (ex: rank of the sender if MPI_ANY_RANK)(changed by the fuction)
+- `status_p`: info on what happened on the receive (ex: rank of the sender if MPI_ANY_RANK, same with ANY_SOURCE)(changed by the fuction)
 
 MPI requires that messages be **nonovertaking**: if process $q$ sends two messages to process $r$, the first message sent by $q$ must be available to $r$ before the second message
 - however, there is no restriction on the arrival of messages sent from different processes
@@ -86,3 +86,15 @@ a received can get a message withouth knowing:
 - the amount of data in the message
 - the sender of the message (`MPI_ANY_SOURCE`)
 - the tag of the message (`MPI_ANY_TAG`)
+
+
+## issue with send and receive
+- **send**: when the send function returns, i  have no idea if the message got delivered successfully, if the message was sent at all or its still in the sender’s process. however, after sending the message, i can alter the things in buffer that was sent (as MPI guarantees that by like making a copy or smn)
+
+mpi has a buffer where it stores messages that were sent but still not receveid by anyone (nobody called the receive funciton with the matching parameters)
+- this cant be done with very big messages
+- to fix this, mpi asks the received if it is ready to receive the message. during this period of time, the send può essere bloccante (ma può essere bloccante anche se è piccola)
+
+so if two processes send to each other at the same time, if the send is bloccante, then deadlock happens
+the only assumption we can make is that if the send returns, we can alter the buffer’s content
+- to keep it portable, we shouldn’t make such assumptions even if we know how the implementation we use works
