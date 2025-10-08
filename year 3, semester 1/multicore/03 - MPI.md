@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-08T16:19
+updated: 2025-10-08T16:27
 completed: false
 ---
 used by distributed-memory systems
@@ -112,4 +112,8 @@ however, non-blocking calls don’t guarantee the altering buffer thing, and the
 
 rendezvous: send chiede al receiver se è pronto
 
-### $\verb ||$
+### $\verb |MPI_Isend()|$
+ - `req`: request id, needs to be used in the `wait()`
+
+i can use `MPI_Test()` to check for completion non-blockingly, or `MPI_Wait()` to check for completion blockingly
+- several variant available
