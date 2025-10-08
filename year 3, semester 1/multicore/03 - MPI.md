@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T18:48
+updated: 2025-10-07T18:55
 completed: false
 ---
 used by distributed-memory systems
@@ -42,9 +42,15 @@ slide 35: dipende dallo scheduling !
 ### $\verb|MPI_Send|$
 - indirizzo di inizio del blocco di memoria da inviare
 - number of elements of the message
-- type of data being sent (int, char, float, ….)
+- type of data being sent (int, char, float, ….) (macros, for custom structs a new mpi datatype needs to be made !)
 - rank of the receiver
 - arbitrary value (4 now)
 - communicator 
 
 mpi preserves endianess !
+
+#### mpi_recv
+- inizio del buffer su cui scrivere messaggio
+- `source`: rank of the sender (MPI_any_RANK exists !)
+- `tag`: has to match with sender’s `tag`
+- `status_p`: info on what happened on the receive (ex: rank of the sender if MPI_ANY_RANK)(changed by the fuction)
