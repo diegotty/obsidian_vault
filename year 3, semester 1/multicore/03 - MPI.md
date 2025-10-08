@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T18:55
+updated: 2025-10-08T14:40
 completed: false
 ---
 used by distributed-memory systems
@@ -54,3 +54,35 @@ mpi preserves endianess !
 - `source`: rank of the sender (MPI_any_RANK exists !)
 - `tag`: has to match with sender’s `tag`
 - `status_p`: info on what happened on the receive (ex: rank of the sender if MPI_ANY_RANK)(changed by the fuction)
+
+MPI requires that messages be **nonovertaking**: if process $q$ sends two messages to process $r$, the first message sent by $q$ must be available to $r$ before the second message
+- however, there is no restriction on the arrival of messages sent from different processes
+
+## data types
+
+| MPI datatype       | C datatype           |
+| ------------------ | -------------------- |
+| MPI_CHAR           | signed char          |
+| MPI_SHORT          | signed short int     |
+| MPI_INT            | signed int           |
+| MPI_LONG           | signed long int      |
+| MPI_LONG_LONG      | signed long long int |
+| MPI_UNSIGNED_CHAR  | unsigned char        |
+| MPI_UNSIGNED_SHORT | unsigned short int   |
+| MPI_UNSIGNED       | unsigned int         |
+| MPI_UNSIGNED_LONG  | unsigned long int    |
+| MPI_FLOAT          | float                |
+| MPI_DOUBLE         | double               |
+| MPI_LONG_DOUBLE    | long double          |
+| MPI_BYTE           |                      |
+| MPI_PACKED         |                      |
+
+## message matching
+a message is successfully received if:
+- `recv_type = send_type`
+- `recv_buf_sz >= send_buf_sz`
+
+a received can get a message withouth knowing:
+- the amount of data in the message
+- the sender of the message (`MPI_ANY_SOURCE`)
+- the tag of the message (`MPI_ANY_TAG`)
