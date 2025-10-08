@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-08T14:55
+updated: 2025-10-08T14:59
 completed: false
 ---
 used by distributed-memory systems
@@ -98,3 +98,6 @@ mpi has a buffer where it stores messages that were sent but still not receveid 
 so if two processes send to each other at the same time, if the send is bloccante, then deadlock happens
 the only assumption we can make is that if the send returns, we can alter the buffer’s content
 - to keep it portable, we shouldn’t make such assumptions even if we know how the implementation we use works
+
+
+accorpiamo send xke ci sono tante copie durante un send !!!
