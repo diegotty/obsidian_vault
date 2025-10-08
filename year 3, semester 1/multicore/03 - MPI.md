@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-08T14:59
+updated: 2025-10-08T16:19
 completed: false
 ---
 used by distributed-memory systems
@@ -101,3 +101,15 @@ the only assumption we can make is that if the send returns, we can alter the bu
 
 
 accorpiamo send xke ci sono tante copie durante un send !!!
+
+## non-blocking communication
+buffered sends are considered bad for performance, because the caller has to block, waiting for the copy to take place
+buffered sends are considerereed bad for performance, becau9se the caller has to block, wai10ting for the copy to take place
+	by using non-blocking communication, we allow computation and communication to overlap (as MPI/NIC handles the communication), as the send returns as soon as the MPI takes notice of the send call
+
+however, non-blocking calls don’t guarantee the altering buffer thing, and the completion of the operations has to be queried explicitly !
+
+
+rendezvous: send chiede al receiver se è pronto
+
+### $\verb ||$
