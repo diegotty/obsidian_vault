@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T18:06
+updated: 2025-10-12T18:21
 completed: false
 ---
 # introduction
@@ -106,22 +106,26 @@ also, a  receiver can get a message withouth knowing:
 - the amount of data in the message
 - the sender of the message (`MPI_ANY_SOURCE`)
 - the tag of the message (`MPI_ANY_TAG`)
-## issue with send and receive
+## point-to-point communication modes
 the exact behaviour of send and receive functions is determined by the MPI implementation, but !! even if you nkow your MPI implementation, stick to what the defined standard says ! don’t make implementation-specific assumptions, otherwise code will not be portable
-- **send**: when the send function returns, the sender does not know  if the message got delivered successfully, or if the message was sent at all. it doesn’t even know if its still in its memory, waiting to be sent. **however**, after the send function returns, the sender can alter the content of the buffer sent, as MPI guarantees the message will not be lost (MPI has a buffer where it stores **some** messages that were sent but still not received by anyone (as nobody called the receive function with the matching parameters)
-	- however, this cant be done with very big messages, and in that cases, it behaves differerntly:
-	- to fix this, mpi asks the received if it is ready to receive the message. during this period of time, the send può essere bloccante (ma può essere bloccante anche se è piccola)
+- **send**: when the send function returns, the sender does not know  if the message got delivered successfully, or if the message was sent at all. it doesn’t even know if its still in its memory, waiting to be sent. **however**, after the send function returns, the sender can alter the content of the buffer sent, as MPI guarantees the message will not be lost (that’s the only assumption we can make)
 
-so if two processes send to each other at the same time, if the send is bloccante, then deadlock happens
-the only assumption we can make is that if the send returns, we can alter the buffer’s content
-- to keep it portable, we shouldn’t make such assumptions even if we know how the implementation we use works
+MPI has a buffer where it stores **some** (small enough) messages that were sent but still not received by anyone (as nobody called the receive function with the matching parameters).
+however, this cant be done with very big messages, and in that cases, it behaves differently: MPI asks the receiver if it is ready to receive the message and waits for a reply before the returning the send call. during this period of time, the send **can be blocking !!** (however, it can be blocking even if the buffer sent is small. as we said, we can’t make assumptions)
+
+the communication mode explained above is the **standard** communication mode. there are three more:
+- **buffered**: the sending operation is always locally blocking: it will return as soon as the message is copied to a buffer. also, the buffer is user-provided
+- **synchronous**: the sending operation will return only after the destination process has initiated and started retrieval of the message. this is a proper **globally blocking** operation, as 
+- **ready**
+
+- **receive**: receive calls are usually blocking
+so if two processes send to each other at the same time and the the send happens to be blocking, then deadlock happens
 
 
-accorpiamo send xke ci sono tante copie durante un send !!!
+because of this overhead, we should limit send calls as much as possible, by not making a lot of small send calls, but rather send calls with bigger buffers
 
 ## non-blocking communication
 buffered sends are considered bad for performance, because the caller has to block, waiting for the copy to take place
-buffered sends are considerereed bad for performance, becau9se the caller has to block, wai10ting for the copy to take place
 	by using non-blocking communication, we allow computation and communication to overlap (as MPI/NIC handles the communication), as the send returns as soon as the MPI takes notice of the send call
 
 however, non-blocking calls don’t guarantee the altering buffer thing, and the completion of the operations has to be queried explicitly !
