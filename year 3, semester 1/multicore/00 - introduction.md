@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T17:06
+updated: 2025-10-12T17:21
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -61,12 +61,13 @@ higher level libraries exist, but the tradeoff is performance
 #### memory
 - **shared-memory**: all the cores can share access to the computer’s memory and the cores can be coordinated by having them examine and update shared memory locations
 - **distributed-memory**: each core has its own, private memory. they communicate explicitly by sending messages across a network !
->[!figure] image
+>[!info] image
 ![[memory.png]]
+with distributed memory (right), cores are connected though a fast network
 #### instructions
 - **multiple-instruction multiple-data (MIMD)**: each core has its own control units (can execute different instructions, and have different fetch cycles) and can work independently from the others
 - **single-instruction multiple-data (SIMD)**: the same instruction is executed across all cores, but each code does so on different data (if a core wants to execute another instruction, it has to stay idle while the other core does its instruction)
-	- aka vector vector processing, this is the GPU’s architecture.
+	- aka vector vector processing, this is the GPU’s architecture. in detail, the GPU is divided in groups of 32 cores. each group is SIMD, but between each other, they are MIMD, as each group has its own control unit
 
 what programming languages will we use for different types of systems ? 
 
@@ -75,17 +76,22 @@ what programming languages will we use for different types of systems ?
 | SIMD | CUDA                   |                    |
 | MIMD | pthreads, openMD, CUDA | MPI                |
 |      |                        |                    |
-la GPU è divisa in gruppi di 32 core, e i gruppi al loro interno sono SIMD, ma tra i diversi gruppi si può usare MIMD (ogni gruppo ha una control unit)
-
-### types of systems
+#### task parallelism
 - **concurrent**: multiple tasks can be in progress at any time (at the same time) and each task can be independent from any other (in necessarily in parallel, can be done by interleaving)
-- **parallel**: multiple tasks can in in progress at any time but need to *cooperate cloosely*
-- **distributed**: a program *might* need to cooperate with other programs
+- **parallel**: multiple tasks can be in progress at any time but need to *cooperate cloosely* (tasks are tightly coupled: for example, cores share the memory or are connected through a fast network)
+- **distributed**: a program *might* need to cooperate with other programs (tasks are more loosely coupled: for example, services connected though the internet)
+parallel and concurrent are distributed, and concurrent programs can be serial
 
 >[!info] hardware
 to write efficient code, its better to know on which hardware we are running the program on, to optimize for that !
 
 ## von neumann architecture
-tranferring data from memory to the registers is a bottleneck, known as **von neumann bottleneck**
+>[!info] von neumann 
+![[Pasted image 20251012171318.png|400]]
+>- the main memory is a collection of locations, and each location has an address used to access the content (data or instruction) in that location
+>- as we already know, the CPU is comprised of the many units, like the CU, the registers (which store the state of the executing program), and the PC (also a register)
+>- the interconnect is used to transfer data between the CPU and the memory. its traditionally a **bus**, but it can be much more complex
+>	- tranferring data from memory to the registers is a bottleneck, known as **von neumann bottleneck**
 
-cache is a SRAM
+>[!info] registers are SRAM
+SRAM is a type of volatile memory, commonly found in CPUs, caches and registers. it uses flip-flops to store each bit of data, so it doesnt need memory refreshes (in DRAM, bits are stored as the presence or absence of a electric charge inside a capacitor. as time passes, the charge gets weaker, and cycles of refresh are used to keep the data inside the memory. of course refreshes are completely unnoticeable)

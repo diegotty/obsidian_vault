@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-08T16:27
+updated: 2025-10-12T17:06
 completed: false
 ---
 used by distributed-memory systems
