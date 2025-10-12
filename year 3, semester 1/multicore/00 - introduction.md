@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-07T17:45
+updated: 2025-10-12T17:06
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -61,10 +61,14 @@ higher level libraries exist, but the tradeoff is performance
 #### memory
 - **shared-memory**: all the cores can share access to the computer’s memory and the cores can be coordinated by having them examine and update shared memory locations
 - **distributed-memory**: each core has its own, private memory. they communicate explicitly by sending messages across a network !
+>[!figure] image
+![[memory.png]]
 #### instructions
 - **multiple-instruction multiple-data (MIMD)**: each core has its own control units (can execute different instructions, and have different fetch cycles) and can work independently from the others
 - **single-instruction multiple-data (SIMD)**: the same instruction is executed across all cores, but each code does so on different data (if a core wants to execute another instruction, it has to stay idle while the other core does its instruction)
-	- aka vector processor, this is the GPU’s architecture
+	- aka vector vector processing, this is the GPU’s architecture.
+
+what programming languages will we use for different types of systems ? 
 
 |      | shared-memory          | distributed-memory |
 | ---- | ---------------------- | ------------------ |
