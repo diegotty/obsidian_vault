@@ -1,12 +1,14 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T17:06
+updated: 2025-10-12T17:36
 completed: false
 ---
-used by distributed-memory systems
-we compile one program that gets executed by multiple processes. we se if-else statements to specify what each process must do (similarly to what happens when you fork a process)
- - communications happen through message passing
+## introduction
+MPI is a library used by distributed-memory systems
+it used the **SPMD** ((**single-program multiple-data**) parallel programming computing model, where one program is compiled and it gets executed by multiple processes.
+we use if-else statements to specify what each process must do (similarly to what happens when you fork a process)
+ - as the systems are distributed-memory, communications happen through message passing
 
 ```c
 #include <stdio.h>
@@ -21,24 +23,40 @@ int main(void){
 }
 ```
 
+>[!info] misc info
 identifiers start with `MPI_`, and the first letter following underscore is uppercase
 
-
+	
 the return value of MPI functions is `int`, and it always returns a code that indicates an error
 
+>[!info] compiling and execution
+>```bash
+>mpicc -g -wall -o mpi_hello mpi_hello.c
+>```
+>- `-g` produces debug information
+>- `-Wall` turns on all warnings
+>it is advised to use some kind of debugger (gdb (GNU debugger, fully terminal: ddd is its graphical frontend) / valgrind (old))
+>```bash
+>mpiexec -n <number of processes> <executable>
+>```
+>- `-n` specifies the number of processes that will execute the program
+>```bash
+>mpiexec -n 4 ./test: -n ddd ./test : -n 1 ./test
+>```
+runs the 5th process under the ddd debugger, and the other 5 normally
 
-debug fico; -g + valgrind / gdb
-
+each process is identified by a **rank**, that starts from `0` to `p-1`
 ## communicators
 a communicator is a collection of processes that can send messages to each other
+- `MPI_Init()` defines a standard communicator, that consists of all the processes created when the program is started: `MPI_COMM_WORLD`
 
-somma in distribuito: reduce
+>[!warning] ranks and communicators
+>id process is relative to what communicator it is in ! (the rank in `MPI_Comm_rank()`)
 
-id process is relative to what communicator it is in ! (the rank in `MPI_Comm_rank`)
+### functions
+- `int MPI_Comm_size(MPI_Comm comm, int* comm_sz_p)`: return the size (cardinality) of the communicator `comm` in `comm_sz_p`
 
-`int MPI_Comm_size` return the size of the communicator `comm` in `comm_sz_p`
-
-slide 35: dipende dallo scheduling !
+- `int MPI_Comm_rank(MPI_Comm comm, int* my_rank_p)`: returns the rank of the process making the call, relative to the communicator `comm`, in `my_rank_p`
 ### $\verb|MPI_Send|$
 - indirizzo di inizio del blocco di memoria da inviare
 - number of elements of the message
