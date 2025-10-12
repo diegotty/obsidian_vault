@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T18:21
+updated: 2025-10-12T18:35
 completed: false
 ---
 # introduction
@@ -106,37 +106,40 @@ also, a  receiver can get a message withouth knowing:
 - the amount of data in the message
 - the sender of the message (`MPI_ANY_SOURCE`)
 - the tag of the message (`MPI_ANY_TAG`)
-## point-to-point communication modes
+### blocking communication
+
+>[!warning] assumptions
 the exact behaviour of send and receive functions is determined by the MPI implementation, but !! even if you nkow your MPI implementation, stick to what the defined standard says ! don’t make implementation-specific assumptions, otherwise code will not be portable
-- **send**: when the send function returns, the sender does not know  if the message got delivered successfully, or if the message was sent at all. it doesn’t even know if its still in its memory, waiting to be sent. **however**, after the send function returns, the sender can alter the content of the buffer sent, as MPI guarantees the message will not be lost (that’s the only assumption we can make)
+
+the problem: when the send function returns, the sender does not know  if the message got delivered successfully, or if the message was sent at all. it doesn’t even know if its still in its memory, waiting to be sent. **however**, after the send function returns, the sender can alter the content of the buffer sent, as MPI guarantees the message will not be lost (that’s the only assumption we can make)
 
 MPI has a buffer where it stores **some** (small enough) messages that were sent but still not received by anyone (as nobody called the receive function with the matching parameters).
 however, this cant be done with very big messages, and in that cases, it behaves differently: MPI asks the receiver if it is ready to receive the message and waits for a reply before the returning the send call. during this period of time, the send **can be blocking !!** (however, it can be blocking even if the buffer sent is small. as we said, we can’t make assumptions)
-
+- because of this overhead, we should limit send calls as much as possible, by not making a lot of small send calls, but rather send calls with bigger buffers
+### point-to-point communication modes
 the communication mode explained above is the **standard** communication mode. there are three more:
 - **buffered**: the sending operation is always locally blocking: it will return as soon as the message is copied to a buffer. also, the buffer is user-provided
-- **synchronous**: the sending operation will return only after the destination process has initiated and started retrieval of the message. this is a proper **globally blocking** operation, as 
-- **ready**
+- **synchronous**: the sending operation will return only after the destination process has initiated and started retrieval of the message. this is a proper **globally blocking** operation, as the sender can be sure of the point where the receiver is without any further communication
+- **ready**: the send operation will succeed only if a matching receive operation has been intiated already. otherwise, the function returns with an error code. the purpose of this mode is to reduce the overhead of handshaking operations !
 
-- **receive**: receive calls are usually blocking
-so if two processes send to each other at the same time and the the send happens to be blocking, then deadlock happens
+such modes are implemented with `MPI_Bsend()`, `MPI_Ssend()` and `MPI_Rsend()`, that share the same arguments `(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)`
 
+### non-blocking communication
+buffered sends are considered bad for performance, because the caller has to block, waiting for the copy to take place. by using non-blocking communication, we allow computation and communication to overlap (as MPI/NIC handles the communication), as the send returns as soon as the MPI takes notice of the send call. we thereby maximize concurrency.
 
-because of this overhead, we should limit send calls as much as possible, by not making a lot of small send calls, but rather send calls with bigger buffers
+however, non-blocking calls don’t guarantee the *altering buffer thing*, and the completion of the operations for both end-points has to be queried explicitly:
+- for senders so that they can re-use the message buffer
+- for receivers so that they can extract the message contents
+#### functions
+- `int MPI_Isend(void *buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *req)`
+	- non-blocking send
+	- the `req` that is returned is a handle that allows a query on the status of the operation to take place
+- `int MPI_Irecv(void  *buf, int count, MPI_Datatype datatype, int source, int tag, MPI_Comm comm, MPI_Request *req)`
+- `int MPI_Wait(MPI_Request *req, MPI_Status *st)`
+	- `*st`: is the address of the structure that will hold the communication information
+	- blocking completion request, destroys the handle that is passed as argument
+- `int MPI_Test(MPI_Request *req, int *flag, MPI_Status *st)`
+	- `flag`: set to true only if the operation is complete
+	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 
-## non-blocking communication
-buffered sends are considered bad for performance, because the caller has to block, waiting for the copy to take place
-	by using non-blocking communication, we allow computation and communication to overlap (as MPI/NIC handles the communication), as the send returns as soon as the MPI takes notice of the send call
-
-however, non-blocking calls don’t guarantee the altering buffer thing, and the completion of the operations has to be queried explicitly !
-
-
-rendezvous: send chiede al receiver se è pronto
-
-### $\verb |MPI_Isend()|$
- - `req`: request id, needs to be used in the `wait()`
-
-i can use `MPI_Test()` to check for completion non-blockingly, or `MPI_Wait()` to check for completion blockingly
-- several variant available
-
-slide 33
+many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
