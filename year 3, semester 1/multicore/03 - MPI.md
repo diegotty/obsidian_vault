@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T17:36
+updated: 2025-10-12T17:45
 completed: false
 ---
 ## introduction
@@ -54,24 +54,29 @@ a communicator is a collection of processes that can send messages to each other
 >id process is relative to what communicator it is in ! (the rank in `MPI_Comm_rank()`)
 
 ### functions
-- `int MPI_Comm_size(MPI_Comm comm, int* comm_sz_p)`: return the size (cardinality) of the communicator `comm` in `comm_sz_p`
+>[!info] return values
+> all MPI functions return an `int`, which is used to communicate a state/error
 
-- `int MPI_Comm_rank(MPI_Comm comm, int* my_rank_p)`: returns the rank of the process making the call, relative to the communicator `comm`, in `my_rank_p`
-### $\verb|MPI_Send|$
-- indirizzo di inizio del blocco di memoria da inviare
-- number of elements of the message
-- type of data being sent (int, char, float, ….) (macros, for custom structs a new mpi datatype needs to be made !)
-- rank of the receiver
-- arbitrary value (4 now)
-- communicator 
+utility:
+- `int MPI_Comm_size(MPI_Comm comm, int* comm_sz_p)`
+	- return the size (cardinality) of the communicator `comm` in `comm_sz_p`
+- `int MPI_Comm_rank(MPI_Comm comm, int* my_rank_p)`
+	- returns the rank of the process making the call, relative to the communicator `comm`, in `my_rank_p`
+- `int MPI_Send(void* msg_buf_p, int msg_size, MPI_Datatype msg_type, int dest, int tag, MPI_Comm communicator)`
+	- `msg_buf_p`: start address of the block of memory to be sent
+	- `msg_size`: number of elements of the message (of type `msg_type`)
+	- `msg_type`: type of data being sent (parallel to int, char, float, …., but we pass a MPI enum value. for custom types (structs) , a new macro needs to be made !)
+	- `dest`: rank of the receiver
+	- `tag`: needs to match the receiver’s tag
+	- `communicator`: communicator to be “used”
 
 mpi preserves endianess !
 
-#### mpi_recv
-- inizio del buffer su cui scrivere messaggio
-- `source`: rank of the sender (MPI_any_RANK exists !)
+`int MPI_Recv(void* msg_buf_p, int buf_size, MPI_Datatype buf_type, int source, int tag, MPI_Comm communicator, MPI_Status* status_p)`
+- `msg_buf_p`: start address of the memory to be filled with the message
+- `source`: rank of the sender (special values like `MPI_any_RANK` exist !)
 - `tag`: has to match with sender’s `tag`
-- `status_p`: info on what happened on the receive (ex: rank of the sender if MPI_ANY_RANK, same with ANY_SOURCE)(changed by the fuction)
+- `status_p`: info on what happened on the receive (ex: rank of the sender if `MPI_ANY_RANK` or `MPI_ANY_SOURCE` was used)
 
 MPI requires that messages be **nonovertaking**: if process $q$ sends two messages to process $r$, the first message sent by $q$ must be available to $r$ before the second message
 - however, there is no restriction on the arrival of messages sent from different processes
@@ -135,3 +140,5 @@ rendezvous: send chiede al receiver se è pronto
 
 i can use `MPI_Test()` to check for completion non-blockingly, or `MPI_Wait()` to check for completion blockingly
 - several variant available
+
+slide 33
