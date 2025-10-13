@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - introduction to computer security]]"
 created: 2025-03-02T17:41
-updated: 2025-10-13T09:32
+updated: 2025-10-13T09:43
 completed: false
 ---
 # symmetric encryption
@@ -18,12 +18,23 @@ symmetric encryption is the universal technique for providing confidentiality fo
 	- on average, half of all possible keys must be tried to achieve success
 ## types of ciphers
 - **block ciphers**: they process the input of one block of elements at a time. they produce an output block for each input block. they are more common and can reuse keys
-- **stream ciphers**: they process the input elements continuously, producing output one element at a time. they are faster and use far less code than block ciphers, and encrypt plaintext one byte at a time.
+- **stream ciphers**: they process the input elements continuously, producing output one element at a time. they are faster and use far less code than block ciphers, and encrypt plaintext one *byte at a time*.
+>[!info] block vs stream ciphers
+![[Pasted image 20251013094151.png]]
+>- a pseudorandom stream is one that is unpredictable, without the knowledge of the input key
 ## symmetric encryption algorithms
 the most known are:
-- **AES** (advanced encryption standard / rijndael): 
-- **DES** (data encryption standard): now considered inscure, 
-  **RC4** (ARC4): now also considered insecure
+- **DES** (DEA / data encryption standard): block cipher that uses 64bit plaintext blocks and 56bit key to produce a 64bit cipher block.
+	- now considered inscure
+	- **3DES**: repeats DES 3times, with 2 or 3 unique keys
+- **AES** (advanced encryption standard / **rijndael**): 128bit block cipher, with 128,192 or 256bit secret keys
+	- made as a replacement to 3DES
+	- the most popular and widely used symetric encryption algorithm in the modern IT industry
+  **RC4** (ARC4): stream cipher with 40-2048bit secret keys
+	- now also considered insecure
   >[!info] brute forcing modern block ciphers
   ![[Pasted image 20251013092911.png]]
 
+symmetric encryption is usually applied to a unit of dat larger than a single 64bit or 128bit block, and the simplest way to approach multiple-block encryption is **ECB** (electronic codebook), where each block of plaintext is encrypted using the same key. this leaves exploits available in case of regularities in the plaintext.
+- there are modes of operation to overcome this
+## message authentication
