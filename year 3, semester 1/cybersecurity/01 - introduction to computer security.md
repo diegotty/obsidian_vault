@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-13T09:02
+updated: 2025-10-13T09:03
 completed: false
 ---
 >[!def] cybersecurity
@@ -124,7 +124,7 @@ the attack surfaces consist of the reachable and exploitable vulnerabilities in 
 - **evaluation**: the process of examining a computer product with respect to certain criteria. involves testing and formal analytic/mathematical techniques
 ### standards
 standards have been developed to cover management practices and the overall achitecture of security mechanisms and services. the most important are:
-- **NIST**
-- **ISOC**
-- **ITU-T**
-- **
+- **NIST**: national institute of standards and technology
+- **ISOC**: internet society
+- **ITU-T**: international telecommunication union
+- **ISO**: international organization for standardization
