@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-13T08:33
+updated: 2025-10-13T08:43
 completed: false
 ---
 >[!def] cybersecurity
@@ -89,5 +89,18 @@ depending on how much the systems is compromised, there are three levels of impa
 ### unauthorized disclosure
 it is a threat to confidentiality, as an entity gains access to data for which the entity is not authorized. it may happen through:
 - **exposure**: sensitive data are directly released to an unathorized entity
-- **interception**: the u.e. directly acceses sensitive data that is travelling between authorized sources and destinations
-- **interference**: an u.e. indirectly accesses sensitive data (not necessarily the data contained in the communication) by reasoning from characteristics or by-products of communications
+- **interception**: the u.e. directly acceses sensitive data that is travelling between authorized sources and destinations (ex: eavesdropping)
+- **interference**: an u.e. indirectly accesses sensitive data (not necessarily the data contained in the communication) by reasoning from characteristics or by-products of communications (uses multiple data streams to determine the source of a particular piece of imformation)
+- **intrusion**: an u.e. gains access to sensitive data by circumventing a system’s security protections
+### deception
+it is a threat to either system integrity or data integrity: an authorized entity receives false data and believes it to be true. it may happen though:
+- **masquerading**: an u.e. gains access to a system or performs a malicious act by posing as an a.e.
+- **falsification**: false data deceive an a.e. (ex: man-in-the-middle attack, where a network stream in intercepted, modified and retrasmitted)
+- **repudiation**: an entity deceives another by falsely denying responsibility for an act, which can lead to misleading log data (this way, malicious actors can get away with actions because they can’t be proven to have been the ones ho performed them. this exploits a weakness of the attacked system)
+### disruption
+it is a threat to availability or system integrity: it’s an event that interrupts or prevents the correct operation of system services and functions. it may happen though:
+- **incapacitation**: a system operation is prevented or interrupted by disabling a system component
+- **corruption**: a system operation gets undesirably altered by adversely modifying system functions or data
+- **obstruction**: a threat action that interrupts delivery of system services by hindering system operation (Dos attacs !)
+### usurpation
+it is a threat to system integrity: an unauthorized entity gains control of system services or functions
