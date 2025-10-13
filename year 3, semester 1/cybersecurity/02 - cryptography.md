@@ -1,7 +1,7 @@
 ---
 related to: "[[01 - introduction to computer security]]"
 created: 2025-03-02T17:41
-updated: 2025-10-13T11:17
+updated: 2025-10-13T11:32
 completed: false
 ---
 # symmetric encryption
@@ -67,7 +67,33 @@ hash functions aimed at authentication need to meet these properties:
 - one-way, or pre-image resistant: given $h$, it is computationally infeasible to find $x \text{  t.c.} H(x)=h$ 
 - computationally infeasible to find $y \neq x \text{ .t.c. } H(y)=H(x)$
 - collision resistant or with strong collision resistance: computationally infeasible to find any pair $(x,y) \text{ t.c. }H(x)=H(y)$
-#### attacking has functions
+#### attacking hash functions
 2 approaches are used to attack hash functions:
 - exploit logical weakness in the algorithm
 - strength of hash function depends solely on the length of the hash code produced by the algorithm
+**SHA** (secure hash algorithm) is the most widely used family of hash algorithms (ex: SHA-256, SHA-512)
+# public-key encryption
+the public-key encryption structure was publicly proposed by Diffie and Hellman in 1976, and it is based on mathematical functions.
+it uses **asymmetric** encryption: 2 separate keys, a *public key* (made public for others to use) and a *private key* (private to the owner)
+- take notice that a protocol is needed for distribution of the keys !
+>[!info] encryption with public key
+![[Pasted image 20251013112343.png]]
+ensures *confidentiality* (only the receiver can decrypt the message)
+
+>[!info] encryption with private key
+![[Pasted image 20251013112437.png]]
+ensures *authenticity*, and can be verified by anyone with the sender’s public key
+
+depending on the encryption algorithm used (**RSA**, **DSS**, **ECC**, **Diffie-Hellman**, …), public-key cryptosystems (frameworks that implement public-key encryption) can have different uses. the main ones are:
+- digital signature
+- symmetric key distribution
+- encryption of secret keys
+
+such public-key cryptosystems must met the following requirements:
+- computationally easy to create key pairs
+- computationally easy for receiver knowing private key, to decrypt ciphertext
+- computationally easy for sender knowing public key, to encrypt messages
+- computationally infeasible for opponent to to otherwise recover original message
+- computationally infeasible for opponent to determine private key from public key
+- useful if either key can be used for each role
+# digital signature
