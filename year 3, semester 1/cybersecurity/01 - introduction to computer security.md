@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-12T16:54
+updated: 2025-10-13T08:32
 completed: false
 ---
 >[!def] cybersecurity
@@ -79,9 +79,15 @@ the tools used to guarantee anonimity are:
 - **mixing**: intertwining of transactions, information or communications in a way that cannot be traced to any individual
 - **proxies**: trusted agents that are willing to engage in actions for an individual in a way that cannot be traced back to that person
 - **pseudonyms**: fictional identities, that can fill in for real identities in communication, but known only to a trusted entity
-
+## threats
 >[!info] levels of impact
 depending on how much the systems is compromised, there are three levels of impact:
 >- **low**: minimal adverse effects
 >- **moderate**: serious adverse effects
 >- **high**: severe or catastrophic adverse effects
+
+### unauthorized disclosure
+it is a threat to confidentiality, as an entity gains access to data for which the entity is not authorized. it may happen through:
+- **exposure**: sensitive data are directly released to an unathorized entity
+- **interception**: the u.e. directly acceses sensitive data that is travelling between authorized sources and destinations
+- **interference**: an u.e. indirectly accesses sensitive data (not necessarily the data contained in the communication) by reasoning from characteristics 
