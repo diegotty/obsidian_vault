@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-13T08:32
+updated: 2025-10-13T08:33
 completed: false
 ---
 >[!def] cybersecurity
@@ -90,4 +90,4 @@ depending on how much the systems is compromised, there are three levels of impa
 it is a threat to confidentiality, as an entity gains access to data for which the entity is not authorized. it may happen through:
 - **exposure**: sensitive data are directly released to an unathorized entity
 - **interception**: the u.e. directly acceses sensitive data that is travelling between authorized sources and destinations
-- **interference**: an u.e. indirectly accesses sensitive data (not necessarily the data contained in the communication) by reasoning from characteristics 
+- **interference**: an u.e. indirectly accesses sensitive data (not necessarily the data contained in the communication) by reasoning from characteristics or by-products of communications
