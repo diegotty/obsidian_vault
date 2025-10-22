@@ -1,12 +1,12 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-22T11:24
+updated: 2025-10-22T15:13
 completed: false
 ---
-	# introduction
+# introduction
 MPI is a library used by distributed-memory systems
-it used the **SPMD** ((**single-program multiple-data**) parallel programming computing model, where one program is compiled and it gets executed by multiple processes.
+it uses the **SPMD** ((**single-program multiple-data**) parallel programming computing model, where one program is compiled and it gets executed by multiple processes.
 we use if-else statements to specify what each process must do (similarly to what happens when you fork a process)
  - as the systems are distributed-memory, communications happen through message passing
 
