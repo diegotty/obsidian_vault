@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-22T11:51
+updated: 2025-10-22T14:26
 completed: false
 ---
 # parallel program structure patterns
@@ -44,3 +44,8 @@ maps and reduce workers can vary in number. the same function is applied to diff
 ### loop parallelism
  >[!info] img
  ![[Pasted image 20251022113348.png]]
+
+
+slide 35
+MPI_Allreduce
+conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
