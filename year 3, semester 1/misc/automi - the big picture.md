@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-23T18:03
+updated: 2025-10-23T18:21
 completed: false
 ---
 abbiamo iniziato studiando i *DFA* (deterministic finite-state automata), in quanto la loro quantità di memoria limitata e il processing di input bit-a-bit implica degli automi più semplici.
@@ -14,4 +14,5 @@ dopo aver definito gli *NFA*, abbiamo dimostrato che $\text{L(DFA)  = L(NFA) = R
 - con gli *NFA* abbiamo poi completato i teoremi di chiusura per i linguaggi regolari.
 
 abbiamo introdotto le *espressioni regolari* (regex), e abbiamo dimostrato che $\text{REG} = \text{L(RE)}$ ( cioe $\text{un linguaggio è regolare } \iff \exists \text{ un'espressione regolare che lo descrive}$)
-
+per completare la dimostrazione, abbiamo usato i *GNFA* (NFA generalizzati), che sugli archi hanno espressioni regolari
+- in particolare, abbiamo usato la loro forma canonica
