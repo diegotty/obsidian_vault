@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-23T18:21
+updated: 2025-10-23T22:41
 completed: false
 ---
 abbiamo iniziato studiando i *DFA* (deterministic finite-state automata), in quanto la loro quantità di memoria limitata e il processing di input bit-a-bit implica degli automi più semplici.
@@ -15,4 +15,5 @@ dopo aver definito gli *NFA*, abbiamo dimostrato che $\text{L(DFA)  = L(NFA) = R
 
 abbiamo introdotto le *espressioni regolari* (regex), e abbiamo dimostrato che $\text{REG} = \text{L(RE)}$ ( cioe $\text{un linguaggio è regolare } \iff \exists \text{ un'espressione regolare che lo descrive}$)
 per completare la dimostrazione, abbiamo usato i *GNFA* (NFA generalizzati), che sugli archi hanno espressioni regolari
-- in particolare, abbiamo usato la loro forma canonica
+- in particolare, abbiamo usato la loro forma canonica per dimostrare che dato un GNFA, possiamo ottenere un automa con due stati ed un arco, che è l’espressione regolare che lo descrive
+siamo poi passati al *pumping lemma*, per verificare se un linguaggio è regolare.
