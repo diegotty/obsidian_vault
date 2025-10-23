@@ -1,12 +1,12 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-21T17:33
+updated: 2025-10-23T17:21
 completed: false
 ---
 # introduction
 MPI is a library used by distributed-memory systems
-it used the **SPMD** ((**single-program multiple-data**) parallel programming computing model, where one program is compiled and it gets executed by multiple processes.
+it uses the **SPMD** ((**single-program multiple-data**) parallel programming computing model, where one program is compiled and it gets executed by multiple processes.
 we use if-else statements to specify what each process must do (similarly to what happens when you fork a process)
  - as the systems are distributed-memory, communications happen through message passing
 
@@ -119,7 +119,7 @@ however, this cant be done with very big messages, and in that cases, it behaves
 ### point-to-point communication modes
 the communication mode explained above is the **standard** communication mode. there are three more:
 - **buffered**: the sending operation is always locally blocking: it will return as soon as the message is copied to a buffer. also, the buffer is user-provided
-- **synchronous**: the sending operation will return only after the destination process has initiated and started retrieval of the message. this is a proper **globally blocking** operation, as the sender can be sure of the point where the receiver is without any further communication
+- **synchronous**: the sending operation will return only after the destination process has initiated and started retrieval of the message. this is a proper *globally blocking* operation, as the sender can be sure of the point where the receiver is without any further communication
 - **ready**: the send operation will succeed only if a matching receive operation has been intiated already. otherwise, the function returns with an error code. the purpose of this mode is to reduce the overhead of handshaking operations !
 
 such modes are implemented with `MPI_Bsend()`, `MPI_Ssend()` and `MPI_Rsend()`, that share the same arguments `(void *buf, int count, MPI_Datatype datatype, int dest, int tag, MPI_Comm comm)`
@@ -127,7 +127,7 @@ such modes are implemented with `MPI_Bsend()`, `MPI_Ssend()` and `MPI_Rsend()`, 
 ### non-blocking communication
 buffered sends are considered bad for performance, because the caller has to block, waiting for the copy to take place. by using non-blocking communication, we allow computation and communication to overlap (as MPI/NIC handles the communication), as the send returns as soon as the MPI takes notice of the send call. we thereby maximize concurrency.
 
-however, non-blocking calls don’t guarantee the *altering buffer thing*, and the completion of the operations for both end-points has to be queried explicitly:
+however, non-blocking calls don’t guarantee the *altering the buffer thing*, and the completion of the operations for both end-points has to be queried explicitly:
 - for senders so that they can re-use the message buffer
 - for receivers so that they can extract the message contents
 #### functions
@@ -141,6 +141,10 @@ however, non-blocking calls don’t guarantee the *altering buffer thing*, and t
 - `int MPI_Test(MPI_Request *req, int *flag, MPI_Status *st)`
 	- `flag`: set to true only if the operation is complete
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
+<<<<<<< HEAD
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 ## parallel design patterns
 - **globally parallel, locally sequential (GPLS)**:
+=======
+
+many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
