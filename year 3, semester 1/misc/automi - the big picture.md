@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-25T15:15
+updated: 2025-10-25T15:55
 completed: false
 ---
 abbiamo iniziato studiando i *DFA* (deterministic finite-state automata), in quanto la loro quantità di memoria limitata e il processing di input bit-a-bit implica degli automi più semplici.
@@ -19,4 +19,4 @@ per completare la dimostrazione, abbiamo usato i *GNFA* (NFA generalizzati, che 
 
 abbiamo studiato il *pumping lemma*, che permette di dimostare se un linguaggio è regolare o meno.
 
->[!warning] a questo punto è importante ricordare che l’automa accetta solo se, a fine input, ci si trova in uno stato finale
+abbiamo introdotto le *grammatiche acontestuali*, un modello di computazione più potente, che permette di rappresentare linguaggi non regolari, e di conseguenza le grammaitche coincidono con un diverso tipo di automi: i *CFG*
