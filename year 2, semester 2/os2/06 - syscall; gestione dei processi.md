@@ -1,7 +1,7 @@
 ---
 related to: "[[05 - syscall; allocazione memoria, gestione IO, misc]]"
 created: 2025-03-02T17:41
-updated: 2025-10-23T17:21
+updated: 2025-10-23T20:13
 completed: true
 ---
 >[!index]
