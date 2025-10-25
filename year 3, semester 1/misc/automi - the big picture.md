@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-25T20:04
+updated: 2025-10-25T20:05
 completed: false
 ---
 abbiamo iniziato studiando i *DFA* (deterministic finite-state automata), in quanto la loro quantità di memoria limitata e il processing di input bit-a-bit implica degli automi più semplici.
@@ -25,6 +25,6 @@ la classe di linguaggi che include quelli regolari e ulteriori linguaggi, non re
 abbiamo introdotto le *CFG* (grammatiche context-free), un modello di computazione più potente, che permette di rappresentare linguaggi non regolari, e di conseguenza le grammaitche coincidono con un diverso tipo di automi: i *PDA* (pushdown automata)
 - abbiamo studiato dei modi per progettare CFG: unione, da un DFA, e usando la ricorsione
 - abbiamo studiato la *forma normale di Chomsky* per i CFG (come la forma canonica per i GNFA)
-abbiamo studiato i *PDA* (pushdown automata), un’estensione dei DFA che consentono di riconoscere linguaggi non regolari usando una pila, che viene aggiornata ad ogni transizio
+abbiamo studiato i *PDA* (pushdown automata), un’estensione dei DFA che consentono di riconoscere linguaggi non regolari usando una pila, che viene aggiornata ad ogni transizione tra stati. abbiamo dimostrato l’equivalenza tra PDA e CFG (dato un CFG, esiste un PDA il cui linguaggio è il CFG)
 
 
