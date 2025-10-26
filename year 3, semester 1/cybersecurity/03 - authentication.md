@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T13:50
+updated: 2025-10-26T14:07
 completed: false
 ---
 # introduction
@@ -79,3 +79,11 @@ attacks include:
 - *social engineering*: attempts to use various psychological conditions in humans to get hold of confidential information (es: pretexting, baiting, quid pro quo)
 - *dictionary attacks*: used when the password’s hash is already obtained. a large dictionary of possible (common) passwords is tried against the password file. this way, each password must be hashed using each salt value, and then compared to stored hash values (so you need the salt and the hash of the password you want to crack
 - *rainbow table attacks*: also used when the password's hash is already obtained. huge table of hash values is pre-computed (using all salts)
+## password selection strategies
+- *user education*: users can be told the importance of using hard to guess passwords, and can be provided with guidelines for selecting strong passwords
+- *computer generated passwords*: however, users have trouble remembering them
+- *reactive password checking*: system periodicaly runs its own password cracker to find guessable passwords
+- *complex password policy*: system checks to see if the password selected by the user is allowable, and if not, rejects it. the goal is to eliminate guessable passwords while allowing the user to select a password that is memorable
+	- hard to strike a balance + a disadvantage is the space required by dictionaries and the time to check
+>[!info] periodically changing password
+requiring users to change passwors periodically, while intuitive, is not 
