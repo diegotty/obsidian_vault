@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T10:45
+updated: 2025-10-26T10:51
 completed: false
 ---
 # introduction
@@ -28,7 +28,15 @@ so three things must be managed:
 	- select a new password upon first use after account recovery
 	- enforcce composition and complexity rules for passwords
 - *authenticator* (the element that allows to perform the authentication)
-	- 
+	- verify the identity of the individual receiving the authenticator 
+	- didnt understand ngl TODO 
 	- change or refresh authenticators frequently or when relevant events occur
 	- protect authenticator content from unauthorized disclosure or modification
+>[!info] digital identity guidelines architecture model
+TODO appendi foto
 ## means of authentication
+the four means of authenticating user identity are based on:
+- something the individual knows
+- something the individual possesses
+- something the individual is
+- *dynamic biometrics*: something the individual does (voice pattern, handwriting, typing rhythm (*keystroke dynamics*))
