@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T14:07
+updated: 2025-10-26T14:22
 completed: false
 ---
 # introduction
@@ -86,4 +86,5 @@ attacks include:
 - *complex password policy*: system checks to see if the password selected by the user is allowable, and if not, rejects it. the goal is to eliminate guessable passwords while allowing the user to select a password that is memorable
 	- hard to strike a balance + a disadvantage is the space required by dictionaries and the time to check
 >[!info] periodically changing password
-requiring users to change passwors periodically, while intuitive, is not 
+requiring users to change passwors periodically, while intuitive, is not a good practice, as, because of the added burden of the periodical change, incentivizes weaker passwords that are easier for people to set and remember (thus diminishing secuirty)
+# tokens
