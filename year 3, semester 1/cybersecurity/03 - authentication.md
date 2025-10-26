@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T10:51
+updated: 2025-10-26T11:07
 completed: false
 ---
 # introduction
@@ -36,7 +36,8 @@ so three things must be managed:
 TODO appendi foto
 ## means of authentication
 the four means of authenticating user identity are based on:
-- something the individual knows
-- something the individual possesses
-- something the individual is
-- *dynamic biometrics*: something the individual does (voice pattern, handwriting, typing rhythm (*keystroke dynamics*))
+- *password*: something the individual knows (PIN, secret answers)
+- *token*: something the individual possesses (smart card, physical key)
+- *biometrics*: something the individual is (fingerprint, iris, face)
+- *dynamic biometrics*: something the individual does (voice pattern, handwriting, typing rhythm (*keystroke dynamics*), walking style (*gait recognition*))
+*multifactor authentication* (the use of more than one authentication means) is advised 
