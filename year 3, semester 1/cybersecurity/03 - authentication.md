@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T16:08
+updated: 2025-10-26T16:22
 completed: false
 ---
 # authentication
@@ -134,7 +134,15 @@ in fact, the *biometric accuracy dilemma* consists in determing the right thresh
 >![[Pasted image 20251026160436.png]]
 
 ### security vs convenience
->[!![[Pasted image 20251026160808.png]]
+the following graph shows, in log-log scale:
+- on the *x-axis*, the false match rate
+- on the *y-axis*, the false nonmatch rate
+by convenience, we mean user-friendliness
+>[!figure]- graph
+>![[Pasted image 20251026160808.png]]
+
+>[!info] flow of biometric systems
+![[Pasted image 20251026162149.png]]
 ## remote user authentication
 its authentication over a network, the internet or a communication link
  - it is subject to many security threats (eavesdropping, capturig a password, replay attacks)
