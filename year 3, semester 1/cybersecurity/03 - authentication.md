@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T14:22
+updated: 2025-10-26T14:52
 completed: false
 ---
 # introduction
@@ -88,3 +88,18 @@ attacks include:
 >[!info] periodically changing password
 requiring users to change passwors periodically, while intuitive, is not a good practice, as, because of the added burden of the periodical change, incentivizes weaker passwords that are easier for people to set and remember (thus diminishing secuirty)
 # tokens
+lets talk about the only cool tokens: *smart tokens*
+- they include an embedded microprocessor
+- are small portable objects and can look like bank cards, calculators, keys
+- they may include keypads or a display for human/token interaction
+- they require an electronic interface (contact or contactless) to communicate with compatible reader/writer
+- can use different authentication protocols: static, dynamic password generators, and challenge-response
+## smart cards
+they are the most important category of smart tokens. with the appearance of a credit card, an electronic interface and an entire microprocessor (with processor, memory and I/O ports)
+- it usually contains three types of memory:
+	- *ROM*: stores data that does not change during the card’s life
+	- *EEPROM* (electrically erasable programmable ROM): holds application data and programs
+	- *RAM*: holds temporary data generated when applications are executed
+>[!info] workflow
+TODO
+
