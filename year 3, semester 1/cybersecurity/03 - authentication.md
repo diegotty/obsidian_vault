@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T16:22
+updated: 2025-10-26T16:37
 completed: false
 ---
 # authentication
@@ -56,15 +56,14 @@ the three levels of *identity assurane levels* (*IAL*), or how strong you prove 
 password-based authentication has many vulnerabilities !
 - also , passwords’ weakness is that they have to be stored in human memory! so they tend to be easy
 
->[!info]
- storing a password, UNIX-style
- - *legacy*
-	 - up to 8 printable characters in length
-	 - 12bit salt used to modify DES encryption into a one-way hash function
-	- zero value repeatedly encrypted 25 times
-	- output translated to a 11 character sequence
-- *today*	
-	- 
+>[!info]-  storing a password, UNIX-style
+> - *legacy*
+>	 - up to 8 printable characters in length
+>	 - 12bit salt used to modify DES encryption into a one-way hash function
+>	- zero value repeatedly encrypted 25 times
+>	- output translated to a 11 character sequence
+>- *today*	
+>	-  you got me ….
 
 ### password strength
 what makes a password strong ?
@@ -148,5 +147,18 @@ its authentication over a network, the internet or a communication link
  - it is subject to many security threats (eavesdropping, capturig a password, replay attacks)
  - it generally relies on some form of a challenge-response protocol to counter threats
  >[!info] diego learns what SSH is
- *secure shell* (*SSH*)
+ *secure shell* (*SSH*) was born as a replacement for telnet (client-server application provides remote access to a terminal) and such protocols, as they trasmitted authentication tokens (username and password) as plaintext through unsecure public networks.
+ SSH mitigates this risk through the use of encryption mechanisms to hide the contents of the transmission
+ SSH uses public-key cryptography to authenticate the remote computer 
 
+>[!figure] basic challenge-response protocol for remote user authentication
+>password and token:
+![[Pasted image 20251026163239.png]]
+>
+>static and dynamic biometric: 
+![[Pasted image 20251026163358.png]]
+## authentication security issues
+ho mollato …..
+>[!info] attacks table
+![[Pasted image 20251026163715.png]]
+![[Pasted image 20251026163743.png]]
