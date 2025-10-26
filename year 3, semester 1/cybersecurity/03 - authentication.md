@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T12:00
+updated: 2025-10-26T12:13
 completed: false
 ---
 # introduction
@@ -43,12 +43,18 @@ the four means of authenticating user identity are based on:
 *multifactor authentication* (the use of more than one authentication means) is advised 
 ## assurance leves for user authentication
 an organization can choose from a range of authentication technologies, based on the *degree of condifence in identity proofing* and authentication processes
-the three levels of *identity assurane levels* (*IAL*), or how strong you prove who you are, when getting an account/credentials, are:
+the three levels of *identity assurane levels* (*IAL*), or how strong you prove who you are, when getting an account/credentials (and so how verified is the identity of the account), are:
 - *IAL 1*: no link from applicant to a specific real-life identity (no confidence or minimal confidence)
 - *IAL 2*: idenity is verified using either remote or physically-present identity proofing (moderate to high-confidence)
-- *IAL 3*: identity is verified  mandatorilythrough physical presence (high-confidence)
+- *IAL 3*: identity is verified  mandatorily through physical presence (high-confidence)
 
 *authenticator assurance levels* (*AAL*) define how strong an authentication method is (this also works for multifactor authentication). they are options an organization can select,based on the need for assurance (which is based on their risk assessment and the potential harm caused by an attacker taking control of an authenticator)
 - *AAL 1*: provides some assurance of authentication via user-supplied ID and password
 - *AAL 2*: provides high confidence of authentication via proof of possession and control of two authentication factors
 - *AAL 3*: provides very high confidence of authentication via proof of possession and control of two authentication factors
+# passwords
+password-based authentication has many vulnerabilities
+- offline dictionary attacks
+- workstation hijacking
+- exploiting multiple password use
+>[!info] never store encrypted passwords
