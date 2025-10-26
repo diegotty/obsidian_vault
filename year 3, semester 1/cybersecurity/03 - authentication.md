@@ -1,10 +1,10 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T15:22
+updated: 2025-10-26T15:37
 completed: false
 ---
-# introduction
+# authentication
 >[!def] authentication
 the process of establishing confidence in user identities that are presented electronically to an information system
 
@@ -52,7 +52,7 @@ the three levels of *identity assurane levels* (*IAL*), or how strong you prove 
 - *AAL 1*: provides some assurance of authentication via user-supplied ID and password
 - *AAL 2*: provides high confidence of authentication via proof of possession and control of two authentication factors
 - *AAL 3*: provides very high confidence of authentication via proof of possession and control of two authentication factors
-# passwords
+## passwords
 password-based authentication has many vulnerabilities !
 - also , passwords’ weakness is that they have to be stored in human memory! so they tend to be easy
 
@@ -87,7 +87,7 @@ attacks include:
 	- hard to strike a balance + a disadvantage is the space required by dictionaries and the time to check
 >[!info] periodically changing password
 requiring users to change passwors periodically, while intuitive, is not a good practice, as, because of the added burden of the periodical change, incentivizes weaker passwords that are easier for people to set and remember (thus diminishing secuirty)
-# tokens
+## tokens
 lets talk about the only cool tokens: *smart tokens*
 - they include an embedded microprocessor
 - are small portable objects and can look like bank cards, calculators, keys
@@ -117,3 +117,15 @@ the client and the server both share a secret key and a time step (in seconds). 
 - TOTPs are safe to replay attacks ! as the code changes every 30 seconds
 an open standard for secure authentication is *FIDO2*
 ## mobile phones
+mobile phones can be used as an authentication device by:
+- using authentication codes via*SMS*
+- using authentication apps
+## biometrics
+biometric refers to any measure used to uniquely identify a person based on biological or physiological traits.
+biometric systems incorporate sensors or scanners to read biometric information, then compare this information to stored tempates of accepted users before granting access (as seen below, the feature vector is different from the reference vector, and a comparison algorithm is used to define if they match)
+>[!info] representation
+in fact, the *biometric accuracy dilemma* consists in determing the right threshold $(t)$ to separate impostors from genuine users
+
+- such systems are based on pattern recognition
+- they are technically complex and expensive when compared to passwords and tokens
+
