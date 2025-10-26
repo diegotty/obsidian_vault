@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T15:05
+updated: 2025-10-26T15:22
 completed: false
 ---
 # introduction
@@ -110,4 +110,10 @@ TODO
 *one-time password* devices have a secret key to generate an OTP, that the user enters and the system valides
 - such devices use a block cipher/hash function to combine secret key and time or nonce (coined for one occasion) value to create the OTP
 - they contain a tamper-resistant module (TRSM) to store the secret key securely 
-suc OTPs can be time-based, used in many hardware tokens and by many mobile authenticator apps
+#### TOTPs
+such OTPs can be time-based (*TOTPs*), used in many hardware tokens and by many mobile authenticator apps
+the client and the server both share a secret key and a time step (in seconds). both the client and the server calculate a `T` value (`current_unix_time/time_step`).
+`T` is then used in the HMAC (hash-based [[02 - cryptography#MAC|MAC]]) as the message, and the secret key is used as, well, the secret key, to get an authentication tag (that, as we know, ensures authenticity)
+- TOTPs are safe to replay attacks ! as the code changes every 30 seconds
+an open standard for secure authentication is *FIDO2*
+## mobile phones
