@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T14:52
+updated: 2025-10-26T15:05
 completed: false
 ---
 # introduction
@@ -103,3 +103,11 @@ they are the most important category of smart tokens. with the appearance of a c
 >[!info] workflow
 TODO
 
+*password authenticated connection establishment* (*PACE*) is used to ensure that the contactless RF(radio-frequency) chip in the card cannot be read without explicit access control:
+- for online applications, access is established by the user entering the six-digit PIN, known only to the holder of the card
+- for offline applications, either the *machine-readable zone* (*MRZ*) on the back of the card, or the six-digit *card access number* (*CAN*) printed on the front is used
+### OTPs
+*one-time password* devices have a secret key to generate an OTP, that the user enters and the system valides
+- such devices use a block cipher/hash function to combine secret key and time or nonce (coined for one occasion) value to create the OTP
+- they contain a tamper-resistant module (TRSM) to store the secret key securely 
+suc OTPs can be time-based, used in many hardware tokens and by many mobile authenticator apps
