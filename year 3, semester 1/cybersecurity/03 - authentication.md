@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T13:43
+updated: 2025-10-26T13:50
 completed: false
 ---
 # introduction
@@ -76,6 +76,6 @@ what makes a password strong ?
 
 
 attacks include:
-- *social engineering*
-- *dictionary attacks*
-- *rainbow table attacks*
+- *social engineering*: attempts to use various psychological conditions in humans to get hold of confidential information (es: pretexting, baiting, quid pro quo)
+- *dictionary attacks*: used when the password’s hash is already obtained. a large dictionary of possible (common) passwords is tried against the password file. this way, each password must be hashed using each salt value, and then compared to stored hash values (so you need the salt and the hash of the password you want to crack
+- *rainbow table attacks*: also used when the password's hash is already obtained. huge table of hash values is pre-computed (using all salts)
