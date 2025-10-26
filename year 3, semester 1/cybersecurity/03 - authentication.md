@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T15:37
+updated: 2025-10-26T16:08
 completed: false
 ---
 # authentication
@@ -33,7 +33,7 @@ so three things must be managed:
 	- change or refresh authenticators frequently or when relevant events occur
 	- protect authenticator content from unauthorized disclosure or modification
 >[!info] digital identity guidelines architecture model
-TODO appendi foto
+![[Pasted image 20251026160008.png]]
 ## means of authentication
 the four means of authenticating user identity are based on:
 - *password*: something the individual knows (PIN, secret answers)
@@ -101,7 +101,7 @@ they are the most important category of smart tokens. with the appearance of a c
 	- *EEPROM* (electrically erasable programmable ROM): holds application data and programs
 	- *RAM*: holds temporary data generated when applications are executed
 >[!info] workflow
-TODO
+![[Pasted image 20251026160138.png]]
 
 *password authenticated connection establishment* (*PACE*) is used to ensure that the contactless RF(radio-frequency) chip in the card cannot be read without explicit access control:
 - for online applications, access is established by the user entering the six-digit PIN, known only to the holder of the card
@@ -122,10 +122,23 @@ mobile phones can be used as an authentication device by:
 - using authentication apps
 ## biometrics
 biometric refers to any measure used to uniquely identify a person based on biological or physiological traits.
-biometric systems incorporate sensors or scanners to read biometric information, then compare this information to stored tempates of accepted users before granting access (as seen below, the feature vector is different from the reference vector, and a comparison algorithm is used to define if they match)
->[!info] representation
-in fact, the *biometric accuracy dilemma* consists in determing the right threshold $(t)$ to separate impostors from genuine users
-
 - such systems are based on pattern recognition
 - they are technically complex and expensive when compared to passwords and tokens
+
+biometric systems incorporate sensors or scanners to read biometric information, then compare this information to stored tempates of accepted users before granting access (as seen below, the feature vector is different from the reference vector, and a comparison algorithm is used to define if they match)
+>[!info] representation
+![[Pasted image 20251026160104.png]]
+in fact, the *biometric accuracy dilemma* consists in determing the right threshold $(t)$ to separate impostors from genuine users
+![[Pasted image 20251026160306.png]]
+>>[!example]- example for a face recognition system
+>![[Pasted image 20251026160436.png]]
+
+### security vs convenience
+>[!![[Pasted image 20251026160808.png]]
+## remote user authentication
+its authentication over a network, the internet or a communication link
+ - it is subject to many security threats (eavesdropping, capturig a password, replay attacks)
+ - it generally relies on some form of a challenge-response protocol to counter threats
+ >[!info] diego learns what SSH is
+ *secure shell* (*SSH*)
 
