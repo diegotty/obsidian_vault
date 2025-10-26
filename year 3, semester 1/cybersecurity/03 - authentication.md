@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T12:13
+updated: 2025-10-26T13:43
 completed: false
 ---
 # introduction
@@ -53,8 +53,29 @@ the three levels of *identity assurane levels* (*IAL*), or how strong you prove 
 - *AAL 2*: provides high confidence of authentication via proof of possession and control of two authentication factors
 - *AAL 3*: provides very high confidence of authentication via proof of possession and control of two authentication factors
 # passwords
-password-based authentication has many vulnerabilities
-- offline dictionary attacks
-- workstation hijacking
-- exploiting multiple password use
->[!info] never store encrypted passwords
+password-based authentication has many vulnerabilities !
+- also , passwords’ weakness is that they have to be stored in human memory! so they tend to be easy
+
+>[!info]
+ storing a password, UNIX-style
+ - *legacy*
+	 - up to 8 printable characters in length
+	 - 12bit salt used to modify DES encryption into a one-way hash function
+	- zero value repeatedly encrypted 25 times
+	- output translated to a 11 character sequence
+- *today*	
+	- 
+
+### password strength
+what makes a password strong ?
+- UPPER/lower case characters
+- special numbers
+- numbers
+- unpredictibility
+- length
+
+
+attacks include:
+- *social engineering*
+- *dictionary attacks*
+- *rainbow table attacks*
