@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T11:07
+updated: 2025-10-26T11:46
 completed: false
 ---
 # introduction
@@ -41,3 +41,8 @@ the four means of authenticating user identity are based on:
 - *biometrics*: something the individual is (fingerprint, iris, face)
 - *dynamic biometrics*: something the individual does (voice pattern, handwriting, typing rhythm (*keystroke dynamics*), walking style (*gait recognition*))
 *multifactor authentication* (the use of more than one authentication means) is advised 
+## assurance leves for user authentication
+an organization can choose from a range of authentication technologies, based on the *degree of condifence in identity proofing* and authentication processes
+the three levels of *identity assurane levels* (*IAL*)  are:
+- *IAL 1*: no need to link the applicant to a specific real-life identity
+- *IAL 2*: provides evidene for the 
