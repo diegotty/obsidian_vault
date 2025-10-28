@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:06
+updated: 2025-10-28T11:25
 completed: false
 ---
 # parallel program structure patterns
@@ -136,9 +136,30 @@ so process 0 must read the data (with `scanf()` and send it to the other process
 
 we do this by calling a function (for every process). in this case:
 ```c
-void get_input( int my_rank, int comm_sz, double* a, double* b, int* n)
+void get_input( int my_rank, int comm_sz, double* a, double* b, int* n){
+	int dest;
+	
+	if (my_rank == 0){
+		for(dest = 1; dest < comm_sz; dest++){
+			MPI_Send(a, 1, MPI_DOUBLE, dest, 0, MPI_COMM_WORLD);
+			MPI_Send(b, 1, MPI_DOUBLE, dest, 0, MPI_COMM_WORLD);
+			MPI_Send(n, 1, MPI_INT, dest, 0, MPI_COMM_WORLD);
+		}
+	}else{
+		MPI_Recv(a, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		MPI_Recv(b, 1, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+		MPI_Recv(n, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+	}
+	
+}
 
 ```
+
+as we saw previously, when doing the global sum, $p-1$ processes send their data to one process, which then computes all the sums. this is *unbalanced*, as:
+- time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
+- time for all the other processes: $T_{send}$
+
+we can alter this by using the 
 slide 35
 MPI_Allreduce
 conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`

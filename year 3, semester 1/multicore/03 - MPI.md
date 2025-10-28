@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T10:18
+updated: 2025-10-28T11:25
 completed: false
 ---
 # introduction
@@ -141,10 +141,4 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 - `int MPI_Test(MPI_Request *req, int *flag, MPI_Status *st)`
 	- `flag`: set to true only if the operation is complete
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
-<<<<<<< HEAD
-many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
-## parallel design patterns
-- **globally parallel, locally sequential (GPLS)**:
-=======
-
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
