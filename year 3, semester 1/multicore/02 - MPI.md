@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:37
+updated: 2025-10-28T11:53
 completed: false
 ---
 # introduction
@@ -144,7 +144,7 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 
 ## `MPI_Reduce`
-the `MPI_Reduce` function
+the `MPI_Reduce` function is a *collective communication function*, that combinesvalues from *multiple processes* into a single result, and sends that result to the root
 - it works as one call for all the processes
 >[!info] illustration
 ![[Pasted image 20251028113049.png]]
