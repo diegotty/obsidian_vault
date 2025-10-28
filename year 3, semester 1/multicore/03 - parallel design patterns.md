@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:32
+updated: 2025-10-28T11:36
 completed: false
 ---
 # parallel program structure patterns
@@ -166,6 +166,10 @@ this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
 
 however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
 this is implemented with functions like [[02 - MPI#`MPI_Reduce`|MPI_Reduce]] !
+for this example, the call would be:
+```c
+MPI_Reduce(&local_int, &total_int, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+```
 
 
 slide 35

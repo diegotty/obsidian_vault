@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:33
+updated: 2025-10-28T11:37
 completed: false
 ---
 # introduction
@@ -145,10 +145,12 @@ many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall
 
 ## `MPI_Reduce`
 the `MPI_Reduce` function
+- it works as one call for all the processes
 >[!info] illustration
 ![[Pasted image 20251028113049.png]]
 
-`int MPI_reduce(void* input_data_p, void* output_data_p, int cout)`
+`int MPI_reduce(void* input_data_p, void* output_data_p, int count, MPI_Datatype datatype, MPI_Op operator, int dest_process, MPI_Comm comm)`
+- `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`):
 
 | Operation value | Meaning                         |
 | --------------- | ------------------------------- |
