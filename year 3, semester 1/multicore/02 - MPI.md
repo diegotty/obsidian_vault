@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:25
+updated: 2025-10-28T11:33
 completed: false
 ---
 # introduction
@@ -142,3 +142,25 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 	- `flag`: set to true only if the operation is complete
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
+
+## `MPI_Reduce`
+the `MPI_Reduce` function
+>[!info] illustration
+![[Pasted image 20251028113049.png]]
+
+`int MPI_reduce(void* input_data_p, void* output_data_p, int cout)`
+
+| Operation value | Meaning                         |
+| --------------- | ------------------------------- |
+| `MPI_MAX`       | maximum                         |
+| `MPI_MIN`       | minimum                         |
+| `MPI_SUM`       | sum                             |
+| `MPI_PROD`      | product                         |
+| `MPI_LAND`      | logical and                     |
+| `MPI_BAND`      | bitwise and                     |
+| `MPI_LOR`       | logical or                      |
+| `MPI_BOR`       | bitwise or                      |
+| `MPI_LXOR`      | logical exclusive or            |
+| `MPI_BXOR`      | bitwise exclusive or            |
+| `MPI_MAXLOC`    | maximum and location of maximum |
+| `MPI_MINLOC`    | minimum and location of minimum |

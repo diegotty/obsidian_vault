@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:25
+updated: 2025-10-28T11:32
 completed: false
 ---
 # parallel program structure patterns
@@ -159,7 +159,15 @@ as we saw previously, when doing the global sum, $p-1$ processes send their data
 - time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
 - time for all the other processes: $T_{send}$
 
-we can alter this by using the 
+we can alter this by using a different tree
+>[!info] diff trees
+![[Pasted image 20251028112725.png]]
+this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
+
+however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
+this is implemented with functions like [[02 - MPI#`MPI_Reduce`|MPI_Reduce]] !
+
+
 slide 35
 MPI_Allreduce
 conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
