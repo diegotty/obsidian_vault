@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-27T15:00
+updated: 2025-10-28T10:18
 completed: false
 ---
 time to become a real nerd !!!!!!!
