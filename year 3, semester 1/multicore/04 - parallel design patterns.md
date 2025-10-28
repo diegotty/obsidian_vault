@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T10:33
+updated: 2025-10-28T10:48
 completed: false
 ---
 # parallel program structure patterns
@@ -67,21 +67,41 @@ the flexibility with this approach is limited, but so is the development effort
  ![[Pasted image 20251022113348.png]]
 
 ## trapezoid example
-area of a trapezoid : $\frac{h}{2}[l_{1}+l_{2}]$ ( with $l_{1},l_{2}$ as the two parallel sides, and $h$ the height of the trapezoid)
-
+>[!info] idea
+>let’s approximate the definite integral of a function by calculating the trapezoids inside it !
+>
 given two points, $a$ and $b$, we choose an $h$ value that will be the same for each of the $n$ trapezoids
-so $h =\frac{b-a}{n}$
-and we divide the the distance from $a$ to $b$ in $n+1$ points:
-$$
-x_{0} = a, x_{1} = a + h, x_{2} = a + 2h, \dots, x_{n-1} = a + (n-1)h, x_{n} = b
-$$
-
+>![[Pasted image 20251028104743.png]]
+area of a trapezoid : $\frac{h}{2}[l_{1}+l_{2}]$ ( with $l_{1},l_{2}$ as the two parallel sides, and $h$ the height of the trapezoid)
+>
+so we divide the the distance from $a$ to $b$ in $n+1$ points:
+>$$
+>x_{0} = a, x_{1} = a + h, x_{2} = a + 2h, \dots, x_{n-1} = a + (n-1)h, x_{n} = b
+>$$
+>
 to find the length of $l_{1},l_{2}$ for each trapezoid, we calculate their image for $f(x)$. so the area of the trapezoid with 4 vertices $x_{i}, x_{i+1}, f(x_{i}), f(x_{i+1})$ is: $\frac{h}{2}[f(x_{i})+f(x_{i+1})]$
-
+>
 and the sum of trapezoid areas is:
-$$
-\frac{h}{2}[f(x_{0}) + f(x_{1}) +f(x_{2})]
-$$
+>$$
+>\sum^{n-1}_{{i=0}} \frac{h}{2}[f(x_{i}) + f(x_{i+1})] = 
+>h\left[ \frac{f(x_{0})}{2} + f(x_{1}) +f(x_{2})+\dots+\frac{f(x_{n})}{2}) \right]
+>$$
+(because each term except the first and the last one appear twice)
+
+the pseudocode to calculate the area of $n$ trapezoids from $a$ to $b$ is:
+```c
+h = (b-a)/n;
+approx = (f(a) + f(b)) /2.0; // first and last term
+for (i = 1; i <= n-1; i++) {
+	x_i = a + i*h;
+	approx += f(x_i);
+}
+approx = h*approx;
+```
+
+now we parallelize !!
+
+
 slide 35
 MPI_Allreduce
 conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
