@@ -1,13 +1,13 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-22T14:36
+updated: 2025-10-28T10:13
 completed: false
 ---
 # parallel program structure patterns
 we can distinguish the *parallel program structure patterns* into two major categories:
 ## GPLS 
-or **globally parallel, locally sequential**, it means that the application is able to *perform multiple tasks concurrently*, with each task running sequentially
+or **globally parallel, locally sequential**, it means that the application is able to *perform multiple tasks concurrently*, with each task running sequentially.
 patterns that fall into this category are:
 ###  SPMD
 SPMD keeps all the application logic in a single program, and its structure typically involves:
@@ -36,12 +36,33 @@ the master coordinates the whole operation.
 workers run two typers of tasks:
 - *map*: apply a function on data, resulting in a set of partial results
 - *reduce*: collect the partial results and derive the complete one
-maps and reduce workers can vary in number. the same function is applied to different parts of a single data item
+maps and reduce workers (so they are 2 different types of workers) can vary in number. the same function is applied to different parts of a single data item
 ## GSLP
  or **globally sequential, locally parallel**, it means that the application executes as a sequential program, with individual parts of it running in parallel when requested.
  patterns that fall into this category are:
 ### fork / join
+there is a single parent thread of execution, and dynamic creation of *children tasks* at run-time. the tasks may run via threads that spawn, or via use of a static pool of threads.
+- children tasks have to finish for parent thread to continue !!! (of course, as its globally sequential)
+>[!info] implemented by OpenMP and Pthread
+
+>[!example] ex
+
+```c
+mergesort(A, lo, hi):
+	if lo < hi: // length of A >=1
+		mid = [lo + (hi - lo)/2]
+		fork mergesort(A, lo, mid) // child task
+		mergesort(A, mid, hi) // done by the main task
+		join
+		merge(A, lo, mid, hi)
+```
+
 ### loop parallelism
+this technique is employed for *migration of sequential/legacy software to multicore*. it focuses on breaking up loops by manipulating the loop control variable
+- a loop has to be in a particular form to support this
+the flexibility with this approach is limited, but so is the development effort
+>[!info] supported by OpenMP
+ 
  >[!info] img
  ![[Pasted image 20251022113348.png]]
 
