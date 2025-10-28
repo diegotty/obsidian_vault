@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T10:48
+updated: 2025-10-28T11:03
 completed: false
 ---
 # parallel program structure patterns
@@ -99,8 +99,40 @@ for (i = 1; i <= n-1; i++) {
 approx = h*approx;
 ```
 
-now we parallelize !!
+>[!info] parallelizing
+>we parallelize this program by:
+>1. partitioning the problem solution into tasks
+>2. indentifying common channels between tasks
+>3. aggregating tasks into composite tasks
+>4. mapping composite tasks to cores
+>
+>![[Pasted image 20251028105022.png]]
+(master-worker pattern)
 
+parallel pseudo-code:
+```c
+get a,b,n;
+h = (b-a)/n;
+local_n = n/comm_sz; // num of trapezoids to calculate
+local_a = a + my_rank*local_n*h; // starting point
+local_b = a + local_n*h; // ending point
+local_integral = trap(local_a, local_b, local_n, h);
+if(my_rank != 0){
+	send local_integral to process 0;
+}else{
+	total_integral = local_integral; // (f(a) + f(b))/2
+	for (proc = 1; proc < comm_sz; proc++){
+		receive local_integral from proc;
+		total_integral += local_integral;
+	}
+}
+if (my_rank == 0):
+	print total_integral;
+```
+
+## input
+most MPI programs *only allow process 0 in `MPI_COMM_WORLD` to access to stdin*.
+so process 0 must read the data (with `scanfand send it to the other processes !
 
 slide 35
 MPI_Allreduce
