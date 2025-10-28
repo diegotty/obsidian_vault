@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:03
+updated: 2025-10-28T11:06
 completed: false
 ---
 # parallel program structure patterns
@@ -129,11 +129,16 @@ if(my_rank != 0){
 if (my_rank == 0):
 	print total_integral;
 ```
-
-## input
+ 
+### input
 most MPI programs *only allow process 0 in `MPI_COMM_WORLD` to access to stdin*.
-so process 0 must read the data (with `scanfand send it to the other processes !
+so process 0 must read the data (with `scanf()` and send it to the other processes !
 
+we do this by calling a function (for every process). in this case:
+```c
+void get_input( int my_rank, int comm_sz, double* a, double* b, int* n)
+
+```
 slide 35
 MPI_Allreduce
 conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
