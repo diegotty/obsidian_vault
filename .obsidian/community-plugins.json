@@ -3,7 +3,6 @@
   "obsidian-smart-typography",
   "table-editor-obsidian",
   "callout-manager",
-  "obsidian-relative-line-numbers",
   "obsidian-vimrc-support",
   "obsidian-git",
   "obsidian-style-settings",
@@ -13,5 +12,6 @@
   "omnisearch",
   "pseudocode-in-obs",
   "update-time",
-  "nuke-orphans"
+  "nuke-orphans",
+  "obsidian-relative-line-numbers"
 ]
