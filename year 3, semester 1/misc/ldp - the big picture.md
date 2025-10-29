@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T10:18
+updated: 2025-10-28T15:59
 completed: false
 ---
 il corso studia la semantica dei linguaggi di programmazione

@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:53
+updated: 2025-10-28T17:12
 completed: false
 ---
 # introduction
@@ -166,3 +166,5 @@ the `MPI_Reduce` function is a *collective communication function*, that combine
 | `MPI_BXOR`      | bitwise exclusive or            |
 | `MPI_MAXLOC`    | maximum and location of maximum |
 | `MPI_MINLOC`    | minimum and location of minimum |
+>[!warning]
+>all the processes in the communicator must call *the same* collective function
