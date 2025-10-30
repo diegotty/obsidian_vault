@@ -165,6 +165,7 @@ we can alter this by using a different tree
 this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
 >
 >the same issue is encountered with sending the values, as process 0 has to send them to $p-1$ processes. we can use another tree to pass the values !
+![[Pasted image 20251030112145.png]]
 
 however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
 this is implemented with functions like [[02 - MPI#`MPI_Reduce`|MPI_Reduce]] !

@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T11:20
+updated: 2025-10-30T11:27
 completed: false
 ---
 # introduction
@@ -184,3 +184,32 @@ the `MPI_Reduce` function is a *collective communication function*, that combine
 | `MPI_MINLOC`    | minimum and location of minimum |
 >[!warning] warning
 >all the processes in the communicator must call *the same* collective function
+### `MPI_Bcast()`
+`MPI_Bcast` sends data belonging to a single process to all of the processes in the communicator
+>[!syntax] syntax
+>```c
+>int MPI_Bcast(
+>	void* data_p,          // in/out
+>	int count,             // int
+>	MPI_Datatype datatype, // in	
+>	int source_proc,       // in
+>	MPI_Comm comm,         // int
+>);
+>```
+
+### `MPI_Allreduce()`
+`MPI_Allreduce`, conceptually, is a `MPI_Reduce + MPI_Bcast`. a global sum is calculated the result and is distributed to all the processes
+>[!info] illustration
+![[Pasted image 20251030112641.png]]
+
+
+```c
+int MPI_Allreduce(
+	void*        input_data_p,  // in
+	void*        output_data_p, // out
+	int          count,         // in
+	MPI_Datatype datatype,      // in
+	MPI_Op       operator,      // in
+	MPI_Comm     comm           // in
+);
+```
