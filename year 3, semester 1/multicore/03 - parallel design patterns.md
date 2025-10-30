@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:36
+updated: 2025-10-30T11:00
 completed: false
 ---
 # parallel program structure patterns
@@ -35,7 +35,7 @@ a variation of the master-worker pattern, made popular by google’s search engi
 the master coordinates the whole operation.
 workers run two typers of tasks:
 - *map*: apply a function on data, resulting in a set of partial results
-- *reduce*: collect the partial results and derive the complete one
+- *reduce*: collect the partial results and derive the complete one ([[02 - MPI#`MPI_Reduce`]])
 maps and reduce workers (so they are 2 different types of workers) can vary in number. the same function is applied to different parts of a single data item
 ## GSLP
  or **globally sequential, locally parallel**, it means that the application executes as a sequential program, with individual parts of it running in parallel when requested.

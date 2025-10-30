@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T10:29
+updated: 2025-10-30T11:06
 completed: false
 ---
 # introduction
@@ -143,13 +143,27 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 
-## `MPI_Reduce`
-the `MPI_Reduce` function is a *collective communication function*, that combinesvalues from *multiple processes* into a single result, and sends that result to the root
-- it works as one call for all the processes
+## collective functions
+collective functions are functions that involve all processes within a specified communicator. every process needs to call the function
+- they are highly optimized by the MPI implementation for parallel computing, so it makes sense to use them over manual implementations
+### `MPI_Reduce()`
+the `MPI_Reduce` function is a *collective communication function*, that combines values from *multiple processes* into a single result, and sends that result to the root
+- as all collectives, it works as one call for all the processes
 >[!info] illustration
 ![[Pasted image 20251028113049.png]]
 
-`int MPI_reduce(void* input_data_p, void* output_data_p, int count, MPI_Datatype datatype, MPI_Op operator, int dest_process, MPI_Comm comm)`
+>[!sy]
+```c
+MPI_Reduce(
+    void*        input_data_p,  // in
+    void*        output_data_p, // out
+    int          count,         // in
+    MPI_Datatype datatype,      // in
+    MPI_Op       operator,      // in
+    int          dest_process,  // in
+    MPI_Comm     comm           // in
+);
+```
 - `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`):
 
 | Operation value | Meaning                         |
@@ -166,5 +180,5 @@ the `MPI_Reduce` function is a *collective communication function*, that combine
 | `MPI_BXOR`      | bitwise exclusive or            |
 | `MPI_MAXLOC`    | maximum and location of maximum |
 | `MPI_MINLOC`    | minimum and location of minimum |
->[!warning]
+>[!warning] warning
 >all the processes in the communicator must call *the same* collective function
