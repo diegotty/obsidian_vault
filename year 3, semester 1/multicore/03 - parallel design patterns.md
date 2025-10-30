@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T11:00
+updated: 2025-10-30T11:21
 completed: false
 ---
 # parallel program structure patterns
@@ -155,14 +155,16 @@ void get_input( int my_rank, int comm_sz, double* a, double* b, int* n){
 
 ```
 
+>[!example] problems
 as we saw previously, when doing the global sum, $p-1$ processes send their data to one process, which then computes all the sums. this is *unbalanced*, as:
-- time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
-- time for all the other processes: $T_{send}$
-
+>- time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
+>- time for all the other processes: $T_{send}$
+>
 we can alter this by using a different tree
->[!info] diff trees
 ![[Pasted image 20251028112725.png]]
 this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
+>
+>the same issue is encountered with sending the values, as process 0 has to send them to $p-1$ processes. we can use another tree to pass the values !
 
 however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
 this is implemented with functions like [[02 - MPI#`MPI_Reduce`|MPI_Reduce]] !
@@ -172,11 +174,9 @@ MPI_Reduce(&local_int, &total_int, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 ```
 
 
-slide 35
 MPI_Allreduce
 conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
 
 recursive doubling algorithm
-
 
 a good amout of time out of runtime is spent doing collective data ““processing””” (like reduce)

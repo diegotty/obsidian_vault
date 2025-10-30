@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T11:06
+updated: 2025-10-30T11:20
 completed: false
 ---
 # introduction
@@ -143,28 +143,30 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 
-## collective functions
+## collective communication
 collective functions are functions that involve all processes within a specified communicator. every process needs to call the function
 - they are highly optimized by the MPI implementation for parallel computing, so it makes sense to use them over manual implementations
+unlike point-to-point communcations (send-receive), collective calls are matched solely on the basis of the communicator and the order in which they are called (no tags !)
 ### `MPI_Reduce()`
 the `MPI_Reduce` function is a *collective communication function*, that combines values from *multiple processes* into a single result, and sends that result to the root
 - as all collectives, it works as one call for all the processes
 >[!info] illustration
 ![[Pasted image 20251028113049.png]]
 
->[!sy]
-```c
-MPI_Reduce(
-    void*        input_data_p,  // in
-    void*        output_data_p, // out
-    int          count,         // in
-    MPI_Datatype datatype,      // in
-    MPI_Op       operator,      // in
-    int          dest_process,  // in
-    MPI_Comm     comm           // in
-);
-```
-- `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`):
+>[!syntax] syntax
+>```c
+>MPI_Reduce(
+>    void*        input_data_p,  // in
+>    void*        output_data_p, // out
+>    int          count,         // in
+>    MPI_Datatype datatype,      // in
+>    MPI_Op       operator,      // in
+>    int          dest_process,  // in
+>    MPI_Comm     comm           // in
+>);
+>```
+>- `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`)
+>- it is possible to pass `NULL` to `output_data_p`
 
 | Operation value | Meaning                         |
 | --------------- | ------------------------------- |
