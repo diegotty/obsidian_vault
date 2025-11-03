@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T06:54
+updated: 2025-11-03T07:07
 completed: false
 ---
 # introduction
@@ -147,6 +147,15 @@ many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall
 collective functions are functions that involve all processes within a specified communicator. every process needs to call the function
 - they are highly optimized by the MPI implementation for parallel computing, so it makes sense to use them over manual implementations
 unlike point-to-point communcations (send-receive), collective calls are matched solely on the basis of the communicator and the order in which they are called (no tags !)
+*colletive algorithms* are widely used in large-scale parallel applications from many domains, and often account for a large fraction of the total runtime
+- especially relevant for distributed training of deep-learning models 
+>[!info] met'a’s FSDP training system
+![[Pasted image 20251103065523.png]]
+
+for this reason, all the *big ballers* are designing their own collective communication libraries (NCCL for NVIDIA, RCCL for AMD, OnceCCL for intel,…)
+
+the optimal way to perform a collective operation depends *heavily* on the specific conditions of the parallel run (message size, size of communicator, hardware topology, …), and no algorithm is fastest in all cases. 
+while OpenMPI does not make assumptions on the underlying hardware, and the algorithmic implementation of the collective function to run is chosen automatically through heuristics (def: problem solving technique that employs a pragmatic method that is not fully optimized, but is “good enough” as an approximation) (), proprietary libraries do make assumptions on the hardware
 
 ### `MPI_Reduce()`
 the `MPI_Reduce` function is a *collective communication function*, that combines values from *multiple processes* into a single result, and sends that result to the root
