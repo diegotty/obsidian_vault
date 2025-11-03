@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T11:21
+updated: 2025-11-03T08:51
 completed: false
 ---
 # parallel program structure patterns
@@ -173,11 +173,3 @@ for this example, the call would be:
 ```c
 MPI_Reduce(&local_int, &total_int, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 ```
-
-
-MPI_Allreduce
-conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
-
-recursive doubling algorithm
-
-a good amout of time out of runtime is spent doing collective data ““processing””” (like reduce)
