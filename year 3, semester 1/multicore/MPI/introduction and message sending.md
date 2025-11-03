@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T08:58
+updated: 2025-11-03T14:39
 completed: false
 ---
 # introduction
@@ -142,3 +142,6 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 	- `flag`: set to true only if the operation is complete
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
+
+### `MPI_Sendrecv`
+`MPI_Sendrec`
