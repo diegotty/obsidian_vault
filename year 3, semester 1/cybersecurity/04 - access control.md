@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-03T19:07
+updated: 2025-11-03T19:23
 completed: false
 ---
 # access control
@@ -42,8 +42,20 @@ many modern UNIX systems support ACLs, like freeBSD, openBSD, linux and solaris
 *mandatory access control* (*MAC*) controls access based on comparing *security labels* with *security clearances*
 each subject and each object is assigned a security class, and in the simplest formulation, security classes form a *strict hierarchy* and are referred to as *security levels*
 - es: top secret < secrete < confidential < restricted < unclassified
-a subject is said to have a *security clearance* of a given level, and an object is said to have a *security classification* of a given level
+a subject is said to have a *security clearance* of a given level, and an object is said to have a *security classification* of a given level.
+- unlike *DAC*, users cannot decide to share or change the access permissions of data they own
+- access is enforced by the system, not by the owner of the resource
 
+>[!info] multilevel security
+the goal of *MAC* is to enforce *multilevel security*: to manage and protect data across different hierarchical classification levels within one system
+
+>[!example] Bell-LaPadula model
+the *Bell-LaPadula model* (*BLP*) is an example of MAC. it defines two crucial rules to maintain confidentiality: 
+>- *no read up* (*ss-property*): a subject can only read an object if the subject’s clearance level is greater than or equal to the object’s classification level
+>- *no write down* (*\*-property*): a subject can write to an object if the subject’s clearance level is less than or equal to the object’s classification level
+>	- this prevents high-level information from being copied/written-down to a low-level file that a low-clearance user could then read !! genius !
+>
+>the limitations of BLP is that it cannot manage the “downgrade of objects”
 ### RBAC
 *role-based access control* (*RBAC*) controls access based on the roles that users have within the systems, and on rules stating what accesses are allowed to users in given roles
 
