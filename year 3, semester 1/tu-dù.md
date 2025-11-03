@@ -1,9 +1,12 @@
 ---
 related to:
 created: 2025-11-03T07:36
-updated: 2025-11-03T15:38
+updated: 2025-11-03T17:27
 completed: false
 ---
+## to do
+- [ ] write overviews for multicore, cybersex
+## could do 
 - [ ] recuperare dimostrazione da fare per casa automi  (17/10)
 - [ ] c lsp doesnt work on mac ?
 - [ ] lez07 multicore exercises ?
