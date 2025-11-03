@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T14:39
+updated: 2025-11-03T14:44
 completed: false
 ---
 # introduction
@@ -144,4 +144,22 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 
 ### `MPI_Sendrecv`
-`MPI_Sendrec`
+`MPI_Sendrecv` is an alternative in message sending: it allows, in a single combined function, to send a message to one destination and simultaneously receive a message from one source process
+- its primary role is to prevent deadlocks (as we know, sends can be blocking, so if two processes send a message at the same time to each other, a deadlock could happen)
+- it is an atomic function
+```c
+int MPI_Sendrecv(
+	void* send_buf_p,            // in
+	int send_buf_size,           // in
+	MPI_Datatype send_buf_type,  // in
+	int dest,                    // in
+	int send_tag,                // in
+	void* recv_buf_p,            // out
+	int recv_buf_size,           // in
+	MPI_Datatype recv_buf_type,  // in
+	int source,                  // in
+	int recv_tag,                // in
+	MPI_Comm communicator,       // in
+	MPI_Status* status_p         // in
+)
+```

@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T08:59
+updated: 2025-11-03T14:46
 completed: false
 ---
 # parallel program structure patterns
@@ -35,7 +35,7 @@ a variation of the master-worker pattern, made popular by google’s search engi
 the master coordinates the whole operation.
 workers run two typers of tasks:
 - *map*: apply a function on data, resulting in a set of partial results
-- *reduce*: collect the partial results and derive the complete one ([[introduction and message sending#`MPI_Reduce`]])
+- *reduce*: collect the partial results and derive the complete one ([[01 - introduction and message sending#`MPI_Reduce`]])
 maps and reduce workers (so they are 2 different types of workers) can vary in number. the same function is applied to different parts of a single data item
 ## GSLP
  or **globally sequential, locally parallel**, it means that the application executes as a sequential program, with individual parts of it running in parallel when requested.
@@ -168,7 +168,7 @@ this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
 ![[Pasted image 20251030112145.png]]
 
 however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
-this is implemented with functions like [[introduction and message sending#`MPI_Reduce`|MPI_Reduce]] !
+this is implemented with functions like [[01 - introduction and message sending#`MPI_Reduce`|MPI_Reduce]] !
 for this example, the call would be:
 ```c
 MPI_Reduce(&local_int, &total_int, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
