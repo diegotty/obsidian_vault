@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03T08:26
-updated: 2025-11-03T09:24
+updated: 2025-11-03T09:38
 completed: false
 ---
 # performance evaluation
@@ -35,6 +35,27 @@ as the number of GPUs increases, the goodput gets worse. why ? because the more 
 the runtime increases with problem size and decreases with the number of processes.
 however, we can se that we measure the same runtime when doubling the processes from 8 to 16 in the first column. we must be able to have realistic expectations !
 
+### speedup
 ideally, when running with $p$ processes, the program should be $p$ times faster than when running with 1 process. we define:
-- $T_{serial}(n)$ as teh time of our sequential application on a problem of size $n$ (e.g. the dimension of the matrix)
-- $T_{parall\ell}$
+- $T_{serial}(n)$ as teh time of our *sequential application* on a problem of size $n$ (e.g. the dimension of the matrix)
+- $T_{parallel}(n, p)$ the time of our *parallel application* on a problem of size $n$, when running with $p$ processes
+- $S(n,p)$ the *speedup* (quantitative measure measuring “absolute” performance improvement) of our parallel application:
+$$
+S(n, p) = \frac{T_{serial}(n)}{T_{parallel}(n,p)}
+$$
+ideally, $S(n,p) = p$. in this case, we say our program has a *linear speedup*
+>[!warning] we must take the tests on the same type of cores/systems (only CPU cores or only GPU cores)
+
+>[!info] expected speedup
+![[Pasted image 20251103092819.png]]
+in general, we expect the speedup to get better when increasing the problem size $n$
+>
+>speedups of parallel matrix-vector multiplication:
+![[Pasted image 20251103092916.png]]
+### scalability
+we must note that $T_{serial}(n)$ is different to $T_{parallel}(n, 1)$, which is the time of our *parallel application* on a problem of size $n$, running with 1 process
+- the parallel and sequential implementations might be different, and in general, $T_{parallel}(n, 1) \geq T_{serial}(n)$
+the *scalability* (qualitative measure) describes how effectively the speedup is maintained as resources vary
+$$
+S(n,p) = \frac{T_{parallel(n,1)}}{T_{parallel(n,p)}}
+$$
