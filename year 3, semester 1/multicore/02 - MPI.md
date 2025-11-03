@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T07:12
+updated: 2025-11-03T08:05
 completed: false
 ---
 # introduction
@@ -177,7 +177,7 @@ the `MPI_Reduce` function is a *collective communication function*, that combine
 >);
 >```
 >- `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`)
->- it is possible to pass `NULL` to `output_data_p`
+>- it is possible to pass `NULL` to `output_data_p`, however `input_data_p` needs to always be valid and readable
 
 | Operation value | Meaning                         |
 | --------------- | ------------------------------- |
