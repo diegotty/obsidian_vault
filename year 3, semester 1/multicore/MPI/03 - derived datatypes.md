@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 15:29
-updated: 2025-11-03T15:53
+updated: 2025-11-03T15:58
 completed: false
 ---
 # derived datatypes
@@ -67,8 +67,17 @@ however, due to the different implementations of datatype, we can’t be sure of
 >MPI_Get_address(&b, &b_addr);
 >array_of_displacements[1] = b_addr-a_addr; //first displacement
 >MPI_Get_address(&c, &c_addr);
->array_of_displacements[2] = c_addr-a_addr; // second displacement (absolute, from 0)
+>array_of_displacements[2] = c_addr-a_addr; // second displacement (from a, not from b !)
 >```
+>
+>we cant do:
+>```c
+>array_of_displacements[0] = 0;
+>array_of_displacements[1] = &b - &a;
+>array_of_displacements[2] = &n - &a;
+>```
+because `&` cast-expressions return a *pointer*, not an *address*. ISO C does not require that the value of a pointer (or the pointer cast to int) be the absolute address of the object pointed at (although this is commonly the case).
+furthermore, referencing may not have a unique definition on machines with a segmented address space. the use of `MPI_Get_address` guarantees portability to any machine
 
 ## `MPI_Type_commit()`
 `MPI_Type_commit` allows the MPI implementation to optimize its internal representation of the derived datatype for use in communication functions !
