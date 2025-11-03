@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-03T19:23
+updated: 2025-11-03T19:31
 completed: false
 ---
 # access control
@@ -14,6 +14,7 @@ a process by which use of system resources is regulated according to a *security
 >[!info] the flow
 ![[Pasted image 20251103184625.png]]
 ## access control models
+we had a high level introduction to this topic at the end of the [[sicurezza|os1 course]]
 ### DAC
 *discretionary access control* (*DAC*) controls access based on the identity of the requestor, and on access rules stating what thre requestors are allowed to do
 such rules are often provided using an *access matrix* or an *access control list* (*ACL*) or an *extended access control matrix*
@@ -55,9 +56,19 @@ the *Bell-LaPadula model* (*BLP*) is an example of MAC. it defines two crucial r
 >- *no write down* (*\*-property*): a subject can write to an object if the subject’s clearance level is less than or equal to the object’s classification level
 >	- this prevents high-level information from being copied/written-down to a low-level file that a low-clearance user could then read !! genius !
 >
->the limitations of BLP is that it cannot manage the “downgrade of objects”
+BLP has many limitations due to its very rigid structure
+
+there are many implementations of MAC, the most recent being SELinux (NSA’s implementation of MAC for linux) and AppArmor for linux, and Mandatory Integrity Control for windows
 ### RBAC
-*role-based access control* (*RBAC*) controls access based on the roles that users have within the systems, and on rules stating what accesses are allowed to users in given roles
+*role-based access control* (*RBAC*) controls access based on the roles that users have within the systems, and on rules stating what accesses are allowed to users in given roles. its goals are:
+- describe organizational control *policies*
+- be based on job function (not on identity or clearance, but their role)
+- increase flexibility/scalability in policy administration (easy to change secuirty requirements)
+>[!info] i like graphs
+![[Pasted image 20251103192734.png]]
+
+>[!info] ACL matrix representation of RBAC
+![[Pasted image 20251103192955.png]]
 
 ### ABAC
 *attribute-based access control* (*ABAC*) controls access based on attributes of the user, the resource to be accessed, and *current enviromental conditions*
