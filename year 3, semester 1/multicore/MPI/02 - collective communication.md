@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T15:00
+updated: 2025-11-03T15:24
 completed: false
 ---
 # collective communication
@@ -89,7 +89,7 @@ the argument is the same as `MPI_Bcast()`, except there is not `dest_process`as 
 
 >[!info] behind the scenes
 ![[Pasted image 20251103065251.png]]
-## `MPI_Scatter`
+## `MPI_Scatter()`
 `MPI_Scatter` should be used in a function that reads in an entire vector on process 0, and sends the needed component to each of the processes
 >[!info] representation
 ![[Pasted image 20251103144807.png]]
@@ -116,7 +116,7 @@ the argument is the same as `MPI_Bcast()`, except there is not `dest_process`as 
 `MPI_IN_PLACE` can optimize the `MPI_Scatter` function: nstead of requiring a new buffer for process 0, it uses the fact that process 0 already has the entire buffer
 ![[Pasted image 20251103145611.png]]
 
-## `MPI_Gather`
+## `MPI_Gather()`
 `MPI_Gather` collects all of the components of a vector onto process 0, and the proceess 0 can process all of the components
 - it gathers following the ranks as order !
 - the opposite of a scatter
@@ -136,3 +136,28 @@ the argument is the same as `MPI_Bcast()`, except there is not `dest_process`as 
 >	MPI_Comm     comm        // in
 >);
 >```
+
+## `MPI_Allgather()`
+`MPI_Allgather`, conceptually, is a *gather + broadcast*, however, in practice, it might be implemented in a more efficient way !
+>[!info] representation
+![[Pasted image 20251103151644.png]]
+
+>[!syntax]
+>```c
+>MPI_Allgather(
+>	void*        send_buf_p, // in
+>	int          send_count, // in
+>	MPI_Datatype send_type,  // in
+>	void*        recv_buf_p, // out
+>	int          recv_count, // in
+>	MPI_Datatype recv_type,  // in
+>	MPI_Comm     comm        // in
+>);
+>```
+>- `send_count`, `recv_count` are the number of elements sent by each process on the gather !
+
+## `MPI_Reduce_Scatter()`
+`MPI_Reduce_Scatter` combines *reduce + scatter*:
+1. each process contribues a local data buffer of the same size, on which is applied a reduce (if every process sends a vector of size $n$, the result is just one vector of size )
+>[!info] representation
+![[Pasted image 20251103152033.png]]
