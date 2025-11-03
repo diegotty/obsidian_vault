@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03T08:26
-updated: 2025-11-03T09:38
+updated: 2025-11-03T09:54
 completed: false
 ---
 # performance evaluation
@@ -59,3 +59,19 @@ the *scalability* (qualitative measure) describes how effectively the speedup is
 $$
 S(n,p) = \frac{T_{parallel(n,1)}}{T_{parallel(n,p)}}
 $$
+## efficiency
+(we call efficiency what is defined as *parallel efficiency*) measures how effectively the *processing resources are utilized*.
+$$
+E(n,p) = \frac{S(n,p)}{p} = \frac{T_{serial}(n)}{p\times T_{parallel}(n,p)}
+$$
+ideally, we would like to have $E(n,p) = 1$ (bc we hope for a linerar speedup), however in practice it is $\leq1$, and it gets worse with smaller problems
+- an efficiency of 0.8 means that, on average, each processor was actively contributing to the solution 80% of the time it was running
+	- meh kind of makes sense ig
+>[!info] graph showing efficiency
+![[Pasted image 20251103094521.png]]
+>
+>efficiencies of parallel matrix-vector multiplication
+![[Pasted image 20251103095129.png]]
+
+## scaling
+*strong* and *weak* scaling are two methods used to evaluate the scalability of a parallel program (by managing the number of processes efficiently). they differ on wh
