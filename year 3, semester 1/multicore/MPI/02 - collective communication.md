@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T15:24
+updated: 2025-11-03T15:29
 completed: false
 ---
 # collective communication
@@ -158,6 +158,25 @@ the argument is the same as `MPI_Bcast()`, except there is not `dest_process`as 
 
 ## `MPI_Reduce_Scatter()`
 `MPI_Reduce_Scatter` combines *reduce + scatter*:
-1. each process contribues a local data buffer of the same size, on which is applied a reduce (if every process sends a vector of size $n$, the result is just one vector of size )
+1. each process contribues a local data buffer of the same size
+2. a *reduce* collective is applied to the data collected (if every process sends a vector of size $n$, the result is just one vector of size $n$)
+3. the vector is divided and sent to the processess (*scatter*): with a vector of size $n$ and $p$ processes, chunks of $n/p$ elements are sent across the ranks
 >[!info] representation
 ![[Pasted image 20251103152033.png]]
+
+>[!syntax] syntax
+>```c
+>``int MPI_Reduce_scatter(
+>    const void *sendbuf,       // in
+>    void *recvbuf,             // out
+>    const int *recvcounts,     // in
+>    MPI_Datatype datatype,     // in
+>    MPI_Op op,                 // in
+>    MPI_Comm comm              // in
+>);
+>```
+>- `op` is the type of reduce operation
+> - `recvcounts`: array of $p$ integers, where `recvcounts[i]` is the number of elements the i-th ranked process receives
+
+>[!info] this collective is used to transpose matrices !
+![[Pasted image 20251103152902.png]]
