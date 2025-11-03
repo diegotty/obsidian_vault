@@ -7,4 +7,4 @@ completed: false
 - [ ] recuperare dimostrazione da fare per casa automi  (17/10)
 - [ ] c lsp doesnt work on mac ?
 - [ ] lez07 multicore exercises ?
-- [ ] recuperare esercitazioneautomi
+- [ ] recuperare esercitazione automi (31/10)
