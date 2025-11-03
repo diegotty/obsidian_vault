@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T14:44
+updated: 2025-11-03T17:21
 completed: false
 ---
 # introduction
@@ -145,7 +145,9 @@ many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall
 
 ### `MPI_Sendrecv`
 `MPI_Sendrecv` is an alternative in message sending: it allows, in a single combined function, to send a message to one destination and simultaneously receive a message from one source process
+- it is blocking
 - its primary role is to prevent deadlocks (as we know, sends can be blocking, so if two processes send a message at the same time to each other, a deadlock could happen)
+- we don’t need to schedule the communication ourselves
 - it is an atomic function
 ```c
 int MPI_Sendrecv(
