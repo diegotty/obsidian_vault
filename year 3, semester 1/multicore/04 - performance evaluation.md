@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03T08:26
-updated: 2025-11-03T15:29
+updated: 2025-11-03T18:01
 completed: false
 ---
 # performance evaluation
@@ -222,6 +222,3 @@ let’s be annoying. lets use the output of the multiplication as the new array 
 
 we would need to do a *gather + broadcast* of one vector (so collect it first, then send it to all the processes). luckily, there exists a dedicated collective function that does this: [[02 - collective communication#`MPI_Allgather`|MPI_Allgather]]
 
-x core e y thread
-context switching is very expensive !
-having 2 threads in a core means that, with the same ALU, there are resources to save 2 process contexts. that way, context switching is faster
