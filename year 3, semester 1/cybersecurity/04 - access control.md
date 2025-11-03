@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-03T19:31
+updated: 2025-11-03T19:51
 completed: false
 ---
 # access control
@@ -70,5 +70,24 @@ there are many implementations of MAC, the most recent being SELinux (NSA’s im
 >[!info] ACL matrix representation of RBAC
 ![[Pasted image 20251103192955.png]]
 
+ummm role families ?
 ### ABAC
 *attribute-based access control* (*ABAC*) controls access based on attributes of the user, the resource to be accessed, and *current enviromental conditions*
+it can define authorizations that express conditions on properties of both the resource and the subject
+- flexible, however its main downside is the performance impact of evaluating predicates on both resource and user properties for each access
+we define the parts of this approach:
+- *subject attributes*: a subject is active entity that causes information to flow among objects or changes the sytem state. the attributes define the identity and characteristics of the subject
+- *object attributes*: an object is a passive information, system-related entity containing or receiving information. the attributes are "leverages" to make access control decisions
+- *environment attributes*: they describe the operational, technical and even situational context in which the information access occurs. these attributes have, so far, been largely ignored in most access control policies
+
+ABAC relies up on the evaluation of:
+1. attributes of the subject
+2. attributes of the object
+3. an access control rule defining the allowable operations for subject-object attribute combinations *in a given environment*
+we can enfore DAC, RBAC and MAC concepts, as it allows an unlimited number of attributes to be combined to satisfy any policy of privilege
+- *policy*: a set of rules and relationship that govern allowable behaviour within an organization, based on the privileges of subjects and how objects are to be protected under which environment conditions
+	- typically written from the perspective of the object that needs protecting and the privileges available to subjects
+- *privilege*: authorized behaviours of subjects. they defined by an authority and embodied in a policy
+>[!info] picture
+![[Pasted image 20251103194700.png]]
+

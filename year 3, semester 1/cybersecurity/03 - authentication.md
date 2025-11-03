@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-26T16:37
+updated: 2025-11-03T19:51
 completed: false
 ---
 # authentication
@@ -11,7 +11,7 @@ the process of establishing confidence in user identities that are presented ele
 there are many identification requirements to protect data:
 - *uniquely* identify and authenticate system *users* , and associate that unique identification with processes acting on behalf of those users
 - *uniquely* identify and authenticate *devices* before establishing a system connection
-- implement *replay-resistant* authentication mechanisms for acces to priviledged and non-priviledged accounts
+- implement *replay-resistant* authentication mechanisms for access to privileged and non-privileged accounts
 - obscure *feedback of authentication* information, during the authentication process
 >[!info] replay attacks
 a replay attack consists in capturing a valid message (/authentication data) and *resend* the same message later to the receiver, to illicitly repeat the original action (or in this case, gain access )
