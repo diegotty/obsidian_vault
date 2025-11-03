@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03T08:26
-updated: 2025-11-03T09:54
+updated: 2025-11-03T10:06
 completed: false
 ---
 # performance evaluation
@@ -74,4 +74,14 @@ ideally, we would like to have $E(n,p) = 1$ (bc we hope for a linerar speedup), 
 ![[Pasted image 20251103095129.png]]
 
 ## scaling
-*strong* and *weak* scaling are two methods used to evaluate the scalability of a parallel program (by managing the number of processes efficiently). they differ on wh
+*strong* and *weak* scaling are two methods used to evaluate the scalability of a parallel program. they differ on whether the total problem size is kept fixed or scaled along with the processors
+- *strong scaling*: the problem size is kept fixed, and the number of processes is increased. if we can keep a high efficiency, our program is *strong-scalable*
+- *weak scaling*: the problem size is increased at the same rate at which the number of processes is increased. if we can keep a high efficiency, our program is *weak-scalable*
+>[!example]
+as we can observe, the program is not strong-scalable but it is weak-scalable
+![[Pasted image 20251103095731.png]]
+![[Pasted image 20251103095820.png]]
+
+different scalings are needed for different problems and are used to make decisions on resource allocation and code optimization:
+- *strong scaling*: evaluating time-critical problems where the size is fixed. if strong scaling drops, adding processes would not be worth it
+- *weak scaling*: evaluating ability to handle increasing datasets. if weak scaling holds up, it means the parallel algorithm is well-designed !
