@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 17:38
-updated: 2025-11-03T18:09
+updated: 2025-11-03T18:19
 completed: false
 ---
 with the introduction of openMP and pthreads, we study how to parallelize effectively between cores of a single CPU
@@ -29,6 +29,15 @@ in a shared memory program, a single process may have multiple threads of contro
 
 ### multithreading in MPI
 ## `MPU_Init_thread()`
+`MPI_Init_thread` is a function that initializes the MPI enviroment like `MPI_Init`, but also requests a certain level of *thread support* from the MPI library
+- must be used when multithreading !
+>[!syntax]
+>```c
+>int MPI_Init_thread(int *argc, char ***argv, int required, int *provided);
+>```
+- `required`,  can be chosen between the threading levels below
+- `provided` is an output value that tells the provided threading level. if the threading level provided is less than the one required, we must do smn cuz the communication may not be thread-safe as intented !
+
 ### threading levels
 `MPI_THREAD_SINGLE` → rank that calls the function is not allowed to use threads (which is basically equivalent to calling `MPI_Init`)
 `MPI_THREAD_FUNNELED` → rank can be multi-threaded but only the main thread may call MPI functions. ideal for fork-join parallelism such as used in `#pragma` omp parallel, where all MPI calls are outside the openMP regions
@@ -36,7 +45,7 @@ in a shared memory program, a single process may have multiple threads of contro
 `MPI_THREAD_MULTIPLE` → rank can be multi-threaded and any thread may call MPI functions. *the MPI library ensures that this access is safe across threads*. note that this makes all MPI operations less efficient, even if only one thread makes MPI calls, so should be used only when necessary
 >[!warning] not all the threading levels are supported by all the MPI implementations
 
->[!info] representation of threading levels
+>[!info]- representation of threading levels
 single:
 ![[Pasted image 20251103180811.png]]
 >
@@ -45,3 +54,17 @@ single:
 >
 >serialized:
 ![[Pasted image 20251103180905.png]]
+>
+>multiple:
+![[Pasted image 20251103180934.png]]
+## thread-safety
+a block of code is *thread-safe* if it can be simultaneously executed by multiple threads without causing problems
+- many C library functions are not thread-safe ! (e.g. `random()`, `localtime()`, … )
+>[!example] tokenizing a file
+we can divide the text in lines, and assign each line to a different thread. each thread can then tokenize the line using `strtok()`
+however, because of how `strtok()` works (it takes a pointer as input the first time. after the first time it takes `NULL` as input, because it returns succesive tokens taken from the cached pointer), and because the cached string is shared, the `strtok()` function is not thread safe
+>
+>famo che ci capiamo
+
+in some cases, the C standard specifies alternate, thread-safe versions of a function (e.g. `strtok_r()`), called *re-entrant* functions.
+- in principle, re-entrant != thread-safe, but they are often also thread safe.
