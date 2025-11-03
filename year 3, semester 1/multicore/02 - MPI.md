@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-11-03T07:07
+updated: 2025-11-03T07:12
 completed: false
 ---
 # introduction
@@ -155,7 +155,8 @@ unlike point-to-point communcations (send-receive), collective calls are matched
 for this reason, all the *big ballers* are designing their own collective communication libraries (NCCL for NVIDIA, RCCL for AMD, OnceCCL for intel,…)
 
 the optimal way to perform a collective operation depends *heavily* on the specific conditions of the parallel run (message size, size of communicator, hardware topology, …), and no algorithm is fastest in all cases. 
-while OpenMPI does not make assumptions on the underlying hardware, and the algorithmic implementation of the collective function to run is chosen automatically through heuristics (def: problem solving technique that employs a pragmatic method that is not fully optimized, but is “good enough” as an approximation) (), proprietary libraries do make assumptions on the hardware
+OpenMPI does not make assumptions on the underlying hardware, and the algorithmic implementation of the collective function to run is chosen automatically through heuristics (problem solving technique that employs a pragmatic method that is not fully optimized, but is “good enough” as an approximation) (MPI uses pre-compiled decision that act as big `if-else`rules)
+- proprietary libraries do make assumptions on the hardware and use that information as well as the details mentioned above to choose an implementation
 
 ### `MPI_Reduce()`
 the `MPI_Reduce` function is a *collective communication function*, that combines values from *multiple processes* into a single result, and sends that result to the root
