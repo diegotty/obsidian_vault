@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T11:27
+updated: 2025-11-03T06:54
 completed: false
 ---
 # introduction
@@ -147,6 +147,7 @@ many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall
 collective functions are functions that involve all processes within a specified communicator. every process needs to call the function
 - they are highly optimized by the MPI implementation for parallel computing, so it makes sense to use them over manual implementations
 unlike point-to-point communcations (send-receive), collective calls are matched solely on the basis of the communicator and the order in which they are called (no tags !)
+
 ### `MPI_Reduce()`
 the `MPI_Reduce` function is a *collective communication function*, that combines values from *multiple processes* into a single result, and sends that result to the root
 - as all collectives, it works as one call for all the processes
@@ -202,14 +203,18 @@ the `MPI_Reduce` function is a *collective communication function*, that combine
 >[!info] illustration
 ![[Pasted image 20251030112641.png]]
 
+>[!syntax] syntax
+>```c
+>int MPI_Allreduce(
+>	void*        input_data_p,  // in
+>	void*        output_data_p, // out
+>	int          count,         // in
+>	MPI_Datatype datatype,      // in
+>	MPI_Op       operator,      // in
+>	MPI_Comm     comm           // in
+>);
+>```
+the argument is the same as `MPI_Bcast()`, except there is not `dest_process`as all the processes should get the information
 
-```c
-int MPI_Allreduce(
-	void*        input_data_p,  // in
-	void*        output_data_p, // out
-	int          count,         // in
-	MPI_Datatype datatype,      // in
-	MPI_Op       operator,      // in
-	MPI_Comm     comm           // in
-);
-```
+>[!info] behind the scenes
+![[Pasted image 20251103065251.png]]
