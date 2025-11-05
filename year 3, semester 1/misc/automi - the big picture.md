@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T10:29
+updated: 2025-11-05T17:28
 completed: false
 ---
 abbiamo iniziato studiando i *DFA* (deterministic finite-state automata), in quanto la loro quantità di memoria limitata e il processing di input bit-a-bit implica degli automi più semplici.
@@ -22,9 +22,15 @@ abbiamo studiato il *pumping lemma*, che permette di dimostare se un linguaggio 
 dopo aver introdotto due modi diversi per descrivere linguaggi regolari (automi finiti e espressioni regolari). definiamo ora metodi più potenti per definire linguaggi anche non regolari.
 la classe di linguaggi che include quelli regolari e ulteriori linguaggi, non regolari, si chiama *CFL*
 
-abbiamo introdotto le *CFG* (grammatiche context-free), un modello di computazione più potente, che permette di rappresentare linguaggi non regolari, e di conseguenza le grammaitche coincidono con un diverso tipo di automi: i *PDA* (pushdown automata)
+abbiamo introdotto le *CFG* (grammatiche context-free), un modello di computazione più potente, che permette di rappresentare linguaggi non regolari: i *CFL* (linguaggi context-free)
+- notiamo che le grammatiche sono l’insieme di regole che definiscono il linguaggio (struttura matematica) , mentre il linguaggio è l’insieme di stringhe prodotte dalla grammatica
+	- CFG diverse possono generare lo stesso CFL !
+di conseguenza le grammatiche coincidono con un diverso tipo di automi: i *PDA* (pushdown automata)
 - abbiamo studiato dei modi per progettare CFG: unione, da un DFA, e usando la ricorsione
 - abbiamo studiato la *forma normale di Chomsky* per i CFG (come la forma canonica per i GNFA)
-abbiamo studiato i *PDA* (pushdown automata), un’estensione dei DFA che consentono di riconoscere linguaggi non regolari usando una pila, che viene aggiornata ad ogni transizione tra stati. abbiamo dimostrato l’equivalenza tra PDA e CFG (dato un CFG, esiste un PDA il cui linguaggio è il CFG)
+(di conseguenza, i CFL sono tutti i linguaggi accettati dai PDA)
+- ricordiamo che $REG \in CFL$, e $DFA \in NFA \in PDA$
+abbiamo studiato i *PDA* (pushdown automata), un’estensione dei DFA che consentono di riconoscere linguaggi non regolari usando una pila, che viene aggiornata ad ogni transizione tra stati. 
+abbiamo dimostrato l’equivalenza tra PDA e CFG 
 
 
