@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-03T19:51
+updated: 2025-11-06T16:16
 completed: false
 ---
 # access control
@@ -70,7 +70,19 @@ there are many implementations of MAC, the most recent being SELinux (NSA’s im
 >[!info] ACL matrix representation of RBAC
 ![[Pasted image 20251103192955.png]]
 
-ummm role families ?
+
+>[!info] families of role-based access control models
+![[Pasted image 20251106161009.png]]
+the top diagram shows how different RBAC models build upon each other, starting from the base model $RBAC_{0}$:
+>- $RBAC_{0}$ is the *base model*, which includes the core concepts of users, roles, permissions, and their assignment
+>- $RBAC_{1}$ extends it by introducing *hierarchical roles*: roles can inherit permissions from other roles (e.g. a manager role inherits all the permissions of a employee role)
+>- $RBAC_{2}$ adds *constraints* that restrict the relationships. a common example is the *separation of duty* (*SoD*), which prevents a single user from possessing conflicting roles (e.g. a “check issuer” and a “check approver”)
+>- $RBAC_{3}$ combines the features of $RBAC_{1}$ and $RBAC_{2}$
+>
+>the bottom diagram details the entities and their relationships in a typical RBAC system:
+- *user assignments* (*UA*) connect users to roles
+- *role hierarchies* (*RH*) are relationships within the roles set, defining which roles inherit permissions from others
+- *permission assignments* (*PA*) connect ro
 ### ABAC
 *attribute-based access control* (*ABAC*) controls access based on attributes of the user, the resource to be accessed, and *current enviromental conditions*
 it can define authorizations that express conditions on properties of both the resource and the subject
