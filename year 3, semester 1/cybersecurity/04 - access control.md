@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-06T16:45
+updated: 2025-11-06T16:58
 completed: false
 ---
 # access control
@@ -112,14 +112,31 @@ we can enfore DAC, RBAC and MAC concepts, as it allows an unlimited number of at
 ![[Pasted image 20251103194700.png]]
 
 #### ABA policies model
-$S$, $O$ and $E$ are subjects, objects and environments
-$SA_{k}(1\dots k\dots K)$ are the pre-defined attributes for subjects
-$OA_{m}(1\dots m\dots M)$ are the pre-defined attributes for objects
-$EA_{n}(1\dots n\dots N)$ are the pre-defined attributes for environments
->[!example] gemini example
+- $S$, $O$ and $E$ are subjects, objects and environments
+- $SA_{k}(1\dots k\dots K)$ are the pre-defined attributes for subjects (they contain information about the subject)
+- $OA_{m}(1\dots m\dots M)$ are the pre-defined attributes for objects (they contain information about the object)
+- $EA_{n}(1\dots n\dots N)$ are the pre-defined attributes for environments (they contain information about the context under which the access attempt is made)
+- the *access rule* states the decision of whether a subject $\text{can\_access}$ an object in a given environment. it is determined by a function $f$ that evaluates the collection of attributes for subject, object and environment
+	- e.g.: a subject with `role` = `admin` can access a `filesecuritylevel`= `confidential` *only if* `currenttime`is in between `9am` and `5pm`
+	- this is more flexible than RBAC, as it can incorporate many dynamic factors (e.g. time, location, or resource data) into access decision
+$$
+\text{can\_access(s,o,e)$\leftarrow$f(ATTR(s),ATTR(o), ATTR(e))}
+$$
+
+>[!example]- gemini example
 ![[Pasted image 20251106164410.png]]
 >
 ![[Pasted image 20251106164521.png]]
+>
+![[Pasted image 20251106165420.png]]
+IF ….. THEN DENY
+
+>[!example]- slides example
+![[Pasted image 20251106165451.png]]
+
+>[!example]- another slides example (i kinda want to move on ngl)
+![[Pasted image 20251106165843.png]]
+![[Pasted image 20251106165852.png]]
 
 >[!info] ABAC vs RBAC
 >in RBAC, as the number of attributes increases to accomodate finer-grained policies, the number of roles and permissions grows *exponentially*
