@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-11-03, 18:33
-updated: 2025-11-06T16:24
+updated: 2025-11-06T16:45
 completed: false
 ---
 # access control
@@ -111,3 +111,16 @@ we can enfore DAC, RBAC and MAC concepts, as it allows an unlimited number of at
 >[!info] picture
 ![[Pasted image 20251103194700.png]]
 
+#### ABA policies model
+$S$, $O$ and $E$ are subjects, objects and environments
+$SA_{k}(1\dots k\dots K)$ are the pre-defined attributes for subjects
+$OA_{m}(1\dots m\dots M)$ are the pre-defined attributes for objects
+$EA_{n}(1\dots n\dots N)$ are the pre-defined attributes for environments
+>[!example] gemini example
+![[Pasted image 20251106164410.png]]
+>
+![[Pasted image 20251106164521.png]]
+
+>[!info] ABAC vs RBAC
+>in RBAC, as the number of attributes increases to accomodate finer-grained policies, the number of roles and permissions grows *exponentially*
+instead, the ABAC model deals with additional attributes in an efficient way
