@@ -4,6 +4,7 @@
     "cssclasses": "multitext",
     "tags": "tags",
     "updated": "datetime",
-    "completed": "checkbox"
+    "completed": "checkbox",
+    "created": "text"
   }
 }

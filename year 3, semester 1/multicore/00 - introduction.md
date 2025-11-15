@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T10:23
+updated: 2025-11-15T18:58
 completed: false
 ---
 the performance of microprocessors has stopped increasing in a fast rate in the last 20 years, going from 50% a year  from 1986 to 2003, to a 4% increase in the last 10 years 
@@ -64,6 +64,15 @@ higher level libraries exist, but the tradeoff is performance
 >[!info] image
 ![[memory.png]]
 with distributed memory (right), cores are connected though a fast network
+
+>[!info] distributed memory systems insight
+![[Pasted image 20251103172359.png]]
+multiple nodes/servers/blades are interconnected, through their NICS, to each other
+>- we can have, as of today, up to 4 GPUs per node
+>- we can have, as of today, up to one NIC per GPU !
+>
+>![[Pasted image 20251103172549.png]]
+we will study *MPI* to parallelize over nodes, *pthread/OpenMP* to parallelize over *CPU cores*, and *CUDA* to parallelize over *GPU cores*
 #### instructions
 - **multiple-instruction multiple-data (MIMD)**: each core has its own control units (can execute different instructions, and have different fetch cycles) and can work independently from the others
 - **single-instruction multiple-data (SIMD)**: the same instruction is executed across all cores, but each code does so on different data (if a core wants to execute another instruction, it has to stay idle while the other core does its instruction)

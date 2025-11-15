@@ -6,7 +6,8 @@
       "dimostrazione",
       "exercise",
       "index",
-      "def"
+      "def",
+      "syntax"
     ],
     "settings": {
       "tuff": [
@@ -88,6 +89,14 @@
           "changes": {
             "icon": "lucide-book-key",
             "color": "177, 37, 37"
+          }
+        }
+      ],
+      "syntax": [
+        {
+          "changes": {
+            "icon": "lucide-book-type",
+            "color": "200, 125, 76"
           }
         }
       ]

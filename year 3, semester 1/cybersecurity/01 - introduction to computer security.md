@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T10:23
+updated: 2025-11-15T18:58
 completed: false
 ---
 >[!def] cybersecurity

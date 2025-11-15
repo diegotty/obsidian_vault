@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-30T10:23
+updated: 2025-11-03T17:21
 completed: false
 ---
 # introduction
@@ -143,28 +143,25 @@ however, non-blocking calls don’t guarantee the *altering the buffer thing*, a
 	- non-blocking completion request, destroys handle only if the operation was successful `flag = 1`
 many variants of the wait operation are available: `MPI_Waitall()`, `MPI_Testall()`, `MPI_Waitany()`, `MPI_Testany()`, …
 
-## `MPI_Reduce`
-the `MPI_Reduce` function is a *collective communication function*, that combinesvalues from *multiple processes* into a single result, and sends that result to the root
-- it works as one call for all the processes
->[!info] illustration
-![[Pasted image 20251028113049.png]]
-
-`int MPI_reduce(void* input_data_p, void* output_data_p, int count, MPI_Datatype datatype, MPI_Op operator, int dest_process, MPI_Comm comm)`
-- `MPI_Op` defines the operator applied by the reduce function. the allowed operators are listed below (however, we can create custom operators with `MPI_Op_create()`):
-
-| Operation value | Meaning                         |
-| --------------- | ------------------------------- |
-| `MPI_MAX`       | maximum                         |
-| `MPI_MIN`       | minimum                         |
-| `MPI_SUM`       | sum                             |
-| `MPI_PROD`      | product                         |
-| `MPI_LAND`      | logical and                     |
-| `MPI_BAND`      | bitwise and                     |
-| `MPI_LOR`       | logical or                      |
-| `MPI_BOR`       | bitwise or                      |
-| `MPI_LXOR`      | logical exclusive or            |
-| `MPI_BXOR`      | bitwise exclusive or            |
-| `MPI_MAXLOC`    | maximum and location of maximum |
-| `MPI_MINLOC`    | minimum and location of minimum |
->[!warning]
->all the processes in the communicator must call *the same* collective function
+### `MPI_Sendrecv`
+`MPI_Sendrecv` is an alternative in message sending: it allows, in a single combined function, to send a message to one destination and simultaneously receive a message from one source process
+- it is blocking
+- its primary role is to prevent deadlocks (as we know, sends can be blocking, so if two processes send a message at the same time to each other, a deadlock could happen)
+- we don’t need to schedule the communication ourselves
+- it is an atomic function
+```c
+int MPI_Sendrecv(
+	void* send_buf_p,            // in
+	int send_buf_size,           // in
+	MPI_Datatype send_buf_type,  // in
+	int dest,                    // in
+	int send_tag,                // in
+	void* recv_buf_p,            // out
+	int recv_buf_size,           // in
+	MPI_Datatype recv_buf_type,  // in
+	int source,                  // in
+	int recv_tag,                // in
+	MPI_Comm communicator,       // in
+	MPI_Status* status_p         // in
+)
+```

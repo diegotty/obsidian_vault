@@ -1,7 +1,7 @@
 ---
 related to:
 created: 2025-03-02T17:41
-updated: 2025-10-28T11:36
+updated: 2025-11-03T14:46
 completed: false
 ---
 # parallel program structure patterns
@@ -35,7 +35,7 @@ a variation of the master-worker pattern, made popular by google’s search engi
 the master coordinates the whole operation.
 workers run two typers of tasks:
 - *map*: apply a function on data, resulting in a set of partial results
-- *reduce*: collect the partial results and derive the complete one
+- *reduce*: collect the partial results and derive the complete one ([[01 - introduction and message sending#`MPI_Reduce`]])
 maps and reduce workers (so they are 2 different types of workers) can vary in number. the same function is applied to different parts of a single data item
 ## GSLP
  or **globally sequential, locally parallel**, it means that the application executes as a sequential program, with individual parts of it running in parallel when requested.
@@ -155,28 +155,21 @@ void get_input( int my_rank, int comm_sz, double* a, double* b, int* n){
 
 ```
 
+>[!example] problems
 as we saw previously, when doing the global sum, $p-1$ processes send their data to one process, which then computes all the sums. this is *unbalanced*, as:
-- time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
-- time for all the other processes: $T_{send}$
-
+>- time for process 0: $(p-1)\cdot(T_{sum}+T_{recv})$
+>- time for all the other processes: $T_{send}$
+>
 we can alter this by using a different tree
->[!info] diff trees
 ![[Pasted image 20251028112725.png]]
 this way, the time for process 0 is $\log_{2}(p) \cdot(T_{sum}+ T_{recv})$
+>
+>the same issue is encountered with sending the values, as process 0 has to send them to $p-1$ processes. we can use another tree to pass the values !
+![[Pasted image 20251030112145.png]]
 
 however, the optimal way to compute a global sum *depends on the number of processes, the size of the data, and the system*. having a native way to express the global sum would simplify programming and improve performance !
-this is implemented with functions like [[02 - MPI#`MPI_Reduce`|MPI_Reduce]] !
+this is implemented with functions like [[01 - introduction and message sending#`MPI_Reduce`|MPI_Reduce]] !
 for this example, the call would be:
 ```c
 MPI_Reduce(&local_int, &total_int, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
 ```
-
-
-slide 35
-MPI_Allreduce
-conceptually, its a `MPI_Reduce()` followed by a `MPI_Bcast()`
-
-recursive doubling algorithm
-
-
-a good amout of time out of runtime is spent doing collective data ““processing””” (like reduce)
